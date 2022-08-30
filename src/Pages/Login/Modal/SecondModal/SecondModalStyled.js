@@ -11,13 +11,14 @@ export const SecondModalBody = styled.div`
   left: 0;
   z-index: 999;
   max-height: 667px;
+  max-width: 375px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
 export const SecondModalSection = styled.div`
   max-width: 300px;
-  width: 90%;
+  width: 100%;
   background-color: white;
   margin: 0px auto 0px auto;
   border-radius: 20px;

@@ -5,11 +5,13 @@ import { useState } from "react";
 
 const Modal = () => {
 const [display,setDisplay] = useState(1)
+const [img,setImg] = useState('')
+console.log(img)
     return(
         <>
-        <FirstModal display={display} setDisplay={setDisplay}  />
-        <SecondModal display={display} setDisplay={setDisplay} />
-        <ThirdModal display={display} setDisplay={setDisplay} />
+        <FirstModal display={display} setDisplay={setDisplay} setImg={setImg} />
+        <SecondModal display={display} setDisplay={setDisplay} setImg={setImg}  />
+        <ThirdModal display={display} setDisplay={setDisplay} setImg={setImg}  />
         </>
     )
 }

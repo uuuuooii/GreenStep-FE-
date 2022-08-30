@@ -32,6 +32,7 @@ background-color: yellow;
 padding: 5px 0;
 text-align: center;
 display: flex;
+justify-content: center;
 `
 
 
@@ -41,8 +42,6 @@ text-align: center;
 
 export const ArrowBack = styled(MdOutlineArrowBackIosNew)`
   color: #e66a2f;
-  /* margin-left: 6px;
-  margin-top: 6px; */
   &:hover {
     cursor: pointer;
   }
@@ -52,8 +51,7 @@ export const ArrowArea = styled.div`
   height: 20px;
   border-radius: 10px;
   background-color: #f7f6f1;
-  /* margin-top: 12px;
-  margin-left: 20px; */
+margin: 0 15px;
   &:hover {
     cursor: pointer;
   }
@@ -78,7 +76,7 @@ height: 100px;
 `
 
 export const ImgDiv = styled.div`
-margin: 40px;
+margin: 100px 40px;
 `
 
 export const SeleceArea = styled.div`

@@ -16,17 +16,16 @@ import {
 
 
 
-const FirstModal = ({display,setDisplay}) => {
+const FirstModal = ({display,setDisplay,setImg}) => {
     const URL = process.env.REACT_APP_URL;
-    console.log(display)
     return (
     <FirstModalBody display={display}>
       <FirstModalSection>
         <ModalHeader>
 
-            <ArrowArea>
+            {/* <ArrowArea>
               <ArrowBack />
-            </ArrowArea>
+            </ArrowArea> */}
         <TopText>
             프로필 사진
             </TopText>
@@ -38,12 +37,12 @@ const FirstModal = ({display,setDisplay}) => {
 <SeleceArea>
 
 <ImgDiv>
-<SelectImg src='https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720' onClick={()=>setDisplay(3)}/>
+<SelectImg src='https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720' onClick={()=>{setDisplay(3);setImg(null)}}/>
  <TopText>카카오톡 프로필</TopText>
 </ImgDiv>
 
 <ImgDiv>
-<SelectImg src='https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720' onClick={()=>setDisplay(2)}/>
+<SelectImg src='https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=720' onClick={()=>{setDisplay(2);setImg(null)}}/>
  <TopText>프로필 캐릭터 선택</TopText>
 </ImgDiv>
 

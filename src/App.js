@@ -7,6 +7,8 @@ import Feed from "./Pages/Feed/Feed";
 import Main from "./Pages/Main";
 import Mypage from "./Pages/MyPage/MyPage";
 import Modal from "./Pages/Login/Modal"
+import MissionCamera from "./Pages/Mission/MissionCamera";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/modal" element={<Modal />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mission" element={<Mission />} />
+          <Route path="/missioncamera" element={<MissionCamera />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/feed" element={<Feed />} />
         </Routes>

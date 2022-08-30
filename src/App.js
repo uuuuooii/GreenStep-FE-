@@ -17,8 +17,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/modal" element={<Modal />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/modal" element={<Modal />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
           <Route path="/mypage" element={<Mypage />} />

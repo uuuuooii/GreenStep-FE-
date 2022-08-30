@@ -15,6 +15,7 @@ export const ThirdModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
 `;
 
 export const ThirdModalSection = styled.div`
@@ -26,8 +27,7 @@ export const ThirdModalSection = styled.div`
 
 export const ModalHeader = styled.div`
   width: 100%;
-  background-color: yellow;
-  padding: 5px 0;
+  padding: 10px 0;
   justify-content: center;
   text-align: center;
   display: flex;
@@ -35,6 +35,7 @@ export const ModalHeader = styled.div`
 export const TopText = styled.div`
   text-align: center;
   margin: 0 auto;
+  font-size: 20px;
 `;
 export const SelectBody = styled.div`
   width: 100%;
@@ -47,7 +48,7 @@ export const SelectBody = styled.div`
 export const ButtonText = styled.div`
   /* margin: auto; */
   width: 32px;
-  margin: 0 5px;
+  margin: 0 10px;
   &:hover {
     cursor: pointer;
   }

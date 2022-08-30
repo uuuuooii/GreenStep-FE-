@@ -15,6 +15,7 @@ export const FirstModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
 `;
 
 export const FirstModalSection = styled.div`
@@ -28,64 +29,68 @@ export const FirstModalSection = styled.div`
 `;
 
 export const ModalHeader = styled.div`
-width: 100%;
-background-color: yellow;
-padding: 5px 0;
-text-align: center;
-display: flex;
-justify-content: center;
-`
-
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`;
 
 export const TopText = styled.div`
-text-align: center;
-margin: auto;
-`
-
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+`;
 
 export const SelectBody = styled.div`
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const ImgArea = styled.div`
-width: 100%;
-height: 100%;
-font-size: 4px;
-/* align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 4px;
+  /* align-items: center;
 justify-content: center;
 display: flex; */
-`
+`;
 export const SelectImg = styled.img`
-width: 100px;
-height: 100px;
-outline: ${(props) => (props.num == props.check ? '2px solid black;' : 'none')};
-&:hover{
+  width: 100px;
+  height: 100px;
+  outline: ${(props) =>
+    props.num == props.check ? '2px solid black;' : 'none'};
+  &:hover {
     cursor: pointer;
-}
-`
+  }
+`;
 
 export const ImgDiv = styled.div`
-margin: 100px 40px;
-`
+  margin: 100px 40px;
+`;
 
 export const SeleceArea = styled.div`
-width: 100px;
-height: 100%;
-display: flex;
-`
+  width: 100px;
+  height: 100%;
+  display: flex;
+`;
 
 export const ButtonText = styled.div`
-/* margin: auto; */
-width: 32px;
-margin: 0 5px;
-&:hover{
+  /* margin: auto; */
+  width: 32px;
+  margin: 0 10px;
+  &:hover {
     cursor: pointer;
-}
-`
+  }
+`;
 export const DummyText = styled.div`
-width: 32px;
-margin: 0 5px;
-/* display: none; */
+  width: 32px;
+  margin: 0 10px;
+  /* display: none; */
+`;
+export const SelectText = styled.div`
+font-size: 6px;
+text-align: center;
+margin: 10px 0;
 `

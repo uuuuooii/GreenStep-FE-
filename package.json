@@ -9,6 +9,7 @@
     "pulltorefreshjs": "^0.1.22",
     "react": "^18.2.0",
     "react-camera-pro": "^1.1.1",
+    "react-camera-pro-2": "^1.1.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI = react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

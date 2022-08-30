@@ -1,5 +1,26 @@
-export function Feed() {
-  return <div>feed 페이지 입니다. </div>;
-}
+import React, { useState } from "react";
+
+const Feed = () => {
+  const [likes, setLikes] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    if (isClicked) {
+      setLikes(likes - 1);
+    } else {
+      setLikes(likes + 1);
+    }
+    setIsClicked(!isClicked);
+  };
+
+  return (
+    <button
+      className={`like-button ${isClicked && "liked"}`}
+      onClick={handleClick}
+    >
+      <span className="likes-counter">{`Like | ${likes}`}</span>
+    </button>
+  );
+};
 
 export default Feed;

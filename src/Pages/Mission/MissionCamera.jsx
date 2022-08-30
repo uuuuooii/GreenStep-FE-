@@ -15,7 +15,7 @@ export const MissionCamera = () => {
         numberOfCamerasCallback={setNumberOfCameras}
       />
       <div className="control">
-        {/* <ImagePreview image={image} /> */}
+        <div className="ImagePreview" image={image} />
         <div
           className="TakePhotoButton"
           onClick={() => {
@@ -41,3 +41,12 @@ export const MissionCamera = () => {
   );
 };
 export default MissionCamera;
+
+// const ImagePreview = styled.div`
+//   width: 120px;
+//   height: 120px;
+//   ${({ image }) => (image ? `background-image:  url(${image});` : "")}
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// `;

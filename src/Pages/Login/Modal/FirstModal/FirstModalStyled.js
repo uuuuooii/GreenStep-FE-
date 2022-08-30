@@ -15,11 +15,13 @@ export const FirstModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
 `;
 
 export const FirstModalSection = styled.div`
   /* max-width: 300px; */
   width: 100%;
+  height: 100%;
   background-color: white;
   margin: 0px auto 0px auto;
   /* border-radius: 20px; */
@@ -27,62 +29,68 @@ export const FirstModalSection = styled.div`
 `;
 
 export const ModalHeader = styled.div`
-width: 100%;
-background-color: yellow;
-padding: 5px 0;
-text-align: center;
-display: flex;
-`
-
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`;
 
 export const TopText = styled.div`
-text-align: center;
-`
-
-export const ArrowBack = styled(MdOutlineArrowBackIosNew)`
-  color: #e66a2f;
-  /* margin-left: 6px;
-  margin-top: 6px; */
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const ArrowArea = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #f7f6f1;
-  /* margin-top: 12px;
-  margin-left: 20px; */
-  &:hover {
-    cursor: pointer;
-  }
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
 `;
 
 export const SelectBody = styled.div`
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const ImgArea = styled.div`
-width: 100%;
-font-size: 4px;
-`
+  width: 100%;
+  height: 100%;
+  font-size: 4px;
+  /* align-items: center;
+justify-content: center;
+display: flex; */
+`;
 export const SelectImg = styled.img`
-width: 100px;
-height: 100px;
-&:hover{
+  width: 100px;
+  height: 100px;
+  outline: ${(props) =>
+    props.num == props.check ? '2px solid black;' : 'none'};
+  &:hover {
     cursor: pointer;
-}
-`
+  }
+`;
 
 export const ImgDiv = styled.div`
-margin: 40px;
-`
+  margin: 100px 40px;
+`;
 
 export const SeleceArea = styled.div`
-width: 100px;
-display: flex;
-/* justify-content: space-around; */
+  width: 100px;
+  height: 100%;
+  display: flex;
+`;
+
+export const ButtonText = styled.div`
+  /* margin: auto; */
+  width: 32px;
+  margin: 0 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const DummyText = styled.div`
+  width: 32px;
+  margin: 0 10px;
+  /* display: none; */
+`;
+export const SelectText = styled.div`
+font-size: 6px;
+text-align: center;
+margin: 10px 0;
 `

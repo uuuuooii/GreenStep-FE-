@@ -1,5 +1,5 @@
 export function Footer() {
-  return <div> Footer입니다. </div>;
+  return <div> Footer </div>;
 }
 
 export default Footer;

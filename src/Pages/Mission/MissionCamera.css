@@ -1,0 +1,13 @@
+.wrap {
+  position: fixed;
+
+  width: 400px;
+  height: 400px;
+  z-index: 1;    
+}
+
+.control {
+    /* position: fixed;
+    display: flex; */
+    height: 100px;
+}

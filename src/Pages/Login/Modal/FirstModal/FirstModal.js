@@ -11,6 +11,7 @@ import {
   ImgDiv,
   ButtonText,
   DummyText,
+  SelectText
 } from './FirstModalStyled';
 
 const FirstModal = ({ display, setDisplay, setImg, setCheck, check }) => {
@@ -48,7 +49,7 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check }) => {
                   check={check}
                   num={1}
                 />
-                <TopText>카카오톡 프로필</TopText>
+                <SelectText>카카오톡 프로필</SelectText>
               </ImgDiv>
 
               <ImgDiv>
@@ -60,7 +61,7 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check }) => {
                   check={check}
                   num={2}
                 />
-                <TopText>프로필 캐릭터 선택</TopText>
+                <SelectText>프로필 캐릭터 선택</SelectText>
               </ImgDiv>
             </SeleceArea>
           </ImgArea>

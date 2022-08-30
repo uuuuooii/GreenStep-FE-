@@ -89,3 +89,8 @@ export const DummyText = styled.div`
   margin: 0 10px;
   /* display: none; */
 `;
+export const SelectText = styled.div`
+font-size: 6px;
+text-align: center;
+margin: 10px 0;
+`

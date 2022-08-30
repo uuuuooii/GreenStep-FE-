@@ -1,5 +1,10 @@
 import React from "react";
 
+import {
+  ToastsContainer,
+  ToastsStore,
+  ToastsContainerPosition,
+} from "react-toasts";
 import PullToRefresh from "pulltorefreshjs";
 
 const Header = () => {
@@ -12,9 +17,21 @@ const Header = () => {
     },
   });
 
+  const onClickToastPopup = () => {
+    ToastsStore.success("This is ToastPopup");
+  };
+
   return (
     <>
       <div>Header 입니다.</div>
+      <button type="button" id="popup" onClick={onClickToastPopup}>
+        toast
+      </button>
+      <ToastsContainer
+        position={ToastsContainerPosition.TOP_BOTTOM}
+        store={ToastsStore}
+        lightBackground
+      />
     </>
   );
 };

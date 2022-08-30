@@ -7207,6 +7207,14 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-camera-pro-2@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-camera-pro-2/-/react-camera-pro-2-1.1.1.tgz#2479e32521c92014870e944b8019fc372aecb559"
+  integrity sha512-mlR/gL3fSXNVOVKwm+R45sWyNmAcaRQpZJ6MseAuRfTIDCWWnSuCeF2VzZSFcJX1rLbvy8HYM1gzzzlmOaZGOw==
+  dependencies:
+    "@types/webrtc" "0.0.25"
+    detectrtc "^1.3.9"
+
 react-camera-pro@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-camera-pro/-/react-camera-pro-1.1.1.tgz#ef7700444f7a9a2a9242d90217dace3e5fae96d6"

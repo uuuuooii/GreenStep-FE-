@@ -6,6 +6,7 @@ import Mission from "./Pages/Mission/Mission";
 import Feed from "./Pages/Feed/Feed";
 import Main from "./Pages/Main";
 import Mypage from "./Pages/MyPage/MyPage";
+import Modal from "./Pages/Login/Modal"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/modal" element={<Modal />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/mypage" element={<Mypage />} />

@@ -6,9 +6,8 @@ import Mission from "./Pages/Mission/Mission";
 import Feed from "./Pages/Feed/Feed";
 import Main from "./Pages/Main";
 import Mypage from "./Pages/MyPage/MyPage";
-import Modal from "./Pages/Login/Modal"
-import MissionCamera from "./Pages/Mission/MissionCamera";
-
+import Modal from "./Pages/Login/Modal";
+import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
 
 function App() {
   return (

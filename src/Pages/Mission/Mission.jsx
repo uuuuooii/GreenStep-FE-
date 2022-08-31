@@ -1,34 +1,16 @@
-import { useEffect, useState } from "react";
-import "./Mission.css";
+import React from "react";
+import ChallengeMission from "./Challenge/ChallengeMission";
+import DailyMission from "./Daily/DailyMission";
+import WeeklyMission from "./Weekly/WeeklyMission";
 
-function Mission() {
-  const [hour, setHour] = useState(23 - new Date().getHours());
-  const [minute, setMinute] = useState(59 - new Date().getMinutes());
-  const [second, setSecond] = useState(59 - new Date().getSeconds());
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setHour(23 - new Date().getHours());
-      setMinute(59 - new Date().getMinutes());
-      setSecond(59 - new Date().getSeconds());
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
+const Mission = () => {
   return (
     <>
-      <div>
-        <div>
-          <div className="challengeBox">
-            <div>
-              {hour < 10 ? "0" + hour : hour}:
-              {minute < 10 ? "0" + minute : minute}:
-              {second < 10 ? "0" + second : second}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ChallengeMission />
+      <DailyMission />
+      <WeeklyMission />
     </>
   );
-}
+};
 
 export default Mission;

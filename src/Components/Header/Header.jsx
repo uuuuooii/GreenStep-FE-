@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Header.css";
 import {
   ToastsContainer,
   ToastsStore,
@@ -22,17 +22,21 @@ const Header = () => {
   };
 
   return (
-    <>
-      <div>Header 입니다.</div>
-      <button type="button" id="popup" onClick={onClickToastPopup}>
+    <div className="header">
+      <div>
+        <div className="title">Green Step</div>
+        {/* <button type="button" id="popup" onClick={onClickToastPopup}>
         toast
       </button>
       <ToastsContainer
         position={ToastsContainerPosition.TOP_BOTTOM}
         store={ToastsStore}
         lightBackground
-      />
-    </>
+      /> */}
+        <div className="icon1" />
+        <div className="icon2" />
+      </div>
+    </div>
   );
 };
 

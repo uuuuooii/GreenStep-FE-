@@ -1,0 +1,62 @@
+/* challengeMission */
+.challengeBox {
+    position: absolute;
+    width: 343px;
+    height: 181px;
+    background: #F3F3F3;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    /* padding: 14px 14px 14px 20.5px; */
+}
+
+.challengeMission {
+    position: relative;
+    background: #D9D9D9;
+    width: 120px;
+    height: 153px;
+    border-radius: 5px;
+    margin: 14px 23px 0 200px;
+}
+
+.miniBox {
+    position: absolute;
+    width: 100px;
+    height: 107px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px 10px 36px 10px;
+}
+
+.missionName {
+    position: absolute;
+    padding: 115px 21px 10px 25px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.challengTitle {
+    position: absolute;
+    top: 54px;
+    padding: 0 0 0 29.5px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+}
+
+.missionTextBox {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.challengTime {
+    font-size: 13px;
+    position: absolute;
+    top: 111px;
+    padding: 0 0 0 29.5px;
+}

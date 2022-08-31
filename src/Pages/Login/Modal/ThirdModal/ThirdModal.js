@@ -24,6 +24,7 @@ const ThirdModal = ({
   img,
 }) => {
   const user = { name: name, nickname: nickname, profilePhoto: img };
+ 
   return (
     <ThirdModalBody display={display}>
       <ThirdModalSection>

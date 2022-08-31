@@ -1,7 +1,7 @@
 body {
   max-width: 375px;
-  max-height: 667px;
-  /* height: 100vh; */
+  /* max-height: 667px; */
+  height: 100vh;
 
   margin: auto;
 

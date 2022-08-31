@@ -14,13 +14,13 @@ export const ThirdModalBody = styled.div`
   max-height: 667px;
   max-width: 375px;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
   border: 1px solid black;
 `;
 
 export const ThirdModalSection = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: white;
   margin: 0px auto 0px auto;
 `;
@@ -66,11 +66,14 @@ export const CenterContainer = styled.div`
 `;
 
 export const TextInput = styled.input`
-  width: 100px;
-  height: 30px;
+  width: 230px;
+  height: 40px;
   margin: 15px 0;
   outline: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 0 10px;
   &:focus {
-    outline: 1px solid black;
+    outline: 0.5px solid black;
   }
 `;

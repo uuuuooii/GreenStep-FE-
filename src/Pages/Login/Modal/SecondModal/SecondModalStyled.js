@@ -13,7 +13,7 @@ export const SecondModalBody = styled.div`
   max-height: 667px;
   max-width: 375px;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
   border: 1px solid black;
 `;
 

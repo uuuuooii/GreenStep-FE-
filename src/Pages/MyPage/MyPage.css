@@ -80,6 +80,7 @@
 
 .photoshots-text {
   font-size: 13px;
+  font-weight: 600;
   margin-top: 8px;
 }
 
@@ -94,7 +95,7 @@
   height: 145px;
   display: flex;
   flex-direction: row;
-  background-color: darkgreen;
+  /* background-color: darkgreen; */
 }
 
 .photoshots-archive-images {
@@ -106,22 +107,49 @@
 }
 
 .posts-archive-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .posts-viewmore-box {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 .posts-text-and-icon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 10px 10px 10px;
 }
 
 .posts-text {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
 }
 
 .posts-viewmore-icon {
+  font-size: 20px;
+  margin-top: 5px;
 }
 
 .posts-archive-box {
+  height: 145px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .posts-archive-images {
+  width: 145px;
+  height: 145px;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
+  margin-right: 3px;
+  background: #f3f3f3;
 }

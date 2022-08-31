@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
 import Medal from './Medal';
 import {
+  FeedPage,
   MedalBox,
   RankingBox,
   RankTitle,
   UserProfile,
   UserName,
   UserArea,
-  MedalArea,
   InfoArea,
-  MedalHead,
-  MedalCenter,
-  MedalBottomArea,
-  MedalLeftBottom,
-  MedalRightBottom,
-  MedalSetArea,
+  FeedArea,
+  FeedCard,
+  CardBottomArea,
+  CardTopArea,
+  TagArea,
+  Clap,
+  ClapPoint,
+  ClapArea,
+  FeedProfile,
+  FeedNickname,
+  FeedContent,
+  FeedArrow,
+  FeedText,
+  FeedPhoto,
+  TotalFeed,
+  PhotoArea,
+  LargePhoto,
 } from './FeedStyled';
 
 const Feed = () => {
-  const [likes, setLikes] = useState(0);
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    if (isClicked) {
-      setLikes(likes - 1);
-    } else {
-      setLikes(likes + 1);
-    }
-    setIsClicked(!isClicked);
-  };
   const userList = [
     {
       userId: '우수진',
@@ -49,33 +49,104 @@ const Feed = () => {
       nickname: '강이노',
     },
   ];
+  const feedList = [
+    {
+      postId: '오늘의 라벨',
+      imgUrl:
+        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
+      profilePhoto:
+        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
+      content:
+        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
+      clapCount: '5',
+      categori: '#공병에 라벨떼기',
+      nickname: '강인호',
+    },
+    {
+      postId: '오늘의 라벨',
+      imgUrl:
+        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
+      profilePhoto:
+        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
+      content:
+        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
+      clapCount: '5',
+      categori: '#공병에 라벨떼기',
+      nickname: '강인호',
+    },
+    {
+      postId: '오늘의 라벨',
+      imgUrl:
+        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
+      profilePhoto:
+        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
+      content:
+        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
+      clapCount: '5',
+      categori: '#공병에 라벨떼기',
+      nickname: '강인호',
+    },
+    {
+      postId: '오늘의 라벨',
+      imgUrl:
+        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
+      profilePhoto:
+        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
+      content:
+        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
+      clapCount: '5',
+      categori: '#공병에 라벨떼기',
+      nickname: '강인호',
+    },
+  ];
 
   return (
-    <RankingBox>
-      <RankTitle>데일리 랭킹</RankTitle>
+    <FeedPage>
+      <RankingBox>
+        <RankTitle>데일리 랭킹</RankTitle>
 
-      <MedalBox>
-        {userList.map((item, index) => (
-          <InfoArea>
-            <Medal num={index} />
-            <UserArea>
-              <UserProfile src={item.profilePhoto} />
-              <UserName>{item.userId}</UserName>
-            </UserArea>
-          </InfoArea>
+        <MedalBox>
+          {userList.map((item, index) => (
+            <InfoArea>
+              <Medal num={index} />
+              <UserArea>
+                <UserProfile src={item.profilePhoto} />
+                <UserName>{item.userId}</UserName>
+              </UserArea>
+            </InfoArea>
+          ))}
+        </MedalBox>
+      </RankingBox>
+
+      <FeedArea>
+        {feedList.map((item) => (
+          <TotalFeed>
+            <FeedCard>
+              <CardTopArea>
+                <TagArea>{item.categori}</TagArea>
+
+                <ClapArea>
+                  <ClapPoint>{item.clapCount}</ClapPoint>
+                  <Clap />
+                </ClapArea>
+              </CardTopArea>
+              <LargePhoto src={item.imgUrl} />
+              <PhotoArea>{/* <FeedPhoto src={item.imgUrl} /> */}</PhotoArea>
+
+              <CardBottomArea>
+                <FeedProfile src={item.profilePhoto} />
+                <FeedNickname>{item.nickname}</FeedNickname>
+              </CardBottomArea>
+            </FeedCard>
+            <FeedContent>
+              <FeedArrow />
+              <FeedText>{item.content}</FeedText>
+            </FeedContent>
+          </TotalFeed>
         ))}
-      </MedalBox>
-    </RankingBox>
+      </FeedArea>
+    </FeedPage>
   );
 };
 
 export default Feed;
-
-{
-  /* <button
-className={`like-button ${isClicked && "liked"}`}
-onClick={handleClick}
->
-<span className="likes-counter">{`Like | ${likes}`}</span>
-</button> */
-}

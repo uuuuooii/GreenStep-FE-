@@ -10,12 +10,12 @@ import {
 } from './FeedStyled';
 
 const Medal = ({ num }) => {
-  const medalColor = ['#ffc72d', '#E7E7E7', '#D5936F;'];
+  const outColor = ['#ffc72d', '#E7E7E7', '#D5936F;'];
   const centerColor = ['#FFE49C', '#FFFFFF;', '#FFE49C;'];
   return (
     <MedalSetArea>
       <MedalArea>
-        <MedalHead color={medalColor[num]}>
+        <MedalHead color={outColor[num]}>
           <MedalCenter color={centerColor[num]} />
         </MedalHead>
 

@@ -6,10 +6,10 @@ import { MdListAlt } from "react-icons/md";
 export function Footer() {
   return (
     <>
-      <div className="Wrap">
-        <hr />
+      <div className="wrap-footer">
+        {/* <hr /> */}
         <div className="footerBox">
-          <div className="wrapIcon">
+          <div className="wrap-footer-Icons">
             <MdListAlt className="footerIcon1" />
             <GrHome className="footerIcon2" />
             <MdPersonOutline className="footerIcon3" />

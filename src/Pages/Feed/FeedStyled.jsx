@@ -210,3 +210,7 @@ export const ClapBox = styled.div`
         cursor: pointer;
     }
 `
+
+export const ScrollDiv = styled.div`
+  height: 20px;
+`

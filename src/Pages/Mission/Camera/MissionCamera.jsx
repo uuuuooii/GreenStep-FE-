@@ -1,13 +1,24 @@
+//react import
 import React, { useState, useRef } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Camera } from 'react-camera-pro';
 import './MissionCamera.css';
 import { CameraBar, UploadButton, UploadImg } from './CameraBar';
+//modules import
+import instance from '../../../Redux/modules/instance';
 
 export const MissionCamera = () => {
   const camera = useRef(null);
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const [image, setImage] = useState(null);
   const Certification = { imgUrl: image };
+  const URL = process.env.REACT_APP_URL;
+  const missionId = useParams();
+  const navigate = useNavigate();
+  const Upload = () => {
+    instance.post(`${URL}/missions/${missionId}`, Certification);
+    navigate('/');
+  };
 
   return (
     <div className="wrap">
@@ -22,7 +33,7 @@ export const MissionCamera = () => {
       )}
       {image ? (
         <CameraBar>
-          <UploadButton  />
+          <UploadButton onClick={Upload} />
         </CameraBar>
       ) : (
         <div className="control">

@@ -2,6 +2,7 @@ import React from "react";
 import "./MyPage.css";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineDoubleArrow } from "react-icons/md";
+
 const MyPage = () => {
   return (
     <>

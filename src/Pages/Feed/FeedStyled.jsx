@@ -1,7 +1,16 @@
 import styled from 'styled-components';
+import { BsArrowReturnRight } from 'react-icons/bs';
+
+
+export const FeedPage = styled.div`
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const RankingBox = styled.div`
-  width: 313px;
+  width: 293px;
   padding: 16px 10px;
   display: flex;
   flex-direction: column;
@@ -22,14 +31,13 @@ export const MedalBox = styled.div`
   justify-content: space-around;
   margin: 30px 0;
 `;
-export const UserCard = styled.div`
-  /* width: ; */
-`;
+export const UserCard = styled.div``;
 export const UserProfile = styled.img`
   width: 70px;
   height: 70px;
   background: #d9d9d9;
   border-radius: 10px;
+  object-fit: cover;
 `;
 export const UserArea = styled.div`
   width: 70px;
@@ -99,3 +107,106 @@ export const MedalRightBottom = styled.div`
   border-radius: 0 5px 2px 11px;
   background-color: #48aee2;
 `;
+
+export const FeedCard = styled.div`
+  width: 100%;
+  height: 312px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+`;
+
+export const FeedArea = styled.div`
+  width: 313px;
+`;
+export const CardBottomArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  padding: 7px 9px;
+  gap: 9px;
+  width: 295px;
+  height: 45px;
+  background: rgba(148, 148, 148, 0.8);
+  box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+`;
+
+export const CardTopArea = styled.div`
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+`;
+
+export const TagArea = styled.div`
+  margin: 0 10px;
+`;
+
+export const ClapArea = styled.div`
+  display: flex;
+  margin: 0 10px;
+`;
+export const ClapPoint = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+`;
+export const FeedProfile = styled.img`
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  margin: 0 5px;
+`;
+export const FeedNickname = styled.div`
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FeedContent = styled.div`
+  display: flex;
+`;
+export const FeedArrow = styled(BsArrowReturnRight)`
+  width: 15px;
+  height: 17px;
+  margin: 0 5px;
+`;
+export const FeedText = styled.div`
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+`;
+export const PhotoArea = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TotalFeed = styled.div`
+  margin: 30px 0;
+`;
+
+export const LargePhoto = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+`;
+
+export const ClapBox = styled.div`
+    color: black;
+    &:hover{
+        cursor: pointer;
+    }
+`

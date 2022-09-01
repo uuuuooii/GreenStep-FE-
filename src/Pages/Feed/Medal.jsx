@@ -1,4 +1,6 @@
+//react import
 import React from 'react';
+//styled import
 import {
   MedalArea,
   MedalHead,

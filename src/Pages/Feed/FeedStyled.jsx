@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { BsHandThumbsUpFill, BsArrowReturnRight } from 'react-icons/bs';
+import { BsArrowReturnRight } from 'react-icons/bs';
+
 
 export const FeedPage = styled.div`
   max-width: 375px;
@@ -159,13 +160,6 @@ export const ClapPoint = styled.div`
   align-items: center;
   margin: 0 5px;
 `;
-export const Clap = styled(BsHandThumbsUpFill)`
-  width: 35px;
-  height: 35px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
 export const FeedProfile = styled.img`
   border-radius: 10px;
   width: 44px;
@@ -199,12 +193,7 @@ export const PhotoArea = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const FeedPhoto = styled.img`
-  width: 75%;
-  height: 80%;
-  border-radius: 10px;
-  margin: 10px 0;
-`;
+
 export const TotalFeed = styled.div`
   margin: 30px 0;
 `;
@@ -214,3 +203,10 @@ export const LargePhoto = styled.img`
   height: 100%;
   border-radius: 10px;
 `;
+
+export const ClapBox = styled.div`
+    color: black;
+    &:hover{
+        cursor: pointer;
+    }
+`

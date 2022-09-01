@@ -1,5 +1,8 @@
+//react import
 import React, { useState } from 'react';
+//styled import
 import Medal from './Medal';
+import ClapIcon from '../../static/clap';
 import {
   FeedPage,
   MedalBox,
@@ -14,7 +17,6 @@ import {
   CardBottomArea,
   CardTopArea,
   TagArea,
-  Clap,
   ClapPoint,
   ClapArea,
   FeedProfile,
@@ -22,10 +24,9 @@ import {
   FeedContent,
   FeedArrow,
   FeedText,
-  FeedPhoto,
   TotalFeed,
-  PhotoArea,
   LargePhoto,
+  ClapBox,
 } from './FeedStyled';
 
 const Feed = () => {
@@ -127,11 +128,12 @@ const Feed = () => {
 
                 <ClapArea>
                   <ClapPoint>{item.clapCount}</ClapPoint>
-                  <Clap />
+                  <ClapBox>
+                    <ClapIcon color={"black"} />
+                  </ClapBox>
                 </ClapArea>
               </CardTopArea>
               <LargePhoto src={item.imgUrl} />
-              <PhotoArea>{/* <FeedPhoto src={item.imgUrl} /> */}</PhotoArea>
 
               <CardBottomArea>
                 <FeedProfile src={item.profilePhoto} />

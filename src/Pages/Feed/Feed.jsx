@@ -1,8 +1,12 @@
 //react import
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useInView } from 'react-intersection-observer';
 //styled import
 import Medal from './Medal';
 import ClapIcon from '../../static/clap';
+import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
+import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 import {
   FeedPage,
   MedalBox,
@@ -27,9 +31,48 @@ import {
   TotalFeed,
   LargePhoto,
   ClapBox,
+  ScrollDiv,
 } from './FeedStyled';
 
 const Feed = () => {
+  const [categori, setCategori] = useState(0);
+  const [page, setPage] = useState(0);
+  const [loding, setLoding] = useState(false);
+  const [FeedList, setFeedList] = useState([]);
+  const [ref, inView] = useInView();
+  // const categoriList = ["전체보기","#공병에 라벨떼기","#분리수거하기"]
+  // categoriList[categori]
+  const URL = process.env.REACT_APP_URL;
+
+  const TagClick = () => {
+    setLoding(true);
+    categori == 0
+      ? setFeedList([
+          ...FeedList,
+          axios.get(`${URL}/feed`).then((res) => res.data.data),
+        ])
+      : setFeedList([
+          ...FeedList,
+          axios
+            .get(`${URL}/feed/categories/${categori}`)
+            .then((res) => res.data.data),
+        ]);
+    setLoding(false);
+  };
+  useEffect(() => {
+    setPage(page + 1);
+  }, [inView]);
+
+  useEffect(() => {
+    setFeedList([]);
+    setPage(1);
+  }, [categori]);
+
+  useEffect(() => {
+    page == 0 ? console.log() : TagClick()
+  }, [page]);
+
+  console.log(page);
   const userList = [
     {
       userId: '우수진',
@@ -103,21 +146,25 @@ const Feed = () => {
 
   return (
     <FeedPage>
-      <RankingBox>
-        <RankTitle>데일리 랭킹</RankTitle>
+      {loding ? (
+        <RankingSkeleton />
+      ) : (
+        <RankingBox>
+          <RankTitle>데일리 랭킹</RankTitle>
 
-        <MedalBox>
-          {userList.map((item, index) => (
-            <InfoArea>
-              <Medal num={index} />
-              <UserArea>
-                <UserProfile src={item.profilePhoto} />
-                <UserName>{item.userId}</UserName>
-              </UserArea>
-            </InfoArea>
-          ))}
-        </MedalBox>
-      </RankingBox>
+          <MedalBox>
+            {userList.map((item, index) => (
+              <InfoArea>
+                <Medal num={index} />
+                <UserArea>
+                  <UserProfile src={item.profilePhoto} />
+                  <UserName>{item.userId}</UserName>
+                </UserArea>
+              </InfoArea>
+            ))}
+          </MedalBox>
+        </RankingBox>
+      )}
 
       <FeedArea>
         {feedList.map((item) => (
@@ -129,7 +176,7 @@ const Feed = () => {
                 <ClapArea>
                   <ClapPoint>{item.clapCount}</ClapPoint>
                   <ClapBox>
-                    <ClapIcon color={"black"} />
+                    <ClapIcon color={'black'} />
                   </ClapBox>
                 </ClapArea>
               </CardTopArea>
@@ -146,7 +193,15 @@ const Feed = () => {
             </FeedContent>
           </TotalFeed>
         ))}
+        {loding ? (
+          <>
+            <FeedSkeleton />
+            <FeedSkeleton />
+            <FeedSkeleton />
+          </>
+        ) : null}
       </FeedArea>
+      <ScrollDiv ref={ref} />
     </FeedPage>
   );
 };

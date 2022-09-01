@@ -4,6 +4,7 @@
     width: 400px;
     height: 400px;
     z-index: 1;
+    /* background-color: black; */
 }
 
 .control {
@@ -11,7 +12,7 @@
     display: flex;
     width: 400px;
     top: 500px;
-    background: rgba(0, 0, 0, 0.3);
+    /* background: black */
 }
 
 .TakePhotoButton {

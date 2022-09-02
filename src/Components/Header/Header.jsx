@@ -6,6 +6,7 @@ import {
   ToastsContainerPosition,
 } from "react-toasts";
 import PullToRefresh from "pulltorefreshjs";
+import { BiBell } from "react-icons/bi";
 
 const Header = () => {
   const PullToRefresh = require("pulltorefreshjs");
@@ -34,7 +35,9 @@ const Header = () => {
         lightBackground
       /> */}
         <div className="header-icon-left" />
-        <div className="header-icon-right" />
+        <div className="header-icon-right">
+          <BiBell />
+        </div>
       </div>
     </div>
   );

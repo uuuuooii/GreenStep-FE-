@@ -1,17 +1,18 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Header from "./Components/Header/Header";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Header from './Components/Header/Header';
 // import Footer from "./Components/Footer/Footer";
-import Login from "./Pages/Login/Login";
-import Mission from "./Pages/Mission/Mission";
-import Upload from "./Pages/Mission/Upload/Upload";
-import Explain from "./Pages/Mission/Explain/Explain";
-import Feed from "./Pages/Feed/Feed";
-import Main from "./Pages/Main";
-import Mypage from "./Pages/MyPage/MyPage/MyPage";
-import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
-import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
-import Modal from "./Pages/Login/Modal";
-import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
+import Login from './Pages/Login/Login';
+import Mission from './Pages/Mission/Mission';
+import Upload from './Pages/Mission/Upload/Upload';
+import Explain from './Pages/Mission/Explain/Explain';
+import Feed from './Pages/Feed/Feed';
+import Main from './Pages/Main';
+import Mypage from './Pages/MyPage/MyPage/MyPage';
+import DetailPosts from './Pages/MyPage/DetailPosts/DetailPosts';
+import DetailPhotoShots from './Pages/MyPage/DetailPhotoShots/DetailPhotoShots';
+import Modal from './Pages/Login/Modal';
+import MissionCamera from './Pages/Mission/Camera/MissionCamera';
+import Test from './test';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/users/kakao/callback" element={<Test/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/modal" element={<Modal />} />
           <Route path="/mission" element={<Mission />} />

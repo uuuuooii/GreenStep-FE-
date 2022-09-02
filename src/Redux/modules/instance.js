@@ -4,10 +4,10 @@ const instance = axios.create({
   baseURL: "",
 });
 
-const Token = localStorage.getItem("Token");
-const Retoken = localStorage.getItem("Retoken");
+const Token = localStorage.getItem("authorization");
+const Retoken = localStorage.getItem("refresh-Token");
 
-instance.defaults.headers.common["Authorization"] = Token;
-instance.defaults.headers.common["Refresh-Token"] = Retoken;
+instance.defaults.headers.common["authorization"] = Token;
+instance.defaults.headers.common["refresh-Token"] = Retoken;
 // console.log(instance.defaults);
 export default instance;

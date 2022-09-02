@@ -1,5 +1,5 @@
 //react import
-import React from 'react';
+import React from "react";
 
 //styled import
 import {
@@ -8,18 +8,16 @@ import {
   ButtonText,
   LoginBody,
   KakaoLink,
-} from './LoginStyled';
+} from "./LoginStyled";
 
 const Login = () => {
   return (
     <LoginBody>
-      <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code">
-      <ButtonBody>
-        <KakaoIcon />
-        <ButtonText>
-          카카오 로그인
-        </ButtonText>
-      </ButtonBody>
+      <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://greenstep.s3-website.ap-northeast-2.amazonaws.com/users/kakao/callback&response_type=code">
+        <ButtonBody>
+          <KakaoIcon />
+          <ButtonText>카카오 로그인</ButtonText>
+        </ButtonBody>
       </KakaoLink>
     </LoginBody>
   );

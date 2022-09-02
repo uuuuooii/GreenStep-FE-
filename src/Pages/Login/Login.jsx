@@ -12,9 +12,9 @@ const Login = () => {
         <KakaoIcon />
         <ButtonText>카카오 로그인</ButtonText>
       </ButtonBody> */}
-      {/* <a href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://54.180.30.74/users/kakao/callback&response_type=code">
+      <a href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code">
         테스트
-      </a> */}
+      </a>
     </LoginBody>
   );
 };

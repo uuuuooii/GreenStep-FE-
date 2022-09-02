@@ -1,9 +1,13 @@
-.header {
+.wrap-header {
   background-color: gray;
   z-index: 1;
 }
 
-.title {
+.header-relative {
+  position: relative;
+}
+
+.header-title {
   position: relative;
   text-align: center;
   height: 24px;
@@ -12,7 +16,7 @@
   padding: 13px;
 }
 
-.icon1 {
+.header-icon-left {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -21,7 +25,7 @@
   left: 16px;
 }
 
-.icon2 {
+.header-icon-right {
   position: absolute;
   width: 30px;
   height: 30px;

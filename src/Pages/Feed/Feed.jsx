@@ -69,7 +69,7 @@ const Feed = () => {
   }, [categori]);
 
   useEffect(() => {
-    page == 0 ? console.log() : TagClick()
+    page == 0 ? console.log() : TagClick();
   }, [page]);
 
   console.log(page);
@@ -103,6 +103,7 @@ const Feed = () => {
       content:
         ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
       clapCount: '5',
+      clapByme: true,
       categori: '#공병에 라벨떼기',
       nickname: '강인호',
     },
@@ -115,6 +116,7 @@ const Feed = () => {
       content:
         ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
       clapCount: '5',
+      clapByme: true,
       categori: '#공병에 라벨떼기',
       nickname: '강인호',
     },
@@ -127,6 +129,7 @@ const Feed = () => {
       content:
         ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
       clapCount: '5',
+      clapByme: true,
       categori: '#공병에 라벨떼기',
       nickname: '강인호',
     },
@@ -139,6 +142,7 @@ const Feed = () => {
       content:
         ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
       clapCount: '5',
+      clapByme: false,
       categori: '#공병에 라벨떼기',
       nickname: '강인호',
     },
@@ -176,7 +180,7 @@ const Feed = () => {
                 <ClapArea>
                   <ClapPoint>{item.clapCount}</ClapPoint>
                   <ClapBox>
-                    <ClapIcon color={'black'} />
+                    <ClapIcon color={item.clapByme ? 'black' : 'white'} />
                   </ClapBox>
                 </ClapArea>
               </CardTopArea>

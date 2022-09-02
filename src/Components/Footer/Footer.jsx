@@ -8,11 +8,11 @@ export function Footer() {
     <>
       <div className="wrap-footer">
         {/* <hr /> */}
-        <div className="footerBox">
-          <div className="wrap-footer-Icons">
-            <MdListAlt className="footerIcon1" />
-            <GrHome className="footerIcon2" />
-            <MdPersonOutline className="footerIcon3" />
+        <div className="footer-box">
+          <div className="wrap-footer-icons">
+            <MdListAlt className="footer-icon-1" />
+            <GrHome className="footer-icon-2" />
+            <MdPersonOutline className="footer-icon-3" />
           </div>
         </div>
       </div>

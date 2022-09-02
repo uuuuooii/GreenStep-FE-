@@ -114,8 +114,8 @@ const Mission = () => {
             )
           )}
         </DailyCardBox>
+        <Footer />
       </WeeklyMissionArea>
-      <Footer />
     </>
   );
 };

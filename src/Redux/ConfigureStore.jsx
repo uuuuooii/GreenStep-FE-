@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import feed from './modules/feed';
+import user from './modules/user';
 
-const rootReducer = combineReducers({ feed });
+const rootReducer = combineReducers({ user });
 const store = configureStore({ reducer: rootReducer });
 
 export default store;

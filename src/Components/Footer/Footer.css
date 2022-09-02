@@ -1,10 +1,9 @@
-.wrap-footer {
+/* .wrap-footer {
   position: relative;
   min-height: 100%;
   padding-bottom: 68px;
-  background: #fff;
   top: 0;
-  /* margin-top: 548px; */
+  background-color: aquamarine;
 }
 
 .footer-box {
@@ -20,22 +19,49 @@
 
 .footer-icon-1 {
   position: absolute;
-  font-size: 22.5px;
+  font-size: 23px;
   left: 19px;
   bottom: 34px;
+  background-color: brown;
 }
 
 .footer-icon-2 {
   position: absolute;
   text-align: center;
-  font-size: 22.5px;
+  font-size: 23px;
   left: 175px;
   bottom: 34px;
+  background-color: blue;
 }
 
 .footer-icon-3 {
   position: absolute;
-  font-size: 22.5px;
+  font-size: 23px;
   left: 334px;
   bottom: 34px;
+  background-color: coral;
+} */
+
+.footer-box {
+  width: 100%;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+}
+
+.wrap-footer-icons {
+  background-color: blue;
+}
+
+.footer-icon-1 {
+  background-color: brown;
+}
+
+.footer-icon-2 {
+  background-color: burlywood;
+}
+
+.footer-icon-3 {
+  background-color: cadetblue;
 }

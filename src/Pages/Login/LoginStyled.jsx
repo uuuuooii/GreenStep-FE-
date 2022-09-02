@@ -30,3 +30,8 @@ export const ButtonText = styled.div`
   width: 100%;
   text-align: center;
 `;
+
+export const KakaoLink = styled.a`
+  text-decoration: none;
+  color: black;
+`

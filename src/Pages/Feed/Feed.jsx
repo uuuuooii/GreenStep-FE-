@@ -16,6 +16,10 @@ import {
   UserName,
   UserArea,
   InfoArea,
+  CategoriBox,
+  CategoriArea,
+  CategoriButton,
+  CategoriButtonText,
   FeedArea,
   FeedCard,
   CardBottomArea,
@@ -39,10 +43,10 @@ const Feed = () => {
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [RankingList,setRankingList] = useState([])
+  const [RankingList, setRankingList] = useState([]);
   const [ref, inView] = useInView();
-  // const categoriList = ["전체보기","#공병에 라벨떼기","#분리수거하기"]
-  // categoriList[categori]
+  const categiriList = ["전체보기","# NO일회용품","# 분리수거","# 환경운동","# 환경용품사용","#에너지절약","#기타"]
+  const categoriApi = ["all","disposable","separate","environmental","goods","energy","etc"]
   const URL = process.env.REACT_APP_URL;
 
   const TagClick = () => {
@@ -55,7 +59,7 @@ const Feed = () => {
       : setFeedList([
           ...FeedList,
           axios
-            .get(`${URL}/feed/categories/${categori}`)
+            .get(`${URL}/feed/categories/${categoriApi[categori]}`)
             .then((res) => res.data.data),
         ]);
     setLoding(false);
@@ -170,7 +174,10 @@ const Feed = () => {
           </MedalBox>
         </RankingBox>
       )}
-
+<CategoriArea>
+{/* <CategoriButton ><CategoriButtonText>item</CategoriButtonText></CategoriButton> */}
+  {categiriList.map((item,index)=><CategoriButton key={item} onClick={()=>setCategori(index)}><CategoriButtonText>{item}</CategoriButtonText></CategoriButton>)}
+  </CategoriArea>
       <FeedArea>
         {feedList.map((item) => (
           <TotalFeed>

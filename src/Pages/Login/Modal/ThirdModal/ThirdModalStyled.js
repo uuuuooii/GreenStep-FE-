@@ -14,7 +14,6 @@ export const ThirdModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: white;
-  border: 1px solid black;
 `;
 
 export const ThirdModalSection = styled.div`

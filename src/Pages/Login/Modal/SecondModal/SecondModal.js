@@ -12,7 +12,7 @@ import {
 } from './SecondModalStyled';
 
 const URL = process.env.REACT_APP_URL;
-const SecondModal = ({ display, setDisplay, setImg, img, user }) => {
+const SecondModal = ({ display, setDisplay, setImg, img }) => {
   const imgList = [
     'https://cdn.pixabay.com/photo/2020/09/04/20/09/cartoon-5544856__340.jpg',
     'https://cdn.pixabay.com/photo/2020/10/18/20/43/dinosaur-5666127__340.png',

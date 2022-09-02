@@ -14,7 +14,7 @@ import {
   SelectText
 } from './FirstModalStyled';
 
-const FirstModal = ({ display, setDisplay, setImg, setCheck, check }) => {
+const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
   const Next = () => {
     check == 1 ? setDisplay(3) : setDisplay(2);
   };
@@ -39,11 +39,11 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check }) => {
             <SeleceArea>
               <ImgDiv>
                 <SelectImg
-                  src="https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg"
+                  src={user.profilePhoto ? user.profilePhoto : "https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg"}
                   onClick={() => {
                     check == 1 ? setCheck(0) : setCheck(1);
                     setImg(
-                      'http://heestudio.kr/common/img/default_profile.png'
+                      user.profilePhoto
                     );
                   }}
                   check={check}

@@ -39,6 +39,7 @@ const Feed = () => {
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
   const [FeedList, setFeedList] = useState([]);
+  const [RankingList,setRankingList] = useState([])
   const [ref, inView] = useInView();
   // const categoriList = ["전체보기","#공병에 라벨떼기","#분리수거하기"]
   // categoriList[categori]

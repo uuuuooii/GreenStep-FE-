@@ -11,6 +11,7 @@ import {
   ProfileImg,
   TextInput,
 } from './ThirdModalStyled';
+import instance from '../../../../Redux/modules/instance';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -22,9 +23,10 @@ const ThirdModal = ({
   name,
   nickname,
   img,
+  user,
 }) => {
-  const user = { name: name, nickname: nickname, profilePhoto: img };
- 
+  const userinfo = { name: name, nickname: nickname, profilePhoto: img };
+console.log(userinfo)
   return (
     <ThirdModalBody display={display}>
       <ThirdModalSection>
@@ -38,7 +40,7 @@ const ThirdModal = ({
           <ButtonText
             onClick={() =>
               name && nickname
-                ? axios.patch(`${URL}/users/info/{userId}`, user)
+                ? instance.patch(`http://54.180.30.74/users/users/info`, userinfo)
                 : alert('빈칸을 입력해주세요')
             }
           >

@@ -25,7 +25,9 @@ function App() {
           <Route path="/modal" element={<Modal />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
+          <Route path="/missioncamera/:id" element={<MissionCamera />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/upload/:id" element={<Upload />} />
           <Route path="/explain" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/detailposts" element={<DetailPosts />} />

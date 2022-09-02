@@ -1,12 +1,32 @@
-import React from "react";
+//react import
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ChallengeMission from "./Challenge/ChallengeMission";
-import Completed from "./Completed";
+//componenes import
+import Completed from "./Completed/Completed";
 import DailyMission from "./Daily/DailyMission";
-import Waiting from "./Waiting";
-import WeeklyMission from "./Weekly/WeeklyMission";
-import "./Daily/DailyMission.css";
+import Waiting from "./Waiting/Waiting";
+import DailyChallenge from "./Daily/DailyChallenge";
+import Footer from "../../Components/Footer/Footer";
+//styled import
+import {
+  DailyMissionArea,
+  DailyTextArea,
+  DailyText,
+  DailyCardBox,
+  WeeklyMissionArea,
+} from "./MissionStyled";
+//redux
+import { __GetTodaymission } from "../../Redux/modules/mission";
+import { useDispatch, useSelector } from "react-redux";
+
 const Mission = () => {
+  const { mission } = useSelector((state) => state.mission);
+  console.log(mission);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(__GetTodaymission());
+  }, [dispatch]);
+
   const navigate = useNavigate();
   const MissionList = [
     {
@@ -33,75 +53,71 @@ const Mission = () => {
       missionName: "String",
       missionStatus: 0,
     },
+    {
+      missionId: "Integer",
+      missionPictogram: "String",
+      missionName: "String",
+      missionStatus: 0,
+    },
+    {
+      missionId: "Integer",
+      missionPictogram: "String",
+      missionName: "String",
+      missionStatus: 0,
+    },
+    {
+      missionId: "Integer",
+      missionPictogram: "String",
+      missionName: "String",
+      missionStatus: 0,
+    },
+    {
+      missionId: "Integer",
+      missionPictogram: "String",
+      missionName: "String",
+      missionStatus: 0,
+    },
   ];
   return (
     <>
-      <ChallengeMission />
-      {/* <DailyMission /> */}
-      <div className="dailyMissionBox">
-        <div className="dailyTitle">데일리 미션</div>
-
-        <div className="flex">
-          {MissionList.map((item) =>
+      <DailyChallenge />
+      <DailyMissionArea>
+        <DailyTextArea>
+          <DailyText>데일리 미션</DailyText>
+        </DailyTextArea>
+        <DailyCardBox>
+          {MissionList.map((item, index) =>
             item.missionStatus == 0 ? (
-              <div
-                className="dailyMission"
-                onClick={() => navigate(`/missioncamera/${item.missionId}`)}
-              >
-                <p className="dailyMissionName">{item.missionName}</p>
-                <div className="dailyMiniBox" />
-              </div>
+              <DailyMission key={item.missionId + index} item={item} />
             ) : item.missionStatus == 1 ? (
-              <div className="WaitingMission">
-                <div>
-                  <div className="WaitingMiniBox">
-                    <p className="Waitingtext">인증 대기중</p>
-                  </div>
-                  <p className="WaitingMissionName">{item.missionName}</p>
-                </div>
-              </div>
+              <Waiting key={item.missionId + index} item={item} />
             ) : (
-              <div>
-                <div className="CompleteMission">
-                  <div>
-                    <div className="CompleteMiniBox">
-                      <p className="Completetext">인증 완료!</p>
-                      <button onClick={() => navigate("/feed")}>
-                        피드에 올리기
-                      </button>
-                    </div>
-                    <p className="CompleteMissionName">{item.missionName}</p>
-                  </div>
-                </div>
-              </div>
+              <Completed key={item.missionId + index} item={item} />
             )
           )}
-        </div>
-      </div>
-      <WeeklyMission />
+        </DailyCardBox>
+      </DailyMissionArea>
+
+      <WeeklyMissionArea>
+        <DailyTextArea>
+          <DailyText>위클리 미션</DailyText>
+        </DailyTextArea>
+
+        <DailyCardBox>
+          {MissionList.map((item, index) =>
+            item.missionStatus == 0 ? (
+              <DailyMission key={item.missionId + index} item={item} />
+            ) : item.missionStatus == 1 ? (
+              <Waiting key={item.missionId + index} item={item} />
+            ) : (
+              <Completed key={item.missionId + index} item={item} />
+            )
+          )}
+        </DailyCardBox>
+      </WeeklyMissionArea>
+      <Footer />
     </>
   );
 };
 
 export default Mission;
-
-// {MissionList.map((item) =>
-//   item.missionStatus === 0 ? (
-//     <div className="dailyMissionBox">
-//     <div className="dailyTitle">데일리 미션</div>
-
-//     <div className="flex">
-
-//       <div className="dailyMission">
-//         <p className="dailyMissionName">Misson Name</p>
-//         <div className="dailyMiniBox" />
-
-//       </div>
-//     </div>
-//   </div>
-//   ) : item.missionStatus === 1 ? (
-//     <Waiting />
-//   ) : (
-//     <Completed />
-//   )
-// )}

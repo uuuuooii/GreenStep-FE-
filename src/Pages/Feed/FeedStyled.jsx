@@ -107,10 +107,10 @@ export const MedalRightBottom = styled.div`
   border-radius: 0 5px 2px 11px;
   background-color: #48aee2;
 `;
-export const CategoriBox = styled.div`
+export const CategoryBox = styled.div`
   max-width: 100%;
 `
-export const CategoriArea = styled.div`
+export const CategoryArea = styled.div`
   /* max-width: 100%; */
   width: 90%;
   display: flex;
@@ -120,7 +120,7 @@ export const CategoriArea = styled.div`
   padding: 10px 0;
   
 `;
-export const CategoriButton = styled.div`
+export const CategoryButton = styled.div`
   min-width: 78px;
   min-height: 26px;
   border-radius: 3px;
@@ -136,7 +136,7 @@ export const CategoriButton = styled.div`
     cursor: pointer;
   }
 `;
-export const CategoriButtonText = styled.div`
+export const CategoryButtonText = styled.div`
     font-weight: 700;
   font-size: 10px;
   line-height: 12px;

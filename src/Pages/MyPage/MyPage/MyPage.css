@@ -10,24 +10,20 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 13px 0px 22px 28px;
-  /* background-color: blanchedalmond; */
 }
 
 .profile-text {
   font-size: 15px;
-  /* background-color: coral; */
 }
 
 .profile-setting {
   font-size: 15px;
-  /* background-color: darkblue; */
 }
 
 .image-nick-email {
   display: flex;
   flex-direction: row;
-  margin: 0px 0px 20px 30px;
-  /* background-color: aquamarine; */
+  margin: 0px 0px 28px 30px;
 }
 
 .image-area {
@@ -42,7 +38,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: cadetblue; */
 }
 
 .nickname-text {
@@ -62,10 +57,9 @@
 .photoshots-viewmore-box {
   width: 100%;
   height: 56px;
-  background: #d9d9d9;
+  background: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
 }
 
 .photoshots-text-and-icon {
@@ -73,7 +67,6 @@
   display: flex;
   justify-content: space-between;
   margin: 25px 10px 10px 10px;
-  /* background-color: aqua; */
 }
 
 .photoshots-text {
@@ -85,7 +78,6 @@
 .photoshots-viewmore-icon {
   font-size: 20px;
   margin-top: 5px;
-  /* background-color: fuchsia; */
 }
 
 .photoshots-archive-box {
@@ -94,7 +86,6 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  /* background-color: darkgreen; */
 }
 
 .photoshots-archive-images {
@@ -116,7 +107,6 @@
   height: 56px;
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -144,6 +134,7 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  margin-bottom: 20px;
 }
 
 .posts-archive-images {

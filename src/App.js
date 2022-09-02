@@ -7,9 +7,9 @@ import Upload from "./Pages/Mission/Upload/Upload";
 import Explain from "./Pages/Mission/Explain/Explain";
 import Feed from "./Pages/Feed/Feed";
 import Main from "./Pages/Main";
-import Mypage from "./Pages/MyPage/MyPage";
-import DetailPosts from "./Pages/MyPage/DetailPosts";
-import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots";
+import Mypage from "./Pages/MyPage/MyPage/MyPage";
+import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
+import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
 import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
 

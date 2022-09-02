@@ -12,7 +12,7 @@ const Mission = () => {
       missionId: "Integer",
       missionPictogram: "String",
       missionName: "String",
-      missionStatus: 0,
+      missionStatus: 3,
     },
     {
       missionId: "Integer",
@@ -32,7 +32,7 @@ const Mission = () => {
     <>
       <ChallengeMission />
       <DailyMission />
-      {/* {MissionList.map((item) =>
+      {MissionList.map((item) =>
         item.missionStatus === 0 ? (
           <DailyMission />
         ) : item.missionStatus === 1 ? (
@@ -40,7 +40,7 @@ const Mission = () => {
         ) : (
           <Completed />
         )
-      )} */}
+      )}
       <WeeklyMission />
     </>
   );

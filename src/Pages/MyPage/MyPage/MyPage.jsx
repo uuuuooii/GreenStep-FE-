@@ -3,8 +3,10 @@ import "./MyPage.css";
 import Footer from "../../../Components/Footer/Footer";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineDoubleArrow } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="whole-mypage">
@@ -27,7 +29,9 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
-                  <MdOutlineDoubleArrow />
+                  <MdOutlineDoubleArrow
+                    onClick={() => navigate("/DetailPhotoShots")}
+                  />
                 </div>
               </div>
             </div>
@@ -43,7 +47,9 @@ const MyPage = () => {
             <div className="posts-text-and-icon">
               <div className="posts-text">게시물 아카이브</div>
               <div className="posts-viewmore-icon">
-                <MdOutlineDoubleArrow />
+                <MdOutlineDoubleArrow
+                  onClick={() => navigate("/DetailPosts")}
+                />
               </div>
             </div>
           </div>

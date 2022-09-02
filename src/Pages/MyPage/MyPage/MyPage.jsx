@@ -1,5 +1,6 @@
 import React from "react";
 import "./MyPage.css";
+import Footer from "../../../Components/Footer/Footer";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
@@ -53,6 +54,7 @@ const MyPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

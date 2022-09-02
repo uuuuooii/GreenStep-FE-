@@ -1,30 +1,33 @@
-import React from "react";
-import "./Header.css";
+import React from 'react';
+import './Header.css';
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
-} from "react-toasts";
-import PullToRefresh from "pulltorefreshjs";
+} from 'react-toasts';
+import PullToRefresh from 'pulltorefreshjs';
 
 const Header = () => {
-  const PullToRefresh = require("pulltorefreshjs");
+  const PullToRefresh = require('pulltorefreshjs');
 
   const ptr = PullToRefresh.init({
-    mainElement: "body",
+    mainElement: 'body',
     onRefresh() {
       window.location.reload();
     },
   });
 
   const onClickToastPopup = () => {
-    ToastsStore.success("This is ToastPopup");
+    ToastsStore.success('This is ToastPopup');
   };
 
   return (
     <div className="header">
+      {/* 여기다 relative */}
+
       <div>
-        <div className="title">Green Step test</div>
+        {/* 여기다 relative */}
+        <div className="title">Green Step</div>
         {/* <button type="button" id="popup" onClick={onClickToastPopup}>
         toast
       </button>

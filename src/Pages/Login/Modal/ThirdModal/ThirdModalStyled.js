@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 export const ThirdModalBody = styled.div`
   display: ${(props) => (props.display == 3 ? 'block' : 'none')};

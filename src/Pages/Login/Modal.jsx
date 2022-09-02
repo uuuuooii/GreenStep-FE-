@@ -28,7 +28,6 @@ const Modal = () => {
         setDisplay={setDisplay}
         setImg={setImg}
         img={img}
-        user={user}
       />
       <ThirdModal
         display={display}
@@ -40,7 +39,6 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
-        user={user}
       />
     </>
   );

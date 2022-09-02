@@ -25,18 +25,22 @@ const DailyMission = () => {
         <div className="dailyTitle">데일리 미션</div>
 
         <div className="flex">
+
           <div className="dailyMission">
             <p className="dailyMissionName">Misson Name</p>
             <div className="dailyMiniBox" />
           </div>
+
           <div className="dailyMission">
             <p className="dailyMissionName">Misson Name</p>
             <div className="dailyMiniBox" />
           </div>
+
           <div className="dailyMission">
             <p className="dailyMissionName">Misson Name</p>
             <div className="dailyMiniBox" />
           </div>
+
         </div>
       </div>
     </>

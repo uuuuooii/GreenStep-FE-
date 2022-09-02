@@ -12,7 +12,7 @@ import DetailPosts from './Pages/MyPage/DetailPosts/DetailPosts';
 import DetailPhotoShots from './Pages/MyPage/DetailPhotoShots/DetailPhotoShots';
 import Modal from './Pages/Login/Modal';
 import MissionCamera from './Pages/Mission/Camera/MissionCamera';
-import Test from './test';
+import Loding from './Loding';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/users/kakao/callback" element={<Test/>} />
+          <Route path="/users/kakao/callback" element={<Loding/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/modal" element={<Modal />} />
           <Route path="/mission" element={<Mission />} />

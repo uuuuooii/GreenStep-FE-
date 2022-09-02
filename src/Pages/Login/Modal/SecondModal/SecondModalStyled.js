@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 export const SecondModalBody = styled.div`
   display: ${(props) => (props.display == 2 ? 'block' : 'none')};
   position: fixed;
@@ -14,7 +13,6 @@ export const SecondModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: white;
-  border: 1px solid black;
 `;
 
 export const SecondModalSection = styled.div`

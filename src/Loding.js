@@ -19,23 +19,11 @@ const Test = () => {
         localStorage.setItem('authorization', token);
         sessionStorage.setItem('refresh-Token', refresh_token);
         dispatch(userThunk(res.data.data));
-        res.data.data.newComer ? navigate('/modal') : navigate('/modal');
+        res.data.data.newComer ? navigate('/modal') : navigate('/mission');
       }, []);
   });
-  const Get = () => {
-    axios
-      .get(`http://54.180.30.74/users/kakao/callback`, { params: { code } })
-      .then((res) => {
-        const token = res.headers.authorization;
-        const refresh_token = res.headers.refresh_token;
-        localStorage.setItem('authorization', token);
-        sessionStorage.setItem('refresh-Token', refresh_token);
-        dispatch(userThunk(res.data.data));
-        // res.data.data.newComer ? navigate('/modal') : navigate('/mission');
-      });
-  };
 
-  return <button onClick={Get}>test</button>;
+  return <div>로딩중</div>;
 };
 
 export default Test;

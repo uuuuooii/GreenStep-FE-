@@ -15,7 +15,6 @@ export const FirstModalBody = styled.div`
   max-width: 375px;
   margin: auto;
   background-color: white;
-  border: 1px solid black;
 `;
 
 export const FirstModalSection = styled.div`

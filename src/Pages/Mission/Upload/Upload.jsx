@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import "./Upload.css";
 
 const Upload = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="detail-wrap-shape">
@@ -17,7 +20,9 @@ const Upload = () => {
             maecenas nunc vestibulum dictumst.
           </p>
         </div>
-        <button className="button-share">피드에 올리기</button>
+        <button className="button-share" onClick={() => navigate("/feed")}>
+          피드에 올리기
+        </button>
       </div>
     </>
   );

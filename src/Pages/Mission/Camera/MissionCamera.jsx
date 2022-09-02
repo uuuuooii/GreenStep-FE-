@@ -1,11 +1,11 @@
 //react import
-import React, { useState, useRef } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Camera } from 'react-camera-pro';
-import './MissionCamera.css';
-import { CameraBar, UploadButton, UploadImg } from './CameraBar';
+import React, { useState, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Camera } from "react-camera-pro";
+import "./MissionCamera.css";
+import { CameraBar, UploadButton, UploadImg } from "./CameraBar";
 //modules import
-import instance from '../../../Redux/modules/instance';
+import instance from "../../../Redux/modules/instance";
 
 export const MissionCamera = () => {
   const camera = useRef(null);
@@ -17,7 +17,7 @@ export const MissionCamera = () => {
   const navigate = useNavigate();
   const Upload = () => {
     instance.post(`${URL}/missions/${missionId}`, Certification);
-    navigate('/');
+    navigate("/Upload");
   };
 
   return (

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { BsArrowReturnRight } from 'react-icons/bs';
 
-
 export const FeedPage = styled.div`
   max-width: 375px;
   display: flex;
@@ -16,6 +15,7 @@ export const RankingBox = styled.div`
   flex-direction: column;
   background: #f3f3f3;
   border-radius: 10px;
+  margin: 20px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
@@ -107,7 +107,40 @@ export const MedalRightBottom = styled.div`
   border-radius: 0 5px 2px 11px;
   background-color: #48aee2;
 `;
-
+export const CategoriBox = styled.div`
+  max-width: 100%;
+`
+export const CategoriArea = styled.div`
+  /* max-width: 100%; */
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin: 10px 0;
+  padding: 10px 0;
+  
+`;
+export const CategoriButton = styled.div`
+  min-width: 78px;
+  min-height: 26px;
+  border-radius: 3px;
+  background-color: ${(props)=>props.check==props.num ? "#868686" : "none"};
+  align-items: center;
+  padding: 4px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #868686;
+  margin: 0 10px;
+  &:hover{
+    cursor: pointer;
+  }
+`;
+export const CategoriButtonText = styled.div`
+    font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+` 
 export const FeedCard = styled.div`
   width: 100%;
   height: 312px;
@@ -205,12 +238,12 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
-    color: black;
-    &:hover{
-        cursor: pointer;
-    }
-`
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 export const ScrollDiv = styled.div`
   height: 20px;
-`
+`;

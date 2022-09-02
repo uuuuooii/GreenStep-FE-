@@ -1,9 +1,9 @@
-import React from "react";
-import "./MyPage.css";
-import Footer from "../../../Components/Footer/Footer";
-import { FiSettings } from "react-icons/fi";
-import { MdOutlineDoubleArrow } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './MyPage.css';
+import Footer from '../../../Components/Footer/Footer';
+import { FiSettings } from 'react-icons/fi';
+import { MdOutlineDoubleArrow } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const MyPage = () => {
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
                   <MdOutlineDoubleArrow
-                    onClick={() => navigate("/DetailPhotoShots")}
+                    onClick={() => navigate('/DetailPhotoShots')}
                   />
                 </div>
               </div>
@@ -48,7 +48,7 @@ const MyPage = () => {
               <div className="posts-text">게시물 아카이브</div>
               <div className="posts-viewmore-icon">
                 <MdOutlineDoubleArrow
-                  onClick={() => navigate("/DetailPosts")}
+                  onClick={() => navigate('/DetailPosts')}
                 />
               </div>
             </div>

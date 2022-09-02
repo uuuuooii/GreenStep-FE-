@@ -27,9 +27,9 @@
 
 .header-icon-right {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: #a6fba4;
+  font-size: 25px;
   top: 10px;
   right: 16px;
+  margin-top: 2px;
+  margin-right: 2px;
 }

@@ -111,17 +111,20 @@ export const CategoriBox = styled.div`
   max-width: 100%;
 `
 export const CategoriArea = styled.div`
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: no-wrap;
+  /* max-width: 100%; */
+  width: 90%;
   display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
   margin: 10px 0;
+  padding: 10px 0;
   
 `;
 export const CategoriButton = styled.div`
-  width: 78px;
-  height: 26px;
+  min-width: 78px;
+  min-height: 26px;
   border-radius: 3px;
+  background-color: ${(props)=>props.check==props.num ? "#868686" : "none"};
   align-items: center;
   padding: 4px 5px;
   display: flex;

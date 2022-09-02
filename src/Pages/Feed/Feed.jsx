@@ -176,7 +176,7 @@ const Feed = () => {
       )}
 <CategoriArea>
 {/* <CategoriButton ><CategoriButtonText>item</CategoriButtonText></CategoriButton> */}
-  {categiriList.map((item,index)=><CategoriButton key={item} onClick={()=>setCategori(index)}><CategoriButtonText>{item}</CategoriButtonText></CategoriButton>)}
+  {categiriList.map((item,index)=><CategoriButton key={item} onClick={()=>setCategori(index)} check={index} num={categori} ><CategoriButtonText>{item}</CategoriButtonText></CategoriButton>)}
   </CategoriArea>
       <FeedArea>
         {feedList.map((item) => (

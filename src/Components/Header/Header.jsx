@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div className="header">
       <div>
-        <div className="title">Green Step test</div>
+        <div className="title">Green Step</div>
         {/* <button type="button" id="popup" onClick={onClickToastPopup}>
         toast
       </button>

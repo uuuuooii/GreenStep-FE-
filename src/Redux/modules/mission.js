@@ -1,12 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import instance from "./instance";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import instance from './instance';
 
 export const __GetTodaymission = createAsyncThunk(
-  "/missions/today-lists/__GetTodaymission",
+  '/missions/today-lists/__GetTodaymission',
   async () => {
     try {
       const response = await instance.get(
-        "http://54.180.30.74/missions/today-lists"
+        'http://54.180.30.74/missions/today-lists'
       );
       const data = response.data.data;
       // console.log(data);
@@ -16,14 +16,13 @@ export const __GetTodaymission = createAsyncThunk(
 );
 
 export const __GetDailymission = createAsyncThunk(
-  "/missions/daily-lists/__GetDailymission",
+  '/missions/daily-lists/__GetDailymission',
   async () => {
     try {
       const response = await instance.get(
-        "http://54.180.30.74/missions/daily-lists"
+        'http://54.180.30.74/missions/daily-lists'
       );
       const data = response.data.data;
-      console.log(data);
       return data;
     } catch (error) {}
   }
@@ -44,7 +43,7 @@ export const __GetDailymission = createAsyncThunk(
 // );
 
 const missionItem = createSlice({
-  name: "mission",
+  name: 'mission',
   initialState: {
     loaded: false,
     challenge: [],

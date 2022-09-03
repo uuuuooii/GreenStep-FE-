@@ -1,31 +1,74 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-// import instance from "./instance";
+import instance from "./instance";
+
+// export const __GetTodaymission = createAsyncThunk(
+//   "/missions/today-lists/__GetTodaymission",
+//   async (payload, thunkAPI) => {
+//     const data = await instance
+//       .get("http://54.180.30.74/missions/today-lists")
+//       .then((res) => {
+//         console.log(res.data.data);
+//       })
+//       .catch((error) => console.log(error));
+//     return thunkAPI.fulfillWithValue(data.data);
+//   }
+// );
 
 export const __GetTodaymission = createAsyncThunk(
   "/missions/today-lists/__GetTodaymission",
-  async (payload, thunkAPI) => {
-    const data = await axios
-      .get("http://54.180.30.74/missions/today-lists")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => error);
-    console.log(data);
-    return thunkAPI.fulfillWithValue(data);
+  async () => {
+    try {
+      const response = await instance.get(
+        "http://54.180.30.74/missions/today-lists"
+      );
+      const data = response.data.data;
+      // console.log(data);
+      return data;
+    } catch (error) {}
   }
 );
+
+// export const __GetDailymission = createAsyncThunk(
+//   "/missions/daily-lists/__GetDailymission",
+//   async () => {
+//     try {
+//       const response = await instance.get(
+//         "http://54.180.30.74/missions/daily-lists"
+//       );
+//       const data = response.data.data;
+//       // console.log(data);
+//       return data;
+//     } catch (error) {}
+//   }
+// );
+
+// export const __GetWeeklymission = createAsyncThunk(
+//   "/missions/weekly-lists/__GetWeeklymission",
+//   async () => {
+//     try {
+//       const response = await instance.get(
+//         "http://54.180.30.74/missions/weekly-lists"
+//       );
+//       const data = response.data.data;
+//       // console.log(data);
+//       return data;
+//     } catch (error) {}
+//   }
+// );
 
 const missionItem = createSlice({
   name: "mission",
   initialState: {
     loaded: false,
-    mission: [],
+    challenge: [],
+    daliy: [],
+    Weekly: [],
   },
   reducers: {},
   extraReducers: {
     [__GetTodaymission.fulfilled]: (state, action) => {
       state.loaded = true;
+      state.challenge = action.payload;
     },
   },
 });

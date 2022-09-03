@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Mission = () => {
   const { mission } = useSelector((state) => state.mission);
-  console.log(mission);
+  // console.log(mission);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(__GetTodaymission());

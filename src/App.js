@@ -13,6 +13,7 @@ import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
 import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
 import Loding from "./Loding";
+import Error from "./Pages/Error/Error";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/detailposts" element={<DetailPosts />} />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </>

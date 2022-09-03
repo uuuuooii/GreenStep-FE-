@@ -117,7 +117,7 @@ export const CategoryArea = styled.div`
   flex-direction: row;
   overflow-x: scroll;
   margin: 10px 0;
-  padding: 10px 0;
+  padding: 15px 0;
   
 `;
 export const CategoryButton = styled.div`

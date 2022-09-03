@@ -16,10 +16,11 @@ export const MissionCamera = () => {
   const missionId = useParams();
   const navigate = useNavigate();
   const Upload = () => {
-    instance.post(`${URL}/missions/${missionId}`, Certification);
+    instance.post(`${URL}/missions/1?photo=${image}`);
     navigate("/Upload");
   };
 
+console.log(image)
   return (
     <div className="wrap">
       {image ? (
@@ -42,7 +43,7 @@ export const MissionCamera = () => {
             className="TakePhotoButton"
             onClick={() => {
               if (camera.current) {
-                const photo = camera.current.takePhoto();
+                const photo = camera.current.takePhoto()
                 setImage(photo);
               }
             }}

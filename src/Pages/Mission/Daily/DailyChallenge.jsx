@@ -38,7 +38,8 @@ const DailyChallenge = ({ item }) => {
         <ChallengePhoto />
         <MissionText>Mission Name</MissionText>
       </ChallengeBody>
-    </ChallengeBox>
+    </ChallengeBox> 
+
   );
 };
 

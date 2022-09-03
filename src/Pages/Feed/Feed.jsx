@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useInView } from 'react-intersection-observer';
 //components import
 import Medal from './Medal';
-import ClapIcon from '../../static/clap';
+import ClapIcon from '../../static/components/clap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 //styled import
@@ -71,7 +71,7 @@ const Feed = () => {
     category == 0
       ? setFeedList([
           ...FeedList,
-          axios.get(`${URL}/feed`).then((res) => res.data.data),
+          axios.get(`${URL}/feed`).then((res) => console.log(res)),
         ])
       : setFeedList([
           ...FeedList,

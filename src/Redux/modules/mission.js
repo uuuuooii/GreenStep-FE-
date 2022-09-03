@@ -28,19 +28,47 @@ export const __GetTodaymission = createAsyncThunk(
   }
 );
 
+// export const __GetDailymission = createAsyncThunk(
+//   "/missions/daily-lists/__GetDailymission",
+//   async () => {
+//     try {
+//       const response = await instance.get(
+//         "http://54.180.30.74/missions/daily-lists"
+//       );
+//       const data = response.data.data;
+//       // console.log(data);
+//       return data;
+//     } catch (error) {}
+//   }
+// );
+
+// export const __GetWeeklymission = createAsyncThunk(
+//   "/missions/weekly-lists/__GetWeeklymission",
+//   async () => {
+//     try {
+//       const response = await instance.get(
+//         "http://54.180.30.74/missions/weekly-lists"
+//       );
+//       const data = response.data.data;
+//       // console.log(data);
+//       return data;
+//     } catch (error) {}
+//   }
+// );
+
 const missionItem = createSlice({
   name: "mission",
   initialState: {
     loaded: false,
-    mission: [],
-    // challenge: [],
-    // daliy: [],
+    challenge: [],
+    daliy: [],
+    Weekly: [],
   },
   reducers: {},
   extraReducers: {
     [__GetTodaymission.fulfilled]: (state, action) => {
       state.loaded = true;
-      state.mission = action.payload;
+      state.challenge = action.payload;
     },
   },
 });

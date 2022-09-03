@@ -31,37 +31,40 @@ const DailyChallenge = ({ item }) => {
   const navigate = useNavigate();
 
   //redux
-  const mission = useSelector((state) => state.mission.mission[0]);
-  // console.log(mission);
+  const mission = useSelector((state) => state.mission.challenge[0]);
+  // console.log(useSelector((state) => state));
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(__GetTodaymission());
   }, [dispatch]);
   // const missiondata = mission;
 
+  // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
-    <ChallengeBox>
-      <ChallengeTextArea>
-        <ChallengeTitle>오늘의 챌린지 미션</ChallengeTitle>
-        <ChallengeTimer>
-          {" "}
-          미션 완료 까지&nbsp;
-          {hour < 10 ? "0" + hour : hour}:{minute < 10 ? "0" + minute : minute}:
-          {second < 10 ? "0" + second : second}
-        </ChallengeTimer>
-      </ChallengeTextArea>
-      <ChallengeBody
-        onClick={() => navigate(`/missioncamera/${mission.missionId}`)}
-      >
-        {mission ? (
-          <ChallengePhoto src={mission.missionImageUrl} />
-        ) : (
-          <ChallengeTimer />
-        )}
-
-        {/* <MissionText>{mission.missionName}</MissionText> */}
-      </ChallengeBody>
-    </ChallengeBox>
+    <>
+      {mission ? (
+        <ChallengeBox>
+          <ChallengeTextArea>
+            <ChallengeTitle>오늘의 챌린지 미션</ChallengeTitle>
+            <ChallengeTimer>
+              {" "}
+              미션 완료 까지&nbsp;
+              {hour < 10 ? "0" + hour : hour}:
+              {minute < 10 ? "0" + minute : minute}:
+              {second < 10 ? "0" + second : second}
+            </ChallengeTimer>
+          </ChallengeTextArea>
+          <ChallengeBody
+            onClick={() => navigate(`/explain/${mission.missionId}`)}
+          >
+            <ChallengePhoto src={mission.missionImageUrl} />
+            <MissionText>{mission.missionName}</MissionText>
+          </ChallengeBody>
+        </ChallengeBox>
+      ) : (
+        <div></div>
+      )}
+    </>
   );
 };
 

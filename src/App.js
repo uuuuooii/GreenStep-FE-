@@ -29,6 +29,7 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/upload/:id" element={<Upload />} />
           <Route path="/explain" element={<Explain />} />
+          <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/detailposts" element={<DetailPosts />} />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />

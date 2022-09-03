@@ -1,8 +1,12 @@
 import React from "react";
 import "./Explain.css";
 import { FiCamera } from "react-icons/fi";
-
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Explain = () => {
+  const params = useParams();
+  const select = useSelector((state) => console.log(state.mission.challenge));
+  console.log(params.id);
   return (
     <>
       <div className="detail-wrap-shape">

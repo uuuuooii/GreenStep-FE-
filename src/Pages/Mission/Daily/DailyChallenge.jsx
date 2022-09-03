@@ -1,9 +1,9 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 //redux
-import { __GetTodaymission } from "../../../Redux/modules/mission";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetTodaymission } from '../../../Redux/modules/mission';
+import { useDispatch, useSelector } from 'react-redux';
 //styled import
 import {
   ChallengeBox,
@@ -13,7 +13,7 @@ import {
   MissionText,
   ChallengeTitle,
   ChallengeTimer,
-} from "./DailyMissionStyled";
+} from './DailyMissionStyled';
 
 const DailyChallenge = ({ item }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
@@ -47,15 +47,15 @@ const DailyChallenge = ({ item }) => {
           <ChallengeTextArea>
             <ChallengeTitle>오늘의 챌린지 미션</ChallengeTitle>
             <ChallengeTimer>
-              {" "}
+              {' '}
               미션 완료 까지&nbsp;
-              {hour < 10 ? "0" + hour : hour}:
-              {minute < 10 ? "0" + minute : minute}:
-              {second < 10 ? "0" + second : second}
+              {hour < 10 ? '0' + hour : hour}:
+              {minute < 10 ? '0' + minute : minute}:
+              {second < 10 ? '0' + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
-            onClick={() => navigate(`/explain/${mission.missionId}`)}
+            onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
             <ChallengePhoto src={mission.missionImageUrl} />
             <MissionText>{mission.missionName}</MissionText>

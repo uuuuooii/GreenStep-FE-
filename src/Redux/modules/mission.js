@@ -61,8 +61,8 @@ const missionItem = createSlice({
   initialState: {
     loaded: false,
     challenge: [],
-    daliy: [],
-    Weekly: [],
+    daily: [],
+    weekly: [],
   },
   reducers: {},
   extraReducers: {

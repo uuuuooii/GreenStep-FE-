@@ -1,18 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-// import instance from "./instance";
+import instance from "./instance";
+
+// export const __GetTodaymission = createAsyncThunk(
+//   "/missions/today-lists/__GetTodaymission",
+//   async (payload, thunkAPI) => {
+//     const data = await instance
+//       .get("http://54.180.30.74/missions/today-lists")
+//       .then((res) => {
+//         console.log(res.data.data);
+//       })
+//       .catch((error) => console.log(error));
+//     return thunkAPI.fulfillWithValue(data.data);
+//   }
+// );
 
 export const __GetTodaymission = createAsyncThunk(
   "/missions/today-lists/__GetTodaymission",
-  async (payload, thunkAPI) => {
-    const data = await axios
-      .get("http://54.180.30.74/missions/today-lists")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => error);
-    console.log(data);
-    return thunkAPI.fulfillWithValue(data);
+  async () => {
+    try {
+      const response = await instance.get(
+        "http://54.180.30.74/missions/today-lists"
+      );
+      const data = response.data.data;
+      // console.log(data);
+      return data;
+    } catch (error) {}
   }
 );
 
@@ -21,11 +33,14 @@ const missionItem = createSlice({
   initialState: {
     loaded: false,
     mission: [],
+    // challenge: [],
+    // daliy: [],
   },
   reducers: {},
   extraReducers: {
     [__GetTodaymission.fulfilled]: (state, action) => {
       state.loaded = true;
+      state.mission = action.payload;
     },
   },
 });

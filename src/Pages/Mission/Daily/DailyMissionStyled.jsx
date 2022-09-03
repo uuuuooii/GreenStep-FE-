@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ export const ChallengeTextArea = styled.div`
   justify-content: space-around;
   padding: 30px 0;
   margin: 0 10px;
-`
+`;
 
 export const ChallengeBody = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ export const ChallengeBody = styled.div`
     cursor: pointer;
   }
 `;
-export const ChallengePhoto = styled.div`
+export const ChallengePhoto = styled.img`
   width: 100px;
   height: 107px;
   background: rgba(255, 255, 255, 0.5);
@@ -73,10 +73,10 @@ export const ChallengeTitle = styled.div`
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-`
+`;
 export const ChallengeTimer = styled.div`
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-`
+`;

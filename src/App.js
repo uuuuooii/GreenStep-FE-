@@ -8,6 +8,8 @@ import Upload from "./Pages/Mission/Upload/Upload";
 import Explain from "./Pages/Mission/Explain/Explain";
 import Feed from "./Pages/Feed/Feed";
 import Mypage from "./Pages/MyPage/MyPage/MyPage";
+import PostsArchive from "./Pages/MyPage/PostsArchive/PostsArchive";
+import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
 import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
 import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
@@ -32,6 +34,8 @@ function App() {
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/postsarchive" element={<PostsArchive />} />
+          <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
           <Route path="/detailposts" element={<DetailPosts />} />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />

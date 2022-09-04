@@ -1,6 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import instance from "./instance";
 
+// export const __GetTodaymission = createAsyncThunk(
+//   "/missions/today-lists/__GetTodaymission",
+//   async (payload, thunkAPI) => {
+//     const data = await instance
+//       .get("http://54.180.30.74/missions/today-lists")
+//       .then((res) => {
+//         console.log(res.data.data);
+//       })
+//       .catch((error) => console.log(error));
+//     return thunkAPI.fulfillWithValue(data.data);
+//   }
+// );
 export const __GetTodaymission = createAsyncThunk(
   "/missions/today-lists/__GetTodaymission",
   async () => {
@@ -23,25 +35,25 @@ export const __GetDailymission = createAsyncThunk(
         "http://54.180.30.74/missions/daily-lists"
       );
       const data = response.data.data;
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {}
   }
 );
 
-// export const __GetWeeklymission = createAsyncThunk(
-//   "/missions/weekly-lists/__GetWeeklymission",
-//   async () => {
-//     try {
-//       const response = await instance.get(
-//         "http://54.180.30.74/missions/weekly-lists"
-//       );
-//       const data = response.data.data;
-//       // console.log(data);
-//       return data;
-//     } catch (error) {}
-//   }
-// );
+export const __GetWeeklymission = createAsyncThunk(
+  "/missions/weekly-lists/__GetWeeklymission",
+  async () => {
+    try {
+      const response = await instance.get(
+        "http://54.180.30.74/missions/weekly-lists"
+      );
+      const data = response.data.data;
+      console.log(data);
+      return data;
+    } catch (error) {}
+  }
+);
 
 const missionItem = createSlice({
   name: "mission",
@@ -60,6 +72,10 @@ const missionItem = createSlice({
     [__GetDailymission.fulfilled]: (state, action) => {
       state.loaded = true;
       state.daily = action.payload;
+    },
+    [__GetWeeklymission.fulfilled]: (state, action) => {
+      state.loaded = true;
+      state.weekly = action.payload;
     },
   },
 });

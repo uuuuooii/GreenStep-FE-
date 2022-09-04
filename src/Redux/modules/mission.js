@@ -35,7 +35,6 @@ export const __GetDailymission = createAsyncThunk(
         "http://54.180.30.74/missions/daily-lists"
       );
       const data = response.data.data;
-      // console.log(data);
       return data;
     } catch (error) {}
   }

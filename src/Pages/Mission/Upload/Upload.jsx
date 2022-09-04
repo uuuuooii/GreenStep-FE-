@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import "./Upload.css";
 
-const Upload = () => {
+const Upload = ({}) => {
   const navigate = useNavigate();
 
   return (
     <>
       <div className="detail-wrap-shape">
         <div className="mission-name-and-tag-area">
-          <div className="mission-name-text">Mission Name</div>
+          <div className="mission-name-text">title</div>
           <div className="mission-tag-text">#Mission Tag</div>
         </div>
         <div className="mission-image-area"></div>

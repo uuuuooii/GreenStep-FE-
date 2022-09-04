@@ -39,7 +39,9 @@ const Explain = () => {
             </div>
             <div className="mission-tag-text">#Mission Tag</div>
             <p className="explain-mission-contents-text">
-              {select ? select.missionContent : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
+              {select
+                ? select.missionContent
+                : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
             </p>
           </div>
 

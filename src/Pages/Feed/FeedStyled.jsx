@@ -124,7 +124,7 @@ export const CategoryButton = styled.div`
   min-width: 78px;
   min-height: 26px;
   border-radius: 3px;
-  background-color: ${(props)=>props.check==props.num ? "#868686" : "none"};
+  background-color: ${(props)=>props.check===props.num ? "#868686" : "none"};
   align-items: center;
   padding: 4px 5px;
   display: flex;

@@ -51,11 +51,6 @@ export const CompletedBody = styled.div`
   height: 100%;
   border-radius: 5px;
 `;
-export const DummyDiv = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-`;
 export const TextArea = styled.div``;
 export const FeedButton = styled.div`
   display: flex;

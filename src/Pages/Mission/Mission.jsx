@@ -21,17 +21,20 @@ import {
   __GetDailymission,
 } from "../../Redux/modules/mission";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 const Mission = () => {
+  const [loading,setLoading] = useState(false)
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
-
+console.log()
   const dispatch = useDispatch();
   useEffect(() => {
+    setLoading(true)
     dispatch(__GetWeeklymission());
     dispatch(__GetDailymission());
+    setLoading(false)
   }, [dispatch]);
-
   const navigate = useNavigate();
 
   return (
@@ -42,15 +45,15 @@ const Mission = () => {
           <DailyText>데일리 미션</DailyText>
         </DailyTextArea>
         <DailyCardBox>
-          {missionDaily.map((item, index) =>
-            item.missionStatus == 0 ? (
-              <DailyMission key={item.missionId + index} item={item} />
-            ) : item.missionStatus == 1 ? (
-              <Waiting key={item.missionId + index} item={item} />
+          {!loading ? missionDaily.map((item, index) =>
+            item.missionStatus === 0 ? (
+              <DailyMission key={item.missionId + index} item={item} onClick={()=>navigate(`/explain/${item.missionId}`)} type={"daily"} />
+            ) : item.missionStatus === 1 ? (
+              <Waiting key={item.missionId + index} item={item} type={"daily"} />
             ) : (
-              <Completed key={item.missionId + index} item={item} />
+              <Completed key={item.missionId + index} item={item} type={"daily"} />
             )
-          )}
+          ) : null}
         </DailyCardBox>
       </DailyMissionArea>
 
@@ -60,15 +63,15 @@ const Mission = () => {
         </DailyTextArea>
 
         <DailyCardBox>
-          {missionWeekly.map((item, index) => {
-            return item.missionStatus == 0 ? (
-              <DailyMission key={item.missionId + index} item={item} />
-            ) : item.missionStatus == 1 ? (
-              <Waiting key={item.missionId + index} item={item} />
+          {!loading ? missionWeekly.map((item, index) => {
+            return item.missionStatus === 0 ? (
+              <DailyMission key={item.missionId + index} item={item} type={"weekly"} />
+            ) : item.missionStatus === 1 ? (
+              <Waiting key={item.missionId + index} item={item} type={"weekly"} />
             ) : (
-              <Completed key={item.missionId + index} item={item} />
+              <Completed key={item.missionId + index} item={item} type={"weekly"} />
             );
-          })}
+          }) : null}
         </DailyCardBox>
         <Footer />
       </WeeklyMissionArea>

@@ -16,7 +16,7 @@ export const DailyBody = styled.div`
   }
 `;
 
-export const MissionPhoto = styled.div`
+export const MissionPhoto = styled.img`
   width: 145px;
   height: 144px;
   background: rgba(255, 255, 255, 0.5);

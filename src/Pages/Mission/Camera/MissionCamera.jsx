@@ -16,11 +16,11 @@ export const MissionCamera = () => {
   const missionId = useParams();
   const navigate = useNavigate();
   const Upload = () => {
-    instance.post(`http://54.180.30.74/missions/1`,Certification);
+    instance.post(`http://54.180.30.74/missions/1`, Certification);
     navigate(`/upload/${missionId}`);
   };
 
-console.log(Certification)
+  console.log(Certification);
   return (
     <div className="wrap">
       {image ? (
@@ -43,7 +43,7 @@ console.log(Certification)
             className="TakePhotoButton"
             onClick={() => {
               if (camera.current) {
-                const photo = camera.current.takePhoto()
+                const photo = camera.current.takePhoto();
                 setImage(photo);
               }
             }}
@@ -64,12 +64,3 @@ console.log(Certification)
   );
 };
 export default MissionCamera;
-
-// const ImagePreview = styled.div`
-//   width: 120px;
-//   height: 120px;
-//   ${({ image }) => (image ? `background-image:  url(${image});` : "")}
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -21,6 +21,10 @@ export const MissionPhoto = styled.div`
   width: 145px;
   height: 144px;
   background: rgba(255, 255, 255, 0.5);
+  background-image: url(${(props) => props.img});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 `;
 export const MissionText = styled.div`
   display: flex;

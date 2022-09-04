@@ -22,7 +22,6 @@ const Admin = () => {
       .then((res) => setFeedList(res.data.data));
     setLoading(false);
   }, []);
-  console.log(feedList);
   const Verify = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=DONE`)

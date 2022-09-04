@@ -9,5 +9,4 @@ const Retoken = localStorage.getItem("refresh-Token");
 
 instance.defaults.headers.common["authorization"] = Token;
 instance.defaults.headers.common["refresh-Token"] = Retoken;
-// console.log(instance.defaults);
 export default instance;

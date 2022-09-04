@@ -1,6 +1,5 @@
-import React from "react";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import instance from "./instance"
 
 const initialState = {
   userInfo: {},
@@ -8,16 +7,13 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-
+const URL = process.env.REACT_APP_URL;
 // Thunk 미들웨어 함수
 export const getUserInfoThunk = createAsyncThunk(
   "userInfo/getUserInfo",
   async (payload, thunkAPI) => {
     try {
-      const data = await axios.get(process.env.REACT_APP_URL + `/users/info`);
-
-      console.log(data);
-
+      const data = await instance.get(`${URL}/users/info`).then((res)=>res.data.data);
       return thunkAPI.fulfillWithValue(data); // 엑스트라 리듀서로 넘겨줌
     } catch (error) {
       return thunkAPI.rejectWithValue(error); // 엑스트라 리듀서로 넘겨줌
@@ -37,7 +33,6 @@ export const userInfoSlice = createSlice({
       state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
     },
     [getUserInfoThunk.fulfilled]: (state, action) => {
-      // console.log(state);
       state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
       state.userInfo = action.payload; // Store에 있는 mypage에 서버에서 가져온 mypage를 넣습니다.
       // console.log(state.isLoading);

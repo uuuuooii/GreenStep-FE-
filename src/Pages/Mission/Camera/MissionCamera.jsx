@@ -13,10 +13,10 @@ export const MissionCamera = () => {
   const [image, setImage] = useState(null);
   const Certification = { base64String: image };
   const URL = process.env.REACT_APP_URL;
-  const missionId = useParams();
+  const missionId = useParams().id;
   const navigate = useNavigate();
   const Upload = () => {
-    instance.post(`http://54.180.30.74/missions/1`,Certification);
+    instance.post(`http://54.180.30.74/missions/1`,Certification).then((res)=>console.log(res));
     navigate(`/upload/${missionId}`);
   };
 

@@ -7,7 +7,6 @@ import {
   CompletedBody,
   TextArea,
   FeedButton,
-  DummyDiv,
 } from "./CompletedStyled";
 
 const Completed = ({ item }) => {

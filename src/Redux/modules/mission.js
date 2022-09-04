@@ -48,7 +48,6 @@ export const __GetWeeklymission = createAsyncThunk(
         "http://54.180.30.74/missions/weekly-lists"
       );
       const data = response.data.data;
-      console.log(data);
       return data;
     } catch (error) {}
   }

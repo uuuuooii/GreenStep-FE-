@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 export const FirstModalBody = styled.div`
-  display: ${(props) => (props.display == 1 ? 'block' : 'none')};
+  display: ${(props) => (props.display === 1 ? 'block' : 'none')};
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -59,7 +58,7 @@ export const SelectImg = styled.img`
   width: 100px;
   height: 100px;
   outline: ${(props) =>
-    props.num == props.check ? '2px solid black;' : 'none'};
+    props.num === props.check ? '2px solid black;' : 'none'};
   &:hover {
     cursor: pointer;
   }

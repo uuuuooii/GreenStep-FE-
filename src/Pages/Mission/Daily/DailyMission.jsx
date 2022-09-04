@@ -5,7 +5,7 @@ import { DailyBody, MissionPhoto, MissionText } from "./DailyMissionStyled";
 import { __GetDailymission } from "../../../Redux/modules/mission";
 import { useDispatch } from "react-redux";
 
-const DailyMission = ({ item }) => {
+const DailyMission = ({ item, type }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(__GetDailymission());
@@ -13,8 +13,8 @@ const DailyMission = ({ item }) => {
 
   const navigate = useNavigate();
   return (
-    <DailyBody onClick={() => navigate(`/missioncamera/${item.missionId}`)}>
-      <MissionPhoto />
+    <DailyBody onClick={() => type == "daily" ? navigate(`/explain/${item.missionId}&daily`) : navigate(`/explain/${item.missionId}&weekly`) }>
+      <MissionPhoto src={item.missionImageUrl} />
       <MissionText>{item.missionName}</MissionText>
     </DailyBody>
   );

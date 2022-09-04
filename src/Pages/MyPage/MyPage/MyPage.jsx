@@ -8,14 +8,16 @@ import { MdOutlineDoubleArrow } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
+  const [loading,setLoding] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state) => state.userInfo);
+  const userInfo = useSelector((state) => state.userInfo.userInfo);
 
   useEffect(() => {
-    //  dispatch(getUserInfoThunk());
-    console.log(userInfo);
-  });
+    setLoding(true)
+     dispatch(getUserInfoThunk());
+     setLoding(false)
+  },[]);
 
   return (
     <>
@@ -26,13 +28,15 @@ const MyPage = () => {
             <FiSettings />
           </div>
         </div>
-        <div className="image-nick-email">
-          <div className="image-area"></div>
+
+       {!loading ?  <div className="image-nick-email">
+          <img src={userInfo.profilePhoto} className="image-area"></img >
           <div className="nick-and-email-area">
-            <div className="nickname-text">닉네임</div>
-            <div className="email-text">이메일주소@gmail.com</div>
+            <div className="nickname-text">{userInfo.nickname}</div>
+            <div className="email-text">{userInfo.email}</div>
           </div>
-        </div>
+        </div> : null}
+
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">
             <div className="photoshots-viewmore-box">

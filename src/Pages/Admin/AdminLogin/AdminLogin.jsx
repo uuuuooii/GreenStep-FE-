@@ -29,7 +29,7 @@ const AdminLogin = () => {
     <Area>
       <div> 관리자 로그인 </div>
       <input onChange={setid} placeholder="email" />
-      <input onChange={setpw} placeholder="password" />
+      <input type="password" onChange={setpw} placeholder="password" />
       <button onClick={Login}>로그인</button>
     </Area>
   );

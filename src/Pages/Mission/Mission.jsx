@@ -47,11 +47,11 @@ console.log()
         <DailyCardBox>
           {!loading ? missionDaily.map((item, index) =>
             item.missionStatus === 0 ? (
-              <DailyMission key={item.missionId + index} item={item} onClick={()=>navigate(`/explain/${item.missionId}`)} type={"daily"} />
+              <DailyMission key={item.missionId + index} item={item} onClick={()=>navigate(`/explain/${item.missionId}&daily`)} type={"daily"} />
             ) : item.missionStatus === 1 ? (
               <Waiting key={item.missionId + index} item={item} type={"daily"} />
             ) : (
-              <Completed key={item.missionId + index} item={item} type={"daily"} />
+              <Completed key={item.missionId + index} item={item} type={"daily"}/>
             )
           ) : null}
         </DailyCardBox>
@@ -65,11 +65,11 @@ console.log()
         <DailyCardBox>
           {!loading ? missionWeekly.map((item, index) => {
             return item.missionStatus === 0 ? (
-              <DailyMission key={item.missionId + index} item={item} type={"weekly"} />
+              <DailyMission key={item.missionId + index} item={item} type={"weekly"} onClick={()=>navigate(`/explain/${item.missionId}&weekly`)} />
             ) : item.missionStatus === 1 ? (
               <Waiting key={item.missionId + index} item={item} type={"weekly"} />
             ) : (
-              <Completed key={item.missionId + index} item={item} type={"weekly"} />
+              <Completed key={item.missionId + index} item={item} type={"weekly"}  />
             );
           }) : null}
         </DailyCardBox>

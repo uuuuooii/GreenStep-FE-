@@ -54,7 +54,7 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
 
               <ImgDiv>
                 <SelectImg
-                  src="https://cdn.pixabay.com/photo/2018/03/13/06/19/lion-3221778__340.png"
+                  src="images/펭귄.png"
                   onClick={() => {
                     check == 2 ? setCheck(0) : setCheck(2);
                   }}

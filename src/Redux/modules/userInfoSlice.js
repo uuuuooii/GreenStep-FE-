@@ -9,6 +9,7 @@ const initialState = {
   error: null,
 };
 const URL = process.env.REACT_APP_URL;
+
 // Thunk 미들웨어 함수
 export const getUserInfoThunk = createAsyncThunk(
   'userInfo/getUserInfo',
@@ -59,15 +60,15 @@ export const userInfoSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getUserInfoThunk.fulfilled]: (state, action) => {
-      state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.userInfo = action.payload; // Store에 있는 mypage에 서버에서 가져온 mypage를 넣습니다.
+      state.isLoading = false;
+      state.userInfo = action.payload;
     },
     [getCertThunk.fulfilled]: (state, action) => {
-      state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.certification = action.payload; // catch 된 error 객체를 state.error에 넣습니다.
+      state.isLoading = false;
+      state.certification = action.payload; 
     }, [getPostThunk.fulfilled]: (state, action) => {
-      state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.post = action.payload; // Store에 있는 mypage에 서버에서 가져온 mypage를 넣습니다.
+      state.isLoading = false;
+      state.post = action.payload; 
     },
   },
 });

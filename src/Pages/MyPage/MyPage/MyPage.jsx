@@ -27,6 +27,7 @@ const MyPage = () => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
+
   return (
     <>
       <div className="whole-mypage">

@@ -1,6 +1,13 @@
 //react import
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+//modules import
+import {
+  __GetWeeklymission,
+  __GetDailymission,
+} from "../../Redux/modules/mission";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 //componenes import
 import Completed from "./Completed/Completed";
 import DailyMission from "./Daily/DailyMission";
@@ -15,13 +22,7 @@ import {
   DailyCardBox,
   WeeklyMissionArea,
 } from "./MissionStyled";
-//redux
-import {
-  __GetWeeklymission,
-  __GetDailymission,
-} from "../../Redux/modules/mission";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+
 
 const Mission = () => {
   const [loading,setLoading] = useState(false)
@@ -45,7 +46,7 @@ console.log()
           <DailyText>데일리 미션</DailyText>
         </DailyTextArea>
         <DailyCardBox>
-          {!loading ? missionDaily.map((item, index) =>
+          {(!loading&&missionDaily) ? missionDaily.map((item, index) =>
             item.missionStatus === 0 ? (
               <DailyMission key={item.missionId + index} item={item} onClick={()=>navigate(`/explain/${item.missionId}&daily`)} type={"daily"} />
             ) : item.missionStatus === 1 ? (
@@ -63,7 +64,7 @@ console.log()
         </DailyTextArea>
 
         <DailyCardBox>
-          {!loading ? missionWeekly.map((item, index) => {
+          {(!loading&&missionDaily) ? missionWeekly.map((item, index) => {
             return item.missionStatus === 0 ? (
               <DailyMission key={item.missionId + index} item={item} type={"weekly"} onClick={()=>navigate(`/explain/${item.missionId}&weekly`)} />
             ) : item.missionStatus === 1 ? (

@@ -37,7 +37,7 @@ const Upload = ({}) => {
         <div className="detail-wrap-shape">
           <div className="mission-name-and-tag-area">
             <div className="mission-name-text">{data.missionName}</div>
-            <div className="mission-tag-text">#Mission Tag</div>
+            <div className="mission-tag-text">{data.tag}</div>
           </div>
           <img className="mission-image-area" src={data.missionImgUrl}></img>
           <textarea

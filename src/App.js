@@ -1,24 +1,27 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Header from "./Components/Header/Header";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Header from './Components/Header/Header';
 // import Footer from "./Components/Footer/Footer";
-import Admin from "./Pages/Admin/Admin/Admin";
-import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
-import Login from "./Pages/Login/Login";
-import Mission from "./Pages/Mission/Mission";
-import Upload from "./Pages/Mission/Upload/Upload";
-import Explain from "./Pages/Mission/Explain/Explain";
-import Feed from "./Pages/Feed/Feed";
-import Mypage from "./Pages/MyPage/MyPage/MyPage";
-import Archive from "./Pages/MyPage/MyPage/Archive/Archive"
-import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
-import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
-import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
-import Modal from "./Pages/Login/Modal";
-import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
-import Loding from "./Loding";
-import Error from "./Pages/Error/Error";
+import Admin from './Pages/Admin/Admin/Admin';
+import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
+import Login from './Pages/Login/Login';
+import Mission from './Pages/Mission/Mission';
+import Upload from './Pages/Mission/Upload/Upload';
+import Explain from './Pages/Mission/Explain/Explain';
+import Feed from './Pages/Feed/Feed';
+import Mypage from './Pages/MyPage/MyPage/MyPage';
+import Archive from './Pages/MyPage/MyPage/Archive/Archive';
+import PhotoShotsArchive from './Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive';
+import DetailPosts from './Pages/MyPage/DetailPosts/DetailPosts';
+import DetailPhotoShots from './Pages/MyPage/DetailPhotoShots/DetailPhotoShots';
+import Modal from './Pages/Login/Modal';
+import MissionCamera from './Pages/Mission/Camera/MissionCamera';
+import Loding from './Loding';
+import Error from './Pages/Error/Error';
+import instance from './Redux/modules/instance';
 
 function App() {
+  const token = localStorage.getItem('Authorization');
+  instance.defaults.headers.common['Authorization'] = token;
   return (
     <>
       <BrowserRouter>

@@ -17,8 +17,8 @@ import {
   FeedButton,
 } from "./DailyMissionStyled";
 
-const DailyChallenge = () => {
-  const [loading, setLoading] = useState(false);
+const DailyChallenge = ({mission}) => {
+  const [loading, setLoading] = useState(true);
   const [hour, setHour] = useState(23 - new Date().getHours());
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());
@@ -32,19 +32,18 @@ const DailyChallenge = () => {
     return () => clearInterval(id);
   }, []);
   const navigate = useNavigate();
-  const mission = useSelector((state) => state.mission.challenge[0]);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    setLoading(true);
-    dispatch(__GetTodaymission());
-    setLoading(false);
-  }, [dispatch]);
-  // const missiondata = mission;
-  // console.log(mission)
+//   const mission =  useSelector((state) => state.mission.challenge)[0];
+// console.log(mission)
+//   const dispatch = useDispatch();
+//   useEffect(() => {
+//     setLoading(true);
+//     dispatch(__GetTodaymission());
+//     setLoading(false);
+//   }, [dispatch]);
   // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
     <>
-      {!loading && mission ? (
+{ mission ?
         <ChallengeBox>
           <ChallengeTextArea>
             <ChallengeTitle>오늘의 챌린지 미션</ChallengeTitle>
@@ -59,20 +58,20 @@ const DailyChallenge = () => {
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {!mission.status === "DEFAULT" && !loading ? (
+            {!mission.status === 'DEFAULT' ? (
               <ChallengeWaiting>
                 <MissionText>인증 대기중</MissionText>
               </ChallengeWaiting>
             ) : null}
-            {mission.status === "DONE" && !loading ? (
+            {mission.status === 'DONE' ? (
               <FeedButton>피드 올리기</FeedButton>
             ) : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
             <MissionText>{mission.missionName}</MissionText>
           </ChallengeBody>
-        </ChallengeBox>
-      ) : null}
+        </ChallengeBox> : null }
+      
     </>
   );
 };

@@ -1,9 +1,9 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 //redux
-import { __GetTodaymission } from "../../../Redux/modules/mission";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetTodaymission } from '../../../Redux/modules/mission';
+import { useDispatch, useSelector } from 'react-redux';
 //styled import
 import {
   ChallengeBox,
@@ -13,9 +13,12 @@ import {
   MissionText,
   ChallengeTitle,
   ChallengeTimer,
-} from "./DailyMissionStyled";
+  ChallengeWaiting,
+  FeedButton,
+} from './DailyMissionStyled';
 
-const DailyChallenge = ({ item }) => {
+const DailyChallenge = () => {
+  const [loading, setLoading] = useState(false);
   const [hour, setHour] = useState(23 - new Date().getHours());
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());
@@ -30,38 +33,46 @@ const DailyChallenge = ({ item }) => {
   }, []);
   const navigate = useNavigate();
   const mission = useSelector((state) => state.mission.challenge[0]);
-  console.log(mission);
   const dispatch = useDispatch();
   useEffect(() => {
+    setLoading(true);
     dispatch(__GetTodaymission());
+    setLoading(false);
   }, [dispatch]);
   // const missiondata = mission;
-
+  // console.log(mission)
   // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
     <>
-      {mission ? (
+      {!loading && mission ? (
         <ChallengeBox>
           <ChallengeTextArea>
             <ChallengeTitle>오늘의 챌린지 미션</ChallengeTitle>
             <ChallengeTimer>
-              {" "}
+              {' '}
               미션 완료 까지&nbsp;
-              {hour < 10 ? "0" + hour : hour}:
-              {minute < 10 ? "0" + minute : minute}:
-              {second < 10 ? "0" + second : second}
+              {hour < 10 ? '0' + hour : hour}:
+              {minute < 10 ? '0' + minute : minute}:
+              {second < 10 ? '0' + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
+            {!mission.status === 'DEFAULT' && !loading ? (
+              <ChallengeWaiting>
+                <MissionText>인증 대기중</MissionText>
+              </ChallengeWaiting>
+            ) : null}
+            {mission.status === 'DONE' && !loading ? (
+              <FeedButton>피드 올리기</FeedButton>
+            ) : null}
+
             <ChallengePhoto src={mission.missionImageUrl} />
             <MissionText>{mission.missionName}</MissionText>
           </ChallengeBody>
         </ChallengeBox>
-      ) : (
-        <div></div>
-      )}
+      ) : null}
     </>
   );
 };

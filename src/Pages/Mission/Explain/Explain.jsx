@@ -37,7 +37,7 @@ const Explain = () => {
             <div className="mission-name-text">
               {select ? select.missionName : 'MissionName'}
             </div>
-            <div className="mission-tag-text">#Mission Tag</div>
+            <div className="mission-tag-text">{select.tag}</div>
             <p className="explain-mission-contents-text">
               {select
                 ? select.missionContent

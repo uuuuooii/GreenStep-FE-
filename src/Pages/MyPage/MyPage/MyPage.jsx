@@ -3,21 +3,21 @@ import "./MyPage.css";
 import Footer from "../../../Components/Footer/Footer";
 import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { MdOutlineDoubleArrow } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
-  const [loading,setLoding] = useState(false)
+  const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
 
   useEffect(() => {
-    setLoding(true)
-     dispatch(getUserInfoThunk());
-     setLoding(false)
-  },[]);
+    setLoding(true);
+    dispatch(getUserInfoThunk());
+    setLoding(false);
+  }, []);
 
   return (
     <>
@@ -29,13 +29,15 @@ const MyPage = () => {
           </div>
         </div>
 
-       {!loading ?  <div className="image-nick-email">
-          <img src={userInfo.profilePhoto} className="image-area"></img >
-          <div className="nick-and-email-area">
-            <div className="nickname-text">{userInfo.nickname}</div>
-            <div className="email-text">{userInfo.email}</div>
+        {!loading ? (
+          <div className="image-nick-email">
+            <img src={userInfo.profilePhoto} className="image-area"></img>
+            <div className="nick-and-email-area">
+              <div className="nickname-text">{userInfo.nickname}</div>
+              <div className="email-text">{userInfo.email}</div>
+            </div>
           </div>
-        </div> : null}
+        ) : null}
 
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">

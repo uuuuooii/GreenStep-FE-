@@ -1,14 +1,13 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
-import { ContentTextarea } from './UploadStyled';
+import "./Upload.css";
 
 const Upload = ({}) => {
   // const []
@@ -31,10 +30,8 @@ const Upload = ({}) => {
           <div className="mission-tag-text">#Mission Tag</div>
         </div>
         <div className="mission-image-area"></div>
-        <div className="mission-contents-box">
-<ContentTextarea/>
-        </div>
-        <button className="button-share" onClick={() => navigate('/feed')}>
+        <textarea className="upload-contents-input"></textarea>
+        <button className="button-share" onClick={() => navigate("/feed")}>
           피드에 올리기
         </button>
       </div>

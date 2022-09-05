@@ -1,0 +1,10 @@
+.upload-contents-input {
+  width: 318px;
+  height: 60px;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.8125rem;
+  font-style: normal;
+}

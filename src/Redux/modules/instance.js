@@ -1,13 +1,13 @@
 import axios from "axios";
-
+const URL = process.env.REACT_APP_URL;
 const instance = axios.create({
-  baseURL: "",
+  baseURL: `${URL}`,
 });
-
-const Token = localStorage.getItem("authorization");
+instance.interceptors.request.use(function (instance){
+const Token = localStorage.getItem("Authorization");
 const Retoken = localStorage.getItem("refresh-Token");
+instance.headers["Authorization"] = Token;
+instance.headers["refresh-Token"] = Retoken;
+return instance })
 
-instance.defaults.headers.common["authorization"] = Token;
-instance.defaults.headers.common["refresh-Token"] = Retoken;
-// console.log(instance.defaults);
 export default instance;

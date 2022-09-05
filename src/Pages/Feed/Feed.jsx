@@ -1,6 +1,6 @@
 //react import
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import instance from '../../Redux/modules/instance';
 import { useInView } from 'react-intersection-observer';
 //components import
 import Medal from './Medal';
@@ -65,36 +65,35 @@ const Feed = () => {
     'etc',
   ];
   const URL = process.env.REACT_APP_URL;
+  console.log(instance.get(`${URL}/feed`).then((res) => res))
+  // const TagClick = () => {
+  //   setLoding(true);
+  //   category == 0
+  //     ? setFeedList([
+  //         ...FeedList,
+  //         instance.get(`${URL}/feed`).then((res) => console.log(res)),
+  //       ])
+  //     : setFeedList([
+  //         ...FeedList,
+  //         instance
+  //           .get(`${URL}/feed/categoryes/${categoryApi[category]}`)
+  //           .then((res) => res.data.data),
+  //       ]);
+  //   setLoding(false);
+  // };
+  // useEffect(() => {
+  //   setPage(page + 1);
+  // }, [inView]);
 
-  const TagClick = () => {
-    setLoding(true);
-    category == 0
-      ? setFeedList([
-          ...FeedList,
-          axios.get(`${URL}/feed`).then((res) => console.log(res)),
-        ])
-      : setFeedList([
-          ...FeedList,
-          axios
-            .get(`${URL}/feed/categoryes/${categoryApi[category]}`)
-            .then((res) => res.data.data),
-        ]);
-    setLoding(false);
-  };
-  useEffect(() => {
-    setPage(page + 1);
-  }, [inView]);
+  // useEffect(() => {
+  //   setFeedList([]);
+  //   setPage(1);
+  // }, [category]);
 
-  useEffect(() => {
-    setFeedList([]);
-    setPage(1);
-  }, [category]);
+  // useEffect(() => {
+  //   page == 0 ? console.log() : TagClick();
+  // }, [page]);
 
-  useEffect(() => {
-    page == 0 ? console.log() : TagClick();
-  }, [page]);
-
-  console.log(page);
   const userList = [
     {
       userId: '우수진',
@@ -113,60 +112,6 @@ const Feed = () => {
       profilePhoto:
         'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
       nickname: '강이노',
-    },
-  ];
-  const feedList = [
-    {
-      postId: '오늘의 라벨',
-      imgUrl:
-        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
-      profilePhoto:
-        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
-      content:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
-      clapCount: '5',
-      clapByme: true,
-      category: '#공병에 라벨떼기',
-      nickname: '강인호',
-    },
-    {
-      postId: '오늘의 라벨',
-      imgUrl:
-        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
-      profilePhoto:
-        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
-      content:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
-      clapCount: '5',
-      clapByme: true,
-      category: '#공병에 라벨떼기',
-      nickname: '강인호',
-    },
-    {
-      postId: '오늘의 라벨',
-      imgUrl:
-        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
-      profilePhoto:
-        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
-      content:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
-      clapCount: '5',
-      clapByme: true,
-      category: '#공병에 라벨떼기',
-      nickname: '강인호',
-    },
-    {
-      postId: '오늘의 라벨',
-      imgUrl:
-        'https://cdn.pixabay.com/photo/2022/04/07/14/31/bottle-7117637__340.jpg',
-      profilePhoto:
-        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
-      content:
-        ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.',
-      clapCount: '5',
-      clapByme: false,
-      category: '#공병에 라벨떼기',
-      nickname: '강인호',
     },
   ];
 
@@ -204,7 +149,7 @@ const Feed = () => {
         ))}
       </CategoryArea>
       <FeedArea>
-        {feedList.map((item) => (
+        {/* {feedList.map((item) => (
           <TotalFeed>
             <FeedCard>
               <CardTopArea>
@@ -229,7 +174,7 @@ const Feed = () => {
               <FeedText>{item.content}</FeedText>
             </FeedContent>
           </TotalFeed>
-        ))}
+        ))} */}
         {loding ? (
           <>
             <FeedSkeleton />

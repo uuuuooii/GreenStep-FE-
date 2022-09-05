@@ -1,23 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import instance from "./instance";
+import axios from "axios";
 
-// export const __GetTodaymission = createAsyncThunk(
-//   "/missions/today-lists/__GetTodaymission",
-//   async (payload, thunkAPI) => {
-//     const data = await instance
-//       .get("http://54.180.30.74/missions/today-lists")
-//       .then((res) => {
-//         console.log(res.data.data);
-//       })
-//       .catch((error) => console.log(error));
-//     return thunkAPI.fulfillWithValue(data.data);
-//   }
-// );
+// const Token = localStorage.getItem('authorization');
+// instance.defaults.headers.common['authorization'] = Token;
 export const __GetTodaymission = createAsyncThunk(
   "/missions/today-lists/__GetTodaymission",
   async () => {
+    // instance.defaults.headers.common['authorization'] = Token;
     try {
       const response = await instance.get("/missions/today-lists");
+
       const data = response.data.data;
       // console.log(data);
       return data;
@@ -28,6 +21,7 @@ export const __GetTodaymission = createAsyncThunk(
 export const __GetDailymission = createAsyncThunk(
   "/missions/daily-lists/__GetDailymission",
   async () => {
+    // instance.defaults.headers.common['authorization'] = Token;
     try {
       const response = await instance.get("/missions/daily-lists");
       const data = response.data.data;
@@ -39,6 +33,7 @@ export const __GetDailymission = createAsyncThunk(
 export const __GetWeeklymission = createAsyncThunk(
   "/missions/weekly-lists/__GetWeeklymission",
   async () => {
+    // instance.defaults.headers.common['authorization'] = Token;
     try {
       const response = await instance.get("/missions/weekly-lists");
       const data = response.data.data;

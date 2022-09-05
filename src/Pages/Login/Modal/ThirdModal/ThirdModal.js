@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ThirdModalBody,
   ThirdModalSection,
@@ -9,9 +9,12 @@ import {
   CenterContainer,
   ProfileImg,
   TextInput,
+  CheckMailArea,
+  CheckMailIcon,
+  CheckMailText,
 } from './ThirdModalStyled';
 import instance from '../../../../Redux/modules/instance';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -23,10 +26,15 @@ const ThirdModal = ({
   name,
   nickname,
   img,
-  user,
 }) => {
-  const userinfo = { name: name, nickname: nickname, profilePhoto: img };
-  const navigate = useNavigate()
+  const [acceptMail, setAcceptMail] = useState(false);
+  const userinfo = {
+    name: name,
+    nickname: nickname,
+    profilePhoto: img,
+    acceptMail: acceptMail,
+  };
+  const navigate = useNavigate();
   return (
     <ThirdModalBody display={display}>
       <ThirdModalSection>
@@ -40,7 +48,9 @@ const ThirdModal = ({
           <ButtonText
             onClick={() =>
               name && nickname
-                ? instance.patch(`http://54.180.30.74/users/info`, userinfo).then(navigate('/mission'))
+                ? instance
+                    .patch(`${URL}/users/info`, userinfo)
+                    .then(navigate('/mission'))
                 : alert('빈칸을 입력해주세요')
             }
           >
@@ -52,6 +62,12 @@ const ThirdModal = ({
             <ProfileImg src={img} />
             <TextInput onChange={setName} placeholder="이름" />
             <TextInput onChange={setNickname} placeholder="닉네임" />
+
+            <CheckMailArea onClick={() => setAcceptMail(!acceptMail)}>
+              {' '}
+              <CheckMailIcon background={!acceptMail ? "white" : "black"} color={!acceptMail ? "black" : "white"} />
+              <CheckMailText>이메일 알림 수신동의</CheckMailText>
+            </CheckMailArea>
           </CenterContainer>
         </SelectBody>
       </ThirdModalSection>

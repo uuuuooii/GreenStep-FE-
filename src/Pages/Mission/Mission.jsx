@@ -36,10 +36,9 @@ const Mission = () => {
     dispatch(__GetDailymission());
     dispatch(__GetTodaymission());
     setLoading(false);
-  }, [dispatch]);
+  }, []);
   const navigate = useNavigate();
-  console.log(missionDaily);
-  console.log(missionWeekly);
+
   return (
     <>
       {!loading ? (
@@ -86,7 +85,7 @@ const Mission = () => {
             </DailyTextArea>
 
             <DailyCardBox>
-              {missionDaily
+              {!loading && missionWeekly
                 ? missionWeekly.map((item, index) => {
                     return item.status === "DEFAULT" ? (
                       <DailyMission

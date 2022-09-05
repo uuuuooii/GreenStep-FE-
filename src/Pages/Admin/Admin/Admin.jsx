@@ -14,7 +14,6 @@ import {
 const Admin = () => {
   const [feedList, setFeedList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(0);
   useEffect(() => {
     setLoading(true);
     instance
@@ -34,6 +33,7 @@ const Admin = () => {
       .then((res) => console.log(res));
     window.location.reload();
   };
+  console.log(feedList);
   return (
     <>
       {!loading ? (

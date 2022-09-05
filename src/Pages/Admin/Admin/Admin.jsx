@@ -14,7 +14,6 @@ import {
 const Admin = () => {
   const [feedList, setFeedList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(0);
   useEffect(() => {
     setLoading(true);
     instance
@@ -25,15 +24,14 @@ const Admin = () => {
   const Verify = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=DONE`)
-      .then((res) => console.log(res));
     window.location.reload();
   };
   const Reject = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=REJECTED`)
-      .then((res) => console.log(res));
     window.location.reload();
   };
+  console.log(feedList);
   return (
     <>
       {!loading ? (

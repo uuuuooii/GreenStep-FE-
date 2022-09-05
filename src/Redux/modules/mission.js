@@ -18,7 +18,7 @@ export const __GetTodaymission = createAsyncThunk(
   async () => {
     try {
       const response = await instance.get(
-        "http://54.180.30.74/missions/today-lists"
+        "/missions/today-lists"
       );
       const data = response.data.data;
       // console.log(data);
@@ -32,7 +32,7 @@ export const __GetDailymission = createAsyncThunk(
   async () => {
     try {
       const response = await instance.get(
-        "http://54.180.30.74/missions/daily-lists"
+        "/missions/daily-lists"
       );
       const data = response.data.data;
       return data;
@@ -45,7 +45,7 @@ export const __GetWeeklymission = createAsyncThunk(
   async () => {
     try {
       const response = await instance.get(
-        "http://54.180.30.74/missions/weekly-lists"
+        "/missions/weekly-lists"
       );
       const data = response.data.data;
       return data;

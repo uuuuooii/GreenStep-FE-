@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import './MyPage.css';
-import Footer from '../../../Components/Footer/Footer';
+import React, { useEffect, useState } from "react";
+import "./MyPage.css";
+import Footer from "../../../Components/Footer/Footer";
 import {
   getUserInfoThunk,
   getCertThunk,
   getPostThunk,
-} from '../../../Redux/modules/userInfoSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { FiSettings } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-import { ArchiveArrow } from './Archive/ArchiveStyled';
+} from "../../../Redux/modules/userInfoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { FiSettings } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { ArchiveArrow } from "./Archive/ArchiveStyled";
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
@@ -54,7 +54,7 @@ const MyPage = () => {
               <div className="photoshots-text">인증샷 아카이브</div>
               <div className="photoshots-viewmore-icon">
                 <ArchiveArrow
-                  onClick={() => navigate('/archive/certification')}
+                  onClick={() => navigate("/archive/certification")}
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ const MyPage = () => {
             <div className="posts-text-and-icon">
               <div className="posts-text">게시물 아카이브</div>
               <div className="posts-viewmore-icon">
-                <ArchiveArrow onClick={() => navigate('/archive/post')} />
+                <ArchiveArrow onClick={() => navigate("/archive/post")} />
               </div>
             </div>
           </div>

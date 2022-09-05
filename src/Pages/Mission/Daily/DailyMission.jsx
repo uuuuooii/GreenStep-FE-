@@ -13,7 +13,13 @@ const DailyMission = ({ item, type }) => {
 
   const navigate = useNavigate();
   return (
-    <DailyBody onClick={() => type == "daily" ? navigate(`/explain/${item.missionId}&daily`) : navigate(`/explain/${item.missionId}&weekly`) }>
+    <DailyBody
+      onClick={() =>
+        type == "daily"
+          ? navigate(`/explain/${item.missionId}&daily`)
+          : navigate(`/explain/${item.missionId}&weekly`)
+      }
+    >
       <MissionPhoto src={item.missionImageUrl} />
       <MissionText>{item.missionName}</MissionText>
     </DailyBody>

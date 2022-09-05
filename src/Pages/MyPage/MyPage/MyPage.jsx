@@ -89,13 +89,13 @@ const MyPage = () => {
             {!loading && post.length > 1 ? (
               post.map((item) => (
                 <img
-                  src={item.missionImgUrl}
+                  src={item.imgUrl}
                   className="photoshots-archive-images"
                 ></img>
               ))
             ) : !loading && post.length === 1 ? (
               <img
-                src={post[0].missionImgUrl}
+                src={post[0].imgUrl}
                 className="photoshots-archive-images"
               ></img>
             ) : null}

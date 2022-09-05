@@ -59,6 +59,7 @@ const MyPage = () => {
               </div>
             </div>
           </div>
+
           <div className="photoshots-archive-box">
             {!loading && certification.length > 1 ? (
               certification.map((item) => (

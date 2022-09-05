@@ -22,10 +22,8 @@ const Upload = ({}) => {
   );
   const testText = { content: content };
   const Upload = () => {
-    instance
-      .post(`/profiles/missions/${param}`, testText);
-      navigate('/mypage')
-
+    instance.post(`/profiles/missions/${param}`, testText);
+    navigate("/mypage");
   };
 
   useEffect(() => {
@@ -42,13 +40,15 @@ const Upload = ({}) => {
             <div className="mission-tag-text">#Mission Tag</div>
           </div>
           <img className="mission-image-area" src={data.missionImgUrl}></img>
-          <div className="mission-contents-box">
-            <ContentTextarea onChange={contentHandler} maxLength={140} />
-          </div>
+          <textarea
+            className="upload-contents-input"
+            onChange={contentHandler}
+            maxLength={140}
+          ></textarea>
           <button
             className="button-share"
             onClick={() =>
-              data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
+              data.onFeed ? alert("이미 작성하신 게시물입니다.") : Upload()
             }
           >
             피드에 올리기

@@ -28,7 +28,7 @@ const Mission = () => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
-  const missionChallenge = useSelector((state) =>state.mission.challenge);
+  const missionChallenge = useSelector((state) => state.mission.challenge);
   const dispatch = useDispatch();
   useEffect(() => {
     setLoading(true);
@@ -36,15 +36,15 @@ const Mission = () => {
     dispatch(__GetDailymission());
     dispatch(__GetTodaymission());
     setLoading(false);
-  }, [dispatch]);
+  }, []);
   const navigate = useNavigate();
-console.log(missionDaily)
-console.log(missionWeekly)
   return (
     <>
       {!loading ? (
         <>
-          {missionChallenge ? <DailyChallenge mission={missionChallenge[0]} /> :null }
+          {missionChallenge ? (
+            <DailyChallenge mission={missionChallenge[0]} />
+          ) : null}
           <DailyMissionArea>
             <DailyTextArea>
               <DailyText>데일리 미션</DailyText>
@@ -84,7 +84,7 @@ console.log(missionWeekly)
             </DailyTextArea>
 
             <DailyCardBox>
-              {(!loading && missionDaily)
+              {!loading && missionWeekly
                 ? missionWeekly.map((item, index) => {
                     return item.status === 'DEFAULT' ? (
                       <DailyMission

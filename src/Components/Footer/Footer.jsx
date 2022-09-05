@@ -6,6 +6,8 @@ import { MdPersonOutline } from "react-icons/md";
 export function Footer() {
   return (
     <>
+      <div className="footer-dummy-div"></div>
+
       <div className="footer-box">
         <div className="wrap-footer-icons">
           <div className="footer-icon-1">

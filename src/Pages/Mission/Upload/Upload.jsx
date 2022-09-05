@@ -1,17 +1,16 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
-import { ContentTextarea } from './UploadStyled';
+import "./Upload.css";
 
 const Upload = ({}) => {
-  const [content, contentHandler] = useInput('');
+  const [content, contentHandler] = useInput("");
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -23,10 +22,8 @@ const Upload = ({}) => {
   );
   const testText = { content: content };
   const Upload = () => {
-    instance
-      .post(`/profiles/missions/${param}`, testText);
-      navigate('/mypage')
-
+    instance.post(`/profiles/missions/${param}`, testText);
+    navigate("/mypage");
   };
 
   useEffect(() => {
@@ -43,13 +40,15 @@ const Upload = ({}) => {
             <div className="mission-tag-text">#Mission Tag</div>
           </div>
           <img className="mission-image-area" src={data.missionImgUrl}></img>
-          <div className="mission-contents-box">
-            <ContentTextarea onChange={contentHandler} maxLength={140} />
-          </div>
+          <textarea
+            className="upload-contents-input"
+            onChange={contentHandler}
+            maxLength={140}
+          ></textarea>
           <button
             className="button-share"
             onClick={() =>
-              data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
+              data.onFeed ? alert("이미 작성하신 게시물입니다.") : Upload()
             }
           >
             피드에 올리기

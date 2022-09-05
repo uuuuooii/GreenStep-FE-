@@ -24,12 +24,11 @@ const Upload = ({}) => {
   const testText = { content: content };
   const Upload = () => {
     instance
-      .post(`/profiles/missions/${param}`, testText)
-      .then((res) => console.log(res));
+      .post(`/profiles/missions/${param}`, testText);
+      navigate('/mypage')
+
   };
 
-  // console.log(requestBody)
-  // console.log(requestBody);
   useEffect(() => {
     setLoding(true);
     dispatch(getCertThunk());

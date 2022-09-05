@@ -11,13 +11,23 @@ import './Upload.css';
 import { ContentTextarea } from './UploadStyled';
 
 const Upload = ({}) => {
-  // const []
+  const [content, contentHandler] = useInput('');
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.userInfo.certification);
-  console.log(data);
+  const data = useSelector((state) =>
+    state.userInfo.certification.length > 1
+      ? state.userInfo.certification.filter((item) => item.id == param)[0]
+      : state.userInfo.certification[0]
+  );
+  const requestBody = { content: content };
+  const Upload = () => {
+    instance
+      .post(`/profiles/missions/${param}`, requestBody)
+      // .then((res) => console.log(res));
+  };
+  console.log(requestBody);
   useEffect(() => {
     setLoding(true);
     dispatch(getCertThunk());
@@ -25,19 +35,21 @@ const Upload = ({}) => {
   }, []);
   return (
     <>
-      <div className="detail-wrap-shape">
-        <div className="mission-name-and-tag-area">
-          <div className="mission-name-text">title</div>
-          <div className="mission-tag-text">#Mission Tag</div>
+      {!loading ? (
+        <div className="detail-wrap-shape">
+          <div className="mission-name-and-tag-area">
+            <div className="mission-name-text">{data.missionName}</div>
+            <div className="mission-tag-text">#Mission Tag</div>
+          </div>
+          <img className="mission-image-area" src={data.missionImgUrl}></img>
+          <div className="mission-contents-box">
+            <ContentTextarea onChange={contentHandler} maxLength={140} />
+          </div>
+          <button className="button-share" onClick={() => Upload()}>
+            피드에 올리기
+          </button>
         </div>
-        <div className="mission-image-area"></div>
-        <div className="mission-contents-box">
-<ContentTextarea/>
-        </div>
-        <button className="button-share" onClick={() => navigate('/feed')}>
-          피드에 올리기
-        </button>
-      </div>
+      ) : null}
     </>
   );
 };

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const ContentTextarea = styled.textarea`
-  width: 330px;
-  height: 80px;
+  width: 310px;
+  height: 70px;
+  padding: 10px 5px;
   border-radius: 5px;
   overflow: hidden;
   &:focus{

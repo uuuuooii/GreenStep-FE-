@@ -11,7 +11,7 @@ import {
 import './Archive.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiSettings } from 'react-icons/fi';
-import { ImageCard, } from './ArchiveStyled';
+import { ImageCard } from './ArchiveStyled';
 
 const Archive = () => {
   const param = useParams().id;
@@ -23,7 +23,6 @@ const Archive = () => {
       ? state.userInfo.certification
       : state.userInfo.post
   );
-  console.log(data);
   useEffect(() => {
     setLoding(true);
     dispatch(getPostThunk());

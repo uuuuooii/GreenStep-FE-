@@ -24,13 +24,11 @@ const Admin = () => {
   const Verify = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=DONE`)
-      .then((res) => console.log(res));
     window.location.reload();
   };
   const Reject = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=REJECTED`)
-      .then((res) => console.log(res));
     window.location.reload();
   };
   console.log(feedList);

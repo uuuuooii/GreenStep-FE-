@@ -21,13 +21,15 @@ const Upload = ({}) => {
       ? state.userInfo.certification.filter((item) => item.id == param)[0]
       : state.userInfo.certification[0]
   );
-  const requestBody = { content: content };
+  const testText = { content: content };
   const Upload = () => {
     instance
-      .post(`/profiles/missions/${param}`, requestBody)
-      // .then((res) => console.log(res));
+      .post(`/profiles/missions/${param}`, testText)
+      .then((res) => console.log(res));
   };
-  console.log(requestBody);
+
+  // console.log(requestBody)
+  // console.log(requestBody);
   useEffect(() => {
     setLoding(true);
     dispatch(getCertThunk());
@@ -45,7 +47,12 @@ const Upload = ({}) => {
           <div className="mission-contents-box">
             <ContentTextarea onChange={contentHandler} maxLength={140} />
           </div>
-          <button className="button-share" onClick={() => Upload()}>
+          <button
+            className="button-share"
+            onClick={() =>
+              data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
+            }
+          >
             피드에 올리기
           </button>
         </div>

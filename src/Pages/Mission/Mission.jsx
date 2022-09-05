@@ -8,7 +8,6 @@ import {
 } from "../../Redux/modules/mission";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
 //componenes import
 import Completed from "./Completed/Completed";
 import DailyMission from "./Daily/DailyMission";

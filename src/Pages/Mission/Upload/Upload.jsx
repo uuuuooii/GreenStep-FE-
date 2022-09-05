@@ -1,17 +1,16 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
-import { ContentTextarea } from './UploadStyled';
+import "./Upload.css";
 
 const Upload = ({}) => {
-  const [content, contentHandler] = useInput('');
+  const [content, contentHandler] = useInput("");
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -23,9 +22,8 @@ const Upload = ({}) => {
   );
   const requestBody = { content: content };
   const Upload = () => {
-    instance
-      .post(`/profiles/missions/${param}`, requestBody)
-      // .then((res) => console.log(res));
+    instance.post(`/profiles/missions/${param}`, requestBody);
+    // .then((res) => console.log(res));
   };
   console.log(requestBody);
   useEffect(() => {

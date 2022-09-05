@@ -19,7 +19,7 @@ const Header = () => {
   });
 
   const onClickToastPopup = () => {
-    ToastsStore.info("토스트 굽는 중!"); //success: 초록색, info: 하늘색, warning: 노란색, error: 붉은색
+    ToastsStore.success("토스트 굽는 중!");
   };
 
   return (

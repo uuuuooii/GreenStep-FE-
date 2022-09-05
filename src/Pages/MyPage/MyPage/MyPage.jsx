@@ -4,7 +4,7 @@ import Footer from '../../../Components/Footer/Footer';
 import {
   getUserInfoThunk,
   getCertThunk,
-  getPostThunk
+  getPostThunk,
 } from '../../../Redux/modules/userInfoSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiSettings } from 'react-icons/fi';
@@ -50,17 +50,16 @@ const MyPage = () => {
 
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">
-            <div className="photoshots-viewmore-box">
-              <div className="photoshots-text-and-icon">
-                <div className="photoshots-text">인증샷 아카이브</div>
-                <div className="photoshots-viewmore-icon">
-                  <ArchiveArrow
-                    onClick={() => navigate('/archive/certification')}
-                  />
-                </div>
+            <div className="photoshots-text-and-icon">
+              <div className="photoshots-text">인증샷 아카이브</div>
+              <div className="photoshots-viewmore-icon">
+                <ArchiveArrow
+                  onClick={() => navigate('/archive/certification')}
+                />
               </div>
             </div>
           </div>
+
           <div className="photoshots-archive-box">
             {!loading && certification.length > 1 ? (
               certification.map((item) => (
@@ -82,14 +81,12 @@ const MyPage = () => {
             <div className="posts-text-and-icon">
               <div className="posts-text">게시물 아카이브</div>
               <div className="posts-viewmore-icon">
-                <ArchiveArrow
-                  onClick={() => navigate('/archive/post')}
-                />
+                <ArchiveArrow onClick={() => navigate('/archive/post')} />
               </div>
             </div>
           </div>
           <div className="posts-archive-box">
-          {!loading && post.length > 1 ? (
+            {!loading && post.length > 1 ? (
               post.map((item) => (
                 <img
                   src={item.missionImgUrl}

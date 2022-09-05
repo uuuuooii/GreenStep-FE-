@@ -29,10 +29,8 @@ const DailyChallenge = ({ item }) => {
     return () => clearInterval(id);
   }, []);
   const navigate = useNavigate();
-
-  //redux
   const mission = useSelector((state) => state.mission.challenge[0]);
-  // console.log(useSelector((state) => state));
+  console.log(mission);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(__GetTodaymission());

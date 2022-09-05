@@ -16,7 +16,7 @@ export const MissionCamera = () => {
   const missionId = useParams().id;
   const navigate = useNavigate();
   const Upload = () => {
-    instance.post(`http://54.180.30.74/missions/1`,Certification).then((res)=>console.log(res));
+    instance.post(`http://54.180.30.74/missions/${missionId}`,Certification).then((res)=>console.log(res));
     navigate(`/mission`);
   };
 

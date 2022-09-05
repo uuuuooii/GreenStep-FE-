@@ -1,10 +1,28 @@
-import { useNavigate } from "react-router-dom";
-import React from "react";
-import "./Upload.css";
+//react import
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import useInput from '../../../hooks/useInput';
+//modules import
+import instance from '../../../Redux/modules/instance';
+import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+//styled import
+import './Upload.css';
+import { ContentTextarea } from './UploadStyled';
 
 const Upload = ({}) => {
+  // const []
+  const param = useParams().id;
+  const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.userInfo.certification);
+  console.log(data);
+  useEffect(() => {
+    setLoding(true);
+    dispatch(getCertThunk());
+    setLoding(false);
+  }, []);
   return (
     <>
       <div className="detail-wrap-shape">
@@ -14,13 +32,9 @@ const Upload = ({}) => {
         </div>
         <div className="mission-image-area"></div>
         <div className="mission-contents-box">
-          <p className="mission-contents-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            pellentesque aliquet nisl nisl, amet, quis. Elementum feugiat
-            maecenas nunc vestibulum dictumst.
-          </p>
+<ContentTextarea/>
         </div>
-        <button className="button-share" onClick={() => navigate("/feed")}>
+        <button className="button-share" onClick={() => navigate('/feed')}>
           피드에 올리기
         </button>
       </div>

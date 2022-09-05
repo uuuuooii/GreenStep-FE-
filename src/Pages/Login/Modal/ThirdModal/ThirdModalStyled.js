@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AiOutlineCheckCircle,AiFillCheckCircle } from 'react-icons/ai';
+import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
 
 export const ThirdModalBody = styled.div`
   display: ${(props) => (props.display == 3 ? 'block' : 'none')};
@@ -76,7 +76,24 @@ export const TextInput = styled.input`
     outline: 0.5px solid black;
   }
 `;
+export const CheckMailArea = styled.div`
+  display: flex;
+  margin: 10px 0;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const CheckMailIcon = styled(AiOutlineCheckCircle)`
+  color: ${(props) => (props.color ? props.color : 'black')};
+  background-color: ${(props) =>
+    props.background ? props.background : 'white'};
+  width: 20px;
+  height: 20px;
+  transition: all 0.5s;
+  border-radius: 10px;
+`;
 
-export const CheckMail = styled(AiOutlineCheckCircle)`
-color: yellow;
-`
+export const CheckMailText = styled.div`
+  font-size: 14px;
+  margin: 0 10px;
+`;

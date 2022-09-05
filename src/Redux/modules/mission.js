@@ -17,9 +17,7 @@ export const __GetTodaymission = createAsyncThunk(
   "/missions/today-lists/__GetTodaymission",
   async () => {
     try {
-      const response = await instance.get(
-        "/missions/today-lists"
-      );
+      const response = await instance.get("/missions/today-lists");
       const data = response.data.data;
       // console.log(data);
       return data;
@@ -31,9 +29,7 @@ export const __GetDailymission = createAsyncThunk(
   "/missions/daily-lists/__GetDailymission",
   async () => {
     try {
-      const response = await instance.get(
-        "/missions/daily-lists"
-      );
+      const response = await instance.get("/missions/daily-lists");
       const data = response.data.data;
       return data;
     } catch (error) {}
@@ -44,9 +40,7 @@ export const __GetWeeklymission = createAsyncThunk(
   "/missions/weekly-lists/__GetWeeklymission",
   async () => {
     try {
-      const response = await instance.get(
-        "/missions/weekly-lists"
-      );
+      const response = await instance.get("/missions/weekly-lists");
       const data = response.data.data;
       return data;
     } catch (error) {}

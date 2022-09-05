@@ -86,7 +86,7 @@ const Mission = () => {
             </DailyTextArea>
 
             <DailyCardBox>
-              {!loading && missionDaily
+              {missionDaily
                 ? missionWeekly.map((item, index) => {
                     return item.status === "DEFAULT" ? (
                       <DailyMission

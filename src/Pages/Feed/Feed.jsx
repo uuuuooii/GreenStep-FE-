@@ -68,27 +68,50 @@ const Feed = () => {
   const URL = process.env.REACT_APP_URL;
   const ZeroPage = () => {
     setLoding(true);
-    instance
-      .get(`${URL}/feed/?lastFeedId=${Number.MAX_SAFE_INTEGER}`)
-      .then((res) => {
-        setFeedList(res.data.data);
-        setLast(res.data.data[res.data.data.length - 1].id);
-      });
+    category == 0
+      ? instance
+          .get(`${URL}/feed/?lastFeedId=${Number.MAX_SAFE_INTEGER}`)
+          .then((res) => {
+            setFeedList(res.data.data);
+            setLast(res.data.data[res.data.data.length - 1].id);
+          })
+      : instance
+          .get(
+            `${URL}/feed/tags/${categoryApi[category]}/?lastFeedId=${
+              last === 0 ? Number.MAX_SAFE_INTEGER : last
+            }`
+          )
+          .then((res) => {
+            console.log(res);
+            setFeedList([...FeedList, ...res.data.data]);
+            setLast(res.data.data[res.data.data.length - 1].id);
+          });
     setLoding(false);
   };
   const TagClick = () => {
     setLoding(true);
     category == 0
-      ? instance.get(`${URL}/feed/?lastFeedId=${last}`).then((res) => {
-          setFeedList([...FeedList, ...res.data.data]);
-          setLast(res.data.data[res.data.data.length - 1].id);
-        })
-      : setFeedList([
-          ...FeedList,
-          instance
-            .get(`${URL}/feed/categoryes/${categoryApi[category]}`)
-            .then((res) => res.data.data),
-        ]);
+      ? instance
+          .get(
+            `${URL}/feed/?lastFeedId=${
+              last == 0 ? Number.MAX_SAFE_INTEGER : last
+            }`
+          )
+          .then((res) => {
+            setFeedList([...FeedList, ...res.data.data]);
+            setLast(res.data.data[res.data.data.length - 1].id);
+          })
+      : instance
+          .get(
+            `${URL}/feed/tags/${categoryApi[category]}/?lastFeedId=${
+              last == 0 ? Number.MAX_SAFE_INTEGER : last
+            }`
+          )
+          .then((res) => {
+            console.log(res);
+            setFeedList([...FeedList, ...res.data.data]);
+            setLast(res.data.data[res.data.data.length - 1].id);
+          });
     setLoding(false);
   };
 
@@ -98,14 +121,13 @@ const Feed = () => {
 
   useEffect(() => {
     setFeedList([]);
-    setPage(1);
+    setPage(0);
+    setLast(0);
   }, [category]);
 
   useEffect(() => {
-    page === 0 ? ZeroPage() : (page%2===0) ? TagClick() : console.log()
+    (page === 0 || page % 2)  ? TagClick() : console.log();
   }, [page]);
-  console.log(FeedList);
-  console.log(page);
   const userList = [
     {
       userId: '우수진',
@@ -165,7 +187,7 @@ const Feed = () => {
           <TotalFeed>
             <FeedCard>
               <CardTopArea>
-                <TagArea>{item.category}</TagArea>
+                <TagArea>{item.tag}</TagArea>
 
                 <ClapArea>
                   <ClapPoint>{item.clapCount}</ClapPoint>
@@ -178,7 +200,7 @@ const Feed = () => {
 
               <CardBottomArea>
                 <FeedProfile src={item.profilePhoto} />
-                <FeedNickname>{item.nickname}</FeedNickname>
+                <FeedNickname>{item.authorName}</FeedNickname>
               </CardBottomArea>
             </FeedCard>
             <FeedContent>

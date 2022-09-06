@@ -167,6 +167,8 @@ export const CardBottomArea = styled.div`
   background: rgba(148, 148, 148, 0.8);
   box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.15);
   border-radius: 7px;
+  position: absolute;
+  bottom: 0;
 `;
 
 export const CardTopArea = styled.div`
@@ -210,6 +212,7 @@ export const FeedNickname = styled.div`
 
 export const FeedContent = styled.div`
   display: flex;
+  background-color: white;
 `;
 export const FeedArrow = styled(BsArrowReturnRight)`
   width: 15px;

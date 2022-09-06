@@ -108,7 +108,6 @@ const Feed = () => {
             }`
           )
           .then((res) => {
-            console.log(res);
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
           });

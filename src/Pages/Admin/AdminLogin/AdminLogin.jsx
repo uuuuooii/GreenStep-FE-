@@ -19,7 +19,7 @@ const AdminLogin = () => {
     axios.post(`${URL}/admin/login`, loginInfo).then((res) => {
       const token = res.headers.authorization;
       const refresh_token = res.headers.refresh_token;
-      localStorage.setItem('authorization', token);
+      localStorage.setItem('Authorization', token);
       sessionStorage.setItem('refresh-Token', refresh_token);
       navigate('/admin');
     });

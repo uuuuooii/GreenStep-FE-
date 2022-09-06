@@ -45,6 +45,7 @@ const Feed = () => {
   const [loding, setLoding] = useState(false);
   const [FeedList, setFeedList] = useState([]);
   const [RankingList, setRankingList] = useState([]);
+  const [last, setLast] = useState('');
   const [ref, inView] = useInView();
   const categiriList = [
     '전체보기',
@@ -65,35 +66,46 @@ const Feed = () => {
     'etc',
   ];
   const URL = process.env.REACT_APP_URL;
-  console.log(instance.get(`${URL}/feed`).then((res) => res))
-  // const TagClick = () => {
-  //   setLoding(true);
-  //   category == 0
-  //     ? setFeedList([
-  //         ...FeedList,
-  //         instance.get(`${URL}/feed`).then((res) => console.log(res)),
-  //       ])
-  //     : setFeedList([
-  //         ...FeedList,
-  //         instance
-  //           .get(`${URL}/feed/categoryes/${categoryApi[category]}`)
-  //           .then((res) => res.data.data),
-  //       ]);
-  //   setLoding(false);
-  // };
-  // useEffect(() => {
-  //   setPage(page + 1);
-  // }, [inView]);
+  const ZeroPage = () => {
+    setLoding(true);
+    instance
+      .get(`${URL}/feed/?lastFeedId=${Number.MAX_SAFE_INTEGER}`)
+      .then((res) => {
+        setFeedList(res.data.data);
+        setLast(res.data.data[res.data.data.length - 1].id);
+      });
+    setLoding(false);
+  };
+  const TagClick = () => {
+    setLoding(true);
+    category == 0
+      ? instance.get(`${URL}/feed/?lastFeedId=${last}`).then((res) => {
+          setFeedList([...FeedList, ...res.data.data]);
+          setLast(res.data.data[res.data.data.length - 1].id);
+        })
+      : setFeedList([
+          ...FeedList,
+          instance
+            .get(`${URL}/feed/categoryes/${categoryApi[category]}`)
+            .then((res) => res.data.data),
+        ]);
+    setLoding(false);
+  };
 
-  // useEffect(() => {
-  //   setFeedList([]);
-  //   setPage(1);
-  // }, [category]);
+  useEffect(() => {
+    setPage(page + 1);
+  }, [inView]);
 
-  // useEffect(() => {
-  //   page == 0 ? console.log() : TagClick();
-  // }, [page]);
+  useEffect(() => {
+    setFeedList([]);
+    setPage(1);
+  }, [category]);
 
+  useEffect(() => {
+    page === 0 ? ZeroPage() : (page%2===0) ? TagClick() : console.log()
+  }, [page]);
+  console.log(FeedList);
+  console.log(page);
   const userList = [
     {
       userId: '우수진',
@@ -117,7 +129,7 @@ const Feed = () => {
 
   return (
     <FeedPage>
-      {loding ? (
+      {!loding ? (
         <RankingSkeleton />
       ) : (
         <RankingBox>
@@ -149,7 +161,7 @@ const Feed = () => {
         ))}
       </CategoryArea>
       <FeedArea>
-        {/* {feedList.map((item) => (
+        {FeedList.map((item) => (
           <TotalFeed>
             <FeedCard>
               <CardTopArea>
@@ -162,7 +174,7 @@ const Feed = () => {
                   </ClapBox>
                 </ClapArea>
               </CardTopArea>
-              <LargePhoto src={item.imgUrl} />
+              <LargePhoto src={item.missionImgUrl} />
 
               <CardBottomArea>
                 <FeedProfile src={item.profilePhoto} />
@@ -174,7 +186,7 @@ const Feed = () => {
               <FeedText>{item.content}</FeedText>
             </FeedContent>
           </TotalFeed>
-        ))} */}
+        ))}
         {loding ? (
           <>
             <FeedSkeleton />

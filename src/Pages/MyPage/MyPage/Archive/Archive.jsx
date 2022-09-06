@@ -41,7 +41,7 @@ const Archive = () => {
           </div>
         </div>
         <div className="archive-grid-area">
-          {!loading && data.length > 1 ? (
+          {(!loading && data.length) > 1 ? (
             data.map((item) => (
               <ImageCard
                 className="archive-image-div"
@@ -49,7 +49,7 @@ const Archive = () => {
                 onClick={() => navigate(`/upload/${item.id}`)}
               />
             ))
-          ) : !loading && data.length === 1 ? (
+          ) : (!loading && data.length) === 1 ? (
             <ImageCard
               className="archive-image-div"
               src={data[0].missionImgUrl}

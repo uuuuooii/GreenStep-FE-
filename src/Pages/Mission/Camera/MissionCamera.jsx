@@ -16,11 +16,10 @@ export const MissionCamera = () => {
   const missionId = useParams().id;
   const navigate = useNavigate();
   const Upload = () => {
-    instance.post(`/missions/${missionId}`,Certification).then((res)=>console.log(res));
+    instance.post(`/missions/${missionId}`,Certification)
     navigate(`/mission`);
   };
 
-  console.log(Certification);
   return (
     <div className="wrap">
       {image ? (
@@ -54,7 +53,7 @@ export const MissionCamera = () => {
             onClick={() => {
               if (camera.current) {
                 const result = camera.current.switchCamera();
-                console.log(result);
+
               }
             }}
           />

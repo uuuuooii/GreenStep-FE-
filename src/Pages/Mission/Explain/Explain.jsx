@@ -31,7 +31,7 @@ const Explain = () => {
   }, [dispatch]);
   return (
     <>
-      {!loding ? (
+      {(!loding&&paramsCategory) ? (
         <div className="detail-wrap-shape">
           <div className="mission-name-and-tag-area">
             <div className="mission-name-text">

@@ -1,6 +1,6 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import instance from '../../../Redux/modules/instance';
+import React, { useEffect, useState, useMemo } from "react";
+import instance from "../../../Redux/modules/instance";
 //styled import
 import {
   AdminArea,
@@ -10,25 +10,23 @@ import {
   Textarea,
   Button,
   ButtonArea,
-} from './AdminStyled';
+} from "./AdminStyled";
 const Admin = () => {
   const [feedList, setFeedList] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     instance
-      .get('/admin/verification')
+      .get("/admin/verification")
       .then((res) => setFeedList(res.data.data));
     setLoading(false);
   }, []);
   const Verify = (id) => {
-    instance
-      .post(`/admin/verification/${id}?verification=DONE`)
+    instance.post(`/admin/verification/${id}?verification=DONE`);
     window.location.reload();
   };
   const Reject = (id) => {
-    instance
-      .post(`/admin/verification/${id}?verification=REJECTED`)
+    instance.post(`/admin/verification/${id}?verification=REJECTED`);
     window.location.reload();
   };
   console.log(feedList);
@@ -36,7 +34,7 @@ const Admin = () => {
     <>
       {!loading ? (
         feedList.map((item) =>
-          item.status == 'WAITING' ? (
+          item.status == "WAITING" ? (
             <AdminArea key={item.missionImgUrl}>
               <SubmitCard>
                 <SubmitPhoto src={item.missionImgUrl} />
@@ -45,7 +43,7 @@ const Admin = () => {
                 </TextareaArea>
                 <ButtonArea>
                   <Button onClick={() => Verify(item.id)}>승인</Button>
-                  <Button color={'pink'} onClick={() => Reject(item.id)}>
+                  <Button color={"pink"} onClick={() => Reject(item.id)}>
                     거절
                   </Button>
                 </ButtonArea>

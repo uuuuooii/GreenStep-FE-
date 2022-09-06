@@ -18,7 +18,7 @@ const MyPage = () => {
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
-  console.log(post);
+
 
   useEffect(() => {
     setLoding(true);
@@ -89,13 +89,13 @@ const MyPage = () => {
             {!loading && post.length > 1 ? (
               post.map((item) => (
                 <img
-                  src={item.imgUrl}
+                  src={item.missionImgUrl}
                   className="photoshots-archive-images"
                 ></img>
               ))
             ) : !loading && post.length === 1 ? (
               <img
-                src={post[0].imgUrl}
+                src={post[0].missionImgUrl}
                 className="photoshots-archive-images"
               ></img>
             ) : null}

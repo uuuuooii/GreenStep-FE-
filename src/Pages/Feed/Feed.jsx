@@ -149,32 +149,13 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-  const userList = [
-    {
-      userId: "우수진",
-      profilePhoto:
-        "https://cdn.pixabay.com/photo/2020/09/04/20/09/cartoon-5544856__340.jpg",
-      nickname: "강이노",
-    },
-    {
-      userId: "김은혜",
-      profilePhoto:
-        "https://cdn.allets.com/500/2018/11/06/500_364293_1541494746.jpeg",
-      nickname: "강이노",
-    },
-    {
-      userId: "강인호",
-      profilePhoto:
-        "https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png",
-      nickname: "강이노",
-    },
-  ];
+  const userList = useSelector((state)=>state.ranks.ranks)
 
   return (
     <FeedPage>
-      {/* {!loding ? (
+      {loding ? (
         <RankingSkeleton />
-      ) : ( */}
+      ) : (
       <RankingBox>
         <RankTitle>데일리 랭킹</RankTitle>
 
@@ -184,13 +165,13 @@ const Feed = () => {
               <Medal num={index} />
               <UserArea>
                 <UserProfile src={item.profilePhoto} />
-                <UserName>{item.userId}</UserName>
+                <UserName>{item.nickName}</UserName>
               </UserArea>
             </InfoArea>
           ))}
         </MedalBox>
       </RankingBox>
-      {/* )} */}
+       )} 
       <CategoryArea>
         {categiriList.map((item, index) => (
           <CategoryButton

@@ -5,8 +5,11 @@ import {
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import ReactDOMServer from "react-dom/server";
 import PullToRefresh from "pulltorefreshjs";
 import { BiBell } from "react-icons/bi";
+import { TbLeaf } from "react-icons/tb";
+import { RiLeafFill } from "react-icons/ri";
 
 const Header = () => {
   const PullToRefresh = require("pulltorefreshjs");
@@ -16,6 +19,13 @@ const Header = () => {
     onRefresh() {
       window.location.reload();
     },
+
+    iconArrow: ReactDOMServer.renderToString(
+      <TbLeaf className="ptr-arrow-icon" />
+    ),
+    iconRefreshing: ReactDOMServer.renderToString(
+      <RiLeafFill className="ptr-refreshing-icon" />
+    ),
   });
 
   const onClickToastPopup = () => {

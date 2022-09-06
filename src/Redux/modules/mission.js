@@ -10,7 +10,6 @@ export const __GetTodaymission = createAsyncThunk(
     // instance.defaults.headers.common['authorization'] = Token;
     try {
       const response = await instance.get("/missions/today-lists");
-
       const data = response.data.data;
       // console.log(data);
       return data;

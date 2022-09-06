@@ -9,7 +9,8 @@ import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
 import { __changeClap } from "../../Redux/modules/clap";
-import { useDispatch } from "react-redux";
+import { __GetLanks } from "../../Redux/modules/ranks";
+import { useDispatch, useSelector } from "react-redux";
 
 //styled import
 import {
@@ -45,6 +46,10 @@ import {
 import { Button } from "../Admin/Admin/AdminStyled";
 
 const Feed = () => {
+  const ranks = useSelector((state) => state.res);
+
+  console.log("123");
+
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
@@ -58,6 +63,11 @@ const Feed = () => {
     console.log("changeClap");
     dispatch(__changeClap(id));
   };
+
+  useEffect(() => {
+    dispatch(__GetLanks());
+    console.log("123");
+  }, [dispatch]);
 
   const categiriList = [
     "전체보기",
@@ -163,25 +173,25 @@ const Feed = () => {
 
   return (
     <FeedPage>
-      {!loding ? (
+      {/* {!loding ? (
         <RankingSkeleton />
-      ) : (
-        <RankingBox>
-          <RankTitle>데일리 랭킹</RankTitle>
+      ) : ( */}
+      <RankingBox>
+        <RankTitle>데일리 랭킹</RankTitle>
 
-          <MedalBox>
-            {userList.map((item, index) => (
-              <InfoArea>
-                <Medal num={index} />
-                <UserArea>
-                  <UserProfile src={item.profilePhoto} />
-                  <UserName>{item.userId}</UserName>
-                </UserArea>
-              </InfoArea>
-            ))}
-          </MedalBox>
-        </RankingBox>
-      )}
+        <MedalBox>
+          {userList.map((item, index) => (
+            <InfoArea>
+              <Medal num={index} />
+              <UserArea>
+                <UserProfile src={item.profilePhoto} />
+                <UserName>{item.userId}</UserName>
+              </UserArea>
+            </InfoArea>
+          ))}
+        </MedalBox>
+      </RankingBox>
+      {/* )} */}
       <CategoryArea>
         {categiriList.map((item, index) => (
           <CategoryButton

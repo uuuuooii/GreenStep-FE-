@@ -1,12 +1,12 @@
 //react import
-import React, { useState, useEffect } from 'react';
-import instance from '../../Redux/modules/instance';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect, useMemo } from "react";
+import instance from "../../Redux/modules/instance";
+import { useInView } from "react-intersection-observer";
 //components import
-import Medal from './Medal';
-import ClapIcon from '../../static/components/clap';
-import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
-import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
+import Medal from "./Medal";
+import ClapIcon from "../../static/components/clap";
+import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
+import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //styled import
 import {
   FeedPage,
@@ -37,7 +37,7 @@ import {
   LargePhoto,
   ClapBox,
   ScrollDiv,
-} from './FeedStyled';
+} from "./FeedStyled";
 
 const Feed = () => {
   const [category, setCategory] = useState(0);
@@ -45,25 +45,25 @@ const Feed = () => {
   const [loding, setLoding] = useState(false);
   const [FeedList, setFeedList] = useState([]);
   const [RankingList, setRankingList] = useState([]);
-  const [last, setLast] = useState('');
+  const [last, setLast] = useState("");
   const [ref, inView] = useInView();
   const categiriList = [
-    '전체보기',
-    '# NO일회용품',
-    '# 분리수거',
-    '# 환경운동',
-    '# 환경용품사용',
-    '#에너지절약',
-    '#기타',
+    "전체보기",
+    "# NO일회용품",
+    "# 분리수거",
+    "# 환경운동",
+    "# 환경용품사용",
+    "#에너지절약",
+    "#기타",
   ];
   const categoryApi = [
-    'all',
-    'disposable',
-    'separate',
-    'environmental',
-    'goods',
-    'energy',
-    'etc',
+    "all",
+    "disposable",
+    "separate",
+    "environmental",
+    "goods",
+    "energy",
+    "etc",
   ];
   const URL = process.env.REACT_APP_URL;
   const ZeroPage = () => {
@@ -102,28 +102,28 @@ const Feed = () => {
   }, [category]);
 
   useEffect(() => {
-    page === 0 ? ZeroPage() : (page%2===0) ? TagClick() : console.log()
+    page === 0 ? ZeroPage() : page % 2 === 0 ? TagClick() : console.log();
   }, [page]);
   console.log(FeedList);
   console.log(page);
   const userList = [
     {
-      userId: '우수진',
+      userId: "우수진",
       profilePhoto:
-        'https://cdn.pixabay.com/photo/2020/09/04/20/09/cartoon-5544856__340.jpg',
-      nickname: '강이노',
+        "https://cdn.pixabay.com/photo/2020/09/04/20/09/cartoon-5544856__340.jpg",
+      nickname: "강이노",
     },
     {
-      userId: '김은혜',
+      userId: "김은혜",
       profilePhoto:
-        'https://cdn.allets.com/500/2018/11/06/500_364293_1541494746.jpeg',
-      nickname: '강이노',
+        "https://cdn.allets.com/500/2018/11/06/500_364293_1541494746.jpeg",
+      nickname: "강이노",
     },
     {
-      userId: '강인호',
+      userId: "강인호",
       profilePhoto:
-        'https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png',
-      nickname: '강이노',
+        "https://cdn.pixabay.com/photo/2018/03/21/05/55/pig-3245668__340.png",
+      nickname: "강이노",
     },
   ];
 
@@ -170,7 +170,7 @@ const Feed = () => {
                 <ClapArea>
                   <ClapPoint>{item.clapCount}</ClapPoint>
                   <ClapBox>
-                    <ClapIcon color={item.clapByme ? 'black' : 'white'} />
+                    <ClapIcon color={item.clapByme ? "black" : "white"} />
                   </ClapBox>
                 </ClapArea>
               </CardTopArea>

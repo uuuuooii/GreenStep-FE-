@@ -36,7 +36,7 @@ const Mission = () => {
     dispatch(__GetDailymission());
     dispatch(__GetTodaymission());
     setLoading(false);
-  }, [5000]);
+  }, [2000]);
   const navigate = useNavigate();
 
   return (

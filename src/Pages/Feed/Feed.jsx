@@ -7,6 +7,10 @@ import Medal from "./Medal";
 import ClapIcon from "../../static/components/clap";
 import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
+//redux
+import { __changeClap } from "../../Redux/modules/clap";
+import { useDispatch } from "react-redux";
+
 //styled import
 import {
   FeedPage,
@@ -38,6 +42,7 @@ import {
   ClapBox,
   ScrollDiv,
 } from "./FeedStyled";
+import { Button } from "../Admin/Admin/AdminStyled";
 
 const Feed = () => {
   const [category, setCategory] = useState(0);
@@ -47,6 +52,13 @@ const Feed = () => {
   const [RankingList, setRankingList] = useState([]);
   const [last, setLast] = useState("");
   const [ref, inView] = useInView();
+
+  const dispatch = useDispatch();
+  const changeClap = (id) => {
+    console.log("changeClap");
+    dispatch(__changeClap(id));
+  };
+
   const categiriList = [
     "전체보기",
     "# NO일회용품",
@@ -188,11 +200,15 @@ const Feed = () => {
             <FeedCard>
               <CardTopArea>
                 <TagArea>{item.tag}</TagArea>
-
-                <ClapArea>
+                {/* 박수 */}
+                <ClapArea
+                  onClick={() => changeClap(item.id)}
+                  color={item.clapByme ? "black" : "white"}
+                  type="button"
+                >
                   <ClapPoint>{item.clapCount}</ClapPoint>
                   <ClapBox>
-                    <ClapIcon color={item.clapByme ? "black" : "white"} />
+                    <ClapIcon />
                   </ClapBox>
                 </ClapArea>
               </CardTopArea>

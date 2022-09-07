@@ -1,0 +1,44 @@
+.detail-photoshots-wrap-shape {
+  width: 100%;
+  /* height: 92vh; */
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: 6px;
+  background-color: #d9d9d9;
+}
+
+.detail-photoshots-mission-name-and-tag-area {
+  margin: 38px 0px 36px 30px;
+}
+
+.detail-photoshots-mission-name-text {
+  font-size: 25px;
+  margin: 0px 32px 10px 0px;
+}
+
+.detail-photoshots-mission-tag-text {
+  font-size: 15px;
+  color: #868686;
+}
+
+.detail-photoshots-mission-image-area {
+  width: 338px;
+  height: 338px;
+  margin: 0px auto 38px auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.detail-photoshots-button-share {
+  width: 142px;
+  height: 38px;
+  margin: 30px auto;
+  padding-top: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid #868686;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  background-color: #868686;
+}

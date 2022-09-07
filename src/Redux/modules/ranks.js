@@ -6,7 +6,7 @@ export const __GetLanks = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const response = await instance.get("rank/mission/point/daily");
-      const data = response.data;
+      const data = response.data.data;
       console.log(data);
       return data;
     } catch (error) {}

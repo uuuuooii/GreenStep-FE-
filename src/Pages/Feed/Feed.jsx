@@ -139,6 +139,8 @@ const Feed = () => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
 
+  console.log(FeedList);
+
   return (
     <FeedPage>
       {!loading && ranks ? (
@@ -183,7 +185,7 @@ const Feed = () => {
                   <ClapArea onClick={() => changeClap(item.id)} type="button">
                     <ClapPoint>{item.clapCount}</ClapPoint>
                     <ClapBox>
-                      {item.clapByme ? <DoneClap /> : <ClapIcon />}
+                      {item.clapByMe ? <DoneClap /> : <ClapIcon />}
                     </ClapBox>
                   </ClapArea>
                 </CardTopArea>

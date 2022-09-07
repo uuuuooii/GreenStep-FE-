@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./DetailPosts.css";
-import { getDetailPostThunk } from "../../../Redux/modules/detailPostSlice";
+import { getPostThunk } from "../../../Redux/modules/userInfoSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const DetailPosts = () => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
-  const detailPost = useSelector((state) => state.detailPost.detailPost[0]);
+  const Param = useParams().id;
+  const detailPost = useSelector(
+    (state) => state.userInfo.post.filter((item) => item.id == Param)[0]
+  );
 
   useEffect(() => {
     setLoding(true);
-    dispatch(getDetailPostThunk());
+    dispatch(getPostThunk());
     setLoding(false);
   }, []);
 

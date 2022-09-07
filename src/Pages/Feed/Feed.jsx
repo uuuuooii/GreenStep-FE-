@@ -8,7 +8,6 @@ import ClapIcon from '../../static/components/clap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 //redux
-import { __changeClap } from '../../Redux/modules/clap';
 import { __GetLanks } from '../../Redux/modules/ranks';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -46,8 +45,7 @@ import {
 import { Button } from '../Admin/Admin/AdminStyled';
 
 const Feed = () => {
-  const userList = useSelector((state) => state.ranks.ranks);
-  const [count,setCount] = useState(0)
+  const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
@@ -56,15 +54,26 @@ const Feed = () => {
   const [ref, inView] = useInView();
 
   const dispatch = useDispatch();
-  const changeClap = (id) => {
-    dispatch(__changeClap(id));
-    setCount(count+1)
-  };
 
   useEffect(() => {
     dispatch(__GetLanks());
   }, [dispatch]);
-
+  //clap
+  const changeClap = async (id) => {
+    await instance
+      .post(`/feed/claps/${id}`)
+      .then((res) => {
+        setFeedList(
+          FeedList.map((feed) => {
+            if (res.data.data && feed.id === id) feed.clapCount++;
+            else if (!res.data.data && feed.id === id) feed.clapCount--;
+            return feed;
+          })
+        );
+      })
+      .catch((error) => error);
+  };
+  //categri
   const categiriList = [
     '전체보기',
     '# NO일회용품',
@@ -124,11 +133,6 @@ const Feed = () => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
 
-useEffect(()=>{
-TagClick()
-  },[count])
-
-
   return (
     <FeedPage>
       {loding ? (
@@ -138,7 +142,7 @@ TagClick()
           <RankTitle>데일리 랭킹</RankTitle>
 
           <MedalBox>
-            {userList.map((item, index) => (
+            {ranks.map((item, index) => (
               <InfoArea>
                 <Medal num={index} />
                 <UserArea>

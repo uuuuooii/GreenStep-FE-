@@ -143,7 +143,6 @@ const Feed = () => {
       ) : (
         <RankingBox>
           <RankTitle>데일리 랭킹</RankTitle>
-
           <MedalBox>
             {ranks.map((item, index) => (
               <InfoArea>

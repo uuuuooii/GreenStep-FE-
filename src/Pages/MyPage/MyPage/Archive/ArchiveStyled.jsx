@@ -1,15 +1,92 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { MdOutlineDoubleArrow } from 'react-icons/md';
+import { ImCross } from 'react-icons/im';
+import {
+  AiFillDelete,
+  AiOutlineCheckCircle,
+  AiFillCheckCircle,
+} from 'react-icons/ai';
+import { IoIosArrowBack } from 'react-icons/io';
 
 export const ImageCard = styled.img`
-      width: 123px;
-  height: 123px;
-&:hover{
+  width: 100%;
+  height: 100%;
+
+  &:hover {
     cursor: pointer;
-}
-`
+  }
+`;
+export const CardArea = styled.div`
+  position: relative;
+  width: 123px;
+  height: 123px;
+`;
+export const BackArrow = styled(IoIosArrowBack)`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
-    &:hover{
-        cursor: pointer;
-    }
-`
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const ArchiveSelectDiv = styled.div`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Cross = styled(ImCross)`
+  width: 25px;
+  height: 25px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const Delete = styled(AiFillDelete)`
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const DeleteDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: ${(props) =>
+    props.check.includes(props.num) ? 'rgba(255, 255, 255, 0.5)' : 'none'};
+  display: ${(props) => props.display};
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+`;
+
+export const NonCheck = styled(AiOutlineCheckCircle)`
+  width: 20px;
+  height: 20px;
+  bottom: 12px;
+  right: 12px;
+  position: absolute;
+  color: #34bea7;
+  z-index: 10;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+export const Check = styled(AiFillCheckCircle)`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: #34bea7;
+  z-index: 10;
+  &:hover {
+    cursor: pointer;
+  }
+`;

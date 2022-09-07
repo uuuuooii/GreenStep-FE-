@@ -55,7 +55,7 @@ const Feed = () => {
   const [ref, inView] = useInView();
 
   const dispatch = useDispatch();
-  //lanks
+
   useEffect(() => {
     dispatch(__GetLanks());
     console.log("123");

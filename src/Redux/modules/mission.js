@@ -11,7 +11,8 @@ export const __GetTodaymission = createAsyncThunk(
     try {
       const response = await instance.get("/missions/today-lists");
       const data = response.data.data;
-      // console.log(data);
+      console.log(data);
+      console.log(data);
       return data;
     } catch (error) {}
   }

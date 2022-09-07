@@ -138,12 +138,7 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-<<<<<<< HEAD
-=======
 
-  console.log(FeedList);
-
->>>>>>> 52f0bff02af95dd16f667c6ea78d9229d36a9dc4
   return (
     <FeedPage>
       {!loading && ranks ? (
@@ -188,11 +183,7 @@ const Feed = () => {
                   <ClapArea onClick={() => changeClap(item.id)} type="button">
                     <ClapPoint>{item.clapCount}</ClapPoint>
                     <ClapBox>
-<<<<<<< HEAD
-                      {item.clapByMe === true ? <DoneClap /> : <ClapIcon />}
-=======
                       {item.clapByMe ? <DoneClap /> : <ClapIcon />}
->>>>>>> 52f0bff02af95dd16f667c6ea78d9229d36a9dc4
                     </ClapBox>
                   </ClapArea>
                 </CardTopArea>

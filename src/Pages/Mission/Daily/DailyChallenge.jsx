@@ -1,9 +1,8 @@
 //react import
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-//redux
+//redux import
 import { __GetTodaymission } from "../../../Redux/modules/mission";
-import { useDispatch, useSelector } from "react-redux";
 //styled import
 import {
   ChallengeBox,
@@ -16,9 +15,10 @@ import {
   ChallengeWaiting,
   FeedButton,
 } from "./DailyMissionStyled";
+//component import
+import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
 
 const DailyChallenge = ({ mission }) => {
-  const [loading, setLoading] = useState(true);
   const [hour, setHour] = useState(23 - new Date().getHours());
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());
@@ -71,7 +71,7 @@ const DailyChallenge = ({ mission }) => {
             <MissionText>{mission.missionName}</MissionText>
           </ChallengeBody>
         </ChallengeBox>
-      ) : null}
+      ) : <ChallengeSkeleton/>}
     </>
   );
 };

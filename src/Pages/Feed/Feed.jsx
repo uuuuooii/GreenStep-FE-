@@ -8,7 +8,7 @@ import ClapIcon from "../../static/components/clap";
 import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
-import { __changeClap } from "../../Redux/modules/clap";
+
 import { __GetLanks } from "../../Redux/modules/ranks";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -59,9 +59,20 @@ const Feed = () => {
   const [ref, inView] = useInView();
 
   const dispatch = useDispatch();
-  const changeClap = (id) => {
-    console.log("changeClap");
-    dispatch(__changeClap(id));
+  //clap
+  const changeClap = async (id) => {
+    await instance
+      .post(`/feed/claps/${id}`)
+      .then((res) => {
+        setFeedList(
+          FeedList.map((feed) => {
+            if (res.data.data && feed.id === id) feed.clapCount++;
+            else if (!res.data.data && feed.id === id) feed.clapCount--;
+            return feed;
+          })
+        );
+      })
+      .catch((error) => error);
   };
 
   useEffect(() => {
@@ -149,29 +160,29 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-  const userList = useSelector((state)=>state.ranks.ranks)
+  const userList = useSelector((state) => state.ranks.ranks);
 
   return (
     <FeedPage>
       {loding ? (
         <RankingSkeleton />
       ) : (
-      <RankingBox>
-        <RankTitle>데일리 랭킹</RankTitle>
+        <RankingBox>
+          <RankTitle>데일리 랭킹</RankTitle>
 
-        <MedalBox>
-          {userList.map((item, index) => (
-            <InfoArea>
-              <Medal num={index} />
-              <UserArea>
-                <UserProfile src={item.profilePhoto} />
-                <UserName>{item.nickName}</UserName>
-              </UserArea>
-            </InfoArea>
-          ))}
-        </MedalBox>
-      </RankingBox>
-       )} 
+          <MedalBox>
+            {userList.map((item, index) => (
+              <InfoArea>
+                <Medal num={index} />
+                <UserArea>
+                  <UserProfile src={item.profilePhoto} />
+                  <UserName>{item.nickName}</UserName>
+                </UserArea>
+              </InfoArea>
+            ))}
+          </MedalBox>
+        </RankingBox>
+      )}
       <CategoryArea>
         {categiriList.map((item, index) => (
           <CategoryButton

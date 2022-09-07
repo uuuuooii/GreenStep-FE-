@@ -1,16 +1,16 @@
 //react import
-import React, { useState, useEffect, useMemo } from "react";
-import instance from "../../Redux/modules/instance";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect, useMemo } from 'react';
+import instance from '../../Redux/modules/instance';
+import { useInView } from 'react-intersection-observer';
 //components import
-import Medal from "./Medal";
-import ClapIcon from "../../static/components/clap";
-import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
-import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
+import Medal from './Medal';
+import ClapIcon from '../../static/components/clap';
+import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
+import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 //redux
-import { __changeClap } from "../../Redux/modules/clap";
-import { __GetLanks } from "../../Redux/modules/ranks";
-import { useDispatch, useSelector } from "react-redux";
+import { __changeClap } from '../../Redux/modules/clap';
+import { __GetLanks } from '../../Redux/modules/ranks';
+import { useDispatch, useSelector } from 'react-redux';
 
 //styled import
 import {
@@ -42,74 +42,48 @@ import {
   LargePhoto,
   ClapBox,
   ScrollDiv,
-} from "./FeedStyled";
-import { Button } from "../Admin/Admin/AdminStyled";
+} from './FeedStyled';
+import { Button } from '../Admin/Admin/AdminStyled';
 
 const Feed = () => {
-  const ranks = useSelector((state) => state.res);
-
-  console.log("123");
-
+  const userList = useSelector((state) => state.ranks.ranks);
+  const [count,setCount] = useState(0)
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [RankingList, setRankingList] = useState([]);
-  const [last, setLast] = useState("");
+  const [last, setLast] = useState('');
   const [ref, inView] = useInView();
 
   const dispatch = useDispatch();
   const changeClap = (id) => {
-    console.log("changeClap");
     dispatch(__changeClap(id));
+    setCount(count+1)
   };
 
   useEffect(() => {
     dispatch(__GetLanks());
-    console.log("123");
   }, [dispatch]);
 
   const categiriList = [
-    "전체보기",
-    "# NO일회용품",
-    "# 분리수거",
-    "# 환경운동",
-    "# 환경용품사용",
-    "#에너지절약",
-    "#기타",
+    '전체보기',
+    '# NO일회용품',
+    '# 분리수거',
+    '# 환경운동',
+    '# 환경용품사용',
+    '#에너지절약',
+    '#기타',
   ];
   const categoryApi = [
-    "all",
-    "disposable",
-    "separate",
-    "environmental",
-    "goods",
-    "energy",
-    "etc",
+    'all',
+    'disposable',
+    'separate',
+    'environmental',
+    'goods',
+    'energy',
+    'etc',
   ];
   const URL = process.env.REACT_APP_URL;
-  const ZeroPage = () => {
-    setLoding(true);
-    category == 0
-      ? instance
-          .get(`${URL}/feed/?lastFeedId=${Number.MAX_SAFE_INTEGER}`)
-          .then((res) => {
-            setFeedList(res.data.data);
-            setLast(res.data.data[res.data.data.length - 1].id);
-          })
-      : instance
-          .get(
-            `${URL}/feed/tags/${categoryApi[category]}/?lastFeedId=${
-              last === 0 ? Number.MAX_SAFE_INTEGER : last
-            }`
-          )
-          .then((res) => {
-            console.log(res);
-            setFeedList([...FeedList, ...res.data.data]);
-            setLast(res.data.data[res.data.data.length - 1].id);
-          });
-    setLoding(false);
-  };
   const TagClick = () => {
     setLoding(true);
     category == 0
@@ -149,29 +123,33 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-  const userList = useSelector((state)=>state.ranks.ranks)
+
+useEffect(()=>{
+TagClick()
+  },[count])
+
 
   return (
     <FeedPage>
       {loding ? (
         <RankingSkeleton />
       ) : (
-      <RankingBox>
-        <RankTitle>데일리 랭킹</RankTitle>
+        <RankingBox>
+          <RankTitle>데일리 랭킹</RankTitle>
 
-        <MedalBox>
-          {userList.map((item, index) => (
-            <InfoArea>
-              <Medal num={index} />
-              <UserArea>
-                <UserProfile src={item.profilePhoto} />
-                <UserName>{item.nickName}</UserName>
-              </UserArea>
-            </InfoArea>
-          ))}
-        </MedalBox>
-      </RankingBox>
-       )} 
+          <MedalBox>
+            {userList.map((item, index) => (
+              <InfoArea>
+                <Medal num={index} />
+                <UserArea>
+                  <UserProfile src={item.profilePhoto} />
+                  <UserName>{item.nickName}</UserName>
+                </UserArea>
+              </InfoArea>
+            ))}
+          </MedalBox>
+        </RankingBox>
+      )}
       <CategoryArea>
         {categiriList.map((item, index) => (
           <CategoryButton
@@ -193,7 +171,7 @@ const Feed = () => {
                 {/* 박수 */}
                 <ClapArea
                   onClick={() => changeClap(item.id)}
-                  color={item.clapByme ? "black" : "white"}
+                  color={item.clapByme ? 'black' : 'white'}
                   type="button"
                 >
                   <ClapPoint>{item.clapCount}</ClapPoint>

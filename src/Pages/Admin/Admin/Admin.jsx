@@ -23,11 +23,11 @@ const Admin = () => {
   }, []);
   const Verify = (id) => {
     instance.post(`/admin/verification/${id}?verification=DONE`);
-    window.location.reload();
+    setFeedList(feedList.filter((it)=>it.id!==id))
   };
   const Reject = (id) => {
     instance.post(`/admin/verification/${id}?verification=REJECTED`);
-    window.location.reload();
+    setFeedList(feedList.filter((it)=>it.id!==id))
   };
   console.log(feedList);
   return (

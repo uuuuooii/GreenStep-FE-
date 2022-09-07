@@ -69,10 +69,11 @@ const MyPage = () => {
 
 
             {!loading && certification.length > 1 ? (
-              certification.map((item) => (
+              certification.map((item,index) => (
                 <img
                   src={item.missionImgUrl}
                   className="photoshots-archive-images"
+                  key={item.missionImgUrl+index}
                 />
               ))
             ) : !loading && certification.length === 1 ? (
@@ -96,10 +97,11 @@ const MyPage = () => {
           </div>
           <div className="posts-archive-box">
             {!loading && post.length > 1 ? (
-              post.map((item) => (
+              post.map((item,index) => (
                 <img
                   src={item.missionImgUrl}
                   className="photoshots-archive-images"
+                  key={item.missionImgUrl+index}
                 ></img>
               ))
             ) : !loading && post.length === 1 ? (

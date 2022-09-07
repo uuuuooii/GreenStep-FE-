@@ -7,10 +7,6 @@ export const __GetLanks = createAsyncThunk(
     try {
       const response = await instance.get("rank/mission/point/daily");
       const data = response.data.data;
-<<<<<<< HEAD
-      console.log(data);
-=======
->>>>>>> 0c5acaba76408ddc8eb24fc2aee79c5cf9820db5
       return data;
     } catch (error) {}
   }

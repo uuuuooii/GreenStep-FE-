@@ -1,14 +1,18 @@
+//react import
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./MyPage.css";
 import Footer from "../../../Components/Footer/Footer";
+//modules import
 import {
   getUserInfoThunk,
   getCertThunk,
   getPostThunk,
 } from "../../../Redux/modules/userInfoSlice";
-import { useDispatch, useSelector } from "react-redux";
+//component import
+import { MypageSkeleton } from "../../../Components/Skeleton/SkeletonStyled";
 import { FiSettings } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 
 const MyPage = () => {
@@ -46,7 +50,9 @@ const MyPage = () => {
               <div className="email-text">{userInfo.email}</div>
             </div>
           </div>
-        ) : null}
+        ) : <div className="image-nick-email">
+        <div className="image-area"></div>
+      </div>}
 
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">
@@ -61,19 +67,23 @@ const MyPage = () => {
           </div>
 
           <div className="photoshots-archive-box">
+
+
             {!loading && certification.length > 1 ? (
               certification.map((item) => (
                 <img
                   src={item.missionImgUrl}
                   className="photoshots-archive-images"
-                ></img>
+                />
               ))
             ) : !loading && certification.length === 1 ? (
               <img
                 src={certification[0].missionImgUrl}
                 className="photoshots-archive-images"
-              ></img>
-            ) : null}
+              />
+            ) :  <><MypageSkeleton/><MypageSkeleton/><MypageSkeleton/></>}
+
+
           </div>
         </div>
         <div className="posts-archive-area">
@@ -98,7 +108,7 @@ const MyPage = () => {
                 src={post[0].missionImgUrl}
                 className="photoshots-archive-images"
               ></img>
-            ) : null}
+            ) : <><MypageSkeleton/><MypageSkeleton/><MypageSkeleton/></>}
           </div>
         </div>
       </div>

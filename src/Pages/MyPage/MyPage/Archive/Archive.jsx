@@ -10,42 +10,44 @@ import {
 import instance from '../../../../Redux/modules/instance';
 //styled import
 import './Archive.css';
-import { IoIosArrowBack } from 'react-icons/io';
-import { FiSettings } from 'react-icons/fi';
 
 import {
   ImageCard,
   ArchiveSelectDiv,
   CardArea,
-  ArchiveArrow,
   Cross,
   Delete,
   DeleteDiv,
   NonCheck,
   Check,
   BackArrow,
+  SkeletonCard,
 } from './ArchiveStyled';
 
 const Archive = () => {
-  const URL = process.env.REACT_APP_URL;
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const [delState, setDelState] = useState(false);
   const [delArr, setDelArr] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const SkeletonList = [];
+  for (let i = 0; i < 20; i++) {
+    SkeletonList.push(i);
+  }
   const data = useSelector((state) =>
     param === 'certification'
       ? state.userInfo.certification
       : state.userInfo.post
   );
+
   useEffect(() => {
     setLoding(true);
     dispatch(getPostThunk());
     dispatch(getCertThunk());
     setLoding(false);
   }, []);
-  console.log(delArr);
   return (
     <>
       <div className="wrap-archive">
@@ -64,11 +66,7 @@ const Archive = () => {
               </ArchiveSelectDiv>
             ) : (
               <Delete
-                onClick={() =>
-                  instance
-                    .delete(`/feed`, { data: delArr })
-                    .then((res) => console.log(res))
-                }
+                onClick={() => instance.delete(`/feed`, { data: delArr })}
               />
             )}
           </div>
@@ -76,7 +74,7 @@ const Archive = () => {
         <div className="archive-grid-area">
           {(!loading && data.length) > 1 ? (
             data.map((item) => (
-              <CardArea key={item.id}>
+              <CardArea key={item + item.id}>
                 <ImageCard
                   src={item.missionImgUrl}
                   onClick={() => navigate(`/upload/${item.id}`)}
@@ -110,7 +108,11 @@ const Archive = () => {
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}
               </DeleteDiv>
             </CardArea>
-          ) : null}
+          ) : (
+            SkeletonList.map((item, index) => (
+              <SkeletonCard key={item * index} />
+            ))
+          )}
         </div>
       </div>
     </>

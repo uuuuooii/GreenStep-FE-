@@ -139,8 +139,6 @@ const Feed = () => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
 
-  console.log(FeedList);
-
   return (
     <FeedPage>
       {!loading && ranks ? (

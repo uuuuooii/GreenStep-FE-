@@ -34,19 +34,22 @@ const Upload = ({}) => {
   return (
     <>
       {!loading ? (
-        <div className="detail-wrap-shape">
-          <div className="mission-name-and-tag-area">
-            <div className="mission-name-text">{data.missionName}</div>
-            <div className="mission-tag-text">{data.tag}</div>
+        <div className="upload-wrap-shape">
+          <div className="upload-mission-name-and-tag-area">
+            <div className="upload-mission-name-text">{data.missionName}</div>
+            <div className="upload-mission-tag-text">{data.tag}</div>
           </div>
-          <img className="mission-image-area" src={data.missionImgUrl}></img>
+          <img
+            className="upload-mission-image-area"
+            src={data.missionImgUrl}
+          ></img>
           <textarea
             className="upload-contents-input"
             onChange={contentHandler}
             maxLength={140}
           ></textarea>
           <button
-            className="button-share"
+            className="upload-button-share"
             onClick={() =>
               data.onFeed ? alert("이미 작성하신 게시물입니다.") : Upload()
             }

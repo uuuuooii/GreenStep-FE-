@@ -19,7 +19,6 @@ const MyPage = () => {
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
 
-
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());

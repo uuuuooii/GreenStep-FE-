@@ -1,4 +1,4 @@
-.detail-wrap-shape {
+.detail-posts-wrap-shape {
   width: 100%;
   /* height: 92vh; */
   display: flex;
@@ -9,28 +9,28 @@
   background-color: #d9d9d9;
 }
 
-.mission-name-and-tag-area {
+.detail-posts-mission-name-and-tag-area {
   margin: 38px 0px 36px 30px;
 }
 
-.mission-name-text {
+.detail-posts-mission-name-text {
   font-size: 25px;
-  margin-bottom: 10px;
+  margin: 0px 32px 10px 0px;
 }
 
-.mission-tag-text {
+.detail-posts-mission-tag-text {
   font-size: 15px;
   color: #868686;
 }
 
-.mission-image-area {
+.detail-posts-mission-image-area {
   width: 338px;
   height: 338px;
   margin: 0px auto 38px auto;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.mission-contents-box {
+.detail-posts-mission-contents-box {
   width: 338px;
   height: 80px;
   margin-left: 18px;
@@ -38,13 +38,13 @@
   background-color: #ffffff;
 }
 
-.mission-contents-text {
+.detail-posts-mission-contents-text {
   font-size: 12px;
   margin: 10px;
   padding: 0px 2px;
 }
 
-.button-share {
+.detail-posts-button-share {
   width: 142px;
   height: 38px;
   margin: 30px auto;

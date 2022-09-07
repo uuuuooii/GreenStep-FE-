@@ -1,23 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./DetailPosts.css";
+import { getDetailPostThunk } from "../../../Redux/modules/detailPostSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const DetailPosts = () => {
+  const [loading, setLoding] = useState(false);
+  const dispatch = useDispatch();
+  const detailPost = useSelector((state) => state.detailPost.detailPost[0]);
+
+  useEffect(() => {
+    setLoding(true);
+    dispatch(getDetailPostThunk());
+    setLoding(false);
+  }, []);
+
   return (
     <>
-      <div className="detail-wrap-shape">
-        <div className="mission-name-and-tag-area">
-          <div className="mission-name-text">Mission Name</div>
-          <div className="mission-tag-text">#Mission Tag</div>
+      <div className="detail-posts-wrap-shape">
+        <div className="detail-posts-mission-name-and-tag-area">
+          <div className="detail-posts-mission-name-text">
+            {detailPost?.missionName}
+          </div>
+          <div className="detail-posts-mission-tag-text">{detailPost?.tag}</div>
         </div>
-        <div className="mission-image-area"></div>
-        <div className="mission-contents-box">
-          <p className="mission-contents-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            pellentesque aliquet nisl nisl, amet, quis. Elementum feugiat
-            maecenas nunc vestibulum dictumst.
+        <img
+          className="detail-posts-mission-image-area"
+          src={
+            detailPost
+              ? detailPost.missionImgUrl
+              : "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-gray-solid-color-simple-background-image_557028.jpg"
+          }
+        ></img>
+        <div className="detail-posts-mission-contents-box">
+          <p className="detail-posts-mission-contents-text">
+            {detailPost?.content}
           </p>
         </div>
-        <button className="button-share">공유하기</button>
+        <button className="detail-posts-button-share">공유하기</button>
       </div>
     </>
   );

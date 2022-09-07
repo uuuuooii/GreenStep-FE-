@@ -8,7 +8,6 @@ import ClapIcon from "../../static/components/clap";
 import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
-
 import { __GetLanks } from "../../Redux/modules/ranks";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -46,10 +45,7 @@ import {
 import { Button } from "../Admin/Admin/AdminStyled";
 
 const Feed = () => {
-  const ranks = useSelector((state) => state.res);
-
-  console.log("123");
-
+  const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loding, setLoding] = useState(false);
@@ -59,6 +55,11 @@ const Feed = () => {
   const [ref, inView] = useInView();
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(__GetLanks());
+    console.log("123");
+  }, [dispatch]);
   //clap
   const changeClap = async (id) => {
     await instance
@@ -74,12 +75,7 @@ const Feed = () => {
       })
       .catch((error) => error);
   };
-
-  useEffect(() => {
-    dispatch(__GetLanks());
-    console.log("123");
-  }, [dispatch]);
-
+  //categri
   const categiriList = [
     "전체보기",
     "# NO일회용품",
@@ -99,28 +95,7 @@ const Feed = () => {
     "etc",
   ];
   const URL = process.env.REACT_APP_URL;
-  const ZeroPage = () => {
-    setLoding(true);
-    category == 0
-      ? instance
-          .get(`${URL}/feed/?lastFeedId=${Number.MAX_SAFE_INTEGER}`)
-          .then((res) => {
-            setFeedList(res.data.data);
-            setLast(res.data.data[res.data.data.length - 1].id);
-          })
-      : instance
-          .get(
-            `${URL}/feed/tags/${categoryApi[category]}/?lastFeedId=${
-              last === 0 ? Number.MAX_SAFE_INTEGER : last
-            }`
-          )
-          .then((res) => {
-            console.log(res);
-            setFeedList([...FeedList, ...res.data.data]);
-            setLast(res.data.data[res.data.data.length - 1].id);
-          });
-    setLoding(false);
-  };
+
   const TagClick = () => {
     setLoding(true);
     category == 0
@@ -160,7 +135,6 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-  const userList = useSelector((state) => state.ranks.ranks);
 
   return (
     <FeedPage>
@@ -171,7 +145,7 @@ const Feed = () => {
           <RankTitle>데일리 랭킹</RankTitle>
 
           <MedalBox>
-            {userList.map((item, index) => (
+            {ranks.map((item, index) => (
               <InfoArea>
                 <Medal num={index} />
                 <UserArea>

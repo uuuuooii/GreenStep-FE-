@@ -90,3 +90,10 @@ export const Check = styled(AiFillCheckCircle)`
     cursor: pointer;
   }
 `;
+
+export const SkeletonCard = styled.div`
+  width: 123px;
+  height: 123px;
+  background-color: gray;
+  margin: 0 5px;
+`

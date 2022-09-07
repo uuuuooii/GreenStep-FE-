@@ -4,7 +4,8 @@ import instance from "../../Redux/modules/instance";
 import { useInView } from "react-intersection-observer";
 //components import
 import Medal from "./Medal";
-import ClapIcon from "../../static/components/clap";
+import ClapIcon from "../../static/components/Clap";
+import DoneClap from "../../static/components/DoneClap";
 import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
@@ -48,34 +49,11 @@ const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
-  const [loding, setLoding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [RankingList, setRankingList] = useState([]);
   const [last, setLast] = useState("");
   const [ref, inView] = useInView();
-
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(__GetLanks());
-    console.log("123");
-  }, [dispatch]);
-  //clap
-  const changeClap = async (id) => {
-    await instance
-      .post(`/feed/claps/${id}`)
-      .then((res) => {
-        setFeedList(
-          FeedList.map((feed) => {
-            if (res.data.data && feed.id === id) feed.clapCount++;
-            else if (!res.data.data && feed.id === id) feed.clapCount--;
-            return feed;
-          })
-        );
-      })
-      .catch((error) => error);
-  };
-  //categri
   const categiriList = [
     "전체보기",
     "# NO일회용품",
@@ -94,10 +72,35 @@ const Feed = () => {
     "energy",
     "etc",
   ];
-  const URL = process.env.REACT_APP_URL;
 
+  useEffect(() => {
+    dispatch(__GetLanks());
+  }, [dispatch]);
+  //clap
+  const changeClap = async (id) => {
+    await instance
+      .post(`/feed/claps/${id}`)
+      .then((res) => {
+        setFeedList(
+          FeedList.map((feed) => {
+            if (res.data.data && feed.id === id) {
+              feed.clapCount++;
+              feed.clapByMe = !feed.clapByMe;
+            } else if (!res.data.data && feed.id === id) {
+              feed.clapCount--;
+              feed.clapByMe = !feed.clapByMe;
+            }
+            return feed;
+          })
+        );
+      })
+      .catch((error) => error);
+  };
+  //categri
+
+  const URL = process.env.REACT_APP_URL;
   const TagClick = () => {
-    setLoding(true);
+    setLoading(true);
     category == 0
       ? instance
           .get(
@@ -119,7 +122,7 @@ const Feed = () => {
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
           });
-    setLoding(false);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -138,15 +141,12 @@ const Feed = () => {
 
   return (
     <FeedPage>
-      {loding ? (
-        <RankingSkeleton />
-      ) : (
+      {!loading && ranks ? (
         <RankingBox>
           <RankTitle>데일리 랭킹</RankTitle>
-
           <MedalBox>
             {ranks.map((item, index) => (
-              <InfoArea>
+              <InfoArea key={index + item}>
                 <Medal num={index} />
                 <UserArea>
                   <UserProfile src={item.profilePhoto} />
@@ -156,11 +156,13 @@ const Feed = () => {
             ))}
           </MedalBox>
         </RankingBox>
+      ) : (
+        <RankingSkeleton />
       )}
       <CategoryArea>
         {categiriList.map((item, index) => (
           <CategoryButton
-            key={item}
+            key={item + index}
             onClick={() => setCategory(index)}
             check={index}
             num={category}
@@ -170,37 +172,42 @@ const Feed = () => {
         ))}
       </CategoryArea>
       <FeedArea>
-        {FeedList.map((item) => (
-          <TotalFeed>
-            <FeedCard>
-              <CardTopArea>
-                <TagArea>{item.tag}</TagArea>
-                {/* 박수 */}
-                <ClapArea
-                  onClick={() => changeClap(item.id)}
-                  color={item.clapByme ? "black" : "white"}
-                  type="button"
-                >
-                  <ClapPoint>{item.clapCount}</ClapPoint>
-                  <ClapBox>
-                    <ClapIcon />
-                  </ClapBox>
-                </ClapArea>
-              </CardTopArea>
-              <LargePhoto src={item.missionImgUrl} />
+        {!loading && FeedList ? (
+          FeedList.map((item, index) => (
+            <TotalFeed key={item + index}>
+              <FeedCard>
+                <CardTopArea>
+                  <TagArea>{item.tag}</TagArea>
+                  {/* 박수 */}
 
-              <CardBottomArea>
-                <FeedProfile src={item.profilePhoto} />
-                <FeedNickname>{item.authorName}</FeedNickname>
-              </CardBottomArea>
-            </FeedCard>
-            <FeedContent>
-              <FeedArrow />
-              <FeedText>{item.content}</FeedText>
-            </FeedContent>
-          </TotalFeed>
-        ))}
-        {loding ? (
+                  <ClapArea onClick={() => changeClap(item.id)} type="button">
+                    <ClapPoint>{item.clapCount}</ClapPoint>
+                    <ClapBox>
+                      {item.clapByme ? <DoneClap /> : <ClapIcon />}
+                    </ClapBox>
+                  </ClapArea>
+                </CardTopArea>
+                <LargePhoto src={item.missionImgUrl} />
+
+                <CardBottomArea>
+                  <FeedProfile src={item.profilePhoto} />
+                  <FeedNickname>{item.authorName}</FeedNickname>
+                </CardBottomArea>
+              </FeedCard>
+              <FeedContent>
+                <FeedArrow />
+                <FeedText>{item.content}</FeedText>
+              </FeedContent>
+            </TotalFeed>
+          ))
+        ) : (
+          <>
+            <FeedSkeleton />
+            <FeedSkeleton />
+            <FeedSkeleton />
+          </>
+        )}
+        {loading ? (
           <>
             <FeedSkeleton />
             <FeedSkeleton />

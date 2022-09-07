@@ -45,6 +45,7 @@ function App() {
           <Route path="/archive/:id" element={<Archive />} />
           <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
           <Route path="/detailposts" element={<DetailPosts />} />
+          <Route path="/detailposts/:id" element={<DetailPosts />} />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />

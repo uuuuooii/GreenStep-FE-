@@ -18,9 +18,9 @@ export const getUserInfoThunk = createAsyncThunk(
       const data = await instance
         .get(`/users/info`)
         .then((res) => res.data.data);
-      return thunkAPI.fulfillWithValue(data); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.fulfillWithValue(data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -32,9 +32,9 @@ export const getCertThunk = createAsyncThunk(
       const data = await instance
         .get(`/profiles/missions`)
         .then((res) => res.data.data);
-      return thunkAPI.fulfillWithValue(data); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.fulfillWithValue(data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -46,9 +46,9 @@ export const getPostThunk = createAsyncThunk(
       const data = await instance
         .get(`/profiles/feed`)
         .then((res) => res.data.data);
-      return thunkAPI.fulfillWithValue(data); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.fulfillWithValue(data);
     } catch (error) {
-      return thunkAPI.rejectWithValue(error); // 엑스트라 리듀서로 넘겨줌
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );

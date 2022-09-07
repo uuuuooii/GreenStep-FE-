@@ -1,16 +1,23 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import useInput from "../../../hooks/useInput";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import useInput from '../../../hooks/useInput';
 //modules import
-import instance from "../../../Redux/modules/instance";
-import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
+import instance from '../../../Redux/modules/instance';
+import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
 //styled import
-import "./Upload.css";
+import './Upload.css';
+import {
+  UploadContentTextArea,
+  UploadButton,
+  ShareButton,
+  UploadSkeleton
+} from './UploadStyled';
 
 const Upload = ({}) => {
-  const [content, contentHandler] = useInput("");
+  const [write, setWrite] = useState(false);
+  const [content, contentHandler] = useInput('');
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -23,7 +30,7 @@ const Upload = ({}) => {
   const testText = { content: content };
   const Upload = () => {
     instance.post(`/profiles/missions/${param}`, testText);
-    navigate("/mypage");
+    navigate('/mypage');
   };
 
   useEffect(() => {
@@ -33,8 +40,9 @@ const Upload = ({}) => {
   }, []);
   return (
     <>
-      {!loading ? (
+      
         <div className="upload-wrap-shape">
+         {!loading && data ? <>
           <div className="upload-mission-name-and-tag-area">
             <div className="upload-mission-name-text">{data.missionName}</div>
             <div className="upload-mission-tag-text">{data.tag}</div>
@@ -43,21 +51,30 @@ const Upload = ({}) => {
             className="upload-mission-image-area"
             src={data.missionImgUrl}
           ></img>
-          <textarea
+          <UploadContentTextArea
             className="upload-contents-input"
             onChange={contentHandler}
             maxLength={140}
-          ></textarea>
-          <button
-            className="upload-button-share"
-            onClick={() =>
-              data.onFeed ? alert("이미 작성하신 게시물입니다.") : Upload()
+            display={write ? 'block' : 'none'}
+          ></UploadContentTextArea>
+          <UploadButton
+            className="upload-button-upload"
+            onClick={() => !write ? setWrite(!write) : data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
             }
           >
             피드에 올리기
-          </button>
+          </UploadButton>
+          <ShareButton
+            className="upload-button-share"
+            display={write ? 'none' : 'block'}
+          >
+            공유하기
+          </ShareButton>
+          </>
+          : <UploadSkeleton/>}
+          
         </div>
-      ) : null}
+      
     </>
   );
 };

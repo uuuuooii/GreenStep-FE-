@@ -85,10 +85,10 @@ const Feed = () => {
           FeedList.map((feed) => {
             if (res.data.data && feed.id === id) {
               feed.clapCount++;
-              feed.clapByme = !feed.clapByme;
+              feed.clapByMe = !feed.clapByMe;
             } else if (!res.data.data && feed.id === id) {
               feed.clapCount--;
-              feed.clapByme = !feed.clapByme;
+              feed.clapByMe = !feed.clapByMe;
             }
             return feed;
           })
@@ -138,7 +138,6 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
-
   return (
     <FeedPage>
       {!loading && ranks ? (
@@ -184,7 +183,7 @@ const Feed = () => {
                   <ClapArea onClick={() => changeClap(item.id)} type="button">
                     <ClapPoint>{item.clapCount}</ClapPoint>
                     <ClapBox>
-                      {item.clapByme ? <DoneClap /> : <ClapIcon />}
+                      {item.clapByMe === true ? <DoneClap /> : <ClapIcon />}
                     </ClapBox>
                   </ClapArea>
                 </CardTopArea>

@@ -1,4 +1,3 @@
-//react import
 import React, { useState, useEffect } from "react";
 import instance from "../../Redux/modules/instance";
 import { useInView } from "react-intersection-observer";
@@ -9,8 +8,8 @@ import DoneClap from "../../static/components/DoneClap";
 import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
 import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
-import { __GetLanks } from "../../Redux/modules/ranks";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetLanks } from '../../Redux/modules/ranks';
+import { useDispatch, useSelector } from 'react-redux';
 
 //styled import
 import {
@@ -42,8 +41,8 @@ import {
   LargePhoto,
   ClapBox,
   ScrollDiv,
-} from "./FeedStyled";
-import { Button } from "../Admin/Admin/AdminStyled";
+} from './FeedStyled';
+import { Button } from '../Admin/Admin/AdminStyled';
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
@@ -51,26 +50,26 @@ const Feed = () => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [last, setLast] = useState("");
+  const [last, setLast] = useState('');
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
   const categiriList = [
-    "전체보기",
-    "# NO일회용품",
-    "# 분리수거",
-    "# 환경운동",
-    "# 환경용품사용",
-    "#에너지절약",
-    "#기타",
+    '전체보기',
+    '# NO일회용품',
+    '# 분리수거',
+    '# 환경운동',
+    '# 환경용품사용',
+    '#에너지절약',
+    '#기타',
   ];
   const categoryApi = [
-    "all",
-    "disposable",
-    "separate",
-    "environmental",
-    "goods",
-    "energy",
-    "etc",
+    'all',
+    'disposable',
+    'separate',
+    'environmental',
+    'goods',
+    'energy',
+    'etc',
   ];
 
   useEffect(() => {

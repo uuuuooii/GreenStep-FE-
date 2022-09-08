@@ -1,15 +1,15 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 //modules import
 import {
   getPostThunk,
   getCertThunk,
-} from "../../../../Redux/modules/userInfoSlice";
-import instance from "../../../../Redux/modules/instance";
+} from '../../../../Redux/modules/userInfoSlice';
+import instance from '../../../../Redux/modules/instance';
 //styled import
-import "./Archive.css";
+import './Archive.css';
 
 import {
   ImageCard,
@@ -22,7 +22,7 @@ import {
   Check,
   BackArrow,
   SkeletonCard,
-} from "./ArchiveStyled";
+} from './ArchiveStyled';
 
 const Archive = () => {
   const param = useParams().id;
@@ -37,15 +37,17 @@ const Archive = () => {
     SkeletonList.push(i);
   }
   const data = useSelector((state) =>
-    param === "certification"
+    param === 'certification'
       ? state.userInfo.certification
       : state.userInfo.post
-  );
+  )
+
 
   useEffect(() => {
     setLoding(true);
-    dispatch(getPostThunk());
-    dispatch(getCertThunk());
+    param === 'certification'
+      ? dispatch(getCertThunk())
+      : dispatch(getPostThunk());
     setLoding(false);
   }, []);
   return (
@@ -54,7 +56,7 @@ const Archive = () => {
         <div className="back-and-settings-button-area">
           <div className="back-button">
             {!delState ? (
-              <BackArrow onClick={() => navigate("/mypage")} />
+              <BackArrow onClick={() => navigate('/mypage')} />
             ) : (
               <Cross onClick={() => setDelState(!delState)} />
             )}
@@ -79,14 +81,14 @@ const Archive = () => {
                   src={item.missionImgUrl}
                   onClick={() =>
                     navigate(
-                      param === "certification"
+                      param === 'certification'
                         ? `/upload/${item.id}`
                         : `/detailposts/${item.id}`
                     )
                   }
                 />
                 <DeleteDiv
-                  display={delState ? "flex" : "none"}
+                  display={delState ? 'flex' : 'none'}
                   onClick={() =>
                     delArr.includes(item.id)
                       ? setDelArr([...delArr.filter((a) => a !== item.id)])
@@ -95,26 +97,26 @@ const Archive = () => {
                   check={delArr}
                   num={item.id}
                 >
-                  {" "}
+                  {' '}
                   {delArr.includes(item.id) ? <Check /> : <NonCheck />}
                 </DeleteDiv>
               </CardArea>
             ))
           ) : (!loading && data.length) === 1 ? (
             <CardArea key={data.id}>
-              {" "}
+              {' '}
               <ImageCard
                 src={data[0].missionImgUrl}
                 onClick={() =>
                   navigate(
-                    param === "certification"
+                    param === 'certification'
                       ? `/upload/${data[0].id}`
                       : `/detailposts/${data[0].id}`
                   )
                 }
               />
               <DeleteDiv
-                display={delState ? "flex" : "none"}
+                display={delState ? 'flex' : 'none'}
                 onClick={() => setDelArr([...delArr, data.id])}
               >
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}

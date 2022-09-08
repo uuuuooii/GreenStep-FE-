@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const UploadButton = styled.button`
   width: 142px;
@@ -14,7 +14,7 @@ export const UploadButton = styled.button`
 `;
 
 export const ShareButton = styled.button`
-  display: ${(props) => (props.display ? props.display : 'block')};
+  display: ${(props) => (props.display ? props.display : "block")};
   width: 142px;
   height: 38px;
   margin: 15px auto;
@@ -25,33 +25,33 @@ export const ShareButton = styled.button`
   color: white;
   font-size: 20px;
   background-color: #868686;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 
 export const UploadContentTextArea = styled.textarea`
-display: ${(props)=>props.display ? props.display : "none"};
+  display: ${(props) => (props.display ? props.display : "none")};
   width: 318px;
   height: 60px;
-  margin: 0px auto;
+  margin: 0px auto 14px auto;
   padding: 10px;
   border-radius: 5px;
   border: none;
   font-size: 0.8125rem;
   font-style: normal;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 
 export const UploadSkeleton = styled.div`
   width: 100%;
-   height: 712px; 
+  height: 712px;
   display: flex;
   flex-direction: column;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin-top: 6px;
   background-color: #d9d9d9;
-`
+`;

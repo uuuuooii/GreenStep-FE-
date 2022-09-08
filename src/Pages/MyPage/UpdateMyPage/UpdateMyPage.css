@@ -1,0 +1,56 @@
+.whole-updatemypage {
+  background-color: aquamarine;
+}
+
+.updatemypage-back-arrow-area {
+  margin: 10px 0px 16px 0px;
+  background-color: white;
+}
+
+.updatemypage-back-arrow-icon {
+  margin-left: 6px;
+  font-size: 36px;
+  color: #34bea7;
+}
+
+.updatemypage-body-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 152px;
+  background-color: rgb(189, 194, 117);
+}
+
+.updatemypage-profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.updatemypage-email {
+}
+
+.updatemypage-email-text {
+}
+
+.updatemypage-email-address {
+}
+
+.updatemypage-input-area {
+}
+
+.updatemypage-input-1 {
+}
+
+.updatemypage-input-name {
+}
+
+.updatemypage-pencil-icon {
+}
+
+.updatemypage-input-2 {
+}
+
+.updatemypage-input-nickname {
+}

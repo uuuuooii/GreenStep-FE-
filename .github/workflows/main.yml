@@ -20,18 +20,8 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
-#       - name: Generate Environment Variables File for Production
-#         run: |
-#           echo "REACT_APP_KAKAO_KEY=$REACT_APP_KAKAO_KEY" >> .env.production
-#           echo "REACT_APP_KAKAO_LOGIN=$REACT_APP_KAKAO_LOGIN" >> .env.production
-#           echo "REACT_APP_KAKAO_ID=$REACT_APP_KAKAO_ID" >> .env.production
-#           echo "REACT_APP_GOOGLE_ID=$REACT_APP_GOOGLE_ID" >> .env.production
-
-#         env:
-#           REACT_APP_KAKAO_KEY: ${{ secrets.REACT_APP_KAKAO_KEY }}
-#           REACT_APP_KAKAO_LOGIN: ${{ secrets.REACT_APP_KAKAO_LOGIN }}
-#           REACT_APP_KAKAO_ID: ${{ secrets.REACT_APP_KAKAO_ID }}
-#           REACT_APP_GOOGLE_ID: ${{ secrets.REACT_APP_GOOGLE_ID }}
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{secrets.DEV_DISTRIBUTION_ID}} --paths "/*"
 
       - name: Install Dependencies # 의존 파일 설치
         run: yarn install

@@ -83,6 +83,18 @@ export const TextInput = styled.input`
     outline: 0.5px solid #34bea7;
   }
 `;
+export const TotalEmailArea = styled.div`
+display: flex;
+align-items: center;
+  text-align: center;
+  flex-direction: column;
+`
+export const CenterLine = styled.div`
+width: 95%;
+height: 0px;
+border:  1px solid rgba(134, 134, 134, 0.3);
+margin: 10px 0;
+`
 export const CheckMailArea = styled.div`
   display: flex;
   margin: 10px 0;
@@ -113,6 +125,7 @@ export const EmailButton = styled.button`
   height: 33px;
   border: none;
   color: white;
+  position: absolute;
 `;
 export const EmailStrong = styled.div`
   color: #036a6a;
@@ -120,10 +133,10 @@ export const EmailStrong = styled.div`
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
-
   display: flex;
   align-items: center;
   text-align: center;
+  margin: 10px 0;
 `;
 export const EmailP = styled.p`
   width: 90%;
@@ -136,3 +149,10 @@ export const EmailP = styled.p`
   text-align: center;
   color: #036a6a;
 `;
+export const EmailButtonArea = styled.div`
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+top: 20px;
+`

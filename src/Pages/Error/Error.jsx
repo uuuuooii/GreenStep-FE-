@@ -1,6 +1,5 @@
 //react import
 import React from 'react';
-import styled from 'styled-components';
 //components import
 import ErrorImage from '../../static/components/ErrorImage';
 import { ErrorBody, ErrorText } from './ErrorStyled';

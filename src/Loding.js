@@ -22,7 +22,7 @@ const Test = () => {
       }, []);
   });
 
-  return <div>로딩중</div>;
+  return <div>로딩중..........</div>;
 };
 
 export default Test;

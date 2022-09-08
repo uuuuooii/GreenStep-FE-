@@ -6,15 +6,18 @@ import {
   TopText,
   SelectBody,
   ButtonText,
+  TotalEmailArea,
   CenterContainer,
   ProfileImg,
   TextInput,
   CheckMailArea,
   CheckMailIcon,
   CheckMailText,
+  EmailButtonArea,
   EmailButton,
   EmailStrong,
-  EmailP
+  EmailP,
+  CenterLine
 } from './ThirdModalStyled';
 import instance from '../../../../Redux/modules/instance';
 import { useNavigate } from 'react-router-dom';
@@ -55,7 +58,8 @@ const ThirdModal = ({
             <ProfileImg src={img} />
             <TextInput onChange={setName} placeholder="이름" />
             <TextInput onChange={setNickname} placeholder="닉네임" />
-
+            <CenterLine/>
+<TotalEmailArea>
 <EmailStrong >마케팅 활용 동의 및 광고 수신 동의</EmailStrong>
 <EmailP>서비스와 관련된 신상품 소식, 이벤트 안내, 고객 혜택 등 다양한 정보를 제공합니다.</EmailP>
             <CheckMailArea onClick={() => setAcceptMail(!acceptMail)}>
@@ -64,13 +68,14 @@ const ThirdModal = ({
               <CheckMailText>이메일 알림 수신동의</CheckMailText>
               
             </CheckMailArea>
-           {(nickname&&name) ? <EmailButton onClick={() =>
+           {(nickname&&name) ?<EmailButtonArea> <EmailButton onClick={() =>
               name && nickname
                 ? instance
                     .patch(`${URL}/users/info`, userinfo)
                     .then(navigate('/mission'))
                 : alert('빈칸을 입력해주세요')
-            } >회원가입</EmailButton> : null}
+            } >회원가입</EmailButton></EmailButtonArea> : null}
+            </TotalEmailArea>
           </CenterContainer>
         </SelectBody>
       </ThirdModalSection>

@@ -96,4 +96,64 @@ export const SkeletonCard = styled.div`
   height: 123px;
   background-color: gray;
   margin: 0 5px;
-`
+`;
+
+export const DeleteModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+`;
+export const DeleteText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  /* height: 115px; */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+`;
+export const DeleteTopText = styled.div`
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 20px 0;
+`;
+export const DeleteLine = styled.div`
+  height: 0px;
+  width: 100%;
+  border: 0.5px solid #868686;
+`;
+export const DeleteBottomText = styled.div`
+  width: 100%;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 132%;
+  text-align: center;
+  color: #ff9e97;
+  margin: 10px 0;
+`;
+export const DeleteCancelButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 15px;
+  width: 340px;
+  height: 34px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 132%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #007afe;
+  margin: 10px 0;
+`;

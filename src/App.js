@@ -16,7 +16,7 @@ import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
 import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
 import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
-import Loding from "./Loding";
+import Loding from "./Pages/Loding/Loding"
 import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
@@ -43,6 +43,7 @@ function App() {
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/archive" element={<Archive />} />
           <Route path="/updatemypage" element={<UpdateMyPage />} />
           <Route path="/archive/:id" element={<Archive />} />
           <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />

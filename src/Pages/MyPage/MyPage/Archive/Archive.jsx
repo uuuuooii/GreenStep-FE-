@@ -10,6 +10,7 @@ import {
 import instance from '../../../../Redux/modules/instance';
 //styled import
 import './Archive.css';
+import Fade from "react-reveal/Fade";
 
 import {
   ImageCard,
@@ -136,14 +137,14 @@ const Archive = () => {
         </div>
         
       </div>
-      { modal? <DeleteModal>
+      { modal? <Fade bottom> <DeleteModal>
         <DeleteText>
           <DeleteTopText>This photo will be deleted from iCloud Photos on all your devices</DeleteTopText>
           <DeleteLine/>
           <DeleteBottomText onClick={() => instance.delete(`/feed`, { data: delArr })} >Delete Photo</DeleteBottomText>
         </DeleteText>
         <DeleteCancelButton onClick={()=>setModal(!modal)}>취소</DeleteCancelButton>
-      </DeleteModal> : null}
+      </DeleteModal></Fade> : null}
     </>
   );
 };

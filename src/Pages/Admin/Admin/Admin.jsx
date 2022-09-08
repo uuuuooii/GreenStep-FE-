@@ -22,18 +22,22 @@ const Admin = () => {
     setLoading(false);
   }, []);
   const Verify = (id) => {
-    instance.post(`/admin/verification/${id}?verification=DONE`);
-    feedList.filter((it) => {
-      return it.id != id;
-    });
-    window.location.reload();
+    instance
+      .post(`/admin/verification/${id}?verification=DONE`)
+      .then((res) => console.log(res));
+    setFeedList(
+      feedList.filter((it) => {
+        return it.id != id;
+      })
+    );
   };
   const Reject = (id) => {
     instance.post(`/admin/verification/${id}?verification=REJECTED`);
-    feedList.filter((it) => {
-      return it.id != id;
-    });
-    window.location.reload();
+    setFeedList(
+      feedList.filter((it) => {
+        return it.id != id;
+      })
+    );
   };
   console.log(feedList);
   return (

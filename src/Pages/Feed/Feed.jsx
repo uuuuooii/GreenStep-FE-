@@ -1,13 +1,12 @@
-//react import
-import React, { useState, useEffect, useMemo } from 'react';
-import instance from '../../Redux/modules/instance';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
+import instance from "../../Redux/modules/instance";
+import { useInView } from "react-intersection-observer";
 //components import
-import Medal from './Medal';
-import ClapIcon from '../../static/components/Clap';
-import DoneClap from '../../static/components/DoneClap';
-import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
-import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
+import Medal from "./Medal";
+import ClapIcon from "../../static/components/ClapIcon";
+import DoneClap from "../../static/components/DoneClap";
+import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
+import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
 //redux
 import { __GetLanks } from '../../Redux/modules/ranks';
 import { useDispatch, useSelector } from 'react-redux';
@@ -138,6 +137,7 @@ const Feed = () => {
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
+
   return (
     <FeedPage>
       {!loading && ranks ? (

@@ -22,7 +22,13 @@ const Admin = () => {
     setLoading(false);
   }, []);
   const Verify = (id) => {
+<<<<<<< HEAD
     instance.post(`/admin/verification/${id}?verification=DONE`);
+=======
+    instance
+      .post(`/admin/verification/${id}?verification=DONE`)
+      .then((res) => console.log(res));
+>>>>>>> 5ff7ac6d9a6b0893f96d557804928ed916dbdc87
     setFeedList(
       feedList.filter((it) => {
         return it.id != id;

@@ -56,7 +56,7 @@ const Kakaoshare = () => {
 
   return (
     <>
-      <div>test</div>
+      <div>테스트!!</div>
       <div className="kakao-share-button">
         {/* Kakao share button */}
         <button id="kakao-link-btn">

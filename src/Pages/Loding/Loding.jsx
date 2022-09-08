@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { userThunk } from "../../Redux/modules/user";
 //component import
 import { RaceBy } from "@uiball/loaders";
+
 //styled import
 import {
   LoadingArea,
@@ -20,6 +21,7 @@ const Test = () => {
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios
       .get(`${url}/users/kakao/callback`, { params: { code } })
@@ -29,6 +31,7 @@ const Test = () => {
         localStorage.setItem("Authorization", token);
         sessionStorage.setItem("refresh-Token", refresh_token);
         dispatch(userThunk(res.data.data));
+
         // res.data.data.newComer ? navigate('/modal') : navigate('/mission');
       }, []);
   });
@@ -39,7 +42,6 @@ const Test = () => {
         <LodingText>페이지 로딩중....</LodingText>
       </LodingTextArea>
       <LodingBarArea>
-        {" "}
         <RaceBy size={200} lineWeight={20} speed={3} color=" #036a6a" />
       </LodingBarArea>
     </LoadingArea>

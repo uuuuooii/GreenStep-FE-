@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div className="wrap-header">
       <div className="header-relative">
-        <div className="header-title">Green Step</div>
+        <div className="header-title">Green Step!!!!!</div>
 
         {/* 토스트 알람창의 CSS */}
         <style jsx="true">{`

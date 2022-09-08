@@ -25,15 +25,19 @@ const Admin = () => {
     instance
       .post(`/admin/verification/${id}?verification=DONE`)
       .then((res) => console.log(res));
-    feedList.filter((it) => {
-      return it.id != id;
-    });
+    setFeedList(
+      feedList.filter((it) => {
+        return it.id != id;
+      })
+    );
   };
   const Reject = (id) => {
     instance.post(`/admin/verification/${id}?verification=REJECTED`);
-    feedList.filter((it) => {
-      return it.id != id;
-    });
+    setFeedList(
+      feedList.filter((it) => {
+        return it.id != id;
+      })
+    );
   };
   console.log(feedList);
   return (

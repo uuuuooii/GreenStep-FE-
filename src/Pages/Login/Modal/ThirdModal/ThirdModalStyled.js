@@ -25,6 +25,7 @@ export const ThirdModalSection = styled.div`
 `;
 
 export const ModalHeader = styled.div`
+  position: relative;
   width: 100%;
   padding: 10px 0;
   justify-content: center;
@@ -34,7 +35,10 @@ export const ModalHeader = styled.div`
 export const TopText = styled.div`
   text-align: center;
   margin: 0 auto;
+  color: #036a6a;
+  font-weight: 600;
   font-size: 20px;
+  line-height: 24px;
 `;
 export const SelectBody = styled.div`
   width: 100%;
@@ -45,6 +49,9 @@ export const SelectBody = styled.div`
   justify-content: center;
 `;
 export const ButtonText = styled.div`
+  color: #6de4c6;
+  position: absolute;
+  left: 0;
   /* margin: auto; */
   width: 32px;
   margin: 0 10px;
@@ -70,10 +77,10 @@ export const TextInput = styled.input`
   margin: 15px 0;
   outline: none;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #34bea7;
   padding: 0 10px;
   &:focus {
-    outline: 0.5px solid black;
+    outline: 0.5px solid #34bea7;
   }
 `;
 export const CheckMailArea = styled.div`
@@ -96,4 +103,36 @@ export const CheckMailIcon = styled(AiOutlineCheckCircle)`
 export const CheckMailText = styled.div`
   font-size: 14px;
   margin: 0 10px;
+  color: #34bea7;
+`;
+export const EmailButton = styled.button`
+  background: #e7835d;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  width: 110px;
+  height: 33px;
+  border: none;
+  color: white;
+`;
+export const EmailStrong = styled.div`
+  color: #036a6a;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+`;
+export const EmailP = styled.p`
+  width: 90%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #036a6a;
 `;

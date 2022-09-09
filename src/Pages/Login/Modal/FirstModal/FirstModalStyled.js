@@ -57,15 +57,16 @@ display: flex; */
 export const SelectImg = styled.img`
   width: 100px;
   height: 100px;
+  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   outline: ${(props) =>
-    props.num === props.check ? '2px solid black;' : 'none'};
+    props.num === props.check ? '2px solid #B2E2AB' : 'none'};
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const ImgDiv = styled.div`
-  margin: 100px 40px;
+  margin: 249px 40px 359px 40px;
 `;
 
 export const SeleceArea = styled.div`
@@ -75,9 +76,9 @@ export const SeleceArea = styled.div`
 `;
 
 export const ButtonText = styled.div`
-  /* margin: auto; */
   width: 32px;
   margin: 0 10px;
+  color: #6de4c6;
   &:hover {
     cursor: pointer;
   }
@@ -85,10 +86,17 @@ export const ButtonText = styled.div`
 export const DummyText = styled.div`
   width: 32px;
   margin: 0 10px;
-  /* display: none; */
 `;
 export const SelectText = styled.div`
-font-size: 6px;
-text-align: center;
-margin: 10px 0;
-`
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #2b5139;
+  font-size: 6px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

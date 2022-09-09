@@ -131,7 +131,7 @@ export const CategoryButton = styled.div`
   line-height: 16px;
   color: #B8DDE2;
   background-color: ${(props) =>
-    props.check === props.num ? '#AFE5EC' : 'none'};
+    props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
   padding: 4px 5px;
   display: flex;

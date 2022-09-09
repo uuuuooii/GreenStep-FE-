@@ -274,6 +274,7 @@ export const TotalFeed = styled.div`
 export const LargePhoto = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 10px 10px 0 0;
 `;
 
 export const ClapBox = styled.div`

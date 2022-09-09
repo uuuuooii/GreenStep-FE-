@@ -1,0 +1,57 @@
+.ptr-arrow-icon {
+  font-size: 30px;
+}
+
+.ptr-refreshing-icon {
+  font-size: 30px;
+}
+
+.wrap-header {
+  background-color: gray;
+  z-index: 1;
+}
+
+.header-relative {
+  position: relative;
+}
+
+.header-title {
+  position: relative;
+  text-align: center;
+  background: #fff;
+  color: #50674c;
+  font-size: 20px;
+  padding: 15px 14px 13px 14px;
+}
+
+.header-icon-left {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 9px;
+  left: 14px;
+}
+
+.header-icon-right {
+  position: absolute;
+  font-size: 25px;
+  top: 12px;
+  right: 18px;
+}
+
+.toast-button {
+  font-size: 16px !important;
+  color: rgb(0, 0, 0) !important;
+  background-color: #fafff8d5 !important;
+  border: 1px solid #fafff8d5 !important;
+  border-radius: 20px !important;
+  min-height: 30px !important;
+  width: 100px !important;
+  margin: 2px auto !important;
+  display: inline-block !important;
+  line-height: 30px !important;
+}
+
+.custom-alert-position {
+  bottom: 80px !important;
+}

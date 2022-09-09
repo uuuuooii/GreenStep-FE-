@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background:  #F9FDF9;
+  background: #DAF2D5;
   margin: 10px;
   position: relative;
   &:hover {

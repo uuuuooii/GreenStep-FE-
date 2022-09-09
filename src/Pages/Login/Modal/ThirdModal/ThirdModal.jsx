@@ -1,4 +1,8 @@
+//react import
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import instance from '../../../../Redux/modules/instance';
+//styled import
 import {
   ThirdModalBody,
   ThirdModalSection,
@@ -19,8 +23,8 @@ import {
   EmailP,
   CenterLine
 } from './ThirdModalStyled';
-import instance from '../../../../Redux/modules/instance';
-import { useNavigate } from 'react-router-dom';
+import Fade from "react-reveal/Fade";
+
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -57,7 +61,7 @@ const ThirdModal = ({
           <CenterContainer>
             <ProfileImg src={img} />
             <TextInput onChange={setName} placeholder="이름" />
-            <TextInput onChange={setNickname} placeholder="닉네임" />
+            <TextInput onChange={setNickname} value={nickname} placeholder="닉네임" />
             <CenterLine/>
 <TotalEmailArea>
 <EmailStrong >마케팅 활용 동의 및 광고 수신 동의</EmailStrong>
@@ -68,13 +72,13 @@ const ThirdModal = ({
               <CheckMailText>이메일 알림 수신동의</CheckMailText>
               
             </CheckMailArea>
-           {(nickname&&name) ?<EmailButtonArea> <EmailButton onClick={() =>
+           {(nickname&&name) ?<Fade bottom > <EmailButtonArea> <EmailButton onClick={() =>
               name && nickname
                 ? instance
                     .patch(`${URL}/users/info`, userinfo)
                     .then(navigate('/mission'))
                 : alert('빈칸을 입력해주세요')
-            } >회원가입</EmailButton></EmailButtonArea> : null}
+            } >회원가입</EmailButton></EmailButtonArea> </Fade> : null}
             </TotalEmailArea>
           </CenterContainer>
         </SelectBody>

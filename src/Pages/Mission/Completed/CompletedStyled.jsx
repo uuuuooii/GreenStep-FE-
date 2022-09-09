@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DailyBody = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background: #d9d9d9;
+  background:  #F9FDF9;
   margin: 10px;
   position: relative;
   &:hover {
@@ -34,6 +34,7 @@ export const MissionText = styled.div`
   font-weight: 600;
   font-size: 13px;
   line-height: 16px; ;
+  color: #50674C;
 `;
 
 export const CompletedBody = styled.div`
@@ -51,23 +52,35 @@ export const CompletedBody = styled.div`
   height: 100%;
   border-radius: 5px;
 `;
-export const TextArea = styled.div``;
+export const CompletedInBody = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
 export const FeedButton = styled.div`
   display: flex;
+  color: white;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 4px 17px;
-  gap: 10px;
   text-align: center;
+  left: 31px;
+  bottom: 25px;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   position: absolute;
   width: 71px;
   height: 17px;
-  background: #d9d9d9;
+  background: #b8dde2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   bottom: 27px;
 `;
+export const LeapDiv = styled.div`
+    position: absolute;
+  top: 15px;
+  left: 23px;
+`
+

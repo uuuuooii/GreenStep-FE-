@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DailyBody = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background: #d9d9d9;
+  background: #f9fdf9;
   margin: 10px;
   &:hover {
     cursor: pointer;
@@ -28,8 +28,9 @@ export const MissionText = styled.div`
   text-align: center;
   font-weight: 600;
   font-size: 11px;
-  line-height: 16px; ;
+  line-height: 16px;
   flex-wrap: wrap;
+  color: #50674c;
 `;
 
 export const ChallengeBox = styled.div`
@@ -64,7 +65,6 @@ export const ChallengeBody = styled.div`
   &:hover {
     cursor: pointer;
   }
-
 `;
 export const ChallengePhoto = styled.img`
   width: 100px;
@@ -76,12 +76,21 @@ export const ChallengeTitle = styled.div`
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  color: #84ca79;
 `;
 export const ChallengeTimer = styled.div`
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
+  padding: 20px;
+  gap: 10px;
+
+  width: 158px;
+  height: 36px;
+
+  background: #b8dde2;
+  border-radius: 5px;
 `;
 
 export const ChallengeWaiting = styled.div`
@@ -99,7 +108,7 @@ export const ChallengeWaiting = styled.div`
   height: 100%;
   border-radius: 5px;
   text-align: center;
-`
+`;
 export const FeedButton = styled.div`
   display: flex;
   flex-direction: row;

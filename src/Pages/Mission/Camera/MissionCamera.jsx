@@ -53,7 +53,7 @@ export const MissionCamera = () => {
           <UploadButton onClick={Upload}>인증샷 보내기</UploadButton>
         ) : (
           <div
-            className="align-center"
+            className="center-icon"
             onClick={() => {
               if (camera.current) {
                 const photo = camera.current.takePhoto();

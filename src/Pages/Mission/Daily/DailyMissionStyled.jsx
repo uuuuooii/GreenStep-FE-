@@ -59,7 +59,7 @@ export const ChallengeBody = styled.div`
   width: 100px;
   height: 133px;
   border-radius: 5px;
-  background: #d9d9d9;
+  background: #DAF2D5;
   margin: 10px;
   position: relative;
   &:hover {
@@ -123,7 +123,7 @@ export const FeedButton = styled.div`
   position: absolute;
   width: 71px;
   height: 17px;
-  background: #d9d9d9;
+  background: #B8DDE2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   bottom: 27px;

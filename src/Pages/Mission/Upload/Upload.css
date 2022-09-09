@@ -6,21 +6,23 @@
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin-top: 6px;
-  background-color: #d9d9d9;
+  background: #DAF2D5;
 }
 
 .upload-mission-name-and-tag-area {
   margin: 38px 0px 36px 30px;
+
 }
 
 .upload-mission-name-text {
   font-size: 25px;
   margin: 0px 32px 10px 0px;
+  color: #84CA79;
 }
 
 .upload-mission-tag-text {
   font-size: 15px;
-  color: #868686;
+  color: #B8DDE2;
 }
 
 .upload-mission-image-area {

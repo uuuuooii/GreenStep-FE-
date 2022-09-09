@@ -58,10 +58,10 @@ const Feed = () => {
 
   const categoryList = [
     '전체보기',
-    '# NO일회용품',
-    '# 분리수거',
-    '# 환경운동',
-    '# 환경용품사용',
+    '#NO일회용품',
+    '#분리수거',
+    '#환경운동',
+    '#환경용품사용',
     '#에너지절약',
     '#기타',
 
@@ -200,7 +200,11 @@ const Feed = () => {
                     <FeedProfile src={item.profilePhoto} />
                     <FeedNickname>{item.authorName}</FeedNickname>
                   </BottomProfileArea>
-                  <TagArea onClick={()=>setCategory(categoryList.indexOf(item.tag))} >{item.tag}</TagArea>
+                  <TagArea
+                    onClick={() => setCategory(categoryList.indexOf(item.tag))}
+                  >
+                    {item.tag}
+                  </TagArea>
                 </CardBottomArea>
                 <ContentArea>
                   <ArrowArea>

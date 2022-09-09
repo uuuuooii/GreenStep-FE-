@@ -13,7 +13,7 @@ import './Archive.css';
 import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
-import Fade from 'react-reveal/Slide';
+import Slide from 'react-reveal/Slide';
 
 import {
   ImageCard,

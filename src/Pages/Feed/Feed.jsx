@@ -180,7 +180,7 @@ const Feed = () => {
                   <ClapArea onClick={() => changeClap(item.id)} type="button">
                     <ClapPoint>{item.clapCount}</ClapPoint>
                     <ClapBox>
-                      {item.clapByMe ? <DoneClap /> : <ClapIcon />}
+                      {item.clapByMe ? <DoneClap /> : <ClapIcon color={"white"} />}
                     </ClapBox>
                   </ClapArea>
                 </CardTopArea>

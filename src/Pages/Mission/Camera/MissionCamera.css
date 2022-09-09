@@ -27,6 +27,12 @@
   justify-content: center;
   align-items: center;
 }
+.center-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 39px ;
+  }
 .TakePhotoButton {
   background: url('https://img.icons8.com/ios/50/000000/compact-camera.png');
   background-position: center;

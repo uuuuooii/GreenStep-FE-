@@ -41,15 +41,15 @@ const Upload = ({}) => {
   return (
     <>
       <div className="upload-wrap-shape">
-        {/* {!loading && data ? ( */}
+        {!loading && data ? (
           <>
             <div className="upload-mission-name-and-tag-area">
-              {/* <div className="upload-mission-name-text">{data.missionName}</div>
-              <div className="upload-mission-tag-text">{data.tag}</div> */}
+              <div className="upload-mission-name-text">{data.missionName}</div>
+              <div className="upload-mission-tag-text">{data.tag}</div>
             </div>
             <img
               className="upload-mission-image-area"
-              // src={data.missionImgUrl} 
+              src={data.missionImgUrl}
             ></img>
             <UploadContentTextArea
               className="upload-contents-input"
@@ -67,16 +67,14 @@ const Upload = ({}) => {
               >
                 피드에 올리기
               </UploadButton>
-              <ShareButton
-                className="upload-button-share"
-              >
+              <ShareButton className="upload-button-share">
                 공유하기
               </ShareButton>
             </ButtonArea>
           </>
-        {/* ) : (
+        ) : (
           <UploadSkeleton />
-        )} */}
+        )}
       </div>
     </>
   );

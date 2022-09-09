@@ -21,11 +21,7 @@ export const CardArea = styled.div`
   width: 123px;
   height: 123px;
 `;
-export const BackArrow = styled(IoIosArrowBack)`
-  &:hover {
-    cursor: pointer;
-  }
-`;
+
 export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
   &:hover {
     cursor: pointer;
@@ -35,23 +31,12 @@ export const ArchiveSelectDiv = styled.div`
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  color: #B2E2AB;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const Cross = styled(ImCross)`
-  width: 25px;
-  height: 25px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const Delete = styled(AiFillDelete)`
-  &:hover {
-    cursor: pointer;
-  }
-`;
 export const DeleteDiv = styled.div`
   width: 100%;
   height: 100%;

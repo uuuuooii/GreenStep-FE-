@@ -6,11 +6,12 @@ import { Camera } from 'react-camera-pro';
 import instance from '../../../Redux/modules/instance';
 //styled import
 import './MissionCamera.css';
-import { UploadButton, UploadImg } from './CameraBar';
+import { UploadImg } from './CameraBar';
 import CameraButton from '../../../static/components/camera/CameraButton';
 import BackCamera from '../../../static/components/camera/BackCamera';
 import ChangeCamera from '../../../static/components/camera/ChangeCamera';
 import BackArrow from '../../../static/components/camera/BackArrow';
+import SendButton from '../../../static/components/camera/SendButton';
 
 export const MissionCamera = () => {
   const camera = useRef(null);
@@ -23,7 +24,6 @@ export const MissionCamera = () => {
     instance.post(`/missions/${missionId}`, Certification);
     navigate(`/mission`);
   };
-  console.log(image);
   return (
     <div className="wrap">
       {image ? (
@@ -46,14 +46,22 @@ export const MissionCamera = () => {
       )}
 
       <div className="control">
-        <div className="align-center" onClick={() => setImage('')}>
-          {image?<BackCamera /> : <BackArrow/>}
-        </div>
         {image ? (
-          <UploadButton onClick={Upload}>인증샷 보내기</UploadButton>
+          <div className="align-center-left" onClick={() => setImage('')}>
+            <BackCamera />
+          </div>
+        ) : (
+          <div className="align-center" onClick={() => setImage('')}>
+            <BackArrow />
+          </div>
+        )}
+        {image ? (
+          <div className="center-icon" onClick={Upload}>
+            <SendButton />
+          </div>
         ) : (
           <div
-            className="center-icon"
+            className="center-icon-send"
             onClick={() => {
               if (camera.current) {
                 const photo = camera.current.takePhoto();

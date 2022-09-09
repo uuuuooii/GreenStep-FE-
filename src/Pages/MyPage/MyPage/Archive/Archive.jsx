@@ -13,7 +13,7 @@ import './Archive.css';
 import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
-import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 import {
   ImageCard,
@@ -144,7 +144,7 @@ const Archive = () => {
       {modal ? (
         <ModalArea>
           {' '}
-          <Fade bottom>
+          <Slide bottom>
             {' '}
             <DeleteModal>
               <DeleteText>
@@ -166,7 +166,7 @@ const Archive = () => {
                 취소
               </DeleteCancelButton>
             </DeleteModal>
-          </Fade>
+          </Slide>
         </ModalArea>
       ) : null}
     </>

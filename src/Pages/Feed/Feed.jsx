@@ -35,7 +35,6 @@ import {
   FeedProfile,
   FeedNickname,
   FeedContent,
-  FeedArrow,
   FeedText,
   TotalFeed,
   LargePhoto,
@@ -43,6 +42,7 @@ import {
   ScrollDiv,
   BottomProfileArea,
 } from './FeedStyled';
+import FeedArrow from '../../static/components/FeedArrow';
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);

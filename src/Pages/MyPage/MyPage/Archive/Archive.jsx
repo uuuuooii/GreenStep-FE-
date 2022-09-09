@@ -57,6 +57,7 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
+  console.log(delArr)
   return (
     <>
       <div className="wrap-archive">
@@ -137,7 +138,7 @@ const Archive = () => {
         </div>
         
       </div>
-      { modal? <Fade bottom> <DeleteModal>
+      { modal&&!delArr.length===1 ? <Fade bottom> <DeleteModal>
         <DeleteText>
           <DeleteTopText>This photo will be deleted from iCloud Photos on all your devices</DeleteTopText>
           <DeleteLine/>

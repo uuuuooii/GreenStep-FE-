@@ -20,8 +20,6 @@ const DailyMission = ({ item, type }) => {
           : navigate(`/explain/${item.missionId}&weekly`)
       }
     >
-      <MissionPhoto src="/images/펭귄.png" />
-      <MissionText>Mission Name</MissionText>
       <MissionPhoto src={item.missionImageUrl} />
       <MissionText>{item.missionName}</MissionText>
     </DailyBody>

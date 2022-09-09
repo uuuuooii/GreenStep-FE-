@@ -1,0 +1,37 @@
+.footer-dummy-div {
+  height: 56px;
+}
+
+.footer-box {
+  border-top: 0.5px solid rgba(134, 134, 134, 0.7);
+  background: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.wrap-footer-icons {
+  /* height: 55px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin: 12px 18px 32px 16px; */
+  margin: 10px 0 28px 0;
+}
+
+.footer-icon-1 {
+  font-size: 28px;
+  margin: 0 10px;
+}
+
+.footer-icon-2 {
+  margin-top: 0px;
+  font-size: 24px;
+}
+
+.footer-icon-3 {
+  font-size: 28px;
+  margin: 0 10px;
+}

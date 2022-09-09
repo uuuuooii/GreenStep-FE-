@@ -188,6 +188,7 @@ export const CardTopArea = styled.div`
   display: flex;
   justify-content: space-between;
   position: absolute;
+  align-items: flex-end;
 `;
 
 export const TagArea = styled.div`
@@ -205,7 +206,9 @@ export const TagArea = styled.div`
 `;
 
 export const ClapArea = styled.div`
+width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: end;
   margin: 0 10px;
 `;
@@ -238,16 +241,17 @@ export const FeedNickname = styled.div`
 export const FeedContent = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: row;
   background-color: white;
   margin: 10px 0;
-  box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
-  border-radius: 0 0 10px 10px;
 `;
 export const FeedText = styled.div`
+width: 100%;
   display: flex;
-  flex-wrap: wrap;
+
   font-family: 'Inter';
   font-style: normal;
+  word-break:break-all;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -269,6 +273,7 @@ export const TotalFeed = styled.div`
   margin: 30px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
+  padding-bottom: 10px;
 `;
 
 export const LargePhoto = styled.img`

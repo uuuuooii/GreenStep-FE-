@@ -27,7 +27,7 @@ const Admin = () => {
       .then((res) => console.log(res));
     setFeedList(
       feedList.filter((it) => {
-        return it.id != id;
+        return it.id !== id;
       })
     );
   };
@@ -35,7 +35,7 @@ const Admin = () => {
     instance.post(`/admin/verification/${id}?verification=REJECTED`);
     setFeedList(
       feedList.filter((it) => {
-        return it.id != id;
+        return it.id !== id;
       })
     );
   };

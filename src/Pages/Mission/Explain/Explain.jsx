@@ -30,12 +30,13 @@ const Explain = () => {
     dispatch(__GetTodaymission());
     dispatch(__GetDailymission());
     setLoding(false);
+    document.getElementById("scroll").scrollTo(0,0)
   }, [dispatch]);
   return (
     <>
       {!loding && paramsCategory ? (
         <Slide bottom>
-        <div className="explain-wrap-shape">
+        <div className="explain-wrap-shape" id="scroll">
           <div className="explain-mission-name-and-tag-area">
             <div className="explain-mission-name-text">
               {select ? select.missionName : 'MissionName'}

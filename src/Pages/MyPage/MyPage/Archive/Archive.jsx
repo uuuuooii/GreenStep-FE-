@@ -77,10 +77,11 @@ const Archive = () => {
                 선택
               </ArchiveSelectDiv>
             ) : (
-              <TrashIcon
-                color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'}
+              <div
                 onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
-              />
+              >
+                <TrashIcon color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'} />
+              </div>
             )}
           </div>
         </div>

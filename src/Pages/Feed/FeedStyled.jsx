@@ -111,9 +111,7 @@ export const MedalRightBottom = styled.div`
   border-radius: 0 5px 2px 11px;
   background-color: #48aee2;
 `;
-export const CategoryBox = styled.div`
-  max-width: 100%;
-`;
+
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
   width: 90%;
@@ -132,15 +130,15 @@ export const CategoryButton = styled.div`
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
-  color: #b8dde2;
+  color: #afe5ec;
   background-color: ${(props) =>
-    props.check === props.num ? '#AFE5EC' : 'none'};
+    props.check === props.num ? '#b8dde2' : 'none'};
   align-items: center;
   padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #b8dde2;
+  border: 1px solid #afe5ec;
   margin: 0 10px;
   &:hover {
     cursor: pointer;
@@ -194,6 +192,16 @@ export const CardTopArea = styled.div`
 
 export const TagArea = styled.div`
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #b8dde2; ;
 `;
 
 export const ClapArea = styled.div`
@@ -227,15 +235,13 @@ export const FeedContent = styled.div`
   display: flex;
   background-color: white;
 `;
-export const FeedArrow = styled(BsArrowReturnRight)`
-  width: 15px;
-  height: 17px;
-  margin: 0 5px;
-`;
 export const FeedText = styled.div`
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+  color: #2b5139;
 `;
 export const PhotoArea = styled.div`
   display: flex;
@@ -246,6 +252,7 @@ export const PhotoArea = styled.div`
 export const TotalFeed = styled.div`
   margin: 30px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
+  border-radius: 10px;
 `;
 
 export const LargePhoto = styled.img`

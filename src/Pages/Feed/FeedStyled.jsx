@@ -206,6 +206,7 @@ export const TagArea = styled.div`
 
 export const ClapArea = styled.div`
   display: flex;
+  justify-content: end;
   margin: 0 10px;
 `;
 export const ClapPoint = styled.div`
@@ -223,30 +224,45 @@ export const FeedProfile = styled.img`
   margin: 0 5px;
 `;
 export const FeedNickname = styled.div`
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #84ca79;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const FeedContent = styled.div`
+  width: 100%;
   display: flex;
   background-color: white;
+  margin: 10px 0;
+  box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
+  border-radius: 0 0 10px 10px;
 `;
 export const FeedText = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   color: #2b5139;
+  margin: 0 10px;
 `;
 export const PhotoArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const ArrowArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
 `;
 
 export const TotalFeed = styled.div`

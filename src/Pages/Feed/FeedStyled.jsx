@@ -35,13 +35,12 @@ export const MedalBox = styled.div`
   justify-content: space-around;
   margin: 30px 0;
 `;
-export const UserCard = styled.div``;
 export const UserProfile = styled.img`
   width: 70px;
   height: 70px;
   background: #d9d9d9;
-  border-radius: 10px;
   object-fit: cover;
+  border-radius: 10px;
 `;
 export const UserArea = styled.div`
   width: 70px;
@@ -130,15 +129,15 @@ export const CategoryButton = styled.div`
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
-  color: #afe5ec;
+  color: #B8DDE2;
   background-color: ${(props) =>
-    props.check === props.num ? '#b8dde2' : 'none'};
+    props.check === props.num ? '#AFE5EC' : 'none'};
   align-items: center;
   padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #afe5ec;
+  border: 1px solid #B8DDE2;
   margin: 0 10px;
   &:hover {
     cursor: pointer;
@@ -175,11 +174,7 @@ export const CardBottomArea = styled.div`
   gap: 9px;
   width: 295px;
   height: 45px;
-  background: rgba(148, 148, 148, 0.8);
-  box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.15);
   border-radius: 7px;
-  position: absolute;
-  bottom: 0;
 `;
 
 export const CardTopArea = styled.div`
@@ -206,7 +201,7 @@ export const TagArea = styled.div`
 `;
 
 export const ClapArea = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -241,17 +236,17 @@ export const FeedNickname = styled.div`
 export const FeedContent = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: white;
   margin: 10px 0;
 `;
 export const FeedText = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
 
   font-family: 'Inter';
   font-style: normal;
-  word-break:break-all;
+  word-break: break-all;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -279,7 +274,6 @@ export const TotalFeed = styled.div`
 export const LargePhoto = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 `;
 
 export const ClapBox = styled.div`
@@ -291,4 +285,9 @@ export const ClapBox = styled.div`
 
 export const ScrollDiv = styled.div`
   height: 20px;
+`;
+export const ContentArea = styled.div`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
 `;

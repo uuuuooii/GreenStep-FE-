@@ -21,7 +21,6 @@ import {
   UserName,
   UserArea,
   InfoArea,
-  CategoryBox,
   CategoryArea,
   CategoryButton,
   CategoryButtonText,
@@ -42,6 +41,7 @@ import {
   ScrollDiv,
   BottomProfileArea,
   ArrowArea,
+  ContentArea,
 } from './FeedStyled';
 import FeedArrow from '../../static/components/FeedArrow';
 

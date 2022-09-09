@@ -10,6 +10,7 @@ import {
 import instance from '../../../../Redux/modules/instance';
 //styled import
 import './Archive.css';
+import Fade from "react-reveal/Fade";
 
 import {
   ImageCard,
@@ -22,6 +23,12 @@ import {
   Check,
   BackArrow,
   SkeletonCard,
+  DeleteModal,
+  DeleteLine,
+  DeleteText,
+  DeleteTopText,
+  DeleteBottomText,
+  DeleteCancelButton
 } from './ArchiveStyled';
 
 const Archive = () => {
@@ -29,6 +36,7 @@ const Archive = () => {
   const [loading, setLoding] = useState(false);
   const [delState, setDelState] = useState(false);
   const [delArr, setDelArr] = useState([]);
+  const [modal,setModal] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -40,8 +48,7 @@ const Archive = () => {
     param === 'certification'
       ? state.userInfo.certification
       : state.userInfo.post
-  )
-
+  );
 
   useEffect(() => {
     setLoding(true);
@@ -50,6 +57,7 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
+  console.log(delArr)
   return (
     <>
       <div className="wrap-archive">
@@ -68,7 +76,7 @@ const Archive = () => {
               </ArchiveSelectDiv>
             ) : (
               <Delete
-                onClick={() => instance.delete(`/feed`, { data: delArr })}
+                onClick={() => setModal(!modal)}
               />
             )}
           </div>
@@ -128,7 +136,16 @@ const Archive = () => {
             ))
           )}
         </div>
+        
       </div>
+      { modal&&!delArr.length===1 ? <Fade bottom> <DeleteModal>
+        <DeleteText>
+          <DeleteTopText>This photo will be deleted from iCloud Photos on all your devices</DeleteTopText>
+          <DeleteLine/>
+          <DeleteBottomText onClick={() => instance.delete(`/feed`, { data: delArr })} >Delete Photo</DeleteBottomText>
+        </DeleteText>
+        <DeleteCancelButton onClick={()=>setModal(!modal)}>취소</DeleteCancelButton>
+      </DeleteModal></Fade> : null}
     </>
   );
 };

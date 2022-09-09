@@ -1,36 +1,34 @@
 //react impoty
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 //modules import
-import { userThunk } from "../../Redux/modules/user";
+import { userThunk } from '../../Redux/modules/user';
 //component import
-import { RaceBy } from "@uiball/loaders";
+import { RaceBy } from '@uiball/loaders';
 //styled import
 import {
   LoadingArea,
   LodingText,
   LodingTextArea,
   LodingBarArea,
-} from "./LodingStyled";
+} from './LodingStyled';
 
 const Test = () => {
   const url = process.env.REACT_APP_URL;
-  const code = new URL(window.location.href).searchParams.get("code");
+  const code = new URL(window.location.href).searchParams.get('code');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(123);
   useEffect(() => {
     axios
       .get(`${url}/users/kakao/callback`, { params: { code } })
       .then((res) => {
         const token = res.headers.authorization;
         const refresh_token = res.headers.refresh_token;
-        localStorage.setItem("Authorization", token);
-        sessionStorage.setItem("refresh-Token", refresh_token);
+        localStorage.setItem('Authorization', token);
+        sessionStorage.setItem('refresh-Token', refresh_token);
         dispatch(userThunk(res.data.data));
-        console.log(123);
         // res.data.data.newComer ? navigate('/modal') : navigate('/mission');
       }, []);
   });
@@ -41,8 +39,8 @@ const Test = () => {
         <LodingText>페이지 로딩중....</LodingText>
       </LodingTextArea>
       <LodingBarArea>
-        {" "}
-        <RaceBy size={200} lineWeight={20} speed={3} color=" #036a6a" />
+        {' '}
+        <RaceBy size={200} lineWeight={20} speed={3} color=" #6DE4C6" />
       </LodingBarArea>
     </LoadingArea>
   );

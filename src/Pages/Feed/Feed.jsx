@@ -41,8 +41,8 @@ import {
   LargePhoto,
   ClapBox,
   ScrollDiv,
+  BottomProfileArea,
 } from './FeedStyled';
-import { Button } from '../Admin/Admin/AdminStyled';
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);

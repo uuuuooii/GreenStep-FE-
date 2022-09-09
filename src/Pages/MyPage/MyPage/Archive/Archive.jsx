@@ -10,25 +10,26 @@ import {
 import instance from '../../../../Redux/modules/instance';
 //styled import
 import './Archive.css';
-import Fade from "react-reveal/Fade";
+import TrashIcon from '../../../../static/components/Archive/TrashIcon';
+import Cancel from '../../../../static/components/Archive/Cancel';
+import BackMypage from '../../../../static/components/Archive/BackMypage';
+import Fade from 'react-reveal/Fade';
 
 import {
   ImageCard,
   ArchiveSelectDiv,
   CardArea,
-  Cross,
-  Delete,
   DeleteDiv,
   NonCheck,
   Check,
-  BackArrow,
   SkeletonCard,
   DeleteModal,
   DeleteLine,
   DeleteText,
   DeleteTopText,
   DeleteBottomText,
-  DeleteCancelButton
+  DeleteCancelButton,
+  ModalArea,
 } from './ArchiveStyled';
 
 const Archive = () => {
@@ -36,7 +37,7 @@ const Archive = () => {
   const [loading, setLoding] = useState(false);
   const [delState, setDelState] = useState(false);
   const [delArr, setDelArr] = useState([]);
-  const [modal,setModal] = useState(false)
+  const [modal, setModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -57,26 +58,28 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(delArr)
+  console.log(delArr);
   return (
     <>
       <div className="wrap-archive">
         <div className="back-and-settings-button-area">
-          <div className="back-button">
-            {!delState ? (
-              <BackArrow onClick={() => navigate('/mypage')} />
-            ) : (
-              <Cross onClick={() => setDelState(!delState)} />
-            )}
+          <div
+            className="archive-top-button"
+            onClick={() =>
+              delState ? setDelState(!delState) : navigate('/mypage')
+            }
+          >
+            {!delState ? <BackMypage /> : <Cancel />}
           </div>
-          <div className="settings-button">
+          <div className="archive-top-button">
             {!delState ? (
               <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
                 선택
               </ArchiveSelectDiv>
             ) : (
-              <Delete
-                onClick={() => setModal(!modal)}
+              <TrashIcon
+                color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'}
+                onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
               />
             )}
           </div>
@@ -136,16 +139,35 @@ const Archive = () => {
             ))
           )}
         </div>
-        
       </div>
-      { modal&&!delArr.length===1 ? <Fade bottom> <DeleteModal>
-        <DeleteText>
-          <DeleteTopText>This photo will be deleted from iCloud Photos on all your devices</DeleteTopText>
-          <DeleteLine/>
-          <DeleteBottomText onClick={() => instance.delete(`/feed`, { data: delArr })} >Delete Photo</DeleteBottomText>
-        </DeleteText>
-        <DeleteCancelButton onClick={()=>setModal(!modal)}>취소</DeleteCancelButton>
-      </DeleteModal></Fade> : null}
+      {modal ? (
+        <ModalArea>
+          {' '}
+          <Fade bottom>
+            {' '}
+            <DeleteModal>
+              <DeleteText>
+                <DeleteTopText>
+                  This photo will be deleted from iCloud Photos on all your
+                  devices
+                </DeleteTopText>
+                <DeleteLine />
+                <DeleteBottomText
+                  onClick={() => {
+                    instance.delete(`/feed`, { data: delArr });
+                    setModal(!modal);
+                  }}
+                >
+                  Delete Photo
+                </DeleteBottomText>
+              </DeleteText>
+              <DeleteCancelButton onClick={() => setModal(!modal)}>
+                취소
+              </DeleteCancelButton>
+            </DeleteModal>
+          </Fade>
+        </ModalArea>
+      ) : null}
     </>
   );
 };

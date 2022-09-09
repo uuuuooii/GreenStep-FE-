@@ -21,11 +21,7 @@ export const CardArea = styled.div`
   width: 123px;
   height: 123px;
 `;
-export const BackArrow = styled(IoIosArrowBack)`
-  &:hover {
-    cursor: pointer;
-  }
-`;
+
 export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
   &:hover {
     cursor: pointer;
@@ -35,23 +31,12 @@ export const ArchiveSelectDiv = styled.div`
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  color: #B2E2AB;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const Cross = styled(ImCross)`
-  width: 25px;
-  height: 25px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const Delete = styled(AiFillDelete)`
-  &:hover {
-    cursor: pointer;
-  }
-`;
 export const DeleteDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -97,14 +82,16 @@ export const SkeletonCard = styled.div`
   background-color: gray;
   margin: 0 5px;
 `;
-
-export const DeleteModal = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ModalArea = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
+  z-index: 500;
+`;
+export const DeleteModal = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 export const DeleteText = styled.div`
   display: flex;

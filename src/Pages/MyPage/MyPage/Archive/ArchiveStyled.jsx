@@ -102,6 +102,7 @@ export const ModalArea = styled.div`
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
+  z-index: 500;
 `;
 export const DeleteModal = styled.div`
   display: flex;

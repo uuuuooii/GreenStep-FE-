@@ -14,10 +14,12 @@
 
 .profile-text {
   font-size: 15px;
+  color: #50674c;
 }
 
 .profile-setting {
   font-size: 15px;
+  color: #50674c;
 }
 
 .image-nick-email {
@@ -45,10 +47,12 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 6px;
+  color: #84ca79;
 }
 
 .email-text {
   font-size: 15px;
+  color: #84ca79;
 }
 
 .photoshots-archive-area {
@@ -74,11 +78,13 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 8px;
+  color: #2b5139;
 }
 
 .photoshots-viewmore-icon {
   font-size: 20px;
   margin-top: 5px;
+  color: #2b5139;
 }
 
 .photoshots-archive-box {
@@ -123,11 +129,13 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 8px;
+  color: #2b5139;
 }
 
 .posts-viewmore-icon {
   font-size: 20px;
   margin-top: 5px;
+  color: #2b5139;
 }
 
 .posts-archive-box {

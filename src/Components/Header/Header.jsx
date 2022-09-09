@@ -10,6 +10,7 @@ import PullToRefresh from "pulltorefreshjs";
 import { BiBell } from "react-icons/bi";
 import { TbLeaf } from "react-icons/tb";
 import { RiLeafFill } from "react-icons/ri";
+import HeaderLogo from "../../static/components/HeaderLogo";
 
 const Header = () => {
   const PullToRefresh = require("pulltorefreshjs");
@@ -35,7 +36,7 @@ const Header = () => {
   return (
     <div className="wrap-header">
       <div className="header-relative">
-        <div className="header-title">Green Step!!!!!</div>
+        <div className="header-title">Green Step</div>
 
         {/* 토스트 알람창의 CSS */}
         <style jsx="true">{`
@@ -67,10 +68,12 @@ const Header = () => {
           store={ToastsStore}
           lightBackground
         />
-        <div className="header-icon-left" />
-        <div className="header-icon-right">
-          <BiBell />
+        <div className="header-icon-left">
+          <HeaderLogo />
         </div>
+        {/* <div className="header-icon-right">
+          <BiBell />
+        </div> */}
       </div>
     </div>
   );

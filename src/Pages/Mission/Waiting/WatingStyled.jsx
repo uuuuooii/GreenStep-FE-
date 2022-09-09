@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background: #d9d9d9;
+  background:  #F9FDF9;
   margin: 10px;
   position: relative;
   &:hover{
@@ -30,6 +30,7 @@ export const MissionText = styled.div`
   font-weight: 600;
   font-size: 13px;
   line-height: 16px; ;
+  color: #50674C;
 `;
 
 export const WatingBody = styled.div`

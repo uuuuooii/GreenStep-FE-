@@ -28,7 +28,7 @@ const Test = () => {
       localStorage.setItem("Authorization", token);
       sessionStorage.setItem("refresh-Token", refresh_token);
       dispatch(userThunk(res.data.data));
-      // res.data.data.newComer ? navigate('/modal') : navigate('/mission');
+      res.data.data.newComer ? navigate("/modal") : navigate("/mission");
     }, []);
   });
 

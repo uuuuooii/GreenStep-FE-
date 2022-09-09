@@ -13,13 +13,17 @@ export const RankingBox = styled.div`
   padding: 16px 10px;
   display: flex;
   flex-direction: column;
-  background: #f3f3f3;
+  background: #ffffff;
+  box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
   margin: 20px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
+  color: #84ca79;
   width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -109,7 +113,7 @@ export const MedalRightBottom = styled.div`
 `;
 export const CategoryBox = styled.div`
   max-width: 100%;
-`
+`;
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
   width: 90%;
@@ -118,29 +122,35 @@ export const CategoryArea = styled.div`
   overflow-x: scroll;
   margin: 10px 0;
   padding: 15px 0;
-  
 `;
 export const CategoryButton = styled.div`
-  min-width: 78px;
+  min-width: 92px;
   min-height: 26px;
   border-radius: 3px;
-  background-color: ${(props)=>props.check===props.num ? "#868686" : "none"};
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #b8dde2;
+  background-color: ${(props) =>
+    props.check === props.num ? '#AFE5EC' : 'none'};
   align-items: center;
   padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #868686;
+  border: 1px solid #b8dde2;
   margin: 0 10px;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 export const CategoryButtonText = styled.div`
-    font-weight: 700;
+  font-weight: 700;
   font-size: 10px;
   line-height: 12px;
-` 
+`;
 export const FeedCard = styled.div`
   width: 100%;
   height: 312px;
@@ -156,10 +166,13 @@ export const FeedCard = styled.div`
 export const FeedArea = styled.div`
   width: 313px;
 `;
+export const BottomProfileArea = styled.div`
+  display: flex;
+`;
 export const CardBottomArea = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
+  justify-content: space-between;
   padding: 7px 9px;
   gap: 9px;
   width: 295px;
@@ -232,6 +245,7 @@ export const PhotoArea = styled.div`
 
 export const TotalFeed = styled.div`
   margin: 30px 0;
+  box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
 `;
 
 export const LargePhoto = styled.img`

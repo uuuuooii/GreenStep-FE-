@@ -10,6 +10,7 @@ import {
   __GetTodaymission,
   __GetDailymission,
 } from '../../../Redux/modules/mission';
+import Slide from "react-reveal/Slide"
 const Explain = () => {
   const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -21,8 +22,8 @@ const Explain = () => {
       paramsCategory === 'challenge'
         ? state.mission.challenge[0]
         : paramsCategory === 'daily'
-    // ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
-    // : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
+    ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
+    : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
   useEffect(() => {
     setLoding(true);
@@ -33,6 +34,7 @@ const Explain = () => {
   return (
     <>
       {!loding && paramsCategory ? (
+        <Slide bottom>
         <div className="explain-wrap-shape">
           <div className="explain-mission-name-and-tag-area">
             <div className="explain-mission-name-text">
@@ -63,7 +65,7 @@ const Explain = () => {
               />
             </div>
           </button>
-        </div>
+        </div></Slide>
       ) : (
         <div>loading</div>
       )}

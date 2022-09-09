@@ -8,8 +8,8 @@ import DoneClap from '../../static/components/DoneClap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 //redux
-import { __GetLanks } from '../../Redux/modules/ranks';
-import { useDispatch, useSelector } from 'react-redux';
+import { __GetLanks } from "../../Redux/modules/ranks";
+import { useDispatch, useSelector } from "react-redux";
 
 //styled import
 import {
@@ -44,32 +44,33 @@ import {
   BottomProfileArea,
 } from './FeedStyled';
 
+
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [last, setLast] = useState('');
+  const [last, setLast] = useState("");
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
   const categiriList = [
-    '전체보기',
-    '# NO일회용품',
-    '# 분리수거',
-    '# 환경운동',
-    '# 환경용품사용',
-    '#에너지절약',
-    '#기타',
+    "전체보기",
+    "# NO일회용품",
+    "# 분리수거",
+    "# 환경운동",
+    "# 환경용품사용",
+    "#에너지절약",
+    "#기타",
   ];
   const categoryApi = [
-    'all',
-    'disposable',
-    'separate',
-    'environmental',
-    'goods',
-    'energy',
-    'etc',
+    "all",
+    "disposable",
+    "separate",
+    "environmental",
+    "goods",
+    "energy",
+    "etc",
   ];
 
   useEffect(() => {
@@ -103,9 +104,7 @@ const Feed = () => {
     category == 0
       ? instance
           .get(
-            `${URL}/feed/?lastFeedId=${
-              last == 0 ? Number.MAX_SAFE_INTEGER : last
-            }`
+            `/feed/?lastFeedId=${last == 0 ? Number.MAX_SAFE_INTEGER : last}`
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
@@ -113,7 +112,7 @@ const Feed = () => {
           })
       : instance
           .get(
-            `${URL}/feed/tags/${categoryApi[category]}/?lastFeedId=${
+            `/feed/tags/${categoryApi[category]}/?lastFeedId=${
               last == 0 ? Number.MAX_SAFE_INTEGER : last
             }`
           )

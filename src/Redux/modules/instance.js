@@ -1,7 +1,7 @@
 import axios from "axios";
 const URL = process.env.REACT_APP_URL;
 const instance = axios.create({
-  baseURL: `https://greenstepserver.link/`,
+  baseURL: `https://greenstepserver.link`,
 });
 instance.interceptors.request.use(function (instance) {
   const Token = localStorage.getItem("Authorization");

@@ -12,11 +12,11 @@ import {
   UploadContentTextArea,
   UploadButton,
   ShareButton,
-  UploadSkeleton
+  UploadSkeleton,
+  ButtonArea,
 } from './UploadStyled';
 
 const Upload = ({}) => {
-  const [write, setWrite] = useState(false);
   const [content, contentHandler] = useInput('');
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
@@ -40,41 +40,42 @@ const Upload = ({}) => {
   }, []);
   return (
     <>
-      
-        <div className="upload-wrap-shape">
-         {!loading && data ? <>
-          <div className="upload-mission-name-and-tag-area">
-            <div className="upload-mission-name-text">{data.missionName}</div>
-            <div className="upload-mission-tag-text">{data.tag}</div>
-          </div>
-          <img
-            className="upload-mission-image-area"
-            src={data.missionImgUrl}
-          ></img>
-          <UploadContentTextArea
-            className="upload-contents-input"
-            onChange={contentHandler}
-            maxLength={140}
-            display={write ? 'block' : 'none'}
-          ></UploadContentTextArea>
-          <UploadButton
-            className="upload-button-upload"
-            onClick={() => !write ? setWrite(!write) : data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
-            }
-          >
-            피드에 올리기
-          </UploadButton>
-          <ShareButton
-            className="upload-button-share"
-            display={write ? 'none' : 'block'}
-          >
-            공유하기
-          </ShareButton>
+      <div className="upload-wrap-shape">
+        {!loading && data ? (
+          <>
+            <div className="upload-mission-name-and-tag-area">
+              <div className="upload-mission-name-text">{data.missionName}</div>
+              <div className="upload-mission-tag-text">{data.tag}</div>
+            </div>
+            <img
+              className="upload-mission-image-area"
+              src={data.missionImgUrl}
+            ></img>
+            <UploadContentTextArea
+              className="upload-contents-input"
+              onChange={contentHandler}
+              maxLength={140}
+              placeholder="인증샷 설명을 자유롭게 적어주세요"
+            ></UploadContentTextArea>
+            <ButtonArea>
+              {' '}
+              <UploadButton
+                className="upload-button-upload"
+                onClick={() =>
+                  data.onFeed ? alert('이미 작성하신 게시물입니다.') : Upload()
+                }
+              >
+                피드에 올리기
+              </UploadButton>
+              <ShareButton className="upload-button-share">
+                공유하기
+              </ShareButton>
+            </ButtonArea>
           </>
-          : <UploadSkeleton/>}
-          
-        </div>
-      
+        ) : (
+          <UploadSkeleton />
+        )}
+      </div>
     </>
   );
 };

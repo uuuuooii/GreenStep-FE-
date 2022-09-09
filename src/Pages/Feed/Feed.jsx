@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import instance from "../../Redux/modules/instance";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from 'react';
+import instance from '../../Redux/modules/instance';
+import { useInView } from 'react-intersection-observer';
 //components import
-import Medal from "./Medal";
-import ClapIcon from "../../static/components/ClapIcon";
-import DoneClap from "../../static/components/DoneClap";
-import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
-import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
+import Medal from './Medal';
+import ClapIcon from '../../static/components/ClapIcon';
+import DoneClap from '../../static/components/DoneClap';
+import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
+import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 //redux
 import { __GetLanks } from "../../Redux/modules/ranks";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +21,6 @@ import {
   UserName,
   UserArea,
   InfoArea,
-  CategoryBox,
   CategoryArea,
   CategoryButton,
   CategoryButtonText,
@@ -35,14 +34,17 @@ import {
   FeedProfile,
   FeedNickname,
   FeedContent,
-  FeedArrow,
   FeedText,
   TotalFeed,
   LargePhoto,
   ClapBox,
   ScrollDiv,
-} from "./FeedStyled";
-import { Button } from "../Admin/Admin/AdminStyled";
+  BottomProfileArea,
+  ArrowArea,
+  ContentArea,
+} from './FeedStyled';
+import FeedArrow from '../../static/components/FeedArrow';
+
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
@@ -53,14 +55,16 @@ const Feed = () => {
   const [last, setLast] = useState("");
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
-  const categiriList = [
-    "전체보기",
-    "# NO일회용품",
-    "# 분리수거",
-    "# 환경운동",
-    "# 환경용품사용",
-    "#에너지절약",
-    "#기타",
+
+  const categoryList = [
+    '전체보기',
+    '#NO일회용품',
+    '#분리수거',
+    '#환경운동',
+    '#환경용품사용',
+    '#에너지절약',
+    '#기타',
+
   ];
   const categoryApi = [
     "all",
@@ -140,7 +144,7 @@ const Feed = () => {
     <FeedPage>
       {!loading && ranks ? (
         <RankingBox>
-          <RankTitle>데일리 랭킹</RankTitle>
+          <RankTitle>Today's Ranking</RankTitle>
           <MedalBox>
             {ranks.map((item, index) => (
               <InfoArea key={index + item}>
@@ -157,7 +161,7 @@ const Feed = () => {
         <RankingSkeleton />
       )}
       <CategoryArea>
-        {categiriList.map((item, index) => (
+        {categoryList.map((item, index) => (
           <CategoryButton
             key={item + index}
             onClick={() => setCategory(index)}
@@ -174,26 +178,41 @@ const Feed = () => {
             <TotalFeed key={item + index}>
               <FeedCard>
                 <CardTopArea>
-                  <TagArea>{item.tag}</TagArea>
                   {/* 박수 */}
 
                   <ClapArea onClick={() => changeClap(item.id)} type="button">
                     <ClapPoint>{item.clapCount}</ClapPoint>
                     <ClapBox>
-                      {item.clapByMe ? <DoneClap /> : <ClapIcon />}
+                      {item.clapByMe ? (
+                        <DoneClap />
+                      ) : (
+                        <ClapIcon color={'white'} />
+                      )}
                     </ClapBox>
                   </ClapArea>
                 </CardTopArea>
                 <LargePhoto src={item.missionImgUrl} />
-
-                <CardBottomArea>
-                  <FeedProfile src={item.profilePhoto} />
-                  <FeedNickname>{item.authorName}</FeedNickname>
-                </CardBottomArea>
               </FeedCard>
               <FeedContent>
-                <FeedArrow />
-                <FeedText>{item.content}</FeedText>
+                <CardBottomArea>
+                  <BottomProfileArea>
+                    {' '}
+                    <FeedProfile src={item.profilePhoto} />
+                    <FeedNickname>{item.authorName}</FeedNickname>
+                  </BottomProfileArea>
+                  <TagArea
+                    onClick={() => setCategory(categoryList.indexOf(item.tag))}
+                  >
+                    {item.tag}
+                  </TagArea>
+                </CardBottomArea>
+                <ContentArea>
+                  <ArrowArea>
+                    {' '}
+                    <FeedArrow />
+                  </ArrowArea>
+                  <FeedText>{item.content}</FeedText>
+                </ContentArea>
               </FeedContent>
             </TotalFeed>
           ))

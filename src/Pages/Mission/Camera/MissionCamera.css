@@ -1,36 +1,48 @@
 .wrap {
-    position: fixed;
-    top: 70px;
-    width: 400px;
-    height: 400px;
-    z-index: 1;
-    /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  background: #daf2d5;
 }
-
+.camera {
+  /* position: absolute; */
+  /* top: 70px;  */
+  width: 350px;
+  height: 350px;
+  z-index: 1;
+  margin: 90px 0;
+  /* background-color: black; */
+}
+.dummy-camera {
+  height: 400px;
+}
 .control {
-    position: fixed;
+  display: flex;
+  height: 75px;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 0 40px;
+  /* background: black */
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-center-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.center-icon {
     display: flex;
-    width: 400px;
-    top: 500px;
-    /* background: black */
-}
-
-.TakePhotoButton {
-    background: url("https://img.icons8.com/ios/50/000000/compact-camera.png");
-    background-position: center;
-    background-size: 40px;
-    background-repeat: no-repeat;
-
-    padding: 20px 90px;
-
-}
-
-.ChangeFacingCameraButton {
-    background: url(https://img.icons8.com/ios/50/000000/switch-camera.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 40px;
-    width: 40px;
-    height: 40px;
-    padding: 20px 70px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 39px;
+  }
+.center-icon-send{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 39px 0 32px;
 }

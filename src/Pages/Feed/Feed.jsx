@@ -54,7 +54,7 @@ const Feed = () => {
   const [last, setLast] = useState('');
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
-  const categiriList = [
+  const categoryList = [
     '전체보기',
     '# NO일회용품',
     '# 분리수거',
@@ -160,7 +160,7 @@ const Feed = () => {
         <RankingSkeleton />
       )}
       <CategoryArea>
-        {categiriList.map((item, index) => (
+        {categoryList.map((item, index) => (
           <CategoryButton
             key={item + index}
             onClick={() => setCategory(index)}
@@ -199,7 +199,7 @@ const Feed = () => {
                     <FeedProfile src={item.profilePhoto} />
                     <FeedNickname>{item.authorName}</FeedNickname>
                   </BottomProfileArea>
-                  <TagArea>{item.tag}</TagArea>
+                  <TagArea onClick={()=>setCategory(categoryList.indexOf(item.tag))} >{item.tag}</TagArea>
                 </CardBottomArea>
                 <ContentArea>
                   <ArrowArea>

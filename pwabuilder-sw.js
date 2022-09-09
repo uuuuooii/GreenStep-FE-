@@ -1,36 +1,32 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-restricted-globals */
 // This is the "Offline page" service worker
 
-// eslint-disable-next-line no-undef
 importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js"
 );
 
 const CACHE = "pwabuilder-page";
 
-const offlineFallbackPage = "offline.html";
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "ToDo-replace-this-name.html";
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
-    // eslint-disable-next-line no-restricted-globals
     self.skipWaiting();
   }
 });
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener("install", async (event) => {
   event.waitUntil(
     caches.open(CACHE).then((cache) => cache.add(offlineFallbackPage))
   );
 });
 
-// eslint-disable-next-line no-undef
 if (workbox.navigationPreload.isSupported()) {
-  // eslint-disable-next-line no-undef
   workbox.navigationPreload.enable();
 }
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
     event.respondWith(

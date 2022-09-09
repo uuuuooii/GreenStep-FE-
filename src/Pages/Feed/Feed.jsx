@@ -172,42 +172,6 @@ const Feed = () => {
         ))}
       </CategoryArea>
       <FeedArea>
-
-      <TotalFeed >
-              <FeedCard>
-                <CardTopArea>
-                  {/* 박수 */}
-
-                  <ClapArea >
-                    <ClapPoint>5</ClapPoint>
-                    <ClapBox>
-                      
-                        <ClapIcon color={'white'} />
-                      
-                    </ClapBox>
-                  </ClapArea>
-                </CardTopArea>
-                <LargePhoto src="/고양이.png" />
-
-                <CardBottomArea>
-                  <BottomProfileArea>
-                    {' '}
-                    <FeedProfile src="/고양이.png" />
-                    <FeedNickname>강인호</FeedNickname>
-                  </BottomProfileArea>
-                  <TagArea>#분리수거 하기</TagArea>
-                </CardBottomArea>
-              </FeedCard>
-              <FeedContent>
-                <ArrowArea>
-                <FeedArrow /></ArrowArea>
-                <FeedText>dfbsdbkbvniokvlxncvljkdfgbvdfjilfvksdfnfvjkldfgadfsdfsdfsdfdsfdsfsdfsd</FeedText>
-              </FeedContent>
-            </TotalFeed>
-
-
-
-
         {!loading && FeedList ? (
           FeedList.map((item, index) => (
             <TotalFeed key={item + index}>
@@ -238,7 +202,10 @@ const Feed = () => {
                 </CardBottomArea>
               </FeedCard>
               <FeedContent>
-               <ArrowArea> <FeedArrow /></ArrowArea>
+                <ArrowArea>
+                  {' '}
+                  <FeedArrow />
+                </ArrowArea>
                 <FeedText>{item.content}</FeedText>
               </FeedContent>
             </TotalFeed>

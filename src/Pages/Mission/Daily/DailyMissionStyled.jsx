@@ -11,6 +11,7 @@ export const DailyBody = styled.div`
   border-radius: 5px;
   background: #f9fdf9;
   margin: 10px;
+  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   &:hover {
     cursor: pointer;
   }

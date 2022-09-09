@@ -38,8 +38,9 @@ export const TopText = styled.div`
 export const SelectImg = styled.img`
   width: 100px;
   height: 100px;
+  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   outline: ${(props) =>
-    props.check == props.select ? '2px solid black' : 'none'};
+    props.check == props.select ? '2px solid #B2E2AB' : 'none'};
   &:hover {
     cursor: pointer;
   }
@@ -68,6 +69,7 @@ export const ButtonText = styled.div`
   /* margin: auto; */
   width: 32px;
   margin: 0 10px;
+  color: #6de4c6;
   &:hover {
     cursor: pointer;
   }

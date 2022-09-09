@@ -63,6 +63,7 @@ export const ProfileImg = styled.img`
   width: 100px;
   height: 100px;
   margin: 15px 0;
+  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
 `;
 export const CenterContainer = styled.div`
   width: 100%;
@@ -81,6 +82,15 @@ export const TextInput = styled.input`
   padding: 0 10px;
   &:focus {
     outline: 0.5px solid #34bea7;
+  }
+  &::placeholder {
+    font-family: 'Apple SD Gothic Neo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+
+    color: #b2e2ab;
   }
 `;
 export const TotalEmailArea = styled.div`

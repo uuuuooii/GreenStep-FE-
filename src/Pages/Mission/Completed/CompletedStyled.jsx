@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background: #DAF2D5;
+  background: #daf2d5;
   margin: 10px;
   position: relative;
   &:hover {
@@ -33,8 +33,8 @@ export const MissionText = styled.div`
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  line-height: 16px; ;
-  color: #50674C;
+  line-height: 16px;
+  color: #50674c;
 `;
 
 export const CompletedBody = styled.div`
@@ -79,8 +79,8 @@ export const FeedButton = styled.div`
   bottom: 27px;
 `;
 export const LeapDiv = styled.div`
-    position: absolute;
-  top: 15px;
-  left: 23px;
-`
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;

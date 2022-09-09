@@ -92,7 +92,6 @@ const Mission = () => {
           <DailyTextArea>
             <DailyText>위클리 미션</DailyText>
           </DailyTextArea>
-
           <DailyCardBox>
             {!loading && missionWeekly ? (
               missionWeekly.map((item, index) => {

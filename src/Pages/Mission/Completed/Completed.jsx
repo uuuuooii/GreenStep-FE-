@@ -22,9 +22,6 @@ const Completed = ({ item }) => {
           <LeapDiv>
             <MissionLeap />
           </LeapDiv>
-          <FeedButton onClick={() => navigate(`/upload/${item.missionId}`)}>
-            피드올리기
-          </FeedButton>
         </CompletedInBody>
       </CompletedBody>
       <MissionPhoto img={item.missionImageUrl} />

@@ -1,0 +1,38 @@
+.wrap-archive {
+}
+
+.back-and-settings-button-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.archive-top-button {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 17px 0;
+padding: 0 21px;
+}
+
+
+
+.archive-grid-area {
+  width: 100%;
+  display: grid;
+  /* gap: 15px; */
+  grid-template-columns: 33% 33% 33%;
+  row-gap: 3px;
+  column-gap: 2px;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+}
+
+.archive-image-div {
+  width: 123px;
+  height: 123px;
+  background-color: #f3f3f3;
+}

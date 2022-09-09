@@ -191,7 +191,8 @@ const Feed = () => {
                   </ClapArea>
                 </CardTopArea>
                 <LargePhoto src={item.missionImgUrl} />
-
+              </FeedCard>
+              <FeedContent>
                 <CardBottomArea>
                   <BottomProfileArea>
                     {' '}
@@ -200,13 +201,13 @@ const Feed = () => {
                   </BottomProfileArea>
                   <TagArea>{item.tag}</TagArea>
                 </CardBottomArea>
-              </FeedCard>
-              <FeedContent>
-                <ArrowArea>
-                  {' '}
-                  <FeedArrow />
-                </ArrowArea>
-                <FeedText>{item.content}</FeedText>
+                <ContentArea>
+                  <ArrowArea>
+                    {' '}
+                    <FeedArrow />
+                  </ArrowArea>
+                  <FeedText>{item.content}</FeedText>
+                </ContentArea>
               </FeedContent>
             </TotalFeed>
           ))

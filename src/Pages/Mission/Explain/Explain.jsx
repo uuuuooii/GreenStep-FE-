@@ -20,8 +20,8 @@ const Explain = () => {
     paramsCategory === "challenge"
       ? state.mission.challenge[0]
       : paramsCategory === "daily"
-      ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
-      : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
+      // ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
+      // : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
   useEffect(() => {
     setLoding(true);
@@ -37,7 +37,7 @@ const Explain = () => {
             <div className="explain-mission-name-text">
               {select ? select.missionName : "MissionName"}
             </div>
-            <div className="explain-mission-tag-text">{select.tag}</div>
+            <div className="explain-mission-tag-text">{select ? select.tag : "#Tag"}</div>
             <p className="explain-mission-contents-text">
               {select
                 ? select.missionContent

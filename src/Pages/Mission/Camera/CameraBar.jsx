@@ -1,23 +1,27 @@
 //styled import
-import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import styled from 'styled-components';
 
-export const CameraBar = styled.div`
-  width: 100%;
+
+export const UploadButton = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-`;
+  padding: 4px 17px;
 
-export const UploadButton = styled(BsFillArrowUpCircleFill)`
-  width: 35px;
-  height: 35px;
-  margin: 15px 0;
+  width: 119px;
+  height: 31px;
+
+  background: #b8dde2;
+
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
   &:hover {
     cursor: pointer;
   }
 `;
 export const UploadImg = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
+  margin: 90px 0;
 `;

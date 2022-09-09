@@ -28,7 +28,8 @@ import {
   DeleteText,
   DeleteTopText,
   DeleteBottomText,
-  DeleteCancelButton
+  DeleteCancelButton,
+  ModalArea
 } from './ArchiveStyled';
 
 const Archive = () => {
@@ -57,7 +58,7 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(delArr)
+  console.log(modal)
   return (
     <>
       <div className="wrap-archive">
@@ -138,14 +139,14 @@ const Archive = () => {
         </div>
         
       </div>
-      { modal&&!delArr.length===1 ? <Fade bottom> <DeleteModal>
+      { modal ? <ModalArea> <Fade bottom> <DeleteModal>
         <DeleteText>
           <DeleteTopText>This photo will be deleted from iCloud Photos on all your devices</DeleteTopText>
           <DeleteLine/>
           <DeleteBottomText onClick={() => instance.delete(`/feed`, { data: delArr })} >Delete Photo</DeleteBottomText>
         </DeleteText>
         <DeleteCancelButton onClick={()=>setModal(!modal)}>취소</DeleteCancelButton>
-      </DeleteModal></Fade> : null}
+      </DeleteModal></Fade></ModalArea> : null}
     </>
   );
 };

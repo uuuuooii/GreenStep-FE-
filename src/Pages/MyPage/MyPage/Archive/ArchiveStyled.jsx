@@ -97,14 +97,15 @@ export const SkeletonCard = styled.div`
   background-color: gray;
   margin: 0 5px;
 `;
-
-export const DeleteModal = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ModalArea = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
+`;
+export const DeleteModal = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 export const DeleteText = styled.div`
   display: flex;

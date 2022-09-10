@@ -13,13 +13,17 @@ export const RankingBox = styled.div`
   padding: 16px 10px;
   display: flex;
   flex-direction: column;
-  background: #f3f3f3;
+  background: #ffffff;
+  box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
   margin: 20px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
+  color: #84ca79;
   width: 100%;
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -31,13 +35,12 @@ export const MedalBox = styled.div`
   justify-content: space-around;
   margin: 30px 0;
 `;
-export const UserCard = styled.div``;
 export const UserProfile = styled.img`
   width: 70px;
   height: 70px;
   background: #d9d9d9;
-  border-radius: 10px;
   object-fit: cover;
+  border-radius: 10px;
 `;
 export const UserArea = styled.div`
   width: 70px;
@@ -107,9 +110,7 @@ export const MedalRightBottom = styled.div`
   border-radius: 0 5px 2px 11px;
   background-color: #48aee2;
 `;
-export const CategoryBox = styled.div`
-  max-width: 100%;
-`
+
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
   width: 90%;
@@ -118,29 +119,35 @@ export const CategoryArea = styled.div`
   overflow-x: scroll;
   margin: 10px 0;
   padding: 15px 0;
-  
 `;
 export const CategoryButton = styled.div`
-  min-width: 78px;
+  min-width: 92px;
   min-height: 26px;
   border-radius: 3px;
-  background-color: ${(props)=>props.check===props.num ? "#868686" : "none"};
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #B8DDE2;
+  background-color: ${(props) =>
+    props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
   padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #868686;
+  border: 1px solid #B8DDE2;
   margin: 0 10px;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 export const CategoryButtonText = styled.div`
-    font-weight: 700;
+  font-weight: 700;
   font-size: 10px;
   line-height: 12px;
-` 
+`;
 export const FeedCard = styled.div`
   width: 100%;
   height: 312px;
@@ -156,19 +163,18 @@ export const FeedCard = styled.div`
 export const FeedArea = styled.div`
   width: 313px;
 `;
+export const BottomProfileArea = styled.div`
+  display: flex;
+`;
 export const CardBottomArea = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
+  justify-content: space-between;
   padding: 7px 9px;
   gap: 9px;
   width: 295px;
   height: 45px;
-  background: rgba(148, 148, 148, 0.8);
-  box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.15);
   border-radius: 7px;
-  position: absolute;
-  bottom: 0;
 `;
 
 export const CardTopArea = styled.div`
@@ -177,14 +183,28 @@ export const CardTopArea = styled.div`
   display: flex;
   justify-content: space-between;
   position: absolute;
+  align-items: flex-end;
 `;
 
 export const TagArea = styled.div`
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #b8dde2; ;
 `;
 
 export const ClapArea = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: end;
   margin: 0 10px;
 `;
 export const ClapPoint = styled.div`
@@ -202,42 +222,59 @@ export const FeedProfile = styled.img`
   margin: 0 5px;
 `;
 export const FeedNickname = styled.div`
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #84ca79;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const FeedContent = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: column;
   background-color: white;
-`;
-export const FeedArrow = styled(BsArrowReturnRight)`
-  width: 15px;
-  height: 17px;
-  margin: 0 5px;
+  margin: 10px 0;
 `;
 export const FeedText = styled.div`
+  width: 100%;
+  display: flex;
+
+  font-family: 'Inter';
+  font-style: normal;
+  word-break: break-all;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
+  color: #2b5139;
+  margin: 0 10px;
 `;
 export const PhotoArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+export const ArrowArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+`;
 
 export const TotalFeed = styled.div`
   margin: 30px 0;
+  box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
+  border-radius: 10px;
+  padding-bottom: 10px;
 `;
 
 export const LargePhoto = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 `;
 
 export const ClapBox = styled.div`
@@ -249,4 +286,9 @@ export const ClapBox = styled.div`
 
 export const ScrollDiv = styled.div`
   height: 20px;
+`;
+export const ContentArea = styled.div`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
 `;

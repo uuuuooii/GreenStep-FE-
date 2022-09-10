@@ -13,6 +13,7 @@ import './Archive.css';
 import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
+import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
 
 import {
@@ -58,9 +59,8 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(delArr);
   return (
-    <>
+    <><Slide right>
       <div className="wrap-archive">
         <div className="back-and-settings-button-area">
           <div
@@ -77,10 +77,11 @@ const Archive = () => {
                 선택
               </ArchiveSelectDiv>
             ) : (
-              <TrashIcon
-                color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'}
+              <div
                 onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
-              />
+              >
+                <TrashIcon color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'} />
+              </div>
             )}
           </div>
         </div>
@@ -140,10 +141,11 @@ const Archive = () => {
           )}
         </div>
       </div>
+      </Slide>
       {modal ? (
         <ModalArea>
           {' '}
-          <Fade bottom>
+          <Slide bottom>
             {' '}
             <DeleteModal>
               <DeleteText>
@@ -165,7 +167,7 @@ const Archive = () => {
                 취소
               </DeleteCancelButton>
             </DeleteModal>
-          </Fade>
+          </Slide>
         </ModalArea>
       ) : null}
     </>

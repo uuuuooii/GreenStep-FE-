@@ -32,6 +32,7 @@ const UpdateMyPage = () => {
                 <input
                   className="updatemypage-input-name"
                   placeholder="이름"
+                  maxLength={7}
                 ></input>
                 <HiPencil className="updatemypage-pencil-icon" />
               </div>
@@ -39,6 +40,7 @@ const UpdateMyPage = () => {
                 <input
                   className="updatemypage-input-nickname"
                   placeholder="닉네임"
+                  maxLength={7}
                 ></input>
                 <HiPencil className="updatemypage-pencil-icon" />
               </div>

@@ -19,6 +19,7 @@ import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
 import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
+import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 // import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <BrowserRouter>
         <Header />
         {/* <Kakaoshare /> */}
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/users/kakao/callback" element={<Loding />} />

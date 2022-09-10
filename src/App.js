@@ -16,7 +16,7 @@ import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
 import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
 import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
-import Loding from "./Pages/Loding/Loding"
+import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
@@ -28,7 +28,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Kakaoshare />
+        {/* <Kakaoshare /> */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/users/kakao/callback" element={<Loding />} />

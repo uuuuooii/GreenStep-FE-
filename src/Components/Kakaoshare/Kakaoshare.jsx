@@ -21,7 +21,7 @@ const Kakaoshare = () => {
         container: "#kakao-link-btn",
         objectType: "feed",
         content: {
-          title: "타이틀",
+          // title: "타이틀",
           description: "#리액트 #카카오 #공유버튼",
           imageUrl: "IMAGE_URL", // i.e. process.env.FETCH_URL + '/logo.png'
           link: {

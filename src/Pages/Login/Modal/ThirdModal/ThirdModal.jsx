@@ -35,8 +35,6 @@ const ThirdModal = ({
   name,
   nickname,
   img,
-  NicknameHandler,
-  NameHandler,
 
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);

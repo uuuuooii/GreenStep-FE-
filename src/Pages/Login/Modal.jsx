@@ -21,6 +21,7 @@ const Modal = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
 
+
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());

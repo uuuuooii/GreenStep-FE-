@@ -1,37 +1,30 @@
-name: React build
+name: my-front
 on:
-  push: # master Branch에서 push 이벤트가 일어났을 때만 실행
+  push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: 'ap-northeast-2'
+
     steps:
-      - name: Checkout source code. # 레포지토리 체크아웃
-        uses: actions/checkout@v2
+      - name: Checkout source code.
+        uses: actions/checkout@master
 
-      - name: Cache node modules # node modules 캐싱
-        uses: actions/cache@v1
+      - name: Upload binary to S3 bucket
+        uses: jakejarvis/s3-sync-action@master
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
-
-      - name: Install Dependencies # 의존 파일 설치
-        run: yarn install
-
-      - name: Build # React Build
-        run: yarn build
+          args: --acl public-read --exclude '*' --include 'index.html'
         env:
-          CI: ""
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
 
-      - name: Deploy # S3에 배포하기
+      - name: Invalidate cache CloudFront
+        uses: chetan/invalidate-cloudfront-action@master
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          aws s3 cp --recursive --region ap-northeast-2 build s3://greenstepapp.com
-
+          DISTRIBUTION: ${{ secrets.DEV_DISTRIBUTION_ID }}
+          PATHS: '/index.html'
+        continue-on-error: true

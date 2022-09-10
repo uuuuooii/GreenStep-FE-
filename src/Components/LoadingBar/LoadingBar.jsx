@@ -12,7 +12,7 @@ import {
 const LoadingBar = () => {
     return(<LoadingArea>
         <LodingTextArea>
-          <LodingText>페이지 로딩중....</LodingText>
+          <LodingText>페이지 로딩중...</LodingText>
         </LodingTextArea>
         <LodingBarArea>
           {' '}

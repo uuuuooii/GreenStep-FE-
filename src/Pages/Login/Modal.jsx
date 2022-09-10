@@ -1,7 +1,7 @@
 //react import
-import React, { useState, useEffect } from "react";
-import useInput from "../../hooks/useInput";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import useInput from '../../hooks/useInput';
+import { useDispatch,useSelector } from 'react-redux';
 //modules import
 import { getUserInfoThunk } from "../../Redux/modules/userInfoSlice";
 //component import
@@ -15,16 +15,20 @@ const Modal = () => {
   const [display, setDisplay] = useState(1);
   const [img, setImg] = useState("");
   const [check, setCheck] = useState(0);
-  const [name, setName] = useInput("");
-  const [nickname, setNickname] = useInput("");
+  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => {setName(state.user.user.name); setNickname(state.user.user.nickname);return state.user.user});
+  const NameHandler = ((e) => {
+    setName(e.target.value);
+  });
+  const NicknameHandler = ((e) => {
+    setNickname(e.target.value);
+  });
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());
     setLoading(false);
-    setName(user.name);
-    setNickname(user.nickname);
   }, []);
 
   return !loading ? (
@@ -53,7 +57,9 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
-      />{" "}
+        NameHandler={NameHandler}
+        NicknameHandler={NicknameHandler}
+      />{' '}
     </>
   ) : (
     <LoadingBar />

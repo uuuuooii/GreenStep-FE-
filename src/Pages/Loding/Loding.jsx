@@ -19,18 +19,15 @@ const Test = () => {
     axios
       .get(`https://greenstepserver.link`, { params: { code } })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         const token = res.headers.authorization;
         const refresh_token = res.headers.refresh_token;
-        localStorage.setItem('Authorization', token);
-        sessionStorage.setItem('refresh-Token', refresh_token);
+        localStorage.setItem("Authorization", token);
+        sessionStorage.setItem("refresh-Token", refresh_token);
         dispatch(userThunk(res.data.data));
-        res.data.data.newComer ? navigate('/modal') : navigate('/mission');
-      },);
-  },[]);
-
-  return (
-<LoadingBar/>
+        res.data.data.newComer ? navigate("/modal") : navigate("/mission");
+      });
+  }, []);
 
   return <LoadingBar />;
 };

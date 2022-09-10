@@ -29,6 +29,7 @@ const Explain = () => {
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
   useEffect(() => {
+    document.getElementById('scroll').scrollTo(0, 0);
     setLoding(true);
     paramsCategory === 'challenge'
       ? dispatch(__GetTodaymission())
@@ -36,7 +37,7 @@ const Explain = () => {
       ? dispatch(__GetDailymission())
       : dispatch(__GetWeeklymission());
     setLoding(false);
-    document.getElementById('scroll').scrollTo(0, 0);
+
   }, [dispatch]);
   return (
     <>

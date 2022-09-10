@@ -7,6 +7,7 @@ import ClapIcon from '../../static/components/ClapIcon';
 import DoneClap from '../../static/components/DoneClap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
+import Footer from '../../Components/Footer/Footer';
 //redux
 import { __GetLanks } from "../../Redux/modules/ranks";
 import { useDispatch, useSelector } from "react-redux";
@@ -140,7 +141,7 @@ const Feed = () => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
 
-  return (
+  return (<>
     <FeedPage>
       {!loading && ranks ? (
         <RankingBox>
@@ -233,6 +234,8 @@ const Feed = () => {
       </FeedArea>
       <ScrollDiv ref={ref} />
     </FeedPage>
+    <Footer/>
+    </>
   );
 };
 

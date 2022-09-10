@@ -6,9 +6,9 @@ import { useDispatch } from "react-redux";
 //modules import
 import { userThunk } from "../../Redux/modules/user";
 //component import
-import LoadingBar from '../../Components/LoadingBar/LoadingBar';
-import instance from "../../Redux/modules/instance";
 
+import LoadingBar from "../../Components/LoadingBar/LoadingBar";
+import instance from "../../Redux/modules/instance";
 
 const Test = () => {
   const url = process.env.REACT_APP_URL;
@@ -32,7 +32,7 @@ const Test = () => {
   return (
 <LoadingBar/>
 
-  );
+  return <LoadingBar />;
 };
 
 export default Test;

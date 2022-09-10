@@ -19,12 +19,7 @@ const Modal = () => {
   const [nickname, setNickname] = useState('');
   const dispatch = useDispatch();
   const user = useSelector((state) => {setName(state.user.user.name); setNickname(state.user.user.nickname);return state.user.user});
-  const NameHandler = ((e) => {
-    setName(e.target.value);
-  });
-  const NicknameHandler = ((e) => {
-    setNickname(e.target.value);
-  });
+
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());

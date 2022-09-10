@@ -1,21 +1,22 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import './MyPage.css';
-import Footer from '../../../Components/Footer/Footer';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 //modules import
 import {
   getUserInfoThunk,
   getCertThunk,
   getPostThunk,
-} from '../../../Redux/modules/userInfoSlice';
+} from "../../../Redux/modules/userInfoSlice";
 //component import
+import Footer from "../../../Components/Footer/Footer";
+//import Slide from 'react-reveal/Fade';
+import Slide from "react-reveal/Slide";
+//styled import
+import "./MyPage.css";
 import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
 import { FiSettings } from 'react-icons/fi';
 import { ArchiveArrow } from './Archive/ArchiveStyled';
-import Slide from 'react-reveal/Slide';
-// import Slide from 'react-reveal/Fade';
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
@@ -86,6 +87,8 @@ const MyPage = () => {
                   src={certification[0].missionImgUrl}
                   className="photoshots-archive-images"
                   alt="archive"
+                  onClick={() => navigate(`/upload/${item.id}`)}
+
                 />
               ) : (
                 <>
@@ -121,6 +124,7 @@ const MyPage = () => {
                   src={post[0].missionImgUrl}
                   className="photoshots-archive-images"
                   alt="archive"
+                  onClick={() => navigate(`/detailposts/${item.id}`)}
                 ></img>
               ) : (
                 <>

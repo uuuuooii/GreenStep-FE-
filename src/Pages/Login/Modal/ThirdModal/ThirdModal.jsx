@@ -1,7 +1,7 @@
 //react import
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import instance from '../../../../Redux/modules/instance';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import instance from "../../../../Redux/modules/instance";
 //styled import
 import {
   ThirdModalBody,
@@ -37,6 +37,7 @@ const ThirdModal = ({
   img,
   NicknameHandler,
   NameHandler,
+
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const userinfo = {

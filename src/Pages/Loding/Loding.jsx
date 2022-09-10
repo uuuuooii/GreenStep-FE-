@@ -20,14 +20,6 @@ const Test = () => {
       .get(`https://greenstepserver.link/users/kakao/callback`, {
         params: { code },
       })
-      .then((res) => console.log(res));
-  }, []);
-  useEffect(() => {
-    console.log('test1');
-    axios
-      .get(`https://greenstepserver.link/users/kakao/callback`, {
-        params: { code },
-      })
       .then((res) => {
         console.log('test2');
         // console.log(res)

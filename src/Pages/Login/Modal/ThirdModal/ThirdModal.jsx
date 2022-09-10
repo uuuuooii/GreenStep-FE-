@@ -36,6 +36,7 @@ const ThirdModal = ({
   name,
   nickname,
   img,
+  user
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const userinfo = {
@@ -60,7 +61,7 @@ const ThirdModal = ({
         <SelectBody>
           <CenterContainer>
             <ProfileImg src={img} />
-            <TextInput onChange={setName} placeholder="이름" maxLength={8} />
+            <TextInput onChange={setName} value={name}  placeholder="이름" maxLength={8} />
             <TextInput onChange={setNickname} value={nickname} placeholder="닉네임" maxLength={8} />
             <CenterLine/>
 <TotalEmailArea>

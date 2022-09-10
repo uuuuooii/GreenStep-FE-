@@ -41,7 +41,7 @@ const Explain = () => {
   return (
     <>
       {!loding && paramsCategory ? (
-        // <Slide bottom>
+        <Slide bottom>
           <div className="explain-wrap-shape" >
             <div className="explain-mission-name-and-tag-area" id="scroll">
               <div className="explain-mission-name-text">
@@ -73,7 +73,7 @@ const Explain = () => {
               </div>
             </button>
           </div>
-        {/* </Slide> */}
+        </Slide>
       ) : (
         <LoadingBar />
       )}

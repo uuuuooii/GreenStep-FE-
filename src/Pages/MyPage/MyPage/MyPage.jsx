@@ -87,7 +87,7 @@ const MyPage = () => {
                   src={certification[0].missionImgUrl}
                   className="photoshots-archive-images"
                   alt="archive"
-                  onClick={() => navigate(`/upload/${item.id}`)}
+                  onClick={() => navigate(`/upload/${certification[0].id}`)}
 
                 />
               ) : (
@@ -124,7 +124,7 @@ const MyPage = () => {
                   src={post[0].missionImgUrl}
                   className="photoshots-archive-images"
                   alt="archive"
-                  onClick={() => navigate(`/detailposts/${item.id}`)}
+                  onClick={() => navigate(`/detailposts/${post[0].id}`)}
                 ></img>
               ) : (
                 <>

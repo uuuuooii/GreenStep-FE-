@@ -1,21 +1,22 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import './MyPage.css';
-import Footer from '../../../Components/Footer/Footer';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 //modules import
 import {
   getUserInfoThunk,
   getCertThunk,
   getPostThunk,
-} from '../../../Redux/modules/userInfoSlice';
+} from "../../../Redux/modules/userInfoSlice";
 //component import
-import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
-import { FiSettings } from 'react-icons/fi';
-import { ArchiveArrow } from './Archive/ArchiveStyled';
-import Slide from "react-reveal/Slide"
-// import Slide from 'react-reveal/Fade';
+import Footer from "../../../Components/Footer/Footer";
+//import Slide from 'react-reveal/Fade';
+import Slide from "react-reveal/Slide";
+//styled import
+import "./MyPage.css";
+import { MypageSkeleton } from "../../../Components/Skeleton/SkeletonStyled";
+import { FiSettings } from "react-icons/fi";
+import { ArchiveArrow } from "./Archive/ArchiveStyled";
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
@@ -63,7 +64,7 @@ const MyPage = () => {
               <div className="photoshots-text">인증샷 아카이브</div>
               <div className="photoshots-viewmore-icon">
                 <ArchiveArrow
-                  onClick={() => navigate('/archive/certification')}
+                  onClick={() => navigate("/archive/certification")}
                 />
               </div>
             </div>
@@ -77,7 +78,7 @@ const MyPage = () => {
                   className="photoshots-archive-images"
                   key={item.missionImgUrl + index}
                   alt="archive"
-                  onClick={()=>navigate(`/upload/${item.id}`)}
+                  onClick={() => navigate(`/upload/${item.id}`)}
                 />
               ))
             ) : !loading && certification.length === 1 ? (
@@ -100,7 +101,7 @@ const MyPage = () => {
             <div className="posts-text-and-icon">
               <div className="posts-text">게시물 아카이브</div>
               <div className="posts-viewmore-icon">
-                <ArchiveArrow onClick={() => navigate('/archive/post')} />
+                <ArchiveArrow onClick={() => navigate("/archive/post")} />
               </div>
             </div>
           </div>
@@ -112,7 +113,7 @@ const MyPage = () => {
                   className="photoshots-archive-images"
                   key={item.missionImgUrl + index}
                   alt="archive"
-                  onClick={()=>navigate(`/detailposts/${item.id}`)}
+                  onClick={() => navigate(`/detailposts/${item.id}`)}
                 ></img>
               ))
             ) : !loading && post.length === 1 ? (

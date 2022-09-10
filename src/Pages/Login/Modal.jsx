@@ -1,7 +1,7 @@
 //react import
 import React, { useState, useEffect } from 'react';
 import useInput from '../../hooks/useInput';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 //modules import
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 //component import

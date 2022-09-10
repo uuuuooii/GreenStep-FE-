@@ -36,6 +36,7 @@ const ThirdModal = ({
   name,
   nickname,
   img,
+  user
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const userinfo = {
@@ -44,6 +45,7 @@ const ThirdModal = ({
     profilePhoto: img,
     acceptMail: acceptMail,
   };
+  console.log(name,nickname)
   const navigate = useNavigate();
   return (
     <ThirdModalBody display={display}>
@@ -60,8 +62,8 @@ const ThirdModal = ({
         <SelectBody>
           <CenterContainer>
             <ProfileImg src={img} />
-            <TextInput onChange={setName} placeholder="이름" maxLength={8} />
-            <TextInput onChange={setNickname} value={nickname} placeholder="닉네임" maxLength={8} />
+            <TextInput onChange={setName} value={user.name}  placeholder="이름" maxLength={8} />
+            <TextInput onChange={setNickname} value={user.nickname} placeholder="닉네임" maxLength={8} />
             <CenterLine/>
 <TotalEmailArea>
 <EmailStrong >마케팅 활용 동의 및 광고 수신 동의</EmailStrong>

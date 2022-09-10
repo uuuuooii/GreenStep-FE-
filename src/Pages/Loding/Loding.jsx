@@ -16,7 +16,7 @@ const Test = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    axios.get(`/users/kakao/callback`, { params: { code } }).then((res) => {
+    axios.get(`users/kakao/callback/`, { params: { code } }).then((res) => {
       const token = res.headers.authorization;
       const refresh_token = res.headers.refresh_token;
       localStorage.setItem("Authorization", token);

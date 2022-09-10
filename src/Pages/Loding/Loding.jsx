@@ -25,7 +25,7 @@ const Test = () => {
         dispatch(userThunk(res.data.data));
         res.data.data.newComer ? navigate('/modal') : navigate('/mission');
       },);
-  });
+  },[]);
 
   return (
 <LoadingBar/>

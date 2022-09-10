@@ -14,6 +14,7 @@ import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
 import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
 import {
   ImageCard,
@@ -58,9 +59,8 @@ const Archive = () => {
       : dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(delArr);
   return (
-    <>
+    <><Slide right>
       <div className="wrap-archive">
         <div className="back-and-settings-button-area">
           <div
@@ -141,6 +141,7 @@ const Archive = () => {
           )}
         </div>
       </div>
+      </Slide>
       {modal ? (
         <ModalArea>
           {' '}

@@ -4,7 +4,8 @@
 
 .footer-box {
   border-top: 0.5px solid rgba(134, 134, 134, 0.7);
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(100px);
   width: 100%;
   position: fixed;
   bottom: 0;

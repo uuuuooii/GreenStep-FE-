@@ -62,7 +62,7 @@ export const ChallengeBody = styled.div`
   width: 100px;
   height: 133px;
   border-radius: 5px;
-  background: #f9fdf9;
+  background: #daf2d5;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   position: relative;
   &:hover {

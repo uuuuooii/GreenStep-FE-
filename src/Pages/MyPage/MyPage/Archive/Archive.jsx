@@ -14,6 +14,7 @@ import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
 import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
 import {
   ImageCard,
@@ -59,90 +60,87 @@ const Archive = () => {
     setLoding(false);
   }, []);
   return (
-    <>
-      <Slide right>
-        <div className="wrap-archive">
-          <div className="back-and-settings-button-area">
-            <div
-              className="archive-top-button"
-              onClick={() =>
-                delState ? setDelState(!delState) : navigate('/mypage')
-              }
-            >
-              {!delState ? <BackMypage /> : <Cancel />}
-            </div>
-            <div className="archive-top-button">
-              {!delState ? (
-                <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
-                  선택
-                </ArchiveSelectDiv>
-              ) : (
-                <div
-                  onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
-                >
-                  <TrashIcon
-                    color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'}
-                  />
-                </div>
-              )}
-            </div>
+    <><Slide right>
+      <div className="wrap-archive">
+        <div className="back-and-settings-button-area">
+          <div
+            className="archive-top-button"
+            onClick={() =>
+              delState ? setDelState(!delState) : navigate('/mypage')
+            }
+          >
+            {!delState ? <BackMypage /> : <Cancel />}
           </div>
-          <div className="archive-grid-area">
-            {(!loading && data.length) > 1 ? (
-              data.map((item) => (
-                <CardArea key={item + item.id}>
-                  <ImageCard
-                    src={item.missionImgUrl}
-                    onClick={() =>
-                      navigate(
-                        param === 'certification'
-                          ? `/upload/${item.id}`
-                          : `/detailposts/${item.id}`
-                      )
-                    }
-                  />
-                  <DeleteDiv
-                    display={delState ? 'flex' : 'none'}
-                    onClick={() =>
-                      delArr.includes(item.id)
-                        ? setDelArr([...delArr.filter((a) => a !== item.id)])
-                        : setDelArr([...delArr, item.id])
-                    }
-                    check={delArr}
-                    num={item.id}
-                  >
-                    {' '}
-                    {delArr.includes(item.id) ? <Check /> : <NonCheck />}
-                  </DeleteDiv>
-                </CardArea>
-              ))
-            ) : (!loading && data.length) === 1 ? (
-              <CardArea key={data.id}>
-                {' '}
+          <div className="archive-top-button">
+            {!delState ? (
+              <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
+                선택
+              </ArchiveSelectDiv>
+            ) : (
+              <div
+                onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
+              >
+                <TrashIcon color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'} />
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="archive-grid-area">
+          {(!loading && data.length) > 1 ? (
+            data.map((item) => (
+              <CardArea key={item + item.id}>
                 <ImageCard
-                  src={data[0].missionImgUrl}
+                  src={item.missionImgUrl}
                   onClick={() =>
                     navigate(
                       param === 'certification'
-                        ? `/upload/${data[0].id}`
-                        : `/detailposts/${data[0].id}`
+                        ? `/upload/${item.id}`
+                        : `/detailposts/${item.id}`
                     )
                   }
                 />
                 <DeleteDiv
                   display={delState ? 'flex' : 'none'}
-                  onClick={() => setDelArr([...delArr, data.id])}
+                  onClick={() =>
+                    delArr.includes(item.id)
+                      ? setDelArr([...delArr.filter((a) => a !== item.id)])
+                      : setDelArr([...delArr, item.id])
+                  }
+                  check={delArr}
+                  num={item.id}
                 >
-                  {delArr.includes(data.id) ? <Check /> : <NonCheck />}
+                  {' '}
+                  {delArr.includes(item.id) ? <Check /> : <NonCheck />}
                 </DeleteDiv>
               </CardArea>
-            ) : (
-              SkeletonList.map((item, index) => (
-                <SkeletonCard key={item * index} />
-              ))
-            )}
-          </div>
+            ))
+          ) : (!loading && data.length) === 1 ? (
+            <CardArea key={data.id}>
+              {' '}
+              <ImageCard
+                src={data[0].missionImgUrl}
+                onClick={() =>
+                  navigate(
+                    param === 'certification'
+                      ? `/upload/${data[0].id}`
+                      : `/detailposts/${data[0].id}`
+                  )
+                }
+              />
+              <DeleteDiv
+                display={delState ? 'flex' : 'none'}
+                onClick={() => setDelArr([...delArr, data.id])}
+              >
+                {delArr.includes(data.id) ? <Check /> : <NonCheck />}
+              </DeleteDiv>
+            </CardArea>
+          ) : (
+            SkeletonList.map((item, index) => (
+              <SkeletonCard key={item * index} />
+            ))
+          )}
         </div>
+      </div>
       </Slide>
       {modal ? (
         <ModalArea>
@@ -158,9 +156,7 @@ const Archive = () => {
                 <DeleteLine />
                 <DeleteBottomText
                   onClick={() => {
-                    param === 'post'
-                      ? instance.delete(`/feed`, { data: delArr })
-                      : instance.delete(`/profiles/missions`, { data: delArr });
+                    instance.delete(`/feed`, { data: delArr });
                     setModal(!modal);
                   }}
                 >

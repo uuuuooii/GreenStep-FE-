@@ -5,7 +5,6 @@ export const DailyBody = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  gap: 10px;
   width: 145px;
   height: 170px;
   border-radius: 5px;
@@ -89,9 +88,7 @@ export const ChallengeTimer = styled.div`
   line-height: 16px;
   text-align: center;
   padding: 10px 13px;
-  margin-top:19px;
-  width: 158px;
-  height: 36px;
+  margin-top: 19px;
   color: white;
   background: #b8dde2;
   border-radius: 5px;

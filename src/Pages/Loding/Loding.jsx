@@ -17,7 +17,7 @@ const Test = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get(`https://greenstepserver.link/users/kakao/callback`, { params: { code } })
+      .get(`https://greenstepserver.link`, { params: { code } })
       .then((res) => {
         console.log(res)
         const token = res.headers.authorization;

@@ -40,7 +40,7 @@ const Explain = () => {
   }, [dispatch]);
   return (
     <>
-      {!loding && paramsCategory ? (
+      {!loding && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape" >
             <div className="explain-mission-name-and-tag-area" id="scroll">

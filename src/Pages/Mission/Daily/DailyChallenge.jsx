@@ -35,7 +35,7 @@ const DailyChallenge = ({ mission }) => {
   // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
     <>
-      {mission ? (
+      {/* {mission ? ( */}
         <ChallengeBox>
           <ChallengeTextArea>
             <ChallengeTitle>Challenge Mission</ChallengeTitle>
@@ -47,24 +47,26 @@ const DailyChallenge = ({ mission }) => {
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
-            onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
+            // onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {!mission.status === 'DEFAULT' ? (
+            {/* {!mission.status === 'DEFAULT' ? (
               <ChallengeWaiting>
                 <MissionText>인증 대기중</MissionText>
               </ChallengeWaiting>
             ) : null}
             {mission.status === 'DONE' ? (
               <FeedButton>피드 올리기</FeedButton>
-            ) : null}
-
-            <ChallengePhoto src={mission.missionImageUrl} />
-            <MissionText>{mission.missionName}</MissionText>
+            ) : null} */}
+            <ChallengePhoto src="/images/펭귄.png" />
+            <MissionText>Mission NAme</MissionText>
+            {/* <ChallengePhoto src={mission.missionImageUrl} /> */}
+            {/* <MissionText>{mission.missionName}</MissionText> */}
           </ChallengeBody>
         </ChallengeBox>
-      ) : (
+      {/* )
+       : (
         <ChallengeSkeleton />
-      )}
+      )} */}
     </>
   );
 };

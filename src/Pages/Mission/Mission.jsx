@@ -43,6 +43,7 @@ const Mission = () => {
 
   return (
     <>
+    <DailyChallenge/>
       <>
         {!loading && missionChallenge ? (
           <DailyChallenge mission={missionChallenge[0]} />

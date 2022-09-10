@@ -18,13 +18,11 @@ const Modal = () => {
   const [name, setName] = useInput('');
   const [nickname, setNickname] = useInput('');
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => {setName(state.user.user.name); setNickname(state.user.user.nickname);return state.user.user});
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());
     setLoading(false);
-    setName(user.name);
-    setNickname(user.nickname);
   }, []);
 
   return !loading ? (

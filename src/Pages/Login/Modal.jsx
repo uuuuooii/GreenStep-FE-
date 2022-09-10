@@ -52,8 +52,6 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
-        NameHandler={NameHandler}
-        NicknameHandler={NicknameHandler}
       />{' '}
     </>
   ) : (

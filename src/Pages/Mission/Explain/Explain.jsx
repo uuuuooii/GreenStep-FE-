@@ -42,8 +42,8 @@ const Explain = () => {
     <>
       {!loding && paramsCategory ? (
         <Slide bottom>
-          <div className="explain-wrap-shape" id="scroll">
-            <div className="explain-mission-name-and-tag-area">
+          <div className="explain-wrap-shape" >
+            <div className="explain-mission-name-and-tag-area" id="scroll">
               <div className="explain-mission-name-text">
                 {select ? select.missionName : 'MissionName'}
               </div>

@@ -3,17 +3,17 @@ import React, { useState, useEffect } from 'react';
 import useInput from '../../hooks/useInput';
 import { useDispatch,useSelector } from 'react-redux';
 //modules import
-import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from "../../Redux/modules/userInfoSlice";
 //component import
-import FirstModal from './Modal/FirstModal/FirstModal';
-import SecondModal from './Modal/SecondModal/SecondModal';
-import ThirdModal from './Modal/ThirdModal/ThirdModal';
-import LoadingBar from '../../Components/LoadingBar/LoadingBar';
+import FirstModal from "./Modal/FirstModal/FirstModal";
+import SecondModal from "./Modal/SecondModal/SecondModal";
+import ThirdModal from "./Modal/ThirdModal/ThirdModal";
+import LoadingBar from "../../Components/LoadingBar/LoadingBar";
 
 const Modal = () => {
   const [loading, setLoading] = useState(false);
   const [display, setDisplay] = useState(1);
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState("");
   const [check, setCheck] = useState(0);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');

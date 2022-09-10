@@ -23,8 +23,8 @@ const Test = () => {
       sessionStorage.setItem("refresh-Token", refresh_token);
       dispatch(userThunk(res.data.data));
       res.data.data.newComer ? navigate("/modal") : navigate("/mission");
-    }, []);
-  });
+    });
+  }, []);
 
   return <LoadingBar />;
 };

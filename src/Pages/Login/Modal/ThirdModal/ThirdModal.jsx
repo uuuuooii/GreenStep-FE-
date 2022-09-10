@@ -62,13 +62,13 @@ const ThirdModal = ({
           <CenterContainer>
             <ProfileImg src={img} />
             <TextInput
-              onChange={NameHandler}
+              onChange={(e)=>NameHandler(e)}
               value={name}
               placeholder="이름"
               maxLength={8}
             />
             <TextInput
-              onChange={NicknameHandler}
+              onChange={(e)=>NicknameHandler(e)}
               value={nickname}
               placeholder="닉네임"
               maxLength={8}

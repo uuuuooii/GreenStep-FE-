@@ -4,6 +4,7 @@ import useInput from '../../hooks/useInput';
 import { useDispatch,useSelector } from 'react-redux';
 //modules import
 import { getUserInfoThunk } from "../../Redux/modules/userInfoSlice";
+import instance from '../../Redux/modules/instance';
 //component import
 import FirstModal from "./Modal/FirstModal/FirstModal";
 import SecondModal from "./Modal/SecondModal/SecondModal";
@@ -17,12 +18,10 @@ const Modal = () => {
   const [check, setCheck] = useState(0);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
-  const dispatch = useDispatch();
-  const user = useSelector((state) => {setName(state.user.user.name); setNickname(state.user.user.nickname);return state.user.user});
 
   useEffect(() => {
     setLoading(true);
-    dispatch(getUserInfoThunk());
+instance.get('/users/info').then((res)=>{setName(res.data.data.name);setNickname(res.data.data.nickname);setImg(res.data.data.profilePhoto)})
     setLoading(false);
   }, []);
 
@@ -34,7 +33,7 @@ const Modal = () => {
         setImg={setImg}
         check={check}
         setCheck={setCheck}
-        user={user}
+
       />
       <SecondModal
         display={display}

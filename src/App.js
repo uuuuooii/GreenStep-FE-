@@ -23,14 +23,14 @@ import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 // import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 
 function App() {
-  const token = localStorage.getItem("Authorization");
-  instance.defaults.headers.common["Authorization"] = token;
+  // const token = localStorage.getItem("Authorization");
+  // instance.defaults.headers.common["Authorization"] = token;
   return (
     <>
       <BrowserRouter>
         <Header />
         {/* <Kakaoshare /> */}
-        <ScrollToTop/>
+        <ScrollToTop id="scroll" />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/users/kakao/callback" element={<Loding />} />

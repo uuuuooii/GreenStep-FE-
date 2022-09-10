@@ -15,10 +15,16 @@ const Modal = () => {
   const [display, setDisplay] = useState(1);
   const [img, setImg] = useState('');
   const [check, setCheck] = useState(0);
-  const [name, setName] = useInput('');
-  const [nickname, setNickname] = useInput('');
+  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
   const dispatch = useDispatch();
   const user = useSelector((state) => {setName(state.user.user.name); setNickname(state.user.user.nickname);return state.user.user});
+  const NameHandler = ((e) => {
+    setName(e.target.value);
+  });
+  const NicknameHandler = ((e) => {
+    setNickname(e.target.value);
+  });
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());
@@ -51,6 +57,8 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
+        NameHandler={NameHandler}
+        NicknameHandler={NicknameHandler}
       />{' '}
     </>
   ) : (

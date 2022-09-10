@@ -14,6 +14,8 @@ import {
 import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
 import { FiSettings } from 'react-icons/fi';
 import { ArchiveArrow } from './Archive/ArchiveStyled';
+import Slide from "react-reveal/Slide"
+// import Slide from 'react-reveal/Fade';
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
@@ -32,7 +34,7 @@ const MyPage = () => {
   }, []);
 
   return (
-    <>
+    <Slide left>
       <div className="whole-mypage">
         <div className="mypage-profile-setting">
           <div className="profile-text">프로필</div>
@@ -75,6 +77,7 @@ const MyPage = () => {
                   className="photoshots-archive-images"
                   key={item.missionImgUrl + index}
                   alt="archive"
+                  onClick={()=>navigate(`/upload/${item.id}`)}
                 />
               ))
             ) : !loading && certification.length === 1 ? (
@@ -109,6 +112,7 @@ const MyPage = () => {
                   className="photoshots-archive-images"
                   key={item.missionImgUrl + index}
                   alt="archive"
+                  onClick={()=>navigate(`/detailposts/${item.id}`)}
                 ></img>
               ))
             ) : !loading && post.length === 1 ? (
@@ -128,7 +132,7 @@ const MyPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </Slide>
   );
 };
 

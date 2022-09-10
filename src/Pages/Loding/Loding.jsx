@@ -16,14 +16,12 @@ const Test = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('test1');
     axios
       .get(`https://greenstepserver.link/users/kakao/callback`, {
         params: { code },
       })
       .then((res) => {
-        console.log('test2');
-        // console.log(res)
+        console.log(res)
         const token = res.headers.authorization;
         const refresh_token = res.headers.refresh_token;
         localStorage.setItem("Authorization", token);

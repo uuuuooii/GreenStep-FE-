@@ -39,6 +39,7 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
+        user={user}
       />
     </>
   );

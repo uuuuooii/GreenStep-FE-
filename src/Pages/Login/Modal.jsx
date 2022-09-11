@@ -3,15 +3,13 @@ import React, { useState, useEffect } from 'react';
 import useInput from '../../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
 //modules import
-import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
+import { userThunk } from '../../Redux/modules/userInfoSlice';
 import instance from '../../Redux/modules/instance';
 //component import
 import FirstModal from './Modal/FirstModal/FirstModal';
 import SecondModal from './Modal/SecondModal/SecondModal';
 import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
-//styled import
-import Slide from 'react-reveal/Slide';
 
 const Modal = () => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +20,7 @@ const Modal = () => {
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.userInfo.userInfo);
 
   useEffect(() => {
     setLoading(true);
@@ -31,7 +29,7 @@ const Modal = () => {
     setImg(user.profilePhoto);
     setName(user.name);
     setNickname(user.nickname);
-  }, []);
+  }, [dispatch]);
 
   return !loading ? (
     <>

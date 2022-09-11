@@ -25,11 +25,7 @@ const Modal = () => {
     setLoading(true);
     dispatch(getUserInfoThunk());
     setLoading(false);
-    setImg(user.profilePhoto);
-    setName(user.name);
-    setNickname(user.nickname);
   }, [dispatch]);
-console.log(user,nickname,img,name)
   return !loading ? (
     <>
       <FirstModal

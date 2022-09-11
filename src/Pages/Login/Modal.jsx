@@ -9,7 +9,7 @@ import FirstModal from './Modal/FirstModal/FirstModal';
 import SecondModal from './Modal/SecondModal/SecondModal';
 import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
-
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 const Modal = () => {
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
@@ -28,6 +28,10 @@ const Modal = () => {
   }, [dispatch]);
   return !loading ? (
     <>
+        <ReactScrollWheelHandler
+      upHandler={(e) => window.scrollTo(0, 0)}
+      downHandler={(e) => window.scrollTo(0, document.body.scrollHeight)}
+    >
       <FirstModal
         display={display}
         setDisplay={setDisplay}
@@ -56,6 +60,7 @@ const Modal = () => {
         name={name}
         img={img}
       />
+      </ReactScrollWheelHandler>
     </>
   ) : (
     <LoadingBar />

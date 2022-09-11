@@ -48,7 +48,7 @@ const ThirdModal = ({
 
   //   addEventListener("mousewheel", (e) => {
   //     const direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";;
-      
+
   //     console.log(direction);
   //   });
   // },[])

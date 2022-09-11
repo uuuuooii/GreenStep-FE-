@@ -24,8 +24,10 @@ import {
   EmailStrong,
   EmailP,
   ProfileArea,
+  TargetDiv
 } from './ThirdModalStyled';
 import Fade from 'react-reveal/Fade';
+import { useRef } from 'react';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -47,6 +49,8 @@ const ThirdModal = ({
     profilePhoto: img,
     acceptMail: acceptMail,
   };
+
+const scrollTarget = useRef()
 
   return (
     <ThirdModalBody display={display}  >
@@ -112,6 +116,7 @@ const ThirdModal = ({
                   </EmailButtonArea>{' '}
                 </Fade>
               ) : null}
+              <TargetDiv ref={scrollTarget} />
             </TotalEmailArea>
           </CenterContainer>
         </SelectBody>

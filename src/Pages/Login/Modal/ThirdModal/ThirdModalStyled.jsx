@@ -28,6 +28,7 @@ export const ThirdModalSection = styled.div`
   height: 90%;
   background-color: white;
   margin: 0px auto 0px auto;
+
 `;
 
 export const ModalHeader = styled.div`
@@ -60,6 +61,10 @@ export const SelectBody = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   padding-top: 166px;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
 `;
 export const ButtonText = styled.div`
   color: #6de4c6;

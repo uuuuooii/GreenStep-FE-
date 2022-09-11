@@ -10,9 +10,12 @@ import FirstModal from './Modal/FirstModal/FirstModal';
 import SecondModal from './Modal/SecondModal/SecondModal';
 import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
+//styled import
+import Slide from 'react-reveal/Slide';
 
 const Modal = () => {
   const [loading, setLoading] = useState(false);
+  const [second, setSecond] = useState(false);
   const [display, setDisplay] = useState(1);
   const [img, setImg] = useState('');
   const [check, setCheck] = useState(0);
@@ -20,7 +23,6 @@ const Modal = () => {
   const [nickname, setNickname] = useState('');
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-
 
   useEffect(() => {
     setLoading(true);
@@ -46,7 +48,9 @@ const Modal = () => {
         setDisplay={setDisplay}
         setImg={setImg}
         img={img}
-      />
+        second={second}
+        setSecond={setSecond}
+      />{' '}
       <ThirdModal
         display={display}
         setDisplay={setDisplay}
@@ -57,7 +61,7 @@ const Modal = () => {
         nickname={nickname}
         name={name}
         img={img}
-      />{' '}
+      />
     </>
   ) : (
     <LoadingBar />

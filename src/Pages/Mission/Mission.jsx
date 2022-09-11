@@ -25,6 +25,7 @@ import {
   DailyCardBox,
   WeeklyMissionArea,
 } from './MissionStyled';
+import Slide from 'react-reveal/Slide';
 
 const Mission = () => {
   const [loading, setLoading] = useState(false);
@@ -43,93 +44,97 @@ const Mission = () => {
 
   return (
     <>
-      <>
-        {!loading && missionChallenge ? (
-          <DailyChallenge mission={missionChallenge[0]} />
-        ) : (
-          <ChallengeSkeleton />
-        )}
-        <DailyMissionArea>
-          <DailyTextArea>
-            <DailyText>데일리 미션</DailyText>
-          </DailyTextArea>
-          <DailyCardBox>
-            {!loading && missionDaily ? (
-              missionDaily.map((item, index) =>
-                item.status === 'DEFAULT' ? (
-                  <DailyMission
-                    key={item.missionId + index}
-                    item={item}
-                    onClick={() => navigate(`/explain/${item.missionId}&daily`)}
-                    type={'daily'}
-                  />
-                ) : item.status === 'WAITING' ? (
-                  <Waiting
-                    key={item.missionId + index}
-                    item={item}
-                    type={'daily'}
-                  />
-                ) : (
-                  <Completed
-                    key={item.missionId + index}
-                    item={item}
-                    type={'daily'}
-                  />
+      <Slide right>
+        <>
+          {!loading && missionChallenge ? (
+            <DailyChallenge mission={missionChallenge[0]} />
+          ) : (
+            <ChallengeSkeleton />
+          )}
+          <DailyMissionArea>
+            <DailyTextArea>
+              <DailyText>데일리 미션</DailyText>
+            </DailyTextArea>
+            <DailyCardBox>
+              {!loading && missionDaily ? (
+                missionDaily.map((item, index) =>
+                  item.status === 'DEFAULT' ? (
+                    <DailyMission
+                      key={item.missionId + index}
+                      item={item}
+                      onClick={() =>
+                        navigate(`/explain/${item.missionId}&daily`)
+                      }
+                      type={'daily'}
+                    />
+                  ) : item.status === 'WAITING' ? (
+                    <Waiting
+                      key={item.missionId + index}
+                      item={item}
+                      type={'daily'}
+                    />
+                  ) : (
+                    <Completed
+                      key={item.missionId + index}
+                      item={item}
+                      type={'daily'}
+                    />
+                  )
                 )
-              )
-            ) : (
-              <>
-                {' '}
-                <DailySkeleton />
-                <DailySkeleton />
-                <DailySkeleton />
-                <DailySkeleton />
-              </>
-            )}
-          </DailyCardBox>
-        </DailyMissionArea>
-        <WeeklyMissionArea>
-          <DailyTextArea>
-            <DailyText>위클리 미션</DailyText>
-          </DailyTextArea>
-          <DailyCardBox>
-            {!loading && missionWeekly ? (
-              missionWeekly.map((item, index) => {
-                return item.status === 'DEFAULT' ? (
-                  <DailyMission
-                    key={item.missionId + index}
-                    item={item}
-                    type={'weekly'}
-                    onClick={() =>
-                      navigate(`/explain/${item.missionId}&weekly`)
-                    }
-                  />
-                ) : item.status === 'WAITING' ? (
-                  <Waiting
-                    key={item.missionId + index}
-                    item={item}
-                    type={'weekly'}
-                  />
-                ) : (
-                  <Completed
-                    key={item.missionId + index}
-                    item={item}
-                    type={'weekly'}
-                  />
-                );
-              })
-            ) : (
-              <>
-                <DailySkeleton />
-                <DailySkeleton />
-                <DailySkeleton />
-                <DailySkeleton />
-              </>
-            )}
-          </DailyCardBox>
-          <Footer />
-        </WeeklyMissionArea>{' '}
-      </>
+              ) : (
+                <>
+                  {' '}
+                  <DailySkeleton />
+                  <DailySkeleton />
+                  <DailySkeleton />
+                  <DailySkeleton />
+                </>
+              )}
+            </DailyCardBox>
+          </DailyMissionArea>
+          <WeeklyMissionArea>
+            <DailyTextArea>
+              <DailyText>위클리 미션</DailyText>
+            </DailyTextArea>
+            <DailyCardBox>
+              {!loading && missionWeekly ? (
+                missionWeekly.map((item, index) => {
+                  return item.status === 'DEFAULT' ? (
+                    <DailyMission
+                      key={item.missionId + index}
+                      item={item}
+                      type={'weekly'}
+                      onClick={() =>
+                        navigate(`/explain/${item.missionId}&weekly`)
+                      }
+                    />
+                  ) : item.status === 'WAITING' ? (
+                    <Waiting
+                      key={item.missionId + index}
+                      item={item}
+                      type={'weekly'}
+                    />
+                  ) : (
+                    <Completed
+                      key={item.missionId + index}
+                      item={item}
+                      type={'weekly'}
+                    />
+                  );
+                })
+              ) : (
+                <>
+                  <DailySkeleton />
+                  <DailySkeleton />
+                  <DailySkeleton />
+                  <DailySkeleton />
+                </>
+              )}
+            </DailyCardBox>
+          </WeeklyMissionArea>{' '}
+        </>
+      </Slide>
+      <Footer />
     </>
   );
 };

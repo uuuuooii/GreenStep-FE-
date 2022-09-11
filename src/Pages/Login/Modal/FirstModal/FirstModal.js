@@ -74,18 +74,6 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
           </ImgArea>
         </SelectBody>
       </FirstModalSection>
-      <ModalHeader>
-        <DummyText></DummyText>
-        <TopText>프로필 사진</TopText>
-        <ButtonText
-          onClick={() => {
-            check === 0 ? alert('선택해주세요') : Next();
-          }}
-          check={check}
-        >
-          다음
-        </ButtonText>
-      </ModalHeader>
     </FirstModalBody>
   );
 };

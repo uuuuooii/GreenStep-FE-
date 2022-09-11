@@ -8,6 +8,10 @@ const SlideLeft = keyframes`
 from{transform:translateX(-300px)}
 to{transform:translateX(0px)}
 `;
+const FadeOn = keyframes`
+from{opacity:0}
+to{opacity:1}
+`
 export const FirstModalBody = styled.div`
   display: ${(props) => (props.display === 1 ? 'block' : 'none')};
   position: fixed;
@@ -50,7 +54,7 @@ export const SelectBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation-name: ${(props) => (!props.slide ? SlideUp : SlideLeft)};
+  animation-name: ${(props) => (!props.slide ? FadeOn : SlideLeft)};
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

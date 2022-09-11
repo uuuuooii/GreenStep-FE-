@@ -21,12 +21,6 @@ const Modal = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userInfo.userInfo);
 
-  const SetInfo = () => {
-    setImg(user.profilePhoto);
-    setName(user.name);
-    setNickname(user.nickname);
-  }
-
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());
@@ -35,9 +29,6 @@ const Modal = () => {
     setName(user.name);
     setNickname(user.nickname);
   }, [dispatch]);
-  useEffect(()=>{
-    user ? SetInfo() : null
-  },[])
 
   return !loading ? (
     <>

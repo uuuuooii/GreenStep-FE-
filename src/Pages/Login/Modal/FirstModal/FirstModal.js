@@ -23,7 +23,6 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
     check === 1 ? setDisplay(3) : setDisplay(2);
     setSlide(true);
   };
-  console.log(slide);
   return (
     <FirstModalBody display={display}>
       <FirstModalSection>

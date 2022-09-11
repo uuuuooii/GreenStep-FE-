@@ -29,7 +29,7 @@ const Modal = () => {
     setName(user.name);
     setNickname(user.nickname);
   }, [dispatch]);
-console.log(user,nickname)
+console.log(user,nickname,img,name)
   return !loading ? (
     <>
       <FirstModal
@@ -39,6 +39,7 @@ console.log(user,nickname)
         check={check}
         setCheck={setCheck}
         user={user}
+        setNickname={setNickname}
       />
       <SecondModal
         display={display}

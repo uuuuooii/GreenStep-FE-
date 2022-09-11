@@ -69,7 +69,7 @@ const Explain = () => {
             <button className="explain-button-go-camera">
               <div className="explain-button-go-camera-icon">
                 <FiCamera
-                  onClick={() => navigate(`/missioncamera/${paramsNum}`)}
+                  onClick={() => navigate(`/missioncamera/${paramsNum}&${paramsCategory}`)}
                 />
               </div>
             </button>

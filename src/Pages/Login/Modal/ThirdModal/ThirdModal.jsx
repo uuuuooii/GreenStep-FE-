@@ -1,7 +1,7 @@
 //react import
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import instance from "../../../../Redux/modules/instance";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import instance from '../../../../Redux/modules/instance';
 //styled import
 import {
   ThirdModalBody,
@@ -21,9 +21,10 @@ import {
   EmailButton,
   EmailStrong,
   EmailP,
-  CenterLine,
+  ProfileArea,
 } from './ThirdModalStyled';
 import Fade from 'react-reveal/Fade';
+import { useEffect } from 'react';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -35,7 +36,6 @@ const ThirdModal = ({
   name,
   nickname,
   img,
-
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const userinfo = {
@@ -44,6 +44,15 @@ const ThirdModal = ({
     profilePhoto: img,
     acceptMail: acceptMail,
   };
+  // useEffect(()=>{
+
+  //   addEventListener("mousewheel", (e) => {
+  //     const direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";;
+      
+  //     console.log(direction);
+  //   });
+  // },[])
+
   const navigate = useNavigate();
   return (
     <ThirdModalBody display={display}>
@@ -58,20 +67,21 @@ const ThirdModal = ({
         </ModalHeader>
         <SelectBody>
           <CenterContainer>
-            <ProfileImg src={img} />
-            <TextInput
-              onChange={(e)=>setName(e.target.value)}
-              value={name}
-              placeholder="이름"
-              maxLength={8}
-            />
-            <TextInput
-              onChange={(e)=>setNickname(e.target.value)}
-              value={nickname}
-              placeholder="닉네임"
-              maxLength={8}
-            />
-            <CenterLine />
+            <ProfileArea>
+              <ProfileImg src={img} />
+              <TextInput
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                placeholder="이름"
+                maxLength={8}
+              />
+              <TextInput
+                onChange={(e) => setNickname(e.target.value)}
+                value={nickname}
+                placeholder="닉네임"
+                maxLength={8}
+              />
+            </ProfileArea>
             <TotalEmailArea>
               <EmailStrong>마케팅 활용 동의 및 광고 수신 동의</EmailStrong>
               <EmailP>
@@ -87,7 +97,7 @@ const ThirdModal = ({
                 <CheckMailText>이메일 알림 수신동의</CheckMailText>
               </CheckMailArea>
               {nickname && name ? (
-                <Fade bottom>
+                <Fade>
                   {' '}
                   <EmailButtonArea>
                     {' '}

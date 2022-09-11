@@ -22,6 +22,7 @@ const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
   const Next = () => {
     check === 1 ? setDisplay(3) : setDisplay(2);
     setSlide(true);
+    setNickname(user.nickname)
   };
   return (
     <FirstModalBody display={display}>

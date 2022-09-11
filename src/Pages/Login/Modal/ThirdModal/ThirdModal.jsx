@@ -1,7 +1,8 @@
 //react import
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../../../Redux/modules/instance';
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 //styled import
 import {
   ThirdModalBody,
@@ -38,27 +39,17 @@ const ThirdModal = ({
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [toBottom, setToBottom] = useState(false);
+  const navigate = useNavigate();
   const userinfo = {
     name: name,
     nickname: nickname,
     profilePhoto: img,
     acceptMail: acceptMail,
   };
-  const handleOnWheel = (e) => {
-    if (e.nativeEvent.wheelDelta > 0) {
-      window.scrollTo(0, 0);
-      setToBottom(false);
-    } else {
-      window.scrollTo(0, 100);
-      setToBottom(true);
-    }}
 
-    useEffect(()=>{
-      handleOnWheel()
-    },[toBottom])
-  const navigate = useNavigate();
   return (
     <ThirdModalBody display={display}>
+
       <ThirdModalSection>
         <ModalHeader>
           <ButtonText
@@ -68,7 +59,12 @@ const ThirdModal = ({
           </ButtonText>
           <TopText>닉네임 설정</TopText>
         </ModalHeader>
+        {/* <ReactScrollWheelHandler
+        upHandler={(e) => console.log('scroll up')}
+        downHandler={(e) => console.log('scroll down')}
+      > */}
         <SelectBody>
+
           <CenterContainer>
             <ProfileArea>
               <ProfileImg src={img} />
@@ -121,6 +117,7 @@ const ThirdModal = ({
             </TotalEmailArea>
           </CenterContainer>
         </SelectBody>
+        
       </ThirdModalSection>
     </ThirdModalBody>
   );

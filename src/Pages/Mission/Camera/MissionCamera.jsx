@@ -52,7 +52,7 @@ export const MissionCamera = () => {
             <BackCamera />
           </div>
         ) : (
-          <div className="align-center" onClick={() => navigate(`explain/${backURL}`)}>
+          <div className="align-center" onClick={() => navigate(`/explain/${backURL}`)}>
             <BackArrow />
           </div>
         )}

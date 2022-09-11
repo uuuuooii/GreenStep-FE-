@@ -29,7 +29,6 @@ const Explain = () => {
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
   useEffect(() => {
-    document.getElementById('scroll').scrollTo(0, 0);
     setLoding(true);
     paramsCategory === 'challenge'
       ? dispatch(__GetTodaymission())
@@ -44,7 +43,7 @@ const Explain = () => {
       {!loding && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape" >
-            <div className="explain-mission-name-and-tag-area" id="scroll">
+            <div className="explain-mission-name-and-tag-area">
               <div className="explain-mission-name-text">
                 {select ? select.missionName : 'MissionName'}
               </div>

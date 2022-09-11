@@ -1,5 +1,11 @@
-import styled from 'styled-components';
-import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
+import styled, { keyframes } from 'styled-components';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+
+const SlideRight = keyframes`
+from{transform:translateX(300px)}
+to{transform:translateX(0px)}
+`;
+
 
 export const ThirdModalBody = styled.div`
   display: ${(props) => (props.display == 3 ? 'block' : 'none')};
@@ -47,6 +53,10 @@ export const SelectBody = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation-name: ${SlideRight};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const ButtonText = styled.div`
   color: #6de4c6;

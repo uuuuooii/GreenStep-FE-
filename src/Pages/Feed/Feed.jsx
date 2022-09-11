@@ -9,8 +9,8 @@ import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 import Footer from '../../Components/Footer/Footer';
 //redux
-import { __GetLanks } from "../../Redux/modules/ranks";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetLanks } from '../../Redux/modules/ranks';
+import { useDispatch, useSelector } from 'react-redux';
 
 //styled import
 import {
@@ -45,7 +45,7 @@ import {
   ContentArea,
 } from './FeedStyled';
 import FeedArrow from '../../static/components/FeedArrow';
-
+import Slide from 'react-reveal/Slide';
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
@@ -53,7 +53,7 @@ const Feed = () => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [last, setLast] = useState("");
+  const [last, setLast] = useState('');
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
 
@@ -65,16 +65,15 @@ const Feed = () => {
     '#환경용품사용',
     '#에너지절약',
     '#기타',
-
   ];
   const categoryApi = [
-    "all",
-    "disposable",
-    "separate",
-    "environmental",
-    "goods",
-    "energy",
-    "etc",
+    'all',
+    'disposable',
+    'separate',
+    'environmental',
+    'goods',
+    'energy',
+    'etc',
   ];
 
   useEffect(() => {
@@ -141,100 +140,108 @@ const Feed = () => {
     page === 0 || page % 2 ? TagClick() : console.log();
   }, [page]);
 
-  return (<>
-    <FeedPage>
-      {!loading && ranks ? (
-        <RankingBox>
-          <RankTitle>Today's Ranking</RankTitle>
-          <MedalBox>
-            {ranks.map((item, index) => (
-              <InfoArea key={index + item}>
-                <Medal num={index} />
-                <UserArea>
-                  <UserProfile src={item.profilePhoto} />
-                  <UserName>{item.nickName}</UserName>
-                </UserArea>
-              </InfoArea>
+  return (
+    <>
+      <Slide left>
+        <FeedPage>
+          {!loading && ranks ? (
+            <RankingBox>
+              <RankTitle>Today's Ranking</RankTitle>
+              <MedalBox>
+                {ranks.map((item, index) => (
+                  <InfoArea key={index + item}>
+                    <Medal num={index} />
+                    <UserArea>
+                      <UserProfile src={item.profilePhoto} />
+                      <UserName>{item.nickName}</UserName>
+                    </UserArea>
+                  </InfoArea>
+                ))}
+              </MedalBox>
+            </RankingBox>
+          ) : (
+            <RankingSkeleton />
+          )}
+          <CategoryArea>
+            {categoryList.map((item, index) => (
+              <CategoryButton
+                key={item + index}
+                onClick={() => setCategory(index)}
+                check={index}
+                num={category}
+              >
+                <CategoryButtonText>{item}</CategoryButtonText>
+              </CategoryButton>
             ))}
-          </MedalBox>
-        </RankingBox>
-      ) : (
-        <RankingSkeleton />
-      )}
-      <CategoryArea>
-        {categoryList.map((item, index) => (
-          <CategoryButton
-            key={item + index}
-            onClick={() => setCategory(index)}
-            check={index}
-            num={category}
-          >
-            <CategoryButtonText>{item}</CategoryButtonText>
-          </CategoryButton>
-        ))}
-      </CategoryArea>
-      <FeedArea>
-        {!loading && FeedList ? (
-          FeedList.map((item, index) => (
-            <TotalFeed key={item + index}>
-              <FeedCard>
-                <CardTopArea>
-                  {/* 박수 */}
+          </CategoryArea>
+          <FeedArea>
+            {!loading && FeedList ? (
+              FeedList.map((item, index) => (
+                <TotalFeed key={item + index}>
+                  <FeedCard>
+                    <CardTopArea>
+                      {/* 박수 */}
 
-                  <ClapArea onClick={() => changeClap(item.id)} type="button">
-                    <ClapPoint>{item.clapCount}</ClapPoint>
-                    <ClapBox>
-                      {item.clapByMe ? (
-                        <DoneClap />
-                      ) : (
-                        <ClapIcon color={'white'} />
-                      )}
-                    </ClapBox>
-                  </ClapArea>
-                </CardTopArea>
-                <LargePhoto src={item.missionImgUrl} />
-              </FeedCard>
-              <FeedContent>
-                <CardBottomArea>
-                  <BottomProfileArea>
-                    {' '}
-                    <FeedProfile src={item.profilePhoto} />
-                    <FeedNickname>{item.authorName}</FeedNickname>
-                  </BottomProfileArea>
-                  <TagArea
-                    onClick={() => setCategory(categoryList.indexOf(item.tag))}
-                  >
-                    {item.tag}
-                  </TagArea>
-                </CardBottomArea>
-                <ContentArea>
-                  <ArrowArea>
-                    {' '}
-                    <FeedArrow />
-                  </ArrowArea>
-                  <FeedText>{item.content}</FeedText>
-                </ContentArea>
-              </FeedContent>
-            </TotalFeed>
-          ))
-        ) : (
-          <>
-            <FeedSkeleton />
-            <FeedSkeleton />
-            <FeedSkeleton />
-          </>
-        )}
-        {loading ? (
-          <>
-            <FeedSkeleton />
-            <FeedSkeleton />
-            <FeedSkeleton />
-          </>
-        ) : null}
-      </FeedArea>
-      <ScrollDiv ref={ref} />
-    </FeedPage>
-    <Footer/>
+                      <ClapArea
+                        onClick={() => changeClap(item.id)}
+                        type="button"
+                      >
+                        <ClapPoint>{item.clapCount}</ClapPoint>
+                        <ClapBox>
+                          {item.clapByMe ? (
+                            <DoneClap />
+                          ) : (
+                            <ClapIcon color={'white'} />
+                          )}
+                        </ClapBox>
+                      </ClapArea>
+                    </CardTopArea>
+                    <LargePhoto src={item.missionImgUrl} />
+                  </FeedCard>
+                  <FeedContent>
+                    <CardBottomArea>
+                      <BottomProfileArea>
+                        {' '}
+                        <FeedProfile src={item.profilePhoto} />
+                        <FeedNickname>{item.authorName}</FeedNickname>
+                      </BottomProfileArea>
+                      <TagArea
+                        onClick={() =>
+                          setCategory(categoryList.indexOf(item.tag))
+                        }
+                      >
+                        {item.tag}
+                      </TagArea>
+                    </CardBottomArea>
+                    <ContentArea>
+                      <ArrowArea>
+                        {' '}
+                        <FeedArrow />
+                      </ArrowArea>
+                      <FeedText>{item.content}</FeedText>
+                    </ContentArea>
+                  </FeedContent>
+                </TotalFeed>
+              ))
+            ) : (
+              <>
+                <FeedSkeleton />
+                <FeedSkeleton />
+                <FeedSkeleton />
+              </>
+            )}
+            {loading ? (
+              <>
+                <FeedSkeleton />
+                <FeedSkeleton />
+                <FeedSkeleton />
+              </>
+            ) : null}
+          </FeedArea>
+          <ScrollDiv ref={ref} />
+        </FeedPage>
+      </Slide>
+      <Footer />
     </>
   );
 };

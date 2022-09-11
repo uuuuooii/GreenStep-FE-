@@ -192,3 +192,6 @@ export const EmailButtonArea = styled.div`
   margin-top: 87px;
   /* top: 40px; */
 `;
+export const TargetDiv = styled.div`
+  height: 1px;
+`

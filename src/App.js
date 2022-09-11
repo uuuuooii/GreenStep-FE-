@@ -23,12 +23,21 @@ import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 // import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 
 function App() {
-  // const token = localStorage.getItem("Authorization");
-  // instance.defaults.headers.common["Authorization"] = token;
+//   const handleOnWheel = (e) => {
+//     if (e.nativeEvent.wheelDelta > 0) {
+//         // scroll up event
+//         console.log('scroll up');
+//         setHide(false);
+//       } else {
+//         // scroll down event 
+//         console.log('scroll down');
+//         setHide(true)
+//     }
+// }
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header  />
         {/* <Kakaoshare /> */}
         <ScrollToTop id="scroll" />
         <Routes>

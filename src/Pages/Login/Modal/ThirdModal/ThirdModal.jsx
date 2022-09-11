@@ -1,5 +1,5 @@
 //react import
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../../../Redux/modules/instance';
 //styled import
@@ -24,7 +24,6 @@ import {
   ProfileArea,
 } from './ThirdModalStyled';
 import Fade from 'react-reveal/Fade';
-import { useEffect } from 'react';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -38,21 +37,25 @@ const ThirdModal = ({
   img,
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
+  const [toBottom, setToBottom] = useState(false);
   const userinfo = {
     name: name,
     nickname: nickname,
     profilePhoto: img,
     acceptMail: acceptMail,
   };
-  // useEffect(()=>{
+  const handleOnWheel = (e) => {
+    if (e.nativeEvent.wheelDelta > 0) {
+      window.scrollTo(0, 0);
+      setToBottom(false);
+    } else {
+      window.scrollTo(0, 100);
+      setToBottom(true);
+    }}
 
-  //   addEventListener("mousewheel", (e) => {
-  //     const direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";;
-
-  //     console.log(direction);
-  //   });
-  // },[])
-
+    useEffect(()=>{
+      handleOnWheel()
+    },[toBottom])
   const navigate = useNavigate();
   return (
     <ThirdModalBody display={display}>

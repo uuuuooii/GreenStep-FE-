@@ -1,8 +1,9 @@
 //react import
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../../../Redux/modules/instance';
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
+import useMoveScrool from '../../../../hooks/useMoveScroll';
+
 //styled import
 import {
   ThirdModalBody,
@@ -48,8 +49,7 @@ const ThirdModal = ({
   };
 
   return (
-    <ThirdModalBody display={display}>
-
+    <ThirdModalBody display={display}  >
       <ThirdModalSection>
         <ModalHeader>
           <ButtonText
@@ -59,13 +59,11 @@ const ThirdModal = ({
           </ButtonText>
           <TopText>닉네임 설정</TopText>
         </ModalHeader>
-        {/* <ReactScrollWheelHandler
-        upHandler={(e) => console.log('scroll up')}
-        downHandler={(e) => console.log('scroll down')}
-      > */}
+
         <SelectBody>
 
           <CenterContainer>
+
             <ProfileArea>
               <ProfileImg src={img} />
               <TextInput
@@ -117,7 +115,6 @@ const ThirdModal = ({
             </TotalEmailArea>
           </CenterContainer>
         </SelectBody>
-        
       </ThirdModalSection>
     </ThirdModalBody>
   );

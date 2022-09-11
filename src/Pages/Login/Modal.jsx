@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import useInput from '../../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
 //modules import
-import { userThunk } from '../../Redux/modules/userInfoSlice';
-import instance from '../../Redux/modules/instance';
+import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 //component import
 import FirstModal from './Modal/FirstModal/FirstModal';
 import SecondModal from './Modal/SecondModal/SecondModal';

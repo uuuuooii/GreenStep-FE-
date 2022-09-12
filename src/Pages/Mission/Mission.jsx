@@ -52,7 +52,6 @@ const Mission = ({Header}) => {
           ) : (
             <ChallengeSkeleton />
           )}
-          
           <DailyMissionArea>
             <DailyTextArea>
               <DailyText>데일리 미션</DailyText>

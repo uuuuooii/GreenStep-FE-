@@ -36,14 +36,14 @@ const Explain = () => {
       ? dispatch(__GetDailymission())
       : dispatch(__GetWeeklymission());
     setLoding(false);
-    document.getElementById('scroll').scrollTo(0, 0);
+
   }, [dispatch]);
   return (
     <>
       {!loding && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape" >
-            <div className="explain-mission-name-and-tag-area" id="scroll">
+            <div className="explain-mission-name-and-tag-area">
               <div className="explain-mission-name-text">
                 {select ? select.missionName : 'MissionName'}
               </div>
@@ -68,7 +68,7 @@ const Explain = () => {
             <button className="explain-button-go-camera">
               <div className="explain-button-go-camera-icon">
                 <FiCamera
-                  onClick={() => navigate(`/missioncamera/${paramsNum}`)}
+                  onClick={() => navigate(`/missioncamera/${paramsNum}&${paramsCategory}`)}
                 />
               </div>
             </button>

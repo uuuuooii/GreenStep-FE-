@@ -1,5 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+const SlideUp = keyframes`
+from{transform:translateY(200px)}
+to{transform:translateY(0px)}
+`;
+const SlideLeft = keyframes`
+from{transform:translateX(-300px)}
+to{transform:translateX(0px)}
+`;
+const FadeOn = keyframes`
+from{opacity:0}
+to{opacity:1}
+`
 export const FirstModalBody = styled.div`
   display: ${(props) => (props.display === 1 ? 'block' : 'none')};
   position: fixed;
@@ -17,13 +29,10 @@ export const FirstModalBody = styled.div`
 `;
 
 export const FirstModalSection = styled.div`
-  /* max-width: 300px; */
   width: 100%;
   height: 100%;
   background-color: white;
   margin: 0px auto 0px auto;
-  /* border-radius: 20px; */
-  /* padding: 0 15px; */
 `;
 
 export const ModalHeader = styled.div`
@@ -45,14 +54,15 @@ export const SelectBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: ${(props) => (!props.slide ? FadeOn : SlideLeft)};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const ImgArea = styled.div`
   width: 100%;
   height: 100%;
   font-size: 4px;
-  /* align-items: center;
-justify-content: center;
-display: flex; */
 `;
 export const SelectImg = styled.img`
   width: 100px;

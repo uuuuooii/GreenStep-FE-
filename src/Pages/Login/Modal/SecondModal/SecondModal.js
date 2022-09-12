@@ -15,7 +15,14 @@ import {
 // import KakaoTalk_20220903_023459515_01 from "../../../../static/images/KakaoTalk_20220903_023459515_01"
 
 const URL = process.env.REACT_APP_URL;
-const SecondModal = ({ display, setDisplay, setImg, img }) => {
+const SecondModal = ({
+  display,
+  setDisplay,
+  setImg,
+  img,
+  second,
+  setSecond,
+}) => {
   const imgList = [
     '/images/고양이.png',
     '/images/돼지.png',
@@ -24,21 +31,32 @@ const SecondModal = ({ display, setDisplay, setImg, img }) => {
     '/images/토끼.png',
     '/images/펭귄.png',
   ];
+  const NextThird = () => {
+    setDisplay(3);
+    setSecond(true);
+  };
   return (
     <SecondModalBody display={display}>
       <SecondModalSection>
         <ModalHeader>
-          <ButtonText onClick={() => setDisplay(1)}>이전</ButtonText>
+          <ButtonText
+            onClick={() => {
+              setDisplay(1);
+              setSecond(false);
+            }}
+          >
+            이전
+          </ButtonText>
           <TopText>프로필 사진</TopText>
           <ButtonText
             onClick={() =>
-              img ? setDisplay(3) : alert('캐릭터를 선택해주세요.')
+              img ? NextThird() : alert('캐릭터를 선택해주세요.')
             }
           >
             다음
           </ButtonText>
         </ModalHeader>
-        <SelectBody>
+        <SelectBody second={second}>
           <ImgArea>
             {imgList.map((item, index) => (
               <ImgDiv key={item}>

@@ -7617,6 +7617,11 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-scroll-wheel-handler@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-wheel-handler/-/react-scroll-wheel-handler-2.2.0.tgz#8119f6befe374d70764511212fd91672cd5cfd7f"
+  integrity sha512-x1OqSyF5qzCEvX2C3Rgfm6BoOMwuV4JJezBZEkRkaMe0cnb9xrnsoYtwrKIJ+J1zRy3dZESoHdoAtepzW+xtKA==
+
 react-toasts@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/react-toasts/-/react-toasts-3.0.6.tgz#e6865ba2a7dd544f09e00c68310ee779d30c7571"

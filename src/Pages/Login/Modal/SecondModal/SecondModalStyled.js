@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const SlideRight = keyframes`
+from{transform:translateX(300px)}
+to{transform:translateX(0px)}
+`;
+const SlideLeft = keyframes`
+from{transform:translateX(-300px)}
+to{transform:translateX(0px)}
+`;
+
 export const SecondModalBody = styled.div`
   display: ${(props) => (props.display == 2 ? 'block' : 'none')};
   position: fixed;
@@ -64,6 +74,10 @@ export const SelectBody = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 50px 0;
+  animation-name: ${(props) => (!props.second ? SlideRight : SlideLeft)};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const ButtonText = styled.div`
   /* margin: auto; */

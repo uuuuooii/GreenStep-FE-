@@ -18,7 +18,8 @@ export const MissionCamera = () => {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const [image, setImage] = useState(null);
   const Certification = { base64String: image };
-  const missionId = useParams().id;
+  const missionId = useParams().id.split('&')[0];
+  const backURL = useParams().id
   const navigate = useNavigate();
   const Upload = () => {
     instance.post(`/missions/${missionId}`, Certification);
@@ -51,7 +52,7 @@ export const MissionCamera = () => {
             <BackCamera />
           </div>
         ) : (
-          <div className="align-center" onClick={() => setImage('')}>
+          <div className="align-center" onClick={() => navigate(`/explain/${backURL}`)}>
             <BackArrow />
           </div>
         )}

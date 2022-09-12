@@ -20,6 +20,7 @@ export const ButtonBody = styled.div`
     cursor: pointer;
     outline: 1px solid black;
   }
+  margin: 3100px 62px 63px 62px;
 `;
 export const KakaoIcon = styled(RiKakaoTalkFill)`
   position: absolute;
@@ -34,4 +35,12 @@ export const ButtonText = styled.div`
 export const KakaoLink = styled.a`
   text-decoration: none;
   color: black;
+`
+export const LDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 286px 80px 2700px 80px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.35) 77.08%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 107.5px;
 `

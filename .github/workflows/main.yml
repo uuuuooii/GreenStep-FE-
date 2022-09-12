@@ -43,8 +43,8 @@ jobs:
         continue-on-error: true
         
    
-      - name: 배포
-        run: aws s3 sync ./dist s3://greenstepapp.com/ --delete
+#       - name: 배포
+#         run: aws s3 sync ./dist s3://greenstepapp.com/ --delete
 
       - name: 캐시 무효화
         run: aws cloudfront create-invalidation --distribution-id=E3IQVE9TJE15W8 --paths "/*"

@@ -17,7 +17,7 @@ import {
 } from './UploadStyled';
 import Slide from 'react-reveal/Slide';
 
-const Upload = ({}) => {
+const Upload = ({Header}) => {
   const [content, contentHandler] = useInput('');
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
@@ -29,7 +29,7 @@ const Upload = ({}) => {
       : state.userInfo.certification[0]
   );
   const testText = { content: content };
-  const Upload = () => {
+  const Upload = ({Header}) => {
     instance.post(`/profiles/missions/${param}`, testText);
     navigate('/mypage');
   };
@@ -41,6 +41,7 @@ const Upload = ({}) => {
   }, []);
   return (
     <>
+    {Header}
       <Slide bottom>
         <div className="upload-wrap-shape">
           {!loading && data ? (

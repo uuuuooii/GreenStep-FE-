@@ -3,9 +3,10 @@ import "./PhotoShotsArchive.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { FiSettings } from "react-icons/fi";
 
-const PhotoShotsArchive = () => {
+const PhotoShotsArchive = ({Header}) => {
   return (
     <>
+    {Header}
       <div className="wrap-archive">
         <div className="back-and-settings-button-area">
           <div className="back-button">

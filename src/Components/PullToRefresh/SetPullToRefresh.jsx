@@ -5,7 +5,7 @@ import { TbLeaf } from "react-icons/tb";
 import { RiLeafFill } from "react-icons/ri";
 import "./PullToRefresh.css";
 
-const PullToRefresh = () => {
+const SetPullToRefresh = () => {
   const PullToRefresh = require("pulltorefreshjs");
 
   const ptr = PullToRefresh.init({
@@ -25,4 +25,4 @@ const PullToRefresh = () => {
   return <div></div>;
 };
 
-export default PullToRefresh;
+export default SetPullToRefresh;

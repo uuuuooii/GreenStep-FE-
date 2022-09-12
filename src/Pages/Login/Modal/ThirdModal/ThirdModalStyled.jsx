@@ -82,6 +82,7 @@ export const ProfileImg = styled.img`
   height: 100px;
   margin: 15px 0;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
+  border-radius: 10px;
 `;
 export const CenterContainer = styled.div`
   width: 100%;

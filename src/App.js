@@ -24,45 +24,35 @@ import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 
 
 function App() {
-//   const handleOnWheel = (e) => {
-//     if (e.nativeEvent.wheelDelta > 0) {
-//         // scroll up event
-//         console.log('scroll up');
-//         setHide(false);
-//       } else {
-//         // scroll down event 
-//         console.log('scroll down');
-//         setHide(true)
-//     }
-// }
+
   return (
     <>
       <BrowserRouter>
-        <Header  />
+        {/* <Header  /> */}
         {/* <Kakaoshare /> */}
         <ScrollToTop id="scroll" />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/users/kakao/callback" element={<Loding />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/" element={<Login  />} />
+          <Route path="/users/kakao/callback" element={<Loding Header={<Header/>} />} />
+          <Route path="/admin" element={<Admin Header={<Header/>} />} />
+          <Route path="/adminlogin" element={<AdminLogin Header={<Header/>} />} />
           <Route path="/modal" element={<Modal />} />
-          <Route path="/mission" element={<Mission />} />
+          <Route path="/mission" element={<Mission Header={<Header/>} />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
           <Route path="/missioncamera/:id" element={<MissionCamera />} />
-          <Route path="/upload" element={<Upload />} />
-          <Route path="/upload/:id" element={<Upload />} />
-          <Route path="/explain" element={<Explain />} />
-          <Route path="/explain/:id" element={<Explain />} />
-          <Route path="/mypage" element={<Mypage />} />
-          <Route path="/archive" element={<Archive />} />
-          <Route path="/updatemypage" element={<UpdateMyPage />} />
-          <Route path="/archive/:id" element={<Archive />} />
-          <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
-          <Route path="/detailposts" element={<DetailPosts />} />
-          <Route path="/detailposts/:id" element={<DetailPosts />} />
-          <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
-          <Route path="/feed" element={<Feed />} />
+          <Route path="/upload" element={<Upload Header={<Header/>} />} />
+          <Route path="/upload/:id" element={<Upload Header={<Header/>} />} />
+          <Route path="/explain" element={<Explain Header={<Header/>} />} />
+          <Route path="/explain/:id" element={<Explain Header={<Header/>} />} />
+          <Route path="/mypage" element={<Mypage Header={<Header/>} />} />
+          <Route path="/archive" element={<Archive Header={<Header/>} />} />
+          <Route path="/updatemypage" element={<UpdateMyPage Header={<Header/>} />} />
+          <Route path="/archive/:id" element={<Archive Header={<Header/>} />} />
+          <Route path="/photoshotsarchive" element={<PhotoShotsArchive Header={<Header/>} />} />
+          <Route path="/detailposts" element={<DetailPosts Header={<Header/>} />} />
+          <Route path="/detailposts/:id" element={<DetailPosts Header={<Header/>} />} />
+          <Route path="/detailphotoshots" element={<DetailPhotoShots Header={<Header/>} />} />
+          <Route path="/feed" element={<Feed Header={<Header/>} />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

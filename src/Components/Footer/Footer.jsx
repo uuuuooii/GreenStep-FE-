@@ -1,7 +1,7 @@
 //react import
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { useState,useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+//styled import
 import styled from 'styled-components';
 import './Footer.css';
 import { MdListAlt, MdPersonOutline } from 'react-icons/md';
@@ -23,20 +23,22 @@ const MyPageIcon = styled(MdPersonOutline)`
 `;
 
 export function Footer() {
+  const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [page, setPage] = useState('Mission');
+  const [page, setPage] = useState('/Mission');
   const SetFeed = () => {
-    setPage('Feed');
     navigate('/feed');
   };
   const SetMission = () => {
-    setPage('Mission');
-    navigate('/Mission');
+    navigate('/mission');
   };
   const SetMyPage = () => {
-    setPage('MyPage');
     navigate('/myPage');
   };
+  console.log(pathname);
+  useEffect(() => {
+    setPage(pathname);
+  }, [pathname]);
   return (
     <>
       <div className="footer-dummy-div"></div>
@@ -44,15 +46,15 @@ export function Footer() {
       <div className="footer-box">
         <div className="wrap-footer-icons">
           <div className="footer-icon-1" onClick={() => SetFeed()}>
-            <FeedIcon color={page === 'Feed' ? '#DAF2D5' : 'black'} />
+            <FeedIcon color={page === '/feed' ? '#DAF2D5' : 'black'} />
           </div>
 
           <div className="footer-icon-2" onClick={() => SetMission()}>
-            <HomeIcon color={page === 'Mission' ? '#DAF2D5' : 'black'} />
+            <HomeIcon color={page === '/mission' ? '#DAF2D5' : 'black'} />
           </div>
 
           <div className="footer-icon-3" onClick={() => SetMyPage()}>
-            <MyPageIcon color={page === 'MyPage' ? '#DAF2D5' : 'black'} />
+            <MyPageIcon color={page === '/myPage' ? '#DAF2D5' : 'black'} />
           </div>
         </div>
       </div>

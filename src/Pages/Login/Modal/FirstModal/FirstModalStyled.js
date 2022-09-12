@@ -1,9 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const SlideUp = keyframes`
-from{transform:translateY(200px)}
-to{transform:translateY(0px)}
-`;
+
 const SlideLeft = keyframes`
 from{transform:translateX(-300px)}
 to{transform:translateX(0px)}
@@ -69,6 +66,7 @@ export const SelectImg = styled.img`
   width: 100px;
   height: 100px;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
+  border-radius: 10px;
   outline: ${(props) =>
     props.num === props.check ? "2px solid #B2E2AB" : "none"};
   &:hover {

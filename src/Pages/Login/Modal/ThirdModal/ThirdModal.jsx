@@ -55,6 +55,7 @@ const ThirdModal = ({
   return (
     <ThirdModalBody display={display}>
       <ThirdModalSection>
+
         <ModalHeader>
           <ButtonText
             onClick={() => (check == 1 ? setDisplay(1) : setDisplay(2))}
@@ -68,6 +69,7 @@ const ThirdModal = ({
           <CenterContainer>
             <ProfileArea>
               <ProfileImg src={img} />
+
               <TextInput
                 onChange={(e) => setName(e.target.value)}
                 value={name}

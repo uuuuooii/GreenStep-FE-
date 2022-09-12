@@ -1,5 +1,5 @@
 //react import
-import React from 'react';
+import React from "react";
 //styled import
 import {
   FirstModalBody,
@@ -14,8 +14,8 @@ import {
   ButtonText,
   DummyText,
   SelectText,
-} from './FirstModalStyled';
-import { useState } from 'react';
+} from "./FirstModalStyled";
+import { useState } from "react";
 
 const FirstModal = ({
   display,
@@ -40,7 +40,7 @@ const FirstModal = ({
           <TopText>프로필 사진</TopText>
           <ButtonText
             onClick={() => {
-              check === 0 ? alert('선택해주세요') : Next();
+              check === 0 ? alert("선택해주세요") : Next();
             }}
             check={check}
           >
@@ -55,7 +55,7 @@ const FirstModal = ({
                   src={
                     user.profilePhoto
                       ? user.profilePhoto
-                      : 'https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg'
+                      : "https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg"
                   }
                   onClick={() => {
                     check === 1 ? setCheck(0) : setCheck(1);

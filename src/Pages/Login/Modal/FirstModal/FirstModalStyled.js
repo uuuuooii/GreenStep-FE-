@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 
 const SlideLeft = keyframes`
@@ -8,9 +8,9 @@ to{transform:translateX(0px)}
 const FadeOn = keyframes`
 from{opacity:0}
 to{opacity:1}
-`
+`;
 export const FirstModalBody = styled.div`
-  display: ${(props) => (props.display === 1 ? 'block' : 'none')};
+  display: ${(props) => (props.display === 1 ? "block" : "none")};
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -62,12 +62,13 @@ export const ImgArea = styled.div`
   font-size: 4px;
 `;
 export const SelectImg = styled.img`
+  object-fit: cover;
   width: 100px;
   height: 100px;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   border-radius: 10px;
   outline: ${(props) =>
-    props.num === props.check ? '2px solid #B2E2AB' : 'none'};
+    props.num === props.check ? "2px solid #B2E2AB" : "none"};
   &:hover {
     cursor: pointer;
   }
@@ -96,7 +97,7 @@ export const DummyText = styled.div`
   margin: 0 10px;
 `;
 export const SelectText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;

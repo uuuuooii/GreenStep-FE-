@@ -17,7 +17,7 @@ import {
 } from './UploadStyled';
 import Slide from 'react-reveal/Slide';
 
-const Upload = ({}) => {
+const Upload = ({Header}) => {
   const [content, contentHandler] = useInput('');
   const param = useParams().id;
   const [loading, setLoding] = useState(false);

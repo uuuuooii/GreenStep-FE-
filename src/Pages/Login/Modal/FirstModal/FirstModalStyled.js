@@ -67,6 +67,7 @@ export const SelectImg = styled.img`
   height: 100px;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   border-radius: 10px;
+  /* -moz-outline-radius : 10px; */
   outline: ${(props) =>
     props.num === props.check ? "2px solid #B2E2AB" : "none"};
   &:hover {

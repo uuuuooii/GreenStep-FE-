@@ -16,7 +16,7 @@ import Slide from 'react-reveal/Slide';
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import WatingLeap from '../../../static/components/WatingLeap';
 
-const Explain = () => {
+const Explain = ({Header}) => {
   const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,6 +40,7 @@ const Explain = () => {
   }, [dispatch]);
   return (
     <>
+    {Header}
       <div className="explain-back-div" onClick={() => navigate('/mission')} />
       {!loding && select ? (
         <Slide bottom>

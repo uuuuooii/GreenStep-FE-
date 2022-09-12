@@ -27,7 +27,7 @@ import {
 } from './MissionStyled';
 import Slide from 'react-reveal/Slide';
 
-const Mission = () => {
+const Mission = ({Header}) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -44,6 +44,7 @@ const Mission = () => {
 
   return (
     <>
+    {Header}
       <Slide right>
         <>
           {!loading && missionChallenge ? (
@@ -51,7 +52,6 @@ const Mission = () => {
           ) : (
             <ChallengeSkeleton />
           )}
-          
           <DailyMissionArea>
             <DailyTextArea>
               <DailyText>데일리 미션</DailyText>

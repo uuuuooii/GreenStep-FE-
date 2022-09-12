@@ -42,8 +42,9 @@ jobs:
           PATHS: '/index.html'
         continue-on-error: true
         
+   
       - name: 배포
-        run: aws s3 sync ./dist s3://bucket-babble-front/ --delete
+        run: aws s3 sync ./dist s3://greenstepapp.com/ --delete
 
       - name: 캐시 무효화
-        run: aws cloudfront create-invalidation --distribution-id $ --paths "/index.html" "/bundle.js"
+        run: aws cloudfront create-invalidation --distribution-id $ --paths "/index.html" 

@@ -61,6 +61,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .explain-waiting-bar {
   width: 100%;
   height: 45px;
@@ -72,11 +73,12 @@
   background: #B8DDE2;
   margin: 30px 0 82px 0;
 }
-.explain-back-div{
+
+.explain-back-div {
   width: 100%;
   height: 65px;
   background: rgba(255, 255, 255, 0.5);
-opacity: 0.5;
-position: absolute;
-top: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
 }

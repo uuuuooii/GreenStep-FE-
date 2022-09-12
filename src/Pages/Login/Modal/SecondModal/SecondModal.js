@@ -15,7 +15,14 @@ import {
 // import KakaoTalk_20220903_023459515_01 from "../../../../static/images/KakaoTalk_20220903_023459515_01"
 
 const URL = process.env.REACT_APP_URL;
-const SecondModal = ({ display, setDisplay, setImg, img,second,setSecond }) => {
+const SecondModal = ({
+  display,
+  setDisplay,
+  setImg,
+  img,
+  second,
+  setSecond,
+}) => {
   const imgList = [
     '/images/고양이.png',
     '/images/돼지.png',
@@ -26,13 +33,20 @@ const SecondModal = ({ display, setDisplay, setImg, img,second,setSecond }) => {
   ];
   const NextThird = () => {
     setDisplay(3);
-    setSecond(true)
-  }
+    setSecond(true);
+  };
   return (
     <SecondModalBody display={display}>
       <SecondModalSection>
         <ModalHeader>
-          <ButtonText onClick={() => {setDisplay(1);setSecond(false)}}>이전</ButtonText>
+          <ButtonText
+            onClick={() => {
+              setDisplay(1);
+              setSecond(false);
+            }}
+          >
+            이전
+          </ButtonText>
           <TopText>프로필 사진</TopText>
           <ButtonText
             onClick={() =>

@@ -28,6 +28,7 @@ export const ThirdModalSection = styled.div`
   height: 90%;
   background-color: white;
   margin: 0px auto 0px auto;
+
 `;
 
 export const ModalHeader = styled.div`
@@ -57,6 +58,13 @@ export const SelectBody = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 166px;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
 `;
 export const ButtonText = styled.div`
   color: #6de4c6;
@@ -80,6 +88,7 @@ export const CenterContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 156px 16px 277px 16px;
 `;
 
 export const TextInput = styled.input`
@@ -103,18 +112,21 @@ export const TextInput = styled.input`
     color: #b2e2ab;
   }
 `;
+export const ProfileArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 166px;
+  justify-content: center;
+  align-items: center;
+`
 export const TotalEmailArea = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  margin-top: 268px;
 `;
-export const CenterLine = styled.div`
-  width: 95%;
-  height: 0px;
-  border: 1px solid rgba(134, 134, 134, 0.3);
-  margin: 10px 0;
-`;
+
 export const CheckMailArea = styled.div`
   display: flex;
   margin: 10px 0;
@@ -138,7 +150,7 @@ export const CheckMailText = styled.div`
   color: #34bea7;
 `;
 export const EmailButton = styled.button`
-  background: #e7835d;
+  background: #B8DDE2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   width: 110px;
@@ -177,5 +189,9 @@ export const EmailButtonArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 40px;
+  margin-top: 87px;
+  /* top: 40px; */
 `;
+export const TargetDiv = styled.div`
+  height: 1px;
+`

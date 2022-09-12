@@ -17,13 +17,21 @@ import {
 } from './FirstModalStyled';
 import { useState } from 'react';
 
-const FirstModal = ({ display, setDisplay, setImg, setCheck, check, user }) => {
+const FirstModal = ({
+  display,
+  setDisplay,
+  setImg,
+  setCheck,
+  check,
+  user,
+  setNickname,
+}) => {
   const [slide, setSlide] = useState(false);
   const Next = () => {
     check === 1 ? setDisplay(3) : setDisplay(2);
     setSlide(true);
+    setNickname(user.nickname);
   };
-  console.log(slide);
   return (
     <FirstModalBody display={display}>
       <FirstModalSection>

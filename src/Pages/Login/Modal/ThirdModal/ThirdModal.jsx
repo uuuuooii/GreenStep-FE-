@@ -1,8 +1,8 @@
 //react import
-import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import instance from '../../../../Redux/modules/instance';
-import useMoveScrool from '../../../../hooks/useMoveScroll';
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import instance from "../../../../Redux/modules/instance";
+import useMoveScrool from "../../../../hooks/useMoveScroll";
 
 //styled import
 import {
@@ -24,10 +24,10 @@ import {
   EmailStrong,
   EmailP,
   ProfileArea,
-  TargetDiv
-} from './ThirdModalStyled';
-import Fade from 'react-reveal/Fade';
-import { useRef } from 'react';
+  TargetDiv,
+} from "./ThirdModalStyled";
+import Fade from "react-reveal/Fade";
+import { useRef } from "react";
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -50,10 +50,10 @@ const ThirdModal = ({
     acceptMail: acceptMail,
   };
 
-const scrollTarget = useRef()
+  const scrollTarget = useRef();
 
   return (
-    <ThirdModalBody display={display}  >
+    <ThirdModalBody display={display}>
       <ThirdModalSection>
         <ModalHeader>
           <ButtonText
@@ -65,9 +65,7 @@ const scrollTarget = useRef()
         </ModalHeader>
 
         <SelectBody>
-
           <CenterContainer>
-
             <ProfileArea>
               <ProfileImg src={img} />
               <TextInput
@@ -90,30 +88,30 @@ const scrollTarget = useRef()
                 정보를 제공합니다.
               </EmailP>
               <CheckMailArea onClick={() => setAcceptMail(!acceptMail)}>
-                {' '}
+                {" "}
                 <CheckMailIcon
-                  background={!acceptMail ? 'white' : '#34BEA7'}
-                  color={!acceptMail ? '#34BEA7' : 'white'}
+                  background={!acceptMail ? "white" : "#34BEA7"}
+                  color={!acceptMail ? "#34BEA7" : "white"}
                 />
                 <CheckMailText>이메일 알림 수신동의</CheckMailText>
               </CheckMailArea>
               {nickname && name ? (
                 <Fade>
-                  {' '}
+                  {" "}
                   <EmailButtonArea>
-                    {' '}
+                    {" "}
                     <EmailButton
                       onClick={() =>
                         name && nickname
                           ? instance
                               .patch(`${URL}/users/info`, userinfo)
-                              .then(navigate('/mission'))
-                          : alert('빈칸을 입력해주세요')
+                              .then(navigate("/mission"))
+                          : alert("빈칸을 입력해주세요")
                       }
                     >
                       회원가입
                     </EmailButton>
-                  </EmailButtonArea>{' '}
+                  </EmailButtonArea>{" "}
                 </Fade>
               ) : null}
               <TargetDiv ref={scrollTarget} />

@@ -1,14 +1,13 @@
-import styled, { keyframes } from 'styled-components';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import styled, { keyframes } from "styled-components";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
 to{transform:translateX(0px)}
 `;
 
-
 export const ThirdModalBody = styled.div`
-  display: ${(props) => (props.display == 3 ? 'block' : 'none')};
+  display: ${(props) => (props.display == 3 ? "block" : "none")};
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -28,7 +27,6 @@ export const ThirdModalSection = styled.div`
   height: 90%;
   background-color: white;
   margin: 0px auto 0px auto;
-
 `;
 
 export const ModalHeader = styled.div`
@@ -62,7 +60,7 @@ export const SelectBody = styled.div`
   overflow-x: hidden;
   padding-top: 166px;
 
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     display: none;
   }
 `;
@@ -78,6 +76,7 @@ export const ButtonText = styled.div`
   }
 `;
 export const ProfileImg = styled.img`
+  object-fit: cover;
   width: 100px;
   height: 100px;
   margin: 15px 0;
@@ -103,7 +102,7 @@ export const TextInput = styled.input`
     outline: 0.5px solid #34bea7;
   }
   &::placeholder {
-    font-family: 'Apple SD Gothic Neo';
+    font-family: "Apple SD Gothic Neo";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -118,7 +117,7 @@ export const ProfileArea = styled.div`
   margin-top: 166px;
   justify-content: center;
   align-items: center;
-`
+`;
 export const TotalEmailArea = styled.div`
   display: flex;
   align-items: center;
@@ -135,9 +134,9 @@ export const CheckMailArea = styled.div`
   }
 `;
 export const CheckMailIcon = styled(AiOutlineCheckCircle)`
-  color: ${(props) => (props.color ? props.color : 'black')};
+  color: ${(props) => (props.color ? props.color : "black")};
   background-color: ${(props) =>
-    props.background ? props.background : 'white'};
+    props.background ? props.background : "white"};
   width: 20px;
   height: 20px;
   transition: all 0.5s;
@@ -150,7 +149,7 @@ export const CheckMailText = styled.div`
   color: #34bea7;
 `;
 export const EmailButton = styled.button`
-  background: #B8DDE2;
+  background: #b8dde2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   width: 110px;
@@ -194,4 +193,4 @@ export const EmailButtonArea = styled.div`
 `;
 export const TargetDiv = styled.div`
   height: 1px;
-`
+`;

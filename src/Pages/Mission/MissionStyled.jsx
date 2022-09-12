@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyMissionArea = styled.div`
   display: flex;
@@ -29,6 +29,7 @@ export const DailyText = styled.div`
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
+  color: #50674c;
 `;
 export const DailyCardBox = styled.div`
   display: flex;

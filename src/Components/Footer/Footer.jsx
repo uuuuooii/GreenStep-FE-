@@ -31,34 +31,34 @@ export function Footer() {
 
       <div className="footer-box">
         <div className="wrap-footer-icons">
-          <div className="footer-icon-1">
-            <FeedIcon
-              color={page === 'Feed' ? '#DAF2D5' : 'black'}
-              onClick={() => {
-                setPage('Feed');
-                navigate('/Feed');
-              }}
-            />
+          <div
+            className="footer-icon-1"
+            onClick={() => {
+              setPage('Feed');
+              navigate('/Feed');
+            }}
+          >
+            <FeedIcon color={page === 'Feed' ? '#DAF2D5' : 'black'} />
           </div>
 
-          <div className="footer-icon-2">
-            <HomeIcon
-              color={page === 'Mission' ? '#DAF2D5' : 'black'}
-              onClick={() => {
-                setPage('Mission');
-                navigate('/Mission');
-              }}
-            />
+          <div
+            className="footer-icon-2"
+            onClick={() => {
+              setPage('Mission');
+              navigate('/Mission');
+            }}
+          >
+            <HomeIcon color={page === 'Mission' ? '#DAF2D5' : 'black'} />
           </div>
 
-          <div className="footer-icon-3">
-            <MyPageIcon
-              color={page === 'MyPage' ? '#DAF2D5' : 'black'}
-              onClick={() => {
-                setPage('MyPage');
-                navigate('/MyPage');
-              }}
-            />
+          <div
+            className="footer-icon-3"
+            onClick={() => {
+              setPage('MyPage');
+              navigate('/MyPage');
+            }}
+          >
+            <MyPageIcon color={page === 'MyPage' ? '#DAF2D5' : 'black'} />
           </div>
         </div>
       </div>

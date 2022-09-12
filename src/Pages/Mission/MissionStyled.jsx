@@ -1,4 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const FadeOn = keyframes`
+from{opacity:0}
+to{opacity:1}
+`;
+
+export const MissionPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  animation-name: ${FadeOn};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`;
 
 export const DailyMissionArea = styled.div`
   display: flex;

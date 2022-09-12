@@ -24,6 +24,7 @@ import {
   DailyText,
   DailyCardBox,
   WeeklyMissionArea,
+  MissionPage
 } from './MissionStyled';
 import Slide from 'react-reveal/Slide';
 
@@ -45,7 +46,7 @@ const Mission = ({Header}) => {
   return (
     <>
     {Header}
-      <Slide right>
+      <MissionPage>
         <>
           {!loading && missionChallenge ? (
             <DailyChallenge mission={missionChallenge[0]} />
@@ -141,8 +142,7 @@ const Mission = ({Header}) => {
             </DailyCardBox>
           </WeeklyMissionArea>{' '}
         </>
-      </Slide>
-      <Footer />
+      </MissionPage> <Footer />
     </>
   );
 };

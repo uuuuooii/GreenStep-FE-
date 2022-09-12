@@ -47,7 +47,7 @@ import {
 import FeedArrow from '../../static/components/FeedArrow';
 import Slide from 'react-reveal/Slide';
 
-const Feed = () => {
+const Feed = ({Header}) => {
   const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
@@ -142,6 +142,7 @@ const Feed = () => {
 
   return (
     <>
+    {Header}
       <Slide left>
         <FeedPage>
           {!loading && ranks ? (

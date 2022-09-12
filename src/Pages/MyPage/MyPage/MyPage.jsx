@@ -18,7 +18,7 @@ import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
 import { FiSettings } from 'react-icons/fi';
 import { ArchiveArrow } from './Archive/ArchiveStyled';
 
-const MyPage = () => {
+const MyPage = ({Header}) => {
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,6 +36,7 @@ const MyPage = () => {
 
   return (
     <>
+    {Header}
       <Slide left>
         <div className="whole-mypage">
           <div className="mypage-profile-setting">

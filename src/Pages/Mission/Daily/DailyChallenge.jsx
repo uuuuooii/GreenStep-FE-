@@ -1,8 +1,8 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 //redux import
-import { __GetTodaymission } from '../../../Redux/modules/mission';
+import { __GetTodaymission } from "../../../Redux/modules/mission";
 //styled import
 import {
   ChallengeBox,
@@ -14,9 +14,9 @@ import {
   ChallengeTimer,
   ChallengeWaiting,
   FeedButton,
-} from './DailyMissionStyled';
+} from "./DailyMissionStyled";
 //component import
-import ChallengeSkeleton from '../../../Components/Skeleton/ChallengeSkeleton';
+import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
 
 const DailyChallenge = ({ mission }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
@@ -40,21 +40,21 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeTextArea>
             <ChallengeTitle>Challenge Mission</ChallengeTitle>
             <ChallengeTimer>
-              {' '}
-              {hour < 10 ? '0' + hour : hour}:
-              {minute < 10 ? '0' + minute : minute}:
-              {second < 10 ? '0' + second : second}
+              {" "}
+              {hour < 10 ? "0" + hour : hour}:
+              {minute < 10 ? "0" + minute : minute}:
+              {second < 10 ? "0" + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {!mission.status === 'DEFAULT' ? (
+            {!mission.status === "DEFAULT" ? (
               <ChallengeWaiting>
                 <MissionText>인증 대기중</MissionText>
               </ChallengeWaiting>
             ) : null}
-            {mission.status === 'DONE' ? (
+            {mission.status === "DONE" ? (
               <FeedButton>피드 올리기</FeedButton>
             ) : null}
 

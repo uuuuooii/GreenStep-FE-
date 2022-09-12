@@ -1,20 +1,20 @@
 //react import
-import React from 'react';
-import { useNavigate } from 'react-router';
+import React from "react";
+import { useNavigate } from "react-router";
 //styled import
 import {
   DailyBody,
   MissionPhoto,
   MissionText,
   WatingBody,
-} from './WatingStyled';
+} from "./WatingStyled";
 
-const Wating = ({ item,type }) => {
+const Wating = ({ item, type }) => {
   const navigate = useNavigate();
   return (
     <DailyBody
       onClick={() =>
-        type == 'daily'
+        type == "daily"
           ? navigate(`/explain/${item.missionId}&daily`)
           : navigate(`/explain/${item.missionId}&weekly`)
       }

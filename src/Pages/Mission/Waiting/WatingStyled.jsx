@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -9,10 +9,10 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background:  #F9FDF9;
+  background: #f9fdf9;
   margin: 10px;
   position: relative;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -29,12 +29,13 @@ export const MissionText = styled.div`
   text-align: center;
   font-weight: 600;
   font-size: 13px;
-  line-height: 16px; ;
-  color: #50674C;
+  line-height: 16px;
+  color: #50674c;
 `;
 
 export const WatingBody = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   position: absolute;
   left: 0%;
   right: 0%;
@@ -47,4 +48,3 @@ export const WatingBody = styled.div`
   height: 100%;
   border-radius: 5px;
 `;
-

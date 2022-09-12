@@ -143,7 +143,7 @@ const Feed = ({Header}) => {
   return (
     <>
     {Header}
-      <Slide left>
+
         <FeedPage>
           {!loading && ranks ? (
             <RankingBox>
@@ -241,7 +241,7 @@ const Feed = ({Header}) => {
           </FeedArea>
           <ScrollDiv ref={ref} />
         </FeedPage>
-      </Slide>
+
       <Footer />
     </>
   );

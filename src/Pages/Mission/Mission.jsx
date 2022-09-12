@@ -1,22 +1,22 @@
 //react import
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 //modules import
 import {
   __GetWeeklymission,
   __GetDailymission,
   __GetTodaymission,
-} from '../../Redux/modules/mission';
-import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+} from "../../Redux/modules/mission";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 //componenes import
-import Completed from './Completed/Completed';
-import DailyMission from './Daily/DailyMission';
-import Waiting from './Waiting/Waiting';
-import DailyChallenge from './Daily/DailyChallenge';
-import Footer from '../../Components/Footer/Footer';
-import ChallengeSkeleton from '../../Components/Skeleton/ChallengeSkeleton';
-import DailySkeleton from '../../Components/Skeleton/DailySkeleton';
+import Completed from "./Completed/Completed";
+import DailyMission from "./Daily/DailyMission";
+import Waiting from "./Waiting/Waiting";
+import DailyChallenge from "./Daily/DailyChallenge";
+import Footer from "../../Components/Footer/Footer";
+import ChallengeSkeleton from "../../Components/Skeleton/ChallengeSkeleton";
+import DailySkeleton from "../../Components/Skeleton/DailySkeleton";
 //styled import
 import {
   DailyMissionArea,
@@ -24,11 +24,11 @@ import {
   DailyText,
   DailyCardBox,
   WeeklyMissionArea,
-  MissionPage
-} from './MissionStyled';
-import Slide from 'react-reveal/Slide';
+  MissionPage,
+} from "./MissionStyled";
+import Slide from "react-reveal/Slide";
 
-const Mission = ({Header}) => {
+const Mission = ({ Header }) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -45,7 +45,7 @@ const Mission = ({Header}) => {
 
   return (
     <>
-    {Header}
+      {Header}
       <MissionPage>
         <>
           {!loading && missionChallenge ? (
@@ -60,20 +60,20 @@ const Mission = ({Header}) => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === 'DEFAULT' ? (
+                  item.status === "DEFAULT" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&daily`)
                       }
-                      type={'daily'}
+                      type={"daily"}
                     />
-                  ) : item.status === 'WAITING' ? (
+                  ) : item.status === "WAITING" ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={'daily'}
+                      type={"daily"}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&daily`)
                       }
@@ -82,18 +82,17 @@ const Mission = ({Header}) => {
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={'daily'}
+                      type={"daily"}
                     />
                   )
                 )
               ) : (
                 <>
-                  {' '}
+                  {" "}
                   <DailySkeleton />
                   <DailySkeleton />
                   <DailySkeleton />
                   <DailySkeleton />
-                  
                 </>
               )}
             </DailyCardBox>
@@ -105,20 +104,20 @@ const Mission = ({Header}) => {
             <DailyCardBox>
               {!loading && missionWeekly ? (
                 missionWeekly.map((item, index) => {
-                  return item.status === 'DEFAULT' ? (
+                  return item.status === "DEFAULT" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
                     />
-                  ) : item.status === 'WAITING' ? (
+                  ) : item.status === "WAITING" ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
@@ -127,7 +126,7 @@ const Mission = ({Header}) => {
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                     />
                   );
                 })
@@ -140,9 +139,10 @@ const Mission = ({Header}) => {
                 </>
               )}
             </DailyCardBox>
-          </WeeklyMissionArea>{' '}
+          </WeeklyMissionArea>{" "}
         </>
-      </MissionPage> <Footer />
+      </MissionPage>{" "}
+      <Footer />
     </>
   );
 };

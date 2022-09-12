@@ -31,7 +31,7 @@ export const MissionText = styled.div`
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-  color: #fff;
+  color: #50674c;
   flex-wrap: wrap;
   margin-top: 10px;
 `;

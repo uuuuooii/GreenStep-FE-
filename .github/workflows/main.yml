@@ -34,9 +34,16 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws s3 cp --recursive --region ap-northeast-2 build s3://greenstepapp.com
+          
       - name: Invalidate cache CloudFront
         uses: chetan/invalidate-cloudfront-action@master
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
           PATHS: '/index.html'
         continue-on-error: true
+        
+      - name: 배포
+        run: aws s3 sync ./dist s3://bucket-babble-front/ --delete
+
+      - name: 캐시 무효화
+        run: aws cloudfront create-invalidation --distribution-id $ --paths "/index.html" "/bundle.js"

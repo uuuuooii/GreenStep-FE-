@@ -1,8 +1,8 @@
 //react import
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import instance from "../../../../Redux/modules/instance";
-import useMoveScrool from "../../../../hooks/useMoveScroll";
+import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import instance from '../../../../Redux/modules/instance';
+import useMoveScrool from '../../../../hooks/useMoveScroll';
 
 //styled import
 import {
@@ -25,9 +25,9 @@ import {
   EmailP,
   ProfileArea,
   TargetDiv,
-} from "./ThirdModalStyled";
-import Fade from "react-reveal/Fade";
-import { useRef } from "react";
+} from './ThirdModalStyled';
+import Fade from 'react-reveal/Fade';
+import { useRef } from 'react';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -41,7 +41,6 @@ const ThirdModal = ({
   img,
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
-  const [toBottom, setToBottom] = useState(false);
   const navigate = useNavigate();
   const userinfo = {
     name: name,
@@ -49,13 +48,12 @@ const ThirdModal = ({
     profilePhoto: img,
     acceptMail: acceptMail,
   };
-
+  console.log(userinfo);
   const scrollTarget = useRef();
 
   return (
     <ThirdModalBody display={display}>
       <ThirdModalSection>
-
         <ModalHeader>
           <ButtonText
             onClick={() => (check == 1 ? setDisplay(1) : setDisplay(2))}
@@ -90,30 +88,29 @@ const ThirdModal = ({
                 정보를 제공합니다.
               </EmailP>
               <CheckMailArea onClick={() => setAcceptMail(!acceptMail)}>
-                {" "}
+                {' '}
                 <CheckMailIcon
-                  background={!acceptMail ? "white" : "#34BEA7"}
-                  color={!acceptMail ? "#34BEA7" : "white"}
+                  background={!acceptMail ? 'white' : '#34BEA7'}
+                  color={!acceptMail ? '#34BEA7' : 'white'}
                 />
                 <CheckMailText>이메일 알림 수신동의</CheckMailText>
               </CheckMailArea>
               {nickname && name ? (
                 <Fade>
-                  {" "}
+                  {' '}
                   <EmailButtonArea>
-                    {" "}
+                    {' '}
                     <EmailButton
                       onClick={() =>
-                        name && nickname
-                          ? instance
-                              .patch(`${URL}/users/info`, userinfo)
-                              .then(navigate("/mission"))
-                          : alert("빈칸을 입력해주세요")
+                        instance.patch(`/users/info`, userinfo).then((res) => {
+                          console.log(res);
+                          navigate('/mission');
+                        })
                       }
                     >
                       회원가입
                     </EmailButton>
-                  </EmailButtonArea>{" "}
+                  </EmailButtonArea>{' '}
                 </Fade>
               ) : null}
               <TargetDiv ref={scrollTarget} />

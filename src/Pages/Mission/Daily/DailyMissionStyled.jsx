@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -26,14 +26,13 @@ export const MissionText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-  color: #b2e2ab;
+  color: #fff;
   flex-wrap: wrap;
-  color: #50674c;
   margin-top: 10px;
 `;
 

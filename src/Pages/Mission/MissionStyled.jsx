@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const FadeOn = keyframes`
 from{opacity:0}
@@ -43,6 +43,7 @@ export const DailyText = styled.div`
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
+  color: #50674c;
 `;
 export const DailyCardBox = styled.div`
   display: flex;

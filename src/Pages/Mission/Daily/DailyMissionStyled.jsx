@@ -34,6 +34,7 @@ export const MissionText = styled.div`
   color: #b2e2ab;
   flex-wrap: wrap;
   color: #50674c;
+  margin-top: 10px;
 `;
 
 export const ChallengeBox = styled.div`

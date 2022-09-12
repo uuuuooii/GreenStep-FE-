@@ -20,8 +20,7 @@ import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
-// import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
-
+import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 
 function App() {
 

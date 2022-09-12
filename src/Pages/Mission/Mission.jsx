@@ -51,6 +51,7 @@ const Mission = () => {
           ) : (
             <ChallengeSkeleton />
           )}
+          
           <DailyMissionArea>
             <DailyTextArea>
               <DailyText>데일리 미션</DailyText>
@@ -72,6 +73,9 @@ const Mission = () => {
                       key={item.missionId + index}
                       item={item}
                       type={'daily'}
+                      onClick={() =>
+                        navigate(`/explain/${item.missionId}&daily`)
+                      }
                     />
                   ) : (
                     <Completed
@@ -88,6 +92,7 @@ const Mission = () => {
                   <DailySkeleton />
                   <DailySkeleton />
                   <DailySkeleton />
+                  
                 </>
               )}
             </DailyCardBox>
@@ -113,6 +118,9 @@ const Mission = () => {
                       key={item.missionId + index}
                       item={item}
                       type={'weekly'}
+                      onClick={() =>
+                        navigate(`/explain/${item.missionId}&weekly`)
+                      }
                     />
                   ) : (
                     <Completed

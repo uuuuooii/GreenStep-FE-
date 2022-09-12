@@ -55,6 +55,7 @@ const scrollTarget = useRef()
   return (
     <ThirdModalBody display={display}  >
       <ThirdModalSection>
+
         <ModalHeader>
           <ButtonText
             onClick={() => (check == 1 ? setDisplay(1) : setDisplay(2))}
@@ -70,6 +71,7 @@ const scrollTarget = useRef()
 
             <ProfileArea>
               <ProfileImg src={img} />
+
               <TextInput
                 onChange={(e) => setName(e.target.value)}
                 value={name}

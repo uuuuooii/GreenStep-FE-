@@ -30,10 +30,6 @@ const Modal = () => {
   }, [dispatch]);
   return !loading ? (
     <>
-      <ReactScrollWheelHandler
-        upHandler={(e) => window.scrollTo(0, 0)}
-        downHandler={(e) => window.scrollTo(0, document.body.scrollHeight)}
-      >
         <FirstModal
           display={display}
           setDisplay={setDisplay}
@@ -62,7 +58,6 @@ const Modal = () => {
           name={name}
           img={img}
         />
-      </ReactScrollWheelHandler>
     </>
   ) : (
     <LoadingBar />

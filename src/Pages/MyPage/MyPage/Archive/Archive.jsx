@@ -32,7 +32,7 @@ import {
   ModalArea,
 } from './ArchiveStyled';
 
-const Archive = () => {
+const Archive = ({Header}) => {
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const [delState, setDelState] = useState(false);
@@ -60,6 +60,7 @@ const Archive = () => {
   }, []);
   return (
     <>
+    {Header}
       <Slide right>
         <div className="wrap-archive">
           <div className="back-and-settings-button-area">

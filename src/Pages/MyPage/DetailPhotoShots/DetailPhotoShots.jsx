@@ -3,7 +3,7 @@ import "./DetailPhotoShots.css";
 import { getDetailPhotoShotThunk } from "../../../Redux/modules/detailPhotoShotSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const DetailPhotoShots = () => {
+const DetailPhotoShots = ({Header}) => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
   const detailPhotoShot = useSelector(
@@ -18,6 +18,7 @@ const DetailPhotoShots = () => {
 
   return (
     <>
+    {Header}
       <div className="detail-photoshots-wrap-shape">
         <div className="detail-photoshots-mission-name-and-tag-area">
           <div className="detail-photoshots-mission-name-text">

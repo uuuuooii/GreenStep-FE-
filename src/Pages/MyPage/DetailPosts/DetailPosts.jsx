@@ -10,7 +10,7 @@ import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import './DetailPosts.css';
 import Slide from 'react-reveal/Slide';
 
-const DetailPosts = () => {
+const DetailPosts = ({Header}) => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
   const Param = useParams().id;
@@ -26,6 +26,7 @@ const DetailPosts = () => {
 
   return (
     <>
+    {Header}
       {!loading ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">

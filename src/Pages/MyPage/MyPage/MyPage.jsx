@@ -14,9 +14,9 @@ import Footer from "../../../Components/Footer/Footer";
 import Slide from "react-reveal/Slide";
 //styled import
 import "./MyPage.css";
-import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
-import { FiSettings } from 'react-icons/fi';
-import { ArchiveArrow } from './Archive/ArchiveStyled';
+import { MypageSkeleton } from "../../../Components/Skeleton/SkeletonStyled";
+import { FiSettings } from "react-icons/fi";
+import { ArchiveArrow } from "./Archive/ArchiveStyled";
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
@@ -41,7 +41,7 @@ const MyPage = () => {
           <div className="mypage-profile-setting">
             <div className="profile-text">프로필</div>
             <div className="profile-setting">
-              <FiSettings />
+              <FiSettings onClick={() => navigate("/updatemypage")} />
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const MyPage = () => {
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
                   <ArchiveArrow
-                    onClick={() => navigate('/archive/certification')}
+                    onClick={() => navigate("/archive/certification")}
                   />
                 </div>
               </div>
@@ -88,7 +88,6 @@ const MyPage = () => {
                   className="photoshots-archive-images"
                   alt="archive"
                   onClick={() => navigate(`/upload/${certification[0].id}`)}
-
                 />
               ) : (
                 <>
@@ -104,7 +103,7 @@ const MyPage = () => {
               <div className="posts-text-and-icon">
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">
-                  <ArchiveArrow onClick={() => navigate('/archive/post')} />
+                  <ArchiveArrow onClick={() => navigate("/archive/post")} />
                 </div>
               </div>
             </div>

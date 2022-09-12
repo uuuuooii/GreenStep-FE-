@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "build": "^0.1.4",
     "framer-motion": "^7.3.2",
+    "fullpage.js": "^4.0.11",
     "pulltorefreshjs": "^0.1.22",
     "react": "^18.2.0",
     "react-camera-pro": "^1.1.1",

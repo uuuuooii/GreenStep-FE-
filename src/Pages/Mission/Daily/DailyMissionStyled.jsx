@@ -74,7 +74,6 @@ export const ChallengePhoto = styled.img`
   width: 100px;
   height: 107px;
   background: rgba(255, 255, 255, 0.5);
-  margin-bottom: 10px;
 `;
 export const ChallengeTitle = styled.div`
   font-weight: 700;

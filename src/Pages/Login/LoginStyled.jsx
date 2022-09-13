@@ -16,7 +16,7 @@ export const ButtonBody = styled.div`
   background-color: yellow;
   padding: 5px;
   border-radius: 5px;
-  &:hover{
+  &:hover {
     cursor: pointer;
     outline: 1px solid black;
   }
@@ -35,12 +35,22 @@ export const ButtonText = styled.div`
 export const KakaoLink = styled.a`
   text-decoration: none;
   color: black;
-`
+  height: 50px;
+`;
 export const LDiv = styled.div`
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 286px 80px 2700px 80px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.35) 77.08%, rgba(255, 255, 255, 0) 100%);
+  top: 286px;
+
+  /* margin: 286px 80px 2700px 80px; */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.35) 77.08%,
+    rgba(255, 255, 255, 0) 100%
+  );
   border-radius: 107.5px;
-`
+  z-index: 999;
+`;

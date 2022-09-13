@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 //styled import
 import './Explain.css';
-import { FiCamera } from 'react-icons/fi';
+import WatingLeap from '../../../static/components/WatingLeap';
 import {
   __GetTodaymission,
   __GetDailymission,
@@ -28,6 +28,7 @@ const ExplainWating = () => {
       ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
+  const pointNum = paramsCategory === 'challenge' ? 40 : paramsCategory === 'weekly' ? 20 : 10
   useEffect(() => {
     setLoding(true);
     paramsCategory === 'challenge'
@@ -41,39 +42,34 @@ const ExplainWating = () => {
   return (
     <>
       {!loding && select ? (
-        <Slide bottom>
-          <div className="explain-wrap-shape" >
-            <div className="explain-mission-name-and-tag-area">
-              <div className="explain-mission-name-text">
-                {select ? select.missionName : 'MissionName'}
-              </div>
-              <div className="explain-mission-tag-text">
-                {select ? select.tag : '#Tag'}
-              </div>
-              <p className="explain-mission-contents-text">
-                {select
-                  ? select.missionContent
-                  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
-              </p>
+      <>
+      <div
+        className="explain-back-div"
+        onClick={() => navigate('/mission')}
+      />
+      <Slide bottom>
+        <div className="explain-wrap-shape">
+          <div className="explain-mission-name-and-tag-area">
+            <div className="explain-mission-name-text">
+              {select ? select.missionName : 'MissionName'}
             </div>
-
-            <img
-              className="explain-mission-image-area"
-              src={
-                select
-                  ? select.missionImageUrl
-                  : 'https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-gray-solid-color-simple-background-image_557028.jpg'
-              }
-            />
-            <button className="explain-button-go-camera">
-              <div className="explain-button-go-camera-icon">
-                <FiCamera
-                  onClick={() => navigate(`/missioncamera/${paramsNum}&${paramsCategory}`)}
-                />
-              </div>
-            </button>
+            <div className="explain-mission-tag-text">
+              {select ? select.tag : '#Tag'}
+            </div>
+            <p className="explain-mission-contents-text">
+              {select
+                ? select.missionContent
+                : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
+            </p>
           </div>
-        </Slide>
+
+          <div className="explain-mission-center-area">
+            <WatingLeap />
+          </div>
+          <div className="explain-waiting-bar" onClick={()=>{navigate('/mission')}} >인증 대기중</div>
+        </div>
+      </Slide>
+    </>
       ) : (
         <LoadingBar />
       )}

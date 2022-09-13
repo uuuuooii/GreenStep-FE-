@@ -75,7 +75,7 @@ const Archive = ({Header}) => {
             <div className="archive-top-button">
               {!delState ? (
                 <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
-                  선택
+                  {param === "post" ? "삭제" : "숨기기"}
                 </ArchiveSelectDiv>
               ) : (
                 <div

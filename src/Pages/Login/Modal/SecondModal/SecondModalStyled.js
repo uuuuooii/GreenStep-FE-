@@ -79,6 +79,7 @@ export const SelectBody = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  background-color: #FCFCFA;
 `;
 export const ButtonText = styled.div`
   /* margin: auto; */

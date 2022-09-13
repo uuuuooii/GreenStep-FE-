@@ -1,5 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
+import styled, { keyframes } from 'styled-components';
 
 const SlideLeft = keyframes`
 from{transform:translateX(-300px)}
@@ -10,7 +9,7 @@ from{opacity:0}
 to{opacity:1}
 `;
 export const FirstModalBody = styled.div`
-  display: ${(props) => (props.display === 1 ? "block" : "none")};
+  display: ${(props) => (props.display === 1 ? 'block' : 'none')};
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -44,6 +43,12 @@ export const TopText = styled.div`
   text-align: center;
   margin: auto;
   font-size: 20px;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #50674c;
 `;
 
 export const SelectBody = styled.div`
@@ -55,6 +60,7 @@ export const SelectBody = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  background-color: #fcfcfa;
 `;
 export const ImgArea = styled.div`
   width: 100%;
@@ -69,7 +75,7 @@ export const SelectImg = styled.img`
   border-radius: 10px;
   /* -moz-outline-radius : 10px; */
   outline: ${(props) =>
-    props.num === props.check ? "2px solid #B2E2AB" : "none"};
+    props.num === props.check ? '2px solid #B2E2AB' : 'none'};
   &:hover {
     cursor: pointer;
   }
@@ -98,7 +104,7 @@ export const DummyText = styled.div`
   margin: 0 10px;
 `;
 export const SelectText = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;

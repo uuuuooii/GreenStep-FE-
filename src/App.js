@@ -28,7 +28,7 @@ function App() {
     <>
       <BrowserRouter>
         {/* <Header  /> */}
-        {/* <Kakaoshare /> */}
+        <Kakaoshare />
         <SetPullToRefresh />
         <Routes>
           <Route path="/" element={<Login />} />

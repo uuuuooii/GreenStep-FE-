@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Header from './Components/Header/Header';
+import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import Admin from "./Pages/Admin/Admin/Admin";
 import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
@@ -22,7 +22,7 @@ import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
-import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
+import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 function App() {
   return (
     <>
@@ -48,10 +48,7 @@ function App() {
           />
           <Route path="/mypage" element={<Mypage Header={<Header />} />} />
           <Route path="/archive" element={<Archive Header={<Header />} />} />
-          <Route
-            path="/updatemypage"
-            element={<UpdateMyPage Header={<Header />} />}
-          />
+          <Route path="/updatemypage" element={<UpdateMyPage />} />
           <Route
             path="/archive/:id"
             element={<Archive Header={<Header />} />}

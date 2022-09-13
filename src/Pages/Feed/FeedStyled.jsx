@@ -1,11 +1,19 @@
-import styled from 'styled-components';
-import { BsArrowReturnRight } from 'react-icons/bs';
+import styled, { keyframes } from "styled-components";
+
+const FadeOn = keyframes`
+from{opacity:0}
+to{opacity:1}
+`;
 
 export const FeedPage = styled.div`
   max-width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation-name: ${FadeOn};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 
 export const RankingBox = styled.div`

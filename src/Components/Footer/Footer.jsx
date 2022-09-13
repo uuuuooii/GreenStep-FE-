@@ -1,7 +1,7 @@
 //react import
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { useState,useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+//styled import
 import styled from 'styled-components';
 import './Footer.css';
 import { MdListAlt, MdPersonOutline } from 'react-icons/md';
@@ -23,42 +23,38 @@ const MyPageIcon = styled(MdPersonOutline)`
 `;
 
 export function Footer() {
+  const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [page, setPage] = useState('Mission');
+  const [page, setPage] = useState('/Mission');
+  const SetFeed = () => {
+    navigate('/feed');
+  };
+  const SetMission = () => {
+    navigate('/mission');
+  };
+  const SetMyPage = () => {
+    navigate('/myPage');
+  };
+  console.log(pathname);
+  useEffect(() => {
+    setPage(pathname);
+  }, [pathname]);
   return (
     <>
       <div className="footer-dummy-div"></div>
 
       <div className="footer-box">
         <div className="wrap-footer-icons">
-          <div
-            className="footer-icon-1"
-            onClick={() => {
-              setPage('Feed');
-              navigate('/Feed');
-            }}
-          >
-            <FeedIcon color={page === 'Feed' ? '#DAF2D5' : 'black'} />
+          <div className="footer-icon-1" onClick={() => SetFeed()}>
+            <FeedIcon color={page === '/feed' ? '#DAF2D5' : 'black'} />
           </div>
 
-          <div
-            className="footer-icon-2"
-            onClick={() => {
-              setPage('Mission');
-              navigate('/Mission');
-            }}
-          >
-            <HomeIcon color={page === 'Mission' ? '#DAF2D5' : 'black'} />
+          <div className="footer-icon-2" onClick={() => SetMission()}>
+            <HomeIcon color={page === '/mission' ? '#DAF2D5' : 'black'} />
           </div>
 
-          <div
-            className="footer-icon-3"
-            onClick={() => {
-              setPage('MyPage');
-              navigate('/MyPage');
-            }}
-          >
-            <MyPageIcon color={page === 'MyPage' ? '#DAF2D5' : 'black'} />
+          <div className="footer-icon-3" onClick={() => SetMyPage()}>
+            <MyPageIcon color={page === '/myPage' ? '#DAF2D5' : 'black'} />
           </div>
         </div>
       </div>

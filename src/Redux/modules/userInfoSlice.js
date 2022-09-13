@@ -3,8 +3,8 @@ import instance from "./instance";
 
 const initialState = {
   userInfo: {},
-  certification: {},
-  post: {},
+  certification: [],
+  post: [],
   isLoading: false,
   error: null,
 };

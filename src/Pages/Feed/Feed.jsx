@@ -47,7 +47,7 @@ import {
 import FeedArrow from '../../static/components/FeedArrow';
 import Slide from 'react-reveal/Slide';
 
-const Feed = ({Header}) => {
+const Feed = ({ Header }) => {
   const ranks = useSelector((state) => state.ranks.ranks);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
@@ -142,105 +142,101 @@ const Feed = ({Header}) => {
 
   return (
     <>
-    {Header}
+      {Header}
 
-        <FeedPage>
-          {!loading && ranks ? (
-            <RankingBox>
-              <RankTitle>Today's Ranking</RankTitle>
-              <MedalBox>
-                {ranks.map((item, index) => (
-                  <InfoArea key={index + item}>
-                    <Medal num={index} />
-                    <UserArea>
-                      <UserProfile src={item.profilePhoto} />
-                      <UserName>{item.nickName}</UserName>
-                    </UserArea>
-                  </InfoArea>
-                ))}
-              </MedalBox>
-            </RankingBox>
+      <FeedPage>
+        {!loading && ranks ? (
+          <RankingBox>
+            <RankTitle>Today's Ranking</RankTitle>
+            <MedalBox>
+              {ranks.map((item, index) => (
+                <InfoArea key={index + item}>
+                  <Medal num={index} />
+                  <UserArea>
+                    <UserProfile src={item.profilePhoto} />
+                    <UserName>{item.nickName}</UserName>
+                  </UserArea>
+                </InfoArea>
+              ))}
+            </MedalBox>
+          </RankingBox>
+        ) : (
+          <RankingSkeleton />
+        )}
+        <CategoryArea>
+          {categoryList.map((item, index) => (
+            <CategoryButton
+              key={item + index}
+              onClick={() => setCategory(index)}
+              check={index}
+              num={category}
+            >
+              <CategoryButtonText>{item}</CategoryButtonText>
+            </CategoryButton>
+          ))}
+        </CategoryArea>
+        <FeedArea>
+          {!loading && FeedList ? (
+            FeedList.map((item, index) => (
+              <TotalFeed key={item + index}>
+                <FeedCard>
+                  <CardTopArea>
+                    {/* 박수 */}
+                    <TagArea
+                      onClick={() =>
+                        setCategory(categoryList.indexOf(item.tag))
+                      }
+                    >
+                      {item.tag}
+                    </TagArea>
+                  </CardTopArea>
+                  <LargePhoto src={item.missionImgUrl} />
+                </FeedCard>
+                <FeedContent>
+                  <CardBottomArea>
+                    <BottomProfileArea>
+                      {' '}
+                      <FeedProfile src={item.profilePhoto} />
+                      <FeedNickname>{item.authorName}</FeedNickname>
+                    </BottomProfileArea>
+                    <ClapArea onClick={() => changeClap(item.id)} type="button">
+                      <ClapPoint>{item.clapCount}</ClapPoint>
+                      <ClapBox>
+                        {item.clapByMe ? (
+                          <DoneClap />
+                        ) : (
+                          <ClapIcon color={'white'} />
+                        )}
+                      </ClapBox>
+                    </ClapArea>
+                  </CardBottomArea>
+                  <ContentArea>
+                    <ArrowArea>
+                      {' '}
+                      <FeedArrow />
+                    </ArrowArea>
+                    <FeedText>{item.content}</FeedText>
+                  </ContentArea>
+                </FeedContent>
+              </TotalFeed>
+            ))
           ) : (
-            <RankingSkeleton />
+            <>
+              <FeedSkeleton />
+              <FeedSkeleton />
+              <FeedSkeleton />
+            </>
           )}
-          <CategoryArea>
-            {categoryList.map((item, index) => (
-              <CategoryButton
-                key={item + index}
-                onClick={() => setCategory(index)}
-                check={index}
-                num={category}
-              >
-                <CategoryButtonText>{item}</CategoryButtonText>
-              </CategoryButton>
-            ))}
-          </CategoryArea>
-          <FeedArea>
-            {!loading && FeedList ? (
-              FeedList.map((item, index) => (
-                <TotalFeed key={item + index}>
-                  <FeedCard>
-                    <CardTopArea>
-                      {/* 박수 */}
-
-                      <ClapArea
-                        onClick={() => changeClap(item.id)}
-                        type="button"
-                      >
-                        <ClapPoint>{item.clapCount}</ClapPoint>
-                        <ClapBox>
-                          {item.clapByMe ? (
-                            <DoneClap />
-                          ) : (
-                            <ClapIcon color={'white'} />
-                          )}
-                        </ClapBox>
-                      </ClapArea>
-                    </CardTopArea>
-                    <LargePhoto src={item.missionImgUrl} />
-                  </FeedCard>
-                  <FeedContent>
-                    <CardBottomArea>
-                      <BottomProfileArea>
-                        {' '}
-                        <FeedProfile src={item.profilePhoto} />
-                        <FeedNickname>{item.authorName}</FeedNickname>
-                      </BottomProfileArea>
-                      <TagArea
-                        onClick={() =>
-                          setCategory(categoryList.indexOf(item.tag))
-                        }
-                      >
-                        {item.tag}
-                      </TagArea>
-                    </CardBottomArea>
-                    <ContentArea>
-                      <ArrowArea>
-                        {' '}
-                        <FeedArrow />
-                      </ArrowArea>
-                      <FeedText>{item.content}</FeedText>
-                    </ContentArea>
-                  </FeedContent>
-                </TotalFeed>
-              ))
-            ) : (
-              <>
-                <FeedSkeleton />
-                <FeedSkeleton />
-                <FeedSkeleton />
-              </>
-            )}
-            {loading ? (
-              <>
-                <FeedSkeleton />
-                <FeedSkeleton />
-                <FeedSkeleton />
-              </>
-            ) : null}
-          </FeedArea>
-          <ScrollDiv ref={ref} />
-        </FeedPage>
+          {loading ? (
+            <>
+              <FeedSkeleton />
+              <FeedSkeleton />
+              <FeedSkeleton />
+            </>
+          ) : null}
+        </FeedArea>
+        <ScrollDiv ref={ref} />
+      </FeedPage>
 
       <Footer />
     </>

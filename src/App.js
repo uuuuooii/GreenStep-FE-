@@ -21,14 +21,15 @@ import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import instance from "./Redux/modules/instance";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
-import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
+import ShareKakao from "./Components/Kakaoshare/ShareKakao";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
+
 function App() {
   return (
     <>
       <BrowserRouter>
         {/* <Header  /> */}
-        <Kakaoshare />
+        <ShareKakao />
         <SetPullToRefresh />
         <Routes>
           <Route path="/" element={<Login />} />

@@ -23,7 +23,7 @@ import Error from './Pages/Error/Error';
 import ExplainWating from './Pages/Mission/Explain/ExplainWating';
 import instance from './Redux/modules/instance';
 import ScrollToTop from './Components/ScrollTop/ScrollTop';
-import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
+// import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
 import Point from './Components/Point/point';
 function App() {

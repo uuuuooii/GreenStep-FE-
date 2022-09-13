@@ -1,6 +1,6 @@
 //react import
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 //styled import
 import {
   ModalHeader,
@@ -11,11 +11,13 @@ import {
   ProfileImg,
   TextInput,
   ProfileArea,
+  PencilDiv,
+  PencilIcon,
+  InputDiv,
 } from './ThirdModalStyled';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
-  display,
   setDisplay,
   setNickname,
   setName,
@@ -26,60 +28,65 @@ const ThirdModal = ({
 }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [third, setThird] = useState(false);
-  const userinfo = {
-    name: name,
-    nickname: nickname,
-    profilePhoto: img,
-    acceptMail: acceptMail,
-  };
+
   const NextModal = () => {
     setDisplay(4);
     setThird(true);
   };
   const OnFirst = () => {
     setDisplay(1);
-    setThird(true);
+    setThird(false);
   };
   const OnSecond = () => {
     setDisplay(2);
-    setThird(true);
+    setThird(false);
   };
-  return (<>
-        <ModalHeader>
-          <ButtonText onClick={() => (check == 1 ? OnFirst() : OnSecond())}>
-            이전
-          </ButtonText>
-          <TopText>닉네임 설정</TopText>
-          <ButtonText
-            onClick={() =>
-              name && nickname ? NextModal() : alert('빈칸을 입력해주세요')
-            }
-          >
-            다음
-          </ButtonText>
-        </ModalHeader>
+  return (
+    <>
+      <ModalHeader>
+        <ButtonText onClick={() => (check == 1 ? OnFirst() : OnSecond())}>
+          이전
+        </ButtonText>
+        <TopText>닉네임 설정</TopText>
+        <ButtonText
+          onClick={() =>
+            name && nickname ? NextModal() : alert('빈칸을 입력해주세요')
+          }
+        >
+          다음
+        </ButtonText>
+      </ModalHeader>
 
-        <SelectBody third={third}>
-          <CenterContainer>
-            <ProfileArea>
-              <ProfileImg src={img} />
-
+      <SelectBody third={third}>
+        <CenterContainer>
+          <ProfileArea>
+            <ProfileImg src={img} />
+            <InputDiv>
               <TextInput
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 placeholder="이름"
                 maxLength={8}
               />
+              <PencilDiv>
+                <PencilIcon />
+              </PencilDiv>
+            </InputDiv>
+            <InputDiv>
               <TextInput
                 onChange={(e) => setNickname(e.target.value)}
                 value={nickname}
                 placeholder="닉네임"
                 maxLength={8}
               />
-            </ProfileArea>
-          </CenterContainer>
-        </SelectBody>
-        </>
+              <PencilDiv>
+                <PencilIcon />
+              </PencilDiv>
+            </InputDiv>
+          </ProfileArea>
+        </CenterContainer>
+      </SelectBody>
+    </>
   );
 };
 

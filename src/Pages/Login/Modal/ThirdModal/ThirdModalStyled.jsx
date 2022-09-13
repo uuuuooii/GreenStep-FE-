@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { HiPencil } from "react-icons/hi";
+import { HiPencil } from 'react-icons/hi';
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
@@ -11,35 +11,13 @@ from{transform:translateX(-300px)}
 to{transform:translateX(0px)}
 `;
 
-export const ThirdModalBody = styled.div`
-  display: ${(props) => (props.display == 3 ? 'block' : 'none')};
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
-
-export const ThirdModalSection = styled.div`
-  width: 100%;
-  height: 90%;
-  background-color: white;
-  margin: 0px auto 0px auto;
-`;
-
 export const ModalHeader = styled.div`
   width: 100%;
   padding: 10px 0;
   justify-content: space-between;
   text-align: center;
   display: flex;
+  background-color: white;
 `;
 export const TopText = styled.div`
   text-align: center;
@@ -79,7 +57,7 @@ export const ProfileImg = styled.img`
   object-fit: cover;
   width: 100px;
   height: 100px;
-  margin: 15px 0;
+  margin-bottom: 52px;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   border-radius: 10px;
 `;
@@ -92,20 +70,21 @@ export const CenterContainer = styled.div`
 `;
 
 export const InputDiv = styled.div`
-  width: 155px;
+  width: 187px;
   height: 40px;
   display: flex;
-  border: 2px solid #B2E2AB;
-`
+  border: 2px solid #b2e2ab;
+  border-radius: 10px;
+  margin: 5px 0;
+`;
 
 export const TextInput = styled.input`
-width:131px;
+  width: 130px;
   height: 16px;
-  margin: 15px 0;
   outline: none;
 
   border-radius: 5px;
-  border: 1px solid #34bea7;
+  border: none;
   padding: 12px;
   &:focus {
     outline: none;
@@ -129,4 +108,16 @@ export const ProfileArea = styled.div`
 `;
 export const TargetDiv = styled.div`
   height: 1px;
+`;
+export const PencilDiv = styled.div`
+  width: 36px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const PencilIcon = styled(HiPencil)`
+  font-size: 18px;
+  color: #b2e2ab;
 `;

@@ -9,45 +9,28 @@ from{transform:translateX(-300px)}
 to{transform:translateX(0px)}
 `;
 
-export const SecondModalBody = styled.div`
-  display: ${(props) => (props.display == 2 ? 'block' : 'none')};
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
-
-export const SecondModalSection = styled.div`
-  width: 100%;
-  background-color: white;
-  margin: 0px auto 0px auto;
-`;
-
 export const ModalHeader = styled.div`
   width: 100%;
   padding: 10px 0;
   text-align: center;
   display: flex;
-  /* justify-content: center; */
+  background-color: white;
 `;
 
 export const TopText = styled.div`
-  text-align: center;
-  margin: 0 auto;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
   font-size: 20px;
+  line-height: 24px;
+
+  color: #50674c;
+  margin: 0 auto;
 `;
 
 export const SelectImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   border-radius: 10px;
   outline: ${(props) =>
@@ -58,8 +41,9 @@ export const SelectImg = styled.img`
 `;
 
 export const ImgDiv = styled.div`
-  width: 100px;
-  margin: 32px 40px;
+  width: 110px;
+  height: 110px;
+  margin: 13px;
 `;
 
 export const ImgArea = styled.div`
@@ -68,6 +52,8 @@ export const ImgArea = styled.div`
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `;
 export const SelectBody = styled.div`
   width: 100%;
@@ -79,7 +65,7 @@ export const SelectBody = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  background-color: #FCFCFA;
+  background-color: #fcfcfa;
 `;
 export const ButtonText = styled.div`
   /* margin: auto; */

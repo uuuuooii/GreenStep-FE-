@@ -23,9 +23,22 @@
   font-size: 15px;
   color: #b8dde2;
 }
-
+.upload-mission-image-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+.upload-mission-icon-div{
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
 .upload-mission-image-area {
-  width: 338px;
+  width: 90%;
   height: 338px;
   margin: 0px auto 38px auto;
   object-fit: cover;

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
 import styled from 'styled-components';
+import OnDot from '../../static/components/Login/OnDot';
+import NonDot from '../../static/components/Login/NonDot';
 //modules import
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 //component import
@@ -78,6 +80,11 @@ const Modal = () => {
               img={img}
             />
           ) : null}
+          <DotArea>
+            {display === 1 || display === 2 ? <NonDot /> : <OnDot />}
+            {display === 3 ? <NonDot /> : <OnDot />}
+            {display === 4 ? <NonDot /> : <OnDot />}
+          </DotArea>
         </ModalSection>
       </ModalBody>
     </>
@@ -100,7 +107,7 @@ const ModalBody = styled.div`
   max-height: 667px;
   max-width: 375px;
   margin: auto;
-  background-color: white;
+  background-color: #FCFCFA;
 `;
 
 const ModalSection = styled.div`
@@ -108,4 +115,18 @@ const ModalSection = styled.div`
   height: 90%;
   background-color: white;
   margin: 0px auto 0px auto;
+  position: relative;
+  background-color: #FCFCFA;
+`;
+
+const DotArea = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 105px;
+  height: 15px;
+  z-index: 1000;
 `;

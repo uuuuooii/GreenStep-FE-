@@ -9,17 +9,17 @@ import { BiHome } from 'react-icons/bi';
 
 const FeedIcon = styled(MdListAlt)`
   color: ${(props) => props.color};
-  transition: all 0.5s;
+  transition: all 0.25s;
 `;
 
 const HomeIcon = styled(BiHome)`
   color: ${(props) => props.color};
-  transition: all 0.5s;
+  transition: all 0.25s;
 `;
 
 const MyPageIcon = styled(MdPersonOutline)`
   color: ${(props) => props.color};
-  transition: all 0.5s;
+  transition: all 0.25s;
 `;
 
 export function Footer() {
@@ -35,7 +35,6 @@ export function Footer() {
   const SetMyPage = () => {
     navigate('/myPage');
   };
-  console.log(pathname);
   useEffect(() => {
     setPage(pathname);
   }, [pathname]);
@@ -45,16 +44,15 @@ export function Footer() {
 
       <div className="footer-box">
         <div className="wrap-footer-icons">
-          <div className="footer-icon-1" onClick={() => SetFeed()}>
-            <FeedIcon color={page === '/feed' ? '#DAF2D5' : 'black'} />
+          <div className="footer-icon-1" onClick={() => SetMission()}>
+            <HomeIcon color={page === '/mission' ? '#84CA79' : 'black'} />
           </div>
 
-          <div className="footer-icon-2" onClick={() => SetMission()}>
-            <HomeIcon color={page === '/mission' ? '#DAF2D5' : 'black'} />
+          <div className="footer-icon-2" onClick={() => SetFeed()}>
+            <FeedIcon color={page === '/feed' ? '#84CA79' : 'black'} />
           </div>
-
           <div className="footer-icon-3" onClick={() => SetMyPage()}>
-            <MyPageIcon color={page === '/myPage' ? '#DAF2D5' : 'black'} />
+            <MyPageIcon color={page === '/myPage' ? '#84CA79' : 'black'} />
           </div>
         </div>
       </div>

@@ -78,35 +78,6 @@ const Explain = ({Header}) => {
             </button>
           </div>
         </Slide>
-      ) : !loding && select.status === 'WAITING' ? (
-        <>
-          <div
-            className="explain-back-div"
-            onClick={() => navigate('/mission')}
-          />
-          <Slide bottom>
-            <div className="explain-wrap-shape">
-              <div className="explain-mission-name-and-tag-area">
-                <div className="explain-mission-name-text">
-                  {select ? select.missionName : 'MissionName'}
-                </div>
-                <div className="explain-mission-tag-text">
-                  {select ? select.tag : '#Tag'}
-                </div>
-                <p className="explain-mission-contents-text">
-                  {select
-                    ? select.missionContent
-                    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
-                </p>
-              </div>
-
-              <div className="explain-mission-center-area">
-                <WatingLeap />
-              </div>
-              <div className="explain-waiting-bar">인증 대기중</div>
-            </div>
-          </Slide>
-        </>
       ) : (
         <LoadingBar />
       )}

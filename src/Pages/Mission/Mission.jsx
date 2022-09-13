@@ -1,22 +1,23 @@
 //react import
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 //modules import
 import {
   __GetWeeklymission,
   __GetDailymission,
   __GetTodaymission,
-} from "../../Redux/modules/mission";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+} from '../../Redux/modules/mission';
+import instance from '../../Redux/modules/instance';
 //componenes import
-import Completed from "./Completed/Completed";
-import DailyMission from "./Daily/DailyMission";
-import Waiting from "./Waiting/Waiting";
-import DailyChallenge from "./Daily/DailyChallenge";
-import Footer from "../../Components/Footer/Footer";
-import ChallengeSkeleton from "../../Components/Skeleton/ChallengeSkeleton";
-import DailySkeleton from "../../Components/Skeleton/DailySkeleton";
+import Completed from './Completed/Completed';
+import DailyMission from './Daily/DailyMission';
+import Waiting from './Waiting/Waiting';
+import DailyChallenge from './Daily/DailyChallenge';
+import Footer from '../../Components/Footer/Footer';
+import ChallengeSkeleton from '../../Components/Skeleton/ChallengeSkeleton';
+import DailySkeleton from '../../Components/Skeleton/DailySkeleton';
+
 //styled import
 import {
   DailyMissionArea,
@@ -25,8 +26,7 @@ import {
   DailyCardBox,
   WeeklyMissionArea,
   MissionPage,
-} from "./MissionStyled";
-import Slide from "react-reveal/Slide";
+} from './MissionStyled';
 
 const Mission = ({ Header }) => {
   const [loading, setLoading] = useState(false);
@@ -34,6 +34,7 @@ const Mission = ({ Header }) => {
   const missionDaily = useSelector((state) => state.mission.daily);
   const missionChallenge = useSelector((state) => state.mission.challenge);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     setLoading(true);
     dispatch(__GetWeeklymission());
@@ -41,13 +42,37 @@ const Mission = ({ Header }) => {
     dispatch(__GetTodaymission());
     setLoading(false);
   }, [2000]);
-  const navigate = useNavigate();
 
   return (
     <>
       {Header}
       <MissionPage>
         <>
+          <button
+            onClick={() =>
+              instance.get('/kakao/logout').then((res) => {
+                if (res.data.data) {
+                  window.localStorage.clear();
+                  window.sessionStorage.clear();
+                }
+              })
+            }
+          >
+            로그아웃
+          </button>
+          <button
+            onClick={() => {
+              instance.post('/kakao/unregister').then((res) => {
+                if (res.data.data) {
+                  window.localStorage.clear();
+                  window.sessionStorage.clear();
+                }
+              });
+            }}
+          >
+            회원탈퇴
+          </button>
+          <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button>
           {!loading && missionChallenge ? (
             <DailyChallenge mission={missionChallenge[0]} />
           ) : (
@@ -60,20 +85,20 @@ const Mission = ({ Header }) => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === "DEFAULT" ? (
+                  item.status === 'DEFAULT' ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&daily`)
                       }
-                      type={"daily"}
+                      type={'daily'}
                     />
-                  ) : item.status === "WAITING" ? (
+                  ) : item.status === 'WAITING' ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={"daily"}
+                      type={'daily'}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&daily`)
                       }
@@ -82,13 +107,13 @@ const Mission = ({ Header }) => {
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={"daily"}
+                      type={'daily'}
                     />
                   )
                 )
               ) : (
                 <>
-                  {" "}
+                  {' '}
                   <DailySkeleton />
                   <DailySkeleton />
                   <DailySkeleton />
@@ -104,20 +129,20 @@ const Mission = ({ Header }) => {
             <DailyCardBox>
               {!loading && missionWeekly ? (
                 missionWeekly.map((item, index) => {
-                  return item.status === "DEFAULT" ? (
+                  return item.status === 'DEFAULT' ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
-                      type={"weekly"}
+                      type={'weekly'}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
                     />
-                  ) : item.status === "WAITING" ? (
+                  ) : item.status === 'WAITING' ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={"weekly"}
+                      type={'weekly'}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
@@ -126,7 +151,7 @@ const Mission = ({ Header }) => {
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={"weekly"}
+                      type={'weekly'}
                     />
                   );
                 })
@@ -139,9 +164,9 @@ const Mission = ({ Header }) => {
                 </>
               )}
             </DailyCardBox>
-          </WeeklyMissionArea>{" "}
+          </WeeklyMissionArea>{' '}
         </>
-      </MissionPage>{" "}
+      </MissionPage>{' '}
       <Footer />
     </>
   );

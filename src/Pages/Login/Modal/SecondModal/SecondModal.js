@@ -66,7 +66,6 @@ const SecondModal = ({
                   check={item}
                   select={img}
                 />
-                <TopText>{index + 1}번캐릭터</TopText>
               </ImgDiv>
             ))}
           </ImgArea>

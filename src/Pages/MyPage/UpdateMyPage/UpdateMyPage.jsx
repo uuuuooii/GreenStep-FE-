@@ -17,16 +17,19 @@ const UpdateMyPage = ({ Header }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, nameHandler] = useInput("");
   const [nickname, nicknameHandler] = useInput("");
-  const userinfo = {
-    name: name,
-    nickname: nickname,
-    profilePhoto: userInfo.profilePhoto,
-    acceptMail: acceptMail,
-  };
+
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
+
+  // const userinfo = {
+  //   name: name,
+  //   nickname: nickname,
+  //   profilePhoto: userInfo.profilePhoto,
+  //   acceptMail: acceptMail,
+  // };
+  // userinfo => 이름 바꾸기!!! 55번째 줄에있는 userinfo도 같이 바꿔놓기.
 
   useEffect(() => {
     setLoding(true);
@@ -36,10 +39,23 @@ const UpdateMyPage = ({ Header }) => {
 
   return (
     <>
-      {Header}
+      {/* {Header} */}
       <div className="whole-updatemypage">
         <div className="updatemypage-back-arrow-area">
-          <IoIosArrowBack className="updatemypage-back-arrow-icon" />
+          <IoIosArrowBack
+            className="updatemypage-back-arrow-icon"
+            onClick={() => navigate(-1)}
+          />
+          <div
+            className="updatemypage-save-button"
+            // onClick={() =>
+            //   instance.patch(`/users/info`, userinfo).then((res) => {
+            //     console.log(res);
+            //   })
+            // }
+          >
+            저장
+          </div>
         </div>
         <div className="updatemypage-body-wrap">
           <div className="updatemypage-image-email-input-wrap">

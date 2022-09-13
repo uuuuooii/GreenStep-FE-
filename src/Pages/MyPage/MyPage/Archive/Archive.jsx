@@ -32,7 +32,7 @@ import {
   ModalArea,
 } from './ArchiveStyled';
 
-const Archive = ({Header}) => {
+const Archive = ({ Header }) => {
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const [delState, setDelState] = useState(false);
@@ -60,7 +60,7 @@ const Archive = ({Header}) => {
   }, []);
   return (
     <>
-    {Header}
+      {Header}
       <Slide right>
         <div className="wrap-archive">
           <div className="back-and-settings-button-area">
@@ -75,7 +75,7 @@ const Archive = ({Header}) => {
             <div className="archive-top-button">
               {!delState ? (
                 <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
-                  선택
+                  {param === 'post' ? '삭제' : '숨기기'}
                 </ArchiveSelectDiv>
               ) : (
                 <div
@@ -94,13 +94,13 @@ const Archive = ({Header}) => {
                 <CardArea key={item + item.id}>
                   <ImageCard
                     src={item.missionImgUrl}
-                    onClick={() =>
+                    onClick={() => {
                       navigate(
-                        param === 'certification'
-                          ? `/upload/${item.id}`
-                          : `/detailposts/${item.id}`
-                      )
-                    }
+                        param === 'post' || item.OnFeed
+                          ? `/detailposts/${item.id} `
+                          : `/upload/${item.id}`
+                      );
+                    }}
                   />
                   <DeleteDiv
                     display={delState ? 'flex' : 'none'}
@@ -124,9 +124,9 @@ const Archive = ({Header}) => {
                   src={data[0].missionImgUrl}
                   onClick={() =>
                     navigate(
-                      param === 'certification'
-                        ? `/upload/${data[0].id}`
-                        : `/detailposts/${data[0].id}`
+                      param === 'post' || data[0].OnFeed
+                        ? `/detailposts/${data[0].id}`
+                        : `/upload/${data[0].id}`
                     )
                   }
                 />

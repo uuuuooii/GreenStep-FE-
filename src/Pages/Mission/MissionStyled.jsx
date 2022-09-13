@@ -6,6 +6,7 @@ to{opacity:1}
 `;
 
 export const MissionPage = styled.div`
+  background-color: #fcfcfa;
   display: flex;
   flex-direction: column;
   animation-name: ${FadeOn};

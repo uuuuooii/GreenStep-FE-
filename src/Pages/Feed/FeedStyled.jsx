@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const FadeOn = keyframes`
 from{opacity:0}
@@ -14,6 +14,7 @@ export const FeedPage = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  background-color: #fcfcfa;
 `;
 
 export const RankingBox = styled.div`
@@ -134,10 +135,10 @@ export const CategoryButton = styled.div`
   border-radius: 3px;
   font-family: 'Apple SD Gothic Neo';
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 13px;
   line-height: 16px;
-  color: #B8DDE2;
+  color: #b8dde2;
   background-color: ${(props) =>
     props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
@@ -145,7 +146,7 @@ export const CategoryButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #B8DDE2;
+  border: 1px solid #b8dde2;
   margin: 0 10px;
   &:hover {
     cursor: pointer;
@@ -158,10 +159,10 @@ export const CategoryButtonText = styled.div`
 `;
 export const FeedCard = styled.div`
   width: 100%;
-  height: 312px;
+  /* height: 312px; */
   background: #d9d9d9;
   border-radius: 10px;
-  margin: 10px 0;
+  /* margin: 10px 0; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -173,14 +174,16 @@ export const FeedArea = styled.div`
 `;
 export const BottomProfileArea = styled.div`
   display: flex;
+  margin-left: 10px;
 `;
 export const CardBottomArea = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 7px 9px;
+  /* padding: 7px 9px; */
   gap: 9px;
-  width: 295px;
+  /* width: 60px; */
   height: 45px;
   border-radius: 7px;
 `;
@@ -195,25 +198,31 @@ export const CardTopArea = styled.div`
 `;
 
 export const TagArea = styled.div`
-  margin: 0 10px;
+  /* position: absolute; */
+  width: 100%;
+  margin: 15px 21px 0 0;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: end;
   align-items: center;
   font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 18px;
   text-align: center;
-  color: #b8dde2; ;
+  text-shadow: 2px 2px 2px #d9d9d9;
+  color: #fcfcfa;
+  &:hover {
+    cursor: pointer;
+  }
 `;
+export const TagText = styled.div``;
 
 export const ClapArea = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: end;
-  margin: 0 10px;
+  margin-right: 16px;
 `;
 export const ClapPoint = styled.div`
   display: flex;
@@ -222,6 +231,19 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 5px;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  /* primary 2.2 */
+
+  color: #84ca79;
 `;
 export const FeedProfile = styled.img`
   border-radius: 10px;
@@ -254,7 +276,6 @@ export const FeedText = styled.div`
 
   font-family: 'Inter';
   font-style: normal;
-  word-break: break-all;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -277,16 +298,16 @@ export const TotalFeed = styled.div`
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
   padding-bottom: 10px;
+  background-color: white;
 `;
 
 export const LargePhoto = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 312px;
+  height: 312px;
   border-radius: 10px 10px 0 0;
 `;
 
 export const ClapBox = styled.div`
-  color: black;
   &:hover {
     cursor: pointer;
   }
@@ -299,4 +320,5 @@ export const ContentArea = styled.div`
   margin-top: 10px;
   display: flex;
   flex-direction: row;
+  padding: 0 10px;
 `;

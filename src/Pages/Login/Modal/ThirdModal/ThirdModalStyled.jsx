@@ -1,41 +1,23 @@
-import styled, { keyframes } from "styled-components";
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import styled, { keyframes } from 'styled-components';
+import { HiPencil } from 'react-icons/hi';
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
 to{transform:translateX(0px)}
 `;
 
-export const ThirdModalBody = styled.div`
-  display: ${(props) => (props.display == 3 ? "block" : "none")};
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
-
-export const ThirdModalSection = styled.div`
-  width: 100%;
-  height: 90%;
-  background-color: white;
-  margin: 0px auto 0px auto;
+const SlideLeft = keyframes`
+from{transform:translateX(-300px)}
+to{transform:translateX(0px)}
 `;
 
 export const ModalHeader = styled.div`
-  position: relative;
   width: 100%;
   padding: 10px 0;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   display: flex;
+  background-color: white;
 `;
 export const TopText = styled.div`
   text-align: center;
@@ -52,23 +34,19 @@ export const SelectBody = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation-name: ${SlideRight};
+  animation-name: ${(props) => (props.check ? SlideLeft : SlideRight)};
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: 166px;
-
+  background-color: #fcfcfa;
   &::-webkit-scrollbar {
     display: none;
   }
 `;
 export const ButtonText = styled.div`
   color: #6de4c6;
-  position: absolute;
-  left: 0;
-  /* margin: auto; */
   width: 32px;
   margin: 0 10px;
   &:hover {
@@ -79,7 +57,7 @@ export const ProfileImg = styled.img`
   object-fit: cover;
   width: 100px;
   height: 100px;
-  margin: 15px 0;
+  margin-bottom: 52px;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   border-radius: 10px;
 `;
@@ -88,22 +66,31 @@ export const CenterContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 156px 16px 277px 16px;
+  margin-bottom: 144px;
+`;
+
+export const InputDiv = styled.div`
+  width: 187px;
+  height: 40px;
+  display: flex;
+  border: 2px solid #b2e2ab;
+  border-radius: 10px;
+  margin: 5px 0;
 `;
 
 export const TextInput = styled.input`
-  width: 230px;
-  height: 40px;
-  margin: 15px 0;
+  width: 130px;
+  height: 16px;
   outline: none;
+
   border-radius: 5px;
-  border: 1px solid #34bea7;
-  padding: 0 10px;
+  border: none;
+  padding: 12px;
   &:focus {
-    outline: 0.5px solid #34bea7;
+    outline: none;
   }
   &::placeholder {
-    font-family: "Apple SD Gothic Neo";
+    font-family: 'Apple SD Gothic Neo';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -119,79 +106,18 @@ export const ProfileArea = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const TotalEmailArea = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  margin-top: 268px;
-`;
-
-export const CheckMailArea = styled.div`
-  display: flex;
-  margin: 10px 0;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const CheckMailIcon = styled(AiOutlineCheckCircle)`
-  color: ${(props) => (props.color ? props.color : "black")};
-  background-color: ${(props) =>
-    props.background ? props.background : "white"};
-  width: 20px;
-  height: 20px;
-  transition: all 0.5s;
-  border-radius: 10px;
-`;
-
-export const CheckMailText = styled.div`
-  font-size: 14px;
-  margin: 0 10px;
-  color: #34bea7;
-`;
-export const EmailButton = styled.button`
-  background: #b8dde2;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
-  width: 110px;
-  height: 33px;
-  border: none;
-  color: white;
-  position: absolute;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const EmailStrong = styled.div`
-  color: #036a6a;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 10px 0;
-`;
-export const EmailP = styled.p`
-  width: 90%;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #036a6a;
-`;
-export const EmailButtonArea = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 87px;
-  /* top: 40px; */
-`;
 export const TargetDiv = styled.div`
   height: 1px;
+`;
+export const PencilDiv = styled.div`
+  width: 36px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const PencilIcon = styled(HiPencil)`
+  font-size: 18px;
+  color: #b2e2ab;
 `;

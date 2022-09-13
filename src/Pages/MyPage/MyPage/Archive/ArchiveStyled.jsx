@@ -29,7 +29,7 @@ export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
 `;
 export const ArchiveSelectDiv = styled.div`
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   color: #B2E2AB;
   &:hover {

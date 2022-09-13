@@ -48,7 +48,7 @@ const Mission = ({ Header }) => {
       {Header}
       <MissionPage>
         <>
-          <button
+          {/* <button
             onClick={() =>
               instance.get('/kakao/logout').then((res) => {
                 if (res.data.data) {
@@ -72,7 +72,7 @@ const Mission = ({ Header }) => {
           >
             회원탈퇴
           </button>
-          <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button>
+          <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button> */}
           {!loading && missionChallenge ? (
             <DailyChallenge mission={missionChallenge[0]} />
           ) : (

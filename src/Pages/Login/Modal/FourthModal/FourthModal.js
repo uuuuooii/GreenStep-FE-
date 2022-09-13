@@ -36,8 +36,7 @@ const FourthModal = ({
       acceptMail: acceptMail,
     };
   return (
-    <FourthModalBody display={display}>
-      <FourthModalSection>
+<>
         <ModalHeader>
           <ButtonText
             onClick={() => (setDisplay(3))}
@@ -81,8 +80,7 @@ const FourthModal = ({
             ) : null}
           </TotalEmailArea>
         </SelectBody>
-      </FourthModalSection>
-    </FourthModalBody>
+</>
   );
 };
 

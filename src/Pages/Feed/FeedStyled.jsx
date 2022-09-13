@@ -14,6 +14,7 @@ export const FeedPage = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  background-color: #fcfcfa;
 `;
 
 export const RankingBox = styled.div`

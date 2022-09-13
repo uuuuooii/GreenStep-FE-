@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
 import styled from 'styled-components';
-import {GoPrimitiveDot} from 'react-icons/go'
 //modules import
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 //component import
@@ -12,24 +11,6 @@ import SecondModal from './Modal/SecondModal/SecondModal';
 import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import FourthModal from './Modal/FourthModal/FourthModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
-
-const PageDot = styled(GoPrimitiveDot)`
-  color: "#84CA79";
-  /* ${(props)=>props.page==="on" ? "#84CA79" : "black"}; */
-  transform: ${(props)=>props.page==="on" ? 'scale(1.3)' : null};
-
-`
-const DotArea = styled.div`
-display: flex;
-  width: 100px;
-  top: 100px;
-  position: fixed;
-  left: 50%;
-  transform: translateX( -50% );
-  z-index: 2000;
-
-`
-
 
 const Modal = () => {
   const [loading, setLoading] = useState(false);
@@ -51,50 +32,54 @@ const Modal = () => {
   }, [dispatch]);
   return !loading ? (
     <>
-      <FirstModal
-        display={display}
-        setDisplay={setDisplay}
-        setImg={setImg}
-        check={check}
-        setCheck={setCheck}
-        user={user}
-        setNickname={setNickname}
-      />
-      <SecondModal
-        display={display}
-        setDisplay={setDisplay}
-        setImg={setImg}
-        img={img}
-        second={second}
-        setSecond={setSecond}
-      />{' '}
-      <ThirdModal
-        display={display}
-        setDisplay={setDisplay}
-        setImg={setImg}
-        check={check}
-        setName={setName}
-        setNickname={setNickname}
-        nickname={nickname}
-        name={name}
-        img={img}
-      />
-      <FourthModal
-        display={display}
-        setDisplay={setDisplay}
-        setImg={setImg}
-        check={check}
-        setName={setName}
-        setNickname={setNickname}
-        nickname={nickname}
-        name={name}
-        img={img}
-      />
-      <DotArea>
-        <PageDot page={display===1||display==2 ? "on" : null} onClick={()=>setDisplay(1)} />
-        <PageDot page={display==3 ? "on" : null} onClick={()=>setDisplay(1)} />
-        <PageDot page={display==4 ? "on" : null} onClick={()=>setDisplay(1)} />
-      </DotArea>
+      <ModalBody>
+        <ModalSection>
+          {display === 1 ? (
+            <FirstModal
+              display={display}
+              setDisplay={setDisplay}
+              setImg={setImg}
+              check={check}
+              setCheck={setCheck}
+              user={user}
+              setNickname={setNickname}
+            />
+          ) : display === 2 ? (
+            <SecondModal
+              display={display}
+              setDisplay={setDisplay}
+              setImg={setImg}
+              img={img}
+              second={second}
+              setSecond={setSecond}
+            />
+          ) : display === 3 ? (
+            <ThirdModal
+              display={display}
+              setDisplay={setDisplay}
+              setImg={setImg}
+              check={check}
+              setName={setName}
+              setNickname={setNickname}
+              nickname={nickname}
+              name={name}
+              img={img}
+            />
+          ) : display === 4 ? (
+            <FourthModal
+              display={display}
+              setDisplay={setDisplay}
+              setImg={setImg}
+              check={check}
+              setName={setName}
+              setNickname={setNickname}
+              nickname={nickname}
+              name={name}
+              img={img}
+            />
+          ) : null}
+        </ModalSection>
+      </ModalBody>
     </>
   ) : (
     <LoadingBar />
@@ -102,3 +87,25 @@ const Modal = () => {
 };
 
 export default Modal;
+
+const ModalBody = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  max-height: 667px;
+  max-width: 375px;
+  margin: auto;
+  background-color: white;
+`;
+
+const ModalSection = styled.div`
+  width: 100%;
+  height: 90%;
+  background-color: white;
+  margin: 0px auto 0px auto;
+`;

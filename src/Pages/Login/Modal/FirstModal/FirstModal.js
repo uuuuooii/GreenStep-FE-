@@ -18,7 +18,6 @@ import {
 import { useState } from "react";
 
 const FirstModal = ({
-  display,
   setDisplay,
   setImg,
   setCheck,
@@ -33,8 +32,7 @@ const FirstModal = ({
     setNickname(user.nickname);
   };
   return (
-    <FirstModalBody display={display}>
-      <FirstModalSection>
+<>
         <ModalHeader>
           <DummyText></DummyText>
           <TopText>프로필 사진</TopText>
@@ -81,8 +79,7 @@ const FirstModal = ({
             </SeleceArea>
           </ImgArea>
         </SelectBody>
-      </FirstModalSection>
-    </FirstModalBody>
+</>
   );
 };
 

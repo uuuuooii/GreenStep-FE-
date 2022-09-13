@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { HiPencil } from "react-icons/hi";
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
@@ -62,7 +62,7 @@ export const SelectBody = styled.div`
   animation-fill-mode: forwards;
   overflow-y: scroll;
   overflow-x: hidden;
-
+  background-color: #fcfcfa;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -91,16 +91,24 @@ export const CenterContainer = styled.div`
   margin-bottom: 144px;
 `;
 
-export const TextInput = styled.input`
-  width: 230px;
+export const InputDiv = styled.div`
+  width: 155px;
   height: 40px;
+  display: flex;
+  border: 2px solid #B2E2AB;
+`
+
+export const TextInput = styled.input`
+width:131px;
+  height: 16px;
   margin: 15px 0;
   outline: none;
+
   border-radius: 5px;
   border: 1px solid #34bea7;
-  padding: 0 10px;
+  padding: 12px;
   &:focus {
-    outline: 0.5px solid #34bea7;
+    outline: none;
   }
   &::placeholder {
     font-family: 'Apple SD Gothic Neo';

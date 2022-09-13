@@ -68,6 +68,7 @@ export const SelectBody = styled.div`
   animation-fill-mode: forwards;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: #FCFCFA;
 
   &::-webkit-scrollbar {
     display: none;

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 //styled import
 import {
-  ThirdModalBody,
-  ThirdModalSection,
   ModalHeader,
   TopText,
   SelectBody,
@@ -14,8 +12,6 @@ import {
   TextInput,
   ProfileArea,
 } from './ThirdModalStyled';
-import Fade from 'react-reveal/Fade';
-import { useRef } from 'react';
 
 const URL = process.env.REACT_APP_URL;
 const ThirdModal = ({
@@ -48,9 +44,7 @@ const ThirdModal = ({
     setDisplay(2);
     setThird(true);
   };
-  return (
-    <ThirdModalBody display={display}>
-      <ThirdModalSection>
+  return (<>
         <ModalHeader>
           <ButtonText onClick={() => (check == 1 ? OnFirst() : OnSecond())}>
             이전
@@ -85,8 +79,7 @@ const ThirdModal = ({
             </ProfileArea>
           </CenterContainer>
         </SelectBody>
-      </ThirdModalSection>
-    </ThirdModalBody>
+        </>
   );
 };
 

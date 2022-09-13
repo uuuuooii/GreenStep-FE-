@@ -4,9 +4,12 @@
 }
 
 .wrap-header {
-  background-color: gray;
+  /* background-color: rgb(212, 212, 212); */
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(100px);
   width: 100%;
   position: fixed;
+  left: 0;
   top: 0;
   z-index: 1;
 }
@@ -18,7 +21,8 @@
 .header-title {
   position: relative;
   text-align: center;
-  background: #fff;
+  /* background: rgba(255, 255, 255, 0.828); */
+  /* backdrop-filter: blur(100px); */
   color: #50674c;
   font-size: 20px;
   padding: 14px 14px 13px 14px;

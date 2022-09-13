@@ -48,10 +48,7 @@ function App() {
           />
           <Route path="/mypage" element={<Mypage Header={<Header />} />} />
           <Route path="/archive" element={<Archive Header={<Header />} />} />
-          <Route
-            path="/updatemypage"
-            element={<UpdateMyPage Header={<Header />} />}
-          />
+          <Route path="/updatemypage" element={<UpdateMyPage />} />
           <Route
             path="/archive/:id"
             element={<Archive Header={<Header />} />}

@@ -1,24 +1,31 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
+//components import
+import Toast from "../../../Components/Toast/Toast";
+import {
+  ToastsContainer,
+  ToastsStore,
+  ToastsContainerPosition,
+} from "react-toasts";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
+import "./Upload.css";
 import {
   UploadContentTextArea,
   UploadButton,
   ShareButton,
   UploadSkeleton,
   ButtonArea,
-} from './UploadStyled';
-import Slide from 'react-reveal/Slide';
+} from "./UploadStyled";
+import Slide from "react-reveal/Slide";
 
-const Upload = ({Header}) => {
-  const [content, contentHandler] = useInput('');
+const Upload = ({ Header }) => {
+  const [content, contentHandler] = useInput("");
   const param = useParams().id;
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -29,9 +36,13 @@ const Upload = ({Header}) => {
       : state.userInfo.certification[0]
   );
   const testText = { content: content };
-  const Upload = ({Header}) => {
+  const Upload = ({ Header }) => {
     instance.post(`/profiles/missions/${param}`, testText);
-    navigate('/mypage');
+    navigate("/mypage");
+  };
+
+  const onClickToastPopup = () => {
+    ToastsStore.success("이미 작성하신 게시물입니다.");
   };
 
   useEffect(() => {
@@ -41,7 +52,39 @@ const Upload = ({Header}) => {
   }, []);
   return (
     <>
-    {Header}
+      {Header}
+
+      {/* 토스트 알람창의 CSS */}
+      <style jsx="true">{`
+        .toast {
+          font-size: 16px !important;
+          color: #fff !important;
+          background-color: #87daa8d4 !important;
+          border-radius: 20px !important;
+          min-height: 30px !important;
+          width: 100px !important;
+          margin: 2px auto !important;
+          display: inline-block !important;
+          line-height: 30px !important;
+        }
+      `}</style>
+
+      {/* <button
+          type="button"
+          id="popup"
+          onClick={onClickToastPopup}
+          className="toast-button"
+        >
+          toast
+        </button> */}
+
+      <ToastsContainer
+        className="custom-alert-position"
+        position={ToastsContainerPosition.BOTTOM_CENTER}
+        store={ToastsStore}
+        lightBackground
+      />
+
       <Slide bottom>
         <div className="upload-wrap-shape">
           {!loading && data ? (
@@ -63,12 +106,15 @@ const Upload = ({Header}) => {
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
               ></UploadContentTextArea>
               <ButtonArea>
-                {' '}
+                {" "}
                 <UploadButton
                   className="upload-button-upload"
+                  type="button"
+                  id="popup"
                   onClick={() =>
                     data.onFeed
-                      ? alert('이미 작성하신 게시물입니다.')
+                      ? // alert("이미 작성하신 게시물입니다.")
+                        { onClickToastPopup }
                       : Upload()
                   }
                 >

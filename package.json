@@ -21,6 +21,7 @@
     "react-camera-pro-2": "^1.1.1",
     "react-dom": "^18.2.0",
     "react-full-page": "^0.1.12",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.4.0",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",

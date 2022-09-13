@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ErrorBody = styled.div`
   display: flex;
@@ -12,5 +12,7 @@ export const ErrorText = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  white-space:pre-wrap
+  white-space: pre-wrap;
+  margin: 0px auto;
+  color: #50674c;
 `;

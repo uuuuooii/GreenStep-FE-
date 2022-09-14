@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ErrorBody = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 0px;
 `;
 export const ErrorText = styled.div`
   font-weight: 600;

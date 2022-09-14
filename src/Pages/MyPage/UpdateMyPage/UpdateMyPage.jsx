@@ -46,7 +46,7 @@ const UpdateMyPage = ({ Header }) => {
             className="updatemypage-back-arrow-icon"
             onClick={() => navigate(-1)}
           />
-          <div
+          <p
             className="updatemypage-save-button"
             // onClick={() =>
             //   instance.patch(`/users/info`, userinfo).then((res) => {
@@ -55,7 +55,7 @@ const UpdateMyPage = ({ Header }) => {
             // }
           >
             저장
-          </div>
+          </p>
         </div>
         <div className="updatemypage-body-wrap">
           <div className="updatemypage-image-email-input-wrap">

@@ -5,14 +5,15 @@ import { useNavigate } from "react-router";
 import ErrorImage from "../../static/components/ErrorImage";
 import { ErrorBody, ErrorText } from "./ErrorStyled";
 import { IoIosArrowBack } from "react-icons/io";
+import "./Error.css";
 
 const Error = () => {
   const navigate = useNavigate();
   return (
     <ErrorBody>
-      <div className="updatemypage-back-arrow-area">
+      <div className="error-back-arrow-area">
         <div onClick={() => navigate(-1)}>
-          <IoIosArrowBack className="updatemypage-back-arrow-icon" />
+          <IoIosArrowBack className="error-back-arrow-icon" />
         </div>
       </div>
       <ErrorImage />

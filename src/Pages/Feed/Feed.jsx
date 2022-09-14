@@ -181,7 +181,7 @@ const Feed = ({ Header }) => {
               <TotalFeed key={item + index}>
                 <FeedCard>
                   <CardTopArea>
-                    {/* 박수 */}
+
                     <TagArea
                       onClick={() =>
                         setCategory(categoryList.indexOf(item.tag))
@@ -205,7 +205,7 @@ const Feed = ({ Header }) => {
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (
-                          <ClapIcon color={'white'} />
+                          <ClapIcon color={'#84CA79'} />
                         )}
                       </ClapBox>
                     </ClapArea>

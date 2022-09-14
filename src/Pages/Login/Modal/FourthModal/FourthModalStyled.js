@@ -6,28 +6,8 @@ const SlideRight = keyframes`
 from{transform:translateX(300px)}
 to{transform:translateX(0px)}
 `;
-export const FourthModalBody = styled.div`
-  display: ${(props) => (props.display == 4 ? "block" : "none")};
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
 
-export const FourthModalSection = styled.div`
-  width: 100%;
-  height: 90%;
-  background-color: white;
-  margin: 0px auto 0px auto;
-`;
+
 export const ButtonText = styled.div`
   color: #6de4c6;
   position: absolute;
@@ -46,6 +26,7 @@ export const ModalHeader = styled.div`
   justify-content: center;
   text-align: center;
   display: flex;
+  background-color: white;
 `;
 export const TopText = styled.div`
   text-align: center;

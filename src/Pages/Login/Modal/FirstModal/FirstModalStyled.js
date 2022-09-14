@@ -8,28 +8,6 @@ const FadeOn = keyframes`
 from{opacity:0}
 to{opacity:1}
 `;
-export const FirstModalBody = styled.div`
-  display: ${(props) => (props.display === 1 ? 'block' : 'none')};
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
-
-export const FirstModalSection = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  margin: 0px auto 0px auto;
-`;
 
 export const ModalHeader = styled.div`
   width: 100%;
@@ -37,6 +15,7 @@ export const ModalHeader = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
+  background-color: white;
 `;
 
 export const TopText = styled.div`

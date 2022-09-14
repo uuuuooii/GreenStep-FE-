@@ -91,8 +91,8 @@ const Feed = ({ Header }) => {
     } else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
       setClapArr([...clapArr, item]);
       setClapCheck([...clapCheck, item]);
-    } else if (!clapCheck.includes(item)&&clapArr.includes(item)) {
-      setClapArr([...clapArr.filter((i) => i !== item)])
+    } else if (!clapCheck.includes(item) && clapArr.includes(item)) {
+      setClapArr([...clapArr.filter((i) => i !== item)]);
     }
   };
   const changeClap = async (id) => {
@@ -149,8 +149,8 @@ const Feed = ({ Header }) => {
 
   useEffect(() => {
     setFeedList([]);
-    setClapArr([])
-    setClapCheck([])
+    setClapArr([]);
+    setClapCheck([]);
     setPage(0);
     setLast(0);
   }, [category]);
@@ -195,6 +195,9 @@ const Feed = ({ Header }) => {
           ))}
         </CategoryArea>
         <FeedArea>
+          {/* <ClapBox clap={Shake}>
+            <DoneClap />
+          </ClapBox> */}
           {!loading && FeedList ? (
             FeedList.map((item, index) => (
               <TotalFeed key={item + index}>

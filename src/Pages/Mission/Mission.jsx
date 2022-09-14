@@ -168,7 +168,7 @@ const Mission = ({ Header }) => {
           </WeeklyMissionArea>{" "}
         </>
       </MissionPage>{" "}
-      <div className="floating-round" onClick={() => navigate("/archive")}>
+      <div className="floating-round" onClick={() => navigate("/archive/certification")}>
         <HiPencil className="floating-icon" />
       </div>
       <Footer />

@@ -44,7 +44,6 @@ const DetailPhotoShots = ({ Header }) => {
           <KakaoShare className="detail-photoshots-button-share">
             공유하기
           </KakaoShare>
-          <KakaoShare />
         </div>
       </div>
     </>

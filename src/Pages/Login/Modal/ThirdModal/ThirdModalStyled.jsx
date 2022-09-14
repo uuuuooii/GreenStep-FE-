@@ -34,7 +34,7 @@ export const SelectBody = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation-name: ${(props) => (props.check ? SlideLeft : SlideRight)};
+  animation-name: ${(props) => (props.third ? SlideLeft : SlideRight)};
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

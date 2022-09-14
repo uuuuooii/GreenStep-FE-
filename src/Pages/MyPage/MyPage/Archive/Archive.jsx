@@ -96,9 +96,10 @@ const Archive = ({ Header }) => {
                     src={item.missionImgUrl}
                     onClick={() => {
                       navigate(
-                        param === 'post' || item.OnFeed
-                          ? `/detailposts/${item.id} `
-                          : `/upload/${item.id}`
+                        // param === 'post' || item.onFeed
+                        //   ? `/detailposts/${item.id} `
+                        //   :
+                           `/upload/${item.id}`
                       );
                     }}
                   />

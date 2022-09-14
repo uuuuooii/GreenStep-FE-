@@ -26,7 +26,7 @@ const ModalBody = styled.div`
   max-height: 667px;
   max-width: 375px;
   margin: auto;
-  background-color: #fcfcfa;
+  background-color: white;
 `;
 
 const ModalSection = styled.div`
@@ -35,7 +35,7 @@ const ModalSection = styled.div`
   background-color: white;
   margin: 0px auto 0px auto;
   position: relative;
-  background-color: #fcfcfa;
+  background-color: white;
 `;
 
 const DotArea = styled.div`
@@ -79,14 +79,13 @@ const SlideRightDiv = styled.div`
 `;
 
 const Modal = () => {
-  const [firstDot, setFirstDot] = useState(false);
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
+  const [fourth, setFourth] = useState(false);
   const [display, setDisplay] = useState(0);
   const [img, setImg] = useState('');
   const [check, setCheck] = useState(0);
-  const [fourth,setFourth] = useState(false)
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
 
@@ -149,15 +148,23 @@ const Modal = () => {
             />
           ) : null}
           <DotArea>
-            { display === 0 ? (
+            {display === 0 ? (
               <>
                 <NonDot />
                 <OnDot />
                 <OnDot />
               </>
-            ) :
-            display===4&&!fourth ? <><OnDot/> <SlideLeftDiv><OnDot/></SlideLeftDiv><SlideRightDiv><NonDot/></SlideRightDiv></>
-            : display === 3 && third ? (
+            ) : display === 4 && !fourth ? (
+              <>
+                <OnDot />{' '}
+                <SlideLeftDiv>
+                  <OnDot />
+                </SlideLeftDiv>
+                <SlideRightDiv>
+                  <NonDot />
+                </SlideRightDiv>
+              </>
+            ) : display === 3 && third ? (
               <>
                 <OnDot />
                 <SlideLeftDiv>

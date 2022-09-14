@@ -1,6 +1,5 @@
 //react import
 import React from "react";
-
 import styled from "styled-components";
 import LoginBody1 from "../../static/components/LoginBody1";
 //styled import

@@ -1,5 +1,5 @@
 //react import
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 //styled import
 import styled from 'styled-components';
@@ -21,39 +21,90 @@ const MyPageIcon = styled(MdPersonOutline)`
   color: ${(props) => props.color};
   transition: all 0.25s;
 `;
+const FooterIcon1 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  margin: 0 10px;
+  background-color: ${(props) =>
+    props.background ? props.background : 'none'};
+  border-radius: 20px;
+  transition: all 0.5s;
+  padding: 2.5px;
+`;
+const FooterIcon2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  background-color: ${(props) =>
+    props.background ? props.background : 'none'};
+  border-radius: 20px;
+  transition: all 0.5s;
+  padding: 2.5px;
+`;
+const FooterIcon3 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  margin: 0 10px;
+  background-color: ${(props) =>
+    props.background ? props.background : 'none'};
+  border-radius: 20px;
+  transition: all 0.5s;
+  padding: 2.5px;
+`;
 
 export function Footer() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [page, setPage] = useState('/Mission');
-  const SetFeed = () => {
-    navigate('/feed');
-  };
-  const SetMission = () => {
-    navigate('/mission');
-  };
-  const SetMyPage = () => {
-    navigate('/myPage');
-  };
+  const [click, setClick] = useState('');
+  const [page, setPage] = useState('');
   useEffect(() => {
     setPage(pathname);
+    setClick(pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setClick('');
+    }, 500);
+  }, [click]);
   return (
     <>
       <div className="footer-dummy-div"></div>
 
       <div className="footer-box">
         <div className="wrap-footer-icons">
-          <div className="footer-icon-1" onClick={() => SetMission()}>
+          <FooterIcon1
+            onClick={() => 
+              navigate('/mission')
+            }
+            background={click === '/mission' ? '#F3F3F3' : null}
+          >
             <HomeIcon color={page === '/mission' ? '#84CA79' : 'black'} />
-          </div>
+          </FooterIcon1>
 
-          <div className="footer-icon-2" onClick={() => SetFeed()}>
+          <FooterIcon2
+            onClick={() => navigate('/feed')}
+            background={click === '/feed' ? '#F3F3F3' : null}
+          >
             <FeedIcon color={page === '/feed' ? '#84CA79' : 'black'} />
-          </div>
-          <div className="footer-icon-3" onClick={() => SetMyPage()}>
-            <MyPageIcon color={page === '/myPage' ? '#84CA79' : 'black'} />
-          </div>
+          </FooterIcon2>
+          <FooterIcon3
+            onClick={() => navigate('/mypage')}
+            background={click === '/mypage' ? '#F3F3F3' : null}
+          >
+            <MyPageIcon color={page === '/mypage' ? '#84CA79' : 'black'} />
+          </FooterIcon3>
         </div>
       </div>
     </>

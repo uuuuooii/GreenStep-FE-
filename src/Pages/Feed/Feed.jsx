@@ -207,7 +207,7 @@ const Feed = ({ Header }) => {
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (
-                          <ClapIcon color="grey" />
+                          <ClapIcon color={"#84CA79"} />
                         )}
                       </ClapBox>
                     </ClapArea>

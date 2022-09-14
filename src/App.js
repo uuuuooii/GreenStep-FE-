@@ -1,10 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Header from './Components/Header/Header';
+import React from "react";
+import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import Admin from './Pages/Admin/Admin/Admin';
 import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
+import Alert from './Components/Alert/Alert'
 import Login from './Pages/Login/Login';
 import Mission from './Pages/Mission/Mission';
 import Upload from './Pages/Mission/Upload/Upload';
@@ -23,7 +24,7 @@ import Error from './Pages/Error/Error';
 import ExplainWating from './Pages/Mission/Explain/ExplainWating';
 import instance from './Redux/modules/instance';
 import ScrollToTop from './Components/ScrollTop/ScrollTop';
-// import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
+import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
 import Point from './Components/Point/point';
 function App() {
@@ -32,7 +33,7 @@ function App() {
     <>
       <BrowserRouter>
         {/* <Header  /> */}
-        {/* <Kakaoshare /> */}
+        <Kakaoshare />
         <SetPullToRefresh />
         <Routes>
           <Route
@@ -44,6 +45,7 @@ function App() {
           <Route path="/users/kakao/callback" element={<Loding />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/alert" element={<Alert />} />
           <Route path="/modal" element={<Modal />} />
           <Route
             path="/mission"

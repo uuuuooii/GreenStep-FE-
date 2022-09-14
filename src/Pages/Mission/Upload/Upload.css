@@ -23,7 +23,7 @@
   font-size: 15px;
   color: #b8dde2;
 }
-.upload-mission-image-div{
+.upload-mission-image-div {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@
   position: relative;
   flex-direction: column;
 }
-.upload-mission-icon-div{
+.upload-mission-icon-div {
   position: absolute;
   width: 90%;
   display: flex;
@@ -46,5 +46,5 @@
 }
 
 .custom-alert-position {
-  bottom: 80px !important;
+  top: 106px !important;
 }

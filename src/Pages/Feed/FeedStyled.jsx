@@ -22,7 +22,7 @@ export const RankingBox = styled.div`
   padding: 16px 10px;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: #fcfcfa;
   box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
   margin: 20px 0;

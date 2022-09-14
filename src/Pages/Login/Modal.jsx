@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import OnDot from '../../static/components/Login/OnDot';
 import NonDot from '../../static/components/Login/NonDot';
 //modules import
@@ -81,9 +81,27 @@ const Modal = () => {
             />
           ) : null}
           <DotArea>
-            {display === 1 || display === 2 ? <NonDot /> : <OnDot />}
-            {display === 3 ? <NonDot /> : <OnDot />}
-            {display === 4 ? <NonDot /> : <OnDot />}
+            {display === 1 || display === 2 ? (
+              <DotDiv>
+                <NonDot />
+              </DotDiv>
+            ) : (
+              <OnDot />
+            )}
+            {display === 3 ? (
+              <DotDiv>
+                <NonDot />
+              </DotDiv>
+            ) : (
+              <OnDot />
+            )}
+            {display === 4 ? (
+              <DotDiv>
+                <NonDot />
+              </DotDiv>
+            ) : (
+              <OnDot />
+            )}
           </DotArea>
         </ModalSection>
       </ModalBody>
@@ -94,6 +112,7 @@ const Modal = () => {
 };
 
 export default Modal;
+
 
 const ModalBody = styled.div`
   position: fixed;
@@ -107,7 +126,7 @@ const ModalBody = styled.div`
   max-height: 667px;
   max-width: 375px;
   margin: auto;
-  background-color: #FCFCFA;
+  background-color: #fcfcfa;
 `;
 
 const ModalSection = styled.div`
@@ -116,7 +135,7 @@ const ModalSection = styled.div`
   background-color: white;
   margin: 0px auto 0px auto;
   position: relative;
-  background-color: #FCFCFA;
+  background-color: #fcfcfa;
 `;
 
 const DotArea = styled.div`
@@ -130,3 +149,21 @@ const DotArea = styled.div`
   height: 15px;
   z-index: 1000;
 `;
+const TransX = keyframes`
+from{transform: scaleX(0.2)}
+to{transform: scaleX(1)}
+`;
+const SlideLeft = keyframes`
+from{transform: scaleX(0.2)}
+to{transform: scaleX(1)}
+`;
+const DotDiv = styled.div`
+  animation-name: ${TransX};
+  animation-duration: 0.35s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`;
+
+const SlideDiv = styled.div`
+  
+`

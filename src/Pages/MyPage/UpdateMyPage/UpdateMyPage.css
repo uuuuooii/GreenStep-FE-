@@ -1,4 +1,5 @@
 .whole-updatemypage {
+  width: 100%;
 }
 
 .updatemypage-back-arrow-area {
@@ -19,8 +20,9 @@
 
 .updatemypage-save-button {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
   color: #b2e2ab;
+  margin: 4px 15px 0px 0px;
 }
 
 .updatemypage-body-wrap {

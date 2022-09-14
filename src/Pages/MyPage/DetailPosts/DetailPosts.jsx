@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 //modules import
-import { getPostThunk } from '../../../Redux/modules/userInfoSlice';
+import { getPostThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import Previous from '../../../static/components/DetailPost/Previous';

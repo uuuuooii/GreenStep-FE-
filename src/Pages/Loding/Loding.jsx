@@ -16,12 +16,15 @@ const Test = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get(`https://greenstepserver.link/users/kakao/callback`, {
+      // .get(`https://greenstepserver.link/users/kakao/callback`,
+      .get(`http://13.209.16.253:8080/users/kakao/callback`, {
         params: { code },
       })
       .then((res) => {
+        const kakao_authorization = res.headers.kakao_authorization;
         const token = res.headers.authorization;
         const refresh_token = res.headers.refresh_token;
+        localStorage.setItem('kakao_authorization', kakao_authorization);
         localStorage.setItem('Authorization', token);
         sessionStorage.setItem('refresh-Token', refresh_token);
         dispatch(userThunk(res.data.data));

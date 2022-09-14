@@ -1,9 +1,7 @@
 //react import
-import React, { useState } from 'react';
+import React from 'react';
 //styled import
 import {
-  SecondModalBody,
-  SecondModalSection,
   ModalHeader,
   TopText,
   SelectImg,
@@ -36,8 +34,7 @@ const SecondModal = ({
     setSecond(true);
   };
   return (
-    <SecondModalBody display={display}>
-      <SecondModalSection>
+    <>
         <ModalHeader>
           <ButtonText
             onClick={() => {
@@ -58,7 +55,7 @@ const SecondModal = ({
         </ModalHeader>
         <SelectBody second={second}>
           <ImgArea>
-            {imgList.map((item, index) => (
+            {imgList.map((item) => (
               <ImgDiv key={item}>
                 <SelectImg
                   src={item}
@@ -66,13 +63,11 @@ const SecondModal = ({
                   check={item}
                   select={img}
                 />
-                <TopText>{index + 1}번캐릭터</TopText>
               </ImgDiv>
             ))}
           </ImgArea>
         </SelectBody>
-      </SecondModalSection>
-    </SecondModalBody>
+        </>
   );
 };
 

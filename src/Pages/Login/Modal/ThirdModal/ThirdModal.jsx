@@ -25,9 +25,9 @@ const ThirdModal = ({
   check,
   nickname,
   img,
+  third,
+  setThird
 }) => {
-  const [acceptMail, setAcceptMail] = useState(false);
-  const [third, setThird] = useState(false);
 
   const NextModal = () => {
     setDisplay(4);

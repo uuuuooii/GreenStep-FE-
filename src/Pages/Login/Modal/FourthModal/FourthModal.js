@@ -21,7 +21,6 @@ import {
 import { Fade } from 'react-reveal';
 
 const FourthModal = ({
-  display,
   setDisplay,
   name,
   nickname,
@@ -39,7 +38,7 @@ const FourthModal = ({
 <>
         <ModalHeader>
           <ButtonText
-            onClick={() => (setDisplay(3))}
+            onClick={() =>setDisplay(3)}
           >
             이전
           </ButtonText>
@@ -68,7 +67,7 @@ const FourthModal = ({
                   {' '}
                   <EmailButton
                     onClick={() =>
-                      instance.patch(`/users/info`, userinfo).then((res) => {
+                      instance.patch(`/users/info`, userinfo).then(() => {
                         navigate('/mission');
                       })
                     }

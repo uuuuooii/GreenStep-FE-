@@ -113,10 +113,6 @@ const Modal = () => {
 
 export default Modal;
 
-const TransX = keyframes`
-from{transform: scaleX(0.2)}
-to{transform: scaleX(1)}
-`;
 
 const ModalBody = styled.div`
   position: fixed;
@@ -153,9 +149,21 @@ const DotArea = styled.div`
   height: 15px;
   z-index: 1000;
 `;
+const TransX = keyframes`
+from{transform: scaleX(0.2)}
+to{transform: scaleX(1)}
+`;
+const SlideLeft = keyframes`
+from{transform: scaleX(0.2)}
+to{transform: scaleX(1)}
+`;
 const DotDiv = styled.div`
   animation-name: ${TransX};
   animation-duration: 0.35s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
+
+const SlideDiv = styled.div`
+  
+`

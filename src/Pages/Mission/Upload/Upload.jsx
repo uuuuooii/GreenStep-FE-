@@ -46,13 +46,17 @@ const Upload = ({ Header }) => {
     return b - a;
   });
 
-  const Uploading = ({ Header }) => {
-    instance.post(`/profiles/missions/${param}`, uploadText);
-    navigate("/mypage");
+  const onClickToastAlready = () => {
+    ToastsStore.success("이미 작성한 게시물입니다");
+  };
+  const onClickToastComplete = () => {
+    ToastsStore.success("게시물 업로드가 완료되었습니다");
   };
 
-  const onClickToastPopup = () => {
-    ToastsStore.success("이미 작성한 게시물입니다.");
+  const Uploading = ({ Header }) => {
+    instance.post(`/profiles/missions/${param}`, uploadText);
+    onClickToastComplete();
+    navigate("/mypage");
   };
 
   useEffect(() => {
@@ -67,16 +71,19 @@ const Upload = ({ Header }) => {
       {/* 토스트 알람창의 CSS */}
       <style jsx="true">{`
         .toast {
-          font-size: 16px !important;
+          font-size: 13px !important;
           color: #fff !important;
-          background-color: #b2e2ab !important;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(178, 226, 171, 0.75) !important;
           box-shadow: 0px 2px 2px #dadada;
           border-radius: 20px !important;
-          min-height: 40px !important;
-          // width: 100px !important;
-          margin: 2px auto !important;
+          min-height: 20px !important;
+          width: 200px !important;
+          margin: 4px auto !important;
+          padding: 8px 35px;
           display: inline-block !important;
-          line-height: 30px !important;
+          line-height: 22px !important;
         }
       `}</style>
 
@@ -151,7 +158,7 @@ const Upload = ({ Header }) => {
                   type="button"
                   id="popup"
                   onClick={() =>
-                    data.onFeed ? onClickToastPopup() : Uploading()
+                    data.onFeed ? onClickToastAlready() : Uploading()
                   }
                 >
                   피드에 올리기

@@ -17,7 +17,6 @@ import DailyChallenge from "./Daily/DailyChallenge";
 import Footer from "../../Components/Footer/Footer";
 import ChallengeSkeleton from "../../Components/Skeleton/ChallengeSkeleton";
 import DailySkeleton from "../../Components/Skeleton/DailySkeleton";
-
 //styled import
 import {
   DailyMissionArea,

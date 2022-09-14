@@ -41,9 +41,7 @@ const DetailPhotoShots = ({ Header }) => {
           <button className="detail-photoshots-button-upload">
             피드에 올리기
           </button>
-          <KakaoShare className="detail-photoshots-button-share">
-            공유하기
-          </KakaoShare>
+          <button className="detail-photoshots-button-share">공유하기</button>
         </div>
       </div>
     </>

@@ -105,29 +105,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Green Step</title>
-  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-</head>
+    <title>Green Step</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  </head>
 
-<body>
-
-  <!-- Channel Plugin Scripts -->
-  <script>
-    (function () {
-      var w = window;
-      if (w.ChannelIO) {
-        return (window.console.error || window.console.log || function () {})(
-          "ChannelIO script included twice."
-        );
-      }
-      var ch = function () {
-        ch.c(arguments);
-      };
-      ch.q = [];
-      ch.c = function (args) {
-        ch.q.push(args);
-      };
-      w.ChannelIO = ch;
+  <body>
+    <!-- Channel Plugin Scripts -->
+    <script>
+      (function () {
+        var w = window;
+        if (w.ChannelIO) {
+          return (window.console.error || window.console.log || function () {})(
+            "ChannelIO script included twice."
+          );
+        }
+        var ch = function () {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function (args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
 
         function l() {
           if (w.ChannelIOInitialized) {

@@ -67,16 +67,7 @@ export function Footer() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [click, setClick] = useState('');
-  const [page, setPage] = useState('/Mission');
-  const SetFeed = () => {
-    navigate('/feed');
-  };
-  const SetMission = () => {
-    navigate('/mission');
-  };
-  const SetMyPage = () => {
-    navigate('/mypage');
-  };
+  const [page, setPage] = useState('');
   useEffect(() => {
     setPage(pathname);
     setClick(pathname);
@@ -87,7 +78,6 @@ export function Footer() {
       setClick('');
     }, 500);
   }, [click]);
-  console.log(click);
   return (
     <>
       <div className="footer-dummy-div"></div>
@@ -95,22 +85,22 @@ export function Footer() {
       <div className="footer-box">
         <div className="wrap-footer-icons">
           <FooterIcon1
-            onClick={() => {
-              SetMission();
-            }}
+            onClick={() => 
+              navigate('/mission')
+            }
             background={click === '/mission' ? '#F3F3F3' : null}
           >
             <HomeIcon color={page === '/mission' ? '#84CA79' : 'black'} />
           </FooterIcon1>
 
           <FooterIcon2
-            onClick={() => SetFeed()}
+            onClick={() => navigate('/feed')}
             background={click === '/feed' ? '#F3F3F3' : null}
           >
             <FeedIcon color={page === '/feed' ? '#84CA79' : 'black'} />
           </FooterIcon2>
           <FooterIcon3
-            onClick={() => SetMyPage()}
+            onClick={() => navigate('/mypage')}
             background={click === '/mypage' ? '#F3F3F3' : null}
           >
             <MyPageIcon color={page === '/mypage' ? '#84CA79' : 'black'} />

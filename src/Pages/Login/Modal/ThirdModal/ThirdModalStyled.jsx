@@ -82,8 +82,8 @@ export const TextInput = styled.input`
   width: 130px;
   height: 16px;
   outline: none;
-
-  border-radius: 5px;
+  background-color: #fcfcfa;
+  border-radius: 10px;
   border: none;
   padding: 12px;
   &:focus {

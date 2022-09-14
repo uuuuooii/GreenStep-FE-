@@ -4,23 +4,26 @@ import { useLocation, useNavigate } from 'react-router-dom';
 //styled import
 import styled from 'styled-components';
 import './Footer.css';
+import FeedIcon from '../../static/components/Footer/FeedIcon'
+import MyPageIcon from '../../static/components/Footer/MyPageIcon'
+import HomeIcon from '../../static/components/Footer/HomeIcon'
 import { MdListAlt, MdPersonOutline } from 'react-icons/md';
 import { BiHome } from 'react-icons/bi';
 
-const FeedIcon = styled(MdListAlt)`
-  color: ${(props) => props.color};
-  transition: all 0.25s;
-`;
+// const FeedIcon = styled(MdListAlt)`
+//   color: ${(props) => props.color};
+//   transition: all 0.25s;
+// `;
 
-const HomeIcon = styled(BiHome)`
-  color: ${(props) => props.color};
-  transition: all 0.25s;
-`;
+// const HomeIcon = styled(BiHome)`
+//   color: ${(props) => props.color};
+//   transition: all 0.25s;
+// `;
 
-const MyPageIcon = styled(MdPersonOutline)`
-  color: ${(props) => props.color};
-  transition: all 0.25s;
-`;
+// const MyPageIcon = styled(MdPersonOutline)`
+//   color: ${(props) => props.color};
+//   transition: all 0.25s;
+// `;
 const FooterIcon1 = styled.div`
   display: flex;
   justify-content: center;
@@ -90,20 +93,20 @@ export function Footer() {
             }
             background={click === '/mission' ? '#F3F3F3' : null}
           >
-            <HomeIcon color={page === '/mission' ? '#84CA79' : 'black'} />
+            <HomeIcon color={page === '/mission' ? '#84CA79' : '#50674C'} />
           </FooterIcon1>
 
           <FooterIcon2
             onClick={() => navigate('/feed')}
             background={click === '/feed' ? '#F3F3F3' : null}
           >
-            <FeedIcon color={page === '/feed' ? '#84CA79' : 'black'} />
+            <FeedIcon color={page === '/feed' ? '#84CA79' : '#50674C'} />
           </FooterIcon2>
           <FooterIcon3
             onClick={() => navigate('/mypage')}
             background={click === '/mypage' ? '#F3F3F3' : null}
           >
-            <MyPageIcon color={page === '/mypage' ? '#84CA79' : 'black'} />
+            <MyPageIcon color={page === '/mypage' ? '#84CA79' : '#50674C'} />
           </FooterIcon3>
         </div>
       </div>

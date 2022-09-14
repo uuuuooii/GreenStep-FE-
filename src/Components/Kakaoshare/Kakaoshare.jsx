@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 //카카오톡 공유버튼 만들기
-function KakaoShareButton({
+function KakaoShare({
   image = "",
   url = "",
   title = "",
@@ -57,4 +57,4 @@ function KakaoShareButton({
   );
 }
 
-export default KakaoShareButton;
+export default KakaoShare;

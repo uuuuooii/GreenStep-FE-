@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./DetailPhotoShots.css";
 import { getDetailPhotoShotThunk } from "../../../Redux/modules/detailPhotoShotSlice";
 import { useDispatch, useSelector } from "react-redux";
+import KakaoShare from "../../../Components/Kakaoshare/Kakaoshare";
 
-const DetailPhotoShots = ({Header}) => {
+const DetailPhotoShots = ({ Header }) => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
   const detailPhotoShot = useSelector(
@@ -18,7 +19,7 @@ const DetailPhotoShots = ({Header}) => {
 
   return (
     <>
-    {Header}
+      {Header}
       <div className="detail-photoshots-wrap-shape">
         <div className="detail-photoshots-mission-name-and-tag-area">
           <div className="detail-photoshots-mission-name-text">
@@ -40,7 +41,9 @@ const DetailPhotoShots = ({Header}) => {
           <button className="detail-photoshots-button-upload">
             피드에 올리기
           </button>
-          <button className="detail-photoshots-button-share">공유하기</button>
+          <KakaoShare className="detail-photoshots-button-share">
+            공유하기
+          </KakaoShare>
         </div>
       </div>
     </>

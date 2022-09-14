@@ -39,7 +39,6 @@ const MyPage = ({ Header }) => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(certification);
 
   return (
     <>

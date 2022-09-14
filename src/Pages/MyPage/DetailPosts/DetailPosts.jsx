@@ -17,18 +17,20 @@ const DetailPosts = ({ Header }) => {
   const navigate = useNavigate();
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
-  const Param = useParams().id;
+  const Param = Number(useParams().id);
   const detailPost = useSelector((state) =>
+  // console.log(state.userInfo.post)
     state.userInfo.post.length > 1
       ? state.userInfo.post.filter(
-          (item) => Number(item.id) === Number(Param)
+          (item) => item.id== Param
         )[0]
       : state.userInfo.post[0]
   );
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
-    IdArr.push(Number(item.id))
+    IdArr.push(item.id)
   );
+
 
   IdArr.sort(function (a, b) {
     return b - a;
@@ -58,10 +60,10 @@ const DetailPosts = ({ Header }) => {
               <div className="detail-posts-mission-icon-div">
                 <div
                   onClick={() =>
-                    IdArr[0] === Param
+                    IdArr[0] == Param
                       ? alert('페이지가 없습니다')
                       : navigate(
-                          `detailposts/${IdArr[IdArr.indexOf(Param) - 1]}`
+                          `/detailposts/${IdArr[IdArr.indexOf(Param) -1]}`
                         )
                   }
                 >
@@ -72,7 +74,7 @@ const DetailPosts = ({ Header }) => {
                     IdArr[IdArr.length - 1] == Param
                       ? alert('마지막 페이지 입니다.')
                       : navigate(
-                          `detailposts/${IdArr[IdArr.indexOf(Param) + 1]}`
+                          `/detailposts/${IdArr[IdArr.indexOf(Param) + 1]}`
                         )
                   }
                 >

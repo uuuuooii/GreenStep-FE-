@@ -29,29 +29,24 @@ import Previous from '../../../static/components/DetailPost/Previous';
 
 const Upload = ({ Header }) => {
   const [content, contentHandler] = useInput('');
-  const param = useParams().id;
+  const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((state) =>
-    state.userInfo.certification.length > 1
-      ? state.userInfo.certification.filter((item) => item.id == param)[0]
-      : state.userInfo.certification[0]
+  const certList = useSelector((state) =>
+    state.userInfo.certification
   );
+  const data = certList.length>1 ? certList.filter((item) => item.id == param)[0] : certList[0]
 
   const uploadText = { content: content };
   const IdArr = [];
-  useSelector((state) =>
-    state.userInfo.certification.length > 1
-      ? state.userInfo.certification
-      : state.userInfo.certification[0]
-  ).map((item) => (!item.OnFeed ? IdArr.push(item.id) : null));
+certList.map((item) => (IdArr.push(item.id)))
   IdArr.sort(function (a, b) {
     return b - a;
   });
-  console.log(IdArr);
 
-  const Upload = ({ Header }) => {
+
+  const Uploading = ({ Header }) => {
     instance.post(`/profiles/missions/${param}`, uploadText);
     navigate('/mypage');
   };
@@ -59,6 +54,7 @@ const Upload = ({ Header }) => {
   const onClickToastPopup = () => {
     ToastsStore.success('이미 작성하신 게시물입니다.');
   };
+
 
   useEffect(() => {
     setLoding(true);
@@ -118,7 +114,7 @@ const Upload = ({ Header }) => {
                     onClick={() =>
                       IdArr[0] == param
                         ? alert('페이지가 없습니다.')
-                        : navigate(`upload/${IdArr[IdArr.indexOf(param) - 1]}`)
+                        : navigate(`/upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
                     <Previous />
@@ -127,7 +123,7 @@ const Upload = ({ Header }) => {
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
                         ? alert('마지막 페이지 입니다.')
-                        : navigate(`upload/${IdArr[IdArr.indexOf(param) + 1]}`)
+                        : navigate(`/upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
                     <Next />
@@ -158,7 +154,7 @@ const Upload = ({ Header }) => {
                     data.onFeed
                       ? // alert("이미 작성하신 게시물입니다.")
                         onClickToastPopup()
-                      : Upload()
+                      : Uploading()
                   }
                 >
                   피드에 올리기

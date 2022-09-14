@@ -1,16 +1,16 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 //modules import
-import { getPostThunk } from '../../../Redux/modules/userInfoSlice';
+import { getPostThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
-import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
+import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
 //styled import
-import './DetailPosts.css';
-import Slide from 'react-reveal/Slide';
+import "./DetailPosts.css";
+import Slide from "react-reveal/Slide";
 
-const DetailPosts = ({Header}) => {
+const DetailPosts = ({ Header }) => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
   const Param = useParams().id;
@@ -26,7 +26,7 @@ const DetailPosts = ({Header}) => {
 
   return (
     <>
-    {Header}
+      {Header}
       {!loading ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
@@ -43,7 +43,7 @@ const DetailPosts = ({Header}) => {
               src={
                 detailPost
                   ? detailPost.missionImgUrl
-                  : 'https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-gray-solid-color-simple-background-image_557028.jpg'
+                  : "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-gray-solid-color-simple-background-image_557028.jpg"
               }
             ></img>
             <div className="detail-posts-mission-contents-box">

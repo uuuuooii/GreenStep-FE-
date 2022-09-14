@@ -11,9 +11,9 @@ function KakaoShare({
   function createShareButton() {
     if (window.Kakao) {
       const kakao = window.Kakao;
-
-      kakao.init("478a698553edb96f76445222b0156733");
-
+      if (!kakao.isInitialized()) {
+        kakao.init("478a698553edb96f76445222b0156733");
+      }
       kakao.Link.createDefaultButton({
         container: ".kakaoBtn",
         objectType: "feed",

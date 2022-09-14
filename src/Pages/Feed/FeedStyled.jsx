@@ -4,6 +4,14 @@ const FadeOn = keyframes`
 from{opacity:0}
 to{opacity:1}
 `;
+export const Shake = keyframes`
+0%{transform: rotate(-0deg)}
+20%{transform: rotate(-30deg)}
+40%{transform: rotate(35deg)}
+60%{transform: rotate(-30deg)}
+80%{transform: rotate(35deg)}
+100%{transform: rotate(0)}
+`;
 
 export const FeedPage = styled.div`
   max-width: 375px;
@@ -224,6 +232,7 @@ export const ClapArea = styled.div`
   flex-direction: row;
   margin-right: 16px;
 `;
+
 export const ClapPoint = styled.div`
   display: flex;
   flex-direction: column;
@@ -308,6 +317,11 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
+width: 40px;
+  animation-name:  ${(props) => props.clap ? Shake : null}; 
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
   &:hover {
     cursor: pointer;
   }

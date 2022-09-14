@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import instance from '../../Redux/modules/instance';
 import { useInView } from 'react-intersection-observer';
+import ClapButton from 'react-clap-button';
 //components import
 import Medal from './Medal';
 import ClapIcon from '../../static/components/ClapIcon';
@@ -8,6 +9,7 @@ import DoneClap from '../../static/components/DoneClap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 import Footer from '../../Components/Footer/Footer';
+import { Shake } from './FeedStyled';
 //redux
 import { __GetLanks } from '../../Redux/modules/ranks';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,12 +45,14 @@ import {
   BottomProfileArea,
   ArrowArea,
   ContentArea,
+  CustomIcon,
 } from './FeedStyled';
 import FeedArrow from '../../static/components/FeedArrow';
-import Slide from 'react-reveal/Slide';
 
 const Feed = ({ Header }) => {
   const ranks = useSelector((state) => state.ranks.ranks);
+  const [clapArr, setClapArr] = useState([]);
+  const [clapCheck, setClapCheck] = useState([]);
   const [category, setCategory] = useState(0);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -80,6 +84,17 @@ const Feed = ({ Header }) => {
     dispatch(__GetLanks());
   }, [dispatch]);
   //clap
+  const CheckClap = (item) => {
+    if (clapCheck.includes(item) && clapArr.includes(item)) {
+      setClapArr([...clapArr.filter((i) => i !== item)]);
+      setClapCheck([...clapCheck.filter((i) => i !== item)]);
+    } else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
+      setClapArr([...clapArr, item]);
+      setClapCheck([...clapCheck, item]);
+    } else if (!clapCheck.includes(item)&&clapArr.includes(item)) {
+      setClapArr([...clapArr.filter((i) => i !== item)])
+    }
+  };
   const changeClap = async (id) => {
     await instance
       .post(`/feed/claps/${id}`)
@@ -100,8 +115,6 @@ const Feed = ({ Header }) => {
       .catch((error) => error);
   };
   //categri
-
-  const URL = process.env.REACT_APP_URL;
   const TagClick = () => {
     setLoading(true);
     category == 0
@@ -112,6 +125,7 @@ const Feed = ({ Header }) => {
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
+            setClapArr(res.data.data.map((item) => item.id));
           })
       : instance
           .get(
@@ -122,6 +136,9 @@ const Feed = ({ Header }) => {
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
+            setClapArr(
+              res.data.data.map((item) => (item.ClapByMe ? item.id : null))
+            );
           });
     setLoading(false);
   };
@@ -132,6 +149,8 @@ const Feed = ({ Header }) => {
 
   useEffect(() => {
     setFeedList([]);
+    setClapArr([])
+    setClapCheck([])
     setPage(0);
     setLast(0);
   }, [category]);
@@ -181,7 +200,6 @@ const Feed = ({ Header }) => {
               <TotalFeed key={item + index}>
                 <FeedCard>
                   <CardTopArea>
-
                     <TagArea
                       onClick={() =>
                         setCategory(categoryList.indexOf(item.tag))
@@ -199,9 +217,24 @@ const Feed = ({ Header }) => {
                       <FeedProfile src={item.profilePhoto} />
                       <FeedNickname>{item.authorName}</FeedNickname>
                     </BottomProfileArea>
-                    <ClapArea onClick={() => changeClap(item.id)} type="button">
+                    {/* 박수 */}
+
+                    <ClapArea
+                      onClick={() => {
+                        changeClap(item.id);
+                        CheckClap(item.id);
+                      }}
+                      type="button"
+                    >
                       <ClapPoint>{item.clapCount}</ClapPoint>
-                      <ClapBox>
+                      <ClapBox
+                        clap={
+                          clapCheck.includes(item.id) &&
+                          clapArr.includes(item.id)
+                            ? Shake
+                            : null
+                        }
+                      >
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (

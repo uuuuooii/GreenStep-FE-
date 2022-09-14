@@ -1,6 +1,6 @@
 //react import
 import React, { useState, useRef } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import { Camera } from 'react-camera-pro';
 //modules import
 import instance from '../../../Redux/modules/instance';
@@ -13,17 +13,16 @@ import ChangeCamera from '../../../static/components/camera/ChangeCamera';
 import BackArrow from '../../../static/components/camera/BackArrow';
 import SendButton from '../../../static/components/camera/SendButton';
 
-export const MissionCamera = () => {
+ const MissionCamera = () => {
+  
+  const missionInfo = useParams().id
+  const missionId = useParams().id.split('&')[0];
   const camera = useRef(null);
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const [image, setImage] = useState(null);
   const Certification = { base64String: image };
-  const missionId = useParams().id.split('&')[0];
+
   const navigate = useNavigate();
-  const Upload = () => {
-    instance.post(`/missions/${missionId}`, Certification);
-    navigate(`/explainwating/${useParams().id}`);
-  };
   return (
     <div className="wrap">
       {image ? (
@@ -56,7 +55,13 @@ export const MissionCamera = () => {
           </div>
         )}
         {image ? (
-          <div className="center-icon" onClick={Upload}>
+          <div
+            className="center-icon"
+            onClick={() => {
+              instance.post(`/missions/${missionId}`, Certification);
+              navigate(`/explainwating/${missionInfo}`);
+            }}
+          >
             <SendButton />
           </div>
         ) : (

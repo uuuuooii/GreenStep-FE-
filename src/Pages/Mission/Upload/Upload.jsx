@@ -11,6 +11,7 @@ import {
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import Kakaoshare from "../../../Components/Kakaoshare/Kakaoshare";
 //modules import
 import instance from "../../../Redux/modules/instance";
 import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
@@ -52,8 +53,8 @@ const Upload = ({ Header }) => {
   const onClickToastComplete = () => {
     ToastsStore.success("게시물 업로드가 완료되었습니다");
   };
-
-  const Uploading = ({ Header }) => {
+  
+  const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
     onClickToastComplete();
     navigate("/mypage");
@@ -163,9 +164,9 @@ const Upload = ({ Header }) => {
                 >
                   피드에 올리기
                 </UploadButton>
-                <ShareButton className="upload-button-share">
+                <Kakaoshare className="upload-button-share">
                   공유하기
-                </ShareButton>
+                </Kakaoshare>
               </ButtonArea>
             </>
           ) : (

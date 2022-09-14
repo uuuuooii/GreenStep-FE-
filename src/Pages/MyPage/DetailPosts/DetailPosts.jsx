@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 //modules import
-import { getPostThunk } from "../../../Redux/modules/userInfoSlice";
+import { getPostThunk } from '../../../Redux/modules/userInfoSlice';
 //component import
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import Previous from '../../../static/components/DetailPost/Previous';
 import Next from '../../../static/components/DetailPost/Next';
+import KakaoShare from '../../../Components/Kakaoshare/Kakaoshare';
 //styled import
 import './DetailPosts.css';
 import Slide from 'react-reveal/Slide';
@@ -19,18 +20,15 @@ const DetailPosts = ({ Header }) => {
   const dispatch = useDispatch();
   const Param = Number(useParams().id);
   const detailPost = useSelector((state) =>
-  // console.log(state.userInfo.post)
+    // console.log(state.userInfo.post)
     state.userInfo.post.length > 1
-      ? state.userInfo.post.filter(
-          (item) => item.id== Param
-        )[0]
+      ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
   );
-
 
   IdArr.sort(function (a, b) {
     return b - a;
@@ -63,7 +61,7 @@ const DetailPosts = ({ Header }) => {
                     IdArr[0] == Param
                       ? alert('페이지가 없습니다')
                       : navigate(
-                          `/detailposts/${IdArr[IdArr.indexOf(Param) -1]}`
+                          `/detailposts/${IdArr[IdArr.indexOf(Param) - 1]}`
                         )
                   }
                 >
@@ -96,7 +94,9 @@ const DetailPosts = ({ Header }) => {
                 {detailPost ? detailPost.content : '#Content'}
               </p>
             </div>
-            <button className="detail-posts-button-share">공유하기</button>
+            <KakaoShare className="detail-posts-button-share">
+              공유하기
+            </KakaoShare>
           </div>
         </Slide>
       ) : (

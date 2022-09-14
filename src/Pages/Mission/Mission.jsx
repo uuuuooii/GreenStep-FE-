@@ -26,6 +26,8 @@ import {
   WeeklyMissionArea,
   MissionPage,
 } from "./MissionStyled";
+import "./Mission.css";
+import { HiPencil } from "react-icons/hi";
 
 const Mission = ({ Header }) => {
   const [loading, setLoading] = useState(false);
@@ -166,6 +168,9 @@ const Mission = ({ Header }) => {
           </WeeklyMissionArea>{" "}
         </>
       </MissionPage>{" "}
+      <div className="floating-round" onClick={() => navigate("/archive")}>
+        <HiPencil className="floating-icon" />
+      </div>
       <Footer />
     </>
   );

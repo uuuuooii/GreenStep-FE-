@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
+import React, { useEffect, useState } from "react";
+import { NativeEventSource, EventSourcePolyfill } from "event-source-polyfill";
 
 const EventSource = NativeEventSource || EventSourcePolyfill;
 const Alert = () => {
@@ -12,17 +12,17 @@ const Alert = () => {
   let eventSource = undefined;
 
   useEffect(() => {
-    console.log('매번 실행되는지');
-    console.log('listening', listening);
+    console.log("매번 실행되는지");
+    console.log("listening", listening);
 
     if (!listening) {
-      eventSource = new EventSource('http://localhost:8080/sse');
+      eventSource = new EventSource("http://localhost:8080/sse");
       msetEventSource(eventSource);
 
-         eventSource.addEventListener("Progress", (event) => {
+      eventSource.addEventListener("Progress", (event) => {
         const result = JSON.parse(event.data);
         console.log("received:", result);
-        setData(result)
+        setData(result);
       });
 
       console.log("eventSource", eventSource);
@@ -32,4 +32,4 @@ const Alert = () => {
   return <>Alert</>;
 };
 
-export default Alert
+export default Alert;

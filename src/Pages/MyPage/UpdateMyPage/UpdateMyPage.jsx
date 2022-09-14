@@ -23,13 +23,12 @@ const UpdateMyPage = ({ Header }) => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
 
-  // const userinfo = {
-  //   name: name,
-  //   nickname: nickname,
-  //   profilePhoto: userInfo.profilePhoto,
-  //   acceptMail: acceptMail,
-  // };
-  // userinfo => 이름 바꾸기!!! 55번째 줄에있는 userinfo도 같이 바꿔놓기.
+  const updateInfo = {
+    name: name,
+    nickname: nickname,
+    profilePhoto: userInfo.profilePhoto,
+    acceptMail: acceptMail,
+  };
 
   useEffect(() => {
     setLoding(true);
@@ -48,28 +47,48 @@ const UpdateMyPage = ({ Header }) => {
           />
           <p
             className="updatemypage-save-button"
-            // onClick={() =>
-            //   instance.patch(`/users/info`, userinfo).then((res) => {
-            //     console.log(res);
-            //   })
-            // }
+            onClick={() =>
+              instance.patch(`/users/info`, updateInfo).then((res) => {
+                console.log(res);
+              })
+            }
           >
             저장
           </p>
         </div>
         <div className="updatemypage-body-wrap">
           <div className="updatemypage-image-email-input-wrap">
-            <img
-              className="updatemypage-profile-image"
-              src={userInfo.profilePhoto}
-              alt="profile"
-            ></img>
-            <div className="updatemypage-email">
-              <div className="updatemypage-email-text">
-                카카오톡 연동 이메일 주소 :
-              </div>
-              <div className="updatemypage-email-address">{userInfo.email}</div>
-            </div>
+            {!loading ? (
+              <>
+                <img
+                  className="updatemypage-profile-image"
+                  src={userInfo.profilePhoto}
+                  alt="profile"
+                ></img>
+                <div className="updatemypage-email">
+                  <div className="updatemypage-email-text">
+                    카카오톡 연동 이메일 주소 :
+                  </div>
+                  <div className="updatemypage-email-address">
+                    {userInfo.email}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <img
+                  className="updatemypage-profile-image"
+                  src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                  alt="profile"
+                ></img>
+                <div className="updatemypage-email">
+                  <div className="updatemypage-email-text">
+                    카카오톡 연동 이메일 주소 :
+                  </div>
+                  <div className="updatemypage-email-address"></div>
+                </div>
+              </>
+            )}
             <div className="updatemypage-input-area">
               <div className="updatemypage-input-1">
                 <input

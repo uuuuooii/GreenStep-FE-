@@ -118,9 +118,7 @@ const Upload = ({ Header }) => {
                     onClick={() =>
                       IdArr[0] == param
                         ? alert('페이지가 없습니다.')
-                        : navigate(
-                            `upload/${IdArr[IdArr.indexOf(param) - 1]}`
-                          )
+                        : navigate(`upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
                     <Previous />
@@ -129,9 +127,7 @@ const Upload = ({ Header }) => {
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
                         ? alert('마지막 페이지 입니다.')
-                        : navigate(
-                            `upload/${IdArr[IdArr.indexOf(param) + 1]}`
-                          )
+                        : navigate(`upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
                     <Next />
@@ -161,7 +157,7 @@ const Upload = ({ Header }) => {
                   onClick={() =>
                     data.onFeed
                       ? // alert("이미 작성하신 게시물입니다.")
-                        { onClickToastPopup }
+                        onClickToastPopup()
                       : Upload()
                   }
                 >

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./DetailPhotoShots.css";
 import { getDetailPhotoShotThunk } from "../../../Redux/modules/detailPhotoShotSlice";
 import { useDispatch, useSelector } from "react-redux";
+import KakaoShare from "../../../Components/Kakaoshare/Kakaoshare";
 
-const DetailPhotoShots = ({Header}) => {
+const DetailPhotoShots = ({ Header }) => {
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
   const detailPhotoShot = useSelector(
@@ -18,7 +19,7 @@ const DetailPhotoShots = ({Header}) => {
 
   return (
     <>
-    {Header}
+      {Header}
       <div className="detail-photoshots-wrap-shape">
         <div className="detail-photoshots-mission-name-and-tag-area">
           <div className="detail-photoshots-mission-name-text">

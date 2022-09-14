@@ -11,6 +11,7 @@ import {
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import Kakaoshare from "../../../Components/Kakaoshare/Kakaoshare";
 //modules import
 import instance from "../../../Redux/modules/instance";
 import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
@@ -156,9 +157,9 @@ const Upload = ({ Header }) => {
                 >
                   피드에 올리기
                 </UploadButton>
-                <ShareButton className="upload-button-share">
+                <Kakaoshare className="upload-button-share">
                   공유하기
-                </ShareButton>
+                </Kakaoshare>
               </ButtonArea>
             </>
           ) : (

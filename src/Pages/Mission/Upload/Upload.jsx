@@ -1,60 +1,59 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
 //components import
-import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
-import Toast from '../../../Components/Toast/Toast';
+import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
+import Toast from "../../../Components/Toast/Toast";
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
-} from 'react-toasts';
+} from "react-toasts";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
+import "./Upload.css";
 import {
   UploadContentTextArea,
   UploadButton,
   ShareButton,
   UploadSkeleton,
   ButtonArea,
-} from './UploadStyled';
-import Slide from 'react-reveal/Slide';
-import Next from '../../../static/components/DetailPost/Next';
-import Previous from '../../../static/components/DetailPost/Previous';
+} from "./UploadStyled";
+import Slide from "react-reveal/Slide";
+import Next from "../../../static/components/DetailPost/Next";
+import Previous from "../../../static/components/DetailPost/Previous";
 
 const Upload = ({ Header }) => {
-  const [content, contentHandler] = useInput('');
+  const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const certList = useSelector((state) =>
-    state.userInfo.certification
-  );
-  const data = certList.length>1 ? certList.filter((item) => item.id == param)[0] : certList[0]
+  const certList = useSelector((state) => state.userInfo.certification);
+  const data =
+    certList.length > 1
+      ? certList.filter((item) => item.id == param)[0]
+      : certList[0];
 
   const uploadText = { content: content };
   const IdArr = [];
-certList.map((item) => (IdArr.push(item.id)))
+  certList.map((item) => IdArr.push(item.id));
   IdArr.sort(function (a, b) {
     return b - a;
   });
 
-
   const Uploading = ({ Header }) => {
     instance.post(`/profiles/missions/${param}`, uploadText);
-    navigate('/mypage');
+    navigate("/mypage");
   };
 
   const onClickToastPopup = () => {
-    ToastsStore.success('이미 작성하신 게시물입니다.');
+    ToastsStore.success("이미 작성한 게시물입니다.");
   };
-
 
   useEffect(() => {
     setLoding(true);
@@ -70,10 +69,11 @@ certList.map((item) => (IdArr.push(item.id)))
         .toast {
           font-size: 16px !important;
           color: #fff !important;
-          background-color: #87daa8d4 !important;
+          background-color: #b2e2ab !important;
+          box-shadow: 0px 2px 2px #dadada;
           border-radius: 20px !important;
-          min-height: 30px !important;
-          width: 100px !important;
+          min-height: 40px !important;
+          // width: 100px !important;
           margin: 2px auto !important;
           display: inline-block !important;
           line-height: 30px !important;
@@ -102,10 +102,10 @@ certList.map((item) => (IdArr.push(item.id)))
             <>
               <div className="upload-mission-name-and-tag-area">
                 <div className="upload-mission-name-text">
-                  {data.missionName ? data.missionName : 'Mission Name'}
+                  {data.missionName ? data.missionName : "Mission Name"}
                 </div>
                 <div className="upload-mission-tag-text">
-                  {data.tag ? data.tag : '#Tag'}
+                  {data.tag ? data.tag : "#Tag"}
                 </div>
               </div>
               <div className="upload-mission-image-div">
@@ -113,7 +113,7 @@ certList.map((item) => (IdArr.push(item.id)))
                   <div
                     onClick={() =>
                       IdArr[0] == param
-                        ? alert('페이지가 없습니다.')
+                        ? alert("페이지가 없습니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
@@ -122,7 +122,7 @@ certList.map((item) => (IdArr.push(item.id)))
                   <div
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
-                        ? alert('마지막 페이지 입니다.')
+                        ? alert("마지막 페이지 입니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
@@ -134,7 +134,7 @@ certList.map((item) => (IdArr.push(item.id)))
                   src={
                     data.missionImgUrl
                       ? data.missionImgUrl
-                      : '/images/고양이.png'
+                      : "/images/고양이.png"
                   }
                 />
               </div>
@@ -145,16 +145,13 @@ certList.map((item) => (IdArr.push(item.id)))
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
               ></UploadContentTextArea>
               <ButtonArea>
-                {' '}
+                {" "}
                 <UploadButton
                   className="upload-button-upload"
                   type="button"
                   id="popup"
                   onClick={() =>
-                    data.onFeed
-                      ? // alert("이미 작성하신 게시물입니다.")
-                        onClickToastPopup()
-                      : Uploading()
+                    data.onFeed ? onClickToastPopup() : Uploading()
                   }
                 >
                   피드에 올리기

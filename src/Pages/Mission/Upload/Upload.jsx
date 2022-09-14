@@ -46,7 +46,7 @@ const Upload = ({ Header }) => {
     return b - a;
   });
 
-  const Uploading = ({ Header }) => {
+  const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
     navigate("/mypage");
   };

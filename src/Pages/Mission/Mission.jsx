@@ -17,7 +17,7 @@ import DailyChallenge from "./Daily/DailyChallenge";
 import Footer from "../../Components/Footer/Footer";
 import ChallengeSkeleton from "../../Components/Skeleton/ChallengeSkeleton";
 import DailySkeleton from "../../Components/Skeleton/DailySkeleton";
-
+import Kakaoshare from "../../Components/Kakaoshare/Kakaoshare";
 //styled import
 import {
   DailyMissionArea,
@@ -81,6 +81,7 @@ const Mission = ({ Header }) => {
           <DailyMissionArea>
             <DailyTextArea>
               <DailyText>데일리 미션</DailyText>
+              <Kakaoshare />
             </DailyTextArea>
             <DailyCardBox>
               {!loading && missionDaily ? (

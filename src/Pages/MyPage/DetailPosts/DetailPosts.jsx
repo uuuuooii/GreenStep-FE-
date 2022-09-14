@@ -97,6 +97,7 @@ const DetailPosts = ({ Header }) => {
             <KakaoShare className="detail-posts-button-share">
               공유하기
             </KakaoShare>
+            <KakaoShare />
           </div>
         </Slide>
       ) : (

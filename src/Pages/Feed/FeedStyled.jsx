@@ -260,9 +260,10 @@ export const ClapPoint = styled.div`
 `;
 export const FeedProfile = styled.img`
   border-radius: 10px;
-  width: 44px;
-  height: 44px;
-  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  margin: 5px 10px 0px 5px;
+  object-fit: cover;
 `;
 export const FeedNickname = styled.div`
   font-family: "Apple SD Gothic Neo";
@@ -321,11 +322,11 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
-  width: 40px;
-  animation-name: ${(props) =>
+  width: 26px;
+  /* animation-name: ${(props) =>
     props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
       ? Shake
-      : null};
+      : null}; */
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -338,8 +339,8 @@ export const ScrollDiv = styled.div`
   height: 20px;
 `;
 export const ContentArea = styled.div`
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   flex-direction: row;
-  padding: 0 10px;
+  padding: 0px 10px 0px 14px;
 `;

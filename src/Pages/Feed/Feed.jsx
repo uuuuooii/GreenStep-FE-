@@ -201,9 +201,6 @@ const Feed = ({ Header }) => {
           ))}
         </CategoryArea>
         <FeedArea>
-          {/* <ClapBox clap={Shake}>
-            <DoneClap />
-          </ClapBox> */}
           {!loading && FeedList ? (
             FeedList.map((item, index) => (
               <TotalFeed key={item + index}>

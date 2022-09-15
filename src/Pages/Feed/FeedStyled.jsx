@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const FadeOn = keyframes`
 from{opacity:0}
@@ -39,7 +39,7 @@ export const RankTitle = styled.div`
   text-align: center;
   color: #84ca79;
   width: 100%;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -91,7 +91,7 @@ export const MedalHead = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 12.5px;
-  background-color: ${(props) => (props.color ? props.color : '#ffc72d')};
+  background-color: ${(props) => (props.color ? props.color : "#ffc72d")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +103,7 @@ export const MedalCenter = styled.div`
   width: 9.75px;
   height: 9.75px;
   border-radius: 4.875px;
-  background-color: ${(props) => (props.color ? props.color : '#FFE49C')};
+  background-color: ${(props) => (props.color ? props.color : "#FFE49C")};
   /* margin: auto; */
 `;
 
@@ -141,14 +141,14 @@ export const CategoryButton = styled.div`
   min-width: 92px;
   min-height: 26px;
   border-radius: 3px;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;
   color: #b8dde2;
   background-color: ${(props) =>
-    props.check === props.num ? '#F1F8F9' : 'none'};
+    props.check === props.num ? "#F1F8F9" : "none"};
   align-items: center;
   padding: 4px 5px;
   display: flex;
@@ -213,7 +213,7 @@ export const TagArea = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -240,7 +240,7 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 5px;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -256,12 +256,12 @@ export const ClapPoint = styled.div`
 `;
 export const FeedProfile = styled.img`
   border-radius: 10px;
-  width: 44px;
-  height: 44px;
-  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  margin: 5px 10px 0px 5px;
 `;
 export const FeedNickname = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -283,7 +283,7 @@ export const FeedText = styled.div`
   width: 100%;
   display: flex;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -317,8 +317,8 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
-width: 40px;
-  animation-name:  ${(props) => props.clap ? Shake : null}; 
+  width: 40px;
+  animation-name: ${(props) => (props.clap ? Shake : null)};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -331,8 +331,8 @@ export const ScrollDiv = styled.div`
   height: 20px;
 `;
 export const ContentArea = styled.div`
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   flex-direction: row;
-  padding: 0 10px;
+  padding: 0px 10px 0px 14px;
 `;

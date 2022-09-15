@@ -26,8 +26,51 @@ import instance from "./Redux/modules/instance";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
-import Point from "./Components/Point/point";
+import {
+  ToastsContainer,
+  ToastsStore,
+  ToastsContainerPosition,
+} from "react-toasts";
 function App() {
+  const onClickToastAlready = () => {
+    ToastsStore.success("이미 작성한 게시물입니다");
+  };
+  const onClickToastComplete = () => {
+    ToastsStore.success("게시물 업로드가 완료되었습니다");
+  };
+  <style jsx="true">{`
+  .toast {
+    font-size: 13px !important;
+    color: #fff !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(178, 226, 171, 0.75) !important;
+    box-shadow: 0px 2px 2px #dadada;
+    border-radius: 20px !important;
+    min-height: 20px !important;
+    width: 200px !important;
+    margin: 4px auto !important;
+    padding: 8px 35px;
+    display: inline-block !important;
+    line-height: 22px !important;
+  }
+`}</style>
+
+{/* <button
+    type="button"
+    id="popup"
+    onClick={onClickToastPopup}
+    className="toast-button"
+  >
+    toast
+  </button> */}
+
+<ToastsContainer
+  className="custom-alert-position"
+  position={ToastsContainerPosition.BOTTOM_CENTER}
+  store={ToastsStore}
+  lightBackground
+/>
   const [point, setPoint] = useState(0);
   return (
     <>
@@ -69,7 +112,7 @@ function App() {
               />
             }
           />
-          <Route path="/upload/:id" element={<Upload Header={<Header />} />} />
+          <Route path="/upload/:id" element={<Upload Header={<Header />} onClickToastAlready={onClickToastAlready} onClickToastComplete={onClickToastComplete} ToastsContainer={<ToastsContainer/>} />} />
           <Route path="/explain" element={<Explain Header={<Header />} />} />
           <Route
             path="/explain/:id"

@@ -17,7 +17,7 @@ import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import WatingLeap from '../../../static/components/WatingLeap';
 
 const Explain = ({Header}) => {
-  const [loding, setLoding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const paramsNum = useParams().id.split('&')[0];
@@ -30,19 +30,19 @@ const Explain = ({Header}) => {
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
   useEffect(() => {
-    setLoding(true);
+    setLoading(true);
     paramsCategory === 'challenge'
       ? dispatch(__GetTodaymission())
       : paramsCategory === 'daily'
       ? dispatch(__GetDailymission())
       : dispatch(__GetWeeklymission());
-    setLoding(false);
+    setLoading(false);
   }, [dispatch]);
   return (
     <>
     {Header}
       <div className="explain-back-div" onClick={() => navigate('/mission')} />
-      {!loding && select ? (
+      {!loading && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape">
             <div className="explain-mission-name-and-tag-area">

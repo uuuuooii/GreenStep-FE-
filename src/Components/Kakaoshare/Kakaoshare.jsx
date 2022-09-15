@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Kakaoshare.css";
 
 //카카오톡 공유버튼 만들기
 function KakaoShare({

@@ -130,15 +130,14 @@ export const MedalRightBottom = styled.div`
 
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-
   padding: 10px 0;
   background-color: rgba(217, 217, 217, 0.1);
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-  padding-left: 20px;
+  /* padding-left: 20px; */
 `;
 export const CategoryButton = styled.div`
   min-width: 63px;

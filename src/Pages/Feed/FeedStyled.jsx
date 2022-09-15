@@ -260,9 +260,9 @@ export const ClapPoint = styled.div`
 `;
 export const FeedProfile = styled.img`
   border-radius: 10px;
-  width: 44px;
-  height: 44px;
-  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  margin: 5px 10px 0px 5px;
 `;
 export const FeedNickname = styled.div`
   font-family: "Apple SD Gothic Neo";
@@ -338,8 +338,8 @@ export const ScrollDiv = styled.div`
   height: 20px;
 `;
 export const ContentArea = styled.div`
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   flex-direction: row;
-  padding: 0 10px;
+  padding: 0px 10px 0px 14px;
 `;

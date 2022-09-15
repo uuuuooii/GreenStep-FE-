@@ -26,7 +26,7 @@ import instance from './Redux/modules/instance';
 import ScrollToTop from './Components/ScrollTop/ScrollTop';
 import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
-import './Toast.css';
+import './Components/Toast/Toast.css';
 import {
   ToastsContainer,
   ToastsStore,

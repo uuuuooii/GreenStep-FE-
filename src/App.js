@@ -1,73 +1,33 @@
-import React from 'react';
-import { useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Header from './Components/Header/Header';
+import React from "react";
+import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
-import Admin from './Pages/Admin/Admin/Admin';
-import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
-import Alert from './Components/Alert/Alert';
-import Login from './Pages/Login/Login';
-import Mission from './Pages/Mission/Mission';
-import Upload from './Pages/Mission/Upload/Upload';
-import Explain from './Pages/Mission/Explain/Explain';
-import Feed from './Pages/Feed/Feed';
-import Mypage from './Pages/MyPage/MyPage/MyPage';
-import UpdateMyPage from './Pages/MyPage/UpdateMyPage/UpdateMyPage';
-import Archive from './Pages/MyPage/MyPage/Archive/Archive';
-import PhotoShotsArchive from './Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive';
-import DetailPosts from './Pages/MyPage/DetailPosts/DetailPosts';
-import DetailPhotoShots from './Pages/MyPage/DetailPhotoShots/DetailPhotoShots';
-import Modal from './Pages/Login/Modal';
-import MissionCamera from './Pages/Mission/Camera/MissionCamera';
-import Loding from './Pages/Loding/Loding';
-import Error from './Pages/Error/Error';
-import ExplainWating from './Pages/Mission/Explain/ExplainWating';
-import instance from './Redux/modules/instance';
-import ScrollToTop from './Components/ScrollTop/ScrollTop';
-import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
-import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
-import './Components/Toast/Toast.css';
-import {
-  ToastsContainer,
-  ToastsStore,
-  ToastsContainerPosition,
-} from 'react-toasts';
+import Admin from "./Pages/Admin/Admin/Admin";
+import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
+import Alert from "./Components/Alert/Alert";
+import Login from "./Pages/Login/Login";
+import Mission from "./Pages/Mission/Mission";
+import Upload from "./Pages/Mission/Upload/Upload";
+import Explain from "./Pages/Mission/Explain/Explain";
+import Feed from "./Pages/Feed/Feed";
+import Mypage from "./Pages/MyPage/MyPage/MyPage";
+import UpdateMyPage from "./Pages/MyPage/UpdateMyPage/UpdateMyPage";
+import Archive from "./Pages/MyPage/MyPage/Archive/Archive";
+import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
+import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
+import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
+import Modal from "./Pages/Login/Modal";
+import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
+import Loding from "./Pages/Loding/Loding";
+import Error from "./Pages/Error/Error";
+import ExplainWating from "./Pages/Mission/Explain/ExplainWating";
+import instance from "./Redux/modules/instance";
+import ScrollToTop from "./Components/ScrollTop/ScrollTop";
+import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
+import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
+import Point from "./Components/Point/point";
 function App() {
-  const onClickToastAlready = () => {
-    ToastsStore.success('이미 작성한 게시물입니다');
-  };
-  const onClickToastComplete = () => {
-    ToastsStore.success('게시물 업로드가 완료되었습니다');
-  };
-  <style jsx="true">{`
-    .toast {
-      font-size: 13px !important;
-      color: #fff !important;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(178, 226, 171, 0.75) !important;
-      box-shadow: 0px 2px 2px #dadada;
-      border-radius: 20px !important;
-      min-height: 20px !important;
-      width: 200px !important;
-      margin: 4px auto !important;
-      padding: 8px 35px;
-      display: inline-block !important;
-      line-height: 22px !important;
-    }
-  `}</style>;
-
-  {
-    /* <button
-    type="button"
-    id="popup"
-    onClick={onClickToastPopup}
-    className="toast-button"
-  >
-    toast
-  </button> */
-  }
-
   const [point, setPoint] = useState(0);
   return (
     <>
@@ -109,16 +69,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/upload/:id"
-            element={
-              <Upload
-                Header={<Header />}
-                onClickToastAlready={onClickToastAlready}
-                onClickToastComplete={onClickToastComplete}
-              />
-            }
-          />
+          <Route path="/upload/:id" element={<Upload Header={<Header />} />} />
           <Route path="/explain" element={<Explain Header={<Header />} />} />
           <Route
             path="/explain/:id"
@@ -150,12 +101,6 @@ function App() {
           <Route path="/feed" element={<Feed Header={<Header />} />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <ToastsContainer
-          className="custom-alert-position"
-          position={ToastsContainerPosition.BOTTOM_CENTER}
-          store={ToastsStore}
-          lightBackground
-        />
       </BrowserRouter>
     </>
   );

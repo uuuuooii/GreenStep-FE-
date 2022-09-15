@@ -29,7 +29,7 @@ import {
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
 
-const Mission = ({ Header }) => {
+const Mission = ({ Header,onClickToastAlready }) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -84,6 +84,7 @@ const Mission = ({ Header }) => {
               <DailyText>데일리 미션</DailyText>
             </DailyTextArea>
             <DailyCardBox>
+              <button onClick={()=>onClickToastAlready()}>토스트</button>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
                   item.status === "DEFAULT" ? (

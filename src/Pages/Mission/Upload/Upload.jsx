@@ -28,7 +28,7 @@ import Slide from "react-reveal/Slide";
 import Next from "../../../static/components/DetailPost/Next";
 import Previous from "../../../static/components/DetailPost/Previous";
 
-const Upload = ({ Header,onClickToastAlready,onClickToastComplete }) => {
+const Upload = ({ Header }) => {
   const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
@@ -51,7 +51,7 @@ const Upload = ({ Header,onClickToastAlready,onClickToastComplete }) => {
   
   const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
-    onClickToastComplete();
+    // onClickToastComplete();
     navigate("/archive/certification");
   };
 
@@ -121,7 +121,7 @@ const Upload = ({ Header,onClickToastAlready,onClickToastComplete }) => {
                   type="button"
                   id="popup"
                   onClick={() =>
-                    data.onFeed ? onClickToastAlready() : Uploading()
+                    data.onFeed ? alert('test') : Uploading()
                   }
                 >
                   피드에 올리기

@@ -263,6 +263,7 @@ export const FeedProfile = styled.img`
   width: 35px;
   height: 35px;
   margin: 5px 10px 0px 5px;
+  object-fit: cover;
 `;
 export const FeedNickname = styled.div`
   font-family: "Apple SD Gothic Neo";
@@ -321,11 +322,11 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
-  width: 40px;
-  animation-name: ${(props) =>
+  width: 26px;
+  /* animation-name: ${(props) =>
     props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
       ? Shake
-      : null};
+      : null}; */
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

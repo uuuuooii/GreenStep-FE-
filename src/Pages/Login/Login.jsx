@@ -12,6 +12,7 @@ import {
   KakaoLink,
   LDiv,
 } from "./LoginStyled";
+
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
 const text2 =
@@ -57,7 +58,7 @@ export default Login;
 
 const FirstArea = styled.div`
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
 
   display: flex;
@@ -67,7 +68,7 @@ const FirstArea = styled.div`
 `;
 const SecondArea = styled.div`
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -76,7 +77,7 @@ const SecondArea = styled.div`
 `;
 const ThirdArea = styled.div`
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -85,7 +86,7 @@ const ThirdArea = styled.div`
 `;
 const FourthArea = styled.div`
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -94,7 +95,7 @@ const FourthArea = styled.div`
 `;
 const LogoArea = styled.div`
   height: 100vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   display: flex;
   align-items: center;

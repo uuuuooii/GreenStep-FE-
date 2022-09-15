@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './Components/Header/Header';
 // import Footer from "./Components/Footer/Footer";
@@ -23,133 +22,67 @@ import Loding from './Pages/Loding/Loding';
 import Error from './Pages/Error/Error';
 import ExplainWating from './Pages/Mission/Explain/ExplainWating';
 import instance from './Redux/modules/instance';
-import ScrollToTop from './Components/ScrollTop/ScrollTop';
 import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
-import './Components/Toast/Toast.css';
+import { ToastStyle } from './Components/Toast/Toast';
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
 } from 'react-toasts';
 function App() {
-  const onClickToastAlready = () => {
-    ToastsStore.success('이미 작성한 게시물입니다');
+  const onClickToast = (text) => {
+    ToastsStore.success(text);
   };
-  const onClickToastComplete = () => {
-    ToastsStore.success('게시물 업로드가 완료되었습니다');
-  };
-  <style jsx="true">{`
-    .toast {
-      font-size: 13px !important;
-      color: #fff !important;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(178, 226, 171, 0.75) !important;
-      box-shadow: 0px 2px 2px #dadada;
-      border-radius: 20px !important;
-      min-height: 20px !important;
-      width: 200px !important;
-      margin: 4px auto !important;
-      padding: 8px 35px;
-      display: inline-block !important;
-      line-height: 22px !important;
-    }
-  `}</style>;
 
-  {
-    /* <button
-    type="button"
-    id="popup"
-    onClick={onClickToastPopup}
-    className="toast-button"
-  >
-    toast
-  </button> */
-  }
-
-  const [point, setPoint] = useState(0);
+  const hideArr = [
+    '/',
+    '/users/kakao/callback',
+    '/alert',
+    '/modal',
+    '/missioncamera',
+    '/updatemypage',
+  ];
   return (
     <>
       <BrowserRouter>
-        {/* <Header  /> */}
+        <Header hideArr={hideArr} />
         {/* <Kakaoshare /> */}
         <SetPullToRefresh />
         <Routes>
-          <Route
-            path="/"
-            element={<Login />}
-            setPoint={setPoint}
-            point={point}
-          />
+          <Route path="/" element={<Login />} />
           <Route path="/users/kakao/callback" element={<Loding />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/alert" element={<Alert />} />
-          <Route path="/modal" element={<Modal />} />
-          <Route
-            path="/mission"
-            element={
-              <Mission setPoint={setPoint} point={point} Header={<Header />} />
-            }
-          />
+          <Route path="/modal" element={<Modal onClickToast={onClickToast} />} />
+          <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
-          <Route
-            path="/missioncamera/:id"
-            element={<MissionCamera point={point} setPoint={setPoint} />}
-          />
-          <Route path="/upload" element={<Upload Header={<Header />} />} />
-          <Route
-            path="/explainwating/:id"
-            element={
-              <ExplainWating
-                Header={<Header />}
-                setPoint={setPoint}
-                point={point}
-              />
-            }
-          />
+          <Route path="/missioncamera/:id" element={<MissionCamera onClickToast={onClickToast} />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/explainwating/:id" element={<ExplainWating />} />
           <Route
             path="/upload/:id"
             element={
               <Upload
-                Header={<Header />}
-                onClickToastAlready={onClickToastAlready}
-                onClickToastComplete={onClickToastComplete}
+                onClickToast={onClickToast}
               />
             }
           />
-          <Route path="/explain" element={<Explain Header={<Header />} />} />
-          <Route
-            path="/explain/:id"
-            element={<Explain Header={<Header />} />}
-          />
-          <Route path="/mypage" element={<Mypage Header={<Header />} />} />
-          <Route path="/archive" element={<Archive Header={<Header />} />} />
+          <Route path="/explain" element={<Explain />} />
+          <Route path="/explain/:id" element={<Explain />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/archive" element={<Archive />} />
           <Route path="/updatemypage" element={<UpdateMyPage />} />
-          <Route
-            path="/archive/:id"
-            element={<Archive Header={<Header />} />}
-          />
-          <Route
-            path="/photoshotsarchive"
-            element={<PhotoShotsArchive Header={<Header />} />}
-          />
-          <Route
-            path="/detailposts"
-            element={<DetailPosts Header={<Header />} />}
-          />
-          <Route
-            path="/detailposts/:id"
-            element={<DetailPosts Header={<Header />} />}
-          />
-          <Route
-            path="/detailphotoshots"
-            element={<DetailPhotoShots Header={<Header />} />}
-          />
-          <Route path="/feed" element={<Feed Header={<Header />} />} />
+          <Route path="/archive/:id" element={<Archive />} />
+          <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
+          <Route path="/detailposts" element={<DetailPosts />} />
+          <Route path="/detailposts/:id" element={<DetailPosts onClickToast={onClickToast} />} />
+          <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
+          <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        {ToastStyle}
         <ToastsContainer
           className="custom-alert-position"
           position={ToastsContainerPosition.BOTTOM_CENTER}

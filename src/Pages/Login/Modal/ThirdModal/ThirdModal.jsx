@@ -26,7 +26,8 @@ const ThirdModal = ({
   nickname,
   img,
   third,
-  setThird
+  setThird,
+  onClickToast
 }) => {
 
   const NextModal = () => {
@@ -50,7 +51,7 @@ const ThirdModal = ({
         <TopText>닉네임 설정</TopText>
         <ButtonText
           onClick={() =>
-            name && nickname ? NextModal() : alert('빈칸을 입력해주세요')
+            name && nickname ? NextModal() : onClickToast('빈칸을 입력해주세요')
           }
         >
           다음

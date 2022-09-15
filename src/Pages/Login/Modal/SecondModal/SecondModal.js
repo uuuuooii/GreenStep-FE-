@@ -19,6 +19,7 @@ const SecondModal = ({
   img,
   second,
   setSecond,
+  onClickToast
 }) => {
   const imgList = [
     '/images/고양이.png',
@@ -46,7 +47,7 @@ const SecondModal = ({
           <TopText>프로필 사진</TopText>
           <ButtonText
             onClick={() =>
-              img ? NextThird() : alert('캐릭터를 선택해주세요.')
+              img ? NextThird() : onClickToast('캐릭터를 선택해주세요.')
             }
           >
             다음

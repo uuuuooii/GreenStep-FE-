@@ -1,6 +1,7 @@
 //react import
-import React, { useState, useRef } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import React, { useState, useRef,useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { Camera } from 'react-camera-pro';
 //modules import
 import instance from '../../../Redux/modules/instance';
@@ -12,15 +13,45 @@ import BackCamera from '../../../static/components/camera/BackCamera';
 import ChangeCamera from '../../../static/components/camera/ChangeCamera';
 import BackArrow from '../../../static/components/camera/BackArrow';
 import SendButton from '../../../static/components/camera/SendButton';
-
- const MissionCamera = () => {
-  
-  const missionInfo = useParams().id
-  const missionId = useParams().id.split('&')[0];
+import {
+  __GetTodaymission,
+  __GetDailymission,
+  __GetWeeklymission,
+} from '../../../Redux/modules/mission';
+const MissionCamera = () => {
+  const dispatch = useDispatch()
+  const missionInfo = useParams().id;
   const camera = useRef(null);
+  const [loading,setLoading] = useState(false)
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const [image, setImage] = useState(null);
   const Certification = { base64String: image };
+  const paramsNum = useParams().id.split('&')[0];
+  const paramsCategory = useParams().id.split('&')[1];
+  const select = useSelector((state) =>
+    paramsCategory === 'challenge'
+      ? state.mission.challenge[0]
+      : paramsCategory === 'daily'
+      ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
+      : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
+  );
+  const UploadPhoto = () => {
+    if(!select.status==="DEFAULT"){
+      alert('이미 전송한 미션입니다.');
+      navigate('/mission')
+    }else{
+    instance.post(`/missions/${paramsNum}`, Certification);
+    navigate(`/explainwating/${missionInfo}`);}
+  };
+  useEffect(() => {
+    setLoading(true);
+    paramsCategory === 'challenge'
+      ? dispatch(__GetTodaymission())
+      : paramsCategory === 'daily'
+      ? dispatch(__GetDailymission())
+      : dispatch(__GetWeeklymission());
+    setLoading(false);
+  }, [dispatch]);
 
   const navigate = useNavigate();
   return (
@@ -57,10 +88,7 @@ import SendButton from '../../../static/components/camera/SendButton';
         {image ? (
           <div
             className="center-icon"
-            onClick={() => {
-              instance.post(`/missions/${missionId}`, Certification);
-              navigate(`/explainwating/${missionInfo}`);
-            }}
+            onClick={() => UploadPhoto()}
           >
             <SendButton />
           </div>

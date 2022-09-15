@@ -33,7 +33,7 @@ export const RankingBox = styled.div`
   background: #fcfcfa;
   box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 18px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
@@ -130,15 +130,20 @@ export const MedalRightBottom = styled.div`
 
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  margin: 10px 0;
-  padding: 15px 0;
+  padding: 10px 0;
+  background-color: rgba(217, 217, 217, 0.1);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* padding-left: 20px; */
 `;
 export const CategoryButton = styled.div`
-  min-width: 92px;
+  min-width: 80px;
   min-height: 26px;
   border-radius: 3px;
   font-family: "Apple SD Gothic Neo";
@@ -150,12 +155,11 @@ export const CategoryButton = styled.div`
   background-color: ${(props) =>
     props.check === props.num ? "#F1F8F9" : "none"};
   align-items: center;
-  padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #b8dde2;
-  margin: 0 10px;
+  margin: 0 5px;
   &:hover {
     cursor: pointer;
   }
@@ -219,7 +223,7 @@ export const TagArea = styled.div`
   font-size: 15px;
   line-height: 18px;
   text-align: center;
-  text-shadow: 2px 2px 2px #d9d9d9;
+  text-shadow: 0.5px 0.5px 0.5px #a09e9e;
   color: #fcfcfa;
   &:hover {
     cursor: pointer;
@@ -303,7 +307,7 @@ export const ArrowArea = styled.div`
 `;
 
 export const TotalFeed = styled.div`
-  margin: 30px 0;
+  margin: 16px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
   padding-bottom: 10px;
@@ -318,7 +322,10 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
   width: 40px;
-  animation-name: ${(props) => (props.clap ? Shake : null)};
+  animation-name: ${(props) =>
+    props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
+      ? Shake
+      : null};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

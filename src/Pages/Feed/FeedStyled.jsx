@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const FadeOn = keyframes`
+export const FadeOn = keyframes`
 from{opacity:0}
 to{opacity:1}
 `;
@@ -313,6 +313,10 @@ export const TotalFeed = styled.div`
   border-radius: 10px;
   padding-bottom: 10px;
   background-color: white;
+  animation-name: ${FadeOn};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 
 export const LargePhoto = styled.img`
@@ -323,13 +327,16 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
   width: 26px;
-  /* animation-name: ${(props) =>
+  animation-name: ${(props) =>
     props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
       ? Shake
-      : null}; */
+      : null};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     cursor: pointer;
   }

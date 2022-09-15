@@ -10,13 +10,23 @@ import {
 } from '../../../Redux/modules/userInfoSlice';
 //component import
 import Footer from '../../../Components/Footer/Footer';
-//import Slide from 'react-reveal/Fade';
-import Slide from 'react-reveal/Slide';
 //styled import
 import './MyPage.css';
-import { MypageSkeleton } from '../../../Components/Skeleton/SkeletonStyled';
+import styled from 'styled-components';
+import { FadeOn } from '../../Feed/FeedStyled';
 import { FiSettings } from 'react-icons/fi';
 import { ArchiveArrow } from './Archive/ArchiveStyled';
+
+const MyPageDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation-name: ${FadeOn};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`
 
 const MyPage = ({ Header }) => {
   const [loading, setLoding] = useState(false);
@@ -40,11 +50,12 @@ const MyPage = ({ Header }) => {
     setLoding(false);
   }, []);
 
+
   return (
     <>
       {Header}
-      <Slide left>
-        <div className="whole-mypage">
+ 
+        <MyPageDiv>
           <div className="mypage-profile-setting">
             <div className="profile-text">프로필</div>
             <div className="profile-setting">
@@ -141,8 +152,7 @@ const MyPage = ({ Header }) => {
               ) : null}
             </div>
           </div>
-        </div>
-      </Slide>
+        </MyPageDiv>
       <Footer />
     </>
   );

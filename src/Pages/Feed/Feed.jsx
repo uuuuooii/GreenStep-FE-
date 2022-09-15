@@ -9,7 +9,6 @@ import DoneClap from '../../static/components/DoneClap';
 import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
 import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
 import Footer from '../../Components/Footer/Footer';
-import { Shake } from './FeedStyled';
 //redux
 import { __GetLanks } from '../../Redux/modules/ranks';
 import { useDispatch, useSelector } from 'react-redux';
@@ -45,7 +44,6 @@ import {
   BottomProfileArea,
   ArrowArea,
   ContentArea,
-  CustomIcon,
 } from './FeedStyled';
 import FeedArrow from '../../static/components/FeedArrow';
 
@@ -88,6 +86,18 @@ const Feed = ({ Header }) => {
     if (clapCheck.includes(item) && clapArr.includes(item)) {
       setClapArr([...clapArr.filter((i) => i !== item)]);
       setClapCheck([...clapCheck.filter((i) => i !== item)]);
+    } else if (
+      !clapCheck.includes(item) &&
+      !clapArr.includes(item) &&
+      item.clapByMe
+    ) {
+      return;
+    } else if (
+      clapCheck.includes(item) &&
+      clapArr.includes(item) &&
+      !item.clapByMe
+    ) {
+      return;
     } else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
       setClapArr([...clapArr, item]);
       setClapCheck([...clapCheck, item]);
@@ -125,7 +135,6 @@ const Feed = ({ Header }) => {
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
-            setClapArr(res.data.data.map((item) => item.id));
           })
       : instance
           .get(
@@ -136,15 +145,9 @@ const Feed = ({ Header }) => {
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
             setLast(res.data.data[res.data.data.length - 1].id);
-            setClapArr(
-              res.data.data.map((item) => (item.ClapByMe ? item.id : null))
-            );
           });
     setLoading(false);
   };
-  console.log(clapArr);
-  console.log(clapCheck);
-  console.log(FeedList)
   useEffect(() => {
     setPage(page + 1);
   }, [inView]);
@@ -159,6 +162,7 @@ const Feed = ({ Header }) => {
 
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
+    setClapArr(FeedList.map((item) => (item.clapByMe ? item.id : null)));
   }, [page]);
 
   return (

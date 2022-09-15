@@ -28,7 +28,7 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
-const MyPage = ({ Header }) => {
+const MyPage = () => {
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -52,8 +52,6 @@ const MyPage = ({ Header }) => {
 
   return (
     <>
-      {Header}
-
       <MyPageDiv>
         <div className="mypage-profile-setting">
           <div className="profile-text">프로필</div>

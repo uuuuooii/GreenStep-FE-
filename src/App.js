@@ -24,7 +24,17 @@ import ExplainWating from './Pages/Mission/Explain/ExplainWating';
 import instance from './Redux/modules/instance';
 import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';
+import { ToastStyle } from './Components/Toast/Toast';
+import {
+  ToastsContainer,
+  ToastsStore,
+  ToastsContainerPosition,
+} from 'react-toasts';
 function App() {
+  const onClickToast = (text) => {
+    ToastsStore.success(text);
+  };
+
   const hideArr = [
     '/',
     '/users/kakao/callback',
@@ -45,13 +55,20 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/alert" element={<Alert />} />
-          <Route path="/modal" element={<Modal />} />
+          <Route path="/modal" element={<Modal onClickToast={onClickToast} />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
-          <Route path="/missioncamera/:id" element={<MissionCamera />} />
+          <Route path="/missioncamera/:id" element={<MissionCamera onClickToast={onClickToast} />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/explainwating/:id" element={<ExplainWating />} />
-          <Route path="/upload/:id" element={<Upload />} />
+          <Route
+            path="/upload/:id"
+            element={
+              <Upload
+                onClickToast={onClickToast}
+              />
+            }
+          />
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
@@ -60,11 +77,18 @@ function App() {
           <Route path="/archive/:id" element={<Archive />} />
           <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
           <Route path="/detailposts" element={<DetailPosts />} />
-          <Route path="/detailposts/:id" element={<DetailPosts />} />
+          <Route path="/detailposts/:id" element={<DetailPosts onClickToast={onClickToast} />} />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        {ToastStyle}
+        <ToastsContainer
+          className="custom-alert-position"
+          position={ToastsContainerPosition.BOTTOM_CENTER}
+          store={ToastsStore}
+          lightBackground
+        />
       </BrowserRouter>
     </>
   );

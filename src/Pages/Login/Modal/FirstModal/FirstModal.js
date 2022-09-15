@@ -24,6 +24,7 @@ const FirstModal = ({
   check,
   user,
   setNickname,
+  onClickToast
 }) => {
   const [slide, setSlide] = useState(false);
   const Next = () => {
@@ -39,7 +40,7 @@ const FirstModal = ({
         <TopText>프로필 사진</TopText>
         <ButtonText
           onClick={() => {
-            check === 0 ? alert('선택해주세요') : Next();
+            check === 0 ? onClickToast('선택해주세요') : Next();
           }}
           check={check}
         >

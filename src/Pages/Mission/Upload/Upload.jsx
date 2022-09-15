@@ -28,7 +28,7 @@ import Slide from "react-reveal/Slide";
 import Next from "../../../static/components/DetailPost/Next";
 import Previous from "../../../static/components/DetailPost/Previous";
 
-const Upload = ({ Header,onClickToastAlready,onClickToastComplete,ToastsContainer }) => {
+const Upload = ({ Header,onClickToastAlready,onClickToastComplete }) => {
   const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
@@ -52,7 +52,7 @@ const Upload = ({ Header,onClickToastAlready,onClickToastComplete,ToastsContaine
   const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
     onClickToastComplete();
-    navigate("/mypage");
+    navigate("/archive/certification");
   };
 
   useEffect(() => {

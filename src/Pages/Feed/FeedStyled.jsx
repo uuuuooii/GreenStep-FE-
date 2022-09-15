@@ -137,10 +137,13 @@ export const CategoryArea = styled.div`
   padding: 10px 0;
   background-color: rgba(217, 217, 217, 0.1);
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  &::-webkit-scrollbar {
+    display: none;
+  }
   /* padding-left: 20px; */
 `;
 export const CategoryButton = styled.div`
-  min-width: 63px;
+  min-width: 80px;
   min-height: 26px;
   border-radius: 3px;
   font-family: "Apple SD Gothic Neo";

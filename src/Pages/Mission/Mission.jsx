@@ -29,7 +29,7 @@ import {
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
 
-const Mission = ({ Header,onClickToastAlready }) => {
+const Mission = ({ Header }) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -168,7 +168,10 @@ const Mission = ({ Header,onClickToastAlready }) => {
           </WeeklyMissionArea>{" "}
         </>
       </MissionPage>{" "}
-      <div className="floating-round" onClick={() => navigate("/archive/certification")}>
+      <div
+        className="floating-round"
+        onClick={() => navigate("/archive/certification")}
+      >
         <HiPencil className="floating-icon" />
       </div>
       <Footer />

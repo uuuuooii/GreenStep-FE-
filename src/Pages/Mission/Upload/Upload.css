@@ -45,6 +45,6 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.custom-alert-position {
-  top: 106px !important;
+.upload-alert-position {
+  bottom: 80px !important;
 }

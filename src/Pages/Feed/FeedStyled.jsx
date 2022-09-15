@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const FadeOn = keyframes`
 from{opacity:0}
@@ -33,13 +33,13 @@ export const RankingBox = styled.div`
   background: #fcfcfa;
   box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 18px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
   color: #84ca79;
   width: 100%;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -91,7 +91,7 @@ export const MedalHead = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 12.5px;
-  background-color: ${(props) => (props.color ? props.color : '#ffc72d')};
+  background-color: ${(props) => (props.color ? props.color : "#ffc72d")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +103,7 @@ export const MedalCenter = styled.div`
   width: 9.75px;
   height: 9.75px;
   border-radius: 4.875px;
-  background-color: ${(props) => (props.color ? props.color : '#FFE49C')};
+  background-color: ${(props) => (props.color ? props.color : "#FFE49C")};
   /* margin: auto; */
 `;
 
@@ -130,32 +130,33 @@ export const MedalRightBottom = styled.div`
 
 export const CategoryArea = styled.div`
   /* max-width: 100%; */
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  margin: 10px 0;
-  padding: 15px 0;
+  padding: 10px 0;
+  background-color: rgba(217, 217, 217, 0.1);
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
 `;
 export const CategoryButton = styled.div`
-  min-width: 92px;
+  min-width: 63px;
   min-height: 26px;
   border-radius: 3px;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;
   color: #b8dde2;
   background-color: ${(props) =>
-    props.check === props.num ? '#F1F8F9' : 'none'};
+    props.check === props.num ? "#F1F8F9" : "none"};
   align-items: center;
-  padding: 4px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #b8dde2;
-  margin: 0 10px;
+  margin: 0 5px;
   &:hover {
     cursor: pointer;
   }
@@ -213,13 +214,13 @@ export const TagArea = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
   text-align: center;
-  text-shadow: 2px 2px 2px #d9d9d9;
+  text-shadow: 0.5px 0.5px 0.5px #a09e9e;
   color: #fcfcfa;
   &:hover {
     cursor: pointer;
@@ -240,7 +241,7 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 5px;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -261,7 +262,7 @@ export const FeedProfile = styled.img`
   margin: 0 5px;
 `;
 export const FeedNickname = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -283,7 +284,7 @@ export const FeedText = styled.div`
   width: 100%;
   display: flex;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -303,7 +304,7 @@ export const ArrowArea = styled.div`
 `;
 
 export const TotalFeed = styled.div`
-  margin: 30px 0;
+  margin: 16px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
   padding-bottom: 10px;
@@ -317,8 +318,11 @@ export const LargePhoto = styled.img`
 `;
 
 export const ClapBox = styled.div`
-width: 40px;
-  animation-name:  ${(props) => props.clapArr.includes(props.check)&& props.clapCheck.includes(props.check) ? Shake : null}; 
+  width: 40px;
+  animation-name: ${(props) =>
+    props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
+      ? Shake
+      : null};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

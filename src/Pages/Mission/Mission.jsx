@@ -84,7 +84,6 @@ const Mission = ({ Header,onClickToastAlready }) => {
               <DailyText>데일리 미션</DailyText>
             </DailyTextArea>
             <DailyCardBox>
-              <button onClick={()=>onClickToastAlready()}>토스트</button>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
                   item.status === "DEFAULT" ? (

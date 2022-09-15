@@ -29,7 +29,7 @@ import {
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
 
-const Mission = ({ Header }) => {
+const Mission = () => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -46,7 +46,7 @@ const Mission = ({ Header }) => {
 
   return (
     <>
-      {Header}
+
       <MissionPage>
         <>
           {/* <button

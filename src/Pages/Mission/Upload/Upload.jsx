@@ -29,7 +29,7 @@ import Slide from "react-reveal/Slide";
 import Next from "../../../static/components/DetailPost/Next";
 import Previous from "../../../static/components/DetailPost/Previous";
 
-const Upload = ({ Header,onClickToast }) => {
+const Upload = ({ onClickToast }) => {
 
   const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
@@ -62,7 +62,7 @@ const Upload = ({ Header,onClickToast }) => {
   }, []);
   return (
     <>
-      {Header}
+
       <Slide bottom>
         <div className="upload-wrap-shape">
           {!loading && data ? (

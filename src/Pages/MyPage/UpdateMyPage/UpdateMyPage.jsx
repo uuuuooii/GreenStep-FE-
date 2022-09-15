@@ -13,7 +13,7 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const URL = process.env.REACT_APP_URL;
 
-const UpdateMyPage = ({ Header }) => {
+const UpdateMyPage = () => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
@@ -42,7 +42,6 @@ const UpdateMyPage = ({ Header }) => {
 
   return (
     <>
-      {/* {Header} */}
       <div className="whole-updatemypage">
         <div className="updatemypage-back-arrow-area">
           <IoIosArrowBack

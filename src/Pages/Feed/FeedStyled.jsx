@@ -318,7 +318,7 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
 width: 40px;
-  animation-name:  ${(props) => props.clap ? Shake : null}; 
+  animation-name:  ${(props) => props.clapArr.includes(props.check)&& props.clapCheck.includes(props.check) ? Shake : null}; 
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

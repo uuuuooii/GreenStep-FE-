@@ -38,11 +38,11 @@ export const KakaoLink = styled.a`
   height: 50px;
 `;
 export const LDiv = styled.div`
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 286px;
+  /* top: 286px; */
 
   /* margin: 286px 80px 2700px 80px; */
   background: linear-gradient(

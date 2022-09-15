@@ -14,7 +14,7 @@ import './DetailPosts.css';
 import Slide from 'react-reveal/Slide';
 import styled from 'styled-components';
 
-const DetailPosts = ({ Header }) => {
+const DetailPosts = ({ onClickToast }) => {
   const navigate = useNavigate();
   const [loading, setLoding] = useState(false);
   const dispatch = useDispatch();
@@ -42,7 +42,6 @@ const DetailPosts = ({ Header }) => {
 
   return (
     <>
-      {Header}
       {!loading ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
@@ -59,7 +58,7 @@ const DetailPosts = ({ Header }) => {
                 <div
                   onClick={() =>
                     IdArr[0] == Param
-                      ? alert('페이지가 없습니다')
+                      ? onClickToast('페이지가 없습니다')
                       : navigate(
                           `/detailposts/${IdArr[IdArr.indexOf(Param) - 1]}`
                         )
@@ -70,7 +69,7 @@ const DetailPosts = ({ Header }) => {
                 <div
                   onClick={() =>
                     IdArr[IdArr.length - 1] == Param
-                      ? alert('마지막 페이지 입니다.')
+                      ? onClickToast('마지막 페이지 입니다.')
                       : navigate(
                           `/detailposts/${IdArr[IdArr.indexOf(Param) + 1]}`
                         )

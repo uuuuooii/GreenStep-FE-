@@ -7,23 +7,8 @@ import './Footer.css';
 import FeedIcon from '../../static/components/Footer/FeedIcon'
 import MyPageIcon from '../../static/components/Footer/MyPageIcon'
 import HomeIcon from '../../static/components/Footer/HomeIcon'
-import { MdListAlt, MdPersonOutline } from 'react-icons/md';
-import { BiHome } from 'react-icons/bi';
 
-// const FeedIcon = styled(MdListAlt)`
-//   color: ${(props) => props.color};
-//   transition: all 0.25s;
-// `;
 
-// const HomeIcon = styled(BiHome)`
-//   color: ${(props) => props.color};
-//   transition: all 0.25s;
-// `;
-
-// const MyPageIcon = styled(MdPersonOutline)`
-//   color: ${(props) => props.color};
-//   transition: all 0.25s;
-// `;
 const FooterIcon1 = styled.div`
   display: flex;
   justify-content: center;

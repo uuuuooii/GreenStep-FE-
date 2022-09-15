@@ -29,10 +29,8 @@ import Slide from "react-reveal/Slide";
 import Next from "../../../static/components/DetailPost/Next";
 import Previous from "../../../static/components/DetailPost/Previous";
 
-const Upload = ({ Header }) => {
-  const onClickToastAlready = () => {
-    ToastsStore.success("이미 등록한 게시물입니다.");
-  };
+const Upload = ({ Header,onClickToast }) => {
+
   const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
@@ -53,7 +51,7 @@ const Upload = ({ Header }) => {
 
   const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
-    alert("게시물 업로드가 완료되었습니다.");
+    onClickToast("게시물 등록이 완료되었습니다.")
     navigate("/archive/certification");
   };
 
@@ -65,32 +63,6 @@ const Upload = ({ Header }) => {
   return (
     <>
       {Header}
-
-      <style jsx="true">{`
-        .toast {
-          font-size: 13px !important;
-          color: #fff !important;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(178, 226, 171, 0.75) !important;
-          box-shadow: 0px 2px 2px #dadada;
-          border-radius: 20px !important;
-          min-height: 20px !important;
-          width: 200px !important;
-          margin: 4px auto !important;
-          padding: 8px 35px;
-          display: inline-block !important;
-          line-height: 22px !important;
-        }
-      `}</style>
-
-      <ToastsContainer
-        className="upload-alert-position"
-        position={ToastsContainerPosition.BOTTOM_CENTER}
-        store={ToastsStore}
-        lightBackground
-      />
-
       <Slide bottom>
         <div className="upload-wrap-shape">
           {!loading && data ? (
@@ -108,7 +80,7 @@ const Upload = ({ Header }) => {
                   <div
                     onClick={() =>
                       IdArr[0] == param
-                        ? alert("페이지가 없습니다.")
+                        ? onClickToast("페이지가 없습니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
@@ -117,7 +89,7 @@ const Upload = ({ Header }) => {
                   <div
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
-                        ? alert("마지막 페이지 입니다.")
+                        ? onClickToast("마지막 페이지 입니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
@@ -146,7 +118,7 @@ const Upload = ({ Header }) => {
                   type="button"
                   id="popup"
                   onClick={() =>
-                    data.onFeed ? onClickToastAlready() : Uploading()
+                    data.onFeed ? onClickToast("이미 등록한 게시물입니다.") : Uploading()
                   }
                 >
                   피드에 올리기

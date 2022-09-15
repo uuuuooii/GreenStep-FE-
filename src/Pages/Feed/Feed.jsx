@@ -142,7 +142,9 @@ const Feed = ({ Header }) => {
           });
     setLoading(false);
   };
-
+  console.log(clapArr);
+  console.log(clapCheck);
+  console.log(FeedList)
   useEffect(() => {
     setPage(page + 1);
   }, [inView]);
@@ -231,12 +233,9 @@ const Feed = ({ Header }) => {
                     >
                       <ClapPoint>{item.clapCount}</ClapPoint>
                       <ClapBox
-                        clap={
-                          clapCheck.includes(item.id) &&
-                          clapArr.includes(item.id)
-                            ? Shake
-                            : null
-                        }
+                        clapCheck={clapCheck}
+                        clapArr={clapArr}
+                        check={item.id}
                       >
                         {item.clapByMe ? (
                           <DoneClap />

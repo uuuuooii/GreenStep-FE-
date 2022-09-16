@@ -28,6 +28,7 @@ import {
 } from "./MissionStyled";
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
+import Header from "../../Components/Header/Header";
 
 const Mission = () => {
   const [loading, setLoading] = useState(false);
@@ -46,7 +47,7 @@ const Mission = () => {
 
   return (
     <>
-
+      <Header />
       <MissionPage>
         <>
           {/* <button

@@ -10,6 +10,7 @@ import {
 } from '../../../Redux/modules/userInfoSlice';
 //component import
 import Footer from '../../../Components/Footer/Footer';
+import Header from '../../../Components/Header/Header';
 //styled import
 import './MyPage.css';
 import styled from 'styled-components';
@@ -52,6 +53,7 @@ const MyPage = () => {
 
   return (
     <>
+      <Header />
       <MyPageDiv>
         <div className="mypage-profile-setting">
           <div className="profile-text">프로필</div>

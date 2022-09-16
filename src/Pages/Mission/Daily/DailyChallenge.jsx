@@ -14,6 +14,7 @@ import {
   ChallengeTimer,
   ChallengeWaiting,
   FeedButton,
+  ChallengeMissionText,
 } from "./DailyMissionStyled";
 //component import
 import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
@@ -40,7 +41,7 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeTextArea>
             <ChallengeTitle>Challenge Mission</ChallengeTitle>
             <ChallengeTimer>
-              {" "}
+              미션 완료까지 &nbsp;
               {hour < 10 ? "0" + hour : hour}:
               {minute < 10 ? "0" + minute : minute}:
               {second < 10 ? "0" + second : second}
@@ -59,7 +60,7 @@ const DailyChallenge = ({ mission }) => {
             ) : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
-            <MissionText>{mission.missionName}</MissionText>
+            <ChallengeMissionText>{mission.missionName}</ChallengeMissionText>
           </ChallengeBody>
         </ChallengeBox>
       ) : (

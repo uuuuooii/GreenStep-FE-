@@ -7,7 +7,6 @@ import {
   MissionPhoto,
   MissionText,
   CompletedBody,
-  FeedButton,
   LeapDiv,
   CompletedInBody,
 } from './CompletedStyled';
@@ -26,7 +25,6 @@ const Completed = ({ item }) => {
       </CompletedBody>
       <MissionPhoto img={item.missionImageUrl} />
       <MissionText>{item.missionName}</MissionText>
-      <MissionText>테스트</MissionText>
     </DailyBody>
   );
 };

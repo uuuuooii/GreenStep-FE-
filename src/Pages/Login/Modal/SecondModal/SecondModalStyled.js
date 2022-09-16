@@ -71,7 +71,7 @@ export const ButtonText = styled.div`
   /* margin: auto; */
   width: 32px;
   margin: 0 10px;
-  color: #6de4c6;
+  color: #868686;
   &:hover {
     cursor: pointer;
   }

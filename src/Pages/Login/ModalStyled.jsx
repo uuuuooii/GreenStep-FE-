@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-export const ModalBody = styled.div`  
+export const ModalBody = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -29,9 +29,8 @@ export const DotArea = styled.div`
   transform: translateX(-50%);
   bottom: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 135px;
-  height: 15px;
   z-index: 1000;
 `;
 export const TransX = keyframes`
@@ -39,17 +38,21 @@ from{transform: scaleX(0.2)}
 to{transform: scaleX(1)}
 `;
 export const SlideLeft = keyframes`
-0%{transform: translateX(30px)}
+0%{transform: translateX(37.5px)}
 80%{transform: translateX(-5px)}
 100%{transform: translateX(0)}
 `;
 export const SlideRight = keyframes`
-0%{transform: translateX(-30px)}
+0%{transform: translateX(-37.5px)}
 80%{transform: translateX(5px)}
 100%{transform: translateX(0)}
 `;
 
+
 export const SlideLeftDiv = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
   animation-name: ${SlideLeft};
   animation-duration: 0.35s;
   animation-timing-function: ease-out;
@@ -57,6 +60,9 @@ export const SlideLeftDiv = styled.div`
 `;
 
 export const SlideRightDiv = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
   animation-name: ${SlideRight};
   animation-duration: 0.35s;
   animation-timing-function: ease-out;

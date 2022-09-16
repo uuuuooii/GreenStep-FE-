@@ -79,7 +79,7 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {ToastStyle}
+        {ToastStyle} 
         <ToastsContainer
           className="custom-alert-position"
           position={ToastsContainerPosition.BOTTOM_CENTER}

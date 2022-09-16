@@ -1,36 +1,35 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import useInput from "../../../hooks/useInput";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import useInput from '../../../hooks/useInput';
 //components import
-import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
-import Toast from "../../../Components/Toast/Toast";
-import {
-  ToastsContainer,
-  ToastsStore,
-  ToastsContainerPosition,
-} from "react-toasts";
-import Kakaoshare from "../../../Components/Kakaoshare/Kakaoshare";
+import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
+import Kakaoshare from '../../../Components/Kakaoshare/Kakaoshare';
 //modules import
-import instance from "../../../Redux/modules/instance";
-import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
+import instance from '../../../Redux/modules/instance';
+import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
 //styled import
-import "./Upload.css";
-import "../../../Components/Toast/Toast.css";
+import './Upload.css';
+import '../../../Components/Toast/Toast.css';
 import {
   UploadContentTextArea,
   UploadButton,
-  ShareButton,
-  UploadSkeleton,
   ButtonArea,
-} from "./UploadStyled";
-import Slide from "react-reveal/Slide";
-import Next from "../../../static/components/DetailPost/Next";
-import Previous from "../../../static/components/DetailPost/Previous";
+  KakaoReactIcon,
+  IconDiv,
+  ButtonText,
+  TotalButtonArea,
+  ShareButton,
+  ShareText,
+} from './UploadStyled';
+import Slide from 'react-reveal/Slide';
+import Next from '../../../static/components/DetailPost/Next';
+import Previous from '../../../static/components/DetailPost/Previous';
+import UploadFeed from '../../../static/components/DetailPost/UploadFeed';
 
 const Upload = ({ onClickToast }) => {
-  const [content, contentHandler] = useInput("");
+  const [content, contentHandler] = useInput('');
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -67,10 +66,10 @@ const Upload = ({ onClickToast }) => {
             <>
               <div className="upload-mission-name-and-tag-area">
                 <div className="upload-mission-name-text">
-                  {data.missionName ? data.missionName : "Mission Name"}
+                  {data.missionName ? data.missionName : 'Mission Name'}
                 </div>
                 <div className="upload-mission-tag-text">
-                  {data.tag ? data.tag : "#Tag"}
+                  {data.tag ? data.tag : '#Tag'}
                 </div>
               </div>
               <div className="upload-mission-image-div">
@@ -78,7 +77,7 @@ const Upload = ({ onClickToast }) => {
                   <div
                     onClick={() =>
                       IdArr[0] == param
-                        ? onClickToast("페이지가 없습니다.")
+                        ? onClickToast('페이지가 없습니다.')
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
@@ -87,7 +86,7 @@ const Upload = ({ onClickToast }) => {
                   <div
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
-                        ? onClickToast("마지막 페이지 입니다.")
+                        ? onClickToast('마지막 페이지 입니다.')
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
@@ -99,7 +98,7 @@ const Upload = ({ onClickToast }) => {
                   src={
                     data.missionImgUrl
                       ? data.missionImgUrl
-                      : "/images/고양이.png"
+                      : '/images/고양이.png'
                   }
                 />
               </div>
@@ -110,24 +109,31 @@ const Upload = ({ onClickToast }) => {
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
                 onfocus="this.placeholder = ''"
               ></UploadContentTextArea>
-              <ButtonArea>
-                {" "}
+              <TotalButtonArea>
                 <UploadButton
-                  className="upload-button-upload"
-                  type="button"
-                  id="popup"
                   onClick={() =>
                     data.onFeed
                       ? onClickToast("이미 등록한 게시물입니다.")
                       : Uploading()
                   }
                 >
-                  피드에 올리기
+                  <ButtonArea>
+                    <IconDiv>
+                      <UploadFeed />
+                    </IconDiv>{' '}
+                    <ShareText>피드 올리기</ShareText>
+                  </ButtonArea>
                 </UploadButton>
-                <Kakaoshare className="upload-button-share">
-                  공유하기
-                </Kakaoshare>
-              </ButtonArea>
+
+                <ShareButton>
+                  <ButtonArea>
+                    <IconDiv>
+                      <KakaoReactIcon />
+                    </IconDiv>{' '}
+                    <ButtonText>카카오 공유하기</ButtonText>
+                  </ButtonArea>
+                </ShareButton>
+              </TotalButtonArea>
             </>
           ) : (
             <LoadingBar />

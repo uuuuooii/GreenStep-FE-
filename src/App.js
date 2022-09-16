@@ -22,9 +22,9 @@ import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import ExplainWating from "./Pages/Mission/Explain/ExplainWating";
 import instance from "./Redux/modules/instance";
-import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 import { ToastStyle } from "./Components/Toast/Toast";
+import { KakaoChannel } from "./Components/ChannelService/ChannelService";
 import {
   ToastsContainer,
   ToastsStore,
@@ -39,7 +39,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        {/* <Kakaoshare /> */}
+        {/* <KakaoChannel /> */}
         <SetPullToRefresh />
         <Routes>
           <Route path="/" element={<Login />} />
@@ -58,7 +58,10 @@ function App() {
             element={<MissionCamera onClickToast={onClickToast} />}
           />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/explainwating/:id" element={<ExplainWating onClickToast={onClickToast} />} />
+          <Route
+            path="/explainwating/:id"
+            element={<ExplainWating onClickToast={onClickToast} />}
+          />
           <Route
             path="/upload/:id"
             element={<Upload onClickToast={onClickToast} />}
@@ -82,7 +85,7 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {ToastStyle} 
+        {ToastStyle}
         <ToastsContainer
           className="custom-alert-position"
           position={ToastsContainerPosition.BOTTOM_CENTER}

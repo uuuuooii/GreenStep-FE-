@@ -89,7 +89,7 @@ export const ChallengePhoto = styled.img`
   background: rgba(255, 255, 255, 0.5);
 `;
 export const ChallengeTitle = styled.div`
-  font-weight: 700;
+  font-weight: bol;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
@@ -125,7 +125,7 @@ export const ChallengeWaiting = styled.div`
   text-align: center;
 `;
 export const FeedButton = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -141,5 +141,5 @@ export const FeedButton = styled.div`
   background: #b8dde2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
-  bottom: 27px;
+  bottom: 27px; */
 `;

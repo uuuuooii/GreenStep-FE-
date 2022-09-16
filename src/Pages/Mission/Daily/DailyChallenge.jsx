@@ -55,9 +55,7 @@ const DailyChallenge = ({ mission }) => {
                 <MissionText>인증 대기중</MissionText>
               </ChallengeWaiting>
             ) : null}
-            {mission.status === "DONE" ? (
-              <FeedButton>피드 올리기</FeedButton>
-            ) : null}
+            {mission.status === "DONE" ? <FeedButton></FeedButton> : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
             <ChallengeMissionText>{mission.missionName}</ChallengeMissionText>

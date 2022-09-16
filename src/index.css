@@ -5,25 +5,9 @@ body {
 
   margin: auto;
   /* font-family: "tway_sky"; */
-
 }
 
 /* 폰트*/
-@font-face {
-  font-family: "BlackhanSans";
-  src: url("./Components//fonts/AppleSDGothicNeoB.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Yfont";
-  src: url("./Components/fonts/AppleSDGothicNeoEB.ttf");
-}
-
-@font-face {
-  font-family: "BMDOHYEON";
-  src: url("./Components/fonts/AppleSDGothicNeoH.ttf");
-}
-
 @font-face {
   font-family: "tway_sky";
   src: url("./Components/fonts/AppleSDGothicNeoL.ttf");
@@ -32,4 +16,9 @@ body {
 @font-face {
   font-family: "SpoqaHanSansNeo";
   src: url("./Components/fonts/AppleSDGothicNeoM.ttf");
+}
+
+@font-face {
+  font-family: "BlackhanSans";
+  src: url("./Components//fonts/AppleSDGothicNeoB.ttf") format("truetype");
 }

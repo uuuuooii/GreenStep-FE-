@@ -11,6 +11,7 @@ import Upload from "./Pages/Mission/Upload/Upload";
 import Explain from "./Pages/Mission/Explain/Explain";
 import Feed from "./Pages/Feed/Feed";
 import Mypage from "./Pages/MyPage/MyPage/MyPage";
+import ViewMoreModal from "./Pages/MyPage/MyPage/ViewMoreModal/ViewMoreModal";
 import UpdateMyPage from "./Pages/MyPage/UpdateMyPage/UpdateMyPage";
 import Archive from "./Pages/MyPage/MyPage/Archive/Archive";
 import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
@@ -58,7 +59,10 @@ function App() {
             element={<MissionCamera onClickToast={onClickToast} />}
           />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/explainwating/:id" element={<ExplainWating onClickToast={onClickToast} />} />
+          <Route
+            path="/explainwating/:id"
+            element={<ExplainWating onClickToast={onClickToast} />}
+          />
           <Route
             path="/upload/:id"
             element={<Upload onClickToast={onClickToast} />}
@@ -66,6 +70,7 @@ function App() {
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/viewmoremodal" element={<ViewMoreModal />} />
           <Route path="/archive" element={<Archive />} />
           <Route
             path="/updatemypage"
@@ -82,7 +87,7 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {ToastStyle} 
+        {ToastStyle}
         <ToastsContainer
           className="custom-alert-position"
           position={ToastsContainerPosition.BOTTOM_CENTER}

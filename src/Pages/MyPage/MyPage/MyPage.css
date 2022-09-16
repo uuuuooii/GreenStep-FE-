@@ -20,7 +20,7 @@
   width: 100%;
 }
 .mypage-flex-text {
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -43,8 +43,10 @@
 
 .image-nick-email {
   display: flex;
-  flex-direction: row;
-  margin: 0px 0px 28px 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0px 0px 28px 30px; */
 }
 
 .image-area {
@@ -52,7 +54,7 @@
   height: 100px;
   background: #d9d9d9;
   border-radius: 10px;
-  margin: 0px 20px 0px 0px;
+  margin-bottom: 16px;
   object-fit: cover;
 }
 
@@ -63,19 +65,36 @@
 }
 
 .nickname-text {
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
-  margin-bottom: 6px;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
   color: #84ca79;
+  margin-bottom: 7px;
 }
 
 .email-text {
-  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
   color: #84ca79;
 }
 
 .photoshots-archive-area {
-  /* width: 100%; */
+  width: 100%;
 }
 
 .photoshots-viewmore-box {
@@ -99,6 +118,12 @@
   margin-top: 8px;
   color: #2b5139;
 }
+.photoshots-text-none {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  color: #d9d9d9;
+}
 
 .photoshots-viewmore-icon {
   font-size: 20px;
@@ -106,8 +131,13 @@
   color: #2b5139;
 }
 
+.photoshots-viewmore-icon-none {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #d9d9d9;
+}
 .photoshots-archive-box {
-  /* width: 100%; */
+  width: 100%;
   height: 145px;
   display: flex;
   flex-direction: row;
@@ -124,6 +154,7 @@
 }
 
 .posts-archive-area {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,15 +181,24 @@
   margin-top: 8px;
   color: #2b5139;
 }
-
+.posts-text-none {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  color: #d9d9d9;
+}
 .posts-viewmore-icon {
   font-size: 20px;
   margin-top: 5px;
   color: #2b5139;
 }
-
+.posts-viewmore-icon-none {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #d9d9d9;
+}
 .posts-archive-box {
-  /* width: 100%; */
+  width: 100%;
   height: 145px;
   display: flex;
   flex-direction: row;

@@ -2,8 +2,8 @@ import React from "react";
 const CameraButton = () => {
   return (
     <svg
-      width="70"
-      height="70"
+      width="75"
+      height="74"
       viewBox="0 0 75 74"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

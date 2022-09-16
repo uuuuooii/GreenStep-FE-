@@ -1,8 +1,8 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 //redux import
-import { __GetTodaymission } from '../../../Redux/modules/mission';
+import { __GetTodaymission } from "../../../Redux/modules/mission";
 //styled import
 import {
   ChallengeBox,
@@ -16,10 +16,10 @@ import {
   ChallengeWaiting,
   ChallengeMissionText,
   LeapDiv,
-} from './DailyMissionStyled';
+} from "./DailyMissionStyled";
 //component import
-import ChallengeSkeleton from '../../../Components/Skeleton/ChallengeSkeleton';
-import MissionLeap from '../../../static/components/MissionLeap';
+import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
+import MissionLeap from "../../../static/components/MissionLeap";
 
 const DailyChallenge = ({ mission }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
@@ -52,11 +52,11 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {mission.status === 'WATING' ? (
+            {mission.status === "WATING" ? (
               <ChallengeWaiting>
                 <WatingText>인증 대기중</WatingText>
               </ChallengeWaiting>
-            ) : mission.status === 'DONE' ? (
+            ) : mission.status === "DONE" ? (
               <ChallengeWaiting>
                 <LeapDiv>
                   <MissionLeap />
@@ -70,7 +70,6 @@ const DailyChallenge = ({ mission }) => {
         </ChallengeBox>
       ) : (
         <ChallengeSkeleton />
-
       )}
     </>
   );

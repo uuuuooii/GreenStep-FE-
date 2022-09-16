@@ -1,37 +1,56 @@
+import { RiKakaoTalkFill } from 'react-icons/ri';
 import styled from 'styled-components';
 
-export const UploadButton = styled.button`
-  width: 142px;
-  height: 38px;
-  margin: 0 auto;
-  padding-top: 4px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
+export const UploadButton = styled.div`
   background: #b8dde2;
-  color: white;
+  color: #fcfcfa;
   border: none;
-  font-family: 'Apple SD Gothic Neo';
-`;
+  display: flex;
 
-export const ShareButton = styled.button`
-  width: 142px;
-  height: 38px;
-  margin: 0 auto;
-  padding-top: 4px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  background: #b8dde2;
-  color: white;
-  border: none;
-  font-family: 'Apple SD Gothic Neo';
+  justify-content: center;
+  align-items: center;
+  padding: 7px 19px;
+
+  width: 132px;
+  height: 18px;
+
+  /* primary 2.2 */
+
+  background: #84ca79;
+  border-radius: 30px;
+  margin: 30px 0 10px 0;
   &:hover {
     cursor: pointer;
   }
 `;
+export const ShareButton = styled.div`
+  background: #b8dde2;
+  color: #fcfcfa;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 19px;
+  width: 132px;
+  height: 18px;
+  background: #84ca79;
+  border-radius: 30px;
+  margin-bottom: 43px;
+`;
+export const PostShareButton = styled.div`
+    background: #b8dde2;
+  color: #fcfcfa;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 19px;
+  width: 132px;
+  height: 18px;
+  background: #84ca79;
+  border-radius: 30px;
+  margin: 35px 0 67px 0;
+`
 
 export const UploadContentTextArea = styled.textarea`
   width: 318px;
@@ -58,11 +77,10 @@ export const UploadContentTextArea = styled.textarea`
   &:focus {
     outline: 1.5px solid #84ca79;
     ::-webkit-input-placeholder {
-    color: transparent;
-    background-image:none
+      color: transparent;
+      background-image: none;
+    }
   }
-  }
-
 `;
 
 export const UploadSkeleton = styled.div`
@@ -77,5 +95,50 @@ export const UploadSkeleton = styled.div`
 `;
 export const ButtonArea = styled.div`
   display: flex;
-  margin: 16px 0 44px 0;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+`;
+export const KakaoReactIcon = styled(RiKakaoTalkFill)`
+  font-size: 25px;
+  background-color: transparent;
+`;
+export const IconDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+export const ButtonText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-left: 5px;
+  height: 100%;
+`;
+export const ShareText = styled.div`
+width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-left: 5px;
+  height: 100%;
+`;
+export const TotalButtonArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

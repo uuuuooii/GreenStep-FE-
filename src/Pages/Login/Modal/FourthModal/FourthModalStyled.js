@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import { AiOutlineCheckCircle,AiFillCheckCircle } from "react-icons/ai";
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
@@ -69,30 +69,43 @@ export const CheckMailArea = styled.div`
     cursor: pointer;
   }
 `;
-export const CheckMailIcon = styled(AiOutlineCheckCircle)`
-  color: ${(props) => (props.color ? props.color : "black")};
-  background-color: ${(props) =>
-    props.background ? props.background : "white"};
+export const CheckedMailIcon = styled(AiFillCheckCircle)`
+  color: #d9d9d9;
   width: 20px;
   height: 20px;
+  font-size: 20px;
+  transition: all 0.5s;
+  border-radius: 10px;
+`
+export const CheckMailIcon = styled(AiOutlineCheckCircle)`
+
+  color: #d9d9d9;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   transition: all 0.5s;
   border-radius: 10px;
 `;
 
 export const CheckMailText = styled.div`
   font-size: 14px;
-  margin: 0 10px;
-  color: #34bea7;
+  margin: 0 7px;
+  color: ${(props)=>props.color};
+  color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const EmailButton = styled.button`
-  background: #b8dde2;
+  background: ${(props)=>props.background};
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   width: 110px;
   height: 33px;
   border: none;
-  color: white;
+  color: #FCFCFA;
   position: absolute;
+  transition: all 0.5s;
   &:hover {
     cursor: pointer;
   }

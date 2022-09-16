@@ -11,6 +11,7 @@ const Header = () => {
   const [path, setPath] = useState('');
   const { pathname } = useLocation();
   const hideArr = [
+    '/',
     '/users/kakao/callback',
     '/alert',
     '/modal',
@@ -21,7 +22,7 @@ const Header = () => {
     (e) => {
       if (y > window.scrollY) {
         setHide(false);
-      } else if (window.scrollY > 100) {
+      } else if (window.scrollY > 0) {
         setHide(true);
       }
       setY(window.scrollY);
@@ -42,8 +43,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="header-dummy-div"></div>
-
+      {!path === '/' ? <div className="header-dummy-div" /> : null}
       {!hide && !hideArr.includes(path) ? (
         <div className="wrap-header">
           <div className="header-relative">

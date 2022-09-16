@@ -46,7 +46,7 @@ import {
   ContentArea,
 } from "./FeedStyled";
 import FeedArrow from "../../static/components/FeedArrow";
-import Header from "../../Components/Header/Header";
+
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
@@ -168,7 +168,6 @@ const Feed = () => {
 
   return (
     <>
-      <Header />
       <FeedPage>
         {!loading && ranks ? (
           <RankingBox>

@@ -18,7 +18,7 @@ import {
   __GetDailymission,
   __GetWeeklymission,
 } from '../../../Redux/modules/mission';
-const MissionCamera = () => {
+const MissionCamera = ({onClickToast}) => {
   const dispatch = useDispatch()
   const missionInfo = useParams().id;
   const camera = useRef(null);
@@ -37,7 +37,7 @@ const MissionCamera = () => {
   );
   const UploadPhoto = () => {
     if(!select.status==="DEFAULT"){
-      alert('이미 전송한 미션입니다.');
+      onClickToast("이미 등록한 게시물입니다.")
       navigate('/mission')
     }else{
     instance.post(`/missions/${paramsNum}`, Certification);

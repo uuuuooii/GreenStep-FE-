@@ -5,6 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
 import OnDot from '../../static/components/Login/OnDot';
 import NonDot from '../../static/components/Login/NonDot';
+import {
+  ModalBody,
+  ModalSection,
+  DotArea,
+  TransX,
+  SlideLeft,
+  SlideRight,
+  SlideLeftDiv,
+  SlideRightDiv,
+} from './ModalStyled';
 //modules import
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 //component import
@@ -14,71 +24,8 @@ import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import FourthModal from './Modal/FourthModal/FourthModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
 
-const ModalBody = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  max-height: 667px;
-  max-width: 375px;
-  margin: auto;
-  background-color: white;
-`;
 
-const ModalSection = styled.div`
-  width: 100%;
-  height: 90%;
-  background-color: white;
-  margin: 0px auto 0px auto;
-  position: relative;
-  background-color: white;
-`;
-
-const DotArea = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 105px;
-  height: 15px;
-  z-index: 1000;
-`;
-const TransX = keyframes`
-from{transform: scaleX(0.2)}
-to{transform: scaleX(1)}
-`;
-const SlideLeft = keyframes`
-0%{transform: translateX(30px)}
-80%{transform: translateX(-5px)}
-100%{transform: translateX(0)}
-`;
-const SlideRight = keyframes`
-0%{transform: translateX(-30px)}
-80%{transform: translateX(5px)}
-100%{transform: translateX(0)}
-`;
-
-const SlideLeftDiv = styled.div`
-  animation-name: ${SlideLeft};
-  animation-duration: 0.35s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-`;
-
-const SlideRightDiv = styled.div`
-  animation-name: ${SlideRight};
-  animation-duration: 0.35s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-`;
-
-const Modal = () => {
+const Modal = ({ onClickToast }) => {
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
@@ -110,6 +57,7 @@ const Modal = () => {
               setCheck={setCheck}
               user={user}
               setNickname={setNickname}
+              onClickToast={onClickToast}
             />
           ) : display === 2 ? (
             <SecondModal
@@ -119,6 +67,7 @@ const Modal = () => {
               img={img}
               second={second}
               setSecond={setSecond}
+              onClickToast={onClickToast}
             />
           ) : display === 3 ? (
             <ThirdModal
@@ -133,6 +82,7 @@ const Modal = () => {
               img={img}
               third={third}
               setThird={setThird}
+              onClickToast={onClickToast}
             />
           ) : display === 4 ? (
             <FourthModal

@@ -13,15 +13,19 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const URL = process.env.REACT_APP_URL;
 
-const UpdateMyPage = ({ Header }) => {
+const UpdateMyPage = () => {
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, nameHandler] = useInput("");
-  const [nickname, nicknameHandler] = useInput("");
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state) => state.userInfo.userInfo);
+  const userInfo = useSelector((state) => {
+    setName(state.userInfo.userInfo.name);
+    setNickname(state.userInfo.userInfo.nickname);
+    return state.userInfo.userInfo;
+  });
 
   const updateInfo = {
     name: name,
@@ -38,7 +42,6 @@ const UpdateMyPage = ({ Header }) => {
 
   return (
     <>
-      {/* {Header} */}
       <div className="whole-updatemypage">
         <div className="updatemypage-back-arrow-area">
           <IoIosArrowBack
@@ -93,7 +96,7 @@ const UpdateMyPage = ({ Header }) => {
               <div className="updatemypage-input-1">
                 <input
                   className="updatemypage-input-name"
-                  onChange={nameHandler}
+                  onChange={(e) => setName(e.target.value)}
                   value={name}
                   placeholder="이름"
                   maxLength={8}
@@ -103,7 +106,7 @@ const UpdateMyPage = ({ Header }) => {
               <div className="updatemypage-input-2">
                 <input
                   className="updatemypage-input-nickname"
-                  onChange={nicknameHandler}
+                  onChange={(e) => setNickname(e.target.value)}
                   value={nickname}
                   placeholder="닉네임"
                   maxLength={8}

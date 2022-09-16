@@ -47,7 +47,7 @@ import {
 } from './FeedStyled';
 import FeedArrow from '../../static/components/FeedArrow';
 
-const Feed = ({ Header }) => {
+const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
   const [clapArr, setClapArr] = useState([]);
   const [clapCheck, setClapCheck] = useState([]);
@@ -167,8 +167,6 @@ const Feed = ({ Header }) => {
 
   return (
     <>
-      {Header}
-
       <FeedPage>
         {!loading && ranks ? (
           <RankingBox>

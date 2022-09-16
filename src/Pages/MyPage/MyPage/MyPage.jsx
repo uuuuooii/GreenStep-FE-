@@ -26,9 +26,9 @@ const MyPageDiv = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-`
+`;
 
-const MyPage = ({ Header }) => {
+const MyPage = () => {
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -50,109 +50,106 @@ const MyPage = ({ Header }) => {
     setLoding(false);
   }, []);
 
-
   return (
     <>
-      {Header}
- 
-        <MyPageDiv>
-          <div className="mypage-profile-setting">
-            <div className="profile-text">프로필</div>
-            <div className="profile-setting">
-              <FiSettings onClick={() => navigate('/updatemypage')} />
+      <MyPageDiv>
+        <div className="mypage-profile-setting">
+          <div className="profile-text">프로필</div>
+          <div className="profile-setting">
+            <FiSettings onClick={() => navigate('/updatemypage')} />
+          </div>
+        </div>
+
+        {!loading ? (
+          <div className="image-nick-email">
+            <img src={userInfo.profilePhoto} className="image-area"></img>
+            <div className="nick-and-email-area">
+              <div className="nickname-text">{userInfo.nickname}</div>
+              <div className="email-text">{userInfo.email}</div>
             </div>
           </div>
+        ) : (
+          <div className="image-nick-email">
+            <div className="image-area"></div>
+          </div>
+        )}
 
-          {!loading ? (
-            <div className="image-nick-email">
-              <img src={userInfo.profilePhoto} className="image-area"></img>
-              <div className="nick-and-email-area">
-                <div className="nickname-text">{userInfo.nickname}</div>
-                <div className="email-text">{userInfo.email}</div>
-              </div>
-            </div>
-          ) : (
-            <div className="image-nick-email">
-              <div className="image-area"></div>
-            </div>
-          )}
-
-          <div className="photoshots-archive-area">
-            <div className="photoshots-viewmore-box">
-              <div className="photoshots-text-and-icon">
-                <div className="photoshots-text">인증샷 아카이브</div>
-                <div className="photoshots-viewmore-icon">
-                  <ArchiveArrow
-                    onClick={() => navigate('/archive/certification')}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="photoshots-archive-box">
-              {!loading && certification.length > 1 ? (
-                certification.map((item, index) => (
-                  <img
-                    src={item.missionImgUrl}
-                    className="photoshots-archive-images"
-                    key={item.missionImgUrl + index}
-                    alt="archive"
-                    onClick={() => navigate(`/upload/${item.id}`)}
-                  />
-                ))
-              ) : !loading && certification.length === 1 ? (
-                <img
-                  src={certification[0].missionImgUrl}
-                  className="photoshots-archive-images"
-                  alt="archive"
-                  onClick={() => navigate(`/upload/${certification[0].id}`)}
+        <div className="photoshots-archive-area">
+          <div className="photoshots-viewmore-box">
+            <div className="photoshots-text-and-icon">
+              <div className="photoshots-text">인증샷 아카이브</div>
+              <div className="photoshots-viewmore-icon">
+                <ArchiveArrow
+                  onClick={() => navigate('/archive/certification')}
                 />
-              ) : certification.length === 0 ? (
-                <>
-                  <div className="mypage-flex-box">
-                    <div className="mypage-flex-text">{FirstText}</div>
-                  </div>
-                </>
-              ) : null}
-            </div>
-          </div>
-          <div className="posts-archive-area">
-            <div className="posts-viewmore-box">
-              <div className="posts-text-and-icon">
-                <div className="posts-text">게시물 아카이브</div>
-                <div className="posts-viewmore-icon">
-                  <ArchiveArrow onClick={() => navigate('/archive/post')} />
-                </div>
               </div>
             </div>
-            <div className="posts-archive-box">
-              {!loading && post.length > 1 ? (
-                post.map((item, index) => (
-                  <img
-                    src={item.missionImgUrl}
-                    className="photoshots-archive-images"
-                    key={item.missionImgUrl + index}
-                    alt="archive"
-                    onClick={() => navigate(`/detailposts/${item.id}`)}
-                  ></img>
-                ))
-              ) : !loading && post.length === 1 ? (
+          </div>
+
+          <div className="photoshots-archive-box">
+            {!loading && certification.length > 1 ? (
+              certification.map((item, index) => (
                 <img
-                  src={post[0].missionImgUrl}
+                  src={item.missionImgUrl}
                   className="photoshots-archive-images"
+                  key={item.missionImgUrl + index}
                   alt="archive"
-                  onClick={() => navigate(`/detailposts/${post[0].id}`)}
-                ></img>
-              ) : post.length === 0 ? (
-                <>
-                  <div className="mypage-flex-box">
-                    <div className="mypage-flex-text">{SecondText}</div>
-                  </div>
-                </>
-              ) : null}
+                  onClick={() => navigate(`/upload/${item.id}`)}
+                />
+              ))
+            ) : !loading && certification.length === 1 ? (
+              <img
+                src={certification[0].missionImgUrl}
+                className="photoshots-archive-images"
+                alt="archive"
+                onClick={() => navigate(`/upload/${certification[0].id}`)}
+              />
+            ) : certification.length === 0 ? (
+              <>
+                <div className="mypage-flex-box">
+                  <div className="mypage-flex-text">{FirstText}</div>
+                </div>
+              </>
+            ) : null}
+          </div>
+        </div>
+        <div className="posts-archive-area">
+          <div className="posts-viewmore-box">
+            <div className="posts-text-and-icon">
+              <div className="posts-text">게시물 아카이브</div>
+              <div className="posts-viewmore-icon">
+                <ArchiveArrow onClick={() => navigate('/archive/post')} />
+              </div>
             </div>
           </div>
-        </MyPageDiv>
+          <div className="posts-archive-box">
+            {!loading && post.length > 1 ? (
+              post.map((item, index) => (
+                <img
+                  src={item.missionImgUrl}
+                  className="photoshots-archive-images"
+                  key={item.missionImgUrl + index}
+                  alt="archive"
+                  onClick={() => navigate(`/detailposts/${item.id}`)}
+                ></img>
+              ))
+            ) : !loading && post.length === 1 ? (
+              <img
+                src={post[0].missionImgUrl}
+                className="photoshots-archive-images"
+                alt="archive"
+                onClick={() => navigate(`/detailposts/${post[0].id}`)}
+              ></img>
+            ) : post.length === 0 ? (
+              <>
+                <div className="mypage-flex-box">
+                  <div className="mypage-flex-text">{SecondText}</div>
+                </div>
+              </>
+            ) : null}
+          </div>
+        </div>
+      </MyPageDiv>
       <Footer />
     </>
   );

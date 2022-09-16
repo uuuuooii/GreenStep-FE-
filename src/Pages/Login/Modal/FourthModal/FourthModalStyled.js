@@ -9,7 +9,7 @@ to{transform:translateX(0px)}
 
 
 export const ButtonText = styled.div`
-  color: #6de4c6;
+  color: #868686;
   position: absolute;
   left: 0;
   /* margin: auto; */

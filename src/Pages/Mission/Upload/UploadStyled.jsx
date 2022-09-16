@@ -57,7 +57,12 @@ export const UploadContentTextArea = styled.textarea`
   }
   &:focus {
     outline: 1.5px solid #84ca79;
+    ::-webkit-input-placeholder {
+    color: transparent;
+    background-image:none
   }
+  }
+
 `;
 
 export const UploadSkeleton = styled.div`

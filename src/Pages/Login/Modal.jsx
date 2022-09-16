@@ -106,7 +106,7 @@ const Modal = ({ onClickToast }) => {
               </>
             ) : display === 4 && !fourth ? (
               <>
-                <OnDot />{' '}
+                <><OnDot /></>{' '}
                 <SlideLeftDiv>
                   <OnDot />
                 </SlideLeftDiv>

@@ -51,3 +51,18 @@ export const DailyCardBox = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
 `;
+export const WatingBody = styled.div`
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+`;

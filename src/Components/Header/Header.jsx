@@ -8,7 +8,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [y, setY] = useState(document.scrollingElement.scrollHeight);
   const [hide, setHide] = useState(false);
-  const [path, setPath] = useState("");
+  // const [path, setPath] = useState('');
   const { pathname } = useLocation();
   const hideArr = [
     "/",
@@ -39,33 +39,28 @@ const Header = () => {
       window.removeEventListener("scroll", handleNavigation);
     };
   }, [handleNavigation]);
-  useEffect(() => {
-    setPath(pathname);
-  }, [pathname]);
 
   return (
     <>
-      {!path === "/" ? <div className="header-dummy-div" /> : null}
-      {!hide && !hideArr.includes(path) ? (
-        <>
-          <div className="header-dummy-div"></div>
-          <div className="wrap-header">
-            <div className="header-relative">
-              <div
-                className="header-title"
-                onClick={() => navigate("/mission")}
-              >
-                Green Step
-              </div>
-              <div className="header-icon-left">
-                <HeaderLogo />
-              </div>
-              {/* <div className="header-icon-right">
+      {!hideArr.includes(pathname) ? (
+        <div className="header-dummy-div" />
+      ) : null}
+
+      {!hide && !hideArr.includes(pathname) ? (
+        <div className="wrap-header">
+          <div className="header-relative">
+            <div className="header-title" onClick={() => navigate('/mission')}>
+              Green Step
+            </div>
+            <div className="header-icon-left">
+              <HeaderLogo />
+            </div>
+            {/* <div className="header-icon-right">
           <BiBell />
         </div> */}
             </div>
           </div>
-        </>
+ 
       ) : null}
     </>
   );

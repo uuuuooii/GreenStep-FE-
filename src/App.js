@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
         {/* <Kakaoshare /> */}
         <SetPullToRefresh />
         <Routes>

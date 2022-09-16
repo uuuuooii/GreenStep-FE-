@@ -14,6 +14,7 @@ import {
   ChallengeTimer,
   ChallengeWaiting,
   FeedButton,
+  ChallengeMissionText,
 } from "./DailyMissionStyled";
 //component import
 import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
@@ -59,7 +60,7 @@ const DailyChallenge = ({ mission }) => {
             ) : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
-            <MissionText>{mission.missionName}</MissionText>
+            <ChallengeMissionText>{mission.missionName}</ChallengeMissionText>
           </ChallengeBody>
         </ChallengeBox>
       ) : (

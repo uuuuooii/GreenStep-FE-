@@ -28,10 +28,24 @@ export const MissionText = styled.div`
   text-align: center;
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
-  font-weight: 600;
+
   font-size: 13px;
   line-height: 16px;
   color: #50674c;
+  flex-wrap: wrap;
+  margin-top: 10px;
+`;
+export const ChallengeMissionText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+
+  font-size: 13px;
+  line-height: 16px;
+  color: #b2e2ab;
   flex-wrap: wrap;
   margin-top: 10px;
 `;
@@ -82,6 +96,7 @@ export const ChallengeTitle = styled.div`
   color: #84ca79;
 `;
 export const ChallengeTimer = styled.div`
+  width: 130px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;

@@ -41,7 +41,7 @@ export const DailyTextArea = styled.div`
 `;
 export const DailyText = styled.div`
   margin: 15px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   color: #50674c;

@@ -16,16 +16,12 @@ export const ButtonBody = styled.div`
   padding: 5px;
 
   /* margin: 3100px 62px 63px 62px; */
-  margin: -60px;
+padding: 60px 0;
 `;
 export const KakaoIcon = styled(RiKakaoTalkFill)`
   position: absolute;
   width: 20px;
   height: 20px;
-`;
-export const ButtonText = styled.div`
-  width: 100%;
-  text-align: center;
 `;
 
 export const KakaoLink = styled.a`

@@ -89,7 +89,7 @@ export const ChallengeTimer = styled.div`
   padding: 10px 13px;
   margin-top: 19px;
   color: white;
-  background: #b8dde2;
+  background: #ade2e9;
   border-radius: 5px;
 `;
 

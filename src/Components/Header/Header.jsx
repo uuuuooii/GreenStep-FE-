@@ -24,7 +24,7 @@ const Header = () => {
     (e) => {
       if (y > window.scrollY) {
         setHide(false);
-      } else if (window.scrollY > 0) {
+      } else if (window.scrollY > 100) {
         setHide(true);
       }
       setY(window.scrollY);

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 const BackArrow = () => {
   return (
     <svg
-      width="41"
+      width="40"
       height="30"
       viewBox="0 0 41 30"
       fill="none"

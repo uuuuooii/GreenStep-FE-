@@ -46,7 +46,6 @@ const Mission = () => {
 
   return (
     <>
-
       <MissionPage>
         <>
           {/* <button

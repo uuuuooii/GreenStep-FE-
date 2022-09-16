@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 const ChangeCamera = () => {
   return (
     <svg
-      width="35"
+      width="33"
       height="30"
       viewBox="0 0 35 30"
       fill="none"

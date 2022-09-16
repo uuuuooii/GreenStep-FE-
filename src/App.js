@@ -67,7 +67,10 @@ function App() {
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/archive" element={<Archive />} />
-          <Route path="/updatemypage" element={<UpdateMyPage />} />
+          <Route
+            path="/updatemypage"
+            element={<UpdateMyPage onClickToast={onClickToast} />}
+          />
           <Route path="/archive/:id" element={<Archive />} />
           <Route path="/photoshotsarchive" element={<PhotoShotsArchive />} />
           <Route path="/detailposts" element={<DetailPosts />} />

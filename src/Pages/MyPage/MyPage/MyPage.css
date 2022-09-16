@@ -7,15 +7,20 @@
   background-color: #fcfcfa;
 }
 
-.mypage-profile-setting {
-  width: 84%;
+.mypage-three-dots-area {
+  width: 96%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 13px 0px 22px 28px;
+  justify-content: flex-end;
+  padding-right: 10px;
+  margin: 0px 0px 6px 0px;
 }
+
+.mypage-three-dots-icon {
+  font-size: 28px;
+  color: #ade2e9;
+}
+
 .mypage-flex-box {
   display: flex;
   justify-content: center;
@@ -24,7 +29,7 @@
   width: 100%;
 }
 .mypage-flex-text {
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -35,21 +40,13 @@
   white-space: pre-wrap;
   color: #84ca79;
 }
-.profile-text {
-  font-size: 15px;
-  color: #50674c;
-}
-
-.profile-setting {
-  font-size: 15px;
-  color: #50674c;
-}
 
 .image-nick-email {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
   /* margin: 0px 0px 28px 30px; */
 }
 
@@ -60,6 +57,7 @@
   border-radius: 10px;
   margin-bottom: 16px;
   object-fit: cover;
+  box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.15);
 }
 
 .nick-and-email-area {
@@ -73,7 +71,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -89,7 +87,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -105,7 +103,7 @@
 .photoshots-viewmore-box {
   width: 100%;
   height: 56px;
-  background: rgb(255, 255, 255);
+  background: #fcfcfa;
   display: flex;
   flex-direction: row;
 }
@@ -120,8 +118,8 @@
 .photoshots-text {
   font-size: 13px;
   font-weight: 600;
-  margin-top: 8px;
-  color: #2b5139;
+  margin-top: 4px;
+  color: #84ca79;
 }
 .photoshots-text-none {
   font-size: 13px;
@@ -132,8 +130,8 @@
 
 .photoshots-viewmore-icon {
   font-size: 20px;
-  margin-top: 5px;
-  color: #2b5139;
+  margin-top: 1px;
+  color: #84ca79;
 }
 
 .photoshots-viewmore-icon-none {
@@ -170,7 +168,7 @@
   height: 56px;
   display: flex;
   flex-direction: row;
-  background-color: rgb(255, 255, 255);
+  background-color: #fcfcfa;
 }
 
 .posts-text-and-icon {
@@ -183,8 +181,8 @@
 .posts-text {
   font-size: 13px;
   font-weight: 600;
-  margin-top: 8px;
-  color: #2b5139;
+  margin-top: 4px;
+  color: #84ca79;
 }
 .posts-text-none {
   font-size: 13px;
@@ -194,8 +192,8 @@
 }
 .posts-viewmore-icon {
   font-size: 20px;
-  margin-top: 5px;
-  color: #2b5139;
+  margin-top: 1px;
+  color: #84ca79;
 }
 .posts-viewmore-icon-none {
   font-size: 20px;

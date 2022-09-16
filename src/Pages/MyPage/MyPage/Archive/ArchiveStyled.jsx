@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { MdOutlineDoubleArrow } from 'react-icons/md';
-import { ImCross } from 'react-icons/im';
+import styled from "styled-components";
+import { MdOutlineDoubleArrow } from "react-icons/md";
+import { ImCross } from "react-icons/im";
 import {
   AiFillDelete,
   AiOutlineCheckCircle,
   AiFillCheckCircle,
-} from 'react-icons/ai';
-import { IoIosArrowBack } from 'react-icons/io';
+} from "react-icons/ai";
+import { IoIosArrowBack } from "react-icons/io";
 
 export const ImageCard = styled.img`
   width: 100%;
@@ -28,10 +28,9 @@ export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
   }
 `;
 export const ArchiveSelectDiv = styled.div`
-  font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #B2E2AB;
+  color: #b2e2ab;
   &:hover {
     cursor: pointer;
   }
@@ -42,7 +41,7 @@ export const DeleteDiv = styled.div`
   height: 100%;
   z-index: 5;
   background-color: ${(props) =>
-    props.check.includes(props.num) ? 'rgba(255, 255, 255, 0.5)' : 'none'};
+    props.check.includes(props.num) ? "rgba(255, 255, 255, 0.5)" : "none"};
   display: ${(props) => props.display};
   top: 0;
   bottom: 0;
@@ -104,27 +103,26 @@ export const DeleteText = styled.div`
   border-radius: 15px;
 `;
 export const DeleteTopText = styled.div`
-  font-weight: 500;
+  color: #868686;
   font-size: 13px;
   line-height: 17px;
   text-align: center;
   letter-spacing: 0.03em;
-  margin: 20px 0;
+  margin: 13.5px;
   padding: 0 28px;
 `;
 export const DeleteLine = styled.div`
-  height: 0px;
   width: 100%;
-  border: 0.5px solid #868686;
+  border: 0.5px solid #c3c2c2;
 `;
+
 export const DeleteBottomText = styled.div`
   width: 100%;
-  font-weight: 500;
   font-size: 20px;
   line-height: 132%;
   text-align: center;
   color: #ff9e97;
-  margin: 10px 0;
+  padding: 5px 0px 15px 0px;
 `;
 export const DeleteCancelButton = styled.div`
   display: flex;
@@ -137,11 +135,11 @@ export const DeleteCancelButton = styled.div`
   border-radius: 15px;
   width: 340px;
   height: 34px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 132%;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #007afe;
+  color: #84ca79;
   margin: 10px 0;
 `;

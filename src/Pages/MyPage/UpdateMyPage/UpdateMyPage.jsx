@@ -8,12 +8,13 @@ import instance from "../../../Redux/modules/instance";
 import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
 import "./UpdateMyPage.css";
+import "../../../Components/Toast/Toast.css";
 import { HiPencil } from "react-icons/hi";
 import { IoIosArrowBack } from "react-icons/io";
 
 const URL = process.env.REACT_APP_URL;
 
-const UpdateMyPage = () => {
+const UpdateMyPage = ({ onClickToast }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
@@ -22,8 +23,6 @@ const UpdateMyPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => {
-    setName(state.userInfo.userInfo.name);
-    setNickname(state.userInfo.userInfo.nickname);
     return state.userInfo.userInfo;
   });
 
@@ -38,6 +37,8 @@ const UpdateMyPage = () => {
     setLoding(true);
     dispatch(getUserInfoThunk());
     setLoding(false);
+    setName(userInfo.name);
+    setNickname(userInfo.nickname);
   }, []);
 
   return (
@@ -50,11 +51,14 @@ const UpdateMyPage = () => {
           />
           <p
             className="updatemypage-save-button"
-            onClick={() =>
-              instance.patch(`/users/info`, updateInfo).then((res) => {
-                console.log(res);
-              })
-            }
+            type="button"
+            id="popup"
+            onClick={() => {
+              onClickToast("등록되었습니다.");
+              instance
+                .patch(`/users/info`, updateInfo)
+                .then((res) => console.log(res));
+            }}
           >
             저장
           </p>

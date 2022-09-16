@@ -50,7 +50,6 @@ const MyPage = () => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-
   return (
     <>
       <Header />
@@ -88,7 +87,7 @@ const MyPage = () => {
 
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">
-            {!certification.length === 0 ? (
+            {!certification.length == 0 ? (
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
@@ -136,7 +135,7 @@ const MyPage = () => {
         </div>
         <div className="posts-archive-area">
           <div className="posts-viewmore-box">
-            {!post.length === 0 ? (
+            {!post.length == 0 ? (
               <div className="posts-text-and-icon">
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">

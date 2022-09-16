@@ -27,9 +27,8 @@ const ThirdModal = ({
   img,
   third,
   setThird,
-  onClickToast
+  onClickToast,
 }) => {
-
   const NextModal = () => {
     setDisplay(4);
     setThird(true);
@@ -62,26 +61,28 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv>
+            <InputDiv color={name ? '#b2e2ab' : '#d9d9d9'}>
               <TextInput
+                color={name ? '#b2e2ab' : '#d9d9d9'}
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 placeholder="이름"
                 maxLength={8}
               />
               <PencilDiv>
-                <PencilIcon />
+                <PencilIcon color={name ? '#b2e2ab' : '#d9d9d9'} />
               </PencilDiv>
             </InputDiv>
-            <InputDiv>
+            <InputDiv color={nickname ? '#b2e2ab' : '#d9d9d9'}>
               <TextInput
+                color={nickname ? '#b2e2ab' : '#d9d9d9'}
                 onChange={(e) => setNickname(e.target.value)}
                 value={nickname}
                 placeholder="닉네임"
                 maxLength={8}
               />
               <PencilDiv>
-                <PencilIcon />
+                <PencilIcon color={nickname ? '#b2e2ab' : '#d9d9d9'} />
               </PencilDiv>
             </InputDiv>
           </ProfileArea>

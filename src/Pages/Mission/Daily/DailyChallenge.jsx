@@ -10,14 +10,16 @@ import {
   ChallengeBody,
   ChallengePhoto,
   MissionText,
+  WatingText,
   ChallengeTitle,
   ChallengeTimer,
   ChallengeWaiting,
-  FeedButton,
   ChallengeMissionText,
+  LeapDiv,
 } from "./DailyMissionStyled";
 //component import
 import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
+import MissionLeap from "../../../static/components/MissionLeap";
 
 const DailyChallenge = ({ mission }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
@@ -50,12 +52,17 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {!mission.status === "DEFAULT" ? (
+            {mission.status === "WATING" ? (
               <ChallengeWaiting>
-                <MissionText>인증 대기중</MissionText>
+                <WatingText>인증 대기중</WatingText>
+              </ChallengeWaiting>
+            ) : mission.status === "DONE" ? (
+              <ChallengeWaiting>
+                <LeapDiv>
+                  <MissionLeap />
+                </LeapDiv>
               </ChallengeWaiting>
             ) : null}
-            {mission.status === "DONE" ? <FeedButton></FeedButton> : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
             <ChallengeMissionText>{mission.missionName}</ChallengeMissionText>

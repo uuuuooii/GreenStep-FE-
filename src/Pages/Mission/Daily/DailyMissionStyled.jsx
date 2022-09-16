@@ -124,22 +124,19 @@ export const ChallengeWaiting = styled.div`
   border-radius: 5px;
   text-align: center;
 `;
-export const FeedButton = styled.div`
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 17px;
-  gap: 10px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
+
+export const LeapDiv = styled.div`
   position: absolute;
-  width: 71px;
-  height: 17px;
-  background: #b8dde2;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
-  bottom: 27px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+export const WatingText = styled.div`
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #fcfcfa;
 `;

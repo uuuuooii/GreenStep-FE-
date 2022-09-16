@@ -109,6 +109,7 @@ export const DeleteTopText = styled.div`
   text-align: center;
   letter-spacing: 0.03em;
   margin: 20px 0;
+  padding: 0 28px;
 `;
 export const DeleteLine = styled.div`
   width: 100%;

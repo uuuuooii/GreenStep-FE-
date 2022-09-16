@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Apple SD Gothic Neo";
+  src: url("../../../Components/fonts/AppleSDGothicNeoL.ttf");
+}
 .whole-mypage {
   /* background-color: #f5f5f5; */
   background-color: #fcfcfa;
@@ -77,6 +81,7 @@
   text-align: center;
   color: #84ca79;
   margin-bottom: 7px;
+  /* font-family: "Apple SD Gothic Neo" */
 }
 
 .email-text {

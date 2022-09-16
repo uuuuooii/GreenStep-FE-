@@ -108,8 +108,7 @@ const Upload = ({ onClickToast }) => {
                 onChange={contentHandler}
                 maxLength={140}
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
-                onfocus="this.placeholder=''"
-                onblur="this.placeholder='인증샷 설명을 자유롭게 적어주세요'"
+                onfocus="this.placeholder = ''"
               ></UploadContentTextArea>
               <ButtonArea>
                 {" "}

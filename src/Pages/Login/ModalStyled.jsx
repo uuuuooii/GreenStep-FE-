@@ -30,7 +30,7 @@ export const DotArea = styled.div`
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  width: 105px;
+  width: 135px;
   height: 15px;
   z-index: 1000;
 `;

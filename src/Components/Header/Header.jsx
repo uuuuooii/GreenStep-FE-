@@ -11,12 +11,14 @@ const Header = () => {
   const [path, setPath] = useState("");
   const { pathname } = useLocation();
   const hideArr = [
-    '/',
-    '/users/kakao/callback',
-    '/alert',
-    '/modal',
-    '/missioncamera',
-    '/updatemypage',
+    "/",
+    "/users/kakao/callback",
+    "/alert",
+    "/modal",
+    "/missioncamera",
+    "/updatemypage",
+    "/archive/certification",
+    "/archive/post",
   ];
   const handleNavigation = useCallback(
     (e) => {
@@ -43,7 +45,7 @@ const Header = () => {
 
   return (
     <>
-      {!path === '/' ? <div className="header-dummy-div" /> : null}
+      {!path === "/" ? <div className="header-dummy-div" /> : null}
       {!hide && !hideArr.includes(path) ? (
         <>
           <div className="header-dummy-div"></div>

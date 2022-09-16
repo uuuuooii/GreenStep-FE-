@@ -108,7 +108,7 @@ export const DeleteTopText = styled.div`
   line-height: 17px;
   text-align: center;
   letter-spacing: 0.03em;
-  margin: 20px 0;
+  margin: 13.5px;
   padding: 0 28px;
 `;
 export const DeleteLine = styled.div`
@@ -122,7 +122,7 @@ export const DeleteBottomText = styled.div`
   line-height: 132%;
   text-align: center;
   color: #ff9e97;
-  margin: 10px 0;
+  padding: 5px 0px 15px 0px;
 `;
 export const DeleteCancelButton = styled.div`
   display: flex;

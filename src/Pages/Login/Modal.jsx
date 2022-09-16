@@ -2,16 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
-import styled, { keyframes } from 'styled-components';
 import OnDot from '../../static/components/Login/OnDot';
 import NonDot from '../../static/components/Login/NonDot';
 import {
   ModalBody,
   ModalSection,
   DotArea,
-  TransX,
-  SlideLeft,
-  SlideRight,
   SlideLeftDiv,
   SlideRightDiv,
 } from './ModalStyled';

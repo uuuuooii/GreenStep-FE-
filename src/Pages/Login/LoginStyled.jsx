@@ -16,7 +16,7 @@ export const ButtonBody = styled.div`
   padding: 5px;
 
   /* margin: 3100px 62px 63px 62px; */
-padding: 60px 0;
+/* padding: 60px 0; */
 `;
 export const KakaoIcon = styled(RiKakaoTalkFill)`
   position: absolute;
@@ -46,3 +46,6 @@ export const LDiv = styled.div`
   border-radius: 107.5px;
   z-index: 999;
 `;
+export const MarginDIv = styled.div`
+  padding: 60px 0;
+`

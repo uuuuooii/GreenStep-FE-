@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ export const MissionText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
 
   font-size: 13px;
@@ -40,7 +40,7 @@ export const ChallengeMissionText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
 
   font-size: 13px;
@@ -89,7 +89,7 @@ export const ChallengePhoto = styled.img`
   background: rgba(255, 255, 255, 0.5);
 `;
 export const ChallengeTitle = styled.div`
-  font-weight: 700;
+  font-weight: bol;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
@@ -124,6 +124,7 @@ export const ChallengeWaiting = styled.div`
   border-radius: 5px;
   text-align: center;
 `;
+
 export const LeapDiv = styled.div`
   position: absolute;
   top: 50%;
@@ -131,7 +132,7 @@ export const LeapDiv = styled.div`
   transform: translate(-50%, -50%);
 `;
 export const WatingText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 15px;

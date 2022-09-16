@@ -115,6 +115,7 @@ export const DeleteLine = styled.div`
   width: 100%;
   border: 0.5px solid #c3c2c2;
 `;
+
 export const DeleteBottomText = styled.div`
   width: 100%;
   font-size: 20px;

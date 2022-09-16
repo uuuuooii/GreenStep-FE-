@@ -1,8 +1,8 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 //redux import
-import { __GetTodaymission } from "../../../Redux/modules/mission";
+import { __GetTodaymission } from '../../../Redux/modules/mission';
 //styled import
 import {
   ChallengeBox,
@@ -10,14 +10,16 @@ import {
   ChallengeBody,
   ChallengePhoto,
   MissionText,
+  WatingText,
   ChallengeTitle,
   ChallengeTimer,
   ChallengeWaiting,
-  FeedButton,
   ChallengeMissionText,
-} from "./DailyMissionStyled";
+  LeapDiv,
+} from './DailyMissionStyled';
 //component import
-import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
+import ChallengeSkeleton from '../../../Components/Skeleton/ChallengeSkeleton';
+import MissionLeap from '../../../static/components/MissionLeap';
 
 const DailyChallenge = ({ mission }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
@@ -42,21 +44,24 @@ const DailyChallenge = ({ mission }) => {
             <ChallengeTitle>Challenge Mission</ChallengeTitle>
             <ChallengeTimer>
               미션 완료까지 &nbsp;
-              {hour < 10 ? "0" + hour : hour}:
-              {minute < 10 ? "0" + minute : minute}:
-              {second < 10 ? "0" + second : second}
+              {hour < 10 ? '0' + hour : hour}:
+              {minute < 10 ? '0' + minute : minute}:
+              {second < 10 ? '0' + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {!mission.status === "DEFAULT" ? (
+            {mission.status === 'WATING' ? (
               <ChallengeWaiting>
-                <MissionText>인증 대기중</MissionText>
+                <WatingText>인증 대기중</WatingText>
               </ChallengeWaiting>
-            ) : null}
-            {mission.status === "DONE" ? (
-              <FeedButton>피드 올리기</FeedButton>
+            ) : mission.status === 'DONE' ? (
+              <ChallengeWaiting>
+                <LeapDiv>
+                  <MissionLeap />
+                </LeapDiv>
+              </ChallengeWaiting>
             ) : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
@@ -65,6 +70,7 @@ const DailyChallenge = ({ mission }) => {
         </ChallengeBox>
       ) : (
         <ChallengeSkeleton />
+
       )}
     </>
   );

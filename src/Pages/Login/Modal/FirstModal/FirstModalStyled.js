@@ -61,19 +61,21 @@ export const SelectImg = styled.img`
 `;
 
 export const ImgDiv = styled.div`
-  margin: 249px 40px 359px 40px;
+  margin: 0 12.5px;
 `;
 
 export const SeleceArea = styled.div`
-  width: 100px;
-  height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 249px 0 359px 0;
 `;
 
 export const ButtonText = styled.div`
   width: 32px;
   margin: 0 10px;
-  color: #6de4c6;
+  color: #868686;
   &:hover {
     cursor: pointer;
   }

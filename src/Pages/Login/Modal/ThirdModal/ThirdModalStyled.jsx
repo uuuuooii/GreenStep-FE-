@@ -46,7 +46,7 @@ export const SelectBody = styled.div`
   }
 `;
 export const ButtonText = styled.div`
-  color: #6de4c6;
+  color: #868686;
   width: 32px;
   margin: 0 10px;
   &:hover {
@@ -73,7 +73,7 @@ export const InputDiv = styled.div`
   width: 187px;
   height: 40px;
   display: flex;
-  border: 2px solid #b2e2ab;
+  border: 2px solid ${(props) => props.color};
   border-radius: 10px;
   margin: 5px 0;
 `;
@@ -95,8 +95,7 @@ export const TextInput = styled.input`
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
-
-    color: #b2e2ab;
+    color: ${(props) => props.color};
   }
 `;
 export const ProfileArea = styled.div`
@@ -119,5 +118,5 @@ export const PencilDiv = styled.div`
 `;
 export const PencilIcon = styled(HiPencil)`
   font-size: 18px;
-  color: #b2e2ab;
+  color: ${(props) => props.color};
 `;

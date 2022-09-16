@@ -154,8 +154,7 @@ const Archive = ({ Header }) => {
             <DeleteModal>
               <DeleteText>
                 <DeleteTopText>
-                  This photo will be deleted from iCloud Photos on all your
-                  devices
+                  {param==='certification' ? '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?' : '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'}
                 </DeleteTopText>
                 <DeleteLine />
                 <DeleteBottomText
@@ -166,7 +165,7 @@ const Archive = ({ Header }) => {
                     setModal(!modal);
                   }}
                 >
-                  Delete Photo
+                   {param==='certification' ? '가려진 항목으로 이동' : '가려진 항목으로 이동'}
                 </DeleteBottomText>
               </DeleteText>
               <DeleteCancelButton onClick={() => setModal(!modal)}>

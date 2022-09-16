@@ -41,7 +41,7 @@ export const ToastStyle = (
   box-shadow: 0px 2px 2px #dadada; !important;
   border-radius: 20px !important;
   min-height: 20px !important;
-  max-width: 200px !important;
+width : 205px !important;
   margin: 4px auto !important;
   padding: 8px 35px; !important;
   display: inline-block !important;

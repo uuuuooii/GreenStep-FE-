@@ -151,14 +151,14 @@ export const CategoryButton = styled.div`
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;
-  color: #b8dde2;
+  color: #a1d0d7;
   background-color: ${(props) =>
     props.check === props.num ? "#F1F8F9" : "none"};
   align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #b8dde2;
+  border: 1px solid #a1d0d7;
   margin: 0 5px;
   &:hover {
     cursor: pointer;

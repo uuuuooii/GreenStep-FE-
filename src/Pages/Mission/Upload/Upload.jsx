@@ -49,8 +49,8 @@ const Upload = ({ onClickToast }) => {
 
   const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
-    onClickToast('게시물 등록이 완료되었습니다.');
-    navigate('/archive/certification');
+    onClickToast("게시물 등록이 완료되었습니다.");
+    navigate("/archive/certification");
   };
 
   useEffect(() => {
@@ -107,12 +107,13 @@ const Upload = ({ onClickToast }) => {
                 onChange={contentHandler}
                 maxLength={140}
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
+                onfocus="this.placeholder = ''"
               ></UploadContentTextArea>
               <TotalButtonArea>
                 <UploadButton
                   onClick={() =>
                     data.onFeed
-                      ? onClickToast('이미 등록한 게시물입니다.')
+                      ? onClickToast("이미 등록한 게시물입니다.")
                       : Uploading()
                   }
                 >

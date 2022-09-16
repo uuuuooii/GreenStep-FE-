@@ -12,6 +12,7 @@ import {
   KakaoLink,
   LDiv,
 } from "./LoginStyled";
+import logo from "./kakao_login_medium_wide.png";
 
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
@@ -45,8 +46,7 @@ const Login = ({ Header }) => {
         {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code"> */}
         <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code">
           <ButtonBody>
-            <KakaoIcon />
-            <ButtonText>카카오 로그인</ButtonText>
+            <Logo />
           </ButtonBody>
         </KakaoLink>
       </A4>
@@ -55,6 +55,12 @@ const Login = ({ Header }) => {
 };
 
 export default Login;
+
+const Logo = styled.img.attrs({
+  src: `${logo}`,
+})`
+  width: 100%;
+`;
 
 const FirstArea = styled.div`
   height: 100vh;
@@ -66,6 +72,7 @@ const FirstArea = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
+
 const SecondArea = styled.div`
   height: 100vh;
   /* border: 1px solid black; */

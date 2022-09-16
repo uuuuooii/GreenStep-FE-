@@ -13,13 +13,8 @@ export const ButtonBody = styled.div`
   display: flex;
   text-align: center;
   position: relative;
-  background-color: yellow;
   padding: 5px;
-  border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-    outline: 1px solid black;
-  }
+
   /* margin: 3100px 62px 63px 62px; */
   margin: -60px;
 `;

@@ -35,18 +35,10 @@ function App() {
     ToastsStore.success(text);
   };
 
-  const hideArr = [
-    '/',
-    '/users/kakao/callback',
-    '/alert',
-    '/modal',
-    '/missioncamera',
-    '/updatemypage',
-  ];
   return (
     <>
       <BrowserRouter>
-        <Header hideArr={hideArr} />
+        <Header />
         {/* <Kakaoshare /> */}
         <SetPullToRefresh />
         <Routes>

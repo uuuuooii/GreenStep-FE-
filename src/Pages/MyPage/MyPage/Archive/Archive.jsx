@@ -1,13 +1,13 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 //modules import
 import {
   getPostThunk,
   getCertThunk,
-} from '../../../../Redux/modules/userInfoSlice';
-import instance from '../../../../Redux/modules/instance';
+} from "../../../../Redux/modules/userInfoSlice";
+import instance from "../../../../Redux/modules/instance";
 //styled import
 import styled from 'styled-components';
 import './Archive.css';
@@ -32,7 +32,7 @@ import {
   DeleteBottomText,
   DeleteCancelButton,
   ModalArea,
-} from './ArchiveStyled';
+} from "./ArchiveStyled";
 
 const Archive = ({ Header }) => {
   const param = useParams().id;
@@ -48,14 +48,14 @@ const Archive = ({ Header }) => {
     SkeletonList.push(i);
   }
   const data = useSelector((state) =>
-    param === 'certification'
+    param === "certification"
       ? state.userInfo.certification
       : state.userInfo.post
   );
 
   useEffect(() => {
     setLoding(true);
-    param === 'certification'
+    param === "certification"
       ? dispatch(getCertThunk())
       : dispatch(getPostThunk());
     setLoding(false);
@@ -148,9 +148,9 @@ const Archive = ({ Header }) => {
 
       {modal ? (
         <ModalArea>
-          {' '}
+          {" "}
           <Slide bottom>
-            {' '}
+            {" "}
             <DeleteModal>
               <DeleteText>
                 <DeleteTopText>
@@ -158,10 +158,10 @@ const Archive = ({ Header }) => {
                     ? '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'
                     : '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'}
                 </DeleteTopText>
-                <DeleteLine />
+                {/* <DeleteLine /> */}
                 <DeleteBottomText
                   onClick={() => {
-                    param === 'post'
+                    param === "post"
                       ? instance.delete(`/feed`, { data: delArr })
                       : instance.delete(`/profiles/missions`, { data: delArr });
                     setModal(!modal);

@@ -13,6 +13,14 @@ import KakaoShare from '../../../Components/Kakaoshare/Kakaoshare';
 import './DetailPosts.css';
 import Slide from 'react-reveal/Slide';
 import styled from 'styled-components';
+import {
+  ButtonArea,
+  KakaoReactIcon,
+  IconDiv,
+  ButtonText,
+  TotalButtonArea,
+  PostShareButton
+} from'../../Mission/Upload/UploadStyled'
 
 const DetailPosts = ({ onClickToast }) => {
   const navigate = useNavigate();
@@ -93,9 +101,17 @@ const DetailPosts = ({ onClickToast }) => {
                 {detailPost ? detailPost.content : '#Content'}
               </p>
             </div>
-            <KakaoShare className="detail-posts-button-share">
-              공유하기
-            </KakaoShare>
+            <TotalButtonArea>
+
+                <PostShareButton>
+                  <ButtonArea>
+                    <IconDiv>
+                      <KakaoReactIcon />
+                    </IconDiv>{' '}
+                    <ButtonText>카카오 공유하기</ButtonText>
+                  </ButtonArea>
+                </PostShareButton>
+              </TotalButtonArea>
           </div>
         </Slide>
       ) : (

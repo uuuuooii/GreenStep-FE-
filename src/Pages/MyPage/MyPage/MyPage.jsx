@@ -63,7 +63,8 @@ const MyPage = () => {
 
         {!loading ? (
           <div className="image-nick-email">
-            <img src={userInfo.profilePhoto} className="image-area"></img>
+            <img src={userInfo.profilePhoto} className="image-area" />
+
             <div className="nick-and-email-area">
               <div className="nickname-text">
                 {userInfo.nickname ? userInfo.nickname : 'Nickname'}

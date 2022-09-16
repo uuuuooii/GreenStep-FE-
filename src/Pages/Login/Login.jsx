@@ -44,9 +44,7 @@ const Login = () => {
 
         {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code"> */}
         <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code">
-          <ButtonBody>
-            <Logo />
-          </ButtonBody>
+          <Logo />
         </KakaoLink>
       </A4>
     </>
@@ -58,7 +56,9 @@ export default Login;
 const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
-  width: 100%;
+  width: 250px;
+  padding: 63px;
+  /* margin: 3100px 62px 63px 62px; */
 `;
 
 const FirstArea = styled.div`

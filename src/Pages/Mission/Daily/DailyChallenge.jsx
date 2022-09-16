@@ -41,7 +41,7 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeTextArea>
             <ChallengeTitle>Challenge Mission</ChallengeTitle>
             <ChallengeTimer>
-              미션 완료까지 &nbsp;
+              미션 완료까지&nbsp;
               {hour < 10 ? "0" + hour : hour}:
               {minute < 10 ? "0" + minute : minute}:
               {second < 10 ? "0" + second : second}

@@ -103,7 +103,7 @@ export const DeleteText = styled.div`
   border-radius: 15px;
 `;
 export const DeleteTopText = styled.div`
-  font-weight: 500;
+  color: #868686;
   font-size: 13px;
   line-height: 17px;
   text-align: center;
@@ -111,13 +111,11 @@ export const DeleteTopText = styled.div`
   margin: 20px 0;
 `;
 export const DeleteLine = styled.div`
-  height: 0px;
   width: 100%;
-  border: 0.5px solid #868686;
+  border: 0.5px solid #c3c2c2;
 `;
 export const DeleteBottomText = styled.div`
   width: 100%;
-  font-weight: 500;
   font-size: 20px;
   line-height: 132%;
   text-align: center;
@@ -135,11 +133,11 @@ export const DeleteCancelButton = styled.div`
   border-radius: 15px;
   width: 340px;
   height: 34px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
   line-height: 132%;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #007afe;
+  color: #84ca79;
   margin: 10px 0;
 `;

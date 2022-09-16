@@ -30,7 +30,6 @@ import Next from "../../../static/components/DetailPost/Next";
 import Previous from "../../../static/components/DetailPost/Previous";
 
 const Upload = ({ onClickToast }) => {
-
   const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
@@ -51,7 +50,7 @@ const Upload = ({ onClickToast }) => {
 
   const Uploading = () => {
     instance.post(`/profiles/missions/${param}`, uploadText);
-    onClickToast("게시물 등록이 완료되었습니다.")
+    onClickToast("게시물 등록이 완료되었습니다.");
     navigate("/archive/certification");
   };
 
@@ -62,7 +61,6 @@ const Upload = ({ onClickToast }) => {
   }, []);
   return (
     <>
-
       <Slide bottom>
         <div className="upload-wrap-shape">
           {!loading && data ? (
@@ -110,6 +108,8 @@ const Upload = ({ onClickToast }) => {
                 onChange={contentHandler}
                 maxLength={140}
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
+                onfocus="this.placeholder=''"
+                onblur="this.placeholder='인증샷 설명을 자유롭게 적어주세요'"
               ></UploadContentTextArea>
               <ButtonArea>
                 {" "}
@@ -118,7 +118,9 @@ const Upload = ({ onClickToast }) => {
                   type="button"
                   id="popup"
                   onClick={() =>
-                    data.onFeed ? onClickToast("이미 등록한 게시물입니다.") : Uploading()
+                    data.onFeed
+                      ? onClickToast("이미 등록한 게시물입니다.")
+                      : Uploading()
                   }
                 >
                   피드에 올리기

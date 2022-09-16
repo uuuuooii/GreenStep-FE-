@@ -58,7 +58,9 @@ export default Login;
 const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
-  width: 100%;
+  width: 250px;
+  padding: 63px;
+  /* margin: 3100px 62px 63px 62px; */
 `;
 
 const FirstArea = styled.div`

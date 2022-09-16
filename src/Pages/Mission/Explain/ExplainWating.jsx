@@ -15,7 +15,7 @@ import Slide from 'react-reveal/Slide';
 //component import
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 
-const ExplainWating = () => {
+const ExplainWating = ({onClickToast}) => {
   const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const ExplainWating = () => {
           <div className="explain-mission-center-area">
             <WatingLeap />
           </div>
-          <div className="explain-waiting-bar" onClick={()=>{navigate('/mission')}} >인증 대기중</div>
+          <div className="explain-waiting-bar" onClick={()=>{navigate('/mission');onClickToast(pointNum)}} >인증 대기중</div>
         </div>
       </Slide>
     </>

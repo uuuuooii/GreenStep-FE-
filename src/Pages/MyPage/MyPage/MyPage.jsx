@@ -64,26 +64,45 @@ const MyPage = () => {
           <div className="image-nick-email">
             <img src={userInfo.profilePhoto} className="image-area"></img>
             <div className="nick-and-email-area">
-              <div className="nickname-text">{userInfo.nickname}</div>
-              <div className="email-text">{userInfo.email}</div>
+              <div className="nickname-text">
+                {userInfo.nickname ? userInfo.nickname : 'Nickname'}
+              </div>
+              <div className="email-text">
+                {userInfo.email ? userInfo.email : 'Email'}
+              </div>
             </div>
           </div>
         ) : (
           <div className="image-nick-email">
             <div className="image-area"></div>
+            <div className="nickname-text">
+              {userInfo.nickname ? userInfo.nickname : 'Nickname'}
+            </div>
+            <div className="email-text">
+              {userInfo.email ? userInfo.email : 'Email'}
+            </div>
           </div>
         )}
 
         <div className="photoshots-archive-area">
           <div className="photoshots-viewmore-box">
-            <div className="photoshots-text-and-icon">
-              <div className="photoshots-text">인증샷 아카이브</div>
-              <div className="photoshots-viewmore-icon">
-                <ArchiveArrow
-                  onClick={() => navigate('/archive/certification')}
-                />
+            {!certification.length === 0 ? (
+              <div className="photoshots-text-and-icon">
+                <div className="photoshots-text">인증샷 아카이브</div>
+                <div className="photoshots-viewmore-icon">
+                  <ArchiveArrow
+                    onClick={() => navigate('/archive/certification')}
+                  />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="photoshots-text-and-icon">
+                <div className="photoshots-text-none">인증샷 아카이브</div>
+                <div className="photoshots-viewmore-icon-none">
+                  <ArchiveArrow />
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="photoshots-archive-box">
@@ -115,12 +134,21 @@ const MyPage = () => {
         </div>
         <div className="posts-archive-area">
           <div className="posts-viewmore-box">
-            <div className="posts-text-and-icon">
-              <div className="posts-text">게시물 아카이브</div>
-              <div className="posts-viewmore-icon">
-                <ArchiveArrow onClick={() => navigate('/archive/post')} />
+            {!post.length === 0 ? (
+              <div className="posts-text-and-icon">
+                <div className="posts-text">게시물 아카이브</div>
+                <div className="posts-viewmore-icon">
+                  <ArchiveArrow onClick={() => navigate('/archive/post')} />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="posts-text-and-icon">
+                <div className="posts-text-none">게시물 아카이브</div>
+                <div className="posts-viewmore-icon-none">
+                  <ArchiveArrow />
+                </div>
+              </div>
+            )}
           </div>
           <div className="posts-archive-box">
             {!loading && post.length > 1 ? (

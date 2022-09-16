@@ -52,7 +52,7 @@ function App() {
           <Route path="/missioncamera" element={<MissionCamera />} />
           <Route path="/missioncamera/:id" element={<MissionCamera onClickToast={onClickToast} />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="/explainwating/:id" element={<ExplainWating />} />
+          <Route path="/explainwating/:id" element={<ExplainWating onClickToast={onClickToast} />} />
           <Route
             path="/upload/:id"
             element={

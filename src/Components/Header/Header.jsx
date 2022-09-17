@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import "./Header.css";
-import { BiBell } from "react-icons/bi";
-import HeaderLogo from "../../static/components/HeaderLogo";
+import React, { useEffect, useState, useCallback } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import './Header.css';
+import { BiBell } from 'react-icons/bi';
+import HeaderLogo from '../../static/components/HeaderLogo';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -11,14 +11,14 @@ const Header = () => {
   // const [path, setPath] = useState('');
   const { pathname } = useLocation();
   const hideArr = [
-    "/",
-    "/users/kakao/callback",
-    "/alert",
-    "/modal",
-    "/missioncamera",
-    "/updatemypage",
-    "/archive/certification",
-    "/archive/post",
+    '/',
+    '/users/kakao/callback',
+    '/alert',
+    '/modal',
+    '/missioncamera',
+    '/updatemypage',
+    '/archive/certification',
+    '/archive/post',
   ];
   const handleNavigation = useCallback(
     (e) => {
@@ -33,10 +33,10 @@ const Header = () => {
   );
 
   useEffect(() => {
-    window.addEventListener("scroll", handleNavigation);
+    window.addEventListener('scroll', handleNavigation);
 
     return () => {
-      window.removeEventListener("scroll", handleNavigation);
+      window.removeEventListener('scroll', handleNavigation);
     };
   }, [handleNavigation]);
 
@@ -58,9 +58,8 @@ const Header = () => {
             {/* <div className="header-icon-right">
           <BiBell />
         </div> */}
-            </div>
           </div>
- 
+        </div>
       ) : null}
     </>
   );

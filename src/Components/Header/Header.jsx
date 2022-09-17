@@ -19,6 +19,7 @@ const Header = () => {
     "/updatemypage",
     "/archive/certification",
     "/archive/post",
+    "/secession",
   ];
   const handleNavigation = useCallback(
     (e) => {

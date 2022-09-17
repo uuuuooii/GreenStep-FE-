@@ -24,12 +24,13 @@ import ExplainWating from "./Pages/Mission/Explain/ExplainWating";
 import instance from "./Redux/modules/instance";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 import { ToastStyle } from "./Components/Toast/Toast";
-import { KakaoChannel } from "./Components/ChannelService/ChannelService";
+
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import Secession from "./Pages/Secession/Secession";
 function App() {
   const onClickToast = (text) => {
     ToastsStore.success(text);
@@ -39,7 +40,6 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        {/* <KakaoChannel /> */}
         <SetPullToRefresh />
         <Routes>
           <Route path="/" element={<Login />} />
@@ -83,6 +83,7 @@ function App() {
           />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/secession" element={<Secession />} />
           <Route path="*" element={<Error />} />
         </Routes>
         {ToastStyle}

@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "build": "^0.1.4",
     "event-source-polyfill": "^1.0.31",
+    "firebase-admin": "^11.0.1",
     "framer-motion": "^7.3.2",
     "fullpage.js": "2.9.6",
     "jquery": "^3.6.1",

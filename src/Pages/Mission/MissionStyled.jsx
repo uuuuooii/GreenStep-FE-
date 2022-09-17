@@ -20,8 +20,8 @@ export const DailyMissionArea = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #fcfcfa;
   padding: 0px 0px 16px;
-  background: white;
   margin: 20px 0;
 `;
 export const WeeklyMissionArea = styled.div`
@@ -30,7 +30,6 @@ export const WeeklyMissionArea = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0px 0px 16px;
-  background: white;
   margin: 20px 0;
 `;
 export const DailyTextArea = styled.div`

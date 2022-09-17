@@ -1,0 +1,70 @@
+.secession-settings-button-area {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rebeccapurple;
+}
+
+.secessiontitle {
+    width: 217px;
+    height: 44px;
+
+    font-family: 'Apple SD Gothic Neo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    /* primary 2.2 */
+
+    color: #84CA79;
+}
+
+
+.secessionimg {
+    /* wepik-photo-mode-2022815-164427 1 */
+
+    width: 300px;
+    height: 240px;
+
+    /* background: url(wepik-photo-mode-2022815-164427.png); */
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+}
+
+.secessionbutton {
+
+
+
+    width: 189px;
+    height: 18px;
+
+    font-family: 'Apple SD Gothic Neo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* White */
+
+    color: #FCFCFA;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

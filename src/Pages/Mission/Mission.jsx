@@ -100,7 +100,7 @@ const Mission = () => {
                       item={item}
                       type={"daily"}
                       onClick={() =>
-                        navigate(`/explain/${item.missionId}&daily`)
+                        navigate(`/explainwating/${item.missionId}&daily`)
                       }
                     />
                   ) : (

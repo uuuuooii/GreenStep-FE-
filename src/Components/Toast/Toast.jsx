@@ -50,3 +50,22 @@ width : 205px !important;
 `}</style>
 );
 
+export const SecondToastStyle = (
+  <style jsx="true">{`
+.toast {
+  font-size: 13px !important; !important;
+  color: #fff !important; !important;
+  justify-content: center; !important;
+  align-items: center; !important;
+  background-color: rgba(178, 226, 171, 0.75) !important;
+  box-shadow: 0px 2px 2px #dadada; !important;
+  border-radius: 20px !important;
+  width : 80px;
+  min-height: 20px !important;
+  margin: 4px auto !important;
+  padding: 8px 35px; !important;
+  display: inline-block !important;
+  line-height: 22px !important;
+}
+`}</style>
+);

@@ -28,7 +28,6 @@ import {
 } from "./MissionStyled";
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
-import Header from "../../Components/Header/Header";
 
 const Mission = () => {
   const [loading, setLoading] = useState(false);
@@ -47,7 +46,6 @@ const Mission = () => {
 
   return (
     <>
-      <Header />
       <MissionPage>
         <>
           {/* <button
@@ -102,7 +100,7 @@ const Mission = () => {
                       item={item}
                       type={"daily"}
                       onClick={() =>
-                        navigate(`/explain/${item.missionId}&daily`)
+                        navigate(`/explainwating/${item.missionId}&daily`)
                       }
                     />
                   ) : (

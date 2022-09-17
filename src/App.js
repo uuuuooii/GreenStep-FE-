@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
@@ -11,6 +11,7 @@ import Upload from "./Pages/Mission/Upload/Upload";
 import Explain from "./Pages/Mission/Explain/Explain";
 import Feed from "./Pages/Feed/Feed";
 import Mypage from "./Pages/MyPage/MyPage/MyPage";
+import ViewMoreModal from "./Pages/MyPage/MyPage/ViewMoreModal/ViewMoreModal";
 import UpdateMyPage from "./Pages/MyPage/UpdateMyPage/UpdateMyPage";
 import Archive from "./Pages/MyPage/MyPage/Archive/Archive";
 import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
@@ -22,25 +23,35 @@ import Loding from "./Pages/Loding/Loding";
 import Error from "./Pages/Error/Error";
 import ExplainWating from "./Pages/Mission/Explain/ExplainWating";
 import instance from "./Redux/modules/instance";
+import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
-import { ToastStyle } from "./Components/Toast/Toast";
-
+import ScrollToTop from "./Components/ScrollTop/ScrollTop";
+import { ToastStyle, SecondToastStyle } from "./Components/Toast/Toast";
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
-import Secession from "./Pages/Secession/Secession";
+
 function App() {
-  const onClickToast = (text) => {
-    ToastsStore.success(text);
+  const [toastNum, setToastNum] = useState(0);
+  const onClickToast = (text, num) => {
+    if (num == undefined) {
+      setToastNum(0);
+      ToastsStore.success(text);
+    } else {
+      setToastNum(num);
+      ToastsStore.success(text);
+    }
   };
 
   return (
     <>
       <BrowserRouter>
         <Header />
+        {/* <Kakaoshare /> */}
         <SetPullToRefresh />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/users/kakao/callback" element={<Loding />} />
@@ -69,6 +80,7 @@ function App() {
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/viewmoremodal" element={<ViewMoreModal />} />
           <Route path="/archive" element={<Archive />} />
           <Route
             path="/updatemypage"
@@ -83,16 +95,31 @@ function App() {
           />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
-          <Route path="/secession" element={<Secession />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {ToastStyle}
-        <ToastsContainer
-          className="custom-alert-position"
-          position={ToastsContainerPosition.BOTTOM_CENTER}
-          store={ToastsStore}
-          lightBackground
-        />
+        {toastNum === 0 ? (
+          <>
+            {" "}
+            {ToastStyle}
+            <ToastsContainer
+              className="custom-alert-position"
+              position={ToastsContainerPosition.BOTTOM_CENTER}
+              store={ToastsStore}
+              lightBackground
+            />
+          </>
+        ) : (
+          <>
+            {" "}
+            {SecondToastStyle}
+            <ToastsContainer
+              className="custom-point-position"
+              position={ToastsContainerPosition.BOTTOM_CENTER}
+              store={ToastsStore}
+              lightBackground
+            />
+          </>
+        )}
       </BrowserRouter>
     </>
   );

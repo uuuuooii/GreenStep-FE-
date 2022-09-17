@@ -66,7 +66,7 @@ const ExplainWating = ({onClickToast}) => {
           <div className="explain-mission-center-area">
             <WatingLeap />
           </div>
-          <div className="explain-waiting-bar" onClick={()=>{navigate('/mission');onClickToast(pointNum)}} >인증 대기중</div>
+          <div className="explain-waiting-bar" onClick={()=>{navigate('/mission');onClickToast(`(+${pointNum}xp)`,1)}} >인증 대기중</div>
         </div>
       </Slide>
     </>

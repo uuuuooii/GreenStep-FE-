@@ -53,10 +53,12 @@ const UpdateMyPage = ({ onClickToast }) => {
             className="updatemypage-save-button"
             type="button"
             id="popup"
-            onClick={
-              (() => onClickToast("등록되었습니다."),
-              instance.patch(`/users/info`, updateInfo).then((res) => {}))
-            }
+            onClick={() => {
+              onClickToast("등록되었습니다.");
+              instance
+                .patch(`/users/info`, updateInfo)
+                .then((res) => console.log(res));
+            }}
           >
             저장
           </p>

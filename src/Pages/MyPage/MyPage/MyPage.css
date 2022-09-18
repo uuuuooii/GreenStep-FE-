@@ -21,8 +21,8 @@
   color: #ade2e9;
 }
 
-/* 모달창의 배경을 만든다 */
-.modal-background {
+/* 모달창 배경 */
+.mypage-modal-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,22 +31,94 @@
   background: rgba(196, 196, 196, 0.529);
 }
 
-/* 모달창 영역을 꾸민다 */
-.modal-box {
+/* 모달창 영역 */
+.mypage-modal-box {
+  width: 100%;
   /* position: absolute; */
   position: fixed;
   bottom: 65px;
-  /* top: calc(50vh - 100px);
-  left: calc(50vw - 200px); */
-  background-color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-  width: 100%;
-  height: 300px;
+  flex-direction: column;
+  border-radius: 20px 20px 0px 0px;
   z-index: 1;
+  background-color: #f8f8f8;
+}
+
+.mypage-modal-bar {
+  margin: 0px auto;
+}
+
+.mypage-wrap-view-more {
+  margin: 50px 0px 44px 34px;
+}
+.mypage-modal-alarm-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-alarm-text {
+  margin-left: 16px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-hidden-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.mypage-modal-hidden-text {
+  margin-left: 15px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-cc-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-cc-text {
+  margin-left: 16px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-quit-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-quit-text {
+  margin-left: 16px;
+  color: #868686;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.mypage-modal-logout-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+  align-items: center;
+}
+
+.mypage-modal-logout-text {
+  margin-left: 16px;
+  color: #6dbac5;
+  font-size: 16px;
+  margin-bottom: 2px;
 }
 
 .mypage-flex-box {

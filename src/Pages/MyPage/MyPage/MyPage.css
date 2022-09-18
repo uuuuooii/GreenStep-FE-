@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10px;
-  margin: 0px 0px 6px 0px;
+  padding-right: 12px;
+  margin: 2px 0px 5px 0px;
 }
 
 .mypage-three-dots-icon {
@@ -28,7 +28,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(196, 196, 196, 0.529);
+  background: rgba(44, 44, 44, 0.322);
   z-index: 10;
 }
 
@@ -135,8 +135,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  /* margin: 0px 0px 28px 30px; */
 }
 
 .image-area {
@@ -144,7 +142,7 @@
   height: 100px;
   background: #d9d9d9;
   border-radius: 10px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   object-fit: cover;
   box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.15);
 }
@@ -157,13 +155,13 @@
   align-items: flex-end;
 }
 .image-pencil-div {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 22px;
   position: absolute;
   transform: translateX(50%);
 }
 .nick-and-email-area {
-  margin: 10px 0;
+  margin: 10px 0px 10px 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,6 +180,7 @@
   text-align: center;
   color: #84ca79;
   margin-bottom: 7px;
+  margin-top: 6px;
   /* font-family: "Apple SD Gothic Neo" */
 }
 

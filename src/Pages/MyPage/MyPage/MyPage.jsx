@@ -10,7 +10,6 @@ import {
 } from "../../../Redux/modules/userInfoSlice";
 //component import
 import Footer from "../../../Components/Footer/Footer";
-import Header from "../../../Components/Header/Header";
 import ProfilePencil from "../../../static/components/ProfilePencil";
 //styled import
 import "./MyPage.css";
@@ -183,7 +182,9 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
+
                   <ArchiveArrow />
+
                 </div>
               </div>
             )}
@@ -243,7 +244,7 @@ const MyPage = () => {
                   key={item.missionImgUrl + index}
                   alt="archive"
                   onClick={() => navigate(`/detailposts/${item.id}`)}
-                ></img>
+                />
               ))
             ) : !loading && post.length === 1 ? (
               <img
@@ -251,7 +252,7 @@ const MyPage = () => {
                 className="photoshots-archive-images"
                 alt="archive"
                 onClick={() => navigate(`/detailposts/${post[0].id}`)}
-              ></img>
+              />
             ) : post.length === 0 ? (
               <>
                 <div className="mypage-flex-box">

@@ -13,11 +13,32 @@ import Footer from '../../../Components/Footer/Footer';
 import Header from '../../../Components/Header/Header';
 import ProfilePencil from '../../../static/components/ProfilePencil';
 //styled import
-import './MyPage.css';
-import styled from 'styled-components';
-import { FadeOn } from '../../Feed/FeedStyled';
-import { HiDotsHorizontal } from 'react-icons/hi';
-import { ArchiveArrow } from './Archive/ArchiveStyled';
+import "./MyPage.css";
+import styled from "styled-components";
+import { FadeOn,SlideBottom } from "../../Feed/FeedStyled";
+import { HiDotsHorizontal } from "react-icons/hi";
+import { ArchiveArrow } from "./Archive/ArchiveStyled";
+import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
+import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
+import ViewMoreHidden from "../../../static/components/ViewMoreHidden";
+import ViewMoreCC from "../../../static/components/ViewMoreCC";
+import ViewMoreQuit from "../../../static/components/ViewMoreQuit";
+import ViewMoreLogOut from "../../../static/components/ViewMoreLogOut";
+
+const MyPageModal = styled.div`
+  width: 100%;
+  position: fixed;
+  bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 20;
+  background-color: #f8f8f8;
+  animation-name: ${SlideBottom};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`
 
 const MyPageDiv = styled.div`
   display: flex;
@@ -33,12 +54,12 @@ const MyPageDiv = styled.div`
 
 const MyPage = () => {
   const [loading, setLoding] = useState(false);
+  const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
-  const [modal, setModal] = useState(false);
 
   const FirstText = `아직 ${
     userInfo.nickname ? userInfo.nickname : '@@@'
@@ -62,29 +83,54 @@ const MyPage = () => {
             className="mypage-three-dots-icon"
             // onClick={() => navigate("/updatemypage")}
             onClick={() => {
-              setModal(true);
+              setViewMoreModal(true);
             }}
           />
         </div>
 
-        {modal ? (
+        {viewMoreModal ? (
           <>
             <div
-              className="modal-background"
+              className="mypage-modal-background"
               onClick={() => {
-                setModal(false);
+                setViewMoreModal(false);
               }}
             ></div>
-            <div class="modal-box">
-              Hello, this is modal window
-              <button
+
+            <MyPageModal>
+              <div
                 onClick={() => {
-                  setModal(false);
+                  setViewMoreModal(false);
                 }}
+                className="mypage-modal-bar"
               >
-                X
-              </button>
-            </div>
+                <ViewMoreRowBar />
+              </div>
+              <div className="mypage-wrap-view-more">
+                <div className="mypage-modal-alarm-area">
+                  <ViewMoreAlarm />
+                  <div className="mypage-modal-alarm-text">알림 설정</div>
+                </div>
+                <div className="mypage-modal-hidden-area">
+                  <ViewMoreHidden />
+                  <div className="mypage-modal-hidden-text">가려진 항목</div>
+                </div>
+                <div className="mypage-modal-cc-area">
+                  <ViewMoreCC />
+                  <div className="mypage-modal-cc-text">고객센터</div>
+                </div>
+                <div className="mypage-modal-quit-area">
+                  <ViewMoreQuit />
+                  <div className="mypage-modal-quit-text">
+                    지구 그만 지키기 (탈퇴하기)
+                  </div>
+                </div>
+                <div className="mypage-modal-logout-area">
+                  <ViewMoreLogOut />
+                  <div className="mypage-modal-logout-text">로그아웃</div>
+                </div>
+              </div>
+            </MyPageModal>
           </>
         ) : null}
 

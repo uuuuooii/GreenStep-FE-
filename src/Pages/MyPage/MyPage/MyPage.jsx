@@ -37,6 +37,7 @@ const MyPage = () => {
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
+  const [modal, setModal] = useState(false);
 
   const FirstText = `아직 ${
     userInfo.nickname ? userInfo.nickname : "@@@"
@@ -58,9 +59,33 @@ const MyPage = () => {
         <div className="mypage-three-dots-area">
           <HiDotsHorizontal
             className="mypage-three-dots-icon"
-            onClick={() => navigate("/updatemypage")}
+            // onClick={() => navigate("/updatemypage")}
+            onClick={() => {
+              setModal(true);
+            }}
           />
         </div>
+
+        {modal ? (
+          <>
+            <div
+              className="modal-background"
+              onClick={() => {
+                setModal(false);
+              }}
+            ></div>
+            <div class="modal-box">
+              Hello, this is modal window
+              <button
+                onClick={() => {
+                  setModal(false);
+                }}
+              >
+                X
+              </button>
+            </div>
+          </>
+        ) : null}
 
         {!loading ? (
           <>

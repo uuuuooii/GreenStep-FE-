@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { RiKakaoTalkFill } from "react-icons/ri";
+import styled from 'styled-components';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 import logo from './kakao_login_medium_wide.png';
+import { GoPrimitiveDot } from 'react-icons/go';
 
 export const LoginBody = styled.div`
   width: 100%;
@@ -17,7 +18,7 @@ export const ButtonBody = styled.div`
   padding: 5px;
 
   /* margin: 3100px 62px 63px 62px; */
-/* padding: 60px 0; */
+  /* padding: 60px 0; */
 `;
 export const KakaoIcon = styled(RiKakaoTalkFill)`
   position: absolute;
@@ -29,6 +30,7 @@ export const KakaoLink = styled.a`
   text-decoration: none;
   /* color: black; */
   height: 50px;
+  margin-bottom: 100px;
 `;
 export const LDiv = styled.div`
   /* position: absolute; */
@@ -48,15 +50,47 @@ export const LDiv = styled.div`
   z-index: 999;
 `;
 export const MarginDIv = styled.div`
-  padding: 60px 0;
-`
+  height: 100vh;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+`;
 export const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
   width: 250px;
   /* margin: 3100px 62px 63px 62px; */
 `;
-
+export const OtherDiv = styled.div`
+  height: 100vh;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+export const Divider = styled.div`
+  width: 100%;
+  height: 5px;
+`;
+export const DotDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 2%;
+  bottom: 50%;
+  transform: translateY(50%);
+`;
+export const PageDot = styled(GoPrimitiveDot)`
+  margin: 5px 0;
+  color: #84ca79;
+  border: ${(props) =>
+    props.num === props.check ? '1px solid #84CA79' : 'none'};
+  border-radius: 50%;
+`;
 export const FirstArea = styled.div`
   height: 100vh;
   /* border: 1px solid black; */
@@ -114,8 +148,7 @@ export const FirstText = styled.div`
   text-align: center;
   color: #84ca79;
   max-width: 300px;
-  position: absolute;
-  top: 914px;
+
   white-space: pre-wrap;
 `;
 export const SecondText = styled.div`
@@ -126,8 +159,7 @@ export const SecondText = styled.div`
   line-height: 30px;
   text-align: center;
   color: #84ca79;
-  position: absolute;
-  top: 1533px;
+
   max-width: 300px;
   white-space: pre-wrap;
 `;
@@ -139,10 +171,9 @@ export const ThirdText = styled.div`
   line-height: 30px;
   text-align: center;
   color: #84ca79;
-  position: absolute;
+
   max-width: 300px;
   white-space: pre-wrap;
-  top: 2124px;
 `;
 export const FourthText = styled.div`
   font-family: 'Apple SD Gothic Neo';
@@ -154,8 +185,6 @@ export const FourthText = styled.div`
   max-width: 300px;
   text-align: center;
   color: #84ca79;
-  position: absolute;
-  top: 2665px;
 `;
 export const A1 = styled.div`
   width: 100%;

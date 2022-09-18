@@ -60,14 +60,10 @@ const MyPage = () => {
         <div className="mypage-three-dots-area">
           <HiDotsHorizontal
             className="mypage-three-dots-icon"
-<<<<<<< HEAD
-            onClick={() => navigate('/updatemypage')}
-=======
             // onClick={() => navigate("/updatemypage")}
             onClick={() => {
               setModal(true);
             }}
->>>>>>> 205d55dd7a25bee2c896636e9d14000e539e3179
           />
         </div>
 

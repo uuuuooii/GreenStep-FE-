@@ -33,6 +33,7 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
+  const [img,setImg] = useState('')
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const UpdateMyPage = ({ onClickToast }) => {
   const updateInfo = {
     name: name,
     nickname: nickname,
-    profilePhoto: userInfo.profilePhoto,
+    profilePhoto: img,
     acceptMail: acceptMail,
   };
   const imgList = [
@@ -62,6 +63,7 @@ const UpdateMyPage = ({ onClickToast }) => {
     setLoding(false);
     setName(userInfo.name);
     setNickname(userInfo.nickname);
+    setImg(userInfo.profilePhoto)
   }, []);
 
   return (
@@ -94,7 +96,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                   { connection ?
                   <img
                     className="updatemypage-profile-image"
-                    src={userInfo.profilePhoto}
+                    src={img}
                     alt="profile"
                   /> : <img
                     className="updatemypage-profile-image"

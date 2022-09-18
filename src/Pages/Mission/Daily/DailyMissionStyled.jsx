@@ -57,7 +57,7 @@ export const ChallengeBox = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 0 16px;
+  margin: 10px 16px;
 `;
 
 export const ChallengeTextArea = styled.div`

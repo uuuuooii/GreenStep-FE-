@@ -24,7 +24,6 @@ import ViewMoreHidden from "../../../static/components/ViewMoreHidden";
 import ViewMoreCC from "../../../static/components/ViewMoreCC";
 import ViewMoreQuit from "../../../static/components/ViewMoreQuit";
 import ViewMoreLogOut from "../../../static/components/ViewMoreLogOut";
-import Slide from "react-reveal/Slide";
 
 const MyPageModal = styled.div`
   width: 100%;
@@ -77,7 +76,6 @@ const MyPage = () => {
   }, []);
   return (
     <>
-      <Header />
       <MyPageDiv>
         <div className="mypage-three-dots-area">
           <HiDotsHorizontal

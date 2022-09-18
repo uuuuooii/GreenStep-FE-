@@ -23,6 +23,7 @@ import ViewMoreHidden from "../../../static/components/ViewMoreHidden";
 import ViewMoreCC from "../../../static/components/ViewMoreCC";
 import ViewMoreQuit from "../../../static/components/ViewMoreQuit";
 import ViewMoreLogOut from "../../../static/components/ViewMoreLogOut";
+import Slide from "react-reveal/Slide";
 
 const MyPageDiv = styled.div`
   display: flex;
@@ -80,6 +81,7 @@ const MyPage = () => {
                 setViewMoreModal(false);
               }}
             ></div>
+            {/* <Slide bottom> */}
             <div class="mypage-modal-box">
               <div
                 onClick={() => {
@@ -114,6 +116,7 @@ const MyPage = () => {
                 </div>
               </div>
             </div>
+            {/* </Slide> */}
           </>
         ) : null}
 

@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import instance from '../../../Redux/modules/instance';
 //modules import
 import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
+//component import
+import Toggle from '../../../Components/Toggle/Toggle';
 //styled import
 import { FadeOn } from '../../Feed/FeedStyled';
 import styled from 'styled-components';
@@ -26,9 +28,12 @@ const UpdateMyPageDiv = styled.div`
 const URL = process.env.REACT_APP_URL;
 
 const UpdateMyPage = ({ onClickToast }) => {
+  const [connection,setConnection] = useState(false)
+  const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
+  const [img,setImg] = useState('')
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -40,9 +45,17 @@ const UpdateMyPage = ({ onClickToast }) => {
   const updateInfo = {
     name: name,
     nickname: nickname,
-    profilePhoto: userInfo.profilePhoto,
+    profilePhoto: img,
     acceptMail: acceptMail,
   };
+  const imgList = [
+    '/images/고양이.png',
+    '/images/돼지.png',
+    '/images/부엉이.png',
+    '/images/새.png',
+    '/images/토끼.png',
+    '/images/펭귄.png',
+  ]
 
   useEffect(() => {
     setLoding(true);
@@ -50,6 +63,7 @@ const UpdateMyPage = ({ onClickToast }) => {
     setLoding(false);
     setName(userInfo.name);
     setNickname(userInfo.nickname);
+    setImg(userInfo.profilePhoto)
   }, []);
 
   return (
@@ -78,22 +92,21 @@ const UpdateMyPage = ({ onClickToast }) => {
           <div className="updatemypage-image-email-input-wrap">
             {!loading ? (
               <>
-
-
-
-              <div className='updatemypage-profile-div'>
-                <img
-                  className="updatemypage-profile-image"
-                  src={userInfo.profilePhoto}
-                  alt="profile"
-                />
-                <div className='updatemypage-profile-pencil-div'>
-                  <ProfilePencil/>
+                <div className="updatemypage-profile-div">
+                  { connection ?
+                  <img
+                    className="updatemypage-profile-image"
+                    src={img}
+                    alt="profile"
+                  /> : <img
+                    className="updatemypage-profile-image"
+                    src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
+                    alt="profile"
+                  />  }
+                  <div className="updatemypage-profile-pencil-div">
+                    <ProfilePencil />
+                  </div>
                 </div>
-                </div>
-
-
-  
               </>
             ) : (
               <>
@@ -110,36 +123,35 @@ const UpdateMyPage = ({ onClickToast }) => {
                 </div>
               </>
             )}
-        
 
             <div className="updatemypage-input-area">
-
-            <div className='updatemypage-button-area'>
-
-            <div className='updatemypage-input-text'>
-                    프로필사진
+              <div className="updatemypage-button-area">
+                <div className="updatemypage-input-text">프로필사진</div>
+                <div className="updatemypage-toggle-area">
+                  <div className="updatemypage-toggle-text">
+                    카카오톡 연동 사진
                   </div>
-<div className='updatemypage-toggle-area'>
-<div className='updatemypage-toggle-text'>
-  카카오톡 연동 사진
-</div>
-  <div className='updatemypage-toggle-button-area'>
-    
-  </div>
-</div>
 
-            </div>
-            <div className='updatemypage-input-text-div'>
-                  <div className='updatemypage-input-text'>
-                    이름
+                  <div
+                    className="updatemypage-toggle-button-area"
+                    onClick={() => {
+                      setConnection(!connection);
+                      setClick(true);
+                    }}
+                  >
+                    <Toggle
+                      background={connection ? '#84CA79' : '#d9d9d9'}
+                      click={click}
+                      check={connection}
+                    />
                   </div>
                 </div>
+              </div>
+              <div className="updatemypage-input-text-div">
+                <div className="updatemypage-input-text">이름</div>
+              </div>
 
               <div className="updatemypage-input-div">
-
-
-             
-
                 <input
                   className="updatemypage-input"
                   onChange={(e) => setName(e.target.value)}
@@ -149,13 +161,10 @@ const UpdateMyPage = ({ onClickToast }) => {
                 />
                 <HiPencil className="updatemypage-pencil-icon" />
               </div>
-              <div className='updatemypage-input-text-div'>
-                  <div className='updatemypage-input-text'>
-                    닉네임
-                  </div>
-                </div>
+              <div className="updatemypage-input-text-div">
+                <div className="updatemypage-input-text">닉네임</div>
+              </div>
               <div className="updatemypage-input-div">
-                
                 <input
                   className="updatemypage-input"
                   onChange={(e) => setNickname(e.target.value)}
@@ -164,19 +173,14 @@ const UpdateMyPage = ({ onClickToast }) => {
                   maxLength={8}
                 />
                 <HiPencil className="updatemypage-pencil-icon" />
-                
               </div>
-              <div className='updatemypage-input-text-div'>
-                  <div className='updatemypage-input-text'>
-                    카카오톡 연동 이메일
-                  </div>
+              <div className="updatemypage-input-text-div">
+                <div className="updatemypage-input-text">
+                  카카오톡 연동 이메일
                 </div>
+              </div>
 
-                <div className="updatemypage-email-area">
-                  {userInfo.email}
-                </div>
-
-
+              <div className="updatemypage-email-area">{userInfo.email}</div>
             </div>
           </div>
         </div>

@@ -160,9 +160,7 @@ const Login = () => {
       outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
     };
   }, []);
-// useEffect(()=>{
-//   document.querySelector('body').style.overflow = 'hidden'
-// })
+
   return (
     <>
       {/* 1차디자인 */}

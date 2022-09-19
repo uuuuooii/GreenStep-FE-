@@ -41,19 +41,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header/>
         {/* <Kakaoshare /> */}
         <SetPullToRefresh />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/users/kakao/callback" element={<Loding />} />
+          <Route path="/users/kakao/callback" element={<Loding />} />   
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/alert" element={<Alert />} />
           <Route
             path="/modal"
-            element={<Modal onClickToast={onClickToast} />}
+            element={<Modal onClickToast={onClickToast} />}   
           />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
@@ -68,7 +68,7 @@ function App() {
           />
           <Route
             path="/upload/:id"
-            element={<Upload onClickToast={onClickToast} />}
+            element={<Upload onClickToast={onClickToast} />} 
           />
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />

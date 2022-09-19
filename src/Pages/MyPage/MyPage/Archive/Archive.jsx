@@ -40,6 +40,7 @@ const Archive = ({ Header }) => {
   const [delState, setDelState] = useState(false);
   const [delArr, setDelArr] = useState([]);
   const [modal, setModal] = useState(false);
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -47,7 +48,7 @@ const Archive = ({ Header }) => {
   for (let i = 0; i < 20; i++) {
     SkeletonList.push(i);
   }
-  const data = useSelector((state) =>
+  const serverData = useSelector((state) =>
     param === 'certification'
       ? state.userInfo.certification
       : state.userInfo.post
@@ -66,14 +67,16 @@ const Archive = ({ Header }) => {
     param === 'certification'
       ? dispatch(getCertThunk())
       : dispatch(getPostThunk());
+    setData(serverData);
     setLoding(false);
-  }, []);
-  console.log(data, param);
+  }, [dispatch]);
+  console.log(param);
   return (
     <>
       {Header}
 
       <WrapArchive>
+        {/* <button onClick={()=>instance.get('/profiles/setting/hidden-missions').then((res)=>console.log(res))}>테스트</button> */}
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"
@@ -86,7 +89,7 @@ const Archive = ({ Header }) => {
           <div className="archive-top-button">
             {!delState ? (
               <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
-                {param === 'post' ? '숨기기' : '숨기기'}
+                {param === 'post' ? '삭제' : '숨기기'}
               </ArchiveSelectDiv>
             ) : (
               <div
@@ -141,7 +144,13 @@ const Archive = ({ Header }) => {
               />
               <DeleteDiv
                 display={delState ? 'flex' : 'none'}
-                onClick={() => setDelArr([...delArr, data.id])}
+                onClick={() =>
+                  delArr.includes(data[0].id)
+                    ? setDelArr([])
+                    : setDelArr([...delArr, data[0].id])
+                }
+                check={delArr}
+                num={data[0].id}
               >
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}
               </DeleteDiv>
@@ -171,9 +180,20 @@ const Archive = ({ Header }) => {
                 <DeleteBottomText
                   onClick={() => {
                     param === 'post'
-                      ? instance.delete(`/feed`, { data: delArr })
-                      : instance.delete(`/profiles/missions`, { data: delArr });
+                      ? instance
+                          .delete(`/feed`, { data: delArr })
+                          .then(() =>
+                            setData([
+                              ...data.filter(
+                                (item) => !delArr.includes(item.id)
+                              ),
+                            ])
+                          )
+                      : instance
+                          .patch(`/profiles/missions`, { data: delArr })
+                          .then((res) => console.log(res));
                     setModal(!modal);
+                    setDelArr([]);
                   }}
                 >
                   {param === 'certification'

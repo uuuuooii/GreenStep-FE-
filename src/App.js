@@ -73,7 +73,7 @@ function App() {
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/viewmoremodal" element={<ViewMoreModal />} />
-          <Route path="/archive" element={<Archive />} />
+          <Route path="/archive" element={<Archive onClickToast={onClickToast} />} />
           <Route
             path="/updatemypage"
             element={<UpdateMyPage onClickToast={onClickToast} />}

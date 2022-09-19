@@ -28,12 +28,12 @@ const UpdateMyPageDiv = styled.div`
 const URL = process.env.REACT_APP_URL;
 
 const UpdateMyPage = ({ onClickToast }) => {
-  const [connection,setConnection] = useState(false)
+  const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
-  const [img,setImg] = useState('')
+  const [img, setImg] = useState('');
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -55,15 +55,21 @@ const UpdateMyPage = ({ onClickToast }) => {
     '/images/새.png',
     '/images/토끼.png',
     '/images/펭귄.png',
-  ]
-
+  ];
+  console.log(userInfo);
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
     setLoding(false);
     setName(userInfo.name);
     setNickname(userInfo.nickname);
-    setImg(userInfo.profilePhoto)
+    if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
+      setImg(userInfo.profilePhoto);
+      setConnection(true);
+    }else if(userInfo.profilePhoto && imgList.includes(userInfo.profilePhoto)){
+      setImg(userInfo.profilePhoto);
+      setConnection(false)
+    }
   }, []);
 
   return (
@@ -82,7 +88,6 @@ const UpdateMyPage = ({ onClickToast }) => {
               onClickToast('등록되었습니다.');
               instance
                 .patch(`/users/info`, updateInfo)
-                .then((res) => console.log(res));
             }}
           >
             저장
@@ -93,16 +98,19 @@ const UpdateMyPage = ({ onClickToast }) => {
             {!loading ? (
               <>
                 <div className="updatemypage-profile-div">
-                  { connection ?
-                  <img
-                    className="updatemypage-profile-image"
-                    src={img}
-                    alt="profile"
-                  /> : <img
-                    className="updatemypage-profile-image"
-                    src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
-                    alt="profile"
-                  />  }
+                  {connection||imgList.includes(img) ? (
+                    <img
+                      className="updatemypage-profile-image"
+                      src={img}
+                      alt="profile"
+                    />
+                  ) :  (
+                    <img
+                      className="updatemypage-profile-image"
+                      src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                      alt="profile"
+                    />
+                  )}
                   <div className="updatemypage-profile-pencil-div">
                     <ProfilePencil />
                   </div>

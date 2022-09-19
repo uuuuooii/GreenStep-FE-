@@ -15,7 +15,13 @@ export const ToggleButton = styled.div`
   background-color: white;
   border-radius: 10px;
   margin: 2px 3px;
-  animation-name: ${(props)=>props.click&&props.check ?ToggleOn : props.click&&!props.check ? ToggleOff : null };
+  transform: ${(props)=>props.check ? "translateX(65%)" : null};
+  animation-name: ${(props) =>
+    props.click && props.check
+      ? ToggleOn
+      : props.click && !props.check
+      ? ToggleOff
+      : null};
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

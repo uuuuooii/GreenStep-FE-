@@ -54,7 +54,7 @@ const Login = () => {
       outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
     };
   }, []);
-  console.log(scrollIndex);
+
   useEffect(() => {
     const wheelHandler = (e) => {
       e.preventDefault();

@@ -33,8 +33,10 @@ const Alarm = () => {
           <p className="alarmtitle1">연동된 이메일</p>
           <div className="alarmwrap">
             <div>
-              <p className="alarelement">{userInfo.email}</p>
-              <p>변경</p>
+              <p className="alarelement1">{userInfo.email}</p>
+              <a href="#" className="alaema">
+                변경
+              </a>
               <p className="alarelement">
                 이메일 알림 수신 동의
                 <label class="switch1">

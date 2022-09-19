@@ -100,11 +100,28 @@
 }
 
 .alarelement {
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #50674C;
+    padding: 0px 0px 0px 0px;
+}
+
+.alarelement1 {
     position: relative;
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
     color: #50674C;
+    padding: 0px 0px 0px 0px;
+}
+
+.alaema {
+    position: absolute;
+    margin: -35px 0px 0px 275px;
+    color: #84CA79;
+    font-size: 15px;
 }
 
 /* toggle switich */
@@ -159,7 +176,7 @@
     width: 33px;
     height: 25.19px;
     border-radius: 25px;
-    margin: 0px 0px 0px 220px;
+    margin: 0px 0px 0px 207px;
 }
 
 

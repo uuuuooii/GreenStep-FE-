@@ -26,6 +26,7 @@ import instance from "./Redux/modules/instance";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
+import useToast from "./hooks/useToast";
 import { ToastStyle, SecondToastStyle } from "./Components/Toast/Toast";
 import {
   ToastsContainer,
@@ -35,16 +36,7 @@ import {
 import Secession from "./Pages/Secession/Secession";
 
 function App() {
-  const [toastNum, setToastNum] = useState(0);
-  const onClickToast = (text, num) => {
-    if (num == undefined) {
-      setToastNum(0);
-      ToastsStore.success(text);
-    } else {
-      setToastNum(num);
-      ToastsStore.success(text);
-    }
-  };
+  const [toastNum, onClickToast] = useToast(0);
 
   return (
     <>
@@ -82,7 +74,10 @@ function App() {
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/viewmoremodal" element={<ViewMoreModal />} />
-          <Route path="/archive" element={<Archive />} />
+          <Route
+            path="/archive"
+            element={<Archive onClickToast={onClickToast} />}
+          />
           <Route
             path="/updatemypage"
             element={<UpdateMyPage onClickToast={onClickToast} />}

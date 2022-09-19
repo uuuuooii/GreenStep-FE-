@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Apple SD Gothic Neo";
-  src: url("../../../Components/fonts/AppleSDGothicNeoL.ttf");
+  font-family: 'Apple SD Gothic Neo';
+  src: url('../../../Components/fonts/AppleSDGothicNeoL.ttf');
 }
 .whole-mypage {
   /* background-color: #f5f5f5; */
@@ -12,13 +12,102 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10px;
-  margin: 0px 0px 6px 0px;
+  padding-right: 12px;
+  margin: 2px 0px 5px 0px;
 }
 
 .mypage-three-dots-icon {
   font-size: 28px;
   color: #ade2e9;
+}
+
+/* 모달창 배경 */
+.mypage-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(44, 44, 44, 0.322);
+  z-index: 10;
+}
+
+/* 모달창 영역 */
+.mypage-modal-bar {
+  margin: 0px auto;
+}
+
+.mypage-wrap-view-more {
+  margin: 50px 0px 44px 34px;
+}
+.mypage-modal-alarm-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-alarm-text {
+  margin-left: 16px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-hidden-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.mypage-modal-hidden-text {
+  margin-left: 15px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-cc-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-cc-text {
+  margin-left: 16px;
+  color: #84ca79;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.mypage-modal-quit-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.mypage-modal-quit-text {
+  margin-left: 16px;
+  color: #868686;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.mypage-modal-logout-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+  align-items: center;
+}
+
+.mypage-modal-logout-text {
+  margin-left: 16px;
+  color: #6dbac5;
+  font-size: 16px;
+  margin-bottom: 2px;
 }
 
 .mypage-flex-box {
@@ -29,7 +118,7 @@
   width: 100%;
 }
 .mypage-flex-text {
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -46,8 +135,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
-  /* margin: 0px 0px 28px 30px; */
 }
 
 .image-area {
@@ -55,12 +142,26 @@
   height: 100px;
   background: #d9d9d9;
   border-radius: 10px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   object-fit: cover;
   box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.15);
 }
-
+.image-div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.image-pencil-div {
+  width: 32px;
+  height: 22px;
+  position: absolute;
+  transform: translateX(50%);
+}
 .nick-and-email-area {
+  margin: 10px 0px 10px 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +172,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -79,6 +180,7 @@
   text-align: center;
   color: #84ca79;
   margin-bottom: 7px;
+  margin-top: 6px;
   /* font-family: "Apple SD Gothic Neo" */
 }
 
@@ -87,7 +189,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;

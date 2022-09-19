@@ -12,7 +12,9 @@ import {
   SlideRightDiv,
 } from './ModalStyled';
 //modules import
+import instance from '../../Redux/modules/instance';
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
+
 //component import
 import FirstModal from './Modal/FirstModal/FirstModal';
 import SecondModal from './Modal/SecondModal/SecondModal';
@@ -22,6 +24,7 @@ import LoadingBar from '../../Components/LoadingBar/LoadingBar';
 
 
 const Modal = ({ onClickToast }) => {
+
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
@@ -31,7 +34,6 @@ const Modal = ({ onClickToast }) => {
   const [check, setCheck] = useState(0);
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
-
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userInfo.userInfo);
 

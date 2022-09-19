@@ -1,7 +1,7 @@
+//react import
 import React, { useState, useEffect } from "react";
 import instance from "../../Redux/modules/instance";
 import { useInView } from "react-intersection-observer";
-import ClapButton from "react-clap-button";
 //components import
 import Medal from "./Medal";
 import ClapIcon from "../../static/components/ClapIcon";

@@ -32,6 +32,7 @@ import {
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import Secession from "./Pages/Secession/Secession";
 
 function App() {
   const [toastNum, setToastNum] = useState(0);
@@ -95,6 +96,7 @@ function App() {
           />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/secession" element={<Secession />} />
           <Route path="*" element={<Error />} />
         </Routes>
         {toastNum === 0 ? (

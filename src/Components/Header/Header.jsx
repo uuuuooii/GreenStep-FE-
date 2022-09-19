@@ -21,6 +21,7 @@ const Header = () => {
     "/archive/post",
     "/secession",
     "*",
+    "/alarm",
   ];
   const handleNavigation = useCallback(
     (e) => {

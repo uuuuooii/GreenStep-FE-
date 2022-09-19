@@ -1,5 +1,6 @@
 //react import
 import React, { useEffect, useState, useCallback } from "react";
+import { useRef } from "react";
 
 import styled from "styled-components";
 import LoginBody1 from "../../static/components/LoginBody1";
@@ -12,8 +13,22 @@ import {
   KakaoLink,
   LDiv,
   MarginDIv,
+  Divider,
+  A4,
+  DotDiv,
+  PageDot,
+  LogoArea,
+  Logo,
+  OtherDiv,
+  FirstArea,
+  FirstText,
+  SecondArea,
+  SecondText,
+  ThirdArea,
+  ThirdText,
+  FourthArea,
+  FourthText,
 } from "./LoginStyled";
-import logo from "./kakao_login_medium_wide.png";
 
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
@@ -22,9 +37,136 @@ const text2 =
 const text3 = "다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.";
 const text4 = '당신이 그릴 스텝, \n "내가 그린 스텝" \n 지금 시작해볼까요?';
 const Login = () => {
+  const dotArr = [1, 2, 3, 4, 5];
+  const pageHeight = window.innerHeight;
+  const [scrollIndex, setScrollIndex] = useState(1);
+  const DIVIDER_HEIGHT = 5;
+  const outerDivRef = useRef();
+  useEffect(() => {
+    document.querySelector("body").style.overflow = "hidden";
+    const wheelHandler = (e) => {
+      e.preventDefault();
+      // 스크롤 행동 구현
+    };
+    const outerDivRefCurrent = outerDivRef.current;
+    outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+    return () => {
+      outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+    };
+  }, []);
+
+  useEffect(() => {
+    const wheelHandler = (e) => {
+      e.preventDefault();
+      const { deltaY } = e;
+      const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
+      // 화면 세로길이, 100vh와 같습니다.
+
+      if (deltaY > 0) {
+        // 스크롤 내릴 때
+        if (scrollTop >= 0 && scrollTop < pageHeight) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight + DIVIDER_HEIGHT,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(2);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(3);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 3 + DIVIDER_HEIGHT * 3,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(4);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 4 + DIVIDER_HEIGHT * 4,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(5);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 5 + DIVIDER_HEIGHT * 5,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(6);
+        } else {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 6 + DIVIDER_HEIGHT * 6,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(6);
+        }
+      } else {
+        // 스크롤 올릴 때
+        if (scrollTop >= 0 && scrollTop < pageHeight) {
+          outerDivRef.current.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(1);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+          outerDivRef.current.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(1);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight + DIVIDER_HEIGHT,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(2);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(3);
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 3 + DIVIDER_HEIGHT * 3,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(4);
+        } else {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 4 + DIVIDER_HEIGHT * 4,
+            left: 0,
+            behavior: "smooth",
+          });
+          setScrollIndex(5);
+        }
+      }
+    };
+    const outerDivRefCurrent = outerDivRef.current;
+    outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+    return () => {
+      outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+    };
+  }, []);
+
   return (
     <>
-      <A4>
+      {/* 1차디자인 */}
+      {/* <A4> */}
+      {/* 풀페이지 */}
+      <OtherDiv ref={outerDivRef}>
         <LogoArea>
           <LDiv>
             <LoginBody1 />
@@ -50,153 +192,29 @@ const Login = () => {
             </ButtonBody>
           </KakaoLink>
         </MarginDIv>
-      </A4>
+        <DotDiv>
+          {dotArr.map((item) => (
+            <PageDot
+              key={item}
+              check={scrollIndex}
+              num={item}
+              onClick={() => {
+                setScrollIndex(item);
+                outerDivRef.current.scrollTo({
+                  top: pageHeight * item + DIVIDER_HEIGHT * item,
+                  left: 0,
+                  behavior: "smooth",
+                });
+              }}
+            />
+          ))}
+        </DotDiv>
+      </OtherDiv>
+      {/* 풀페이지 */}
+
+      {/* </A4> */}
     </>
   );
 };
 
 export default Login;
-
-const Logo = styled.img.attrs({
-  src: `${logo}`,
-})`
-  width: 250px;
-  /* margin: 3100px 62px 63px 62px; */
-`;
-
-const FirstArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-
-const SecondArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-const ThirdArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-const FourthArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-const LogoArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-
-const FirstText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #84ca79;
-  max-width: 300px;
-  position: absolute;
-  top: 914px;
-  white-space: pre-wrap;
-`;
-const SecondText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #84ca79;
-  position: absolute;
-  top: 1533px;
-  max-width: 300px;
-  white-space: pre-wrap;
-`;
-const ThirdText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #84ca79;
-  position: absolute;
-  max-width: 300px;
-  white-space: pre-wrap;
-  top: 2124px;
-`;
-const FourthText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  white-space: pre-wrap;
-  max-width: 300px;
-  text-align: center;
-  color: #84ca79;
-  position: absolute;
-  top: 2665px;
-`;
-const A1 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: red;
-`;
-const A2 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: yellow;
-`;
-const A3 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: blue;
-`;
-const A4 = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 3200px;
-  background-image: url("data:image/svg+xml, %3Csvg width='375' height='3200' viewBox='0 0 375 3200' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='375' height='3200' fill='url(%23paint0_linear_665_12829)' fill-opacity='0.7' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_665_12829' x1='187.5' y1='0' x2='187.5' y2='3200' gradientUnits='userSpaceOnUse' %3E%3Cstop stop-color='%2384CA79' /%3E%3Cstop offset='0.276042' stop-color='%2394D28B' stop-opacity='0.7' /%3E%3Cstop offset='1' stop-color='%23B2E2AB' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-`;

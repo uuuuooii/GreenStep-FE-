@@ -19,20 +19,21 @@ import {
   IconDiv,
   ButtonText,
   TotalButtonArea,
-  PostShareButton
-} from'../../Mission/Upload/UploadStyled'
+  PostShareButton,
+} from '../../Mission/Upload/UploadStyled';
+import DoneClap from '../../../static/components/DoneClap';
 
 const DetailPosts = ({ onClickToast }) => {
   const navigate = useNavigate();
-  const [loading, setLoding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const Param = Number(useParams().id);
   const detailPost = useSelector((state) =>
-    // console.log(state.userInfo.post)
     state.userInfo.post.length > 1
       ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
+
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
@@ -43,9 +44,9 @@ const DetailPosts = ({ onClickToast }) => {
   });
 
   useEffect(() => {
-    setLoding(true);
+    setLoading(true);
     dispatch(getPostThunk());
-    setLoding(false);
+    setLoading(false);
   }, []);
 
   return (
@@ -54,9 +55,22 @@ const DetailPosts = ({ onClickToast }) => {
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
             <div className="detail-posts-mission-name-and-tag-area">
-              <div className="detail-posts-mission-name-text">
-                {detailPost ? detailPost.missionName : 'Mission Name'}
+              <div className="detail-posts-mission-name-area">
+                <div className="detail-posts-flex-position">
+                  <div className="detail-posts-mission-name-text">
+                    {detailPost ? detailPost.missionName : 'Mission Name'}
+                  </div>
+                </div>
+                <div className="detail-posts-clap-area">
+                  <div className="detail-posts-clap-point">
+                    {detailPost.clapCount}
+                  </div>
+                  <div className="detail-posts-flex-position">
+                    <DoneClap />
+                  </div>
+                </div>
               </div>
+
               <div className="detail-posts-mission-tag-text">
                 {detailPost ? detailPost.tag : '#Tag'}
               </div>
@@ -64,6 +78,7 @@ const DetailPosts = ({ onClickToast }) => {
             <div className="detail-posts-mission-img-div">
               <div className="detail-posts-mission-icon-div">
                 <div
+                  className="detail-posts-mission-icon"
                   onClick={() =>
                     IdArr[0] == Param
                       ? onClickToast('페이지가 없습니다')
@@ -75,6 +90,7 @@ const DetailPosts = ({ onClickToast }) => {
                   <PreviousIcon />
                 </div>
                 <div
+                  className="detail-posts-mission-icon"
                   onClick={() =>
                     IdArr[IdArr.length - 1] == Param
                       ? onClickToast('마지막 페이지 입니다.')
@@ -102,19 +118,19 @@ const DetailPosts = ({ onClickToast }) => {
               </p>
             </div>
             <TotalButtonArea>
-
-                <PostShareButton>
-                  <ButtonArea>
-                    <IconDiv>
-                      <KakaoReactIcon />
-                    </IconDiv>{' '}
-                    <ButtonText>카카오 공유하기</ButtonText>
-                  </ButtonArea>
-                </PostShareButton>
-              </TotalButtonArea>
+              <PostShareButton>
+                <ButtonArea>
+                  <IconDiv>
+                    <KakaoReactIcon />
+                  </IconDiv>{' '}
+                  <ButtonText>카카오 공유하기</ButtonText>
+                </ButtonArea>
+              </PostShareButton>
+            </TotalButtonArea>
           </div>
         </Slide>
-      ) : (
+      ) :
+       (
         <LoadingBar />
       )}
     </>

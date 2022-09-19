@@ -1,21 +1,21 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 //modules import
 import {
   getPostThunk,
   getCertThunk,
-} from "../../../../Redux/modules/userInfoSlice";
-import instance from "../../../../Redux/modules/instance";
+} from '../../../../Redux/modules/userInfoSlice';
+import instance from '../../../../Redux/modules/instance';
 //styled import
-import styled from "styled-components";
-import "./Archive.css";
-import TrashIcon from "../../../../static/components/Archive/TrashIcon";
-import Cancel from "../../../../static/components/Archive/Cancel";
-import BackMypage from "../../../../static/components/Archive/BackMypage";
-import Slide from "react-reveal/Slide";
-import { FadeOn } from "../../../Feed/FeedStyled";
+import styled from 'styled-components';
+import './Archive.css';
+import TrashIcon from '../../../../static/components/Archive/TrashIcon';
+import Cancel from '../../../../static/components/Archive/Cancel';
+import BackMypage from '../../../../static/components/Archive/BackMypage';
+import Slide from 'react-reveal/Slide';
+import { FadeOn } from '../../../Feed/FeedStyled';
 
 import {
   ImageCard,
@@ -32,7 +32,7 @@ import {
   DeleteBottomText,
   DeleteCancelButton,
   ModalArea,
-} from "./ArchiveStyled";
+} from './ArchiveStyled';
 
 const Archive = ({ Header }) => {
   const param = useParams().id;
@@ -40,6 +40,7 @@ const Archive = ({ Header }) => {
   const [delState, setDelState] = useState(false);
   const [delArr, setDelArr] = useState([]);
   const [modal, setModal] = useState(false);
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -47,29 +48,40 @@ const Archive = ({ Header }) => {
   for (let i = 0; i < 20; i++) {
     SkeletonList.push(i);
   }
-  const data = useSelector((state) =>
-    param === "certification"
+  const serverData = useSelector((state) =>
+    param === 'certification'
       ? state.userInfo.certification
       : state.userInfo.post
   );
+  // const PostNavigate = (id) => {
+  //   if(param==="post")
+  //   navigate(
+  //     param === "post" || data[0].OnFeed
+  //       ? `/detailposts/${data[0].id}`
+  //       : `/upload/${data[0].id}`
+  //   )
+  // }
 
   useEffect(() => {
     setLoding(true);
-    param === "certification"
+    param === 'certification'
       ? dispatch(getCertThunk())
       : dispatch(getPostThunk());
+    setData(serverData);
     setLoding(false);
-  }, []);
+  }, [dispatch]);
+  console.log(param);
   return (
     <>
       {Header}
 
       <WrapArchive>
+        {/* <button onClick={()=>instance.get('/profiles/setting/hidden-missions').then((res)=>console.log(res))}>테스트</button> */}
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"
             onClick={() =>
-              delState ? setDelState(!delState) : navigate("/mypage")
+              delState ? setDelState(!delState) : navigate('/mypage')
             }
           >
             {!delState ? <BackMypage /> : <Cancel />}
@@ -77,13 +89,13 @@ const Archive = ({ Header }) => {
           <div className="archive-top-button">
             {!delState ? (
               <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
-                {param === "post" ? "숨기기" : "숨기기"}
+                {param === 'post' ? '삭제' : '숨기기'}
               </ArchiveSelectDiv>
             ) : (
               <div
                 onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
               >
-                <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
+                <TrashIcon color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'} />
               </div>
             )}
           </div>
@@ -96,15 +108,14 @@ const Archive = ({ Header }) => {
                   src={item.missionImgUrl}
                   onClick={() => {
                     navigate(
-                      // param === 'post' || item.onFeed
-                      //   ? `/detailposts/${item.id} `
-                      //   :
-                      `/upload/${item.id}`
+                      param === 'post'
+                        ? `/detailposts/${item.id} `
+                        : `/upload/${item.id}`
                     );
                   }}
                 />
                 <DeleteDiv
-                  display={delState ? "flex" : "none"}
+                  display={delState ? 'flex' : 'none'}
                   onClick={() =>
                     delArr.includes(item.id)
                       ? setDelArr([...delArr.filter((a) => a !== item.id)])
@@ -113,27 +124,33 @@ const Archive = ({ Header }) => {
                   check={delArr}
                   num={item.id}
                 >
-                  {" "}
+                  {' '}
                   {delArr.includes(item.id) ? <Check /> : <NonCheck />}
                 </DeleteDiv>
               </CardArea>
             ))
           ) : (!loading && data.length) === 1 ? (
             <CardArea key={data.id}>
-              {" "}
+              {' '}
               <ImageCard
                 src={data[0].missionImgUrl}
                 onClick={() =>
                   navigate(
-                    param === "post" || data[0].OnFeed
+                    param === 'post'
                       ? `/detailposts/${data[0].id}`
                       : `/upload/${data[0].id}`
                   )
                 }
               />
               <DeleteDiv
-                display={delState ? "flex" : "none"}
-                onClick={() => setDelArr([...delArr, data.id])}
+                display={delState ? 'flex' : 'none'}
+                onClick={() =>
+                  delArr.includes(data[0].id)
+                    ? setDelArr([])
+                    : setDelArr([...delArr, data[0].id])
+                }
+                check={delArr}
+                num={data[0].id}
               >
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}
               </DeleteDiv>
@@ -148,29 +165,40 @@ const Archive = ({ Header }) => {
 
       {modal ? (
         <ModalArea>
-          {" "}
+          {' '}
           <Slide bottom>
-            {" "}
+            {' '}
             <DeleteModal>
               <DeleteText>
                 <DeleteTopText>
-                  {param === "certification"
-                    ? "인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?"
-                    : "게시글을 숨기기 하시면 아카이브 페이지에서 보여지지 않습니다. 숨기기 하시겠습니까?"}
+                  {param === 'certification'
+                    ? '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'
+                    : '게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?'}
                 </DeleteTopText>
                 <hr className="DeleteLine" />
                 {/* <DeleteLine /> */}
                 <DeleteBottomText
                   onClick={() => {
-                    param === "post"
-                      ? instance.delete(`/feed`, { data: delArr })
-                      : instance.delete(`/profiles/missions`, { data: delArr });
+                    param === 'post'
+                      ? instance
+                          .delete(`/feed`, { data: delArr })
+                          .then(() =>
+                            setData([
+                              ...data.filter(
+                                (item) => !delArr.includes(item.id)
+                              ),
+                            ])
+                          )
+                      : instance
+                          .patch(`/profiles/missions`, { data: delArr })
+                          .then((res) => console.log(res));
                     setModal(!modal);
+                    setDelArr([]);
                   }}
                 >
-                  {param === "certification"
-                    ? "가려진 항목으로 이동"
-                    : "가려진 항목으로 이동"}
+                  {param === 'certification'
+                    ? '가려진 항목으로 이동'
+                    : '삭제하기'}
                 </DeleteBottomText>
               </DeleteText>
               <DeleteCancelButton onClick={() => setModal(!modal)}>

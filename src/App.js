@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
@@ -25,32 +25,35 @@ import ExplainWating from "./Pages/Mission/Explain/ExplainWating";
 import instance from "./Redux/modules/instance";
 import Kakaoshare from "./Components/Kakaoshare/Kakaoshare";
 import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
-import { ToastStyle } from "./Components/Toast/Toast";
+import ScrollToTop from "./Components/ScrollTop/ScrollTop";
+import useToast from "./hooks/useToast";
+import { ToastStyle, SecondToastStyle } from "./Components/Toast/Toast";
 import {
   ToastsContainer,
   ToastsStore,
   ToastsContainerPosition,
 } from "react-toasts";
+import Secession from "./Pages/Secession/Secession";
+
 function App() {
-  const onClickToast = (text) => {
-    ToastsStore.success(text);
-  };
+  const [toastNum, onClickToast] = useToast(0);
 
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header/>
         {/* <Kakaoshare /> */}
         <SetPullToRefresh />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/users/kakao/callback" element={<Loding />} />
+          <Route path="/users/kakao/callback" element={<Loding />} />   
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/alert" element={<Alert />} />
           <Route
             path="/modal"
-            element={<Modal onClickToast={onClickToast} />}
+            element={<Modal onClickToast={onClickToast} />}   
           />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
@@ -65,13 +68,16 @@ function App() {
           />
           <Route
             path="/upload/:id"
-            element={<Upload onClickToast={onClickToast} />}
+            element={<Upload onClickToast={onClickToast} />} 
           />
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/viewmoremodal" element={<ViewMoreModal />} />
-          <Route path="/archive" element={<Archive />} />
+          <Route
+            path="/archive"
+            element={<Archive onClickToast={onClickToast} />}
+          />
           <Route
             path="/updatemypage"
             element={<UpdateMyPage onClickToast={onClickToast} />}
@@ -85,15 +91,32 @@ function App() {
           />
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/secession" element={<Secession />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        {ToastStyle}
-        <ToastsContainer
-          className="custom-alert-position"
-          position={ToastsContainerPosition.BOTTOM_CENTER}
-          store={ToastsStore}
-          lightBackground
-        />
+        {toastNum === 0 ? (
+          <>
+            {" "}
+            {ToastStyle}
+            <ToastsContainer
+              className="custom-alert-position"
+              position={ToastsContainerPosition.BOTTOM_CENTER}
+              store={ToastsStore}
+              lightBackground
+            />
+          </>
+        ) : (
+          <>
+            {" "}
+            {SecondToastStyle}
+            <ToastsContainer
+              className="custom-point-position"
+              position={ToastsContainerPosition.BOTTOM_CENTER}
+              store={ToastsStore}
+              lightBackground
+            />
+          </>
+        )}
       </BrowserRouter>
     </>
   );

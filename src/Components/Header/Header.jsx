@@ -1,18 +1,33 @@
 //react import
-import React, { useEffect, useState, useCallback } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState, useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 //styled import
-import './Header.css';
-import { BiBell } from 'react-icons/bi';
-import HeaderLogo from '../../static/components/HeaderLogo';
+import "./Header.css";
+import { BiBell } from "react-icons/bi";
+import HeaderLogo from "../../static/components/HeaderLogo";
 //component import
-import { pathArr, hideArr } from '../../static/path/Path';
+import { pathArr, hideArr } from "../../static/path/Path";
 const Header = () => {
   const navigate = useNavigate();
   const [y, setY] = useState(document.scrollingElement.scrollHeight);
   const [hide, setHide] = useState(false);
   // const [path, setPath] = useState('');
   const { pathname } = useLocation();
+
+  const hideArr = [
+    "/",
+    "/users/kakao/callback",
+    "/alert",
+    "/modal",
+    "/missioncamera",
+    "/updatemypage",
+    "/archive/certification",
+    "/archive/post",
+    "/secession",
+    "*",
+    "/alarm",
+  ];
+
   const handleNavigation = useCallback(
     (e) => {
       if (y > window.scrollY) {
@@ -26,10 +41,10 @@ const Header = () => {
   );
 
   useEffect(() => {
-    window.addEventListener('scroll', handleNavigation);
+    window.addEventListener("scroll", handleNavigation);
 
     return () => {
-      window.removeEventListener('scroll', handleNavigation);
+      window.removeEventListener("scroll", handleNavigation);
     };
   }, [handleNavigation]);
 
@@ -46,7 +61,7 @@ const Header = () => {
               <div className="header-relative">
                 <div
                   className="header-title"
-                  onClick={() => navigate('/mission')}
+                  onClick={() => navigate("/mission")}
                 >
                   Green Step
                 </div>

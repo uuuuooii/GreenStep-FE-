@@ -8,13 +8,13 @@ import Secessionimg from "../../static/components/Secessionimg";
 const Secession = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <div className="secessionall">
       <div className="secession-back-arrow-area">
         <div onClick={() => navigate("/mission")}>
           <IoIosArrowBack className="secession-back-arrow-icon" />
           <p className="secessiontext">탈퇴하기</p>
         </div>
-      </div>{" "}
+      </div>
       <div className="secessionwrap">
         <div className="secessiontitle">
           그린스텝과 지구를 지키는 일을 중단하실 건가요?
@@ -24,7 +24,7 @@ const Secession = () => {
           네, 저 혼자 지구를 지키겠습니다
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -13,7 +13,6 @@ const Header = () => {
   const [hide, setHide] = useState(false);
   // const [path, setPath] = useState('');
   const { pathname } = useLocation();
-
   const handleNavigation = useCallback(
     (e) => {
       if (y > window.scrollY) {

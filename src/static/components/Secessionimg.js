@@ -3,7 +3,7 @@ const Secessionimg = () => {
   return (
     <svg
       width="300"
-      height="240"
+      height="280"
       viewBox="0 0 300 240"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

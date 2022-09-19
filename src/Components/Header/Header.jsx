@@ -20,6 +20,7 @@ const Header = () => {
     "/archive/certification",
     "/archive/post",
     "/secession",
+    "*",
   ];
   const handleNavigation = useCallback(
     (e) => {

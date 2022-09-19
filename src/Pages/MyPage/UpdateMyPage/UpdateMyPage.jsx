@@ -1,21 +1,21 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import useInput from '../../../../src/hooks/useInput';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import instance from '../../../Redux/modules/instance';
+import React, { useEffect, useState } from "react";
+import useInput from "../../../../src/hooks/useInput";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import instance from "../../../Redux/modules/instance";
 //modules import
-import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
-import Toggle from '../../../Components/Toggle/Toggle';
+import Toggle from "../../../Components/Toggle/Toggle";
 //styled import
-import { FadeOn } from '../../Feed/FeedStyled';
-import styled from 'styled-components';
-import './UpdateMyPage.css';
-import '../../../Components/Toast/Toast.css';
-import { HiPencil } from 'react-icons/hi';
-import { IoIosArrowBack } from 'react-icons/io';
-import ProfilePencil from '../../../static/components/ProfilePencil';
+import { FadeOn } from "../../Feed/FeedStyled";
+import styled from "styled-components";
+import "./UpdateMyPage.css";
+import "../../../Components/Toast/Toast.css";
+import { HiPencil } from "react-icons/hi";
+import { IoIosArrowBack } from "react-icons/io";
+import ProfilePencil from "../../../static/components/ProfilePencil";
 
 const UpdateMyPageDiv = styled.div`
   width: 100%;
@@ -31,9 +31,9 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [img, setImg] = useState('');
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [img, setImg] = useState("");
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -49,12 +49,12 @@ const UpdateMyPage = ({ onClickToast }) => {
     acceptMail: acceptMail,
   };
   const imgList = [
-    '/images/고양이.png',
-    '/images/돼지.png',
-    '/images/부엉이.png',
-    '/images/새.png',
-    '/images/토끼.png',
-    '/images/펭귄.png',
+    "/images/고양이.png",
+    "/images/돼지.png",
+    "/images/부엉이.png",
+    "/images/새.png",
+    "/images/토끼.png",
+    "/images/펭귄.png",
   ];
   console.log(userInfo);
   useEffect(() => {
@@ -66,9 +66,12 @@ const UpdateMyPage = ({ onClickToast }) => {
     if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
       setImg(userInfo.profilePhoto);
       setConnection(true);
-    }else if(userInfo.profilePhoto && imgList.includes(userInfo.profilePhoto)){
+    } else if (
+      userInfo.profilePhoto &&
+      imgList.includes(userInfo.profilePhoto)
+    ) {
       setImg(userInfo.profilePhoto);
-      setConnection(false)
+      setConnection(false);
     }
   }, []);
 
@@ -85,9 +88,8 @@ const UpdateMyPage = ({ onClickToast }) => {
             type="button"
             id="popup"
             onClick={() => {
-              onClickToast('등록되었습니다.');
-              instance
-                .patch(`/users/info`, updateInfo)
+              onClickToast("등록되었습니다.");
+              instance.patch(`/users/info`, updateInfo);
             }}
           >
             저장
@@ -98,13 +100,13 @@ const UpdateMyPage = ({ onClickToast }) => {
             {!loading ? (
               <>
                 <div className="updatemypage-profile-div">
-                  {connection||imgList.includes(img) ? (
+                  {connection || imgList.includes(img) ? (
                     <img
                       className="updatemypage-profile-image"
                       src={img}
                       alt="profile"
                     />
-                  ) :  (
+                  ) : (
                     <img
                       className="updatemypage-profile-image"
                       src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
@@ -148,7 +150,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                     }}
                   >
                     <Toggle
-                      background={connection ? '#84CA79' : '#d9d9d9'}
+                      background={connection ? "#84CA79" : "#d9d9d9"}
                       click={click}
                       check={connection}
                     />

@@ -34,7 +34,7 @@ const MyPageModal = styled.div`
   z-index: 20;
   background-color: #f8f8f8;
   animation-name: ${SlideBottom};
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
@@ -182,9 +182,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-
                   <ArchiveArrow />
-
                 </div>
               </div>
             )}

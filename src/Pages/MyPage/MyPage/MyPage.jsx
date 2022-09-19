@@ -107,7 +107,12 @@ const MyPage = () => {
               <div className="mypage-wrap-view-more">
                 <div className="mypage-modal-alarm-area">
                   <ViewMoreAlarm />
-                  <div className="mypage-modal-alarm-text">알림 설정</div>
+                  <div
+                    className="mypage-modal-alarm-text"
+                    onClick={() => navigate("/alarm")}
+                  >
+                    알림 설정
+                  </div>
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
@@ -182,9 +187,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-
                   <ArchiveArrow />
-
                 </div>
               </div>
             )}

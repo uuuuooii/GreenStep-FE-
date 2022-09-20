@@ -16,7 +16,7 @@ import Slide from 'react-reveal/Slide';
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 import WatingLeap from '../../../static/components/WatingLeap';
 
-const Explain = ({Header}) => {
+const Explain = ({ Header }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Explain = ({Header}) => {
   }, [dispatch]);
   return (
     <>
-    {Header}
+      {Header}
       <div className="explain-back-div" onClick={() => navigate('/mission')} />
       {!loading && select ? (
         <Slide bottom>
@@ -56,6 +56,9 @@ const Explain = ({Header}) => {
                 {select
                   ? select.missionContent
                   : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
+              </p>
+              <p className="explain-mission-contents-text">
+                사진을 찍어서 인증해보세요!
               </p>
             </div>
 

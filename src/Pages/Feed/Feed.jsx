@@ -1,17 +1,17 @@
 //react import
-import React, { useState, useEffect } from "react";
-import instance from "../../Redux/modules/instance";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from 'react';
+import instance from '../../Redux/modules/instance';
+import { useInView } from 'react-intersection-observer';
 //components import
-import Medal from "./Medal";
-import ClapIcon from "../../static/components/ClapIcon";
-import DoneClap from "../../static/components/DoneClap";
-import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
-import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
-import Footer from "../../Components/Footer/Footer";
+import Medal from './Medal';
+import ClapIcon from '../../static/components/ClapIcon';
+import DoneClap from '../../static/components/DoneClap';
+import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
+import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
+import Footer from '../../Components/Footer/Footer';
 //redux
-import { __GetLanks } from "../../Redux/modules/ranks";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetLanks } from '../../Redux/modules/ranks';
+import { useDispatch, useSelector } from 'react-redux';
 
 //styled import
 import {
@@ -44,9 +44,8 @@ import {
   BottomProfileArea,
   ArrowArea,
   ContentArea,
-} from "./FeedStyled";
-import FeedArrow from "../../static/components/FeedArrow";
-
+} from './FeedStyled';
+import FeedArrow from '../../static/components/FeedArrow';
 
 const Feed = () => {
   const ranks = useSelector((state) => state.ranks.ranks);
@@ -56,27 +55,27 @@ const Feed = () => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [FeedList, setFeedList] = useState([]);
-  const [last, setLast] = useState("");
+  const [last, setLast] = useState('');
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
 
   const categoryList = [
-    "전체보기",
-    "#NO일회용품",
-    "#분리수거",
-    "#환경운동",
-    "#환경용품사용",
-    "#에너지절약",
-    "#기타",
+    '전체보기',
+    '#NO일회용품',
+    '#분리수거',
+    '#환경운동',
+    '#환경용품사용',
+    '#에너지절약',
+    '#기타',
   ];
   const categoryApi = [
-    "all",
-    "disposable",
-    "separate",
-    "environmental",
-    "goods",
-    "energy",
-    "etc",
+    'all',
+    'disposable',
+    'separate',
+    'environmental',
+    'goods',
+    'energy',
+    'etc',
   ];
 
   useEffect(() => {
@@ -206,9 +205,10 @@ const Feed = () => {
                 <FeedCard>
                   <CardTopArea>
                     <TagArea
-                      onClick={() =>
-                        {setCategory(categoryList.indexOf(item.tag));window.scrollTo(0, 0)}
-                      }
+                      onClick={() => {
+                        setCategory(categoryList.indexOf(item.tag));
+                        window.scrollTo(0, 0);
+                      }}
                     >
                       {item.tag}
                     </TagArea>
@@ -218,7 +218,7 @@ const Feed = () => {
                 <FeedContent>
                   <CardBottomArea>
                     <BottomProfileArea>
-                      {" "}
+                      {' '}
                       <FeedProfile src={item.profilePhoto} />
                       <FeedNickname>{item.authorName}</FeedNickname>
                     </BottomProfileArea>
@@ -240,14 +240,14 @@ const Feed = () => {
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (
-                          <ClapIcon color={"#84CA79"} />
+                          <ClapIcon color={'#84CA79'} />
                         )}
                       </ClapBox>
                     </ClapArea>
                   </CardBottomArea>
                   <ContentArea>
                     <ArrowArea>
-                      {" "}
+                      {' '}
                       <FeedArrow />
                     </ArrowArea>
                     <FeedText>{item.content}</FeedText>

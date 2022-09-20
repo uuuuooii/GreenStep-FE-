@@ -64,8 +64,8 @@ const ThirdModal = ({
             <InputDiv color={name ? '#b2e2ab' : '#d9d9d9'}>
               <TextInput
                 color={name ? '#b2e2ab' : '#d9d9d9'}
-                onChange={(e) => setName(e.target.value)}
-                value={name}
+                onChange={setName}
+                defaultValue={name? name : ''}
                 placeholder="이름"
                 maxLength={8}
               />
@@ -76,8 +76,8 @@ const ThirdModal = ({
             <InputDiv color={nickname ? '#b2e2ab' : '#d9d9d9'}>
               <TextInput
                 color={nickname ? '#b2e2ab' : '#d9d9d9'}
-                onChange={(e) => setNickname(e.target.value)}
-                value={nickname}
+                onChange={setNickname}
+                defaultValue={nickname? nickname : ''}
                 placeholder="닉네임"
                 maxLength={8}
               />

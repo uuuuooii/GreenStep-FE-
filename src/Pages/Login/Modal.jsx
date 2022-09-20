@@ -1,5 +1,6 @@
 //react import
 import React, { useState, useEffect } from 'react';
+import useInput from '../../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
 import OnDot from '../../static/components/Login/OnDot';
@@ -12,7 +13,6 @@ import {
   SlideRightDiv,
 } from './ModalStyled';
 //modules import
-import instance from '../../Redux/modules/instance';
 import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
 
 //component import
@@ -22,9 +22,7 @@ import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import FourthModal from './Modal/FourthModal/FourthModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
 
-
 const Modal = ({ onClickToast }) => {
-
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
@@ -32,8 +30,8 @@ const Modal = ({ onClickToast }) => {
   const [display, setDisplay] = useState(0);
   const [img, setImg] = useState('');
   const [check, setCheck] = useState(0);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
+  const [name, setName] = useInput('');
+  const [nickname, setNickname] = useInput('');
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userInfo.userInfo);
 
@@ -104,7 +102,9 @@ const Modal = ({ onClickToast }) => {
               </>
             ) : display === 4 && !fourth ? (
               <>
-                <><OnDot /></>{' '}
+                <>
+                  <OnDot />
+                </>{' '}
                 <SlideLeftDiv>
                   <OnDot />
                 </SlideLeftDiv>

@@ -14,7 +14,7 @@ import ProfilePencil from "../../../static/components/ProfilePencil";
 //styled import
 import "./MyPage.css";
 import styled from "styled-components";
-import { FadeOn, SlideBottom } from "../../Feed/FeedStyled";
+import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";

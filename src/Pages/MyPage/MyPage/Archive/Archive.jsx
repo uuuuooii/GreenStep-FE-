@@ -14,8 +14,7 @@ import './Archive.css';
 import TrashIcon from '../../../../static/components/Archive/TrashIcon';
 import Cancel from '../../../../static/components/Archive/Cancel';
 import BackMypage from '../../../../static/components/Archive/BackMypage';
-import Slide from 'react-reveal/Slide';
-import { FadeOn } from '../../../Feed/FeedStyled';
+import { FadeOn } from '../../../../Components/Animation/Animation';
 
 import {
   ImageCard,
@@ -44,6 +43,11 @@ const Archive = ({ Header }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const CancelClick = () => {
+    setDelState(!delState);
+    setModal(false);
+    setDelArr([])
+  }
   const SkeletonList = [];
   for (let i = 0; i < 20; i++) {
     SkeletonList.push(i);
@@ -70,7 +74,6 @@ const Archive = ({ Header }) => {
     setData(serverData);
     setLoding(false);
   }, [dispatch]);
-  console.log(param);
   return (
     <>
       {Header}
@@ -81,7 +84,7 @@ const Archive = ({ Header }) => {
           <div
             className="archive-top-button"
             onClick={() =>
-              delState ? setDelState(!delState) : navigate('/mypage')
+              delState ? CancelClick() : navigate('/mypage')
             }
           >
             {!delState ? <BackMypage /> : <Cancel />}
@@ -155,19 +158,14 @@ const Archive = ({ Header }) => {
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}
               </DeleteDiv>
             </CardArea>
-          ) : (
-            SkeletonList.map((item, index) => (
-              <SkeletonCard key={item * index} />
-            ))
-          )}
+          ) : <div className="mypage-flex-box">
+          <div className="mypage-flex-text">${`아직 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!`}</div>
+        </div>}
         </div>
       </WrapArchive>
 
       {modal ? (
         <ModalArea>
-          {' '}
-          <Slide bottom>
-            {' '}
             <DeleteModal>
               <DeleteText>
                 <DeleteTopText>
@@ -191,7 +189,6 @@ const Archive = ({ Header }) => {
                           )
                       : instance
                           .patch(`/profiles/missions`, { data: delArr })
-                          .then((res) => console.log(res));
                     setModal(!modal);
                     setDelArr([]);
                   }}
@@ -205,7 +202,7 @@ const Archive = ({ Header }) => {
                 취소
               </DeleteCancelButton>
             </DeleteModal>
-          </Slide>
+
         </ModalArea>
       ) : null}
     </>

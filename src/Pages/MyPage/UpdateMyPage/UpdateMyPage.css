@@ -28,6 +28,25 @@
   margin: 4px 15px 0px 0px;
 }
 
+/* 모달창 배경 */
+.updatemypage-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(44, 44, 44, 0.322);
+  z-index: 10;
+}
+
+/* 모달창 영역 */
+.updatemypage-modal-bar {
+  margin: 0px auto;
+}
+.updatemypage-wrap-characters {
+  margin: 50px 0px 44px 34px;
+}
+
 .updatemypage-body-wrap {
   display: flex;
   flex-direction: column;

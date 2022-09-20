@@ -1,24 +1,25 @@
 body {
-  max-width: 375px;
-  /* max-height: 667px; */
+  /* max-width: 375px; */
+  max-width: 100%;
   height: 100vh;
   /* overflow-y: hidden; */
   margin: auto;
-  font-family: 'tway_sky';
+  font-family: "tway_sky";
+  background-color: #fcfcfa;
 }
 
 /* 폰트*/
 @font-face {
-  font-family: 'tway_sky';
-  src: url('./Components/fonts/AppleSDGothicNeoL.ttf');
+  font-family: "tway_sky";
+  src: url("./Components/fonts/AppleSDGothicNeoL.ttf");
 }
 
 @font-face {
-  font-family: 'SpoqaHanSansNeo';
-  src: url('./Components/fonts/AppleSDGothicNeoM.ttf');
+  font-family: "SpoqaHanSansNeo";
+  src: url("./Components/fonts/AppleSDGothicNeoM.ttf");
 }
 
 @font-face {
-  font-family: 'BlackhanSans';
-  src: url('./Components//fonts/AppleSDGothicNeoB.ttf') format('truetype');
+  font-family: "BlackhanSans";
+  src: url("./Components//fonts/AppleSDGothicNeoB.ttf") format("truetype");
 }

@@ -1,28 +1,28 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 //modules import
 import {
   getUserInfoThunk,
   getCertThunk,
   getPostThunk,
-} from "../../../Redux/modules/userInfoSlice";
+} from '../../../Redux/modules/userInfoSlice';
 //component import
-import Footer from "../../../Components/Footer/Footer";
-import ProfilePencil from "../../../static/components/ProfilePencil";
+import Footer from '../../../Components/Footer/Footer';
+import ProfilePencil from '../../../static/components/ProfilePencil';
 //styled import
-import "./MyPage.css";
-import styled from "styled-components";
-import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
-import { HiDotsHorizontal } from "react-icons/hi";
-import { ArchiveArrow } from "./Archive/ArchiveStyled";
-import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
-import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
-import ViewMoreHidden from "../../../static/components/ViewMoreHidden";
-import ViewMoreCC from "../../../static/components/ViewMoreCC";
-import ViewMoreQuit from "../../../static/components/ViewMoreQuit";
-import ViewMoreLogOut from "../../../static/components/ViewMoreLogOut";
+import './MyPage.css';
+import styled from 'styled-components';
+import { FadeOn, SlideBottom } from '../../../Components/Animation/Animation';
+import { HiDotsHorizontal } from 'react-icons/hi';
+import { ArchiveArrow } from './Archive/ArchiveStyled';
+import ViewMoreRowBar from '../../../static/components/ViewMoreRowBar';
+import ViewMoreAlarm from '../../../static/components/ViewMoreAlarm';
+import ViewMoreHidden from '../../../static/components/ViewMoreHidden';
+import ViewMoreCC from '../../../static/components/ViewMoreCC';
+import ViewMoreQuit from '../../../static/components/ViewMoreQuit';
+import ViewMoreLogOut from '../../../static/components/ViewMoreLogOut';
 
 const MyPageModal = styled.div`
   width: 100%;
@@ -57,14 +57,15 @@ const MyPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
+  console.log(userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
-console.log(userInfo)
+  console.log(userInfo);
   const FirstText = `아직 ${
-    userInfo.nickname ? userInfo.nickname : "@@@"
+    userInfo.nickname ? userInfo.nickname : '@@@'
   }님의 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!`;
   const SecondText = `다른 이도 ${
-    userInfo.nickname ? userInfo.nickname : "@@@"
+    userInfo.nickname ? userInfo.nickname : '@@@'
   }님이 그린 스텝을 보고싶어해요! 🤩 \n 피드에 공유해 주세요!`;
   useEffect(() => {
     setLoding(true);
@@ -93,7 +94,7 @@ console.log(userInfo)
               onClick={() => {
                 setViewMoreModal(false);
               }}
-            ></div>
+            />
 
             <MyPageModal>
               <div
@@ -109,7 +110,7 @@ console.log(userInfo)
                   <ViewMoreAlarm />
                   <div
                     className="mypage-modal-alarm-text"
-                    onClick={() => navigate("/alarm")}
+                    onClick={() => navigate('/alarm')}
                   >
                     알림 설정
                   </div>
@@ -144,7 +145,7 @@ console.log(userInfo)
                 <img src={userInfo.profilePhoto} className="image-area" />
                 <div
                   className="image-pencil-div"
-                  onClick={() => navigate("/updatemypage")}
+                  onClick={() => navigate('/updatemypage')}
                 >
                   <ProfilePencil />
                 </div>
@@ -152,11 +153,17 @@ console.log(userInfo)
 
               <div className="nick-and-email-area">
                 <div className="nickname-text">
-                  {userInfo.nickname ? userInfo.nickname : "Nickname"}
+                  {userInfo.nickname ? userInfo.nickname : 'Nickname'}
                 </div>
                 <div className="email-text">
-                  {userInfo.email ? userInfo.email : "Email"}
+                  {userInfo.email ? userInfo.email : 'Email'}
                 </div>
+                <p className="missionCount">
+                  미션 달성 : {userInfo.missionCount}개
+                </p>
+                <p className="missionPoint">
+                  미션 총 겸험치 : {userInfo.missionPoint}xp
+                </p>
               </div>
             </div>
           </>
@@ -164,10 +171,10 @@ console.log(userInfo)
           <div className="image-nick-email">
             <div className="image-area"></div>
             <div className="nickname-text">
-              {userInfo.nickname ? userInfo.nickname : "Nickname"}
+              {userInfo.nickname ? userInfo.nickname : 'Nickname'}
             </div>
             <div className="email-text">
-              {userInfo.email ? userInfo.email : "Email"}
+              {userInfo.email ? userInfo.email : 'Email'}
             </div>
           </div>
         )}
@@ -179,7 +186,7 @@ console.log(userInfo)
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
                   <ArchiveArrow
-                    onClick={() => navigate("/archive/certification")}
+                    onClick={() => navigate('/archive/certification')}
                   />
                 </div>
               </div>
@@ -226,7 +233,7 @@ console.log(userInfo)
               <div className="posts-text-and-icon">
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">
-                  <ArchiveArrow onClick={() => navigate("/archive/post")} />
+                  <ArchiveArrow onClick={() => navigate('/archive/post')} />
                 </div>
               </div>
             ) : (

@@ -5,9 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../../Redux/modules/instance';
 //modules import
-import {
-  getUserInfoThunk,
-} from '../../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
 //component import
 import Toggle from '../../../Components/Toggle/Toggle';
 //styled import
@@ -60,12 +58,12 @@ const UpdateMyPage = ({ onClickToast }) => {
     '/images/토끼.png',
     '/images/펭귄.png',
   ];
-
+  // console.log(kakaoProfile)
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
     instance
-      .get('/profiles/setting/hidden-missions')
+      .get('/users/kakao-profile-photo')
       .then((res) => setKakaoProfile(res.data.data));
     setLoding(false);
     setName(userInfo.name);
@@ -101,6 +99,7 @@ const UpdateMyPage = ({ onClickToast }) => {
             onClick={() => {
               onClickToast('등록되었습니다.');
               instance.patch(`/users/info`, updateInfo);
+              navigate('/mypage');
             }}
           >
             <FiCheck />
@@ -158,6 +157,9 @@ const UpdateMyPage = ({ onClickToast }) => {
                     onClick={() => {
                       setConnection(!connection);
                       setClick(true);
+                      img === kakaoProfile
+                        ? setImg(userInfo.profilePhoto)
+                        : setImg(kakaoProfile);
                     }}
                   >
                     <Toggle

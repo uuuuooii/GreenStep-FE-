@@ -2,100 +2,44 @@
   "name": "GreenStep",
   "icons": [
     {
-      "src": "blob:https://www.pwabuilder.com/d6db88b5-d1bf-4727-9acd-5d1bbdd129a5",
-      "type": "image/png",
-      "sizes": "16x16",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/8b3664f6-25ed-4fe7-8a11-c3fd9d8496fa",
-      "type": "image/png",
-      "sizes": "20x20",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/fa217f1d-0f45-4f4a-b4ed-33669e5263c1",
-      "type": "image/png",
-      "sizes": "24x24",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/0ac03278-de73-4b65-a0ef-b299c065d3d2",
-      "type": "image/png",
-      "sizes": "30x30",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/cc4fb4a0-c925-484e-b8b5-2492a197cb6d",
-      "type": "image/png",
-      "sizes": "32x32",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/0503e918-84d7-4ffd-a9f3-4bae33e3b2d9",
-      "type": "image/png",
+      "src": "/KakaoTalk_Photo.png",
       "sizes": "36x36",
-      "purpose": "any"
+      "type": "image/png",
+      "density": "0.75"
     },
     {
-      "src": "blob:https://www.pwabuilder.com/54ce3596-1048-4016-9dd9-b7a45b7fa10e",
-      "type": "image/png",
-      "sizes": "40x40",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/3e9ba7ac-065b-4193-8493-fe0a3d29b92b",
-      "type": "image/png",
-      "sizes": "44x44",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/18fc0a59-6a75-4b03-8606-8d679507f132",
-      "type": "image/png",
+      "src": "/KakaoTalk_Photo.png",
       "sizes": "48x48",
-      "purpose": "any"
+      "type": "image/png",
+      "density": "1.0"
     },
     {
-      "src": "blob:https://www.pwabuilder.com/82537222-e60c-4567-86f0-edf80a52c8d8",
-      "type": "image/png",
-      "sizes": "60x60",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/ddba4f11-e3a9-456a-9065-b9fe1da3fc8d",
-      "type": "image/png",
-      "sizes": "64x64",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/38feb767-b29f-4f10-825d-590b8425bf75",
-      "type": "image/png",
+      "src": "/KakaoTalk_Photo.png",
       "sizes": "72x72",
-      "purpose": "any"
+      "type": "image/png",
+      "density": "1.5"
     },
     {
-      "src": "blob:https://www.pwabuilder.com/faa8fc0d-e313-48ac-8edc-54454f05d2bc",
-      "type": "image/png",
-      "sizes": "80x80",
-      "purpose": "any"
-    },
-    {
-      "src": "blob:https://www.pwabuilder.com/99999ada-2c6c-4d97-8db2-9aa74d5f4c25",
-      "type": "image/png",
+      "src": "/KakaoTalk_Photo.png",
       "sizes": "96x96",
-      "purpose": "any"
+      "type": "image/png",
+      "density": "2.0"
     },
     {
-      "src": "blob:https://www.pwabuilder.com/6bedefe7-3e31-4a13-a1c9-2eee3af15a15",
+      "src": "/KakaoTalk_Photo.png",
+      "sizes": "144x144",
       "type": "image/png",
-      "sizes": "256x256",
-      "purpose": "any"
+      "density": "3.0"
     },
     {
-      "src": "blob:https://www.pwabuilder.com/47ad3ae8-03bf-44dc-ae08-3d2d18222022",
+      "src": "/KakaoTalk_Photo.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any"
+      "density": "4.0"
     }
-  ]
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#FCFCFA"
 }

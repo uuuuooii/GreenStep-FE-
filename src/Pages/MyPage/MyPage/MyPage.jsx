@@ -59,7 +59,7 @@ const MyPage = () => {
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
-
+console.log(userInfo)
   const FirstText = `아직 ${
     userInfo.nickname ? userInfo.nickname : "@@@"
   }님의 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!`;

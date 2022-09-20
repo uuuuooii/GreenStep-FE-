@@ -15,6 +15,7 @@
     "event-source-polyfill": "^1.0.31",
     "firebase-admin": "^11.0.1",
     "framer-motion": "^7.3.2",
+    "fullpage-react-fs": "^1.0.4",
     "fullpage.js": "2.9.6",
     "jquery": "^3.6.1",
     "pulltorefreshjs": "^0.1.22",

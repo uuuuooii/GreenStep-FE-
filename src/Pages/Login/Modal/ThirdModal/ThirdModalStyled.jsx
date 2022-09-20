@@ -98,6 +98,15 @@ export const TextInput = styled.input`
     color: ${(props) => props.color};
   }
 `;
+export const WarningText = styled.div`
+  font-size: 6px;
+  color: ${(props)=>props.color? props.color : '#b2e2ab'};
+  width: 100%;
+`
+export const WarningDiv = styled.div`
+  display: flex;
+  justify-content: start;
+`
 export const ProfileArea = styled.div`
   display: flex;
   flex-direction: column;

@@ -14,6 +14,8 @@ import {
   PencilDiv,
   PencilIcon,
   InputDiv,
+  WarningText,
+  WarningDiv,
 } from './ThirdModalStyled';
 
 const URL = process.env.REACT_APP_URL;
@@ -41,6 +43,10 @@ const ThirdModal = ({
     setDisplay(2);
     setThird(false);
   };
+
+  var reg = /[^ㄱ-ㅎ가-힣a-zA-Z0-9]/g;
+  //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
+  console.log(reg.test(name));
   return (
     <>
       <ModalHeader>
@@ -50,7 +56,9 @@ const ThirdModal = ({
         <TopText>닉네임 설정</TopText>
         <ButtonText
           onClick={() =>
-            name && nickname ? NextModal() : onClickToast('빈칸을 입력해주세요')
+            name && nickname && !reg.test(name) && !reg.test(nickname)
+              ? NextModal()
+              : onClickToast('빈칸을 확인해주세요')
           }
         >
           다음
@@ -65,26 +73,44 @@ const ThirdModal = ({
               <TextInput
                 color={name ? '#b2e2ab' : '#d9d9d9'}
                 onChange={setName}
-                defaultValue={name? name : ''}
+                defaultValue={name ? name : ''}
                 placeholder="이름"
                 maxLength={8}
+                type="text"
               />
               <PencilDiv>
                 <PencilIcon color={name ? '#b2e2ab' : '#d9d9d9'} />
               </PencilDiv>
             </InputDiv>
+            <WarningDiv>
+              {' '}
+              {reg.test(name) ? (
+                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+              ) : (
+                <WarningText>최대 8글자</WarningText>
+              )}
+            </WarningDiv>
+
             <InputDiv color={nickname ? '#b2e2ab' : '#d9d9d9'}>
               <TextInput
                 color={nickname ? '#b2e2ab' : '#d9d9d9'}
                 onChange={setNickname}
-                defaultValue={nickname? nickname : ''}
+                defaultValue={nickname ? nickname : ''}
                 placeholder="닉네임"
                 maxLength={8}
+                type="text"
               />
               <PencilDiv>
                 <PencilIcon color={nickname ? '#b2e2ab' : '#d9d9d9'} />
               </PencilDiv>
             </InputDiv>
+            <WarningDiv>
+              {reg.test(nickname) ? (
+                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+              ) : (
+                <WarningText>최대 8글자</WarningText>
+              )}
+            </WarningDiv>
           </ProfileArea>
         </CenterContainer>
       </SelectBody>

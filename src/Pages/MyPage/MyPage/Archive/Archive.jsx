@@ -69,7 +69,7 @@ const Archive = ({ Header }) => {
 
   useEffect(() => {
     setLoding(true);
-    //param 값으로 인증글,게시글 분기
+    //param 값으로 인증글,게시글,숨김글 분기
     param === 'certification'
       ? dispatch(getCertThunk())
       : dispatch(getPostThunk());

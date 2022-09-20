@@ -63,7 +63,7 @@ const DetailPosts = ({ onClickToast }) => {
                 </div>
                 <div className="detail-posts-clap-area">
                   <div className="detail-posts-clap-point">
-                    {detailPost.clapCount}
+                    {detailPost.clapCount ? detailPost.clapCount : 0}
                   </div>
                   <div className="detail-posts-flex-position">
                     <DoneClap />

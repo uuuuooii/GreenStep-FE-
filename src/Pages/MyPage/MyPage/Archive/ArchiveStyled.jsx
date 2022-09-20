@@ -1,12 +1,7 @@
-import styled from "styled-components";
-import { MdOutlineDoubleArrow } from "react-icons/md";
-import { ImCross } from "react-icons/im";
-import {
-  AiFillDelete,
-  AiOutlineCheckCircle,
-  AiFillCheckCircle,
-} from "react-icons/ai";
-import { IoIosArrowBack } from "react-icons/io";
+import styled from 'styled-components';
+import { MdOutlineDoubleArrow } from 'react-icons/md';
+import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
+import { SlideBottom } from '../../../../Components/Animation/Animation';
 
 export const ImageCard = styled.img`
   width: 100%;
@@ -41,7 +36,7 @@ export const DeleteDiv = styled.div`
   height: 100%;
   z-index: 5;
   background-color: ${(props) =>
-    props.check.includes(props.num) ? "rgba(255, 255, 255, 0.5)" : "none"};
+    props.check.includes(props.num) ? 'rgba(255, 255, 255, 0.5)' : 'none'};
   display: ${(props) => props.display};
   top: 0;
   bottom: 0;
@@ -87,6 +82,10 @@ export const ModalArea = styled.div`
   transform: translateX(-50%);
   bottom: 20px;
   z-index: 500;
+  animation-name: ${SlideBottom};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const DeleteModal = styled.div`
   display: flex;
@@ -142,4 +141,10 @@ export const DeleteCancelButton = styled.div`
   letter-spacing: 0.03em;
   color: #84ca79;
   margin: 10px 0;
+`;
+export const ArchiveFlexBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;

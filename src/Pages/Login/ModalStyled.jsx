@@ -1,7 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 export const ModalBody = styled.div`
   position: fixed;
-  width: 100%;
   height: 100vh;
   top: 0;
   right: 0;
@@ -9,7 +8,8 @@ export const ModalBody = styled.div`
   left: 0;
   z-index: 999;
   max-height: 667px;
-  max-width: 375px;
+  /* max-width: 375px; */
+  max-width: 100%;
   margin: auto;
   background-color: white;
 `;
@@ -48,11 +48,10 @@ export const SlideRight = keyframes`
 100%{transform: translateX(0)}
 `;
 
-
 export const SlideLeftDiv = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation-name: ${SlideLeft};
   animation-duration: 0.35s;
   animation-timing-function: ease-out;
@@ -60,9 +59,9 @@ justify-content: center;
 `;
 
 export const SlideRightDiv = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation-name: ${SlideRight};
   animation-duration: 0.35s;
   animation-timing-function: ease-out;

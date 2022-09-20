@@ -207,7 +207,7 @@ const Feed = () => {
                   <CardTopArea>
                     <TagArea
                       onClick={() =>
-                        setCategory(categoryList.indexOf(item.tag))
+                        {setCategory(categoryList.indexOf(item.tag));window.scrollTo(0, 0)}
                       }
                     >
                       {item.tag}

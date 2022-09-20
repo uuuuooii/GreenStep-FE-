@@ -11,7 +11,8 @@ export const Shake = keyframes`
 `;
 
 export const FeedPage = styled.div`
-  max-width: 375px;
+  /* max-width: 375px; */
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

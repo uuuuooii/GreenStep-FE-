@@ -34,7 +34,7 @@ const MyPageModal = styled.div`
   z-index: 20;
   background-color: #f8f8f8;
   animation-name: ${SlideBottom};
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
@@ -107,7 +107,12 @@ const MyPage = () => {
               <div className="mypage-wrap-view-more">
                 <div className="mypage-modal-alarm-area">
                   <ViewMoreAlarm />
-                  <div className="mypage-modal-alarm-text">알림 설정</div>
+                  <div
+                    className="mypage-modal-alarm-text"
+                    onClick={() => navigate("/alarm")}
+                  >
+                    알림 설정
+                  </div>
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
@@ -182,9 +187,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-
                   <ArchiveArrow />
-
                 </div>
               </div>
             )}

@@ -3,23 +3,23 @@
   "name": "GreenStep",
   "icons": [
     {
-      "src": "KakaoTalk_Photo_2022-09-15-16-52-05",
+      "src": "icon_",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "KakaoTalk_Photo_2022-09-15-16-52-05",
+      "src": "icon_",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "KakaoTalk_Photo_2022-09-15-16-52-05",
+      "src": "icon_",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#FCFCFA",
   "background_color": "#FCFCFA"
 }

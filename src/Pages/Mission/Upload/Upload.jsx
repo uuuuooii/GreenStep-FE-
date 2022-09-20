@@ -1,17 +1,17 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import useInput from '../../../hooks/useInput';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import useInput from "../../../hooks/useInput";
 //components import
-import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
-import Kakaoshare from '../../../Components/Kakaoshare/Kakaoshare';
+import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
+import KakaoShare from "../../../Components/Kakaoshare/Kakaoshare";
 //modules import
-import instance from '../../../Redux/modules/instance';
-import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
+import instance from "../../../Redux/modules/instance";
+import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
-import './Upload.css';
-import '../../../Components/Toast/Toast.css';
+import "./Upload.css";
+import "../../../Components/Toast/Toast.css";
 import {
   UploadContentTextArea,
   UploadButton,
@@ -22,14 +22,14 @@ import {
   TotalButtonArea,
   ShareButton,
   ShareText,
-} from './UploadStyled';
-import Slide from 'react-reveal/Slide';
-import Next from '../../../static/components/DetailPost/Next';
-import Previous from '../../../static/components/DetailPost/Previous';
-import UploadFeed from '../../../static/components/DetailPost/UploadFeed';
+} from "./UploadStyled";
+import Slide from "react-reveal/Slide";
+import Next from "../../../static/components/DetailPost/Next";
+import Previous from "../../../static/components/DetailPost/Previous";
+import UploadFeed from "../../../static/components/DetailPost/UploadFeed";
 
 const Upload = ({ onClickToast }) => {
-  const [content, contentHandler] = useInput('');
+  const [content, contentHandler] = useInput("");
   const param = Number(useParams().id);
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -66,10 +66,10 @@ const Upload = ({ onClickToast }) => {
             <>
               <div className="upload-mission-name-and-tag-area">
                 <div className="upload-mission-name-text">
-                  {data.missionName ? data.missionName : 'Mission Name'}
+                  {data.missionName ? data.missionName : "Mission Name"}
                 </div>
                 <div className="upload-mission-tag-text">
-                  {data.tag ? data.tag : '#Tag'}
+                  {data.tag ? data.tag : "#Tag"}
                 </div>
               </div>
               <div className="upload-mission-image-div">
@@ -77,7 +77,7 @@ const Upload = ({ onClickToast }) => {
                   <div
                     onClick={() =>
                       IdArr[0] == param
-                        ? onClickToast('페이지가 없습니다.')
+                        ? onClickToast("페이지가 없습니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) - 1]}`)
                     }
                   >
@@ -86,7 +86,7 @@ const Upload = ({ onClickToast }) => {
                   <div
                     onClick={() =>
                       IdArr[IdArr.length - 1] == param
-                        ? onClickToast('마지막 페이지 입니다.')
+                        ? onClickToast("마지막 페이지 입니다.")
                         : navigate(`/upload/${IdArr[IdArr.indexOf(param) + 1]}`)
                     }
                   >
@@ -98,7 +98,7 @@ const Upload = ({ onClickToast }) => {
                   src={
                     data.missionImgUrl
                       ? data.missionImgUrl
-                      : '/images/고양이.png'
+                      : "/images/고양이.png"
                   }
                 />
               </div>
@@ -120,7 +120,7 @@ const Upload = ({ onClickToast }) => {
                   <ButtonArea>
                     <IconDiv>
                       <UploadFeed />
-                    </IconDiv>{' '}
+                    </IconDiv>{" "}
                     <ShareText>피드 올리기</ShareText>
                   </ButtonArea>
                 </UploadButton>
@@ -129,8 +129,8 @@ const Upload = ({ onClickToast }) => {
                   <ButtonArea>
                     <IconDiv>
                       <KakaoReactIcon />
-                    </IconDiv>{' '}
-                    <ButtonText>카카오 공유하기</ButtonText>
+                    </IconDiv>{" "}
+                    <KakaoShare>카카오 공유하기</KakaoShare>
                   </ButtonArea>
                 </ShareButton>
               </TotalButtonArea>

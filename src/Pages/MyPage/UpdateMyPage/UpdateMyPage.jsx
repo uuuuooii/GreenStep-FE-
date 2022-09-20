@@ -7,7 +7,6 @@ import instance from '../../../Redux/modules/instance';
 //modules import
 import {
   getUserInfoThunk,
-  getPrifilePhotoThunk,
 } from '../../../Redux/modules/userInfoSlice';
 //component import
 import Toggle from '../../../Components/Toggle/Toggle';
@@ -19,6 +18,7 @@ import '../../../Components/Toast/Toast.css';
 import { HiPencil } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import ProfilePencil from '../../../static/components/ProfilePencil';
+import { FiCheck } from 'react-icons/fi';
 
 const UpdateMyPageDiv = styled.div`
   width: 100%;
@@ -93,8 +93,9 @@ const UpdateMyPage = ({ onClickToast }) => {
             className="updatemypage-back-arrow-icon"
             onClick={() => navigate(-1)}
           />
+          <div className="updatemypage-title-text">프로필 수정</div>
           <p
-            className="updatemypage-save-button"
+            className="updatemypage-save-icon"
             type="button"
             id="popup"
             onClick={() => {
@@ -102,7 +103,7 @@ const UpdateMyPage = ({ onClickToast }) => {
               instance.patch(`/users/info`, updateInfo);
             }}
           >
-            저장
+            <FiCheck />
           </p>
         </div>
         <div className="updatemypage-body-wrap">

@@ -48,6 +48,9 @@ const Admin = () => {
             <AdminArea key={item.missionImgUrl}>
               <SubmitCard>
                 <SubmitPhoto src={item.missionImgUrl} />
+                <p>미션 타입: {item.missionType}</p>
+                <p>미션 내용: {item.missionName}</p>
+                <p>email: {item.email}</p>
                 <TextareaArea>
                   <Textarea placeholder="거절사유" />
                 </TextareaArea>

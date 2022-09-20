@@ -1,13 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
+import { FadeOn } from '../../Components/Animation/Animation';
 
-export const FadeOn = keyframes`
-from{opacity:0}
-to{opacity:1}
-`;
-export const SlideBottom = keyframes`
-from{transform:translateY(300px)}
-to{transform:translateY(0px)}
-`;
 export const Shake = keyframes`
 0%{transform: rotate(-0deg)}
 20%{transform: rotate(-30deg)}
@@ -44,7 +37,7 @@ export const RankTitle = styled.div`
   text-align: center;
   color: #84ca79;
   width: 100%;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -96,7 +89,7 @@ export const MedalHead = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 12.5px;
-  background-color: ${(props) => (props.color ? props.color : "#ffc72d")};
+  background-color: ${(props) => (props.color ? props.color : '#ffc72d')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +101,7 @@ export const MedalCenter = styled.div`
   width: 9.75px;
   height: 9.75px;
   border-radius: 4.875px;
-  background-color: ${(props) => (props.color ? props.color : "#FFE49C")};
+  background-color: ${(props) => (props.color ? props.color : '#FFE49C')};
   /* margin: auto; */
 `;
 
@@ -151,14 +144,14 @@ export const CategoryButton = styled.div`
   min-width: 80px;
   min-height: 26px;
   border-radius: 3px;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;
   color: #a1d0d7;
   background-color: ${(props) =>
-    props.check === props.num ? "#F1F8F9" : "none"};
+    props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
   display: flex;
   justify-content: center;
@@ -222,7 +215,7 @@ export const TagArea = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -249,7 +242,7 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 5px;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -271,7 +264,7 @@ export const FeedProfile = styled.img`
   object-fit: cover;
 `;
 export const FeedNickname = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -293,7 +286,7 @@ export const FeedText = styled.div`
   width: 100%;
   display: flex;
 
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 13px;

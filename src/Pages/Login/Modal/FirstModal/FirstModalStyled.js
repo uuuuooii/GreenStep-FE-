@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const SlideLeft = keyframes`
 from{transform:translateX(-300px)}
@@ -22,7 +22,7 @@ export const TopText = styled.div`
   text-align: center;
   margin: auto;
   font-size: 20px;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -54,7 +54,7 @@ export const SelectImg = styled.img`
   border-radius: 10px;
   /* -moz-outline-radius : 10px; */
   outline: ${(props) =>
-    props.num === props.check ? '2px solid #B2E2AB' : 'none'};
+    props.num === props.check ? "2px solid #B2E2AB" : "none"};
   &:hover {
     cursor: pointer;
   }
@@ -69,7 +69,7 @@ export const SeleceArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin: 249px 0 359px 0;
+  margin: 200px 0 350px 0;
 `;
 
 export const ButtonText = styled.div`
@@ -85,7 +85,7 @@ export const DummyText = styled.div`
   margin: 0 10px;
 `;
 export const SelectText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;

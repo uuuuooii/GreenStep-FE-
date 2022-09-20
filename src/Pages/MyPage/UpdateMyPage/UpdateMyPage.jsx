@@ -15,6 +15,7 @@ import "./UpdateMyPage.css";
 import "../../../Components/Toast/Toast.css";
 import { HiPencil } from "react-icons/hi";
 import { IoIosArrowBack } from "react-icons/io";
+import { FiCheck } from "react-icons/fi";
 import ProfilePencil from "../../../static/components/ProfilePencil";
 
 const UpdateMyPageDiv = styled.div`
@@ -83,8 +84,9 @@ const UpdateMyPage = ({ onClickToast }) => {
             className="updatemypage-back-arrow-icon"
             onClick={() => navigate(-1)}
           />
+          <div className="updatemypage-title-text">프로필 수정</div>
           <p
-            className="updatemypage-save-button"
+            className="updatemypage-save-icon"
             type="button"
             id="popup"
             onClick={() => {
@@ -92,7 +94,7 @@ const UpdateMyPage = ({ onClickToast }) => {
               instance.patch(`/users/info`, updateInfo);
             }}
           >
-            저장
+            <FiCheck />
           </p>
         </div>
         <div className="updatemypage-body-wrap">

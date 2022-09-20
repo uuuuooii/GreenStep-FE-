@@ -44,7 +44,7 @@ const FirstModal = ({
           }}
           check={check}
         >
-          다음
+          
         </ButtonText>
       </ModalHeader>
       <SelectBody slide={slide}>
@@ -64,6 +64,7 @@ const FirstModal = ({
                         'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
                       )
                     : setImg(user.profilePhoto);
+                    setDisplay(3)
                 }}
                 check={check}
                 num={1}
@@ -76,6 +77,7 @@ const FirstModal = ({
                 src="images/펭귄.png"
                 onClick={() => {
                   check === 2 ? setCheck(0) : setCheck(2);
+                  setDisplay(2)
                 }}
                 check={check}
                 num={2}

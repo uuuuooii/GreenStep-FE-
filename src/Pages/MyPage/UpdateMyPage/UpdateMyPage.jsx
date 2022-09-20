@@ -1,21 +1,24 @@
 //react import
-import React, { useEffect, useState } from "react";
-import useInput from "../../../../src/hooks/useInput";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import instance from "../../../Redux/modules/instance";
+import React, { useEffect, useState } from 'react';
+import useInput from '../../../../src/hooks/useInput';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import instance from '../../../Redux/modules/instance';
 //modules import
-import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
+import {
+  getUserInfoThunk,
+} from '../../../Redux/modules/userInfoSlice';
 //component import
-import Toggle from "../../../Components/Toggle/Toggle";
+import Toggle from '../../../Components/Toggle/Toggle';
 //styled import
-import { FadeOn } from "../../Feed/FeedStyled";
-import styled from "styled-components";
-import "./UpdateMyPage.css";
-import "../../../Components/Toast/Toast.css";
-import { HiPencil } from "react-icons/hi";
-import { IoIosArrowBack } from "react-icons/io";
-import ProfilePencil from "../../../static/components/ProfilePencil";
+import { FadeOn } from '../../../Components/Animation/Animation';
+import styled from 'styled-components';
+import './UpdateMyPage.css';
+import '../../../Components/Toast/Toast.css';
+import { HiPencil } from 'react-icons/hi';
+import { IoIosArrowBack } from 'react-icons/io';
+import ProfilePencil from '../../../static/components/ProfilePencil';
+import { FiCheck } from 'react-icons/fi';
 
 const UpdateMyPageDiv = styled.div`
   width: 100%;
@@ -31,9 +34,10 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [img, setImg] = useState('');
+  const [kakaoProfile, setKakaoProfile] = useState('');
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -49,17 +53,20 @@ const UpdateMyPage = ({ onClickToast }) => {
     acceptMail: acceptMail,
   };
   const imgList = [
-    "/images/고양이.png",
-    "/images/돼지.png",
-    "/images/부엉이.png",
-    "/images/새.png",
-    "/images/토끼.png",
-    "/images/펭귄.png",
+    '/images/고양이.png',
+    '/images/돼지.png',
+    '/images/부엉이.png',
+    '/images/새.png',
+    '/images/토끼.png',
+    '/images/펭귄.png',
   ];
-  console.log(userInfo);
+
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
+    instance
+      .get('/profiles/setting/hidden-missions')
+      .then((res) => setKakaoProfile(res.data.data));
     setLoding(false);
     setName(userInfo.name);
     setNickname(userInfo.nickname);
@@ -72,6 +79,9 @@ const UpdateMyPage = ({ onClickToast }) => {
     ) {
       setImg(userInfo.profilePhoto);
       setConnection(false);
+    } else if (userInfo.profilePhoto === kakaoProfile) {
+      setImg(userInfo.profilePhoto);
+      setConnection(true);
     }
   }, []);
 
@@ -83,16 +93,17 @@ const UpdateMyPage = ({ onClickToast }) => {
             className="updatemypage-back-arrow-icon"
             onClick={() => navigate(-1)}
           />
+          <div className="updatemypage-title-text">프로필 수정</div>
           <p
-            className="updatemypage-save-button"
+            className="updatemypage-save-icon"
             type="button"
             id="popup"
             onClick={() => {
-              onClickToast("등록되었습니다.");
+              onClickToast('등록되었습니다.');
               instance.patch(`/users/info`, updateInfo);
             }}
           >
-            저장
+            <FiCheck />
           </p>
         </div>
         <div className="updatemypage-body-wrap">
@@ -150,7 +161,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                     }}
                   >
                     <Toggle
-                      background={connection ? "#84CA79" : "#d9d9d9"}
+                      background={connection ? '#84CA79' : '#d9d9d9'}
                       click={click}
                       check={connection}
                     />

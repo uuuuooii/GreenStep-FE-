@@ -9,10 +9,13 @@ export const MissionPage = styled.div`
   background-color: #fcfcfa;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   animation-name: ${FadeOn};
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  margin: 0 auto;
 `;
 
 export const DailyMissionArea = styled.div`
@@ -22,7 +25,7 @@ export const DailyMissionArea = styled.div`
   align-items: center;
   background: #fcfcfa;
   padding: 0px 0px 16px;
-  margin: 20px 0;
+  margin: 20px auto;
 `;
 export const WeeklyMissionArea = styled.div`
   display: flex;
@@ -30,7 +33,7 @@ export const WeeklyMissionArea = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0px 0px 16px;
-  margin: 20px 0;
+  margin: 20px auto;
 `;
 export const DailyTextArea = styled.div`
   width: 100%;

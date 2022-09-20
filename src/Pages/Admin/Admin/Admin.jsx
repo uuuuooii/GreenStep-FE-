@@ -61,6 +61,11 @@ const Admin = () => {
                   </Button>
                 </ButtonArea>
               </SubmitCard>
+              <ButtonArea>
+              {item.missionType}: 
+                {item.missionName}
+                
+              </ButtonArea>
             </AdminArea>
           ) : null
         )

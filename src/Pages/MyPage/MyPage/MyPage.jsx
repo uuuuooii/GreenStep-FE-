@@ -57,6 +57,7 @@ const MyPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
+  console.log(userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
 
@@ -157,6 +158,12 @@ const MyPage = () => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
+                <p className="missionCount">
+                  미션 달성 : {userInfo.missionCount}개
+                </p>
+                <p className="missionPoint">
+                  미션 총 겸험치 : {userInfo.missionPoint}xp
+                </p>
               </div>
             </div>
           </>

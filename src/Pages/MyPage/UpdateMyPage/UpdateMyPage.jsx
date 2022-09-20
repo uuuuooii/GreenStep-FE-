@@ -5,17 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../../Redux/modules/instance';
 //modules import
-import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
+import {
+  getUserInfoThunk,
+} from '../../../Redux/modules/userInfoSlice';
 //component import
 import Toggle from '../../../Components/Toggle/Toggle';
 //styled import
-import { FadeOn } from '../../Feed/FeedStyled';
+import { FadeOn } from '../../../Components/Animation/Animation';
 import styled from 'styled-components';
 import './UpdateMyPage.css';
 import '../../../Components/Toast/Toast.css';
 import { HiPencil } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import ProfilePencil from '../../../static/components/ProfilePencil';
+import { FiCheck } from 'react-icons/fi';
 
 const UpdateMyPageDiv = styled.div`
   width: 100%;
@@ -34,6 +37,7 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
   const [img, setImg] = useState('');
+  const [kakaoProfile, setKakaoProfile] = useState('');
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -56,19 +60,28 @@ const UpdateMyPage = ({ onClickToast }) => {
     '/images/토끼.png',
     '/images/펭귄.png',
   ];
-  console.log(userInfo);
+
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
+    instance
+      .get('/profiles/setting/hidden-missions')
+      .then((res) => setKakaoProfile(res.data.data));
     setLoding(false);
     setName(userInfo.name);
     setNickname(userInfo.nickname);
     if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
       setImg(userInfo.profilePhoto);
       setConnection(true);
-    }else if(userInfo.profilePhoto && imgList.includes(userInfo.profilePhoto)){
+    } else if (
+      userInfo.profilePhoto &&
+      imgList.includes(userInfo.profilePhoto)
+    ) {
       setImg(userInfo.profilePhoto);
-      setConnection(false)
+      setConnection(false);
+    } else if (userInfo.profilePhoto === kakaoProfile) {
+      setImg(userInfo.profilePhoto);
+      setConnection(true);
     }
   }, []);
 
@@ -80,17 +93,17 @@ const UpdateMyPage = ({ onClickToast }) => {
             className="updatemypage-back-arrow-icon"
             onClick={() => navigate(-1)}
           />
+          <div className="updatemypage-title-text">프로필 수정</div>
           <p
-            className="updatemypage-save-button"
+            className="updatemypage-save-icon"
             type="button"
             id="popup"
             onClick={() => {
               onClickToast('등록되었습니다.');
-              instance
-                .patch(`/users/info`, updateInfo)
+              instance.patch(`/users/info`, updateInfo);
             }}
           >
-            저장
+            <FiCheck />
           </p>
         </div>
         <div className="updatemypage-body-wrap">
@@ -98,13 +111,13 @@ const UpdateMyPage = ({ onClickToast }) => {
             {!loading ? (
               <>
                 <div className="updatemypage-profile-div">
-                  {connection||imgList.includes(img) ? (
+                  {connection || imgList.includes(img) ? (
                     <img
                       className="updatemypage-profile-image"
                       src={img}
                       alt="profile"
                     />
-                  ) :  (
+                  ) : (
                     <img
                       className="updatemypage-profile-image"
                       src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"

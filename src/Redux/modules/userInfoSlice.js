@@ -5,6 +5,7 @@ const initialState = {
   userInfo: {},
   certification: [],
   post: [],
+  kakaoProfile:{},
   isLoading: false,
   error: null,
 };
@@ -18,6 +19,20 @@ export const getUserInfoThunk = createAsyncThunk(
       const data = await instance
         .get(`/users/info`)
         .then((res) => res.data.data);
+      return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const getPrifilePhotoThunk = createAsyncThunk(
+  "userInfo/getUserInfo",
+  async (payload, thunkAPI) => {
+    try {
+      const data = await instance
+        .get("/profiles/setting/hidden-missions")
+        .then((res) => console.log(res));
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);

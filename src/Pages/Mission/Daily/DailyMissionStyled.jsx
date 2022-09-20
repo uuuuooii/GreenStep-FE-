@@ -9,7 +9,7 @@ export const DailyBody = styled.div`
   height: 170px;
   border-radius: 5px;
   background: #f9fdf9;
-  margin: 10px;
+  margin: 10px auto;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   &:hover {
     cursor: pointer;
@@ -57,7 +57,7 @@ export const ChallengeBox = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 10px 16px;
+  margin: 15px 20px 0px 20px;
 `;
 
 export const ChallengeTextArea = styled.div`
@@ -97,12 +97,12 @@ export const ChallengeTitle = styled.div`
 `;
 export const ChallengeTimer = styled.div`
   width: 132px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
   padding: 10px 13px;
-  margin-top: 19px;
+  margin-top: 5px;
   color: white;
   background: #ade2e9;
   border-radius: 5px;

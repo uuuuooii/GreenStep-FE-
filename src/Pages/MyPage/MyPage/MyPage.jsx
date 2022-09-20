@@ -14,7 +14,7 @@ import ProfilePencil from "../../../static/components/ProfilePencil";
 //styled import
 import "./MyPage.css";
 import styled from "styled-components";
-import { FadeOn, SlideBottom } from "../../Feed/FeedStyled";
+import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
@@ -34,7 +34,7 @@ const MyPageModal = styled.div`
   z-index: 20;
   background-color: #f8f8f8;
   animation-name: ${SlideBottom};
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
@@ -57,6 +57,7 @@ const MyPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
+  console.log(userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
 
@@ -107,7 +108,12 @@ const MyPage = () => {
               <div className="mypage-wrap-view-more">
                 <div className="mypage-modal-alarm-area">
                   <ViewMoreAlarm />
-                  <div className="mypage-modal-alarm-text">알림 설정</div>
+                  <div
+                    className="mypage-modal-alarm-text"
+                    onClick={() => navigate("/alarm")}
+                  >
+                    알림 설정
+                  </div>
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
@@ -152,6 +158,12 @@ const MyPage = () => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
+                <p className="missionCount">
+                  미션 달성 : {userInfo.missionCount}개
+                </p>
+                <p className="missionPoint">
+                  미션 총 겸험치 : {userInfo.missionPoint}xp
+                </p>
               </div>
             </div>
           </>
@@ -182,9 +194,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-
                   <ArchiveArrow />
-
                 </div>
               </div>
             )}

@@ -34,6 +34,7 @@ import {
   ToastsContainerPosition,
 } from "react-toasts";
 import Secession from "./Pages/Secession/Secession";
+import Alarm from "./Pages/Alarm/Alarm";
 
 function App() {
   const [toastNum, onClickToast] = useToast(0);
@@ -41,19 +42,19 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header/>
+        <Header />
         {/* <Kakaoshare /> */}
-        <SetPullToRefresh />
+        {/* <SetPullToRefresh /> */}
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/users/kakao/callback" element={<Loding />} />   
+          <Route path="/users/kakao/callback" element={<Loding />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/alert" element={<Alert />} />
           <Route
             path="/modal"
-            element={<Modal onClickToast={onClickToast} />}   
+            element={<Modal onClickToast={onClickToast} />}
           />
           <Route path="/mission" element={<Mission />} />
           <Route path="/missioncamera" element={<MissionCamera />} />
@@ -68,7 +69,7 @@ function App() {
           />
           <Route
             path="/upload/:id"
-            element={<Upload onClickToast={onClickToast} />} 
+            element={<Upload onClickToast={onClickToast} />}
           />
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
@@ -92,6 +93,7 @@ function App() {
           <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/secession" element={<Secession />} />
+          <Route path="/alarm" element={<Alarm />} />
           <Route path="*" element={<Error />} />
         </Routes>
         {toastNum === 0 ? (

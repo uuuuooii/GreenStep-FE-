@@ -16,11 +16,6 @@
         "src": "/icon_70x70.png",
         "sizes": "384x384",
         "type": "image/png"
-    },
-    {
-        "src": "/icon-144x144.png",
-        "sizes": "144x144",
-        "type": "image/png"
     }
 ],
   "start_url": "./index.html",

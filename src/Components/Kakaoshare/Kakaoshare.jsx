@@ -19,20 +19,24 @@ function KakaoShare({
         container: ".kakaoBtn",
         objectType: "feed",
         content: {
-          title: title || "title = string",
-          description: description || "description = string",
-          imageUrl: image || "image = string",
+          title: title || "Green Step",
+          description:
+            description ||
+            "당신의 작지만 일상적인 환경 미션을 통해서, 나비 효과를 만들어 아주 큰 변화로 이끌어보세요.",
+          imageUrl:
+            image ||
+            "https://postfiles.pstatic.net/MjAyMjA5MjFfMTA3/MDAxNjYzNzQyMDU4NzMw.TdlM0tvkOs_rkWCx6UYP0PtBBfrhashZENJ2MC0jyjAg.A_FnkPKNVen8Jl8wmK7Y8g7pskNWuDish7JpVGuqIswg.PNG.eunhey2717/KakaoTalk_Photo_2022-09-20-16-12-31_004.png?type=w773",
           link: {
-            mobileWebUrl: url || "url = string",
-            webUrl: url || "url = string",
+            mobileWebUrl: url || "https://greenstepapp.com/",
+            webUrl: url || "https://greenstepapp.com/",
           },
         },
         buttons: [
           {
             title: "자세히 보기",
             link: {
-              mobileWebUrl: url,
-              webUrl: url,
+              mobileWebUrl: "https://greenstepapp.com/",
+              webUrl: "https://greenstepapp.com/",
             },
           },
         ],

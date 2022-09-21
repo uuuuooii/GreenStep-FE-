@@ -1,5 +1,4 @@
 {
-  "short_name": "GreenStep",
   "name": "GreenStep",
   "start_url": "./index.html",
   "display": "fullscreen",
@@ -8,6 +7,7 @@
   "background_color": "#ffffff",
   "icons": [
     {
+
         "src": "/icon_310x310.png",
         "sizes": "310x310",
         "type": "image/png"
@@ -24,3 +24,4 @@
     }
 ]
 }
+

@@ -1,19 +1,17 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = { user: [] };
 // const URL = process.env.REACT_APP_URL;
 
 export const userThunk = createAsyncThunk(
-  'user/userThunk',
+  "user/userThunk",
   async (payload, thunkAPI) => {
-      
-
     return thunkAPI.fulfillWithValue(payload);
   }
 );
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {

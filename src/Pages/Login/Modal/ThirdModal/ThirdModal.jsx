@@ -42,7 +42,7 @@ const ThirdModal = ({
     setThird(false);
   };
   const user = useSelector((state) => state.userInfo.userInfo);
-  console.log(user.name);
+  console.log(nickname);
   var reg = /[^ㄱ-ㅎ가-힣a-zA-Z0-9]/g;
   //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
   return (

@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import logo from './kakao_login_medium_wide.png';
 import { GoPrimitiveDot } from 'react-icons/go';
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from 'react-icons/md';
 
 export const LoginBody = styled.div`
   width: 100%;
@@ -25,7 +29,24 @@ export const KakaoIcon = styled(RiKakaoTalkFill)`
   width: 20px;
   height: 20px;
 `;
-
+export const DownArea = styled.div`
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const UpArea = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const KakaoLink = styled.a`
   text-decoration: none;
   /* color: black; */
@@ -63,11 +84,19 @@ export const Logo = styled.img.attrs({
   width: 250px;
   /* margin: 3100px 62px 63px 62px; */
 `;
+export const UpArrow = styled(MdOutlineKeyboardArrowUp)`
+  color: #84ca79;
+  font-size: 28px;
+`;
+export const DownArrow = styled(MdOutlineKeyboardArrowDown)`
+  color: #84ca79;
+  font-size: 28px;
+`;
 export const OtherDiv = styled.div`
- background-image: url("data:image/svg+xml, %3Csvg width='375' height='3200' viewBox='0 0 375 3200' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='375' height='3200' fill='url(%23paint0_linear_665_12829)' fill-opacity='0.7' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_665_12829' x1='187.5' y1='0' x2='187.5' y2='3200' gradientUnits='userSpaceOnUse' %3E%3Cstop stop-color='%2384CA79' /%3E%3Cstop offset='0.276042' stop-color='%2394D28B' stop-opacity='0.7' /%3E%3Cstop offset='1' stop-color='%23B2E2AB' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-;
+  /* background-image: url("data:image/svg+xml, %3Csvg width='375' height='3200' viewBox='0 0 375 3200' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='375' height='3200' fill='url(%23paint0_linear_665_12829)' fill-opacity='0.7' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_665_12829' x1='187.5' y1='0' x2='187.5' y2='3200' gradientUnits='userSpaceOnUse' %3E%3Cstop stop-color='%2384CA79' /%3E%3Cstop offset='0.276042' stop-color='%2394D28B' stop-opacity='0.7' /%3E%3Cstop offset='1' stop-color='%23B2E2AB' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"); */
+  /* ; */
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   &::-webkit-scrollbar {
     display: none;
   }

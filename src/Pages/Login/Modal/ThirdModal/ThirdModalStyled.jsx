@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { HiPencil } from 'react-icons/hi';
+import styled, { keyframes } from "styled-components";
+import { HiPencil } from "react-icons/hi";
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
@@ -90,13 +90,22 @@ export const TextInput = styled.input`
     outline: none;
   }
   &::placeholder {
-    font-family: 'Apple SD Gothic Neo';
+    font-family: "Apple SD Gothic Neo";
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     color: ${(props) => props.color};
   }
+`;
+export const WarningText = styled.div`
+  font-size: 6px;
+  color: ${(props) => (props.color ? props.color : "#b2e2ab")};
+  width: 100%;
+`;
+export const WarningDiv = styled.div`
+  display: flex;
+  justify-content: start;
 `;
 export const ProfileArea = styled.div`
   display: flex;

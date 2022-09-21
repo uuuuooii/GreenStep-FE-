@@ -52,6 +52,7 @@ const Archive = ({ Header }) => {
   for (let i = 0; i < 20; i++) {
     SkeletonList.push(i);
   }
+  //param 값으로 저장소 분기
   const serverData = useSelector((state) =>
     param === 'certification'
       ? state.userInfo.certification
@@ -68,6 +69,7 @@ const Archive = ({ Header }) => {
 
   useEffect(() => {
     setLoding(true);
+    //param 값으로 인증글,게시글,숨김글 분기
     param === 'certification'
       ? dispatch(getCertThunk())
       : dispatch(getPostThunk());
@@ -79,7 +81,6 @@ const Archive = ({ Header }) => {
       {Header}
 
       <WrapArchive>
-        {/* <button onClick={()=>instance.get('/profiles/setting/hidden-missions').then((res)=>console.log(res))}>테스트</button> */}
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"

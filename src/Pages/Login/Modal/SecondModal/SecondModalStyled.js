@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
@@ -14,27 +14,36 @@ export const ModalHeader = styled.div`
   padding: 10px 0;
   text-align: center;
   display: flex;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
 `;
 
 export const TopText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "AppleNeoR";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 24px;
-
   color: #50674c;
-  margin: 0 auto;
+  margin: 2px auto;
+`;
+
+export const ButtonText = styled.div`
+  font-family: "AppleNeoR";
+  font-size: 18px;
+  margin: 3px 15px 2px 15px;
+  color: #868686;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const SelectImg = styled.img`
   width: 100%;
   height: 100%;
-  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
+  box-shadow: 0px 2.5px 4px #e6e6e4;
   border-radius: 10px;
   outline: ${(props) =>
-    props.check == props.select ? '2px solid #B2E2AB' : 'none'};
+    props.check == props.select ? "2px solid #B2E2AB" : "none"};
   &:hover {
     cursor: pointer;
   }
@@ -66,13 +75,4 @@ export const SelectBody = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   background-color: #fcfcfa;
-`;
-export const ButtonText = styled.div`
-  /* margin: auto; */
-  width: 32px;
-  margin: 0 10px;
-  color: #868686;
-  &:hover {
-    cursor: pointer;
-  }
 `;

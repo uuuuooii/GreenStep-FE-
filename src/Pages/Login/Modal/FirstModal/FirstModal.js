@@ -38,7 +38,7 @@ const FirstModal = ({
     <>
       <ModalHeader>
         <DummyText></DummyText>
-        <TopText>프로필 사진</TopText>
+        <TopText>프로필 선택</TopText>
         <ButtonText
           onClick={() => {
             check === 0 ? onClickToast("선택해주세요") : Next();

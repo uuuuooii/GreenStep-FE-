@@ -8,7 +8,7 @@ export const DailyBody = styled.div`
   width: 145px;
   height: 170px;
   border-radius: 5px;
-  background: #f9fdf9;
+  background: #fcfcfa;
   margin: 10px auto;
   box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   &:hover {
@@ -26,14 +26,12 @@ export const MissionText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-
+  font-family: "AppleNeoR";
   font-size: 13px;
   line-height: 16px;
   color: #50674c;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 9px;
 `;
 export const ChallengeMissionText = styled.div`
   display: flex;
@@ -89,7 +87,6 @@ export const ChallengePhoto = styled.img`
   background: rgba(255, 255, 255, 0.5);
 `;
 export const ChallengeTitle = styled.div`
-  font-weight: bol;
   font-size: 18px;
   line-height: 22px;
   text-align: center;

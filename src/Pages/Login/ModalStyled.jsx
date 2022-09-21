@@ -11,16 +11,15 @@ export const ModalBody = styled.div`
   /* max-width: 375px; */
   max-width: 100%;
   margin: auto;
-  background-color: white;
+  background-color: #fcfcfa;
 `;
 
 export const ModalSection = styled.div`
   width: 100%;
   height: 90%;
-  background-color: white;
+  background-color: FCFCFA;
   margin: 0px auto 0px auto;
   position: relative;
-  background-color: white;
 `;
 
 export const DotArea = styled.div`
@@ -32,6 +31,7 @@ export const DotArea = styled.div`
   justify-content: space-between;
   width: 135px;
   z-index: 1000;
+  background-color: #fcfcfa;
 `;
 export const TransX = keyframes`
 from{transform: scaleX(0.2)}

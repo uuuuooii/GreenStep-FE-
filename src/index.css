@@ -9,17 +9,23 @@ body {
 }
 
 /* 폰트*/
+
 @font-face {
-  font-family: "AppleNeoM";
-  src: url("./Components/Fonts/AppleSDGothicNeoL.ttf");
+  font-family: "AppleNeoR";
+  src: url("./Components/Fonts/AppleSDGothicNeoR.ttf");
 }
 
 @font-face {
-  font-family: "AppleNeoSB";
+  font-family: "AppleNeoM";
   src: url("./Components/Fonts/AppleSDGothicNeoM.ttf");
 }
 
 @font-face {
+  font-family: "AppleNeoSB";
+  src: url("./Components/Fonts/AppleSDGothicNeoSB.ttf");
+}
+
+@font-face {
   font-family: "AppleNeoB";
-  src: url("./Components//Fonts/AppleSDGothicNeoB.ttf") format("truetype");
+  src: url("./Components/Fonts/AppleSDGothicNeoB.ttf") format("truetype");
 }

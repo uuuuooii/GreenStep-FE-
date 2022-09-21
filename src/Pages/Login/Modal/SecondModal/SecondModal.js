@@ -46,7 +46,7 @@ const SecondModal = ({
         >
           이전
         </ButtonText>
-        <TopText>프로필 사진</TopText>
+        <TopText>캐릭터 선택</TopText>
         <ButtonText
           onClick={() =>
             img ? NextThird() : onClickToast("캐릭터를 선택해주세요.")

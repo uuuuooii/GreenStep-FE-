@@ -15,15 +15,14 @@ export const ModalHeader = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
 `;
 
 export const TopText = styled.div`
   text-align: center;
-  margin: auto;
-  font-size: 20px;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  margin: 4px auto 5px auto;
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
@@ -50,7 +49,7 @@ export const SelectImg = styled.img`
   object-fit: cover;
   width: 100px;
   height: 100px;
-  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
+  box-shadow: 0px 2.5px 4px #e6e6e4;
   border-radius: 10px;
   /* -moz-outline-radius : 10px; */
   outline: ${(props) =>
@@ -85,13 +84,10 @@ export const DummyText = styled.div`
   margin: 0 10px;
 `;
 export const SelectText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
-  font-weight: 600;
+  font-family: "AppleNeoM";
   font-size: 13px;
   line-height: 16px;
   color: #2b5139;
-  font-size: 6px;
   margin: 10px 0;
   display: flex;
   justify-content: center;

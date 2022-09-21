@@ -33,7 +33,7 @@ const DetailPosts = ({ onClickToast }) => {
       ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
-
+  console.log(detailPost);
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
@@ -63,7 +63,7 @@ const DetailPosts = ({ onClickToast }) => {
                 </div>
                 <div className="detail-posts-clap-area">
                   <div className="detail-posts-clap-point">
-                    {detailPost.clapCount}
+                    {detailPost.clapCount ? detailPost.clapCount : 0}
                   </div>
                   <div className="detail-posts-flex-position">
                     <DoneClap />

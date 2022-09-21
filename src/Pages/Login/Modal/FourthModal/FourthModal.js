@@ -55,7 +55,8 @@ const FourthModal = ({ setDisplay, name, nickname, img }) => {
               <EmailButtonArea>
                 {' '}
                 <EmailButton
-                  background={acceptMail ? '#b8dde2' : 'd9d9d9'}
+                  background={'#b8dde2'}
+                  // {acceptMail ? '#b8dde2' : 'd9d9d9'}
                   onClick={() =>
                     instance.patch(`/users/info`, userinfo).then(() => {
                       navigate('/mission');

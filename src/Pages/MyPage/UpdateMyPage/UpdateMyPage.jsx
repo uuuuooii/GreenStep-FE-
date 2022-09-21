@@ -1,24 +1,39 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import useInput from '../../../../src/hooks/useInput';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import instance from '../../../Redux/modules/instance';
+import React, { useEffect, useState } from "react";
+import useInput from "../../../../src/hooks/useInput";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import instance from "../../../Redux/modules/instance";
 //modules import
-import {
-  getUserInfoThunk,
-} from '../../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
-import Toggle from '../../../Components/Toggle/Toggle';
+import Toggle from "../../../Components/Toggle/Toggle";
 //styled import
-import { FadeOn } from '../../../Components/Animation/Animation';
-import styled from 'styled-components';
-import './UpdateMyPage.css';
-import '../../../Components/Toast/Toast.css';
-import { HiPencil } from 'react-icons/hi';
-import { IoIosArrowBack } from 'react-icons/io';
-import ProfilePencil from '../../../static/components/ProfilePencil';
-import { FiCheck } from 'react-icons/fi';
+import { FadeOn } from "../../../Components/Animation/Animation";
+import styled from "styled-components";
+import "./UpdateMyPage.css";
+import "../../../Components/Toast/Toast.css";
+import { SlideBottom } from "../../../Components/Animation/Animation";
+import { HiPencil } from "react-icons/hi";
+import { IoIosArrowBack } from "react-icons/io";
+import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
+import ProfilePencil from "../../../static/components/ProfilePencil";
+import { FiCheck } from "react-icons/fi";
+
+const UpdateMyPageModal = styled.div`
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 20;
+  background-color: #f8f8f8;
+  animation-name: ${SlideBottom};
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`;
 
 const UpdateMyPageDiv = styled.div`
   width: 100%;
@@ -34,10 +49,11 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [img, setImg] = useState('');
-  const [kakaoProfile, setKakaoProfile] = useState('');
+  const [name, setName] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [img, setImg] = useState("");
+  const [kakaoProfile, setKakaoProfile] = useState("");
+  const [viewMoreModal, setViewMoreModal] = useState(false);
 
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
@@ -53,19 +69,19 @@ const UpdateMyPage = ({ onClickToast }) => {
     acceptMail: acceptMail,
   };
   const imgList = [
-    '/images/고양이.png',
-    '/images/돼지.png',
-    '/images/부엉이.png',
-    '/images/새.png',
-    '/images/토끼.png',
-    '/images/펭귄.png',
+    "/images/고양이.png",
+    "/images/돼지.png",
+    "/images/부엉이.png",
+    "/images/새.png",
+    "/images/토끼.png",
+    "/images/펭귄.png",
   ];
-
+  // console.log(kakaoProfile)
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
     instance
-      .get('/profiles/setting/hidden-missions')
+      .get("/users/kakao-profile-photo")
       .then((res) => setKakaoProfile(res.data.data));
     setLoding(false);
     setName(userInfo.name);
@@ -99,13 +115,38 @@ const UpdateMyPage = ({ onClickToast }) => {
             type="button"
             id="popup"
             onClick={() => {
-              onClickToast('등록되었습니다.');
+              onClickToast("등록되었습니다.");
               instance.patch(`/users/info`, updateInfo);
+              navigate("/mypage");
             }}
           >
             <FiCheck />
           </p>
         </div>
+
+        {viewMoreModal ? (
+          <>
+            <div
+              className="updatemypage-modal-background"
+              onClick={() => {
+                setViewMoreModal(false);
+              }}
+            />
+
+            <UpdateMyPageModal>
+              <div
+                onClick={() => {
+                  setViewMoreModal(false);
+                }}
+                className="updatemypage-modal-bar"
+              >
+                <ViewMoreRowBar />
+              </div>
+              <div className="updatemypage-wrap-characters"></div>
+            </UpdateMyPageModal>
+          </>
+        ) : null}
+
         <div className="updatemypage-body-wrap">
           <div className="updatemypage-image-email-input-wrap">
             {!loading ? (
@@ -124,7 +165,12 @@ const UpdateMyPage = ({ onClickToast }) => {
                       alt="profile"
                     />
                   )}
-                  <div className="updatemypage-profile-pencil-div">
+                  <div
+                    className="updatemypage-profile-pencil-div"
+                    onClick={() => {
+                      setViewMoreModal(true);
+                    }}
+                  >
                     <ProfilePencil />
                   </div>
                 </div>
@@ -158,10 +204,13 @@ const UpdateMyPage = ({ onClickToast }) => {
                     onClick={() => {
                       setConnection(!connection);
                       setClick(true);
+                      img === kakaoProfile
+                        ? setImg(userInfo.profilePhoto)
+                        : setImg(kakaoProfile);
                     }}
                   >
                     <Toggle
-                      background={connection ? '#84CA79' : '#d9d9d9'}
+                      background={connection ? "#84CA79" : "#d9d9d9"}
                       click={click}
                       check={connection}
                     />

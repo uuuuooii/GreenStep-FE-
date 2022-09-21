@@ -60,7 +60,7 @@ const MyPage = () => {
   console.log(userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
-
+  console.log(userInfo);
   const FirstText = `아직 ${
     userInfo.nickname ? userInfo.nickname : "@@@"
   }님의 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!`;
@@ -94,7 +94,7 @@ const MyPage = () => {
               onClick={() => {
                 setViewMoreModal(false);
               }}
-            ></div>
+            />
 
             <MyPageModal>
               <div
@@ -162,7 +162,7 @@ const MyPage = () => {
                   미션 달성 : {userInfo.missionCount}개
                 </p>
                 <p className="missionPoint">
-                  미션 총 겸험치 : {userInfo.missionPoint}xp
+                  내가 그린 스텝 : {userInfo.missionPoint}걸음
                 </p>
               </div>
             </div>

@@ -35,6 +35,7 @@ import {
 } from "react-toasts";
 import Secession from "./Pages/Secession/Secession";
 import Alarm from "./Pages/Alarm/Alarm";
+import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
 
 function App() {
   const [toastNum, onClickToast] = useToast(0);
@@ -94,6 +95,7 @@ function App() {
           <Route path="/feed" element={<Feed />} />
           <Route path="/secession" element={<Secession />} />
           <Route path="/alarm" element={<Alarm />} />
+          <Route path="/alarmlist" element={<AlarmList />} />
           <Route path="*" element={<Error />} />
         </Routes>
         {toastNum === 0 ? (

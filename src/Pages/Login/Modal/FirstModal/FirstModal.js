@@ -1,5 +1,5 @@
 //react import
-import React from 'react';
+import React from "react";
 //styled import
 import {
   FirstModalBody,
@@ -14,8 +14,8 @@ import {
   ButtonText,
   DummyText,
   SelectText,
-} from './FirstModalStyled';
-import { useState } from 'react';
+} from "./FirstModalStyled";
+import { useState } from "react";
 
 const FirstModal = ({
   setDisplay,
@@ -24,7 +24,8 @@ const FirstModal = ({
   check,
   user,
   setNickname,
-  onClickToast
+  onClickToast,
+  name,
 }) => {
   const [slide, setSlide] = useState(false);
   const Next = () => {
@@ -32,7 +33,7 @@ const FirstModal = ({
     setSlide(true);
     setNickname(user.nickname);
   };
-
+  console.log(user.name);
   return (
     <>
       <ModalHeader>
@@ -40,12 +41,10 @@ const FirstModal = ({
         <TopText>프로필 사진</TopText>
         <ButtonText
           onClick={() => {
-            check === 0 ? onClickToast('선택해주세요') : Next();
+            check === 0 ? onClickToast("선택해주세요") : Next();
           }}
           check={check}
-        >
-          
-        </ButtonText>
+        ></ButtonText>
       </ModalHeader>
       <SelectBody slide={slide}>
         <ImgArea>
@@ -55,16 +54,16 @@ const FirstModal = ({
                 src={
                   user.profilePhoto
                     ? user.profilePhoto
-                    : 'https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg'
+                    : "https://blog.kakaocdn.net/dn/Sq4OD/btqzlkr13eD/dYwFnscXEA6YIOHckdPDDk/img.jpg"
                 }
                 onClick={() => {
                   check === 1 ? setCheck(0) : setCheck(1);
                   !user.profilePhoto
                     ? setImg(
-                        'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
+                        "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
                       )
                     : setImg(user.profilePhoto);
-                    setDisplay(3)
+                  setDisplay(3);
                 }}
                 check={check}
                 num={1}
@@ -77,7 +76,7 @@ const FirstModal = ({
                 src="images/펭귄.png"
                 onClick={() => {
                   check === 2 ? setCheck(0) : setCheck(2);
-                  setDisplay(2)
+                  setDisplay(2);
                 }}
                 check={check}
                 num={2}

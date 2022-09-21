@@ -1,26 +1,26 @@
 //react import
-import React, { useState, useEffect } from 'react';
-import useInput from '../../hooks/useInput';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import useInput from "../../hooks/useInput";
+import { useDispatch, useSelector } from "react-redux";
 //styled import
-import OnDot from '../../static/components/Login/OnDot';
-import NonDot from '../../static/components/Login/NonDot';
+import OnDot from "../../static/components/Login/OnDot";
+import NonDot from "../../static/components/Login/NonDot";
 import {
   ModalBody,
   ModalSection,
   DotArea,
   SlideLeftDiv,
   SlideRightDiv,
-} from './ModalStyled';
+} from "./ModalStyled";
 //modules import
-import { getUserInfoThunk } from '../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from "../../Redux/modules/userInfoSlice";
 
 //component import
-import FirstModal from './Modal/FirstModal/FirstModal';
-import SecondModal from './Modal/SecondModal/SecondModal';
-import ThirdModal from './Modal/ThirdModal/ThirdModal';
-import FourthModal from './Modal/FourthModal/FourthModal';
-import LoadingBar from '../../Components/LoadingBar/LoadingBar';
+import FirstModal from "./Modal/FirstModal/FirstModal";
+import SecondModal from "./Modal/SecondModal/SecondModal";
+import ThirdModal from "./Modal/ThirdModal/ThirdModal";
+import FourthModal from "./Modal/FourthModal/FourthModal";
+import LoadingBar from "../../Components/LoadingBar/LoadingBar";
 
 const Modal = ({ onClickToast }) => {
   const [loading, setLoading] = useState(false);
@@ -28,13 +28,14 @@ const Modal = ({ onClickToast }) => {
   const [third, setThird] = useState(false);
   const [fourth, setFourth] = useState(false);
   const [display, setDisplay] = useState(0);
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState("");
   const [check, setCheck] = useState(0);
-  const [name, setName] = useInput('');
-  const [nickname, setNickname] = useInput('');
+  const [name, setName] = useInput("");
+  const [nickname, setNickname] = useInput("");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userInfo.userInfo);
 
+  console.log(user);
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());
@@ -104,7 +105,7 @@ const Modal = ({ onClickToast }) => {
               <>
                 <>
                   <OnDot />
-                </>{' '}
+                </>{" "}
                 <SlideLeftDiv>
                   <OnDot />
                 </SlideLeftDiv>
@@ -124,13 +125,13 @@ const Modal = ({ onClickToast }) => {
               </>
             ) : display === 3 && !third ? (
               <>
-                {' '}
+                {" "}
                 <SlideLeftDiv>
                   <OnDot />
                 </SlideLeftDiv>
                 <SlideRightDiv>
                   <NonDot />
-                </SlideRightDiv>{' '}
+                </SlideRightDiv>{" "}
                 <OnDot />
               </>
             ) : (display === 1 || display === 2) && !second ? (

@@ -54,7 +54,7 @@ const ThirdModal = ({
         <TopText>닉네임 설정</TopText>
         <ButtonText
           onClick={() =>
-            name && nickname && !reg.test(name) && !reg.test(nickname)
+            nickname && !reg.test(nickname)
               ? NextModal()
               : onClickToast("빈칸을 확인해주세요")
           }

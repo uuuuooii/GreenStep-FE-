@@ -73,7 +73,7 @@ const ExplainWating = ({ onClickToast }) => {
                 className="explain-waiting-bar"
                 onClick={() => {
                   navigate("/mission");
-                  onClickToast(`(+${pointNum}xp)`, 1);
+                  onClickToast(`예상 경험치 (+${pointNum}xp)`, 1);
                 }}
               >
                 인증 대기중

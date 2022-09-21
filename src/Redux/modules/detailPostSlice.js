@@ -15,7 +15,7 @@ export const getDetailPostThunk = createAsyncThunk(
     try {
       const data = await instance
         .get(`/profiles/feed`)
-        .then((res) => res.data.data);
+        .then((res) => console.log(res));
       return thunkAPI.fulfillWithValue(data); // 엑스트라 리듀서로 넘겨줌
     } catch (error) {
       return thunkAPI.rejectWithValue(error); // 엑스트라 리듀서로 넘겨줌

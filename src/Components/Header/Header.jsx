@@ -14,19 +14,7 @@ const Header = () => {
   // const [path, setPath] = useState('');
   const { pathname } = useLocation();
 
-  const hideArr = [
-    "/",
-    "/users/kakao/callback",
-    "/alert",
-    "/modal",
-    "/missioncamera",
-    "/updatemypage",
-    "/archive/certification",
-    "/archive/post",
-    "/secession",
-    "*",
-    "/alarm",
-  ];
+
 
   const handleNavigation = useCallback(
     (e) => {

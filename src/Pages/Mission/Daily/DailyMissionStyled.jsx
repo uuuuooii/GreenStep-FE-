@@ -52,7 +52,7 @@ export const ChallengeMissionText = styled.div`
 
 export const ChallengeBox = styled.div`
   display: flex;
-  padding: 12px 10px 14px 16px;
+  padding: 12px 12px 12px 10px;
   justify-content: space-between;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
@@ -65,7 +65,7 @@ export const ChallengeTextArea = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 30px 0;
-  margin: 0 10px;
+  margin: 0 20px 0px 10px;
 `;
 
 export const ChallengeBody = styled.div`
@@ -101,7 +101,7 @@ export const ChallengeTimer = styled.div`
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  padding: 10px 13px;
+  padding: 10px 10px;
   margin-top: 5px;
   color: white;
   background: #ade2e9;

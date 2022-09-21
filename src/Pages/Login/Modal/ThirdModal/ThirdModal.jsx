@@ -67,9 +67,9 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv color={name ? "#b2e2ab" : "#d9d9d9"}>
+            <InputDiv color={name ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={name ? "#b2e2ab" : "#2a2929"}
+                color={name ? "#B2E2AB" : "#2a2929"}
                 onChange={setName}
                 defaultValue={name ? name : ""}
                 placeholder={user.name}
@@ -78,21 +78,21 @@ const ThirdModal = ({
               />
 
               <PencilDiv>
-                <PencilIcon color={name ? "#b2e2ab" : "#d9d9d9"} />
+                <PencilIcon color={name ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
               {" "}
               {reg.test(name) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
               ) : (
-                <WarningText>최대 8글자</WarningText>
+                <WarningText>최대 8글자까지 가능합니다.</WarningText>
               )}
             </WarningDiv>
 
-            <InputDiv color={nickname ? "#b2e2ab" : "#d9d9d9"}>
+            <InputDiv color={nickname ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={nickname ? "#b2e2ab" : "#d9d9d9"}
+                color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
                 defaultValue={nickname ? nickname : ""}
                 placeholder="닉네임"
@@ -100,14 +100,14 @@ const ThirdModal = ({
                 type="text"
               />
               <PencilDiv>
-                <PencilIcon color={nickname ? "#b2e2ab" : "#d9d9d9"} />
+                <PencilIcon color={nickname ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
               {reg.test(nickname) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
               ) : (
-                <WarningText>최대 8글자</WarningText>
+                <WarningText>최대 8글자까지 가능합니다.</WarningText>
               )}
             </WarningDiv>
           </ProfileArea>

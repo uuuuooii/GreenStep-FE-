@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Apple SD Gothic Neo";
-  src: url("../../../Components/fonts/AppleSDGothicNeoL.ttf");
+  src: url("../../../Components/Fonts/AppleSDGothicNeoL.ttf");
 }
 
 .whole-mypage {
@@ -216,7 +216,6 @@
   text-align: center;
   color: #4f7d48;
 }
-
 
 .photoshots-archive-area {
   width: 100%;

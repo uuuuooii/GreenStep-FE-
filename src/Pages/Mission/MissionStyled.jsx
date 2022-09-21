@@ -24,8 +24,8 @@ export const DailyMissionArea = styled.div`
   justify-content: center;
   align-items: center;
   background: #fcfcfa;
-  padding: 0px 0px 16px;
-  margin: 20px auto;
+  padding: 0px;
+  margin: 20px auto 0px auto;
 `;
 export const WeeklyMissionArea = styled.div`
   display: flex;
@@ -42,8 +42,9 @@ export const DailyTextArea = styled.div`
   justify-content: start;
 `;
 export const DailyText = styled.div`
-  margin: 15px;
-  font-weight: 500;
+  font-family: "AppleNeoR";
+  margin: 15px 15px 15px 20px;
+  font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   color: #50674c;

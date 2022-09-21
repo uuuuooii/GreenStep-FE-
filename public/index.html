@@ -30,9 +30,12 @@
   <link rel="manifest" href="./images/FaviconLogo/manifest.json" />
   <meta name="msapplication-TileColor" content="#FCFCFA" />
   <meta name="msapplication-TileImage" content="./images/FaviconLogo/ms-icon-144x144.png" />
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
 
-
-  <link rel="manifest" href="greenstepapp/manifest.json" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
   <title>Green Step</title>
   <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -82,8 +85,47 @@
     ChannelIO("boot", {
       pluginKey: "0f8cda23-1dfd-49f1-9e44-1eeccf36d4e7",
     });
+    //End Channel Plugin 
+
+    //pwa
+    var deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+      console.log('beforeinstallprompt Event fired');
+      e.preventDefault();
+
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+
+      return false;
+    });
+
+    // 특정 버튼 클릭 시 설치 시작 
+    btnSave.addEventListener('click', function () {
+      if (deferredPrompt !== undefined) {
+        // The user has had a postive interaction with our app and Chrome
+        // has tried to prompt previously, so let's show the prompt.
+        deferredPrompt.prompt();
+
+        // Follow what the user has done with the prompt.
+        deferredPrompt.userChoice.then(function (choiceResult) {
+
+          console.log(choiceResult.outcome);
+
+          if (choiceResult.outcome == 'dismissed') {
+            console.log('User cancelled home screen install');
+          } else {
+            console.log('User added to home screen');
+          }
+
+          // We no longer need the prompt.  Clear it up.
+          deferredPrompt = null;
+        });
+      }
+    });
   </script>
-  <!-- End Channel Plugin -->
+
+
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--

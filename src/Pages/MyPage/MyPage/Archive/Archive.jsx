@@ -46,8 +46,8 @@ const Archive = ({ Header }) => {
   const CancelClick = () => {
     setDelState(!delState);
     setModal(false);
-    setDelArr([])
-  }
+    setDelArr([]);
+  };
   const SkeletonList = [];
   for (let i = 0; i < 20; i++) {
     SkeletonList.push(i);
@@ -58,15 +58,6 @@ const Archive = ({ Header }) => {
       ? state.userInfo.certification
       : state.userInfo.post
   );
-  // const PostNavigate = (id) => {
-  //   if(param==="post")
-  //   navigate(
-  //     param === "post" || data[0].OnFeed
-  //       ? `/detailposts/${data[0].id}`
-  //       : `/upload/${data[0].id}`
-  //   )
-  // }
-
   useEffect(() => {
     setLoding(true);
     //param 값으로 인증글,게시글,숨김글 분기
@@ -84,9 +75,7 @@ const Archive = ({ Header }) => {
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"
-            onClick={() =>
-              delState ? CancelClick() : navigate('/mypage')
-            }
+            onClick={() => (delState ? CancelClick() : navigate('/mypage'))}
           >
             {!delState ? <BackMypage /> : <Cancel />}
           </div>
@@ -159,51 +148,54 @@ const Archive = ({ Header }) => {
                 {delArr.includes(data.id) ? <Check /> : <NonCheck />}
               </DeleteDiv>
             </CardArea>
-          ) : <div className="mypage-flex-box">
-          <div className="mypage-flex-text">${`아직 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!`}</div>
-        </div>}
+          ) : null}
         </div>
+        {data.length === 0 ? (
+          <div className="archive-flex-box">
+            <div className="archive-flex-text">
+              {
+                '아직 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!'
+              }
+            </div>
+          </div>
+        ) : null}
       </WrapArchive>
 
       {modal ? (
         <ModalArea>
-            <DeleteModal>
-              <DeleteText>
-                <DeleteTopText>
-                  {param === 'certification'
-                    ? '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'
-                    : '게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?'}
-                </DeleteTopText>
-                <hr className="DeleteLine" />
-                {/* <DeleteLine /> */}
-                <DeleteBottomText
-                  onClick={() => {
-                    param === 'post'
-                      ? instance
-                          .delete(`/feed`, { data: delArr })
-                          .then(() =>
-                            setData([
-                              ...data.filter(
-                                (item) => !delArr.includes(item.id)
-                              ),
-                            ])
-                          )
-                      : instance
-                          .patch(`/profiles/missions`, { data: delArr })
-                    setModal(!modal);
-                    setDelArr([]);
-                  }}
-                >
-                  {param === 'certification'
-                    ? '가려진 항목으로 이동'
-                    : '삭제하기'}
-                </DeleteBottomText>
-              </DeleteText>
-              <DeleteCancelButton onClick={() => setModal(!modal)}>
-                취소
-              </DeleteCancelButton>
-            </DeleteModal>
-
+          <DeleteModal>
+            <DeleteText>
+              <DeleteTopText>
+                {param === 'certification'
+                  ? '인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?'
+                  : '게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?'}
+              </DeleteTopText>
+              <hr className="DeleteLine" />
+              {/* <DeleteLine /> */}
+              <DeleteBottomText
+                onClick={() => {
+                  param === 'post'
+                    ? instance
+                        .delete(`/feed`, { data: delArr })
+                        .then(() =>
+                          setData([
+                            ...data.filter((item) => !delArr.includes(item.id)),
+                          ])
+                        )
+                    : instance.put(`/profiles/missions`, { data: delArr });
+                  setModal(!modal);
+                  setDelArr([]);
+                }}
+              >
+                {param === 'certification'
+                  ? '가려진 항목으로 이동'
+                  : '삭제하기'}
+              </DeleteBottomText>
+            </DeleteText>
+            <DeleteCancelButton onClick={() => setModal(!modal)}>
+              취소
+            </DeleteCancelButton>
+          </DeleteModal>
         </ModalArea>
       ) : null}
     </>

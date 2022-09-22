@@ -148,10 +148,12 @@ const Feed = () => {
           });
     setLoading(false);
   };
+  // 최하단에 도달 시 페이지 +1
   useEffect(() => {
     setPage(page + 1);
   }, [inView]);
 
+  //카테고리 변경시 페이지를 비움
   useEffect(() => {
     setFeedList([]);
     setClapArr([]);
@@ -160,6 +162,7 @@ const Feed = () => {
     setLast(0);
   }, [category]);
 
+//page가 올라가면서 통신을 해서 추가적인 값을 받아옴
   useEffect(() => {
     page === 0 || page % 2 ? TagClick() : console.log();
     setClapArr(FeedList.map((item) => (item.clapByMe ? item.id : null)));

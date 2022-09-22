@@ -41,7 +41,7 @@ const Explain = ({ Header }) => {
   return (
     <>
       {Header}
-      <div className="explain-back-div" onClick={() => navigate('/mission')} />
+      {/* <div className="explain-back-div" onClick={() => navigate('/mission')} /> */}
       {!loading && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape">

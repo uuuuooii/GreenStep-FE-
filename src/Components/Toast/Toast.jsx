@@ -1,71 +1,36 @@
-import React from "react";
-import "./Toast.css";
-import {
-  ToastsContainer,
-  ToastsStore,
-  ToastsContainerPosition,
-} from "react-toasts";
+import React from 'react';
+import { SlideBottom, FadeOut } from '../Animation/Animation';
+import './Toast.css';
+import styled from 'styled-components';
 
-const Toast = () => {
-  return (
-    <>
-      {/* <button
-          type="button"
-          id="popup"
-          onClick={onClickToastPopup}
-          className="toast-button"
-        >
-          toast
-        </button> */}
-
-      <ToastsContainer
-        className="custom-alert-position"
-        position={ToastsContainerPosition.BOTTOM_CENTER}
-        store={ToastsStore}
-        lightBackground
-      />
-    </>
-  );
+const Toast = ({ text,toastNum }) => {
+  return <ToastBody toastNum={toastNum} >{text}</ToastBody>;
 };
 
 export default Toast;
 
-export const ToastStyle = (
-  <style jsx="true">{`
-.toast {
-  font-size: 13px !important; !important;
-  color: #fff !important; !important;
-  justify-content: center; !important;
-  align-items: center; !important;
-  background-color: rgba(178, 226, 171, 0.75) !important;
-  box-shadow: 0px 2px 2px #dadada; !important;
-  border-radius: 20px !important;
-  min-height: 20px !important;
-  width: 205px !important;
-  margin: 4px auto !important;
-  padding: 8px 35px; !important;
-  display: inline-block !important;
-  line-height: 22px !important;
-}
-`}</style>
-);
-
-export const SecondToastStyle = (
-  <style jsx="true">{`
-.toast {
-  font-size: 13px !important; !important;
-  color: #fff !important; !important;
-  justify-content: center; !important;
-  align-items: center; !important;
-  background-color: rgba(178, 226, 171, 0.75) !important;
-  box-shadow: 0px 2px 2px #dadada; !important;
-  border-radius: 20px !important;
-  width : 80px;
-  min-height: 20px !important;
-  margin: 4px auto !important;
-  padding: 8px 35px; !important;
-  display: inline-block !important;
-  line-height: 22px !important;
-}
-`}</style>
-);
+const ToastBody = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: all 0.5s;
+  transform: translateX(-50%);
+  bottom: 80px;
+  font-size: 13px;
+  color: #fff;
+  background-color: rgba(178, 226, 171, 0.75);
+  box-shadow: 0px 2px 2px #dadada;
+  border-radius: 20px;
+  min-height: 20px;
+  max-width: 205px;
+  /* margin: 4px auto; */
+  padding: 8px 35px;
+  text-align: center;
+  line-height: 22px;
+  animation-name: ${SlideBottom};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  z-index: 1000;
+`;

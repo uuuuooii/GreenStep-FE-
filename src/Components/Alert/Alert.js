@@ -12,24 +12,34 @@ const Alert = () => {
   const token = localStorage.getItem('Authorization');
 
   const [meventSource, msetEventSource] = useState(undefined);
-
   let eventSource = undefined;
   // console.log(eventSource);
-  useEffect(() => {
-    //구독하기
-    if (token) {
-      const eventSource = new EventSource('http://13.209.16.253:8080/subscribe', {
-        headers: {
-          Authorization: token,
-        },
-      });
+  useEffect(
+    () => {
+      // const source = new EventSource('http://13.209.16.253:8080/subscribe', {
+      //   headers: {
+      //     Authorization: token,
+      //   },
+      // });
+      // source.onmessage = (e) => console.log(e.data);
+
+      //구독하기
+
+      const eventSource = new EventSource(
+        'http://13.209.16.253:8080/subscribe',
+        {
+          headers: {
+            // 'Authorization': token
+            Authorization: token,
+          },
+        }
+      );
 
       eventSource.addEventListener('message', (e) => {
-          console.log(e)
-          setNewAlert((prev) => [JSON.parse(e.data)]);
+        console.log(e);
+        setNewAlert((prev) => [JSON.parse(e.data)]);
 
-          // queryClient.invalidateQueries('alertList');
-        
+        // queryClient.invalidateQueries('alertList');
       });
 
       eventSource.addEventListener('error', (e) => {
@@ -37,11 +47,15 @@ const Alert = () => {
           console.log(e);
         }
       });
-    }
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token]);
+    []
+  );
 
   return <>Alert</>;
 };
 
 export default Alert;
+
+// (HttpServletRequest request,
+//   @RequestHeader(value = "Last-Event-ID", required = false, defaultValue = "")

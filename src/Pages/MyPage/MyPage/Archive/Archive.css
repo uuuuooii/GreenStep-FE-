@@ -38,3 +38,12 @@
   height: 123px;
   background-color: #f3f3f3;
 }
+.archive-flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+.archive-flex-text {
+margin: 40vh 0;
+white-space: pre-wrap;
+}

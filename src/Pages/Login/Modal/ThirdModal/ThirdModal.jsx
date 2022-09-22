@@ -46,7 +46,6 @@ const ThirdModal = ({
 
   var reg = /[^ㄱ-ㅎ가-힣a-zA-Z0-9]/g;
   //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
-  console.log(reg.test(name));
   return (
     <>
       <ModalHeader>

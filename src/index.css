@@ -1,0 +1,31 @@
+body {
+  /* max-width: 375px; */
+  max-width: 100%;
+  height: 100vh;
+  /* overflow-y: hidden; */
+  margin: auto;
+  /* font-family: "tway_sky"; */
+  background-color: #fcfcfa;
+}
+
+/* 폰트*/
+
+@font-face {
+  font-family: "AppleNeoR";
+  src: url("./Components/fonts/AppleSDGothicNeoR.ttf");
+}
+
+@font-face {
+  font-family: "AppleNeoM";
+  src: url("./Components/fonts/AppleSDGothicNeoM.ttf");
+}
+
+@font-face {
+  font-family: "AppleNeoSB";
+  src: url("./Components/fonts/AppleSDGothicNeoSB.ttf");
+}
+
+@font-face {
+  font-family: "AppleNeoB";
+  src: url("./Components/fonts/AppleSDGothicNeoB.ttf") format("truetype");
+}

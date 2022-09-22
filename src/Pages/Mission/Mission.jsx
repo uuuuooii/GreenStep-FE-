@@ -48,31 +48,7 @@ const Mission = () => {
     <>
       <MissionPage>
         <>
-          {/* <button
-            onClick={() =>
-              instance.get('/kakao/logout').then((res) => {
-                if (res.data.data) {
-                  window.localStorage.clear();
-                  window.sessionStorage.clear();
-                }
-              })
-            }
-          >
-            로그아웃
-          </button>
-          <button
-            onClick={() => {
-              instance.post('/kakao/unregister').then((res) => {
-                if (res.data.data) {
-                  window.localStorage.clear();
-                  window.sessionStorage.clear();
-                }
-              });
-            }}
-          >
-            회원탈퇴
-          </button>
-          <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button> */}
+          {/* <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button>  */}
           {!loading && missionChallenge ? (
             <DailyChallenge mission={missionChallenge[0]} />
           ) : (

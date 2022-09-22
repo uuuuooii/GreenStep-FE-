@@ -50,6 +50,7 @@
 }
 
 .mypage-modal-alarm-text {
+  cursor: pointer;
   margin-left: 16px;
   color: #84ca79;
   font-size: 16px;
@@ -64,6 +65,7 @@
 }
 
 .mypage-modal-hidden-text {
+  cursor: pointer;
   margin-left: 15px;
   color: #84ca79;
   font-size: 16px;
@@ -78,6 +80,7 @@
 }
 
 .mypage-modal-cc-text {
+  cursor: pointer;
   margin-left: 16px;
   color: #84ca79;
   font-size: 16px;
@@ -92,6 +95,7 @@
 }
 
 .mypage-modal-quit-text {
+  cursor: pointer;
   margin-left: 16px;
   color: #868686;
   font-size: 16px;
@@ -106,6 +110,7 @@
 }
 
 .mypage-modal-logout-text {
+  cursor: pointer;
   margin-left: 16px;
   color: #6dbac5;
   font-size: 16px;
@@ -121,6 +126,7 @@
 }
 
 .mypage-flex-text {
+  cursor: pointer;
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import logo from './kakao_login_medium_wide.png';
-import { GoPrimitiveDot } from 'react-icons/go';
 import {
-  MdOutlineKeyboardArrowDown,
-  MdOutlineKeyboardArrowUp,
-} from 'react-icons/md';
+  LogoFade,
+  FadeBottomOn,
+  FadeBottomOnImage,
+} from '../../Components/Animation/Animation';
 
 export const LoginBody = styled.div`
   width: 100%;
@@ -24,28 +24,16 @@ export const ButtonBody = styled.div`
   /* margin: 3100px 62px 63px 62px; */
   /* padding: 60px 0; */
 `;
-export const KakaoIcon = styled(RiKakaoTalkFill)`
+export const LogoGraDiv = styled.div`
+  /* background-color: #daf2d5; */
+  width: 250px;
+  height: 250px;
+  /* border-radius: 150px; */
   position: absolute;
-  width: 20px;
-  height: 20px;
-`;
-export const DownArea = styled.div`
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const UpArea = styled.div`
-  width: 100%;
-  position: fixed;
-  top: 0;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  animation-name: ${LogoFade};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const KakaoLink = styled.a`
   text-decoration: none;
@@ -55,19 +43,13 @@ export const KakaoLink = styled.a`
 `;
 export const LDiv = styled.div`
   /* position: absolute; */
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   /* top: 286px; */
 
   /* margin: 286px 80px 2700px 80px; */
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.35) 77.08%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  border-radius: 107.5px;
   z-index: 999;
 `;
 export const MarginDIv = styled.div`
@@ -84,53 +66,44 @@ export const Logo = styled.img.attrs({
   width: 250px;
   /* margin: 3100px 62px 63px 62px; */
 `;
-export const UpArrow = styled(MdOutlineKeyboardArrowUp)`
-  color: #84ca79;
-  font-size: 28px;
-`;
-export const DownArrow = styled(MdOutlineKeyboardArrowDown)`
-  color: #84ca79;
-  font-size: 28px;
-`;
-export const OtherDiv = styled.div`
-  /* background-image: url("data:image/svg+xml, %3Csvg width='375' height='3200' viewBox='0 0 375 3200' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='375' height='3200' fill='url(%23paint0_linear_665_12829)' fill-opacity='0.7' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_665_12829' x1='187.5' y1='0' x2='187.5' y2='3200' gradientUnits='userSpaceOnUse' %3E%3Cstop stop-color='%2384CA79' /%3E%3Cstop offset='0.276042' stop-color='%2394D28B' stop-opacity='0.7' /%3E%3Cstop offset='1' stop-color='%23B2E2AB' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"); */
-  /* ; */
-  height: 100vh;
-  overflow: hidden;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-export const Divider = styled.div`
-  width: 100%;
-  height: 5px;
-`;
-export const DotDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  right: 2%;
-  bottom: 50%;
-  transform: translateY(50%);
-`;
-export const PageDot = styled(GoPrimitiveDot)`
-  margin: 5px 0;
-  color: #84ca79;
-  border: ${(props) =>
-    props.num === props.check ? '1px solid #84CA79' : 'none'};
-  border-radius: 50%;
+export const BlurDiv = styled.div`
+  position: absolute;
 `;
 export const FirstArea = styled.div`
-  height: 100vh;
-  /* border: 1px solid black; */
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+`;
+export const FirstTitle = styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 148%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  text-align: center;
+  z-index: 2000;
+  margin: 0 23px;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  color: rgba(80, 103, 76, 0.5);
+  opacity: 0;
+`;
+export const FirstImgDiv = styled.div`
+  position: relative;
+  width: 366px;
+  height: 286px;
+`;
+export const FirstImg = styled.img`
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 
 export const SecondArea = styled.div`
@@ -138,9 +111,24 @@ export const SecondArea = styled.div`
   /* border: 1px solid black; */
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+`;
+export const SecondImgDiv = styled.div`
+  position: relative;
+  width: 366px;
+  height: 286px;
+`;
+export const SecondImg = styled.img`
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0.5;
 `;
 export const ThirdArea = styled.div`
   height: 100vh;
@@ -163,36 +151,77 @@ export const FourthArea = styled.div`
 export const LogoArea = styled.div`
   height: 100vh;
   /* border: 1px solid black; */
+  /* background-color: #DAF2D5; */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 
+export const FirstCoverDiv = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 130px;
+  height: 282px;
+  z-index: 3000;
+  transform: translate(20%, -20%);
+`;
+export const SecondCoverDiv = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 282px;
+  z-index: 3000;
+  transform: translate(-20%, -20%);
+`;
+export const FirstCover = styled.img`
+  width: 100%;
+  height: 100%;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  /* opacity: 0; */
+`;
 export const FirstText = styled.div`
+  opacity: 0;
   font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 148%;
+  color: #50674c;
+  margin: 20px 0;
   text-align: center;
-  color: #84ca79;
-  max-width: 300px;
-
   white-space: pre-wrap;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+`;
+export const SecondRefDiv = styled.div`
+  height: 1px;
 `;
 export const SecondText = styled.div`
+  opacity: 0;
+  width: 100%;
   font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 148%;
+  color: #50674c;
+  margin: 20px 0;
   text-align: center;
-  color: #84ca79;
-
-  max-width: 300px;
   white-space: pre-wrap;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
 export const ThirdText = styled.div`
   font-family: 'Apple SD Gothic Neo';
@@ -217,39 +246,60 @@ export const FourthText = styled.div`
   text-align: center;
   color: #84ca79;
 `;
-export const A1 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: red;
+export const LastTextFirst = styled.div`
+  opacity: 0;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 48px;
+  /* or 192% */
+
+  text-align: center;
+
+  /* primary 1 */
+
+  color: #50674c;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
-export const A2 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: yellow;
+export const LastTextSecond = styled.div`
+  opacity: 0;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 48px;
+  /* or 192% */
+
+  text-align: center;
+
+  /* primary 1 */
+
+  color: #50674c;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;
-export const A3 = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  background-color: blue;
-`;
-export const A4 = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 3200px;
-  background-image: url("data:image/svg+xml, %3Csvg width='375' height='3200' viewBox='0 0 375 3200' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='375' height='3200' fill='url(%23paint0_linear_665_12829)' fill-opacity='0.7' /%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_665_12829' x1='187.5' y1='0' x2='187.5' y2='3200' gradientUnits='userSpaceOnUse' %3E%3Cstop stop-color='%2384CA79' /%3E%3Cstop offset='0.276042' stop-color='%2394D28B' stop-opacity='0.7' /%3E%3Cstop offset='1' stop-color='%23B2E2AB' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+export const LastTextThird = styled.div`
+  opacity: 0;
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 48px;
+  /* or 192% */
+
+  text-align: center;
+
+  /* primary 1 */
+
+  color: #50674c;
+  animation-name: ${(props) => props.animation};
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 `;

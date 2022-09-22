@@ -1,22 +1,22 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 //modules import
 import {
   __GetWeeklymission,
   __GetDailymission,
   __GetTodaymission,
-} from '../../Redux/modules/mission';
-import instance from '../../Redux/modules/instance';
+} from "../../Redux/modules/mission";
+import instance from "../../Redux/modules/instance";
 //componenes import
-import Completed from './Completed/Completed';
-import DailyMission from './Daily/DailyMission';
-import Waiting from './Waiting/Waiting';
-import DailyChallenge from './Daily/DailyChallenge';
-import Footer from '../../Components/Footer/Footer';
-import ChallengeSkeleton from '../../Components/Skeleton/ChallengeSkeleton';
-import DailySkeleton from '../../Components/Skeleton/DailySkeleton';
+import Completed from "./Completed/Completed";
+import DailyMission from "./Daily/DailyMission";
+import Waiting from "./Waiting/Waiting";
+import DailyChallenge from "./Daily/DailyChallenge";
+import Footer from "../../Components/Footer/Footer";
+import ChallengeSkeleton from "../../Components/Skeleton/ChallengeSkeleton";
+import DailySkeleton from "../../Components/Skeleton/DailySkeleton";
 //styled import
 import {
   DailyMissionArea,
@@ -25,9 +25,9 @@ import {
   DailyCardBox,
   WeeklyMissionArea,
   MissionPage,
-} from './MissionStyled';
-import './Mission.css';
-import { HiPencil } from 'react-icons/hi';
+} from "./MissionStyled";
+import "./Mission.css";
+import { HiPencil } from "react-icons/hi";
 
 const Mission = () => {
   const [loading, setLoading] = useState(false);
@@ -85,35 +85,35 @@ const Mission = () => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === 'DEFAULT' ? (
+                  item.status === "DEFAULT" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&daily`)
                       }
-                      type={'daily'}
+                      type={"daily"}
                     />
-                  ) : item.status === 'WAITING' ? (
+                  ) : item.status === "WAITING" ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={'daily'}
+                      type={"daily"}
                       onClick={() =>
-                        navigate(`/explainwating/${item.missionId}&daily`)
+                        navigate(`/explainwaiting/${item.missionId}&daily`)
                       }
                     />
                   ) : (
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={'daily'}
+                      type={"daily"}
                     />
                   )
                 )
               ) : (
                 <>
-                  {' '}
+                  {" "}
                   <DailySkeleton />
                   <DailySkeleton />
                   <DailySkeleton />
@@ -129,20 +129,20 @@ const Mission = () => {
             <DailyCardBox>
               {!loading && missionWeekly ? (
                 missionWeekly.map((item, index) => {
-                  return item.status === 'DEFAULT' ? (
+                  return item.status === "DEFAULT" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
                     />
-                  ) : item.status === 'WAITING' ? (
+                  ) : item.status === "WAITING" ? (
                     <Waiting
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                       onClick={() =>
                         navigate(`/explain/${item.missionId}&weekly`)
                       }
@@ -151,7 +151,7 @@ const Mission = () => {
                     <Completed
                       key={item.missionId + index}
                       item={item}
-                      type={'weekly'}
+                      type={"weekly"}
                     />
                   );
                 })
@@ -164,12 +164,12 @@ const Mission = () => {
                 </>
               )}
             </DailyCardBox>
-          </WeeklyMissionArea>{' '}
+          </WeeklyMissionArea>{" "}
         </>
-      </MissionPage>{' '}
+      </MissionPage>{" "}
       <div
         className="floating-round"
-        onClick={() => navigate('/archive/certification')}
+        onClick={() => navigate("/archive/certification")}
       >
         <HiPencil className="floating-icon" />
       </div>

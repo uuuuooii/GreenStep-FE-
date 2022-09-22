@@ -15,8 +15,8 @@ const Wating = ({ item, type }) => {
     <DailyBody
       onClick={() =>
         type == "daily"
-          ? navigate(`/explainwating/${item.missionId}&daily`)
-          : navigate(`/explainwating/${item.missionId}&weekly`)
+          ? navigate(`/explainwaiting/${item.missionId}&daily`)
+          : navigate(`/explainwaiting/${item.missionId}&weekly`)
       }
     >
       <WatingBody>인증 대기중</WatingBody>

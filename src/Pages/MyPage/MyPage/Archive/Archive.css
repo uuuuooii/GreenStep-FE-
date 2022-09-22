@@ -38,21 +38,10 @@
   height: 123px;
   background-color: #f3f3f3;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a789beb9741d56fe51d6bba51f3ab169321f57ba
 .archive-flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  }
-.archive-flex-text {
-margin: 40vh 0;
-white-space: pre-wrap;
-=======
   height: 100%;
   width: 100%;
 }
@@ -69,5 +58,4 @@ white-space: pre-wrap;
   white-space: pre-wrap;
   color: #84ca79;
   padding: 150px 0px 0px 0px;
->>>>>>> a789beb9741d56fe51d6bba51f3ab169321f57ba
 }

@@ -1,7 +1,7 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  background: #F9FDF9;
+  background: #fcfcfa;
 }
 
 .camera {
@@ -52,4 +52,20 @@
   justify-content: center;
   align-items: center;
   margin: 0 39px 0 32px;
+}
+
+.missioncamera-icon-button {
+  width: 70px;
+  height: 70px;
+  margin: 39px auto 50px auto;
+  background: #fcfcfa;
+  color: #50674c;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.missioncamera-icon {
+  font-size: 45px;
+  margin: 12.5px 0px 0px 12.5px;
 }

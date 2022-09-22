@@ -9,11 +9,11 @@ body {
 }
 
 /* 폰트*/
-
+/* 
 @font-face {
   font-family: "AppleNeoR";
   src: url("./Components/fonts/AppleSDGothicNeoR.ttf");
-}
+} */
 
 @font-face {
   font-family: "AppleNeoM";

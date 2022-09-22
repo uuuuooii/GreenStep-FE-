@@ -21,7 +21,7 @@ import Modal from './Pages/Login/Modal';
 import MissionCamera from './Pages/Mission/Camera/MissionCamera';
 import Loding from './Pages/Loding/Loding';
 import Error from './Pages/Error/Error';
-import ExplainWaiting from './Pages/Mission/Explain/ExplainWating';
+import ExplainWaiting from './Pages/Mission/Explain/ExplainWaiting';
 import instance from './Redux/modules/instance';
 import Kakaoshare from './Components/Kakaoshare/Kakaoshare';
 import SetPullToRefresh from './Components/PullToRefresh/SetPullToRefresh';

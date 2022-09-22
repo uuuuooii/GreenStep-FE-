@@ -63,7 +63,7 @@ const Login = () => {
       setFirstAni(true);
     }
   
-  }, [firstView,secondView]);
+  }, [firstView,secondView,thirdView,fourthView]);
   // useEffect(()=>{},[secondView])
 
   return (

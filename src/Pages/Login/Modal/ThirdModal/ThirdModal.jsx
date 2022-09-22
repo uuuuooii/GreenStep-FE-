@@ -41,8 +41,7 @@ const ThirdModal = ({
     setDisplay(2);
     setThird(false);
   };
-  const user = useSelector((state) => state.userInfo.userInfo);
-  console.log(nickname);
+
   var reg = /[^ㄱ-ㅎ가-힣a-zA-Z0-9]/g;
   //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
   return (
@@ -71,8 +70,8 @@ const ThirdModal = ({
               <TextInput
                 color={name ? "#B2E2AB" : "#2a2929"}
                 onChange={setName}
-                defaultValue={name ? name : ""}
-                placeholder={user.name}
+                defaultValue={name ? name : "이름"}
+                placeholder="이름"
                 maxLength={8}
                 type="text"
               />
@@ -94,7 +93,7 @@ const ThirdModal = ({
               <TextInput
                 color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
-                defaultValue={nickname ? nickname : ""}
+                value={nickname}
                 placeholder="닉네임"
                 maxLength={8}
                 type="text"

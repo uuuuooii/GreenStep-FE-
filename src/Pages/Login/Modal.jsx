@@ -33,9 +33,10 @@ const Modal = ({ onClickToast }) => {
   const [name, setName] = useInput("");
   const [nickname, setNickname] = useInput("");
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.userInfo.userInfo);
+  const user = useSelector((state) => {console.log(state.userInfo.userInfo)
+  return state.userInfo.userInfo
+  });
 
-  console.log(user);
   useEffect(() => {
     setLoading(true);
     dispatch(getUserInfoThunk());

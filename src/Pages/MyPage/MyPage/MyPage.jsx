@@ -123,7 +123,10 @@ const MyPage = () => {
                 </div>
                 <div className="mypage-modal-quit-area">
                   <ViewMoreQuit />
-                  <div className="mypage-modal-quit-text">
+                  <div
+                    className="mypage-modal-quit-text"
+                    onClick={() => navigate("/secession")}
+                  >
                     지구 그만 지키기 (탈퇴하기)
                   </div>
                 </div>

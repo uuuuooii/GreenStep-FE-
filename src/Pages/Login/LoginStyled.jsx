@@ -99,7 +99,7 @@ export const FirstImgDiv = styled.div`
 export const FirstImg = styled.img`
   width: 100%;
   height: 100%;
-  opacity: 0;
+  opacity: 0.5;
   animation-name: ${(props) => props.animation};
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -128,7 +128,7 @@ export const SecondImg = styled.img`
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  opacity: 0;
+  opacity: 0.5;
 `;
 export const ThirdArea = styled.div`
   height: 100vh;
@@ -185,7 +185,7 @@ export const FirstCover = styled.img`
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  opacity: 0;
+  /* opacity: 0; */
 `;
 export const FirstText = styled.div`
   opacity: 0;

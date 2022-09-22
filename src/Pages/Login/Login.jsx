@@ -1,13 +1,13 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useRef } from "react";
+import React, { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import {
   LogoFade,
   FadeBottomOn,
   FadeBottomOnImage,
-} from "../../Components/Animation/Animation";
-import { useInView } from "react-intersection-observer";
-import LoginBody1 from "../../static/components/LoginBody1";
+} from '../../Components/Animation/Animation';
+import { useInView } from 'react-intersection-observer';
+import LoginBody1 from '../../static/components/LoginBody1';
 //styled import
 import {
   ButtonBody,
@@ -35,13 +35,13 @@ import {
   FourthArea,
   FourthText,
   LogoGraDiv,
-} from "./LoginStyled";
+} from './LoginStyled';
 
 const text1 =
-  " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
+  ' 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.';
 const text2 =
-  "무엇부터 시작하죠? \n 일상생활에서 실천 가능한\n 다양한 미션들을 받아보세요";
-const text3 = "다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.";
+  '무엇부터 시작하죠? \n 일상생활에서 실천 가능한\n 다양한 미션들을 받아보세요';
+const text3 = '다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.';
 const text4 = '당신이 그릴 스텝, \n "내가 그린 스텝" \n 지금 시작해볼까요?';
 const Login = () => {
   const [first, firstView] = useInView();
@@ -63,7 +63,7 @@ const Login = () => {
     } else if (firstView) {
       setFirstAni(true);
     }
-  }, [firstView, secondView]);
+  }, [firstView, secondView, thirdView, fourthView]);
   // useEffect(()=>{},[secondView])
 
   return (
@@ -82,7 +82,7 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/1번이미지.jpg"
-            animation={firstAni ? FadeBottomOnImage : null}
+            // animation={firstAni ? FadeBottomOnImage : null}
             ref={first}
           />
 
@@ -90,7 +90,7 @@ const Login = () => {
             <FirstCover
               src="/images/Login/1번커버.png"
               animation={firstAni ? FadeBottomOn : null}
-            />{" "}
+            />{' '}
           </FirstCoverDiv>
         </FirstImgDiv>
         <FirstText animation={firstAni ? FadeBottomOn : null}>
@@ -104,13 +104,13 @@ const Login = () => {
         <SecondImgDiv>
           <SecondImg
             src="/images/Login/2번이미지.jpg"
-            animation={secondAni ? FadeBottomOnImage : null}
+            // animation={secondAni ? FadeBottomOnImage : null}
           />
           <SecondCoverDiv>
             <FirstCover
               src="/images/Login/2번커버.png"
               animation={secondAni ? FadeBottomOn : null}
-            />{" "}
+            />{' '}
           </SecondCoverDiv>
         </SecondImgDiv>
         <SecondText animation={secondAni ? FadeBottomOn : null}>
@@ -125,13 +125,13 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/3번이미지.jpg"
-            animation={thirdAni ? FadeBottomOnImage : null}
+            // animation={thirdAni ? FadeBottomOnImage : null}
           />
           <FirstCoverDiv>
             <FirstCover
               src="/images/Login/3번커버.png"
               animation={thirdAni ? FadeBottomOn : null}
-            />{" "}
+            />{' '}
           </FirstCoverDiv>
         </FirstImgDiv>
         <FirstText animation={thirdAni ? FadeBottomOn : null}>
@@ -143,7 +143,7 @@ const Login = () => {
           당신이 그릴 스텝,
         </LastTextFirst>
         <LastTextSecond animation={fourthAni ? FadeBottomOn : null}>
-          "내가 그린 스텝"{" "}
+          "내가 그린 스텝"{' '}
         </LastTextSecond>
         <LastTextThird animation={fourthAni ? FadeBottomOn : null}>
           지금 시작해볼까요?

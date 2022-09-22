@@ -133,7 +133,7 @@ const MyPage = () => {
                 </div>
                 <div className="mypage-modal-logout-area">
                   <ViewMoreLogOut />
-                  <button
+                  <div
                     className="mypage-modal-logout-text"
                     onClick={() =>
                       instance.get("/kakao/logout").then((res) => {
@@ -145,7 +145,7 @@ const MyPage = () => {
                     }
                   >
                     로그아웃
-                  </button>
+                  </div>
                 </div>
               </div>
             </MyPageModal>

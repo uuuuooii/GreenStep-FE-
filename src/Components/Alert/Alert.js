@@ -4,6 +4,7 @@ import { useQueryClient } from 'react-query';
 import styled from 'styled-components';
 
 const EventSource = NativeEventSource || EventSourcePolyfill;
+global.EventSource = NativeEventSource || EventSourcePolyfill;
 const Alert = () => {
   const [listening, setListening] = useState(false);
   const [data, setData] = useState([]);
@@ -13,6 +14,7 @@ const Alert = () => {
 
   const [meventSource, msetEventSource] = useState(undefined);
   let eventSource = undefined;
+
   // console.log(eventSource);
   useEffect(
     () => {
@@ -28,10 +30,8 @@ const Alert = () => {
       const eventSource = new EventSource(
         'http://13.209.16.253:8080/subscribe',
         {
-          headers: {
-            // 'Authorization': token
-            Authorization: token,
-          },
+          // 'Authorization': token
+          Authorization: token,
         }
       );
 

@@ -1,6 +1,6 @@
 //react import
-import React, { useState } from 'react';
-
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 //styled import
 import {
   ModalHeader,
@@ -16,9 +16,7 @@ import {
   InputDiv,
   WarningText,
   WarningDiv,
-} from './ThirdModalStyled';
-
-const URL = process.env.REACT_APP_URL;
+} from "./ThirdModalStyled";
 const ThirdModal = ({
   setDisplay,
   setNickname,
@@ -55,9 +53,9 @@ const ThirdModal = ({
         <TopText>닉네임 설정</TopText>
         <ButtonText
           onClick={() =>
-            name && nickname && !reg.test(name) && !reg.test(nickname)
+            nickname && !reg.test(nickname)
               ? NextModal()
-              : onClickToast('빈칸을 확인해주세요')
+              : onClickToast("빈칸을 확인해주세요")
           }
         >
           다음
@@ -68,46 +66,47 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv color={name ? '#b2e2ab' : '#d9d9d9'}>
+            <InputDiv color={name ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={name ? '#b2e2ab' : '#d9d9d9'}
+                color={name ? "#B2E2AB" : "#2a2929"}
                 onChange={setName}
-                defaultValue={name ? name : ''}
+                defaultValue={name ? name : "이름"}
                 placeholder="이름"
                 maxLength={8}
                 type="text"
               />
+
               <PencilDiv>
-                <PencilIcon color={name ? '#b2e2ab' : '#d9d9d9'} />
+                <PencilIcon color={name ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
-              {' '}
+              {" "}
               {reg.test(name) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
               ) : (
-                <WarningText>최대 8글자</WarningText>
+                <WarningText>최대 8글자까지 가능합니다.</WarningText>
               )}
             </WarningDiv>
 
-            <InputDiv color={nickname ? '#b2e2ab' : '#d9d9d9'}>
+            <InputDiv color={nickname ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={nickname ? '#b2e2ab' : '#d9d9d9'}
+                color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
-                defaultValue={nickname ? nickname : ''}
+                value={nickname}
                 placeholder="닉네임"
                 maxLength={8}
                 type="text"
               />
               <PencilDiv>
-                <PencilIcon color={nickname ? '#b2e2ab' : '#d9d9d9'} />
+                <PencilIcon color={nickname ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
               {reg.test(nickname) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다</WarningText>
+                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
               ) : (
-                <WarningText>최대 8글자</WarningText>
+                <WarningText>최대 8글자까지 가능합니다.</WarningText>
               )}
             </WarningDiv>
           </ProfileArea>

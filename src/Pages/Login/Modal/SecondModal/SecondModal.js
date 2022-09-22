@@ -1,5 +1,5 @@
 //react import
-import React from 'react';
+import React from "react";
 //styled import
 import {
   ModalHeader,
@@ -9,7 +9,7 @@ import {
   ImgArea,
   SelectBody,
   ButtonText,
-} from './SecondModalStyled';
+} from "./SecondModalStyled";
 // import KakaoTalk_20220903_023459515_01 from "../../../../static/images/KakaoTalk_20220903_023459515_01"
 
 const URL = process.env.REACT_APP_URL;
@@ -19,55 +19,57 @@ const SecondModal = ({
   img,
   second,
   setSecond,
-  onClickToast
+  onClickToast,
+  name,
 }) => {
   const imgList = [
-    '/images/고양이.png',
-    '/images/돼지.png',
-    '/images/부엉이.png',
-    '/images/새.png',
-    '/images/토끼.png',
-    '/images/펭귄.png',
+    "/images/고양이.png",
+    "/images/돼지.png",
+    "/images/부엉이.png",
+    "/images/새.png",
+    "/images/토끼.png",
+    "/images/펭귄.png",
   ];
   const NextThird = () => {
     setDisplay(3);
     setSecond(true);
   };
+
   return (
     <>
-        <ModalHeader>
-          <ButtonText
-            onClick={() => {
-              setDisplay(1);
-              setSecond(false);
-            }}
-          >
-            이전
-          </ButtonText>
-          <TopText>프로필 사진</TopText>
-          <ButtonText
-            onClick={() =>
-              img ? NextThird() : onClickToast('캐릭터를 선택해주세요.')
-            }
-          >
-            다음
-          </ButtonText>
-        </ModalHeader>
-        <SelectBody second={second}>
-          <ImgArea>
-            {imgList.map((item) => (
-              <ImgDiv key={item}>
-                <SelectImg
-                  src={item}
-                  onClick={() => (img == item ? setImg('') : setImg(item))}
-                  check={item}
-                  select={img}
-                />
-              </ImgDiv>
-            ))}
-          </ImgArea>
-        </SelectBody>
-        </>
+      <ModalHeader>
+        <ButtonText
+          onClick={() => {
+            setDisplay(1);
+            setSecond(false);
+          }}
+        >
+          이전
+        </ButtonText>
+        <TopText>캐릭터 선택</TopText>
+        <ButtonText
+          onClick={() =>
+            img ? NextThird() : onClickToast("캐릭터를 선택해주세요.")
+          }
+        >
+          다음
+        </ButtonText>
+      </ModalHeader>
+      <SelectBody second={second}>
+        <ImgArea>
+          {imgList.map((item) => (
+            <ImgDiv key={item}>
+              <SelectImg
+                src={item}
+                onClick={() => (img == item ? setImg("") : setImg(item))}
+                check={item}
+                select={img}
+              />
+            </ImgDiv>
+          ))}
+        </ImgArea>
+      </SelectBody>
+    </>
   );
 };
 

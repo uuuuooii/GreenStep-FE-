@@ -182,7 +182,7 @@ const Archive = ({ Header }) => {
                             ...data.filter((item) => !delArr.includes(item.id)),
                           ])
                         )
-                    : instance.put(`/profiles/missions`, { data: delArr });
+                    : instance.patch(`/profiles/missions`, delArr);
                   setModal(!modal);
                   setDelArr([]);
                 }}

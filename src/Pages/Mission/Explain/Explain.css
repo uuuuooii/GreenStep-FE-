@@ -1,32 +1,61 @@
+.explain-back-div {
+  width: 100%;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+}
+
 .explain-wrap-shape {
   width: 100%;
   /* height: 92vh; */
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  margin-top: 6px;
-  font-family: 'Apple SD Gothic Neo';
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* margin-top: 6px; */
+  font-family: "Apple SD Gothic Neo";
   background-color: #fcfcfa;
 }
 
 .explain-mission-name-and-tag-area {
-  margin: 38px 32px 36px 30px;
+  margin: 38px 28px 36px 30px;
+}
+
+.explain-mission-name-and-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .explain-mission-name-text {
+  font-family: "AppleNeoR";
   font-size: 25px;
+  line-height: 30px;
   margin: 0px 0px 10px 0px;
+  color: #2b5139;
+}
+
+.explain-mission-close-button {
+  font-size: 25px;
+  color: #c3c2c2;
 }
 
 .explain-mission-tag-text {
+  font-family: "AppleNeoM";
+  line-height: 18px;
   font-size: 15px;
-  color: #868686;
+  margin-top: 2px;
+  color: #b8dde2;
 }
 
 .explain-mission-contents-text {
+  font-family: "AppleNeoR";
+  line-height: 18px;
   margin-bottom: 0px;
   font-size: 15px;
+  color: #2b5139;
 }
 
 .explain-mission-image-area {
@@ -41,7 +70,8 @@
   width: 70px;
   height: 70px;
   margin: 0px auto 50px auto;
-  background: white;
+  background: #fcfcfa;
+  color: #50674c;
   border: none;
   border-radius: 100px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
@@ -49,7 +79,7 @@
 
 .explain-button-go-camera-icon {
   font-size: 45px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .explain-mission-center-area {
@@ -85,13 +115,4 @@
   text-align: center;
   background: #b8dde2;
   margin: 30px 0 82px 0;
-}
-
-.explain-back-div {
-  width: 100%;
-  height: 65px;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
 }

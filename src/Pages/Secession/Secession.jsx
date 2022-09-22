@@ -30,6 +30,7 @@ const Secession = () => {
                 window.localStorage.clear();
                 window.sessionStorage.clear();
               }
+              navigate("/");
             });
           }}
         >

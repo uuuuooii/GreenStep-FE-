@@ -49,6 +49,7 @@
 
 
 .secessionbutton {
+    cursor: pointer;
     width: 223px;
     height: 26px;
     margin: 95px 24px;

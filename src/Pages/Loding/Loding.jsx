@@ -24,6 +24,7 @@ const Test = () => {
           params: { code },
         }
       )
+
       .then((res) => {
         const kakao_authorization = res.headers.kakao_authorization;
         const token = res.headers.authorization;

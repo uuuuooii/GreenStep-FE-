@@ -12,20 +12,20 @@ body {
 
 @font-face {
   font-family: "AppleNeoR";
-  src: url("./Components/Fonts/AppleSDGothicNeoR.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoR.ttf");
 }
 
 @font-face {
   font-family: "AppleNeoM";
-  src: url("./Components/Fonts/AppleSDGothicNeoM.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoM.ttf");
 }
 
 @font-face {
   font-family: "AppleNeoSB";
-  src: url("./Components/Fonts/AppleSDGothicNeoSB.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoSB.ttf");
 }
 
 @font-face {
   font-family: "AppleNeoB";
-  src: url("./Components/Fonts/AppleSDGothicNeoB.ttf") format("truetype");
+  src: url("./Components/fonts/AppleSDGothicNeoB.ttf") format("truetype");
 }

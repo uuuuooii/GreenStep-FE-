@@ -22,7 +22,7 @@
 
 .archive-grid-area {
   width: 100%;
-  display: grid;
+  /* display: grid; */
   /* gap: 15px; */
   grid-template-columns: 33% 33% 33%;
   row-gap: 3px;
@@ -37,4 +37,27 @@
   width: 123px;
   height: 123px;
   background-color: #f3f3f3;
+}
+
+
+.archive-flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.archive-flex-text {
+  font-family: "Apple SD Gothic Neo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+  white-space: pre-wrap;
+  color: #84ca79;
+  padding: 150px 0px 0px 0px;
 }

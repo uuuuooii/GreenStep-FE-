@@ -55,6 +55,7 @@ export const ImgDiv = styled.div`
   margin: 13px;
 `;
 
+
 export const ImgArea = styled.div`
   width: 100%;
   font-size: 4px;

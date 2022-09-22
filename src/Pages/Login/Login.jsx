@@ -105,7 +105,6 @@ const Login = () => {
         </FirstTitle>
         <FirstImgDiv >
           <FirstImg src="/images/Login/3번이미지.jpg" animation={thirdAni ? FadeBottomOnImage : null} />
-
           <FirstCoverDiv>
             <FirstCover src="/images/Login/3번커버.png" animation={thirdAni ? FadeBottomOn : null}/>{' '}
           </FirstCoverDiv>

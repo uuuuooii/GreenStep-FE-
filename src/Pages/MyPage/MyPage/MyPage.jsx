@@ -8,6 +8,7 @@ import {
   getCertThunk,
   getPostThunk,
 } from "../../../Redux/modules/userInfoSlice";
+import instance from "../../../Redux/modules/instance";
 //component import
 import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
@@ -123,13 +124,28 @@ const MyPage = () => {
                 </div>
                 <div className="mypage-modal-quit-area">
                   <ViewMoreQuit />
-                  <div className="mypage-modal-quit-text">
+                  <div
+                    className="mypage-modal-quit-text"
+                    onClick={() => navigate("/secession")}
+                  >
                     지구 그만 지키기 (탈퇴하기)
                   </div>
                 </div>
                 <div className="mypage-modal-logout-area">
                   <ViewMoreLogOut />
-                  <div className="mypage-modal-logout-text">로그아웃</div>
+                  <button
+                    className="mypage-modal-logout-text"
+                    onClick={() =>
+                      instance.get("/kakao/logout").then((res) => {
+                        if (res.data.data) {
+                          window.localStorage.clear();
+                          window.sessionStorage.clear();
+                        }
+                      })
+                    }
+                  >
+                    로그아웃
+                  </button>
                 </div>
               </div>
             </MyPageModal>

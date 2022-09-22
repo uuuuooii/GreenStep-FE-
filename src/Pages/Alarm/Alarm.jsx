@@ -22,7 +22,7 @@ const Alarm = () => {
   return (
     <div className="alarmall">
       <div className="alarm-back-arrow-area">
-        <div onClick={() => navigate("/mission")}>
+        <div onClick={() => navigate("/mypage")}>
           <IoIosArrowBack className="alarm-back-arrow-icon" />
           <p className="alarmtext">알림 설정</p>
         </div>

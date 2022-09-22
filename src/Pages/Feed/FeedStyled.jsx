@@ -35,10 +35,9 @@ export const RankingBox = styled.div`
 `;
 export const RankTitle = styled.div`
   text-align: center;
-  color: #84ca79;
+  color: #50674c;
   width: 100%;
-  font-family: "Inter";
-  font-style: normal;
+  font-family: "AppleNeoB";
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -62,8 +61,10 @@ export const UserArea = styled.div`
   position: relative;
 `;
 export const UserName = styled.div`
-  text-align: center;
+  font-family: "AppleNeoR”;
+  font-weight: 600;
   font-size: 12px;
+  text-align: center;
 `;
 export const InfoArea = styled.div`
   position: relative;

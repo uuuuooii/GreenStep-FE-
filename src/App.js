@@ -40,7 +40,7 @@ function App() {
       setDisplay(0);
     }, 3000);
   }, [display]);
-  console.log(display);
+ 
   return (
     <>
       <BrowserRouter>

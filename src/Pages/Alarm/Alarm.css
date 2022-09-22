@@ -3,8 +3,7 @@
 }
 
 .alarm-back-arrow-area {
-  margin: 8px 0px 16px 0px;
-  padding-bottom: 4px;
+  margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +13,7 @@
 
 .alarm-back-arrow-icon {
   position: absolute;
-  margin: 15px 0px 3px 6px;
+  margin: 9px 0px 3px 6px;
   font-size: 36px;
   color: #c3c2c2;
 }
@@ -29,17 +28,21 @@
 
 .alarmtext {
   position: relative;
-  padding: 0px 0px 0px 150px;
-  font-size: 20px;
-  color: #50674c;
+  padding: 14px 0px 15.5px 158px;
+  font-family: "AppleNeoM";
   font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #50674c;
 }
 
 .alarmtitle {
-  padding: 15px 0px 0px;
+  font-family: "AppleNeoSB";
   font-weight: 700;
   font-size: 18px;
+  line-height: 22px;
   color: #2b5139;
+  padding: 15px 0px 0px;
 }
 
 .alarmtitle1-2 {
@@ -54,15 +57,17 @@
 }
 
 .alarmtitle1 {
-  padding: 10px 0px 0px 13px;
+  font-family: "AppleNeoM";
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
   color: #2b5139;
+  padding: 10px 0px 0px 13px;
 }
 
 .alarmtitle2 {
   padding: 30px 0px 0px 0px;
+  font-family: "AppleNeoM";
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
@@ -70,6 +75,7 @@
 }
 
 .alarmtitle3 {
+  font-family: "AppleNeoR";
   padding: 0px 0px 0px 0px;
   font-size: 10px;
   line-height: 12px;
@@ -78,8 +84,10 @@
 
 .alarmmaintitle {
   padding: 30px 0px 0px;
+  font-family: "AppleNeoSB";
   font-weight: 700;
   font-size: 18px;
+  line-height: 22px;
   color: #2b5139;
 }
 
@@ -92,32 +100,38 @@
 }
 
 .alarmboxtext {
+  font-family: "AppleNeoR";
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   color: #50674c;
 }
 
-.alarelement {
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 18px;
-  color: #50674c;
-  padding: 0px 0px 0px 0px;
-}
-
 .alarelement1 {
   position: relative;
+  font-family: "AppleNeoR";
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   color: #50674c;
-  padding: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+.alarelement {
+  font-family: "AppleNeoR";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #50674c;
+  padding: 0px;
 }
 
 .alaema {
   position: absolute;
   margin: -35px 0px 0px 275px;
+  font-family: "AppleNeoR";
+  font-weight: 700;
+  line-height: 18px;
   color: #84ca79;
   font-size: 15px;
 }

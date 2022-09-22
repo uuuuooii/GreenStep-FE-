@@ -24,14 +24,14 @@ export const FeedPage = styled.div`
 `;
 
 export const RankingBox = styled.div`
-  width: 293px;
-  padding: 16px 10px;
+  /* width: 293px; */
+  margin: 18px 0px;
+  padding: 0px 34px;
   display: flex;
   flex-direction: column;
   background: #fcfcfa;
   box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
   border-radius: 10px;
-  margin: 18px 0;
 `;
 export const RankTitle = styled.div`
   text-align: center;
@@ -41,13 +41,13 @@ export const RankTitle = styled.div`
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  margin: 10px 0;
+  margin: 20px 0px 0px 0px;
 `;
 export const MedalBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 30px 0;
+  margin: 25px 0px 26px 0px;
 `;
 export const UserProfile = styled.img`
   width: 70px;
@@ -57,13 +57,16 @@ export const UserProfile = styled.img`
   border-radius: 10px;
 `;
 export const UserArea = styled.div`
+  margin: 0px 9px;
   width: 70px;
   position: relative;
 `;
 export const UserName = styled.div`
-  font-family: "AppleNeoR”;
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 12px;
+  color: #50674c;
+  line-height: 14px;
   text-align: center;
 `;
 export const InfoArea = styled.div`
@@ -74,7 +77,8 @@ export const MedalSetArea = styled.div`
   position: absolute;
   display: flex;
   /* align-items: flex-end; */
-  left: 55px;
+  top: 8px;
+  left: 62px;
 `;
 export const MedalArea = styled.div`
   position: relative;
@@ -134,15 +138,15 @@ export const CategoryArea = styled.div`
   flex-direction: row;
   overflow-x: scroll;
   padding: 10px 0;
-  background-color: rgba(217, 217, 217, 0.1);
-  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fcfcfa;
+  /* box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); */
   &::-webkit-scrollbar {
     display: none;
   }
   /* padding-left: 20px; */
 `;
 export const CategoryButton = styled.div`
-  min-width: 80px;
+  min-width: 90px;
   min-height: 26px;
   border-radius: 3px;
   font-family: "Apple SD Gothic Neo";
@@ -159,14 +163,17 @@ export const CategoryButton = styled.div`
   align-items: center;
   border: 1px solid #a1d0d7;
   margin: 0 5px;
+  padding-bottom: 3px;
+  padding-top: 1px;
   &:hover {
     cursor: pointer;
   }
 `;
 export const CategoryButtonText = styled.div`
+  font-family: "AppleNeoR";
   font-weight: 700;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 16px;
 `;
 export const FeedCard = styled.div`
   width: 100%;

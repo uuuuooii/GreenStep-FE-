@@ -44,9 +44,21 @@
   margin: 0px auto;
 }
 .updatemypage-wrap-characters {
-  margin: 50px 0px 44px 34px;
+  width: 100%;
+  font-size: 4px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
 }
-
+.updatemypage-wrap-characters-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin: 0 auto;
+}
 .updatemypage-body-wrap {
   display: flex;
   flex-direction: column;

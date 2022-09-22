@@ -75,7 +75,7 @@ const Archive = ({ Header }) => {
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"
-            onClick={() => (delState ? CancelClick() : navigate('/mypage'))}
+            onClick={() => (delState ? CancelClick() : navigate('/mission'))}
           >
             {!delState ? <BackMypage /> : <Cancel />}
           </div>

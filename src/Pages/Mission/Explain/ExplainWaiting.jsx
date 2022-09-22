@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 //styled import
 import "./Explain.css";
-import WatingLeap from "../../../static/components/WatingLeap";
+import "./ExplainWaiting.css";
 import {
   __GetTodaymission,
   __GetDailymission,
@@ -15,7 +15,7 @@ import Slide from "react-reveal/Slide";
 //component import
 import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
 
-const ExplainWating = ({ onClickToast }) => {
+const ExplainWaiting = ({ onClickToast }) => {
   const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -64,7 +64,10 @@ const ExplainWating = ({ onClickToast }) => {
               </div>
 
               <div className="explain-mission-center-area">
-                <WatingLeap />
+                <img
+                  src="/images/WaitingLeaf.png"
+                  className="explain-mission-waiting-logo"
+                />
                 <div className="explain-mission-center-point-text">
                   {`예상 경험치는 +${pointNum}xp 입니다.`}
                 </div>
@@ -88,4 +91,4 @@ const ExplainWating = ({ onClickToast }) => {
   );
 };
 
-export default ExplainWating;
+export default ExplainWaiting;

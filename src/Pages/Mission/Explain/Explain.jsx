@@ -15,7 +15,6 @@ import {
 import Slide from "react-reveal/Slide";
 //component import
 import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
-import WatingLeap from "../../../static/components/WatingLeap";
 
 const Explain = ({ Header }) => {
   const [loading, setLoading] = useState(false);

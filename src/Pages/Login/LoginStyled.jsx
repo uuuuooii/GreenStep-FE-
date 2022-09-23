@@ -31,7 +31,7 @@ export const LogoGraDiv = styled.div`
   /* border-radius: 150px; */
   position: absolute;
   animation-name: ${LogoFade};
-  animation-duration: 1s;
+  animation-duration: 1.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
@@ -53,7 +53,6 @@ export const LDiv = styled.div`
   z-index: 999;
 `;
 export const MarginDIv = styled.div`
-  height: 100vh;
   padding-bottom: 60px;
   display: flex;
   align-items: center;

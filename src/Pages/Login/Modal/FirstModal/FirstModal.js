@@ -33,7 +33,6 @@ const FirstModal = ({
     setSlide(true);
     setNickname(user.nickname);
   };
-  console.log(user.name);
   return (
     <>
       <ModalHeader>

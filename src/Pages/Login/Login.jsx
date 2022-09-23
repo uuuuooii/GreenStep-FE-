@@ -68,7 +68,6 @@ const Login = () => {
 
   return (
     <>
-      =
       <LogoArea>
         <LogoGraDiv />
         <LDiv>

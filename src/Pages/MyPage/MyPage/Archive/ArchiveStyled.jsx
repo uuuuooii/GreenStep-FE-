@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { MdOutlineDoubleArrow } from 'react-icons/md';
-import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
-import { SlideBottom } from '../../../../Components/Animation/Animation';
+import styled from "styled-components";
+import { MdOutlineDoubleArrow } from "react-icons/md";
+import { AiOutlineCheckCircle, AiFillCheckCircle } from "react-icons/ai";
+import { SlideBottom } from "../../../../Components/Animation/Animation";
 
 export const ImageCard = styled.img`
   width: 100%;
@@ -36,7 +36,7 @@ export const DeleteDiv = styled.div`
   height: 100%;
   z-index: 5;
   background-color: ${(props) =>
-    props.check.includes(props.num) ? 'rgba(255, 255, 255, 0.5)' : 'none'};
+    props.check.includes(props.num) ? "rgba(255, 255, 255, 0.5)" : "none"};
   display: ${(props) => props.display};
   top: 0;
   bottom: 0;
@@ -102,6 +102,7 @@ export const DeleteText = styled.div`
   border-radius: 15px;
 `;
 export const DeleteTopText = styled.div`
+  font-family: "AppleNeoR";
   color: #868686;
   font-size: 13px;
   line-height: 17px;
@@ -117,6 +118,8 @@ export const DeleteLine = styled.div`
 
 export const DeleteBottomText = styled.div`
   width: 100%;
+  font-family: "AppleNeoR";
+  font-weight: 500;
   font-size: 20px;
   line-height: 132%;
   text-align: center;
@@ -134,7 +137,8 @@ export const DeleteCancelButton = styled.div`
   border-radius: 15px;
   width: 340px;
   height: 34px;
-  font-weight: 600;
+  font-family: "AppleNeoM";
+  font-weight: 700;
   font-size: 20px;
   line-height: 132%;
   text-align: center;

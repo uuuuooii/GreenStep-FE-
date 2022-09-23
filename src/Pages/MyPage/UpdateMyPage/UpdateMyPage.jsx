@@ -16,6 +16,7 @@ import './UpdateMyPage.css';
 import '../../../Components/Toast/Toast.css';
 import { SlideBottom } from '../../../Components/Animation/Animation';
 import { HiPencil } from 'react-icons/hi';
+import { HiOutlineX } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import ViewMoreRowBar from '../../../static/components/ViewMoreRowBar';
 import ProfilePencil from '../../../static/components/ProfilePencil';
@@ -24,7 +25,7 @@ import { FiCheck } from 'react-icons/fi';
 export const MyPageImgDiv = styled.div`
   width: 110px;
   height: 110px;
-  margin: 26px 27px;
+  margin: 12px 15px;
 `;
 
 const UpdateMyPageModal = styled.div`
@@ -60,8 +61,8 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
+  const [name, setName] = useInput('');
+  const [nickname, setNickname] = useInput('');
   const [img, setImg] = useState('');
   const [kakaoProfile, setKakaoProfile] = useState('');
   const [viewMoreModal, setViewMoreModal] = useState(false);
@@ -69,10 +70,7 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state) => {
-    return state.userInfo.userInfo;
-  });
-console.log(userInfo.profilePhoto)
+  const userInfo = useSelector((state) => state.userInfo.userInfo);
   const updateInfo = {
     name: name,
     nickname: nickname,
@@ -87,7 +85,6 @@ console.log(userInfo.profilePhoto)
     '/images/토끼.png',
     '/images/펭귄.png',
   ];
-  console.log(userInfo.profilePhoto);
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
@@ -95,8 +92,6 @@ console.log(userInfo.profilePhoto)
       .get('/users/kakao-profile-photo')
       .then((res) => setKakaoProfile(res.data.data.kakaoProfilePhoto));
     setLoding(false);
-    setName(userInfo.name);
-    setNickname(userInfo.nickname);
     if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
       setImg(userInfo.profilePhoto);
       setConnection(true);
@@ -145,13 +140,15 @@ console.log(userInfo.profilePhoto)
             />
 
             <UpdateMyPageModal>
-              <div
-                onClick={() => {
-                  setViewMoreModal(false);
-                }}
-                className="updatemypage-modal-bar"
-              >
-                <ViewMoreRowBar />
+              <div className="updatemypage-close-button-area">
+                <div
+                  onClick={() => {
+                    setViewMoreModal(false);
+                  }}
+                  className="updatemypage-close-button"
+                >
+                  <HiOutlineX />
+                </div>
               </div>
               <div className="updatemypage-wrap-characters">
                 {/* <div className="updatemypage-wrap-characters-center"> */}
@@ -238,8 +235,8 @@ console.log(userInfo.profilePhoto)
               <div className="updatemypage-input-div">
                 <input
                   className="updatemypage-input"
-                  onChange={(e) => setName(e.target.value)}
-                  defaultvalue={name}
+                  onChange={setName}
+                  defaultValue={userInfo.name}
                   placeholder="이름"
                   maxLength={8}
                 />
@@ -252,7 +249,7 @@ console.log(userInfo.profilePhoto)
                 <input
                   className="updatemypage-input"
                   onChange={setNickname}
-                  defaultvalue={nickname}
+                  defaultvalue={userInfo.nickname}
                   placeholder="닉네임"
                   maxLength={8}
                 />

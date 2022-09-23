@@ -17,6 +17,7 @@ import "./MyPage.css";
 import styled from "styled-components";
 import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
 import { HiDotsHorizontal } from "react-icons/hi";
+import { HiOutlineX } from "react-icons/hi";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
 import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
@@ -96,13 +97,15 @@ const MyPage = () => {
             />
 
             <MyPageModal>
-              <div
-                onClick={() => {
-                  setViewMoreModal(false);
-                }}
-                className="mypage-modal-bar"
-              >
-                <ViewMoreRowBar />
+              <div className="mypage-modal-close-button-area">
+                <div
+                  onClick={() => {
+                    setViewMoreModal(false);
+                  }}
+                  className="mypage-modal-close-button"
+                >
+                  <HiOutlineX />
+                </div>
               </div>
               <div className="mypage-wrap-view-more">
                 <div className="mypage-modal-alarm-area">
@@ -172,12 +175,12 @@ const MyPage = () => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
-                <p className="missionCount">
+                <div className="missionCount">
                   미션 달성 : {userInfo.missionCount}개
-                </p>
-                <p className="missionPoint">
+                </div>
+                <div className="missionPoint">
                   내가 그린 스텝 : {userInfo.missionPoint}걸음
-                </p>
+                </div>
               </div>
             </div>
           </>

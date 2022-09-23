@@ -72,8 +72,8 @@ const UpdateMyPage = ({ onClickToast }) => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const updateInfo = {
-    name: name,
-    nickname: nickname,
+    name: name ? name : userInfo.name,
+    nickname: nickname ? nickname : userInfo.nickname,
     // profilePhoto: connection ? kakaoProfile : !connection&&img,
     acceptMail: acceptMail,
   };

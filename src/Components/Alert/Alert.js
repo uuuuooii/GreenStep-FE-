@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
 import { useQueryClient } from 'react-query';
 import styled from 'styled-components';
+import instance from '../../Redux/modules/instance';
 
-const EventSource = NativeEventSource || EventSourcePolyfill;
-global.EventSource = NativeEventSource || EventSourcePolyfill;
+var EventSource = EventSourcePolyfill;;
+//EventSource = NativeEventSource || EventSourcePolyfill;
 const Alert = () => {
   const [listening, setListening] = useState(false);
   const [data, setData] = useState([]);
@@ -13,40 +14,32 @@ const Alert = () => {
   const token = localStorage.getItem('Authorization');
 
   const [meventSource, msetEventSource] = useState(undefined);
-  let eventSource = undefined;
-
+  // let eventSource = undefined;
+// console.log(newAlert)
   // console.log(eventSource);
   useEffect(
     () => {
-      // const source = new EventSource('http://13.209.16.253:8080/subscribe', {
-      //   headers: {
-      //     Authorization: token,
-      //   },
-      // });
-      // source.onmessage = (e) => console.log(e.data);
+   instance.get('/notifications').then((res) => console.log(res));
 
       //구독하기
 
       const eventSource = new EventSource(
         'http://13.209.16.253:8080/subscribe',
         {
-          // 'Authorization': token
-          Authorization: token,
+          headers: {
+            // 'Authorization': token
+            Authorization: token,
+          },
         }
       );
-
       eventSource.addEventListener('message', (e) => {
-        console.log(e);
-        setNewAlert((prev) => [JSON.parse(e.data)]);
+        if (e.type === 'message' && e.data.startsWith('{')) {
+          setNewAlert((prev) => [JSON.parse(e.data)]);
 
-        // queryClient.invalidateQueries('alertList');
-      });
-
-      eventSource.addEventListener('error', (e) => {
-        if (e) {
-          console.log(e);
+          // queryClient.invalidateQueries('alertList');
         }
       });
+
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []

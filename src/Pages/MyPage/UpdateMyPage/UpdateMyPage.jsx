@@ -8,9 +8,7 @@ import instance from '../../../Redux/modules/instance';
 import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
 //component import
 import Toggle from '../../../Components/Toggle/Toggle';
-import {
-  SelectImg,
-} from '../../Login/Modal/SecondModal/SecondModalStyled';
+import { SelectImg } from '../../Login/Modal/SecondModal/SecondModalStyled';
 //styled import
 import { FadeOn } from '../../../Components/Animation/Animation';
 import styled from 'styled-components';
@@ -18,6 +16,7 @@ import './UpdateMyPage.css';
 import '../../../Components/Toast/Toast.css';
 import { SlideBottom } from '../../../Components/Animation/Animation';
 import { HiPencil } from 'react-icons/hi';
+import { HiOutlineX } from 'react-icons/hi';
 import { IoIosArrowBack } from 'react-icons/io';
 import ViewMoreRowBar from '../../../static/components/ViewMoreRowBar';
 import ProfilePencil from '../../../static/components/ProfilePencil';
@@ -26,7 +25,7 @@ import { FiCheck } from 'react-icons/fi';
 export const MyPageImgDiv = styled.div`
   width: 110px;
   height: 110px;
-  margin: 26px 27px;
+  margin: 12px 15px;
 `;
 
 const UpdateMyPageModal = styled.div`
@@ -62,8 +61,8 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
+  const [name, setName] = useInput('');
+  const [nickname, setNickname] = useInput('');
   const [img, setImg] = useState('');
   const [kakaoProfile, setKakaoProfile] = useState('');
   const [viewMoreModal, setViewMoreModal] = useState(false);
@@ -71,14 +70,11 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state) => {
-    return state.userInfo.userInfo;
-  });
-
+  const userInfo = useSelector((state) => state.userInfo.userInfo);
   const updateInfo = {
     name: name,
     nickname: nickname,
-    profilePhoto: img,
+    // profilePhoto: connection ? kakaoProfile : !connection&&img,
     acceptMail: acceptMail,
   };
   const imgList = [
@@ -89,7 +85,6 @@ const UpdateMyPage = ({ onClickToast }) => {
     '/images/토끼.png',
     '/images/펭귄.png',
   ];
-  console.log(userInfo.profilePhoto)
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
@@ -97,8 +92,6 @@ const UpdateMyPage = ({ onClickToast }) => {
       .get('/users/kakao-profile-photo')
       .then((res) => setKakaoProfile(res.data.data.kakaoProfilePhoto));
     setLoding(false);
-    setName(userInfo.name);
-    setNickname(userInfo.nickname);
     if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
       setImg(userInfo.profilePhoto);
       setConnection(true);
@@ -147,21 +140,23 @@ const UpdateMyPage = ({ onClickToast }) => {
             />
 
             <UpdateMyPageModal>
-              <div
-                onClick={() => {
-                  setViewMoreModal(false);
-                }}
-                className="updatemypage-modal-bar"
-              >
-                <ViewMoreRowBar />
+              <div className="updatemypage-close-button-area">
+                <div
+                  onClick={() => {
+                    setViewMoreModal(false);
+                  }}
+                  className="updatemypage-close-button"
+                >
+                  <HiOutlineX />
+                </div>
               </div>
               <div className="updatemypage-wrap-characters">
                 {/* <div className="updatemypage-wrap-characters-center"> */}
-                  {imgList.map((item) => (
-                    <MyPageImgDiv onClick={() => setImg(item)}>
-                      <SelectImg src={item} check={item} select={img} />
-                    </MyPageImgDiv>
-                  ))}
+                {imgList.map((item) => (
+                  <MyPageImgDiv onClick={() => setImg(item)}>
+                    <SelectImg src={item} check={item} select={img} />
+                  </MyPageImgDiv>
+                ))}
                 {/* </div> */}
               </div>
             </UpdateMyPageModal>
@@ -173,19 +168,12 @@ const UpdateMyPage = ({ onClickToast }) => {
             {!loading ? (
               <>
                 <div className="updatemypage-profile-div">
-                  {connection || imgList.includes(img) ? (
-                    <img
-                      className="updatemypage-profile-image"
-                      src={img}
-                      alt="profile"
-                    />
-                  ) : (
-                    <img
-                      className="updatemypage-profile-image"
-                      src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-                      alt="profile"
-                    />
-                  )}
+                  <img
+                    className="updatemypage-profile-image"
+                    src={connection ? kakaoProfile : img}
+                    alt="profile"
+                  />
+
                   <div
                     className="updatemypage-profile-pencil-div"
                     onClick={() => {
@@ -225,9 +213,11 @@ const UpdateMyPage = ({ onClickToast }) => {
                     onClick={() => {
                       setConnection(!connection);
                       setClick(true);
-                      img === kakaoProfile
-                        ? setImg(userInfo.profilePhoto)
-                        : setImg(kakaoProfile);
+                      !connection
+                        ? setImg(kakaoProfile)
+                        : setImg(
+                            'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
+                          );
                     }}
                   >
                     <Toggle
@@ -245,8 +235,8 @@ const UpdateMyPage = ({ onClickToast }) => {
               <div className="updatemypage-input-div">
                 <input
                   className="updatemypage-input"
-                  onChange={(e) => setName(e.target.value)}
-                  defaultvalue={name}
+                  onChange={setName}
+                  defaultValue={userInfo.name}
                   placeholder="이름"
                   maxLength={8}
                 />
@@ -259,7 +249,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                 <input
                   className="updatemypage-input"
                   onChange={setNickname}
-                  defaultvalue={nickname}
+                  defaultvalue={userInfo.nickname}
                   placeholder="닉네임"
                   maxLength={8}
                 />

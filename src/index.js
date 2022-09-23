@@ -5,6 +5,7 @@ import App from "./App";
 import { Provider } from "react-redux/es/exports";
 import store from "./Redux/ConfigureStore";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,3 +17,8 @@ root.render(
 );
 
 serviceWorkerRegistration.register();
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals(console.log);

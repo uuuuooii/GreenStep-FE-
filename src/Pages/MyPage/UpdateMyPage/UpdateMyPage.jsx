@@ -72,8 +72,8 @@ const UpdateMyPage = ({ onClickToast }) => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const updateInfo = {
-    name: name,
-    nickname: nickname,
+    name: name ? name : userInfo.name,
+    nickname: nickname ? nickname : userInfo.nickname,
     // profilePhoto: connection ? kakaoProfile : !connection&&img,
     acceptMail: acceptMail,
   };
@@ -249,7 +249,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                 <input
                   className="updatemypage-input"
                   onChange={setNickname}
-                  defaultvalue={userInfo.nickname}
+                  defaultValue={userInfo.nickname}
                   placeholder="닉네임"
                   maxLength={8}
                 />

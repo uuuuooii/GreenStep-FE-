@@ -1,27 +1,45 @@
 {
-  "name": "GreenStep",
-  "start_url": "./index.html",
-  "display": "fullscreen",
-  "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "short_name": "Green Step",
+  "name": "Green Step",
   "icons": [
     {
-
-        "src": "/icon_310x310.png",
-        "sizes": "310x310",
-        "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-        "src": "/icon_150x150.png",
-        "sizes": "150x150",
-        "type": "image/png"
+      "src": "logo70.png",
+      "type": "image/png",
+      "sizes": "70x70"
     },
     {
-        "src": "/icon_70x70.png",
-        "sizes": "384x384",
-        "type": "image/png"
+      "src": "logo144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "logo150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+    {
+      "src": "logo310.png",
+      "type": "image/png",
+      "sizes": "310x310"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "logo600.png",
+      "type": "image/png",
+      "sizes": "600x600"
     }
-]
+  ],
+  "start_url": ".",
+  "display": "fullscreen",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
-

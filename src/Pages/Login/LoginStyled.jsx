@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import { RiKakaoTalkFill } from 'react-icons/ri';
-import logo from './kakao_login_medium_wide.png';
+import styled from "styled-components";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import logo from "./kakao_login_medium_wide.png";
 import {
   LogoFade,
   FadeBottomOn,
   FadeBottomOnImage,
-} from '../../Components/Animation/Animation';
+} from "../../Components/Animation/Animation";
 
 export const LoginBody = styled.div`
   width: 100%;
@@ -28,8 +28,9 @@ export const LogoGraDiv = styled.div`
   /* background-color: #daf2d5; */
   width: 250px;
   height: 250px;
+  max-width: 100%;
   /* border-radius: 150px; */
-  position: absolute;
+  /* position: absolute; */
   animation-name: ${LogoFade};
   animation-duration: 1.2s;
   animation-timing-function: ease-out;
@@ -43,6 +44,7 @@ export const KakaoLink = styled.a`
 `;
 export const LDiv = styled.div`
   /* position: absolute; */
+  position: absolute;
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -151,7 +153,7 @@ export const LogoArea = styled.div`
   height: 100vh;
   /* border: 1px solid black; */
   /* background-color: #DAF2D5; */
-  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +190,7 @@ export const FirstCover = styled.img`
 `;
 export const FirstText = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -208,7 +210,7 @@ export const SecondRefDiv = styled.div`
 export const SecondText = styled.div`
   opacity: 0;
   width: 100%;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -223,7 +225,7 @@ export const SecondText = styled.div`
   animation-fill-mode: forwards;
 `;
 export const ThirdText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -235,7 +237,7 @@ export const ThirdText = styled.div`
   white-space: pre-wrap;
 `;
 export const FourthText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -247,7 +249,7 @@ export const FourthText = styled.div`
 `;
 export const LastTextFirst = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
@@ -266,7 +268,7 @@ export const LastTextFirst = styled.div`
 `;
 export const LastTextSecond = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
@@ -285,7 +287,7 @@ export const LastTextSecond = styled.div`
 `;
 export const LastTextThird = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;

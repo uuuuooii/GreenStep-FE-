@@ -113,14 +113,14 @@ const Login = () => {
           </FirstTitle>
           <SecondImgDiv>
             <SecondImg
-              src="images/Login/2번이미지.jpg"
+              src="images/Login/2번이미지.webp"
 
               // animation={secondAni ? FadeBottomOnImage : null}
             />
             <SecondCoverDiv>
               <FirstCover
                 ref={second}
-                src="/images/Login/2번커버.png"
+                src="/images/Login/2번커버.webp"
                 animation={secondAni ? FadeBottomOn : null}
               />{" "}
             </SecondCoverDiv>
@@ -136,14 +136,14 @@ const Login = () => {
           </FirstTitle>
           <FirstImgDiv>
             <FirstImg
-              src="/images/Login/3번이미지.jpg"
+              src="/images/Login/3번이미지.webp"
 
               // animation={thirdAni ? FadeBottomOnImage : null}
             />
             <FirstCoverDiv>
               <FirstCover
                 ref={third}
-                src="/images/Login/3번커버.png"
+                src="/images/Login/3번커버.webp"
                 animation={thirdAni ? FadeBottomOn : null}
               />{" "}
             </FirstCoverDiv>

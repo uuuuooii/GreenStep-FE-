@@ -14,10 +14,10 @@ to{transform:translateY(0px)}
 `;
 
 export const LogoFade = keyframes`
-0%{transform:scale(1.1);border-radius:1000px;background-color:white}
-35%{transform:scale(0.8);border-radius:1000px;background-color: #DAF2D5}
-99%{transform:scale(5);border-radius:1000px;background: linear-gradient(#DAF2D5,white);}
-100%{width:400px;height:100%;background: linear-gradient(#DAF2D5,white);}
+0%{transform:scale(0.8);border-radius:1000px;background-color:white}
+35%{transform:scale(0.5);border-radius:1000px;background-color: #DAF2D5}
+99%{transform:scale(4);border-radius:1000px;background: linear-gradient(#DAF2D5,white);}
+100%{max-width:100%;height:100%;background: linear-gradient(#DAF2D5,white);}
 `
 export const FadeBottomOn = keyframes`
 0%{opacity:0;transform:translateY(100px)}

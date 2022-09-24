@@ -32,7 +32,7 @@ import {
   SecondRefDiv,
   FourthArea,
   LogoGraDiv,
-  LastText
+  LastText,
 } from './LoginStyled';
 
 const text1 =
@@ -79,18 +79,18 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/1번이미지.jpg"
+            
             // animation={firstAni ? FadeBottomOnImage : null}
           />
 
           <FirstCoverDiv>
             <FirstCover
-              ref={first}
               src="/images/Login/1번커버.png"
               animation={firstAni ? FadeBottomOn : null}
             />{' '}
           </FirstCoverDiv>
         </FirstImgDiv>
-        <FirstText animation={firstAni ? FadeBottomOn : null}>
+        <FirstText ref={first} animation={firstAni ? FadeBottomOn : null}>
           {text2}
         </FirstText>
       </FirstArea>
@@ -101,11 +101,11 @@ const Login = () => {
         <SecondImgDiv>
           <SecondImg
             src="/images/Login/2번이미지.jpg"
+            ref={second}
             // animation={secondAni ? FadeBottomOnImage : null}
           />
           <SecondCoverDiv>
             <FirstCover
-              ref={second}
               src="/images/Login/2번커버.png"
               animation={secondAni ? FadeBottomOn : null}
             />{' '}
@@ -123,11 +123,11 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/3번이미지.jpg"
+            ref={third}
             // animation={thirdAni ? FadeBottomOnImage : null}
           />
           <FirstCoverDiv>
             <FirstCover
-              ref={third}
               src="/images/Login/3번커버.png"
               animation={thirdAni ? FadeBottomOn : null}
             />{' '}
@@ -138,7 +138,11 @@ const Login = () => {
         </FirstText>
       </FirstArea>
       <FourthArea>
-        <LastText time={'1s'} ref={fourth} animation={fourthAni ? FadeBottomOn : null}>
+        <LastText
+          time={'1s'}
+          ref={fourth}
+          animation={fourthAni ? FadeBottomOn : null}
+        >
           당신이 그릴 스텝,
         </LastText>
         <LastText time={'2s'} animation={fourthAni ? FadeBottomOn : null}>

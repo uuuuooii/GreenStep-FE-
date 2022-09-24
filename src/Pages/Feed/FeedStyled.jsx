@@ -333,10 +333,7 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
   width: 26px;
-  animation-name: ${(props) =>
-    props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
-      ? Shake
-      : null};
+  animation-name:${(props)=>props.animation};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -350,6 +347,7 @@ export const ClapBox = styled.div`
 
 export const ScrollDiv = styled.div`
   height: 20px;
+  display: ${(props)=>props.display};
 `;
 export const ContentArea = styled.div`
   margin-top: 8px;

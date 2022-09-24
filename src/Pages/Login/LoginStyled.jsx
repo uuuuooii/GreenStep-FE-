@@ -11,7 +11,7 @@ export const LoginPageArea = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`
+`;
 export const LoginBody = styled.div`
   width: 100%;
   display: flex;
@@ -32,14 +32,14 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   display: block;
   /* background-color: #daf2d5; */
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   /* border-radius: 150px; */
   position: absolute;
   animation-name: ${LogoFade};
-  animation-duration: 1.2s;
+  animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   object-fit: cover;
@@ -81,7 +81,6 @@ export const FirstArea = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-
 `;
 export const FirstTitle = styled.div`
   font-style: normal;
@@ -194,7 +193,7 @@ export const FirstCover = styled.img`
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  /* opacity: 0; */
+  opacity: 0;
 `;
 export const FirstText = styled.div`
   opacity: 0;
@@ -265,8 +264,7 @@ export const LastText = styled.div`
   text-align: center;
   color: #50674c;
   animation-name: ${(props) => props.animation};
-  animation-duration: ${(props)=>props.time};
+  animation-duration: ${(props) => props.time};
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
-

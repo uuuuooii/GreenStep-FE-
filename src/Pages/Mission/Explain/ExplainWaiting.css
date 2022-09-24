@@ -4,9 +4,3 @@
   width: 200px;
   box-shadow: 0px 3px 20px #e2e2e2;
 }
-
-.explain-mission-name-and-close-area {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}

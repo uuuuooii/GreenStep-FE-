@@ -19,6 +19,7 @@ import styled from "styled-components";
 import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { HiOutlineX } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
 import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
@@ -184,10 +185,10 @@ const MyPage = ({ onClickToast }) => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
-                <div className="missionCount">
+                <div className="mypage-mission-count">
                   미션 달성 : {userInfo.missionCount}개
                 </div>
-                <div className="missionPoint">
+                <div className="mypage-mission-point">
                   내가 그린 스텝 : {userInfo.missionPoint}걸음
                 </div>
               </div>
@@ -211,7 +212,7 @@ const MyPage = ({ onClickToast }) => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
-                  <ArchiveArrow
+                  <IoIosArrowForward
                     onClick={() => navigate("/archive/certification")}
                   />
                 </div>
@@ -220,7 +221,7 @@ const MyPage = ({ onClickToast }) => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-                  <ArchiveArrow />
+                  <IoIosArrowForward />
                 </div>
               </div>
             )}
@@ -259,14 +260,16 @@ const MyPage = ({ onClickToast }) => {
               <div className="posts-text-and-icon">
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">
-                  <ArchiveArrow onClick={() => navigate("/archive/post")} />
+                  <IoIosArrowForward
+                    onClick={() => navigate("/archive/post")}
+                  />
                 </div>
               </div>
             ) : (
               <div className="posts-text-and-icon">
                 <div className="posts-text-none">게시물 아카이브</div>
                 <div className="posts-viewmore-icon-none">
-                  <ArchiveArrow />
+                  <IoIosArrowForward />
                 </div>
               </div>
             )}

@@ -13,6 +13,7 @@ import instance from "../../../Redux/modules/instance";
 import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
 //styled import
+import "../../../Components/Toast/Toast.css";
 import "./MyPage.css";
 import styled from "styled-components";
 import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
@@ -53,7 +54,8 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
-const MyPage = () => {
+const MyPage = ({ onClickToast }) => {
+  console.log(onClickToast);
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
@@ -74,6 +76,7 @@ const MyPage = () => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
+
   return (
     <>
       <MyPageDiv>
@@ -143,6 +146,8 @@ const MyPage = () => {
                         if (res.data.data) {
                           window.localStorage.clear();
                           window.sessionStorage.clear();
+                          navigate("/");
+                          onClickToast(`로그아웃 되었습니다`, 1);
                         }
                       })
                     }

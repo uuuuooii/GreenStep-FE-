@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 //styled import
+import { HiOutlineX } from "react-icons/hi";
 import "./Explain.css";
 import "./ExplainWaiting.css";
 import {
@@ -50,8 +51,16 @@ const ExplainWaiting = ({ onClickToast }) => {
           <Slide bottom>
             <div className="explain-wrap-shape">
               <div className="explain-mission-name-and-tag-area">
-                <div className="explain-mission-name-text">
-                  {select ? select.missionName : "MissionName"}
+                <div className="explain-mission-name-and-close-area">
+                  <div className="explain-mission-name-text">
+                    {select ? select.missionName : "MissionName"}
+                  </div>
+                  <div
+                    className="explain-mission-close-button"
+                    onClick={() => navigate("/mission")}
+                  >
+                    <HiOutlineX />
+                  </div>
                 </div>
                 <div className="explain-mission-tag-text">
                   {select ? select.tag : "#Tag"}

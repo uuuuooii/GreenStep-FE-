@@ -1,13 +1,13 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useRef } from 'react';
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import {
   LogoFade,
   FadeBottomOn,
   FadeBottomOnImage,
-} from '../../Components/Animation/Animation';
-import { useInView } from 'react-intersection-observer';
-import LoginBody1 from '../../static/components/LoginBody1';
+} from "../../Components/Animation/Animation";
+import { useInView } from "react-intersection-observer";
+import LoginBody1 from "../../static/components/LoginBody1";
 //styled import
 import {
   LoginPageArea,
@@ -36,10 +36,10 @@ import {
 } from './LoginStyled';
 
 const text1 =
-  ' 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.';
+  " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
 const text2 =
-  '무엇부터 시작하죠? \n 일상생활에서 실천 가능한\n 다양한 미션들을 받아보세요';
-const text3 = '다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.';
+  "무엇부터 시작하죠? \n 일상생활에서 실천 가능한\n 다양한 미션들을 받아보세요";
+const text3 = "다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.";
 const text4 = '당신이 그릴 스텝, \n "내가 그린 스텝" \n 지금 시작해볼까요?';
 const Login = () => {
   const [first, firstView] = useInView();
@@ -87,7 +87,7 @@ const Login = () => {
               ref={first}
               src="/images/Login/1번커버.png"
               animation={firstAni ? FadeBottomOn : null}
-            />{' '}
+            />{" "}
           </FirstCoverDiv>
         </FirstImgDiv>
         <FirstText animation={firstAni ? FadeBottomOn : null}>
@@ -108,7 +108,7 @@ const Login = () => {
               ref={second}
               src="/images/Login/2번커버.png"
               animation={secondAni ? FadeBottomOn : null}
-            />{' '}
+            />{" "}
           </SecondCoverDiv>
         </SecondImgDiv>
         <SecondText animation={secondAni ? FadeBottomOn : null}>
@@ -130,7 +130,7 @@ const Login = () => {
               ref={third}
               src="/images/Login/3번커버.png"
               animation={thirdAni ? FadeBottomOn : null}
-            />{' '}
+            />{" "}
           </FirstCoverDiv>
         </FirstImgDiv>
         <FirstText animation={thirdAni ? FadeBottomOn : null}>

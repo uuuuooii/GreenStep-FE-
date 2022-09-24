@@ -1,6 +1,6 @@
 //react import
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 //styled import
 import {
   ModalHeader,
@@ -16,7 +16,7 @@ import {
   InputDiv,
   WarningText,
   WarningDiv,
-} from './ThirdModalStyled';
+} from "./ThirdModalStyled";
 const ThirdModal = ({
   setDisplay,
   setNickname,
@@ -56,7 +56,7 @@ const ThirdModal = ({
           onClick={() =>
             nickname && !reg.test(nickname)
               ? NextModal()
-              : onClickToast('빈칸을 확인해주세요')
+              : onClickToast("빈칸을 확인해주세요")
           }
         >
           다음
@@ -67,22 +67,26 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv color={name ? '#B2E2AB' : '#C3C2C2'}>
+            <InputDiv color={name ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={name ? '#B2E2AB' : '#2a2929'}
+<<<<<<< HEAD
+                color={name ? "#B2E2AB" : "#C3C2C2"}
+=======
+                color={name ? "#B2E2AB" : "#2a2929"}
+>>>>>>> e6593de21292ce43d1fd75321143fff338fd8152
                 onChange={setName}
-                defaultValue={user.name ? user.name : '이름'}
+                defaultValue={user.name ? user.name : "이름"}
                 placeholder="이름"
                 maxLength={8}
                 type="text"
               />
 
               <PencilDiv>
-                <PencilIcon color={name ? '#B2E2AB' : '#C3C2C2'} />
+                <PencilIcon color={name ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
-              {' '}
+              {" "}
               {reg.test(name) ? (
                 <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
               ) : (
@@ -90,17 +94,17 @@ const ThirdModal = ({
               )}
             </WarningDiv>
 
-            <InputDiv color={nickname ? '#B2E2AB' : '#C3C2C2'}>
+            <InputDiv color={nickname ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
-                color={nickname ? '#B2E2AB' : '#C3C2C2'}
+                color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
-                value={nickname}
+                defaultValue={user.nickname}
                 placeholder="닉네임"
                 maxLength={8}
                 type="text"
               />
               <PencilDiv>
-                <PencilIcon color={nickname ? '#B2E2AB' : '#C3C2C2'} />
+                <PencilIcon color={nickname ? "#B2E2AB" : "#C3C2C2"} />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>

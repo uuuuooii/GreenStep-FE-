@@ -77,7 +77,7 @@ const Login = () => {
   // useEffect(()=>{},[secondView])
 
   return (
-    <CloudimageProvider config={cloudimageConfig}>
+    <>
       <LoginPageArea>
         <LogoArea>
           <LogoGraDiv />
@@ -91,18 +91,14 @@ const Login = () => {
           </FirstTitle>
           <FirstImgDiv>
             <FirstImg
-              src="/images/Login/1번이미지.jpg"
+              src="/images/Login/1번이미지.webp"
               // animation={firstAni ? FadeBottomOnImage : null}
-              alt="Demo image"
-              ratio={1.5}
             />
 
             <FirstCoverDiv>
               <FirstCover
                 ref={first}
                 src="/images/Login/1번커버.png"
-                alt="Demo image"
-                ratio={1.5}
                 animation={firstAni ? FadeBottomOn : null}
               />{" "}
             </FirstCoverDiv>
@@ -118,16 +114,13 @@ const Login = () => {
           <SecondImgDiv>
             <SecondImg
               src="images/Login/2번이미지.jpg"
-              alt="Demo image"
-              ratio={1.5}
+
               // animation={secondAni ? FadeBottomOnImage : null}
             />
             <SecondCoverDiv>
               <FirstCover
                 ref={second}
                 src="/images/Login/2번커버.png"
-                alt="Demo image"
-                ratio={1.5}
                 animation={secondAni ? FadeBottomOn : null}
               />{" "}
             </SecondCoverDiv>
@@ -144,16 +137,13 @@ const Login = () => {
           <FirstImgDiv>
             <FirstImg
               src="/images/Login/3번이미지.jpg"
-              alt="Demo image"
-              ratio={1.5}
+
               // animation={thirdAni ? FadeBottomOnImage : null}
             />
             <FirstCoverDiv>
               <FirstCover
                 ref={third}
                 src="/images/Login/3번커버.png"
-                alt="Demo image"
-                ratio={1.5}
                 animation={thirdAni ? FadeBottomOn : null}
               />{" "}
             </FirstCoverDiv>
@@ -186,7 +176,7 @@ const Login = () => {
           </KakaoLink>
         </MarginDIv>
       </LoginPageArea>
-    </CloudimageProvider>
+    </>
   );
 };
 

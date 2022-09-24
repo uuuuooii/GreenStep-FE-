@@ -1,11 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import instance from "./instance";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import instance from './instance';
 
 const initialState = {
   userInfo: {},
   certification: [],
   post: [],
-  kakaoProfile:{},
+  hide: [],
+  kakaoProfile: {},
   isLoading: false,
   error: null,
 };
@@ -13,7 +14,7 @@ const URL = process.env.REACT_APP_URL;
 
 // Thunk 미들웨어 함수
 export const getUserInfoThunk = createAsyncThunk(
-  "userInfo/getUserInfo",
+  'userInfo/getUserInfo',
   async (payload, thunkAPI) => {
     try {
       const data = await instance
@@ -27,11 +28,11 @@ export const getUserInfoThunk = createAsyncThunk(
 );
 
 export const getPrifilePhotoThunk = createAsyncThunk(
-  "userInfo/getUserInfo",
+  'userInfo/getUserInfo',
   async (payload, thunkAPI) => {
     try {
       const data = await instance
-        .get("/profiles/setting/hidden-missions")
+        .get('/profiles/setting/hidden-missions')
         .then((res) => console.log(res));
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
@@ -41,7 +42,7 @@ export const getPrifilePhotoThunk = createAsyncThunk(
 );
 
 export const getCertThunk = createAsyncThunk(
-  "Cert/getCert",
+  'Cert/getCert',
   async (payload, thunkAPI) => {
     try {
       const data = await instance
@@ -54,8 +55,21 @@ export const getCertThunk = createAsyncThunk(
   }
 );
 
+export const getHideThunk = createAsyncThunk(
+  'Hide/getHide',
+  async (payload, thunkAPI) => {
+    try {
+      const data = await instance
+        .get(`/profiles/setting/hidden-missions`)
+        .then((res) => console.log(res.data.data));
+      return thunkAPI.fulfillWithValue(data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
 export const getPostThunk = createAsyncThunk(
-  "Post/getPost",
+  'Post/getPost',
   async (payload, thunkAPI) => {
     try {
       const data = await instance
@@ -70,7 +84,7 @@ export const getPostThunk = createAsyncThunk(
 
 // 리듀서
 export const userInfoSlice = createSlice({
-  name: "userInfo",
+  name: 'userInfo',
   initialState,
   reducers: {},
   extraReducers: {
@@ -85,6 +99,10 @@ export const userInfoSlice = createSlice({
     [getPostThunk.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.post = action.payload;
+    },
+    [getHideThunk.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.hide = action.payload;
     },
   },
 });

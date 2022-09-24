@@ -98,7 +98,7 @@ const Login = () => {
             <FirstCoverDiv>
               <FirstCover
                 ref={first}
-                src="/images/Login/1번커버.png"
+                src="/images/Login/1번커버.webp"
                 animation={firstAni ? FadeBottomOn : null}
               />{" "}
             </FirstCoverDiv>

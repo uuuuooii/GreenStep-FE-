@@ -54,10 +54,8 @@ const Explain = ({ Header }) => {
               </div>
             </div>
             <div className="explain-mission-name-and-tag-area">
-              <div className="explain-mission-name-and-button">
-                <div className="explain-mission-name-text">
-                  {select ? select.missionName : "MissionName"}
-                </div>
+              <div className="explain-mission-name-text">
+                {select ? select.missionName : "MissionName"}
               </div>
               <div className="explain-mission-tag-text">
                 {select ? select.tag : "#Tag"}

@@ -63,12 +63,11 @@ const Login = () => {
     } else if (firstView) {
       setFirstAni(true);
     }
-  }, [firstView, secondView]);
+  }, [firstView, secondView, thirdView, fourthView]);
   // useEffect(()=>{},[secondView])
 
   return (
     <>
-      =
       <LogoArea>
         <LogoGraDiv />
         <LDiv>
@@ -82,12 +81,12 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/1번이미지.jpg"
-            animation={firstAni ? FadeBottomOnImage : null}
-            ref={first}
+            // animation={firstAni ? FadeBottomOnImage : null}
           />
 
           <FirstCoverDiv>
             <FirstCover
+              ref={first}
               src="/images/Login/1번커버.png"
               animation={firstAni ? FadeBottomOn : null}
             />{" "}
@@ -98,16 +97,17 @@ const Login = () => {
         </FirstText>
       </FirstArea>
       <SecondArea>
-        <FirstTitle animation={secondAni ? FadeBottomOn : null} ref={second}>
+        <FirstTitle animation={secondAni ? FadeBottomOn : null}>
           Feed
         </FirstTitle>
         <SecondImgDiv>
           <SecondImg
             src="/images/Login/2번이미지.jpg"
-            animation={secondAni ? FadeBottomOnImage : null}
+            // animation={secondAni ? FadeBottomOnImage : null}
           />
           <SecondCoverDiv>
             <FirstCover
+              ref={second}
               src="/images/Login/2번커버.png"
               animation={secondAni ? FadeBottomOn : null}
             />{" "}
@@ -119,16 +119,17 @@ const Login = () => {
         <SecondRefDiv />
       </SecondArea>
       <FirstArea>
-        <FirstTitle animation={thirdAni ? FadeBottomOn : null} ref={third}>
+        <FirstTitle animation={thirdAni ? FadeBottomOn : null}>
           Habbit
         </FirstTitle>
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/3번이미지.jpg"
-            animation={thirdAni ? FadeBottomOnImage : null}
+            // animation={thirdAni ? FadeBottomOnImage : null}
           />
           <FirstCoverDiv>
             <FirstCover
+              ref={third}
               src="/images/Login/3번커버.png"
               animation={thirdAni ? FadeBottomOn : null}
             />{" "}

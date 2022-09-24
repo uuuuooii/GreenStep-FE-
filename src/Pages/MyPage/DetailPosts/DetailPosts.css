@@ -30,7 +30,7 @@
   width: 90%;
   position: absolute;
 }
-.detail-posts-mission-icon{
+.detail-posts-mission-icon {
   margin: 0 5px;
 }
 .detail-posts-mission-img-div {
@@ -84,10 +84,11 @@
 }
 
 .detail-posts-mission-contents-text {
-  font-style: normal;
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
+  color: #000000;
   margin: 10px;
   padding: 0px 2px;
   white-space: pre-line;

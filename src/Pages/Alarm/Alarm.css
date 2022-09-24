@@ -1,227 +1,236 @@
 .alarmall {
-    background: #FCFCFA;
+  background: #fcfcfa;
 }
 
 .alarm-back-arrow-area {
-    margin: 8px 0px 16px 0px;
-    padding-bottom: 4px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.5);
-    border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
 }
 
 .alarm-back-arrow-icon {
-    position: absolute;
-    margin: 15px 0px 3px 6px;
-    font-size: 36px;
-    color: #C3C2C2;
+  position: absolute;
+  margin: 9px 0px 3px 6px;
+  font-size: 36px;
+  color: #c3c2c2;
 }
 
 .alarmallwrap {
-    padding: 0px 0px 100px 20px;
+  padding: 0px 0px 100px 20px;
 }
 
 .alarmwrap {
-    margin: 0px 0px 0px 16px;
+  margin: 0px 0px 0px 16px;
 }
 
 .alarmtext {
-    position: relative;
-    padding: 0px 0px 0px 150px;
-    font-size: 20px;
-    color: #50674C;
-    font-weight: 600;
+  position: relative;
+  padding: 14px 0px 15.5px 158px;
+  font-family: "AppleNeoM";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #50674c;
 }
 
 .alarmtitle {
-    padding: 15px 0px 0px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #2B5139;
+  font-family: "AppleNeoSB";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2b5139;
+  padding: 15px 0px 0px;
 }
 
 .alarmtitle1-2 {
-    padding: 64px 0px 0px 0px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #2B5139;
+  padding: 64px 0px 0px 0px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2b5139;
 }
 
-
 .alarmwrapm {
-    padding: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 10px;
 }
 
 .alarmtitle1 {
-    padding: 10px 0px 0px 13px;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    color: #2B5139;
+  font-family: "AppleNeoM";
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #2b5139;
+  padding: 10px 0px 0px 13px;
 }
 
 .alarmtitle2 {
-    padding: 30px 0px 0px 0px;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    color: #2B5139;
+  padding: 30px 0px 0px 0px;
+  font-family: "AppleNeoM";
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #2b5139;
 }
 
 .alarmtitle3 {
-    padding: 0px 0px 0px 0px;
-    font-size: 10px;
-    line-height: 12px;
-    color: #C3C2C2;
+  font-family: "AppleNeoR";
+  padding: 0px 0px 0px 0px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #c3c2c2;
 }
 
 .alarmmaintitle {
-    padding: 30px 0px 0px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #2B5139;
+  padding: 30px 0px 0px;
+  font-family: "AppleNeoSB";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2b5139;
 }
 
 .alarmbox {
-    padding: 12px;
-    width: 295px;
-    height: 87.37px;
-    background: #EEEEEE;
-    border-radius: 10px;
+  padding: 12px;
+  width: 295px;
+  height: 87.37px;
+  background: #eeeeee;
+  border-radius: 10px;
 }
 
 .alarmboxtext {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    color: #50674C;
-}
-
-.alarelement {
-
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: #50674C;
-    padding: 0px 0px 0px 0px;
+  font-family: "AppleNeoR";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #50674c;
 }
 
 .alarelement1 {
-    position: relative;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: #50674C;
-    padding: 0px 0px 0px 0px;
+  position: relative;
+  font-family: "AppleNeoR";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #50674c;
+  padding: 0px;
+}
+
+.alarelement {
+  font-family: "AppleNeoR";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #50674c;
+  padding: 0px;
 }
 
 .alaema {
-    position: absolute;
-    margin: -35px 0px 0px 275px;
-    color: #84CA79;
-    font-size: 15px;
+  position: absolute;
+  margin: -35px 0px 0px 275px;
+  font-family: "AppleNeoR";
+  font-weight: 700;
+  line-height: 18px;
+  color: #84ca79;
+  font-size: 15px;
 }
 
 /* toggle switich */
 .switch1 {
-    position: absolute;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 150px;
+  position: absolute;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 150px;
 }
 
 .switch2 {
-    position: relative;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 140px;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 140px;
 }
 
 .switch3 {
-    position: relative;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 210px;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 210px;
 }
 
 .switch4 {
-    position: relative;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 190px;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 190px;
 }
 
 .switch5 {
-    position: relative;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 200px;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 200px;
 }
 
 .switch6 {
-    position: relative;
-    display: inline-block;
-    width: 33px;
-    height: 25.19px;
-    border-radius: 25px;
-    margin: 0px 0px 0px 207px;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 25.19px;
+  border-radius: 25px;
+  margin: 0px 0px 0px 207px;
 }
 
-
 .switch input {
-    opacity: 0;
-    width: 20px;
-    height: 0;
+  opacity: 0;
+  width: 20px;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: -18px;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: -18px;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 2.5px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
-input:checked+.slider {
-    background-color: #84CA79
+input:checked + .slider {
+  background-color: #84ca79;
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #84CA79
+input:focus + .slider {
+  box-shadow: 0 0 1px #84ca79;
 }
 
-input:checked+.slider:before {
-
-    transform: translateX(26px);
+input:checked + .slider:before {
+  transform: translateX(26px);
 }

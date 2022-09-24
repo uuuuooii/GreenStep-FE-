@@ -14,7 +14,7 @@ export const ToggleButton = styled.div`
   height: 20px;
   background-color: white;
   border-radius: 10px;
-  margin: 2.5px 4px;
+  margin: 2.5px 3.5px;
   transform: ${(props) => (props.check ? "translateX(65%)" : null)};
   animation-name: ${(props) =>
     props.click && props.check

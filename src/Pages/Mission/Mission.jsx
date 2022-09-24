@@ -48,7 +48,6 @@ const Mission = () => {
     <>
       <MissionPage>
         <>
-          {/* <button onClick={()=>instance.post('/kakao-share/me/637').then((res)=>console.log(res))}>피드테스트</button>  */}
           {!loading && missionChallenge ? (
             <DailyChallenge mission={missionChallenge[0]} />
           ) : (

@@ -1,10 +1,4 @@
-/* @font-face {
-  font-family: "Apple SD Gothic Neo";
-  src: url("../../../Components/Fonts/AppleSDGothicNeoL.ttf");
-} */
-
 .whole-mypage {
-  /* background-color: #f5f5f5; */
   background-color: #fcfcfa;
 }
 
@@ -34,12 +28,24 @@
 }
 
 /* 모달창 영역 */
-.mypage-modal-bar {
-  margin: 0px auto;
+.mypage-modal-close-button-area {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mypage-modal-close-button {
+  font-size: 25px;
+  color: #c3c2c2;
+  margin: 25px 25px 0px 0px;
 }
 
 .mypage-wrap-view-more {
-  margin: 50px 0px 44px 34px;
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0px 0px 44px 34px;
 }
 
 .mypage-modal-alarm-area {
@@ -127,8 +133,7 @@
 
 .mypage-flex-text {
   cursor: pointer;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -150,7 +155,7 @@
 .image-area {
   width: 100px;
   height: 100px;
-  background: #d9d9d9;
+  background: #ffffff;
   border-radius: 10px;
   /* margin-bottom: 16px; */
   object-fit: cover;
@@ -185,13 +190,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Inter";
-  font-style: normal;
+  font-family: "AppleNeoB";
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
   text-align: center;
-  color: #84ca79;
+  color: #50674c;
   margin-bottom: 7px;
   margin-top: 6px;
   /* font-family: "Apple SD Gothic Neo" */
@@ -202,22 +206,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
+  font-family: "AppleNeoR";
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #84ca79;
+  color: #50674c;
 }
 
 .missionCount {
+  font-family: "AppleNeoR";
   font-size: 14px;
   text-align: center;
   color: #4f7d48;
 }
 
 .missionPoint {
+  font-family: "AppleNeoR";
   font-size: 14px;
   text-align: center;
   color: #4f7d48;
@@ -236,6 +241,10 @@
 }
 
 .photoshots-text-and-icon {
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -301,6 +310,10 @@
 }
 
 .posts-text-and-icon {
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
   width: 100%;
   display: flex;
   justify-content: space-between;

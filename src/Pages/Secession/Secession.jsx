@@ -11,7 +11,7 @@ const Secession = () => {
   return (
     <div className="secessionall">
       <div className="secession-back-arrow-area">
-        <div onClick={() => navigate("/mission")}>
+        <div onClick={() => navigate("/mypage")}>
           <IoIosArrowBack className="secession-back-arrow-icon" />
 
           <p className="secessiontext">탈퇴하기</p>

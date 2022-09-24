@@ -19,13 +19,14 @@ export const LogoFade = keyframes`
 99%{transform:scale(4);border-radius:1000px;background: linear-gradient(#DAF2D5,white);}
 100%{max-width:100%;height:100%;background: linear-gradient(#DAF2D5,white);}
 `
+
 export const FadeBottomOn = keyframes`
 0%{opacity:0;transform:translateY(100px)}
 50%{opacity:0;transform:translateY(100px)}
 100%{opacity:1;transform:translateY(0)}
-`
+`;
 export const FadeBottomOnImage = keyframes`
 0%{opacity:0;transform:translateY(100px)}
 50%{opacity:0;transform:translateY(100px)}
 100%{opacity:0.5;transform:translateY(0)}
-`
+`;

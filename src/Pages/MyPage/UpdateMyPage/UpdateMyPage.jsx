@@ -1,26 +1,26 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import useInput from '../../../../src/hooks/useInput';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import instance from '../../../Redux/modules/instance';
+import React, { useEffect, useState } from "react";
+import useInput from "../../../../src/hooks/useInput";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import instance from "../../../Redux/modules/instance";
 //modules import
-import { getUserInfoThunk } from '../../../Redux/modules/userInfoSlice';
+import { getUserInfoThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
-import Toggle from '../../../Components/Toggle/Toggle';
-import { SelectImg } from '../../Login/Modal/SecondModal/SecondModalStyled';
+import Toggle from "../../../Components/Toggle/Toggle";
+import { SelectImg } from "../../Login/Modal/SecondModal/SecondModalStyled";
 //styled import
-import { FadeOn } from '../../../Components/Animation/Animation';
-import styled from 'styled-components';
-import './UpdateMyPage.css';
-import '../../../Components/Toast/Toast.css';
-import { SlideBottom } from '../../../Components/Animation/Animation';
-import { HiPencil } from 'react-icons/hi';
-import { HiOutlineX } from 'react-icons/hi';
-import { IoIosArrowBack } from 'react-icons/io';
-import ViewMoreRowBar from '../../../static/components/ViewMoreRowBar';
-import ProfilePencil from '../../../static/components/ProfilePencil';
-import { FiCheck } from 'react-icons/fi';
+import { FadeOn } from "../../../Components/Animation/Animation";
+import styled from "styled-components";
+import "./UpdateMyPage.css";
+import "../../../Components/Toast/Toast.css";
+import { SlideBottom } from "../../../Components/Animation/Animation";
+import { HiPencil } from "react-icons/hi";
+import { HiOutlineX } from "react-icons/hi";
+import { IoIosArrowBack } from "react-icons/io";
+import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
+import ProfilePencil from "../../../static/components/ProfilePencil";
+import { FiCheck } from "react-icons/fi";
 
 export const MyPageImgDiv = styled.div`
   width: 110px;
@@ -61,10 +61,10 @@ const UpdateMyPage = ({ onClickToast }) => {
   const [connection, setConnection] = useState(false);
   const [click, setClick] = useState(false);
   const [acceptMail, setAcceptMail] = useState(false);
-  const [name, setName] = useInput('');
-  const [nickname, setNickname] = useInput('');
-  const [img, setImg] = useState('');
-  const [kakaoProfile, setKakaoProfile] = useState('');
+  const [name, setName] = useInput("");
+  const [nickname, setNickname] = useInput("");
+  const [img, setImg] = useState("");
+  const [kakaoProfile, setKakaoProfile] = useState("");
   const [viewMoreModal, setViewMoreModal] = useState(false);
 
   const [loading, setLoding] = useState(false);
@@ -72,24 +72,24 @@ const UpdateMyPage = ({ onClickToast }) => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo.userInfo);
   const updateInfo = {
-    name: name,
-    nickname: nickname,
+    name: name ? name : userInfo.name,
+    nickname: nickname ? nickname : userInfo.nickname,
     // profilePhoto: connection ? kakaoProfile : !connection&&img,
     acceptMail: acceptMail,
   };
   const imgList = [
-    '/images/고양이.png',
-    '/images/돼지.png',
-    '/images/부엉이.png',
-    '/images/새.png',
-    '/images/토끼.png',
-    '/images/펭귄.png',
+    "/images/고양이.png",
+    "/images/돼지.png",
+    "/images/부엉이.png",
+    "/images/새.png",
+    "/images/토끼.png",
+    "/images/펭귄.png",
   ];
   useEffect(() => {
     setLoding(true);
     dispatch(getUserInfoThunk());
     instance
-      .get('/users/kakao-profile-photo')
+      .get("/users/kakao-profile-photo")
       .then((res) => setKakaoProfile(res.data.data.kakaoProfilePhoto));
     setLoding(false);
     if (userInfo.profilePhoto && !imgList.includes(userInfo.profilePhoto)) {
@@ -121,9 +121,9 @@ const UpdateMyPage = ({ onClickToast }) => {
             type="button"
             id="popup"
             onClick={() => {
-              onClickToast('등록되었습니다.');
+              onClickToast("등록되었습니다.");
               instance.patch(`/users/info`, updateInfo);
-              navigate('/mypage');
+              navigate("/mypage");
             }}
           >
             <FiCheck />
@@ -216,12 +216,12 @@ const UpdateMyPage = ({ onClickToast }) => {
                       !connection
                         ? setImg(kakaoProfile)
                         : setImg(
-                            'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
+                            "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
                           );
                     }}
                   >
                     <Toggle
-                      background={connection ? '#84CA79' : '#d9d9d9'}
+                      background={connection ? "#84CA79" : "#d9d9d9"}
                       click={click}
                       check={connection}
                     />
@@ -249,7 +249,7 @@ const UpdateMyPage = ({ onClickToast }) => {
                 <input
                   className="updatemypage-input"
                   onChange={setNickname}
-                  defaultvalue={userInfo.nickname}
+                  defaultValue={userInfo.nickname}
                   placeholder="닉네임"
                   maxLength={8}
                 />

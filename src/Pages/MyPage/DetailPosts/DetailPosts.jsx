@@ -11,6 +11,7 @@ import Next from "../../../static/components/DetailPost/Next";
 import KakaoShare from "../../../Components/Kakaoshare/Kakaoshare";
 //styled import
 import "./DetailPosts.css";
+import { HiOutlineX } from "react-icons/hi";
 import Slide from "react-reveal/Slide";
 import styled from "styled-components";
 import {
@@ -24,6 +25,7 @@ import {
 import DoneClap from "../../../static/components/DoneClap";
 
 const DetailPosts = ({ onClickToast }) => {
+  console.log(onClickToast);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -54,6 +56,14 @@ const DetailPosts = ({ onClickToast }) => {
       {!loading ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
+            <div className="detail-posts-close-button-area">
+              <div
+                className="detail-posts-close-button"
+                onClick={() => navigate("/mypage")}
+              >
+                <HiOutlineX />
+              </div>
+            </div>
             <div className="detail-posts-mission-name-and-tag-area">
               <div className="detail-posts-mission-name-area">
                 <div className="detail-posts-flex-position">

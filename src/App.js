@@ -27,7 +27,6 @@ import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 import useToast from "./hooks/useToast";
 import Toast from "./Components/Toast/Toast";
-// import Toast from "./Components/Toast/Toast";
 import Secession from "./Pages/Secession/Secession";
 import Alarm from "./Pages/Alarm/Alarm";
 import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
@@ -74,7 +73,10 @@ function App() {
           />
           <Route path="/explain" element={<Explain />} />
           <Route path="/explain/:id" element={<Explain />} />
-          <Route path="/mypage" element={<Mypage />} />
+          <Route
+            path="/mypage"
+            element={<Mypage onClickToast={onClickToast} />}
+          />
           <Route path="/viewmoremodal" element={<ViewMoreModal />} />
           <Route
             path="/archive"

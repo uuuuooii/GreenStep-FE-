@@ -13,11 +13,13 @@ import instance from "../../../Redux/modules/instance";
 import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
 //styled import
+import "../../../Components/Toast/Toast.css";
 import "./MyPage.css";
 import styled from "styled-components";
 import { FadeOn, SlideBottom } from "../../../Components/Animation/Animation";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { HiOutlineX } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
 import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
 import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
@@ -53,7 +55,7 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
-const MyPage = () => {
+const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
@@ -74,6 +76,7 @@ const MyPage = () => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
+
   return (
     <>
       <MyPageDiv>
@@ -119,7 +122,12 @@ const MyPage = () => {
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
-                  <div className="mypage-modal-hidden-text" onClick={()=>navigate('/archive/hide')} >가려진 항목</div>
+                  <div
+                    className="mypage-modal-hidden-text"
+                    onClick={() => navigate("/archive/hide")}
+                  >
+                    가려진 항목
+                  </div>
                 </div>
                 <div className="mypage-modal-cc-area">
                   <ViewMoreCC />
@@ -143,6 +151,8 @@ const MyPage = () => {
                         if (res.data.data) {
                           window.localStorage.clear();
                           window.sessionStorage.clear();
+                          navigate("/");
+                          onClickToast(`로그아웃 되었습니다`, 1);
                         }
                       })
                     }
@@ -175,10 +185,10 @@ const MyPage = () => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
-                <div className="missionCount">
+                <div className="mypage-mission-count">
                   미션 달성 : {userInfo.missionCount}개
                 </div>
-                <div className="missionPoint">
+                <div className="mypage-mission-point">
                   내가 그린 스텝 : {userInfo.missionPoint}걸음
                 </div>
               </div>
@@ -202,7 +212,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
-                  <ArchiveArrow
+                  <IoIosArrowForward
                     onClick={() => navigate("/archive/certification")}
                   />
                 </div>
@@ -211,7 +221,7 @@ const MyPage = () => {
               <div className="photoshots-text-and-icon">
                 <div className="photoshots-text-none">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon-none">
-                  <ArchiveArrow />
+                  <IoIosArrowForward />
                 </div>
               </div>
             )}
@@ -250,14 +260,16 @@ const MyPage = () => {
               <div className="posts-text-and-icon">
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">
-                  <ArchiveArrow onClick={() => navigate("/archive/post")} />
+                  <IoIosArrowForward
+                    onClick={() => navigate("/archive/post")}
+                  />
                 </div>
               </div>
             ) : (
               <div className="posts-text-and-icon">
                 <div className="posts-text-none">게시물 아카이브</div>
                 <div className="posts-viewmore-icon-none">
-                  <ArchiveArrow />
+                  <IoIosArrowForward />
                 </div>
               </div>
             )}

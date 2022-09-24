@@ -1,75 +1,70 @@
 .secessionall {
-    background: #FCFCFA;
+  background: #fcfcfa;
 }
 
 .secessionwrap {
-    padding: 0px 0px 0px 60px;
-
+  padding: 0px 0px 0px 60px;
 }
 
 .secession-back-arrow-area {
-    margin: 8px 0px 16px 0px;
-    padding-bottom: 4px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.5);
-    border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
+  margin: 8px 0px 16px 0px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
 }
 
 .secession-back-arrow-icon {
-    position: absolute;
-    margin: 15px 0px 3px 6px;
-    font-size: 36px;
-    color: #C3C2C2;
+  position: absolute;
+  margin: 15px 0px 3px 6px;
+  font-size: 36px;
+  color: #c3c2c2;
 }
 
 .secessiontext {
-    position: relative;
-    padding: 0px 0px 0px 150px;
-    font-size: 20px;
-    color: #50674C;
-    font-weight: 600;
-    font-family: 'Apple SD Gothic Neo';
-
+  position: relative;
+  padding: 0px 0px 0px 150px;
+  font-size: 20px;
+  color: #50674c;
+  font-weight: 600;
+  font-family: "AppleNeoM";
 }
 
 .secessiontitle {
-    width: 217px;
-    height: 44px;
-    padding: 120px 0px 0px 35px;
-    font-family: 'Apple SD Gothic Neo';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #84CA79;
+  width: 217px;
+  height: 44px;
+  padding: 120px 0px 0px 35px;
+  font-family: "AppleNeoM";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #84ca79;
 }
 
-
 .secessionbutton {
-    cursor: pointer;
-    width: 223px;
-    height: 26px;
-    margin: 95px 24px;
-    padding: 0 17px;
-    font-family: 'Apple SD Gothic Neo';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FCFCFA;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    border: 0;
-    outline: 0;
+  cursor: pointer;
+  width: 223px;
+  height: 26px;
+  margin: 95px 24px;
+  padding: 0 17px;
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fcfcfa;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: 0;
+  outline: 0;
 
-    background: #C3C2C2;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 3px;
+  background: #c3c2c2;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 }

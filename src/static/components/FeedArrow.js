@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 const FeedArrow = () => {
   return (
     <svg
@@ -10,7 +10,7 @@ const FeedArrow = () => {
     >
       <path
         d="M15 11L9 17L7.58 15.58L11.17 12H0V0H2V10H11.17L7.58 6.42L9 5L15 11Z"
-        fill="#84CA79"
+        fill="#50674C"
       />
     </svg>
   );

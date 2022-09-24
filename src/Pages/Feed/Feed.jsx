@@ -56,6 +56,8 @@ const Feed = () => {
   const [clapCheck, setClapCheck] = useState([]);
   //현재 보고있는 카테고리 값
   const [category, setCategory] = useState(0);
+  //페이지 값
+  const [page, setPage] = useState(0);
   //로딩 상태값
   const [loading, setLoading] = useState(false);
   //피드를 받는 배열
@@ -159,17 +161,21 @@ const Feed = () => {
   };
   // 최하단에 도달 시 페이지 +1
   useEffect(() => {
-    if (inView) {
-      TagClick();
-    }
+    setPage(page + 1);
   }, [inView]);
   //카테고리 변경시 페이지를 비움
   useEffect(() => {
     setFeedList([]);
     setClapArr([]);
     setClapCheck([]);
+    setPage(0);
     setLast(0);
   }, [category]);
+  useEffect(() => {
+    if (page === 0 && page % 2 === 0) {
+      TagClick();
+    }
+  }, [page]);
 
   //페이지 랜더링시에 랭크정보 가져오기
   useEffect(() => {
@@ -284,10 +290,7 @@ const Feed = () => {
             </>
           ) : null}
         </FeedArea>
-        <ScrollDiv
-          ref={ref}
-          display={FeedList.length === 0 ? 'block' : 'none'}
-        />
+        <ScrollDiv ref={ref} />
       </FeedPage>
 
       <Footer />

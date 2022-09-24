@@ -33,7 +33,7 @@ import {
   FourthArea,
   LogoGraDiv,
   LastText,
-} from "./LoginStyled";
+} from './LoginStyled';
 
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
@@ -79,18 +79,18 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/1번이미지.jpg"
+            
             // animation={firstAni ? FadeBottomOnImage : null}
           />
 
           <FirstCoverDiv>
             <FirstCover
-              ref={first}
               src="/images/Login/1번커버.png"
               animation={firstAni ? FadeBottomOn : null}
             />{" "}
           </FirstCoverDiv>
         </FirstImgDiv>
-        <FirstText animation={firstAni ? FadeBottomOn : null}>
+        <FirstText ref={first} animation={firstAni ? FadeBottomOn : null}>
           {text2}
         </FirstText>
       </FirstArea>
@@ -101,11 +101,11 @@ const Login = () => {
         <SecondImgDiv>
           <SecondImg
             src="/images/Login/2번이미지.jpg"
+            ref={second}
             // animation={secondAni ? FadeBottomOnImage : null}
           />
           <SecondCoverDiv>
             <FirstCover
-              ref={second}
               src="/images/Login/2번커버.png"
               animation={secondAni ? FadeBottomOn : null}
             />{" "}
@@ -123,11 +123,11 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/3번이미지.jpg"
+            ref={third}
             // animation={thirdAni ? FadeBottomOnImage : null}
           />
           <FirstCoverDiv>
             <FirstCover
-              ref={third}
               src="/images/Login/3번커버.png"
               animation={thirdAni ? FadeBottomOn : null}
             />{" "}
@@ -139,7 +139,7 @@ const Login = () => {
       </FirstArea>
       <FourthArea>
         <LastText
-          time={"1s"}
+          time={'1s'}
           ref={fourth}
           animation={fourthAni ? FadeBottomOn : null}
         >

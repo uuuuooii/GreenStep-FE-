@@ -1,17 +1,18 @@
 //react import
-import React, { useState, useEffect } from "react";
-import instance from "../../Redux/modules/instance";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from 'react';
+import instance from '../../Redux/modules/instance';
+import { useInView } from 'react-intersection-observer';
 //components import
-import Medal from "./Medal";
-import ClapIcon from "../../static/components/ClapIcon";
-import DoneClap from "../../static/components/DoneClap";
-import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
-import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
-import Footer from "../../Components/Footer/Footer";
+import Medal from './Medal';
+import ClapIcon from '../../static/components/ClapIcon';
+import DoneClap from '../../static/components/DoneClap';
+import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
+import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
+import Footer from '../../Components/Footer/Footer';
+import { Shake } from './FeedStyled';
 //redux
-import { __GetLanks } from "../../Redux/modules/ranks";
-import { useDispatch, useSelector } from "react-redux";
+import { __GetLanks } from '../../Redux/modules/ranks';
+import { useDispatch, useSelector } from 'react-redux';
 
 //styled import
 import {
@@ -44,8 +45,8 @@ import {
   BottomProfileArea,
   ArrowArea,
   ContentArea,
-} from "./FeedStyled";
-import FeedArrow from "../../static/components/FeedArrow";
+} from './FeedStyled';
+import FeedArrow from '../../static/components/FeedArrow';
 
 const Feed = () => {
   //랭킹 정보 가져오기
@@ -55,61 +56,51 @@ const Feed = () => {
   const [clapCheck, setClapCheck] = useState([]);
   //현재 보고있는 카테고리 값
   const [category, setCategory] = useState(0);
-  // 무한스크롤 페이지값
+  //페이지 값
   const [page, setPage] = useState(0);
   //로딩 상태값
   const [loading, setLoading] = useState(false);
   //피드를 받는 배열
   const [FeedList, setFeedList] = useState([]);
   //서버에 보내는 마지막 피드의 id값
-  const [last, setLast] = useState("");
+  const [last, setLast] = useState('');
   //화면에 보일시 inView의 값이 true로 변함
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
 
   const categoryList = [
-    "전체보기",
-    "#NO일회용품",
-    "#분리수거",
-    "#환경운동",
-    "#환경용품사용",
-    "#에너지절약",
-    "#기타",
+    '전체보기',
+    '#NO일회용품',
+    '#분리수거',
+    '#환경운동',
+    '#환경용품사용',
+    '#에너지절약',
+    '#기타',
   ];
   const categoryApi = [
-    "all",
-    "disposable",
-    "separate",
-    "environmental",
-    "goods",
-    "energy",
-    "etc",
+    'all',
+    'disposable',
+    'separate',
+    'environmental',
+    'goods',
+    'energy',
+    'etc',
   ];
 
-  useEffect(() => {
-    dispatch(__GetLanks());
-  }, [dispatch]);
   //clap
   const CheckClap = (item) => {
+    //두개의 배열에 모두 들어가있을 경우 둘 다 삭제
     if (clapCheck.includes(item) && clapArr.includes(item)) {
       setClapArr([...clapArr.filter((i) => i !== item)]);
       setClapCheck([...clapCheck.filter((i) => i !== item)]);
-    } else if (
-      !clapCheck.includes(item) &&
-      !clapArr.includes(item) &&
-      item.clapByMe
-    ) {
-      return;
-    } else if (
-      clapCheck.includes(item) &&
-      clapArr.includes(item) &&
-      !item.clapByMe
-    ) {
-      return;
-    } else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
+    }
+    //두개의 배열에 모두 포함하지 않을경우 둘 다 넣어줌
+    else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
       setClapArr([...clapArr, item]);
       setClapCheck([...clapCheck, item]);
-    } else if (!clapCheck.includes(item) && clapArr.includes(item)) {
+    }
+    //하나의 배열에만 들어있을 경우 들어있는 배열의 값을 삭제
+    else if (!clapCheck.includes(item) && clapArr.includes(item)) {
       setClapArr([...clapArr.filter((i) => i !== item)]);
     }
   };
@@ -144,6 +135,11 @@ const Feed = () => {
             setFeedList([...FeedList, ...res.data.data]);
             //받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
+            //받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
+            setClapArr([
+              ...clapArr,
+              ...res.data.data.map((item) => (item.clapByMe ? item.id : null)),
+            ]);
           })
       : instance
           .get(
@@ -153,8 +149,13 @@ const Feed = () => {
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
-             //받은 피드의 맨 마지막 아이디를 저장
+            //받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
+            //받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
+            setClapArr([
+              ...clapArr,
+              ...res.data.data.map((item) => (item.clapByMe ? item.id : null)),
+            ]);
           });
     setLoading(false);
   };
@@ -162,7 +163,6 @@ const Feed = () => {
   useEffect(() => {
     setPage(page + 1);
   }, [inView]);
-
   //카테고리 변경시 페이지를 비움
   useEffect(() => {
     setFeedList([]);
@@ -171,12 +171,16 @@ const Feed = () => {
     setPage(0);
     setLast(0);
   }, [category]);
-
-  //page가 올라가면서 통신을 해서 추가적인 값을 받아옴
   useEffect(() => {
-    page === 0 || page % 2 ? TagClick() : console.log();
-    setClapArr(FeedList.map((item) => (item.clapByMe ? item.id : null)));
+    if (page === 0 && page % 2 === 0) {
+      TagClick();
+    }
   }, [page]);
+
+  //페이지 랜더링시에 랭크정보 가져오기
+  useEffect(() => {
+    dispatch(__GetLanks());
+  }, [dispatch]);
 
   return (
     <>
@@ -231,7 +235,7 @@ const Feed = () => {
                 <FeedContent>
                   <CardBottomArea>
                     <BottomProfileArea>
-                      {" "}
+                      {' '}
                       <FeedProfile src={item.profilePhoto} />
                       <FeedNickname>{item.authorName}</FeedNickname>
                     </BottomProfileArea>
@@ -246,21 +250,24 @@ const Feed = () => {
                     >
                       <ClapPoint>{item.clapCount}</ClapPoint>
                       <ClapBox
-                        clapCheck={clapCheck}
-                        clapArr={clapArr}
-                        check={item.id}
+                        animation={
+                          clapArr.includes(item.id) &&
+                          clapCheck.includes(item.id)
+                            ? Shake
+                            : null
+                        }
                       >
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (
-                          <ClapIcon color={"#84CA79"} />
+                          <ClapIcon color={'#84CA79'} />
                         )}
                       </ClapBox>
                     </ClapArea>
                   </CardBottomArea>
                   <ContentArea>
                     <ArrowArea>
-                      {" "}
+                      {' '}
                       <FeedArrow />
                     </ArrowArea>
                     <FeedText>{item.content}</FeedText>

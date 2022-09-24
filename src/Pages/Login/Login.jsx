@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import LoginBody1 from "../../static/components/LoginBody1";
 //styled import
 import {
+  LoginPageArea,
   ButtonBody,
   KakaoLink,
   LDiv,
@@ -29,12 +30,9 @@ import {
   SecondCoverDiv,
   SecondText,
   SecondRefDiv,
-  LastTextFirst,
-  LastTextSecond,
-  LastTextThird,
   FourthArea,
-  FourthText,
   LogoGraDiv,
+  LastText,
 } from "./LoginStyled";
 //imgcdn
 import Img, { CloudimageProvider } from "react-cloudimage-responsive";
@@ -80,108 +78,114 @@ const Login = () => {
 
   return (
     <CloudimageProvider config={cloudimageConfig}>
-      <LogoArea>
-        <LogoGraDiv />
-        <LDiv>
-          <LoginBody1 />
-        </LDiv>
-      </LogoArea>
-      <FirstArea>
-        <FirstTitle animation={firstAni ? FadeBottomOn : null}>
-          Mission
-        </FirstTitle>
-        <FirstImgDiv>
-          <FirstImg
-            src="/images/Login/1번이미지.jpg"
-            // animation={firstAni ? FadeBottomOnImage : null}
-            alt="Demo image"
-            ratio={1.5}
-          />
+      <LoginPageArea>
+        <LogoArea>
+          <LogoGraDiv />
+          <LDiv>
+            <LoginBody1 />
+          </LDiv>
+        </LogoArea>
+        <FirstArea>
+          <FirstTitle animation={firstAni ? FadeBottomOn : null}>
+            Mission
+          </FirstTitle>
+          <FirstImgDiv>
+            <FirstImg
+              src="/images/Login/1번이미지.jpg"
+              // animation={firstAni ? FadeBottomOnImage : null}
+              alt="Demo image"
+              ratio={1.5}
+            />
 
-          <FirstCoverDiv>
-            <FirstCover
-              ref={first}
-              src="/images/Login/1번커버.png"
+            <FirstCoverDiv>
+              <FirstCover
+                ref={first}
+                src="/images/Login/1번커버.png"
+                alt="Demo image"
+                ratio={1.5}
+                animation={firstAni ? FadeBottomOn : null}
+              />{" "}
+            </FirstCoverDiv>
+          </FirstImgDiv>
+          <FirstText animation={firstAni ? FadeBottomOn : null}>
+            {text2}
+          </FirstText>
+        </FirstArea>
+        <SecondArea>
+          <FirstTitle animation={secondAni ? FadeBottomOn : null}>
+            Feed
+          </FirstTitle>
+          <SecondImgDiv>
+            <SecondImg
+              src="images/Login/2번이미지.jpg"
               alt="Demo image"
               ratio={1.5}
-              animation={firstAni ? FadeBottomOn : null}
-            />{" "}
-          </FirstCoverDiv>
-        </FirstImgDiv>
-        <FirstText animation={firstAni ? FadeBottomOn : null}>
-          {text2}
-        </FirstText>
-      </FirstArea>
-      <SecondArea>
-        <FirstTitle animation={secondAni ? FadeBottomOn : null}>
-          Feed
-        </FirstTitle>
-        <SecondImgDiv>
-          <SecondImg
-            src="images/Login/2번이미지.jpg"
-            alt="Demo image"
-            ratio={1.5}
-            // animation={secondAni ? FadeBottomOnImage : null}
-          />
-          <SecondCoverDiv>
-            <FirstCover
-              ref={second}
-              src="/images/Login/2번커버.png"
+              // animation={secondAni ? FadeBottomOnImage : null}
+            />
+            <SecondCoverDiv>
+              <FirstCover
+                ref={second}
+                src="/images/Login/2번커버.png"
+                alt="Demo image"
+                ratio={1.5}
+                animation={secondAni ? FadeBottomOn : null}
+              />{" "}
+            </SecondCoverDiv>
+          </SecondImgDiv>
+          <SecondText animation={secondAni ? FadeBottomOn : null}>
+            {text3}
+          </SecondText>
+          <SecondRefDiv />
+        </SecondArea>
+        <FirstArea>
+          <FirstTitle animation={thirdAni ? FadeBottomOn : null}>
+            Habbit
+          </FirstTitle>
+          <FirstImgDiv>
+            <FirstImg
+              src="/images/Login/3번이미지.jpg"
               alt="Demo image"
               ratio={1.5}
-              animation={secondAni ? FadeBottomOn : null}
-            />{" "}
-          </SecondCoverDiv>
-        </SecondImgDiv>
-        <SecondText animation={secondAni ? FadeBottomOn : null}>
-          {text3}
-        </SecondText>
-        <SecondRefDiv />
-      </SecondArea>
-      <FirstArea>
-        <FirstTitle animation={thirdAni ? FadeBottomOn : null}>
-          Habbit
-        </FirstTitle>
-        <FirstImgDiv>
-          <FirstImg
-            src="/images/Login/3번이미지.jpg"
-            alt="Demo image"
-            ratio={1.5}
-            // animation={thirdAni ? FadeBottomOnImage : null}
-          />
-          <FirstCoverDiv>
-            <FirstCover
-              ref={third}
-              src="/images/Login/3번커버.png"
-              alt="Demo image"
-              ratio={1.5}
-              animation={thirdAni ? FadeBottomOn : null}
-            />{" "}
-          </FirstCoverDiv>
-        </FirstImgDiv>
-        <FirstText animation={thirdAni ? FadeBottomOn : null}>
-          {text1}
-        </FirstText>
-      </FirstArea>
-      <FourthArea>
-        <LastTextFirst ref={fourth} animation={fourthAni ? FadeBottomOn : null}>
-          당신이 그릴 스텝,
-        </LastTextFirst>
-        <LastTextSecond animation={fourthAni ? FadeBottomOn : null}>
-          "내가 그린 스텝"{" "}
-        </LastTextSecond>
-        <LastTextThird animation={fourthAni ? FadeBottomOn : null}>
-          지금 시작해볼까요?
-        </LastTextThird>
-      </FourthArea>
-      <MarginDIv>
-        <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code">
-          {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code"> */}
-          <ButtonBody>
-            <Logo />
-          </ButtonBody>
-        </KakaoLink>
-      </MarginDIv>
+              // animation={thirdAni ? FadeBottomOnImage : null}
+            />
+            <FirstCoverDiv>
+              <FirstCover
+                ref={third}
+                src="/images/Login/3번커버.png"
+                alt="Demo image"
+                ratio={1.5}
+                animation={thirdAni ? FadeBottomOn : null}
+              />{" "}
+            </FirstCoverDiv>
+          </FirstImgDiv>
+          <FirstText animation={thirdAni ? FadeBottomOn : null}>
+            {text1}
+          </FirstText>
+        </FirstArea>
+        <FourthArea>
+          <LastText
+            time={"1s"}
+            ref={fourth}
+            animation={fourthAni ? FadeBottomOn : null}
+          >
+            당신이 그릴 스텝,
+          </LastText>
+          <LastText time={"2s"} animation={fourthAni ? FadeBottomOn : null}>
+            "내가 그린 스텝"{" "}
+          </LastText>
+          <LastText time={"3s"} animation={fourthAni ? FadeBottomOn : null}>
+            지금 시작해볼까요?
+          </LastText>
+        </FourthArea>
+        <MarginDIv>
+          <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code">
+            {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code"> */}
+            <ButtonBody>
+              <Logo />
+            </ButtonBody>
+          </KakaoLink>
+        </MarginDIv>
+      </LoginPageArea>
     </CloudimageProvider>
   );
 };

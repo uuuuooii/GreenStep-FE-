@@ -24,6 +24,7 @@ import {
 import DoneClap from "../../../static/components/DoneClap";
 
 const DetailPosts = ({ onClickToast }) => {
+  console.log(onClickToast);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import { useQueryClient } from 'react-query';
 import styled from 'styled-components';
 import instance from '../../Redux/modules/instance';
 
-var EventSource = EventSourcePolyfill;;
+var EventSource = EventSourcePolyfill;
 //EventSource = NativeEventSource || EventSourcePolyfill;
 const Alert = () => {
   const [listening, setListening] = useState(false);

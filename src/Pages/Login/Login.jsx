@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import LoginBody1 from "../../static/components/LoginBody1";
 //styled import
 import {
+  LoginPageArea,
   ButtonBody,
   KakaoLink,
   LDiv,
@@ -29,13 +30,10 @@ import {
   SecondCoverDiv,
   SecondText,
   SecondRefDiv,
-  LastTextFirst,
-  LastTextSecond,
-  LastTextThird,
   FourthArea,
-  FourthText,
   LogoGraDiv,
-} from "./LoginStyled";
+  LastText
+} from './LoginStyled';
 
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
@@ -67,7 +65,7 @@ const Login = () => {
   // useEffect(()=>{},[secondView])
 
   return (
-    <>
+    <LoginPageArea>
       <LogoArea>
         <LogoGraDiv />
         <LDiv>
@@ -140,15 +138,15 @@ const Login = () => {
         </FirstText>
       </FirstArea>
       <FourthArea>
-        <LastTextFirst ref={fourth} animation={fourthAni ? FadeBottomOn : null}>
+        <LastText time={'1s'} ref={fourth} animation={fourthAni ? FadeBottomOn : null}>
           당신이 그릴 스텝,
-        </LastTextFirst>
-        <LastTextSecond animation={fourthAni ? FadeBottomOn : null}>
-          "내가 그린 스텝"{" "}
-        </LastTextSecond>
-        <LastTextThird animation={fourthAni ? FadeBottomOn : null}>
+        </LastText>
+        <LastText time={'2s'} animation={fourthAni ? FadeBottomOn : null}>
+          "내가 그린 스텝"{' '}
+        </LastText>
+        <LastText time={'3s'} animation={fourthAni ? FadeBottomOn : null}>
           지금 시작해볼까요?
-        </LastTextThird>
+        </LastText>
       </FourthArea>
       <MarginDIv>
         {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code"> */}
@@ -158,7 +156,7 @@ const Login = () => {
           </ButtonBody>
         </KakaoLink>
       </MarginDIv>
-    </>
+    </LoginPageArea>
   );
 };
 

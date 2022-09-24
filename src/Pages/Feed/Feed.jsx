@@ -48,13 +48,20 @@ import {
 import FeedArrow from "../../static/components/FeedArrow";
 
 const Feed = () => {
+  //랭킹 정보 가져오기
   const ranks = useSelector((state) => state.ranks.ranks);
+  //애니메이션 분기 처리를 위한 배열 2개
   const [clapArr, setClapArr] = useState([]);
   const [clapCheck, setClapCheck] = useState([]);
+  //현재 보고있는 카테고리 값
   const [category, setCategory] = useState(0);
+  // 무한스크롤 페이지값
   const [page, setPage] = useState(0);
+  //로딩 상태값
   const [loading, setLoading] = useState(false);
+  //피드를 받는 배열
   const [FeedList, setFeedList] = useState([]);
+  //서버에 보내는 마지막 피드의 id값
   const [last, setLast] = useState("");
   //화면에 보일시 inView의 값이 true로 변함
   const [ref, inView] = useInView();
@@ -135,6 +142,7 @@ const Feed = () => {
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
+            //받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
           })
       : instance
@@ -145,6 +153,7 @@ const Feed = () => {
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
+             //받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
           });
     setLoading(false);

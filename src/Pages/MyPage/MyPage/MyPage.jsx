@@ -119,7 +119,7 @@ const MyPage = () => {
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
-                  <div className="mypage-modal-hidden-text">가려진 항목</div>
+                  <div className="mypage-modal-hidden-text" onClick={()=>navigate('/archive/hide')} >가려진 항목</div>
                 </div>
                 <div className="mypage-modal-cc-area">
                   <ViewMoreCC />

@@ -19,8 +19,20 @@
   background-color: #fcfcfa;
 }
 
+.explain-mission-close-button-area {
+  height: 42px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.explain-mission-close-button {
+  padding: 20px 18px 0px 0px;
+  font-size: 25px;
+  color: #c3c2c2;
+}
+
 .explain-mission-name-and-tag-area {
-  margin: 38px 28px 36px 30px;
+  margin: 0px 0px 36px 30px;
 }
 
 .explain-mission-name-and-button {
@@ -37,23 +49,18 @@
   color: #2b5139;
 }
 
-.explain-mission-close-button {
-  font-size: 25px;
-  color: #c3c2c2;
-}
-
 .explain-mission-tag-text {
   font-family: "AppleNeoM";
   line-height: 18px;
   font-size: 15px;
-  margin-top: 2px;
+  margin: 2px 28px 0px 0px;
   color: #b8dde2;
 }
 
 .explain-mission-contents-text {
   font-family: "AppleNeoR";
   line-height: 18px;
-  margin-bottom: 0px;
+  margin: 15px 28px 0px 0px;
   font-size: 15px;
   color: #2b5139;
 }

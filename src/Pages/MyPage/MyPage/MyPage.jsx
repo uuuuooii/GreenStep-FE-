@@ -55,7 +55,6 @@ const MyPageDiv = styled.div`
 `;
 
 const MyPage = ({ onClickToast }) => {
-  console.log(onClickToast);
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
@@ -122,7 +121,12 @@ const MyPage = ({ onClickToast }) => {
                 </div>
                 <div className="mypage-modal-hidden-area">
                   <ViewMoreHidden />
-                  <div className="mypage-modal-hidden-text" onClick={()=>navigate('/archive/hide')} >가려진 항목</div>
+                  <div
+                    className="mypage-modal-hidden-text"
+                    onClick={() => navigate("/archive/hide")}
+                  >
+                    가려진 항목
+                  </div>
                 </div>
                 <div className="mypage-modal-cc-area">
                   <ViewMoreCC />

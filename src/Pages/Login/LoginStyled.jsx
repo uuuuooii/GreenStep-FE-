@@ -6,7 +6,12 @@ import {
   FadeBottomOn,
   FadeBottomOnImage,
 } from '../../Components/Animation/Animation';
-
+export const LoginPageArea = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 export const LoginBody = styled.div`
   width: 100%;
   display: flex;
@@ -25,15 +30,19 @@ export const ButtonBody = styled.div`
   /* padding: 60px 0; */
 `;
 export const LogoGraDiv = styled.div`
+  display: block;
   /* background-color: #daf2d5; */
   width: 250px;
   height: 250px;
+  max-width: 100%;
+  max-height: 100%;
   /* border-radius: 150px; */
   position: absolute;
   animation-name: ${LogoFade};
   animation-duration: 1.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  object-fit: cover;
 `;
 export const KakaoLink = styled.a`
   text-decoration: none;
@@ -72,6 +81,7 @@ export const FirstArea = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
 `;
 export const FirstTitle = styled.div`
   font-style: normal;
@@ -156,7 +166,7 @@ export const LogoArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 `;
 
 export const FirstCoverDiv = styled.div`
@@ -245,60 +255,18 @@ export const FourthText = styled.div`
   text-align: center;
   color: #84ca79;
 `;
-export const LastTextFirst = styled.div`
+export const LastText = styled.div`
   opacity: 0;
   font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
   line-height: 48px;
-  /* or 192% */
-
   text-align: center;
-
-  /* primary 1 */
-
   color: #50674c;
   animation-name: ${(props) => props.animation};
-  animation-duration: 1s;
+  animation-duration: ${(props)=>props.time};
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
-export const LastTextSecond = styled.div`
-  opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 48px;
-  /* or 192% */
 
-  text-align: center;
-
-  /* primary 1 */
-
-  color: #50674c;
-  animation-name: ${(props) => props.animation};
-  animation-duration: 2s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-`;
-export const LastTextThird = styled.div`
-  opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 48px;
-  /* or 192% */
-
-  text-align: center;
-
-  /* primary 1 */
-
-  color: #50674c;
-  animation-name: ${(props) => props.animation};
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-`;

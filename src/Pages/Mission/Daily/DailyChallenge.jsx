@@ -65,7 +65,7 @@ const DailyChallenge = ({ mission }) => {
             ) : null}
 
             <ChallengePhoto src={mission.missionImageUrl} />
-            <ChallengeMissionText>{mission.missionName}</ChallengeMissionText>
+            <ChallengeMissionText title={mission.missionName} >{mission.missionName}</ChallengeMissionText>
           </ChallengeBody>
         </ChallengeBox>
       ) : (

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blaze-cms/image-cdn-react": "^0.3.0-alpha.3",
     "@fullpage/react-fullpage": "^0.1.28",
+    "@imageengine/react": "^0.11.1",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -23,6 +25,7 @@
     "react-camera-pro": "^1.1.1",
     "react-camera-pro-2": "^1.1.1",
     "react-clap-button": "^1.2.12",
+    "react-cloudimage-responsive": "^3.6.4",
     "react-dom": "^18.2.0",
     "react-full-page": "^0.1.12",
     "react-helmet": "^6.1.0",

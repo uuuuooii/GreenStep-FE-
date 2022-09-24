@@ -36,6 +36,18 @@ import {
   FourthText,
   LogoGraDiv,
 } from "./LoginStyled";
+//imgcdn
+import Img, { CloudimageProvider } from "react-cloudimage-responsive";
+const cloudimageConfig = {
+  token: "demo",
+  baseURL: "https://cdn.scaleflex.it/demo/",
+};
+
+const cloudimageConfigWithCustomCNAMEDomain = {
+  token: "demo",
+  baseURL: "https://cdn.scaleflex.it/demo/",
+  customDomain: "https://cdn.scaleflex.it/demo/",
+};
 
 const text1 =
   " 당신의 작지만 일상적인 \n 환경 미션을 통해서,\n 나비 효과를 만들어\n 아주 큰 변화로 이끌어보세요.";
@@ -67,7 +79,7 @@ const Login = () => {
   // useEffect(()=>{},[secondView])
 
   return (
-    <>
+    <CloudimageProvider config={cloudimageConfig}>
       <LogoArea>
         <LogoGraDiv />
         <LDiv>
@@ -82,12 +94,16 @@ const Login = () => {
           <FirstImg
             src="/images/Login/1번이미지.jpg"
             // animation={firstAni ? FadeBottomOnImage : null}
+            alt="Demo image"
+            ratio={1.5}
           />
 
           <FirstCoverDiv>
             <FirstCover
               ref={first}
               src="/images/Login/1번커버.png"
+              alt="Demo image"
+              ratio={1.5}
               animation={firstAni ? FadeBottomOn : null}
             />{" "}
           </FirstCoverDiv>
@@ -102,13 +118,17 @@ const Login = () => {
         </FirstTitle>
         <SecondImgDiv>
           <SecondImg
-            src="/images/Login/2번이미지.jpg"
+            src="images/Login/2번이미지.jpg"
+            alt="Demo image"
+            ratio={1.5}
             // animation={secondAni ? FadeBottomOnImage : null}
           />
           <SecondCoverDiv>
             <FirstCover
               ref={second}
               src="/images/Login/2번커버.png"
+              alt="Demo image"
+              ratio={1.5}
               animation={secondAni ? FadeBottomOn : null}
             />{" "}
           </SecondCoverDiv>
@@ -125,12 +145,16 @@ const Login = () => {
         <FirstImgDiv>
           <FirstImg
             src="/images/Login/3번이미지.jpg"
+            alt="Demo image"
+            ratio={1.5}
             // animation={thirdAni ? FadeBottomOnImage : null}
           />
           <FirstCoverDiv>
             <FirstCover
               ref={third}
               src="/images/Login/3번커버.png"
+              alt="Demo image"
+              ratio={1.5}
               animation={thirdAni ? FadeBottomOn : null}
             />{" "}
           </FirstCoverDiv>
@@ -158,7 +182,7 @@ const Login = () => {
           </ButtonBody>
         </KakaoLink>
       </MarginDIv>
-    </>
+    </CloudimageProvider>
   );
 };
 

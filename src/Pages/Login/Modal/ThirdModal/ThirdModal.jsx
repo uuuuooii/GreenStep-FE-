@@ -69,7 +69,11 @@ const ThirdModal = ({
             <ProfileImg src={img} />
             <InputDiv color={name ? "#B2E2AB" : "#C3C2C2"}>
               <TextInput
+<<<<<<< HEAD
+                color={name ? "#B2E2AB" : "#C3C2C2"}
+=======
                 color={name ? "#B2E2AB" : "#2a2929"}
+>>>>>>> e6593de21292ce43d1fd75321143fff338fd8152
                 onChange={setName}
                 defaultValue={user.name ? user.name : "이름"}
                 placeholder="이름"

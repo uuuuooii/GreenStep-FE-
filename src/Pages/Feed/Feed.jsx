@@ -172,11 +172,10 @@ const Feed = () => {
     setLast(0);
   }, [category]);
   useEffect(() => {
-    if (page === 0 && page % 2 === 0) {
+    if (page === 0 || page % 2 === 0) {
       TagClick();
     }
   }, [page]);
-
   //페이지 랜더링시에 랭크정보 가져오기
   useEffect(() => {
     dispatch(__GetLanks());

@@ -24,6 +24,7 @@
 }
 
 .secessiontext {
+
   position: relative;
   padding: 0px 0px 0px 150px;
   font-size: 20px;
@@ -42,9 +43,11 @@
   line-height: 22px;
   text-align: center;
   color: #84ca79;
+
 }
 
 .secessionbutton {
+
   cursor: pointer;
   width: 223px;
   height: 26px;
@@ -63,6 +66,7 @@
   flex-grow: 0;
   border: 0;
   outline: 0;
+
 
   background: #c3c2c2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);

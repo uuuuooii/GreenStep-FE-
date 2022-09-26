@@ -61,7 +61,7 @@ export const getHideThunk = createAsyncThunk(
     try {
       const data = await instance
         .get(`/profiles/setting/hidden-missions`)
-        .then((res) => console.log(res.data.data));
+        .then((res) => res.data.data);
       return thunkAPI.fulfillWithValue(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);

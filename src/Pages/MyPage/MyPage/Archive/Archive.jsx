@@ -32,7 +32,8 @@ import {
   DeleteBottomText,
   DeleteCancelButton,
   ModalArea,
-} from "./ArchiveStyled";
+  ArchivePage,
+} from './ArchiveStyled';
 
 const Archive = () => {
   const param = useParams().id;
@@ -43,6 +44,8 @@ const Archive = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  console.log(data);
 
   const CancelClick = () => {
     setDelState(!delState);
@@ -69,13 +72,15 @@ const Archive = () => {
       ? dispatch(getCertThunk())
       : param === "post"
       ? dispatch(getPostThunk())
-      : dispatch(getHideThunk());
+      : instance
+          .get(`/profiles/setting/hidden-missions`)
+          .then((res) => setData(res.data.data));
     setData(serverData);
     setLoding(false);
   }, [dispatch]);
 
   return (
-    <>
+    <ArchivePage>
       <WrapArchive>
         <div className="back-and-settings-button-area">
           <div
@@ -172,6 +177,8 @@ const Archive = () => {
         ) : null}
       </WrapArchive>
 
+
+
       {modal ? (
         <ModalArea>
           <DeleteModal>
@@ -195,7 +202,13 @@ const Archive = () => {
                             ...data.filter((item) => !delArr.includes(item.id)),
                           ])
                         )
-                    : instance.patch(`/profiles/missions`, delArr);
+                    : instance
+                        .patch(`/profiles/missions`, delArr)
+                        .then(() =>
+                          setData([
+                            ...data.filter((item) => !delArr.includes(item.id)),
+                          ])
+                        );
                   setModal(!modal);
                   setDelArr([]);
                 }}
@@ -213,7 +226,7 @@ const Archive = () => {
           </DeleteModal>
         </ModalArea>
       ) : null}
-    </>
+    </ArchivePage>
   );
 };
 

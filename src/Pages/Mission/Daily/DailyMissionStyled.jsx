@@ -94,7 +94,7 @@ export const ChallengeTitle = styled.div`
   color: #84ca79;
 `;
 export const ChallengeTimer = styled.div`
-  width: 132px;
+  width: 149px;
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;

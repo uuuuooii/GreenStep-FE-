@@ -149,8 +149,6 @@ export const CategoryButton = styled.div`
   min-width: 90px;
   min-height: 26px;
   border-radius: 3px;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
   font-weight: bold;
   font-size: 13px;
   line-height: 16px;
@@ -223,8 +221,7 @@ export const TagArea = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  font-family: "AppleNeoM";
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -249,9 +246,8 @@ export const ClapPoint = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 0 5px;
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  margin: 0px 10px 0px 0px;
+  font-family: "AppleNeoSB";
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
@@ -272,12 +268,12 @@ export const FeedProfile = styled.img`
   object-fit: cover;
 `;
 export const FeedNickname = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  font-family: "AppleNeoSB";
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
-  color: #84ca79;
+  color: #50674c;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,14 +289,12 @@ export const FeedContent = styled.div`
 export const FeedText = styled.div`
   width: 100%;
   display: flex;
-
-  font-family: "Inter";
-  font-style: normal;
+  font-family: "AppleNeoR";
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   color: #2b5139;
-  margin: 0 10px;
+  margin: 0px 15px 0px 5px;
 `;
 export const PhotoArea = styled.div`
   display: flex;
@@ -333,10 +327,7 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
   width: 26px;
-  animation-name: ${(props) =>
-    props.clapArr.includes(props.check) && props.clapCheck.includes(props.check)
-      ? Shake
-      : null};
+  animation-name:${(props)=>props.animation};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -355,5 +346,5 @@ export const ContentArea = styled.div`
   margin-top: 8px;
   display: flex;
   flex-direction: row;
-  padding: 0px 10px 0px 14px;
+  padding: 0px 0px 0px 20px;
 `;

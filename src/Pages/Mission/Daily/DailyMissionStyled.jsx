@@ -19,6 +19,7 @@ export const DailyBody = styled.div`
 export const MissionPhoto = styled.img`
   width: 145px;
   height: 144px;
+  object-fit: cover;
   background: rgba(255, 255, 255, 0.5);
 `;
 export const MissionText = styled.div`
@@ -41,7 +42,7 @@ export const ChallengeMissionText = styled.div`
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
 
-  font-size: ${(props)=>props.title.length>8 ? "10px" : "13px"};
+  font-size: ${(props) => (props.title.length > 8 ? "10px" : "13px")};
   line-height: 16px;
   color: #b2e2ab;
   flex-wrap: wrap;
@@ -129,8 +130,7 @@ export const LeapDiv = styled.div`
   transform: translate(-50%, -50%);
 `;
 export const WatingText = styled.div`
-  font-family: "Apple SD Gothic Neo";
-  font-style: normal;
+  font-family: "AppleNeoM";
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;

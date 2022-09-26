@@ -11,13 +11,15 @@ import instance from "../../../Redux/modules/instance";
 import { getCertThunk } from "../../../Redux/modules/userInfoSlice";
 //styled import
 import "./Upload.css";
+import { HiOutlineX } from "react-icons/hi";
 import "../../../Components/Toast/Toast.css";
 import {
   UploadContentTextArea,
   UploadButton,
   ButtonArea,
   KakaoReactIcon,
-  IconDiv,
+  UploadIconDiv,
+  KakaoIconDiv,
   ButtonText,
   TotalButtonArea,
   ShareButton,
@@ -64,6 +66,14 @@ const Upload = ({ onClickToast }) => {
         <div className="upload-wrap-shape">
           {!loading && data ? (
             <>
+              <div className="upload-mission-close-button-area">
+                <div
+                  className="upload-mission-close-button"
+                  onClick={() => navigate("/mypage")}
+                >
+                  <HiOutlineX />
+                </div>
+              </div>
               <div className="upload-mission-name-and-tag-area">
                 <div className="upload-mission-name-text">
                   {data.missionName ? data.missionName : "Mission Name"}
@@ -118,18 +128,18 @@ const Upload = ({ onClickToast }) => {
                   }
                 >
                   <ButtonArea>
-                    <IconDiv>
+                    <UploadIconDiv>
                       <UploadFeed />
-                    </IconDiv>{" "}
+                    </UploadIconDiv>{" "}
                     <ShareText>피드 올리기</ShareText>
                   </ButtonArea>
                 </UploadButton>
 
                 <ShareButton>
                   <ButtonArea>
-                    <IconDiv>
+                    <KakaoIconDiv>
                       <KakaoReactIcon />
-                    </IconDiv>{" "}
+                    </KakaoIconDiv>{" "}
                     <KakaoShare>카카오 공유하기</KakaoShare>
                   </ButtonArea>
                 </ShareButton>

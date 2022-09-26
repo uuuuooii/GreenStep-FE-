@@ -73,6 +73,7 @@ const Archive = () => {
     setData(serverData);
     setLoding(false);
   }, [dispatch]);
+
   return (
     <>
       <WrapArchive>

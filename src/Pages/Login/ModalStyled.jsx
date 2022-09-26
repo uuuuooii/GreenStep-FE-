@@ -7,7 +7,7 @@ export const ModalBody = styled.div`
   bottom: 0;
   left: 0;
   z-index: 999;
-  max-height: 667px;
+  /* max-height: 667px; */
   /* max-width: 375px; */
   max-width: 100%;
   margin: auto;

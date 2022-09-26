@@ -127,9 +127,7 @@ const ThirdModal = ({
             <WarningDiv>
               {
                 {
-                  empty: (
-                    <WarningText>최대 8글자인 한글만 가능합니다.</WarningText>
-                  ),
+                  empty: <WarningText></WarningText>,
                   error: <ErrorText>이름은 한글만 입력해주세요.</ErrorText>,
                   success: (
                     <WarningText>최대 8글자인 한글만 가능합니다.</WarningText>
@@ -148,7 +146,7 @@ const ThirdModal = ({
             </WarningDiv>
 
             <InputDiv
-              color={valid.nickname === "error" ? "#E1756E" : "#C3C2C2"}
+              color={valid.nickname === "error" ? "#E1756E" : "#B2E2AB"}
             >
               <TextInput
                 color={nickname ? "#B2E2AB" : "#C3C2C2"}
@@ -160,18 +158,14 @@ const ThirdModal = ({
               />
               <PencilDiv>
                 <PencilIcon
-                  color={valid.nickname === "error" ? "#E1756E" : "#C3C2C2"}
+                  color={valid.nickname === "error" ? "#E1756E" : "#B2E2AB"}
                 />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
               {
                 {
-                  empty: (
-                    <WarningText>
-                      최대 8글자까지인 한글 or 영어만 가능합니다.
-                    </WarningText>
-                  ),
+                  empty: <WarningText></WarningText>,
                   error: (
                     <ErrorText>아이디는 영문,숫자만 입력해주세요.</ErrorText>
                   ),

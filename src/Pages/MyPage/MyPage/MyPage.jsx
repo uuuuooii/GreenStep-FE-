@@ -55,12 +55,14 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
+
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state) => state.userInfo.userInfo);
+  const [userInfo,setUserInfo] = useState({})
+  // const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
   const FirstText = `아직 ${
@@ -71,12 +73,12 @@ const MyPage = ({ onClickToast }) => {
   }님이 그린 스텝을 보고싶어해요! 🤩 \n 피드에 공유해 주세요!`;
   useEffect(() => {
     setLoding(true);
-    dispatch(getUserInfoThunk());
+   instance.get('/users/info').then((res)=>setUserInfo(res.data.data))
     dispatch(getCertThunk());
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-
+console.log(userInfo)
   return (
     <>
       <MyPageDiv>

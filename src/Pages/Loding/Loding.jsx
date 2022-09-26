@@ -1,4 +1,4 @@
-//react impoty
+//react import
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -17,9 +17,9 @@ const Test = () => {
   useEffect(() => {
     axios
 
-      .get(
-        `https://greenstepserver.link/users/kakao/callback`,
-        // .get(`http://13.209.16.253:8080/users/kakao/callback`,
+      // .get(
+      //   `https://greenstepserver.link/users/kakao/callback`,
+        .get(`http://13.209.16.253:8080/users/kakao/callback`,
         {
           params: { code },
         }

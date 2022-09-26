@@ -1,5 +1,5 @@
 //react import
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 //styled import
 import {
@@ -15,6 +15,7 @@ import {
   PencilIcon,
   InputDiv,
   WarningText,
+  ErrorText,
   WarningDiv,
 } from "./ThirdModalStyled";
 const ThirdModal = ({
@@ -30,6 +31,8 @@ const ThirdModal = ({
   onClickToast,
   user,
 }) => {
+  const [valid, setValid] = useState({ name: "empty", nickname: "empty" });
+
   const NextModal = () => {
     setDisplay(4);
     setThird(true);
@@ -43,8 +46,47 @@ const ThirdModal = ({
     setThird(false);
   };
 
-  var reg = /[^ㄱ-ㅎ가-힣a-zA-Z0-9]/g;
+  const krEg = /[^가-힣^a-zA-Z]$/;
+  const korean = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+
   //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
+
+  useEffect(() => {
+    if (name === "") {
+      setValid((prev) => {
+        return { ...prev, name: "empty" };
+      });
+    } else {
+      console.log(korean.test(name));
+      if (korean.test(name)) {
+        setValid((prev) => {
+          return { ...prev, name: "error" };
+        });
+      } else {
+        setValid((prev) => {
+          return { ...prev, name: "success" };
+        });
+      }
+    }
+  }, [name]);
+
+  useEffect(() => {
+    if (nickname === "") {
+      setValid((prev) => {
+        return { ...prev, nickname: "empty" };
+      });
+    } else {
+      if (krEg.test(nickname)) {
+        setValid((prev) => {
+          return { ...prev, nickname: "error" };
+        });
+      } else {
+        setValid((prev) => {
+          return { ...prev, nickname: "success" };
+        });
+      }
+    }
+  }, [nickname]);
   return (
     <>
       <ModalHeader>
@@ -54,7 +96,7 @@ const ThirdModal = ({
         <TopText>닉네임 설정</TopText>
         <ButtonText
           onClick={() =>
-            nickname && !reg.test(nickname)
+            nickname && !krEg.test(nickname)
               ? NextModal()
               : onClickToast("빈칸을 확인해주세요")
           }
@@ -67,9 +109,9 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv color={name ? "#B2E2AB" : "#C3C2C2"}>
+            <InputDiv color={valid.name === "error" ? "#E1756E" : "#B2E2AB"}>
               <TextInput
-                color={name ? "#B2E2AB" : "#C3C2C2"}
+                color={name ? "#B2E2AB" : "#C3C2C2 "}
                 onChange={setName}
                 defaultValue={user.name ? user.name : "이름"}
                 placeholder="이름"
@@ -78,19 +120,37 @@ const ThirdModal = ({
               />
 
               <PencilDiv>
-                <PencilIcon color={name ? "#B2E2AB" : "#C3C2C2"} />
+                <PencilIcon
+                  color={valid.name === "error" ? "#E1756E" : "#B2E2AB"}
+                />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
-              {" "}
-              {reg.test(name) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
+              {
+                {
+                  empty: (
+                    <WarningText>최대 8글자인 한글만 가능합니다.</WarningText>
+                  ),
+                  error: <ErrorText>이름은 한글만 입력해주세요.</ErrorText>,
+                  success: (
+                    <WarningText>최대 8글자인 한글만 가능합니다.</WarningText>
+                  ),
+                }[valid.name]
+              }
+              {/* {name !== "" ? (
+                valid.name ? ( // 일치했을 때(한글만 작성됐을 때) true 불일치(한글이 아닌 글자) false
+                  <WarningText>최대 8글자인 한글만 가능합니다.</WarningText> // true
+                ) : (
+                  <ErrorText>이름은 한글만 입력해주세요.</ErrorText> // false
+                )
               ) : (
-                <WarningText>최대 8글자까지 가능합니다.</WarningText>
-              )}
+                <WarningText>최대 8글자인 한글만 가능합니다.</WarningText>
+              )} */}
             </WarningDiv>
 
-            <InputDiv color={nickname ? "#B2E2AB" : "#C3C2C2"}>
+            <InputDiv
+              color={valid.nickname === "error" ? "#E1756E" : "#C3C2C2"}
+            >
               <TextInput
                 color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
@@ -100,15 +160,36 @@ const ThirdModal = ({
                 type="text"
               />
               <PencilDiv>
-                <PencilIcon color={nickname ? "#B2E2AB" : "#C3C2C2"} />
+                <PencilIcon
+                  color={valid.nickname === "error" ? "#E1756E" : "#C3C2C2"}
+                />
               </PencilDiv>
             </InputDiv>
             <WarningDiv>
-              {reg.test(nickname) ? (
-                <WarningText>사용할 수 없는 문자가 포함되었습니다.</WarningText>
+              {
+                {
+                  empty: (
+                    <WarningText>
+                      최대 8글자까지인 한글 or 영어만 가능합니다.
+                    </WarningText>
+                  ),
+                  error: (
+                    <ErrorText>아이디는 영문,숫자만 입력해주세요.</ErrorText>
+                  ),
+                  success: (
+                    <WarningText>
+                      최대 8글자까지인 한글 or 영어만 가능합니다.
+                    </WarningText>
+                  ),
+                }[valid.nickname]
+              }
+              {/* {krEg.test(nickname) ? (
+                <ErrorText>아이디는 영문,숫자만 입력해주세요.</ErrorText>
               ) : (
-                <WarningText>최대 8글자까지 가능합니다.</WarningText>
-              )}
+                <WarningText>
+                  최대 8글자까지인 한글 or 영어만 가능합니다.
+                </WarningText>
+              )} */}
             </WarningDiv>
           </ProfileArea>
         </CenterContainer>

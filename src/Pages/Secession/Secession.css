@@ -31,10 +31,11 @@
     color: #50674C;
     font-weight: 600;
     font-family: 'Apple SD Gothic Neo';
-
+    text-align: center;
 }
 
 .secessiontitle {
+    text-align: center;
     width: 217px;
     height: 44px;
     padding: 120px 0px 0px 35px;
@@ -49,6 +50,7 @@
 
 
 .secessionbutton {
+    text-align: center;
     cursor: pointer;
     width: 223px;
     height: 26px;

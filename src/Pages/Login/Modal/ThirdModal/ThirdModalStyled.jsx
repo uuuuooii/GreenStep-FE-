@@ -80,8 +80,8 @@ export const InputDiv = styled.div`
   height: 40px;
   display: flex;
   border: 2px solid ${(props) => props.color};
-  border-radius: 6px;
   margin: 5px 0;
+  border-radius: 6px;
 `;
 
 export const TextInput = styled.input`
@@ -113,6 +113,11 @@ export const WarningDiv = styled.div`
 export const WarningText = styled.div`
   font-size: 6px;
   color: ${(props) => (props.color ? props.color : "#b2e2ab")};
+  width: 100%;
+`;
+export const ErrorText = styled.div`
+  font-size: 6px;
+  color: ${(props) => (props.color ? props.color : "#E1756E ")};
   width: 100%;
 `;
 

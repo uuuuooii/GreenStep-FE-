@@ -198,7 +198,6 @@
   color: #50674c;
   margin-bottom: 7px;
   margin-top: 6px;
-  /* font-family: "Apple SD Gothic Neo" */
 }
 
 .email-text {
@@ -214,18 +213,18 @@
   color: #50674c;
 }
 
-.missionCount {
+.mypage-mission-count {
   font-family: "AppleNeoR";
   font-size: 14px;
   text-align: center;
-  color: #4f7d48;
+  color: #50674c;
 }
 
-.missionPoint {
+.mypage-mission-point {
   font-family: "AppleNeoR";
   font-size: 14px;
   text-align: center;
-  color: #4f7d48;
+  color: #50674c;
 }
 
 .photoshots-archive-area {
@@ -255,7 +254,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 4px;
-  color: #84ca79;
+  color: #50674c;
 }
 
 .photoshots-text-none {
@@ -268,7 +267,7 @@
 .photoshots-viewmore-icon {
   font-size: 20px;
   margin-top: 1px;
-  color: #84ca79;
+  color: #50674c;
 }
 
 .photoshots-viewmore-icon-none {
@@ -324,7 +323,7 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 4px;
-  color: #84ca79;
+  color: #50674c;
 }
 
 .posts-text-none {
@@ -337,7 +336,7 @@
 .posts-viewmore-icon {
   font-size: 20px;
   margin-top: 1px;
-  color: #84ca79;
+  color: #50674c;
 }
 
 .posts-viewmore-icon-none {

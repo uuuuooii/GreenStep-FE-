@@ -45,28 +45,25 @@ const Explain = ({ Header }) => {
       {!loading && select ? (
         <Slide bottom>
           <div className="explain-wrap-shape">
+            <div className="explain-mission-close-button-area">
+              <div
+                className="explain-mission-close-button"
+                onClick={() => navigate("/mission")}
+              >
+                <HiOutlineX />
+              </div>
+            </div>
             <div className="explain-mission-name-and-tag-area">
-              <div className="explain-mission-name-and-button">
-                <div className="explain-mission-name-text">
-                  {select ? select.missionName : "MissionName"}
-                </div>
-                <div
-                  className="explain-mission-close-button"
-                  onClick={() => navigate("/mission")}
-                >
-                  <HiOutlineX />
-                </div>
+              <div className="explain-mission-name-text">
+                {select ? select.missionName : "MissionName"}
               </div>
               <div className="explain-mission-tag-text">
                 {select ? select.tag : "#Tag"}
               </div>
-              <p className="explain-mission-contents-text">
+              <div className="explain-mission-contents-text">
                 {select
                   ? select.missionContent
                   : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor."}
-              </p>
-              <div className="explain-mission-contents-text">
-                사진을 찍어서 인증해보세요!
               </div>
             </div>
 

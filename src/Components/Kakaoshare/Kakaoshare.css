@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "AppleNeoM";
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
-  margin-left: 5px;
+  margin-left: 7px;
+  margin-bottom: 1px;
   height: 100%;
 }

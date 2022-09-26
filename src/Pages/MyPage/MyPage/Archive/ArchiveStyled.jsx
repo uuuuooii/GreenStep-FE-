@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { MdOutlineDoubleArrow } from "react-icons/md";
-import { AiOutlineCheckCircle, AiFillCheckCircle } from "react-icons/ai";
-import { SlideBottom } from "../../../../Components/Animation/Animation";
+import styled from 'styled-components';
+import { MdOutlineDoubleArrow } from 'react-icons/md';
+import { AiOutlineCheckCircle, AiFillCheckCircle } from 'react-icons/ai';
+import { SlideBottom } from '../../../../Components/Animation/Animation';
 
 export const ImageCard = styled.img`
   width: 100%;
@@ -36,7 +36,7 @@ export const DeleteDiv = styled.div`
   height: 100%;
   z-index: 5;
   background-color: ${(props) =>
-    props.check.includes(props.num) ? "rgba(255, 255, 255, 0.5)" : "none"};
+    props.check.includes(props.num) ? 'rgba(255, 255, 255, 0.5)' : 'none'};
   display: ${(props) => props.display};
   top: 0;
   bottom: 0;
@@ -76,8 +76,10 @@ export const SkeletonCard = styled.div`
   background-color: gray;
   margin: 0 5px;
 `;
+
 export const ModalArea = styled.div`
   position: fixed;
+  /* margin: 0 auto; */
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
@@ -87,6 +89,7 @@ export const ModalArea = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
+
 export const DeleteModal = styled.div`
   display: flex;
   flex-direction: column;
@@ -102,7 +105,7 @@ export const DeleteText = styled.div`
   border-radius: 15px;
 `;
 export const DeleteTopText = styled.div`
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   color: #868686;
   font-size: 13px;
   line-height: 17px;
@@ -118,7 +121,7 @@ export const DeleteLine = styled.div`
 
 export const DeleteBottomText = styled.div`
   width: 100%;
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 500;
   font-size: 20px;
   line-height: 132%;
@@ -137,7 +140,7 @@ export const DeleteCancelButton = styled.div`
   border-radius: 15px;
   width: 340px;
   height: 34px;
-  font-family: "AppleNeoM";
+  font-family: 'AppleNeoM';
   font-weight: 700;
   font-size: 20px;
   line-height: 132%;
@@ -151,4 +154,9 @@ export const ArchiveFlexBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+export const ArchivePage = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;

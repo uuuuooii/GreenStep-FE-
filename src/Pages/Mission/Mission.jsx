@@ -43,6 +43,7 @@ const Mission = () => {
     dispatch(__GetTodaymission());
     setLoading(false);
   }, [2000]);
+  console.log(missionDaily);
 
   return (
     <>

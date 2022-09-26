@@ -148,7 +148,7 @@ const MyPage = ({ onClickToast }) => {
                     className="mypage-modal-logout-text"
                     onClick={() =>
                       instance.get("/kakao/logout").then((res) => {
-                        if (res.data.data) {
+                        if (res.data) {
                           window.localStorage.clear();
                           window.sessionStorage.clear();
                           navigate("/");

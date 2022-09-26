@@ -36,13 +36,13 @@ export const LogoGraDiv = styled.div`
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  /* border-radius: 150px; */
-  /* position: absolute; */
+  position: absolute;
   animation-name: ${LogoFade};
-  animation-duration: 2s;
+  animation-duration: 2.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   object-fit: cover;
+  overflow: hidden;
 `;
 export const KakaoLink = styled.a`
   text-decoration: none;
@@ -166,7 +166,7 @@ export const LogoArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: auto;
+  overflow: hidden;
 `;
 
 export const FirstCoverDiv = styled.div`

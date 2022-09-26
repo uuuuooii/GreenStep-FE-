@@ -22,9 +22,9 @@
 
 .archive-grid-area {
   width: 100%;
-  /* display: grid; */
-  /* gap: 15px; */
-  grid-template-columns: 33% 33% 33%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 33.1% 33.1% 33.1%;
   row-gap: 3px;
   column-gap: 2px;
   /* display: flex;

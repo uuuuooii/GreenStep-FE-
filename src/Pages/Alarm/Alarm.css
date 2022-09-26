@@ -1,5 +1,15 @@
 .alarmall {
+
   background: #fcfcfa;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 375px;
+  max-width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: auto;
+  flex-direction: column;
 }
 
 .alarm-back-arrow-area {
@@ -27,6 +37,7 @@
 }
 
 .alarmtext {
+  text-align: center;
   position: relative;
   padding: 14px 0px 15.5px 158px;
   font-family: "AppleNeoM";
@@ -223,14 +234,14 @@
   border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #84ca79;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #84ca79;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(26px);
 }

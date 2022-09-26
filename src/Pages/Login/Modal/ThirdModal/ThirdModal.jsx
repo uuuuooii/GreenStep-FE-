@@ -57,7 +57,6 @@ const ThirdModal = ({
         return { ...prev, name: "empty" };
       });
     } else {
-      console.log(korean.test(name));
       if (korean.test(name)) {
         setValid((prev) => {
           return { ...prev, name: "error" };

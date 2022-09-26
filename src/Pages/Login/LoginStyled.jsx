@@ -5,7 +5,7 @@ import {
   LogoFade,
   FadeBottomOn,
   FadeBottomOnImage,
-} from '../../Components/Animation/Animation';
+} from "../../Components/Animation/Animation";
 export const LoginPageArea = styled.div`
   display: flex;
   justify-content: center;

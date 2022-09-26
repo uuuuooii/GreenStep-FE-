@@ -24,6 +24,29 @@
 }
 
 .secessiontext {
+<<<<<<< HEAD
+    position: relative;
+    padding: 0px 0px 0px 150px;
+    font-size: 20px;
+    color: #50674C;
+    font-weight: 600;
+    font-family: 'Apple SD Gothic Neo';
+    text-align: center;
+}
+
+.secessiontitle {
+    text-align: center;
+    width: 217px;
+    height: 44px;
+    padding: 120px 0px 0px 35px;
+    font-family: 'Apple SD Gothic Neo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #84CA79;
+=======
   position: relative;
   padding: 0px 0px 0px 150px;
   font-size: 20px;
@@ -42,9 +65,32 @@
   line-height: 22px;
   text-align: center;
   color: #84ca79;
+>>>>>>> 73f2ee6d8b18c2005b5e71765362fc21b2a9b077
 }
 
 .secessionbutton {
+<<<<<<< HEAD
+    text-align: center;
+    cursor: pointer;
+    width: 223px;
+    height: 26px;
+    margin: 95px 24px;
+    padding: 0 17px;
+    font-family: 'Apple SD Gothic Neo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FCFCFA;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: 0;
+    outline: 0;
+=======
   cursor: pointer;
   width: 223px;
   height: 26px;
@@ -63,6 +109,7 @@
   flex-grow: 0;
   border: 0;
   outline: 0;
+>>>>>>> 73f2ee6d8b18c2005b5e71765362fc21b2a9b077
 
   background: #c3c2c2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);

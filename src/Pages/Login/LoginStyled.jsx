@@ -166,7 +166,7 @@ export const LogoArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 
 export const FirstCoverDiv = styled.div`

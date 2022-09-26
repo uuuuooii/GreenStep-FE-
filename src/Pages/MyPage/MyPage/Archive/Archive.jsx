@@ -33,7 +33,7 @@ import {
   DeleteCancelButton,
   ModalArea,
   ArchivePage,
-} from './ArchiveStyled';
+} from "./ArchiveStyled";
 
 const Archive = () => {
   const param = useParams().id;
@@ -177,15 +177,13 @@ const Archive = () => {
         ) : null}
       </WrapArchive>
 
-
-
       {modal ? (
         <ModalArea>
           <DeleteModal>
             <DeleteText>
               <DeleteTopText>
                 {param === "certification"
-                  ? "인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?"
+                  ? "게시글을 숨기기 하시면 아카이브 페이지에서 보여지지 않습니다. 숨기기 하시겠습니까?"
                   : param === "post"
                   ? "게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?"
                   : "해당 게시물들을 인증샷 아카이브로 이동하시겠습니까?"}

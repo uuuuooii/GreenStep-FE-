@@ -75,7 +75,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    // document.querySelector('body').style.overflow-x= 'hidden'
+    document.querySelector('body').style.overflowX= 'hidden'
     if (fourthView) {
       setFourthAni(true);
     } else if (thirdView) {

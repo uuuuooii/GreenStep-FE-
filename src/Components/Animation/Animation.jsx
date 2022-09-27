@@ -18,7 +18,7 @@ export const LogoFade = keyframes`
 35%{transform:scale(0.5);border-radius:250px;background-color: #DAF2D5}
 100%{transform:scale(4);background: linear-gradient(#DAF2D5,white);}
 /* 100%{max-width:100%;height:100%;background: linear-gradient(#DAF2D5,white);} */
-`
+`;
 
 export const FadeBottomOn = keyframes`
 0%{opacity:0;transform:translateY(100px)}

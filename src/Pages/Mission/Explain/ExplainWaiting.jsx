@@ -29,6 +29,7 @@ const ExplainWaiting = ({ onClickToast }) => {
       ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
+  console.log(select);
   const pointNum =
     paramsCategory === "challenge" ? 40 : paramsCategory === "weekly" ? 20 : 10;
   useEffect(() => {
@@ -76,7 +77,12 @@ const ExplainWaiting = ({ onClickToast }) => {
                 <img
                   src="/images/WaitingLeaf.png"
                   className="explain-mission-waiting-logo"
-                />
+                ></img>
+                <img
+                  src={select.missionImageUrl}
+                  className="explain-mission-waiting-png"
+                ></img>
+
                 <div className="explain-mission-center-point-text">
                   {`예상 경험치는 +${pointNum}xp 입니다.`}
                 </div>
@@ -90,6 +96,7 @@ const ExplainWaiting = ({ onClickToast }) => {
               >
                 인증 대기중
               </div>
+              <p className="explain-text">인증까지 평균 1시간 소요됩니다</p>
             </div>
           </Slide>
         </>

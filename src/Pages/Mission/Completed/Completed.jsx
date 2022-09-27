@@ -1,6 +1,6 @@
 // react import
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 // styled import
 import {
   DailyBody,
@@ -9,8 +9,8 @@ import {
   CompletedBody,
   LeapDiv,
   CompletedInBody,
-} from './CompletedStyled';
-import MissionLeap from '../../../static/components/MissionLeap';
+} from "./CompletedStyled";
+import MissionLeap from "../../../static/components/MissionLeap";
 
 const Completed = ({ item }) => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Completed = ({ item }) => {
           </LeapDiv>
         </CompletedInBody>
       </CompletedBody>
-      <MissionPhoto img={item.missionImageUrl} />
+      <MissionPhoto img={item.missionIconUrl} />
       <MissionText>{item.missionName}</MissionText>
     </DailyBody>
   );

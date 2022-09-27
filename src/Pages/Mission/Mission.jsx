@@ -8,7 +8,6 @@ import {
   __GetDailymission,
   __GetTodaymission,
 } from "../../Redux/modules/mission";
-import instance from "../../Redux/modules/instance";
 //componenes import
 import Completed from "./Completed/Completed";
 import DailyMission from "./Daily/DailyMission";
@@ -43,6 +42,7 @@ const Mission = () => {
     dispatch(__GetTodaymission());
     setLoading(false);
   }, [2000]);
+  console.log(missionDaily);
 
   return (
     <>

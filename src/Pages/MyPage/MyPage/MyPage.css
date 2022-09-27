@@ -149,7 +149,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 5px;
+  margin: 10px 0px 5px 10px;
 }
 
 .image-area {
@@ -213,18 +213,69 @@
   color: #50674c;
 }
 
-.mypage-mission-count {
-  font-family: "AppleNeoR";
-  font-size: 14px;
-  text-align: center;
-  color: #50674c;
+.mypage-mission-count-and-point-area {
+  display: flex;
+  flex-direction: row;
+  margin: 42px 18px 0px 0px;
 }
 
-.mypage-mission-point {
+.mypage-mission-count-area {
+  display: flex;
+  flex-direction: row;
+  margin-right: 60px;
+}
+.mypage-mission-count-icon {
+  margin-right: 10px;
+}
+.mypage-mission-count-and-text {
+  display: flex;
+  flex-direction: column;
+}
+.mypage-mission-count {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "AppleNeoSB";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #84ca79;
+  margin-bottom: 3px;
+}
+.mypage-mission-count-text {
   font-family: "AppleNeoR";
-  font-size: 14px;
-  text-align: center;
-  color: #50674c;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #868686;
+}
+.mypage-mission-point-area {
+  display: flex;
+  flex-direction: row;
+}
+.mypage-mission-point-icon {
+  margin-right: 10px;
+}
+
+.mypage-mission-point-and-text {
+  display: flex;
+  flex-direction: column;
+}
+.mypage-mission-point {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "AppleNeoSB";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #84ca79;
+  margin-bottom: 3px;
+}
+.mypage-mission-point-text {
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #868686;
 }
 
 .photoshots-archive-area {
@@ -278,7 +329,7 @@
 
 .photoshots-archive-box {
   width: 100%;
-  height: 145px;
+  height: 122px;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
@@ -286,8 +337,8 @@
 }
 
 .photoshots-archive-images {
-  min-width: 145px;
-  height: 145px;
+  min-width: 122px;
+  height: 122px;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
   margin-right: 3px;
   background: #f3f3f3;
@@ -347,12 +398,12 @@
 
 .posts-archive-box {
   width: 100%;
-  height: 145px;
+  height: 122px;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .posts-archive-images {

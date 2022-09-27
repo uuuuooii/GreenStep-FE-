@@ -32,6 +32,7 @@
   color: #50674c;
   font-size: 20px;
   padding: 14px 14px 13px 14px;
+  margin-left: 12px;
 }
 
 .header-icon-left {
@@ -46,5 +47,5 @@
   font-size: 25px;
   position: absolute;
   right: 18px;
-  top: 12px
+  top: 12px;
 }

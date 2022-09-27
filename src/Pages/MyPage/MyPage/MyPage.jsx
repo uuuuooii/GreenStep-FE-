@@ -12,6 +12,8 @@ import instance from "../../../Redux/modules/instance";
 //component import
 import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
+import CompleteIcon from "../../../static/components/MyPage/CompleteIcon";
+import StepLogo from "../../../static/components/MyPage/StepLogo";
 //styled import
 import "../../../Components/Toast/Toast.css";
 import "./MyPage.css";
@@ -54,7 +56,6 @@ const MyPageDiv = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
-
 
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
@@ -187,11 +188,30 @@ const MyPage = ({ onClickToast }) => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
-                <div className="mypage-mission-count">
-                  미션 달성 : {userInfo.missionCount}개
-                </div>
-                <div className="mypage-mission-point">
-                  내가 그린 스텝 : {userInfo.missionPoint}걸음
+
+                <div className="mypage-mission-count-and-point-area">
+                  <div className="mypage-mission-count-area">
+                    <div className="mypage-mission-count-icon">
+                      <CompleteIcon />
+                    </div>
+                    <div className="mypage-mission-count-and-text">
+                      <div className="mypage-mission-count">
+                        {userInfo.missionCount}
+                      </div>
+                      <div className="mypage-mission-count-text">미션 완료</div>
+                    </div>
+                  </div>
+                  <div className="mypage-mission-point-area">
+                    <div className="mypage-mission-point-icon">
+                      <StepLogo />
+                    </div>
+                    <div className="mypage-mission-point-and-text">
+                      <div className="mypage-mission-point">
+                        {userInfo.missionPoint}
+                      </div>
+                      <div className="mypage-mission-point-text">걸음</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

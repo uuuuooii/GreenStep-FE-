@@ -11,6 +11,11 @@ export const LoadingArea = styled.div`
 
 export const LodingText = styled.div`
   /* position: absolute; */
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #b2e2ab;
   bottom: 30px;
   display: flex;
   flex-direction: row;

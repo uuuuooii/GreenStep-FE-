@@ -61,7 +61,7 @@ const MyPage = ({ onClickToast }) => {
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [userInfo,setUserInfo] = useState({})
+  const [userInfo, setUserInfo] = useState({});
   // const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
@@ -73,12 +73,11 @@ const MyPage = ({ onClickToast }) => {
   }님이 그린 스텝을 보고싶어해요! 🤩 \n 피드에 공유해 주세요!`;
   useEffect(() => {
     setLoding(true);
-   instance.get('/users/info').then((res)=>setUserInfo(res.data.data))
+    instance.get("/users/info").then((res) => setUserInfo(res.data.data));
     dispatch(getCertThunk());
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-console.log(userInfo)
   return (
     <>
       <MyPageDiv>
@@ -150,10 +149,11 @@ console.log(userInfo)
                     className="mypage-modal-logout-text"
                     onClick={() =>
                       instance.get("/kakao/logout").then((res) => {
-                        if (res.data.data) {
-                          window.localStorage.clear();
-                          window.sessionStorage.clear();
-                          navigate("/");
+                        if (res.data.success) {
+                          // window.localStorage.clear();
+                          // window.sessionStorage.clear();
+                          window.location.replace(res.data.data);
+                          // navigate("/");
                           onClickToast(`로그아웃 되었습니다`, 1);
                         }
                       })

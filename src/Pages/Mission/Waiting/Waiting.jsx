@@ -20,7 +20,7 @@ const Wating = ({ item, type }) => {
       }
     >
       <WatingBody>인증 대기중</WatingBody>
-      <MissionPhoto src={item.missionImageUrl} />
+      <MissionPhoto src={item.missionIconUrl} />
       <MissionText>{item.missionName}</MissionText>
     </DailyBody>
   );

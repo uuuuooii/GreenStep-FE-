@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 export const ModalBody = styled.div`
   position: fixed;
-  height: 100vh;
+  /* height: 100vh; */
   top: 0;
   right: 0;
   bottom: 0;

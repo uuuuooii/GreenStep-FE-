@@ -75,8 +75,10 @@ const ExplainWaiting = ({ onClickToast }) => {
               <div className="explain-mission-center-area">
                 <img
                   src="/images/WaitingLeaf.png"
+                  // src="/images/WaitingLeaf.png"
                   className="explain-mission-waiting-logo"
-                />
+                ></img>
+                <div> {select.missionIconUrl}</div>
                 <div className="explain-mission-center-point-text">
                   {`예상 경험치는 +${pointNum}xp 입니다.`}
                 </div>

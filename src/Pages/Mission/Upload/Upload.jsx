@@ -69,7 +69,7 @@ const Upload = ({ onClickToast }) => {
               <div className="upload-mission-close-button-area">
                 <div
                   className="upload-mission-close-button"
-                  onClick={() => navigate("/mypage")}
+                  onClick={() => navigate("/archive/certification")}
                 >
                   <HiOutlineX />
                 </div>

@@ -33,9 +33,11 @@ import {
   FourthArea,
   LogoGraDiv,
   LastText,
+  DownButton,
+  DownArrow,
 } from "./LoginStyled";
 //imgcdn
-import Img, { CloudimageProvider } from "react-cloudimage-responsive";
+// import Img, { CloudimageProvider } from "react-cloudimage-responsive";
 const cloudimageConfig = {
   token: "demo",
   baseURL: "https://cdn.scaleflex.it/demo/",
@@ -62,8 +64,18 @@ const Login = () => {
   const [thirdAni, setThirdAni] = useState(false);
   const [fourth, fourthView] = useInView();
   const [fourthAni, setFourthAni] = useState(false);
+  const scrollRef = useRef();
+
+  const DownPage = () => {
+    scrollRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
 
   useEffect(() => {
+    document.querySelector("body").style.overflowX = "hidden";
     if (fourthView) {
       setFourthAni(true);
     } else if (thirdView) {
@@ -176,6 +188,10 @@ const Login = () => {
           </KakaoLink>
         </MarginDIv>
       </LoginPageArea>
+      <DownButton onClick={DownPage}>
+        <DownArrow />
+      </DownButton>
+      <div ref={scrollRef} />
     </>
   );
 };

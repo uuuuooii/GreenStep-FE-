@@ -79,7 +79,7 @@ export const InputDiv = styled.div`
   width: 187px;
   height: 40px;
   display: flex;
-  border: 2px solid ${(props) => props.color};
+  border: 2px solid ${(props) => props.color ? props.color : "#B2E2AB"};
   margin: 5px 0;
   border-radius: 6px;
 `;

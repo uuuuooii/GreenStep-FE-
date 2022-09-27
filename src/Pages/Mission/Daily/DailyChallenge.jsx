@@ -41,9 +41,12 @@ const DailyChallenge = ({ mission }) => {
       {mission ? (
         <ChallengeBox>
           <ChallengeTextArea>
-            <ChallengeTitle>Challenge Mission</ChallengeTitle>
+            <ChallengeTitle>챌린지 미션</ChallengeTitle>
+            <ChallengeMissionText title={mission.missionName}>
+              {mission.missionName}
+            </ChallengeMissionText>
             <ChallengeTimer>
-              미션 완료까지&nbsp;
+              미션 완료까지&nbsp;&nbsp;
               {hour < 10 ? "0" + hour : hour}:
               {minute < 10 ? "0" + minute : minute}:
               {second < 10 ? "0" + second : second}
@@ -65,9 +68,6 @@ const DailyChallenge = ({ mission }) => {
             ) : null}
 
             <ChallengePhoto src={mission.missionIconUrl} />
-            <ChallengeMissionText title={mission.missionName}>
-              {mission.missionName}
-            </ChallengeMissionText>
           </ChallengeBody>
         </ChallengeBox>
       ) : (

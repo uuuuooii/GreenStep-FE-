@@ -117,7 +117,7 @@ const MyPage = ({ onClickToast }) => {
                   <ViewMoreAlarm />
                   <div
                     className="mypage-modal-alarm-text"
-                    onClick={() => navigate("/alarm")}
+                    onClick={() => alert('개발중입니다.')}
                   >
                     알림 설정
                   </div>

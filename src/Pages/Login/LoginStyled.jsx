@@ -273,10 +273,10 @@ export const LastText = styled.div`
   animation-fill-mode: forwards;
 `;
 export const DownButton = styled.div`
-position: fixed;
-border-radius: 15px;
-left: 5%;
-bottom: 50px;
+  position: fixed;
+  border-radius: 15px;
+  right: 2%;
+  bottom: 20%;
   width: 60px;
   height: 60px;
   background-color: #84ca79;
@@ -288,4 +288,4 @@ bottom: 50px;
 export const DownArrow = styled(AiOutlineArrowDown)`
   font-size: 28px;
   color: #50674c;
-`
+`;

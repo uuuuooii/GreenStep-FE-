@@ -55,7 +55,7 @@ const ThirdModal = ({
         return { ...prev, name: 'empty' };
       });
     } else {
-      if (korean.test(name)) {
+      if (korean.test(name ? name : user.name)) {
         setValid((prev) => {
           return { ...prev, name: 'error' };
         });
@@ -110,7 +110,7 @@ const ThirdModal = ({
               <TextInput
                 color={name ? '#B2E2AB' : '#C3C2C2 '}
                 onChange={setName}
-                value={name}
+                defaultValue={user.name}
                 placeholder="이름"
                 maxLength={8}
                 type="text"
@@ -149,7 +149,7 @@ const ThirdModal = ({
               <TextInput
                 color={nickname ? '#B2E2AB' : '#C3C2C2'}
                 onChange={setNickname}
-                value={nickname}
+                defaultValue={user.nickname}
                 placeholder="닉네임"
                 maxLength={8}
                 type="text"

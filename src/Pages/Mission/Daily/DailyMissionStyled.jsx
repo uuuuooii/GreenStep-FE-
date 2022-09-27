@@ -77,9 +77,9 @@ export const ChallengeBody = styled.div`
   }
 `;
 export const ChallengePhoto = styled.img`
-  width: 165px;
-  height: 170px;
-  margin: 0px 0px 0px 0px;
+  width: 185px;
+  height: 185px;
+  padding: 0px 0px 0px 10px;
 `;
 export const ChallengeTitle = styled.div`
   font-size: 13px;

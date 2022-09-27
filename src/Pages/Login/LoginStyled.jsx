@@ -17,6 +17,7 @@ export const LoginBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const ButtonBody = styled.div`
@@ -32,7 +33,7 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   display: block;
   /* background-color: #daf2d5; */
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -138,6 +139,7 @@ export const SecondImg = styled.img`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   opacity: 0.5;
+  overflow: hidden;
 `;
 export const ThirdArea = styled.div`
   height: 100vh;
@@ -188,7 +190,7 @@ export const SecondCoverDiv = styled.div`
   transform: translate(-20%, -20%);
 `;
 export const FirstCover = styled.img`
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   animation-name: ${(props) => props.animation};
   animation-duration: 2s;

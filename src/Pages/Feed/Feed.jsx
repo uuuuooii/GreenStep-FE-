@@ -172,7 +172,7 @@ const Feed = () => {
     setLast(0);
   }, [category]);
   useEffect(() => {
-    if (page === 0 || page % 2 === 0) {
+    if (page === 0 || page % 2 !== 0) {
       TagClick();
     }
   }, [page]);

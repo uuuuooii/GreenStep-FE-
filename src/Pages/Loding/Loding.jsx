@@ -21,7 +21,7 @@ const Test = () => {
       .get(`http://13.209.16.253:8080/users/kakao/callback`, {
         params: { code },
       })
-
+      
       .then((res) => {
         const kakao_authorization = res.headers.kakao_authorization;
         const token = res.headers.authorization;

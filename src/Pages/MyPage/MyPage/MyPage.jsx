@@ -57,6 +57,7 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
+
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
@@ -79,7 +80,6 @@ const MyPage = ({ onClickToast }) => {
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-  console.log(userInfo);
   return (
     <>
       <MyPageDiv>

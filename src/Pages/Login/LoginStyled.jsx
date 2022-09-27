@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { RiKakaoTalkFill } from "react-icons/ri";
-import logo from "./kakao_login_medium_wide.png";
+import styled from 'styled-components';
+import { RiKakaoTalkFill } from 'react-icons/ri';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import logo from './kakao_login_medium_wide.png';
 import {
   LogoFade,
   FadeBottomOn,
@@ -17,6 +18,7 @@ export const LoginBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const ButtonBody = styled.div`
@@ -32,7 +34,7 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   display: block;
   /* background-color: #daf2d5; */
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -138,6 +140,7 @@ export const SecondImg = styled.img`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   opacity: 0.5;
+  overflow: hidden;
 `;
 export const ThirdArea = styled.div`
   height: 100vh;
@@ -188,7 +191,7 @@ export const SecondCoverDiv = styled.div`
   transform: translate(-20%, -20%);
 `;
 export const FirstCover = styled.img`
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   animation-name: ${(props) => props.animation};
   animation-duration: 2s;
@@ -198,7 +201,7 @@ export const FirstCover = styled.img`
 `;
 export const FirstText = styled.div`
   opacity: 0;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -218,7 +221,7 @@ export const SecondRefDiv = styled.div`
 export const SecondText = styled.div`
   opacity: 0;
   width: 100%;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -233,7 +236,7 @@ export const SecondText = styled.div`
   animation-fill-mode: forwards;
 `;
 export const ThirdText = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -245,7 +248,7 @@ export const ThirdText = styled.div`
   white-space: pre-wrap;
 `;
 export const FourthText = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -257,7 +260,7 @@ export const FourthText = styled.div`
 `;
 export const LastText = styled.div`
   opacity: 0;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
@@ -269,3 +272,20 @@ export const LastText = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
+export const DownButton = styled.div`
+position: fixed;
+border-radius: 15px;
+left: 5%;
+bottom: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #84ca79;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+`;
+export const DownArrow = styled(AiOutlineArrowDown)`
+  font-size: 28px;
+  color: #50674c;
+`

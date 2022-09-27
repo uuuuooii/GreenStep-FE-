@@ -33,7 +33,7 @@ import {
   DeleteCancelButton,
   ModalArea,
   ArchivePage,
-} from "./ArchiveStyled";
+} from './ArchiveStyled';
 
 const Archive = () => {
   const param = useParams().id;
@@ -176,6 +176,8 @@ const Archive = () => {
           </div>
         ) : null}
       </WrapArchive>
+
+
 
       {modal ? (
         <ModalArea>

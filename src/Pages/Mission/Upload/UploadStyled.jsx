@@ -64,11 +64,11 @@ export const UploadContentTextArea = styled.textarea`
   font-weight: 600;
   line-height: 16px;
   &::placeholder {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M0 12.375V15.5H3.125L12.3417 6.28333L9.21667 3.15833L0 12.375ZM14.7583 3.86667C15.0833 3.54167 15.0833 3.01667 14.7583 2.69167L12.8083 0.741667C12.4833 0.416667 11.9583 0.416667 11.6333 0.741667L10.1083 2.26667L13.2333 5.39167L14.7583 3.86667Z' fill='%232b5139' /%3E%3C/svg%3E");
+    /* background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M0 12.375V15.5H3.125L12.3417 6.28333L9.21667 3.15833L0 12.375ZM14.7583 3.86667C15.0833 3.54167 15.0833 3.01667 14.7583 2.69167L12.8083 0.741667C12.4833 0.416667 11.9583 0.416667 11.6333 0.741667L10.1083 2.26667L13.2333 5.39167L14.7583 3.86667Z' fill='%232b5139' /%3E%3C/svg%3E");
     background-size: contain;
     background-position: 1px center;
     background-repeat: no-repeat;
-    background-position-x: 185px;
+    background-position-x: 185px; */
     color: #2b5139;
     font-family: "AppleNeoR";
     font-weight: 600;

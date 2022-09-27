@@ -79,7 +79,9 @@ export const SkeletonCard = styled.div`
 
 export const ModalArea = styled.div`
   position: fixed;
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  width: 100%;
+
   /* left: 50%; */
   transform: translateX(-50%);
   bottom: 20px;
@@ -99,7 +101,7 @@ export const DeleteText = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 360px;
+  width: 100%;
   /* height: 115px; */
   background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
@@ -113,6 +115,7 @@ export const DeleteTopText = styled.div`
   letter-spacing: 0.03em;
   margin: 13.5px;
   padding: 0 28px 0px 47px;
+  
 `;
 export const DeleteLine = styled.div`
   width: 100%;
@@ -138,7 +141,7 @@ export const DeleteCancelButton = styled.div`
   gap: 10px;
   background: #ffffff;
   border-radius: 15px;
-  width: 340px;
+  width: 100%;
   height: 34px;
   font-family: 'AppleNeoM';
   font-weight: 700;

@@ -22,7 +22,14 @@ import {
 import { Fade } from "react-reveal";
 import user from "../../../../Redux/modules/user";
 
-const FourthModal = ({ setDisplay, name, nickname, img, user }) => {
+const FourthModal = ({
+  setDisplay,
+  name,
+  nickname,
+  img,
+  user,
+  onClickToast,
+}) => {
   const navigate = useNavigate();
   const [acceptMail, setAcceptMail] = useState(false);
   const userinfo = {
@@ -62,6 +69,7 @@ const FourthModal = ({ setDisplay, name, nickname, img, user }) => {
               onClick={() =>
                 instance.patch(`/users/info`, userinfo).then(() => {
                   navigate("/mission");
+                  onClickToast(`${nickname}님 환영합니다.`, 1);
                 })
               }
             >

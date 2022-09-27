@@ -6,7 +6,7 @@ import "./Secession.css";
 import Secessionimg from "../../static/components/Secessionimg";
 import instance from "../../Redux/modules/instance";
 
-const Secession = () => {
+const Secession = ({ onClickToast }) => {
   const navigate = useNavigate();
   return (
     <div className="secessionall">
@@ -31,6 +31,7 @@ const Secession = () => {
                 window.sessionStorage.clear();
               }
               navigate("/");
+              onClickToast(`탈퇴 되었습니다.`, 1);
             });
           }}
         >

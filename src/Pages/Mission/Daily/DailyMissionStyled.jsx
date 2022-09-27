@@ -79,7 +79,6 @@ export const ChallengeBody = styled.div`
 export const ChallengePhoto = styled.img`
   width: 165px;
   height: 170px;
-  background: rgba(255, 255, 255, 0.5);
   margin: 0px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`

@@ -57,7 +57,6 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
-
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
@@ -189,19 +188,28 @@ const MyPage = ({ onClickToast }) => {
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
+
                 <div className="mypage-mission-count-and-point-area">
                   <div className="mypage-mission-count-area">
-                    <div className="mypage-mission-count-icon"></div>
+                    <div className="mypage-mission-count-icon">
+                      <CompleteIcon />
+                    </div>
                     <div className="mypage-mission-count-and-text">
                       <div className="mypage-mission-count">
                         {userInfo.missionCount}
                       </div>
-                      <div className="mypage-mission-text">미션 완료</div>
+                      <div className="mypage-mission-count-text">미션 완료</div>
                     </div>
                   </div>
                   <div className="mypage-mission-point-area">
-                    <div className="mypage-mission-point">
-                      {userInfo.missionPoint}
+                    <div className="mypage-mission-point-icon">
+                      <StepLogo />
+                    </div>
+                    <div className="mypage-mission-point-and-text">
+                      <div className="mypage-mission-point">
+                        {userInfo.missionPoint}
+                      </div>
+                      <div className="mypage-mission-point-text">걸음</div>
                     </div>
                   </div>
                 </div>

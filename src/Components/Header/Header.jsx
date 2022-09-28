@@ -1,7 +1,6 @@
 //react import
 import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
 //styled import
 import './Header.css';
 import { BiBell } from 'react-icons/bi';
@@ -9,7 +8,7 @@ import HeaderLogo from '../../static/components/HeaderLogo';
 //component import
 import { pathArr, hideArr } from '../../static/path/Path';
 import instance from '../../Redux/modules/instance';
-const EventSource = EventSourcePolyfill || NativeEventSource;
+
 const Header = () => {
 
   const navigate = useNavigate();
@@ -19,6 +18,9 @@ const Header = () => {
   const { pathname } = useLocation();
   useEffect(()=>{
     instance.get('/notifications/count').then((res)=>setUnread(res.data.count));
+    if(!localStorage.getItem('Authorization')&&!pathname==='/users/kakao/callback'){
+      navigate('/')
+    }
   },[pathname])
 
   const handleNavigation = useCallback(

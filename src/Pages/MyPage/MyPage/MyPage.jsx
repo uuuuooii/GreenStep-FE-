@@ -157,6 +157,7 @@ const MyPage = ({ onClickToast }) => {
                       instance.get("/kakao/logout").then((res) => {
                         if (res.data.success) {
                           window.location.replace(res.data.data);
+                          navigate("/");
                           onClickToast(`로그아웃 되었습니다`, 1);
                         }
                       })

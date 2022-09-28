@@ -26,7 +26,6 @@ const DailyChallenge = ({ mission }) => {
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());
 
-  console.log(mission);
   useEffect(() => {
     const id = setInterval(() => {
       setHour(23 - new Date().getHours());

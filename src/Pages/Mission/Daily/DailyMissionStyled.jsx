@@ -84,14 +84,9 @@ export const ChallengePhoto = styled.img`
 export const ChallengeTitle = styled.div`
   font-family: "AppleNeoR";
   font-size: 13px;
-<<<<<<< HEAD
-  line-height: 16px;
-  font-weight: 600;
-  padding: 0px 0px 0px 0px;
-=======
   line-height: 22px;
   padding: 9px 0px 0px 0px;
->>>>>>> Dev
+
   color: #50674c;
 `;
 export const ChallengeTimer = styled.div`

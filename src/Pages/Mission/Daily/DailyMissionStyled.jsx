@@ -60,7 +60,7 @@ export const ChallengeBox = styled.div`
   );
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 15px 20px 0px 25px;
+  margin: 20px auto 0px auto;
 `;
 
 export const ChallengeTextArea = styled.div`

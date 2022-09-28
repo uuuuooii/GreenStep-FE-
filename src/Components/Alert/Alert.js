@@ -20,7 +20,7 @@ const Alert = () => {
   const [value, setValue] = useState(null);
   const [newAlert, setNewAlert] = useState([]);
   const [alertOpen, setAlertOpen] = useState(false);
-  const [unread, setUnread] = useState();
+  const [unread, setUnread] = useState(0);
   const queryClient = useQueryClient();
   const { data: alertList } = useGetMessageAlert();
   const { data: alertUnreadList } = useGetUnreadAlert();
@@ -32,7 +32,6 @@ const Alert = () => {
   const [meventSource, msetEventSource] = useState(undefined);
   const allList = alertList?.data;
   const unreadList = alertUnreadList?.data.count;
-console.log(allList)
   useEffect(() => {
     //구독하기
     if (token) {

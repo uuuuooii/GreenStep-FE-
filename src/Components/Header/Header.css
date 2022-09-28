@@ -51,3 +51,19 @@
   right: 18px;
   top: 12px;
 }
+.header-new-list-div{
+  position: relative;
+}
+.header-new-list {
+  width: 15px;
+  height: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  background-color: red;
+  font-size: 10px;
+}

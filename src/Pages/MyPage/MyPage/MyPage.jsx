@@ -156,7 +156,8 @@ const MyPage = ({ onClickToast }) => {
                     onClick={() => {
                       window.localStorage.clear();
                       window.sessionStorage.clear();
-                      window.location.replace("https://greenstepapp.com/");
+                      // window.location.replace("https://greenstepapp.com/");
+                      navigate("/");
                       onClickToast(`로그아웃 되었습니다`, 1);
                     }}
                   >

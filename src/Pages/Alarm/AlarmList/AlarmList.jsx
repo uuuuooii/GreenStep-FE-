@@ -17,7 +17,7 @@ import './AlarmList.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import instance from '../../../Redux/modules/instance';
 const EventSource = EventSourcePolyfill || NativeEventSource;
-const AlarmList = () => {
+const AlarmList = ({onClickToast}) => {
   const [newAlert, setNewAlert] = useState([]);
   const [alertOpen, setAlertOpen] = useState(false);
   const [unread, setUnread] = useState();
@@ -78,7 +78,7 @@ const AlarmList = () => {
           onClick={() => navigate(-1)}
         />
         <div className="alarmlist-title-text">알림</div>
-        <div className="alarmlist-dummy-place" onClick={()=>{instance.delete("/notifications/delete");setNewAlert([])}}> 전체읽음 </div>
+        <div className="alarmlist-dummy-place" onClick={()=>{instance.delete("/notifications/delete");setNewAlert([]);onClickToast("전체읽음 처리되었습니다.")}}> 전체읽음 </div>
       </div>
       <div className="alarmlist-dummy-div"></div>
       <div className="alarmlist-box">

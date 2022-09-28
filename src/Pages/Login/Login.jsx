@@ -76,16 +76,6 @@ const Login = () => {
     });
   };
   useEffect(() => {
-    //애니메이션 후 버튼 생기게
-    // setTimeout(() => {
-    //   setButton(true);
-    // }, [2000]);
-    //애니메이션 끝난 후 스크롤 생기게 (밀리는현상 방지)
-    // document.querySelector('body').style.overflow = 'hidden';
-    // setTimeout(() => {
-    //   document.querySelector('body').style.overflow = 'auto';
-    //   document.querySelector('body').style.overflowX = 'hidden';
-    // }, [5000]);
     //채널톡 삭제
     setTimeout(() => {
       document.getElementById('ch-plugin').style.display = 'none';
@@ -205,8 +195,8 @@ const Login = () => {
         </MarginDIv>
       </LoginPageArea>
 
-        <DownButton onClick={()=>DownPage}>
-          <DownArrow />
+        <DownButton onClick={DownPage}>
+          <DownArrow onClick={DownPage} />
         </DownButton>
 
       <div ref={scrollRef} />

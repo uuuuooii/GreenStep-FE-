@@ -77,14 +77,14 @@ export const ChallengeBody = styled.div`
   }
 `;
 export const ChallengePhoto = styled.img`
-  width: 185px;
-  height: 185px;
-  padding: 0px 0px 0px 10px;
+  width: 171px;
+  height: 173px;
+  padding: 7px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`
   font-size: 13px;
   line-height: 22px;
-  padding: 0px 0px 0px 0px;
+  padding: 9px 0px 0px 0px;
   color: #50674c;
 `;
 export const ChallengeTimer = styled.div`
@@ -94,7 +94,7 @@ export const ChallengeTimer = styled.div`
   line-height: 16px;
   text-align: center;
   padding: 10px 1px;
-  margin: 90px -2px;
+  margin: 79px -2px;
   color: white;
   background: #ade2e9;
   border-radius: 5px;

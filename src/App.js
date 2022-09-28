@@ -33,7 +33,7 @@ import Alarm from "./Pages/Alarm/Alarm";
 import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
 import UpdateLoading from "./Pages/Loding/UpdateLoading";
 import FourthModal from "./Pages/Login/Modal/FourthModal/FourthModal";
-
+import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
 
 function App() {
   const queryClient = new QueryClient();
@@ -105,6 +105,7 @@ function App() {
               path="/secession"
               element={<Secession onClickToast={onClickToast} />}
             />
+            <Route path="introduce" element={<Introduce />} />
             <Route path="/alarm" element={<Alarm />} />
             <Route path="/alarmlist" element={<AlarmList />} />
             <Route path="*" element={<Error />} />

@@ -12,6 +12,7 @@ export const LoginPageArea = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
 `;
 export const LoginBody = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   display: block;
   /* background-color: #daf2d5; */
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -283,9 +284,11 @@ export const DownButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 9;
 `;
 export const DownArrow = styled(AiOutlineArrowDown)`
   font-size: 28px;
   color: #50674c;
 `;
+
+export const Introduce = styled.div``;

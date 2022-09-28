@@ -1,8 +1,8 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 //redux import
-import { __GetTodaymission } from "../../../Redux/modules/mission";
+import { __GetTodaymission } from '../../../Redux/modules/mission';
 //styled import
 import {
   ChallengeBox,
@@ -16,16 +16,17 @@ import {
   ChallengeWaiting,
   ChallengeMissionText,
   LeapDiv,
-} from "./DailyMissionStyled";
+} from './DailyMissionStyled';
 //component import
-import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
-import MissionLeap from "../../../static/components/MissionLeap";
+import ChallengeSkeleton from '../../../Components/Skeleton/ChallengeSkeleton';
+import MissionLeap from '../../../static/components/MissionLeap';
 
 const DailyChallenge = ({ mission }) => {
   const [hour, setHour] = useState(23 - new Date().getHours());
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());
 
+  console.log(mission);
   useEffect(() => {
     const id = setInterval(() => {
       setHour(23 - new Date().getHours());
@@ -35,6 +36,7 @@ const DailyChallenge = ({ mission }) => {
     return () => clearInterval(id);
   }, []);
   const navigate = useNavigate();
+  console.log(mission);
   // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
     <>
@@ -47,19 +49,25 @@ const DailyChallenge = ({ mission }) => {
             </ChallengeMissionText>
             <ChallengeTimer>
               미션 완료까지&nbsp;&nbsp;
-              {hour < 10 ? "0" + hour : hour}:
-              {minute < 10 ? "0" + minute : minute}:
-              {second < 10 ? "0" + second : second}
+              {hour < 10 ? '0' + hour : hour}:
+              {minute < 10 ? '0' + minute : minute}:
+              {second < 10 ? '0' + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
-            onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
+            onClick={() =>
+              mission.status === 'DEFAULT'
+                ? navigate(`/explain/${mission.missionId}&challenge`)
+                : mission.status === 'WAITING'
+                ? navigate(`explainwaiting/${mission.missionId}&challenge`)
+                : null
+            }
           >
-            {mission.status === "WATING" ? (
+            {mission.status === 'WAITING' ? (
               <ChallengeWaiting>
                 <WatingText>인증 대기중</WatingText>
               </ChallengeWaiting>
-            ) : mission.status === "DONE" ? (
+            ) : mission.status === 'DONE' ? (
               <ChallengeWaiting>
                 <LeapDiv>
                   <MissionLeap />

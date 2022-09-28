@@ -33,7 +33,7 @@ import {
   DeleteCancelButton,
   ModalArea,
   ArchivePage,
-} from './ArchiveStyled';
+} from "./ArchiveStyled";
 
 const Archive = () => {
   const param = useParams().id;
@@ -65,6 +65,7 @@ const Archive = () => {
       : state.userInfo.hide
   );
   useEffect(() => {
+    document.querySelector('body').style.maxWidth= 'none'
     setLoding(true);
 
     //param 값으로 인증글,게시글,숨김글 분기
@@ -176,8 +177,6 @@ const Archive = () => {
           </div>
         ) : null}
       </WrapArchive>
-
-
 
       {modal ? (
         <ModalArea>

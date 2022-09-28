@@ -81,7 +81,7 @@ const Login = () => {
     }, [2000]);
     setTimeout(() => {
       document.getElementById('ch-plugin').style.display = 'none';
-    }, [500]);
+    }, [100]);
   }, []);
   useEffect(() => {
     document.querySelector('body').style.overflowX = 'hidden';

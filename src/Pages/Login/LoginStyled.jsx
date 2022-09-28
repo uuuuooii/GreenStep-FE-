@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { RiKakaoTalkFill } from 'react-icons/ri';
-import { AiOutlineArrowDown } from 'react-icons/ai';
-import logo from './kakao_login_medium_wide.png';
+import styled from "styled-components";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import logo from "./kakao_login_medium_wide.png";
 import {
   LogoFade,
   FadeBottomOn,
@@ -201,7 +201,7 @@ export const FirstCover = styled.img`
 `;
 export const FirstText = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -221,7 +221,7 @@ export const SecondRefDiv = styled.div`
 export const SecondText = styled.div`
   opacity: 0;
   width: 100%;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -236,7 +236,7 @@ export const SecondText = styled.div`
   animation-fill-mode: forwards;
 `;
 export const ThirdText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -248,7 +248,7 @@ export const ThirdText = styled.div`
   white-space: pre-wrap;
 `;
 export const FourthText = styled.div`
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -260,7 +260,7 @@ export const FourthText = styled.div`
 `;
 export const LastText = styled.div`
   opacity: 0;
-  font-family: 'Apple SD Gothic Neo';
+  font-family: "Apple SD Gothic Neo";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
@@ -275,10 +275,10 @@ export const LastText = styled.div`
 export const DownButton = styled.div`
   position: fixed;
   border-radius: 15px;
-  right: 2%;
-  bottom: 20%;
-  width: 60px;
-  height: 60px;
+  right: 6%;
+  bottom: 21%;
+  width: 40px;
+  height: 40px;
   background-color: #84ca79;
   display: flex;
   justify-content: center;

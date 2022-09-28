@@ -62,9 +62,10 @@
 
 <body>
   <!-- Channel Plugin Scripts -->
-  <script id="channelTalk">
+  <script>
     (function () {
       var w = window;
+      w.id = 'channelTalk'
       if (w.ChannelIO) {
         return (window.console.error || window.console.log || function () {})(
           "ChannelIO script included twice."

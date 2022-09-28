@@ -276,10 +276,10 @@ export const LastText = styled.div`
 export const DownButton = styled.div`
   position: fixed;
   border-radius: 15px;
-  right: 2%;
-  bottom: 20%;
-  width: 60px;
-  height: 60px;
+  right: 6%;
+  bottom: 21%;
+  width: 40px;
+  height: 40px;
   background-color: #84ca79;
   display: flex;
   justify-content: center;

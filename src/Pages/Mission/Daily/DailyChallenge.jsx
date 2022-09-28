@@ -43,7 +43,7 @@ const DailyChallenge = ({ mission }) => {
       {mission ? (
         <ChallengeBox>
           <ChallengeTextArea>
-            <ChallengeTitle>챌린지 미션</ChallengeTitle>
+            <ChallengeTitle>챌린지 미션:</ChallengeTitle>
             <ChallengeMissionText title={mission.missionName}>
               {mission.missionName}
             </ChallengeMissionText>

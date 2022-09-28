@@ -52,6 +52,8 @@ export const DailyText = styled.div`
 export const DailyCardBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
   flex-direction: row;
 `;
 export const WatingBody = styled.div`

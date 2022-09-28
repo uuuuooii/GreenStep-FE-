@@ -28,7 +28,7 @@ const AlarmList = ({onClickToast}) => {
   const ref = useRef();
   const allList = alertList?.data;
   const unreadList = alertUnreadList?.data.count;
-  console.log(newAlert);
+  const navigate = useNavigate();
   useEffect(() => {
     //구독하기
     if (token) {
@@ -68,7 +68,7 @@ const AlarmList = ({onClickToast}) => {
       document.removeEventListener('mousedown', clickOutSide);
     };
   });
-  const navigate = useNavigate();
+
 
   return (
     <>
@@ -86,7 +86,7 @@ const AlarmList = ({onClickToast}) => {
           ? newAlert.map((item) => (
               <div
                 className="alarmlist-contents-div"
-                onClick={()=>{instance.delete(`/notifications/delete/${item.id}`);window.location.replace(item.url)}}
+                onClick={()=>{instance.delete(`/notifications/delete/${item.id}`);navigate(item.url)}}
               >
                 {' '}
                 <div className="alarmlist-contents-and-time">

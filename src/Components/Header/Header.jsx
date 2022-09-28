@@ -56,9 +56,9 @@ const Header = () => {
                 <div className="header-icon-left">
                   <HeaderLogo />
                 </div>
-                {/* <div className="header-icon-right">
+                <div className="header-icon-right" onClick={()=>navigate("alarmlist")}>
           <BiBell />
-        </div> */}
+        </div>
               </div>
             </div>
           ) : null}

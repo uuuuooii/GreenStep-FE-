@@ -86,7 +86,7 @@ export const ModalArea = styled.div`
   width: 100%;
 
   /* left: 50%; */
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   bottom: 20px;
   z-index: 500;
   animation-name: ${SlideBottom};

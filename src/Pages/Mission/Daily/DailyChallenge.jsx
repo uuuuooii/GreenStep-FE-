@@ -36,7 +36,6 @@ const DailyChallenge = ({ mission }) => {
     return () => clearInterval(id);
   }, []);
   const navigate = useNavigate();
-  console.log(mission);
   // 값을 받기 전에 렌더링 되면서 없는 값을 실행하려고 하니까 에러가 남. 그래서 값을 받아올 때 까지 띄어주는 코드가 필요함.(삼항연산자)
   return (
     <>

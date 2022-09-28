@@ -117,7 +117,7 @@ const MyPage = ({ onClickToast }) => {
                   <ViewMoreAlarm />
                   <div
                     className="mypage-modal-alarm-text"
-                    onClick={() => alert('개발중입니다.')}
+                    onClick={() => alert("개발중입니다.")}
                   >
                     알림 설정
                   </div>
@@ -133,7 +133,12 @@ const MyPage = ({ onClickToast }) => {
                 </div>
                 <div className="mypage-modal-cc-area">
                   <ViewMoreCC />
-                  <div className="mypage-modal-cc-text">고객센터</div>
+                  <div
+                    className="mypage-modal-cc-text"
+                    onClick={() => navigate("/introduce")}
+                  >
+                    고객센터
+                  </div>
                 </div>
                 <div className="mypage-modal-quit-area">
                   <ViewMoreQuit />

@@ -35,6 +35,7 @@ import {
   LastText,
   DownButton,
   DownArrow,
+  Introduce,
 } from "./LoginStyled";
 //imgcdn
 // import Img, { CloudimageProvider } from "react-cloudimage-responsive";

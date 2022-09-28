@@ -20,13 +20,15 @@
   transition-timing-function: ease-in;
   transition: all 1s;
 }
-
+.header-icon-bell {
+  color: #50674c;
+}
 .header-relative {
   position: relative;
 }
 
 .header-title {
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   position: relative;
   text-align: center;
   color: #50674c;

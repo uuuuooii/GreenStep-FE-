@@ -47,8 +47,8 @@ export const ChallengeMissionText = styled.div`
 `;
 
 export const ChallengeBox = styled.div`
-  width: 333px;
-  height: 179px;
+  width: 332px;
+  height: 178px;
   display: flex;
   padding: 12px 12px 12px 20px;
   justify-content: space-between;
@@ -82,14 +82,22 @@ export const ChallengePhoto = styled.img`
   padding: 7px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`
+  font-family: "AppleNeoR";
   font-size: 13px;
+<<<<<<< HEAD
+  line-height: 16px;
+  font-weight: 600;
+  padding: 0px 0px 0px 0px;
+=======
   line-height: 22px;
   padding: 9px 0px 0px 0px;
+>>>>>>> Dev
   color: #50674c;
 `;
 export const ChallengeTimer = styled.div`
   width: 149px;
   height: 36px;
+  font-family: "AppleNeoM";
   font-size: 13px;
   line-height: 16px;
   text-align: center;

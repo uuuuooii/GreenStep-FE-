@@ -13,7 +13,6 @@ import {
 import MissionLeap from "../../../static/components/MissionLeap";
 
 const Completed = ({ item }) => {
-  const navigate = useNavigate();
   return (
     <DailyBody>
       <CompletedBody>

@@ -12,6 +12,7 @@ export const LoginPageArea = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
 `;
 export const LoginBody = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   display: block;
   /* background-color: #daf2d5; */
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -275,10 +276,10 @@ export const LastText = styled.div`
 export const DownButton = styled.div`
   position: fixed;
   border-radius: 15px;
-  right: 2%;
-  bottom: 20%;
-  width: 60px;
-  height: 60px;
+  right: 6%;
+  bottom: 21%;
+  width: 40px;
+  height: 40px;
   background-color: #84ca79;
   display: flex;
   justify-content: center;

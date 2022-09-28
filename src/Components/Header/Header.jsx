@@ -11,7 +11,6 @@ const Header = () => {
   const navigate = useNavigate();
   const [y, setY] = useState(document.scrollingElement.scrollHeight);
   const [hide, setHide] = useState(false);
-  // const [path, setPath] = useState('');
   const { pathname } = useLocation();
 
 
@@ -56,9 +55,9 @@ const Header = () => {
                 <div className="header-icon-left">
                   <HeaderLogo />
                 </div>
-                {/* <div className="header-icon-right">
-          <BiBell />
-        </div> */}
+                <div className="header-icon-right" onClick={()=>navigate("alarmlist")}>
+          <BiBell className="header-icon-bell" />
+        </div>
               </div>
             </div>
           ) : null}

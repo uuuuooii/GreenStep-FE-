@@ -32,7 +32,7 @@ const Alert = () => {
   const [meventSource, msetEventSource] = useState(undefined);
   const allList = alertList?.data;
   const unreadList = alertUnreadList?.data.count;
-
+console.log(allList)
   useEffect(() => {
     //구독하기
     if (token) {
@@ -43,7 +43,7 @@ const Alert = () => {
       });
 
       sse.addEventListener('message', (e) => {
-        console.log(e);
+        // console.log(e);
         queryClient.invalidateQueries('alertList');
       });
     }

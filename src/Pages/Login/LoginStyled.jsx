@@ -12,7 +12,7 @@ export const LoginPageArea = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 export const LoginBody = styled.div`
   width: 100%;
@@ -35,15 +35,16 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   /* width: 100%; */
   /* height: 100%; */
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
+  background: linear-gradient(#DAF2D5,white);
   position: absolute;
   animation-name: ${LogoFade};
   animation-duration: 2.5s;
   animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  animation-fill-mode: none;
   object-fit: cover;
   overflow-x: hidden;
 `;
@@ -84,6 +85,7 @@ export const FirstArea = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const FirstTitle = styled.div`
   font-style: normal;
@@ -125,6 +127,7 @@ export const SecondArea = styled.div`
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const SecondImgDiv = styled.div`
   position: relative;
@@ -150,6 +153,7 @@ export const ThirdArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const FourthArea = styled.div`
   height: 100vh;
@@ -159,6 +163,7 @@ export const FourthArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const LogoArea = styled.div`
   height: 100vh;
@@ -168,7 +173,7 @@ export const LogoArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 export const FirstCoverDiv = styled.div`

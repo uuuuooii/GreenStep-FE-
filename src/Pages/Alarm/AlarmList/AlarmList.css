@@ -1,4 +1,5 @@
 .alarmlist-back-arrow-area {
+  position: relative;
   margin: 8px 0px 0px 0px;
   padding-bottom: 4px;
   display: flex;
@@ -15,6 +16,9 @@
 }
 
 .alarmlist-title-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   color: #50674c;
   font-size: 20px;
   font-weight: bold;
@@ -22,8 +26,16 @@
 }
 
 .alarmlist-dummy-place {
-  height: 30px;
-  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #50674c;
+  margin: 0 10px;
 }
 
 .alarmlist-dummy-div {
@@ -32,7 +44,7 @@
 
 .alarmlist-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 15px 30px;
 }
 
@@ -40,6 +52,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.alarmlist-contents-div {
+  display: flex;
+  margin: 25px 0;
 }
 
 .alarmlist-box-contents {
@@ -61,12 +77,10 @@
 .alarmlist-box-img-area {
   width: 50px;
   height: 50px;
-  background-color: #d9d9d9;
   margin-left: 18px;
 }
 
 .alarmlist-box-img {
-  width: 50px;
-  height: 50px;
-  margin-left: 18px;
+  width: 100%;
+  height: 100%;
 }

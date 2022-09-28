@@ -107,7 +107,7 @@ function App() {
             />
             <Route path="introduce" element={<Introduce />} />
             <Route path="/alarm" element={<Alarm />} />
-            <Route path="/alarmlist" element={<AlarmList />} />
+            <Route path="/alarmlist" element={<AlarmList onClickToast={onClickToast} />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </QueryClientProvider>

@@ -56,7 +56,7 @@ const DailyChallenge = ({ mission }) => {
           <ChallengeBody
             onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
           >
-            {mission.status === "WATING" ? (
+            {mission.status === "WAITING" ? (
               <ChallengeWaiting>
                 <WatingText>인증 대기중</WatingText>
               </ChallengeWaiting>

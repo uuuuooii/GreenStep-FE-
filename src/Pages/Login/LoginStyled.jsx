@@ -275,7 +275,7 @@ export const DownButton = styled.div`
   position: fixed;
   border-radius: 15px;
   right: 20px;
-  bottom: 150px;
+  bottom: 90px;
   width: 42px;
   height: 42px;
   background-color: #84ca79;

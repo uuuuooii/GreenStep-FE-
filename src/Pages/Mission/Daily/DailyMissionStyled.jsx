@@ -82,14 +82,17 @@ export const ChallengePhoto = styled.img`
   padding: 0px 0px 0px 10px;
 `;
 export const ChallengeTitle = styled.div`
+  font-family: "AppleNeoR";
   font-size: 13px;
-  line-height: 22px;
+  line-height: 16px;
+  font-weight: 600;
   padding: 0px 0px 0px 0px;
   color: #50674c;
 `;
 export const ChallengeTimer = styled.div`
   width: 149px;
   height: 36px;
+  font-family: "AppleNeoM";
   font-size: 13px;
   line-height: 16px;
   text-align: center;

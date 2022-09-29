@@ -19,6 +19,7 @@
   transition: all 1s;
 }
 .header-icon-bell {
+  margin-top: 2px;
   color: #50674c;
 }
 .header-relative {
@@ -46,7 +47,7 @@
 .header-icon-right {
   font-size: 25px;
   position: absolute;
-  right: 18px;
+  right: 14px;
   top: 12px;
 }
 .header-new-list-div {
@@ -54,14 +55,18 @@
 }
 .header-new-list {
   width: 15px;
-  height: 15px;
+  height: 14px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 1.8px solid #50674c;
   border-radius: 10px;
   position: absolute;
+  left: 12px;
+  top: -3px;
   background-color: red;
-  font-size: 10px;
+  padding-top: 1px;
+  font-size: 12px;
 }

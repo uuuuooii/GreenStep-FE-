@@ -1,5 +1,6 @@
 //react import
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 import useInput from '../../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
 //styled import
@@ -21,6 +22,7 @@ import SecondModal from './Modal/SecondModal/SecondModal';
 import ThirdModal from './Modal/ThirdModal/ThirdModal';
 import FourthModal from './Modal/FourthModal/FourthModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
+import instance from '../../Redux/modules/instance';
 
 const Modal = ({ onClickToast }) => {
   const user = useSelector((state) => state.userInfo.userInfo);
@@ -33,6 +35,7 @@ const Modal = ({ onClickToast }) => {
   const [check, setCheck] = useState(0);
   const [name, setName] = useInput(user.name);
   const [nickname, setNickname] = useInput(user.nickname);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,6 +43,14 @@ const Modal = ({ onClickToast }) => {
     dispatch(getUserInfoThunk());
     setLoading(false);
   }, [dispatch]);
+  useEffect(() => {
+    instance.get('users/info').then((res) => {
+      if (res.data.data.nickname) {
+        navigate('/mission');
+        onClickToast('이미 가입한 계정입니다.')
+      }
+    });
+  }, []);
   return !loading ? (
     <>
       <ModalBody>

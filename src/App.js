@@ -39,9 +39,10 @@ function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
   useEffect(() => {
+    if(display>0){
     setTimeout(() => {
       setDisplay(0);
-    }, 3000);
+    }, 4000);}
   }, [display]);
   return (
     <>

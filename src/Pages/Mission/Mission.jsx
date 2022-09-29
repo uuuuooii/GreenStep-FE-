@@ -146,7 +146,7 @@ const Mission = ({ onClickToast }) => {
         className="floating-round"
         onClick={() => {
           navigate("/archive/certification");
-          onClickToast(`게시물 작성이 가능합니다`, 1);
+          onClickToast(`사진 클릭 시, 게시물 작성이 가능합니다`, 1);
         }}
       >
         <HiPencil className="floating-icon" />

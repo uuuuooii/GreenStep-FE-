@@ -1,8 +1,8 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
+import { NativeEventSource, EventSourcePolyfill } from "event-source-polyfill";
 
 import {
   useDeleteAlert,
@@ -10,21 +10,21 @@ import {
   useGetMessageAlert,
   useGetUnreadAlert,
   usePostReadAlert,
-} from '../../../hooks/useNotification';
-import { useQueryClient } from 'react-query';
-import { useRef } from 'react';
-import './AlarmList.css';
-import { IoIosArrowBack } from 'react-icons/io';
-import instance from '../../../Redux/modules/instance';
+} from "../../../hooks/useNotification";
+import { useQueryClient } from "react-query";
+import { useRef } from "react";
+import "./AlarmList.css";
+import { IoIosArrowBack } from "react-icons/io";
+import instance from "../../../Redux/modules/instance";
 const EventSource = EventSourcePolyfill || NativeEventSource;
-const AlarmList = ({onClickToast}) => {
+const AlarmList = ({ onClickToast }) => {
   const [newAlert, setNewAlert] = useState([]);
   const [alertOpen, setAlertOpen] = useState(false);
   const [unread, setUnread] = useState();
   const queryClient = useQueryClient();
   const { data: alertList } = useGetMessageAlert();
   const { data: alertUnreadList } = useGetUnreadAlert();
-  const token = localStorage.getItem('Authorization');
+  const token = localStorage.getItem("Authorization");
   const ref = useRef();
   const allList = alertList?.data;
   const unreadList = alertUnreadList?.data.count;
@@ -32,14 +32,14 @@ const AlarmList = ({onClickToast}) => {
   useEffect(() => {
     //구독하기
     if (token) {
-      const sse = new EventSource('http://13.209.16.253:8080/subscribe', {
+      const sse = new EventSource("http://13.209.16.253:8080/subscribe", {
         headers: {
           Authorization: token,
         },
       });
 
-      sse.addEventListener('message', (e) => {
-        queryClient.invalidateQueries('alertList');
+      sse.addEventListener("message", (e) => {
+        queryClient.invalidateQueries("alertList");
       });
     }
   }, [token]);
@@ -49,7 +49,7 @@ const AlarmList = ({onClickToast}) => {
       setNewAlert(allList);
       setUnread(unreadList);
 
-      queryClient.invalidateQueries('unreadList');
+      queryClient.invalidateQueries("unreadList");
     }
   }, [allList, unreadList]);
   const openAlert = () => {
@@ -63,9 +63,9 @@ const AlarmList = ({onClickToast}) => {
   };
 
   useEffect(() => {
-    if (alertOpen) document.addEventListener('mousedown', clickOutSide);
+    if (alertOpen) document.addEventListener("mousedown", clickOutSide);
     return () => {
-      document.removeEventListener('mousedown', clickOutSide);
+      document.removeEventListener("mousedown", clickOutSide);
     };
   });
 
@@ -77,7 +77,17 @@ const AlarmList = ({onClickToast}) => {
           onClick={() => navigate(-1)}
         />
         <div className="alarmlist-title-text">알림</div>
-        <div className="alarmlist-dummy-place" onClick={()=>{instance.delete("/notifications/delete");setNewAlert([]);onClickToast("전체읽음 처리되었습니다.")}}> 전체읽음 </div>
+        <div
+          className="alarmlist-check-button"
+          onClick={() => {
+            instance.delete("/notifications/delete");
+            setNewAlert([]);
+            onClickToast("전체읽음 처리되었습니다.");
+          }}
+        >
+          {" "}
+          전체읽음{" "}
+        </div>
       </div>
       <div className="alarmlist-dummy-div"></div>
       <div className="alarmlist-box">
@@ -85,28 +95,31 @@ const AlarmList = ({onClickToast}) => {
           ? newAlert.map((item) => (
               <div
                 className="alarmlist-contents-div"
-                onClick={()=>{instance.delete(`/notifications/delete/${item.id}`);navigate(item.url)}}
+                onClick={() => {
+                  instance.delete(`/notifications/delete/${item.id}`);
+                  navigate(item.url);
+                }}
               >
-                {' '}
+                {" "}
                 <div className="alarmlist-contents-and-time">
                   <div className="alarmlist-box-contents">
                     {item.notificationContent}
                   </div>
                   <div className="alarmlist-box-time">
-                    {item.createAt.split('T')[0].split('-')[1][0] === '0'
-                      ? item.createAt.split('T')[0].split('-')[1][1]
-                      : item.createAt.split('T')[0].split('-')[1]}
-                    월{item.createAt.split('T')[0].split('-')[2]}일{' '}
-                    {item.createAt.split('T')[1].split(':')[0]}:
-                    {item.createAt.split('T')[1].split(':')[1]}
+                    {item.createAt.split("T")[0].split("-")[1][0] === "0"
+                      ? item.createAt.split("T")[0].split("-")[1][1]
+                      : item.createAt.split("T")[0].split("-")[1]}
+                    월{item.createAt.split("T")[0].split("-")[2]}일{" "}
+                    {item.createAt.split("T")[1].split(":")[0]}:
+                    {item.createAt.split("T")[1].split(":")[1]}
                   </div>
                 </div>
                 <div className="alarmlist-box-img-area">
                   <img
                     className="alarmlist-box-img"
                     src={
-                      item.imgUrl === 'nullImg'
-                        ? '/images/WaitingLeaf.png'
+                      item.imgUrl === "nullImg"
+                        ? "/images/WaitingLeaf.png"
                         : item.imgUrl
                     }
                   />

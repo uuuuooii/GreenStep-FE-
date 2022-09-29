@@ -1,6 +1,6 @@
 //react import
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 //styled import
 import {
   ModalHeader,
@@ -17,7 +17,7 @@ import {
   WarningText,
   ErrorText,
   WarningDiv,
-} from './ThirdModalStyled';
+} from "./ThirdModalStyled";
 const ThirdModal = ({
   setDisplay,
   setNickname,
@@ -31,7 +31,7 @@ const ThirdModal = ({
   onClickToast,
   user,
 }) => {
-  const [valid, setValid] = useState({ name: 'empty', nickname: 'empty' });
+  const [valid, setValid] = useState({ name: "empty", nickname: "empty" });
 
   const NextModal = () => {
     setDisplay(4);
@@ -50,36 +50,36 @@ const ThirdModal = ({
   const korean = /[a-z0-8]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
 
   useEffect(() => {
-    if (name === '') {
+    if (name === "") {
       setValid((prev) => {
-        return { ...prev, name: 'empty' };
+        return { ...prev, name: "empty" };
       });
     } else {
       if (korean.test(name ? name : user.name)) {
         setValid((prev) => {
-          return { ...prev, name: 'error' };
+          return { ...prev, name: "error" };
         });
       } else {
         setValid((prev) => {
-          return { ...prev, name: 'success' };
+          return { ...prev, name: "success" };
         });
       }
     }
   }, [name]);
 
   useEffect(() => {
-    if (nickname === '') {
+    if (nickname === "") {
       setValid((prev) => {
-        return { ...prev, nickname: 'empty' };
+        return { ...prev, nickname: "empty" };
       });
     } else {
       if (krEg.test(nickname)) {
         setValid((prev) => {
-          return { ...prev, nickname: 'error' };
+          return { ...prev, nickname: "error" };
         });
       } else {
         setValid((prev) => {
-          return { ...prev, nickname: 'success' };
+          return { ...prev, nickname: "success" };
         });
       }
     }
@@ -95,7 +95,7 @@ const ThirdModal = ({
           onClick={() =>
             nickname && !krEg.test(nickname)
               ? NextModal()
-              : onClickToast('빈칸을 확인해주세요')
+              : onClickToast("빈칸을 확인해주세요")
           }
         >
           다음
@@ -106,9 +106,9 @@ const ThirdModal = ({
         <CenterContainer>
           <ProfileArea>
             <ProfileImg src={img} />
-            <InputDiv color={valid.name === 'error' ? '#E1756E' : '#B2E2AB'}>
+            <InputDiv color={valid.name === "error" ? "#E1756E" : "#B2E2AB"}>
               <TextInput
-                color={name ? '#B2E2AB' : '#C3C2C2 '}
+                color={name ? "#B2E2AB" : "#C3C2C2 "}
                 onChange={setName}
                 defaultValue={user.name}
                 placeholder="이름"
@@ -118,7 +118,7 @@ const ThirdModal = ({
 
               <PencilDiv>
                 <PencilIcon
-                  color={valid.name === 'error' ? '#E1756E' : '#B2E2AB'}
+                  color={valid.name === "error" ? "#E1756E" : "#B2E2AB"}
                 />
               </PencilDiv>
             </InputDiv>
@@ -144,10 +144,10 @@ const ThirdModal = ({
             </WarningDiv>
 
             <InputDiv
-              color={valid.nickname === 'error' ? '#E1756E' : '#B2E2AB'}
+              color={valid.nickname === "error" ? "#E1756E" : "#B2E2AB"}
             >
               <TextInput
-                color={nickname ? '#B2E2AB' : '#C3C2C2'}
+                color={nickname ? "#B2E2AB" : "#C3C2C2"}
                 onChange={setNickname}
                 defaultValue={user.nickname}
                 placeholder="닉네임"
@@ -156,7 +156,7 @@ const ThirdModal = ({
               />
               <PencilDiv>
                 <PencilIcon
-                  color={valid.nickname === 'error' ? '#E1756E' : '#B2E2AB'}
+                  color={valid.nickname === "error" ? "#E1756E" : "#B2E2AB"}
                 />
               </PencilDiv>
             </InputDiv>
@@ -165,7 +165,7 @@ const ThirdModal = ({
                 {
                   empty: <WarningText></WarningText>,
                   error: (
-                    <ErrorText>아이디는 영문,숫자만 입력해주세요.</ErrorText>
+                    <ErrorText>아이디는 한글 or 영어로 입력해주세요.</ErrorText>
                   ),
                   success: (
                     <WarningText>

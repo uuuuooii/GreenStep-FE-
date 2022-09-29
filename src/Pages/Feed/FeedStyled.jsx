@@ -295,6 +295,7 @@ export const FeedText = styled.div`
   line-height: 16px;
   color: #2b5139;
   margin: 0px 15px 0px 5px;
+  word-break: break-all;
 `;
 export const PhotoArea = styled.div`
   display: flex;

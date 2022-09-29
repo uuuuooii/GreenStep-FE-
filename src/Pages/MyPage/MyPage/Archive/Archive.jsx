@@ -224,7 +224,7 @@ const OnModal = () => {
                   ? "가려진 항목으로 이동"
                   : param === "post"
                   ? "삭제하기"
-                  : "숨기기"}
+                  : "복구하기"}
               </DeleteBottomText>
             </DeleteText>
             <DeleteCancelButton onClick={() => OffModal()}>

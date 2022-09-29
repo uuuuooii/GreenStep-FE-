@@ -59,7 +59,7 @@ const Mission = () => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === "DEFAULT" ? (
+                  item.status === "DEFAULT"||item.status ==="REJECTED" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}

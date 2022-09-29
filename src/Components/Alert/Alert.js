@@ -24,12 +24,8 @@ const Alert = () => {
   const queryClient = useQueryClient();
   const { data: alertList } = useGetMessageAlert();
   const { data: alertUnreadList } = useGetUnreadAlert();
-  const { mutateAsync: removeAlert } = useDeleteAlert();
-  const { mutateAsync: removeAllAlert } = useDeleteAlertAll();
-  const { mutateAsync: readAlert } = usePostReadAlert();
   const token = localStorage.getItem('Authorization');
   const ref = useRef();
-  const [meventSource, msetEventSource] = useState(undefined);
   const allList = alertList?.data;
   const unreadList = alertUnreadList?.data.count;
   useEffect(() => {

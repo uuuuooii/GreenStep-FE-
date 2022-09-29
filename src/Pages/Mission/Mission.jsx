@@ -143,7 +143,10 @@ const Mission = ({ onClickToast }) => {
       </MissionPage>{" "}
       <div
         className="floating-round"
-        onClick={() => navigate("/archive/certification")}
+        onClick={() => {
+          navigate("/archive/certification");
+          onClickToast(`게시물 작성이 가능합니다`, 1);
+        }}
       >
         <HiPencil className="floating-icon" />
       </div>

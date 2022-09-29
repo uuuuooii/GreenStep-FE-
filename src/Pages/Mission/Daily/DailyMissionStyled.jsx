@@ -75,6 +75,20 @@ export const ChallengeBody = styled.div`
     cursor: pointer;
   }
 `;
+export const ChallengeWaiting = styled.div`
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin: 0px 0px 0px -163px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 195%;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+`;
+
 export const ChallengePhoto = styled.img`
   width: 171px;
   height: 173px;
@@ -100,20 +114,6 @@ export const ChallengeTimer = styled.div`
   color: white;
   background: #ade2e9;
   border-radius: 5px;
-`;
-
-export const ChallengeWaiting = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  padding: 0px 0px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 150%;
-  height: 90%;
-  border-radius: 5px;
-  text-align: center;
 `;
 
 export const LeapDiv = styled.div`

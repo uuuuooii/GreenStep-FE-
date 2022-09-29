@@ -1,10 +1,10 @@
-import React from 'react';
-import { SlideBottom, FadeOut } from '../Animation/Animation';
-import './Toast.css';
-import styled from 'styled-components';
+import React from "react";
+import { SlideBottom, FadeOut } from "../Animation/Animation";
+import "./Toast.css";
+import styled from "styled-components";
 
-const Toast = ({ text,toastNum }) => {
-  return <ToastBody toastNum={toastNum} >{text}</ToastBody>;
+const Toast = ({ text, toastNum }) => {
+  return <ToastBody toastNum={toastNum}>{text}</ToastBody>;
 };
 
 export default Toast;
@@ -32,5 +32,5 @@ const ToastBody = styled.div`
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  z-index: 1000;
+  z-index: 10;
 `;

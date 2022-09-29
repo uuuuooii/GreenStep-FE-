@@ -153,17 +153,13 @@ const MyPage = ({ onClickToast }) => {
                   <ViewMoreLogOut />
                   <div
                     className="mypage-modal-logout-text"
-                    onClick={() =>
-                      instance.get("/kakao/logout").then((res) => {
-                        if (res.data.success) {
-                          // window.localStorage.clear();
-                          // window.sessionStorage.clear();
-                          window.location.replace(res.data.data);
-                          // navigate("/");
-                          onClickToast(`로그아웃 되었습니다`, 1);
-                        }
-                      })
-                    }
+                    onClick={() => {
+                      window.localStorage.clear();
+                      window.sessionStorage.clear();
+                      // window.location.replace("https://greenstepapp.com/");
+                      navigate("/");
+                      onClickToast(`로그아웃 되었습니다`, 1);
+                    }}
                   >
                     로그아웃
                   </div>
@@ -240,7 +236,10 @@ const MyPage = ({ onClickToast }) => {
                 <div className="photoshots-text">인증샷 아카이브</div>
                 <div className="photoshots-viewmore-icon">
                   <IoIosArrowForward
-                    onClick={() => navigate("/archive/certification")}
+                    onClick={() => {
+                      navigate("/archive/certification");
+                      onClickToast(`사진 클릭 시, 게시물 작성이 가능합니다`, 1);
+                    }}
                   />
                 </div>
               </div>
@@ -288,7 +287,10 @@ const MyPage = ({ onClickToast }) => {
                 <div className="posts-text">게시물 아카이브</div>
                 <div className="posts-viewmore-icon">
                   <IoIosArrowForward
-                    onClick={() => navigate("/archive/post")}
+                    onClick={() => {
+                      navigate("/archive/post");
+                      onClickToast(`게시물 삭제가 가능합니다`, 1);
+                    }}
                   />
                 </div>
               </div>

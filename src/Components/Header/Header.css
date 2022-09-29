@@ -1,8 +1,6 @@
 .header-dummy-div {
   width: 100%;
-
   height: 58px;
-
   background-color: #fcfcfa;
 }
 
@@ -28,7 +26,7 @@
 }
 
 .header-title {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   position: relative;
   text-align: center;
   color: #50674c;
@@ -51,7 +49,7 @@
   right: 18px;
   top: 12px;
 }
-.header-new-list-div{
+.header-new-list-div {
   position: relative;
 }
 .header-new-list {

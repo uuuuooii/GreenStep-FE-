@@ -59,7 +59,7 @@ const Mission = ({ onClickToast }) => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === "DEFAULT"||item.status ==="REJECTED" ? (
+                  item.status === "DEFAULT" || item.status === "REJECTED" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
@@ -103,7 +103,8 @@ const Mission = ({ onClickToast }) => {
             <DailyCardBox>
               {!loading && missionWeekly ? (
                 missionWeekly.map((item, index) => {
-                  return item.status === "DEFAULT" ? (
+                  return item.status === "DEFAULT" ||
+                    item.status === "REJECTED" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}

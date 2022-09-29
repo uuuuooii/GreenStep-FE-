@@ -22,7 +22,6 @@ import ChallengeSkeleton from "../../../Components/Skeleton/ChallengeSkeleton";
 import MissionLeap from "../../../static/components/MissionLeap";
 
 const DailyChallenge = ({ mission }) => {
-  console.log(mission);
   const [hour, setHour] = useState(23 - new Date().getHours());
   const [minute, setMinute] = useState(59 - new Date().getMinutes());
   const [second, setSecond] = useState(59 - new Date().getSeconds());

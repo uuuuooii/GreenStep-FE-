@@ -238,7 +238,7 @@ const MyPage = ({ onClickToast }) => {
                   <IoIosArrowForward
                     onClick={() => {
                       navigate("/archive/certification");
-                      onClickToast(`게시물 작성, 사진 숨기기가 가능합니다`, 1);
+                      onClickToast(`사진 클릭 시, 게시물 작성이 가능합니다`, 1);
                     }}
                   />
                 </div>

@@ -105,16 +105,13 @@ export const ChallengeTimer = styled.div`
 export const ChallengeWaiting = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
+  padding: 0px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   border-radius: 5px;
   text-align: center;
 `;

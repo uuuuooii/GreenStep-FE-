@@ -14,12 +14,12 @@ const Test = () => {
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  console.log(code)
   useEffect(() => {
     axios
-
-      .get(
-        `https://greenstepserver.link/users/kakao/callback`,
-        // .get(`http://13.209.16.253:8080/users/kakao/callback`,
+      // .get(
+      //   `https://greenstepserver.link/users/kakao/callback`,
+        .get(`http://13.209.16.253:8080/users/kakao/callback`,
         {
           params: { code },
         }

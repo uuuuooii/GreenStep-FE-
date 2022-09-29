@@ -110,7 +110,7 @@ export const ChallengeWaiting = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 150%;
   height: 90%;
   border-radius: 5px;
   text-align: center;

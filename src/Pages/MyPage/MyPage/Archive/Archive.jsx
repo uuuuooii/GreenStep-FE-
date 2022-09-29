@@ -65,7 +65,7 @@ const Archive = () => {
       : state.userInfo.hide
   );
   useEffect(() => {
-    document.querySelector('body').style.maxWidth= 'none'
+    document.querySelector("body").style.maxWidth = "none";
     setLoding(true);
 
     //param 값으로 인증글,게시글,숨김글 분기
@@ -112,6 +112,7 @@ const OnModal = () => {
             ) : (
               <div
                 onClick={() => (delArr.length > 0 ? OnModal() : null)}
+
               >
                 <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
               </div>

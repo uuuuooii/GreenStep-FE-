@@ -47,10 +47,9 @@ export const ChallengeMissionText = styled.div`
 `;
 
 export const ChallengeBox = styled.div`
-  width: 332px;
   height: 178px;
   display: flex;
-  padding: 12px 12px 12px 20px;
+  padding: 0px 0px 0px 15px;
   justify-content: space-between;
   background: linear-gradient(
     269.82deg,
@@ -60,7 +59,7 @@ export const ChallengeBox = styled.div`
   );
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 20px auto 0px auto;
+  margin: 20px 0px 0px 0px;
 `;
 
 export const ChallengeTextArea = styled.div`
@@ -79,7 +78,7 @@ export const ChallengeBody = styled.div`
 export const ChallengePhoto = styled.img`
   width: 171px;
   height: 173px;
-  padding: 7px 0px 0px 0px;
+  padding: 2px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`
   font-family: "AppleNeoR";
@@ -97,7 +96,7 @@ export const ChallengeTimer = styled.div`
   line-height: 16px;
   text-align: center;
   padding: 10px 1px;
-  margin: 79px -2px;
+  margin: 69px -2px;
   color: white;
   background: #ade2e9;
   border-radius: 5px;

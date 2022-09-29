@@ -294,7 +294,9 @@ export const FeedText = styled.div`
   font-size: 13px;
   line-height: 16px;
   color: #2b5139;
+  word-break: break-all;
   margin: 0px 15px 0px 5px;
+  word-break: break-all;
 `;
 export const PhotoArea = styled.div`
   display: flex;
@@ -327,7 +329,7 @@ export const LargePhoto = styled.img`
 
 export const ClapBox = styled.div`
   width: 26px;
-  animation-name:${(props)=>props.animation};
+  animation-name: ${(props) => props.animation};
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

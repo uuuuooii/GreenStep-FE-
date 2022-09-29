@@ -80,13 +80,15 @@ const Archive = () => {
     setLoding(false);
   }, [dispatch]);
 
-const OnModal = () => {
-  document.getElementById('ch-plugin').style.display = 'none';
-  setModal(!modal)}
+  const OnModal = () => {
+    document.getElementById("ch-plugin").style.display = "none";
+    setModal(!modal);
+  };
 
   const OffModal = () => {
-    document.getElementById('ch-plugin').style.display = 'block';
-    setModal(!modal)}
+    document.getElementById("ch-plugin").style.display = "block";
+    setModal(!modal);
+  };
 
   return (
     <ArchivePage>
@@ -110,10 +112,7 @@ const OnModal = () => {
                   : "복구"}
               </ArchiveSelectDiv>
             ) : (
-              <div
-                onClick={() => (delArr.length > 0 ? OnModal() : null)}
-
-              >
+              <div onClick={() => (delArr.length > 0 ? OnModal() : null)}>
                 <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
               </div>
             )}
@@ -217,7 +216,7 @@ const OnModal = () => {
                             ...data.filter((item) => !delArr.includes(item.id)),
                           ])
                         );
-                        OffModal();
+                  OffModal();
                   setDelArr([]);
                 }}
               >

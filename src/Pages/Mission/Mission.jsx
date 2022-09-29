@@ -28,7 +28,7 @@ import {
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
 
-const Mission = () => {
+const Mission = ({ onClickToast }) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -59,7 +59,7 @@ const Mission = () => {
             <DailyCardBox>
               {!loading && missionDaily ? (
                 missionDaily.map((item, index) =>
-                  item.status === "DEFAULT"||item.status ==="REJECTED" ? (
+                  item.status === "DEFAULT" || item.status === "REJECTED" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
@@ -103,7 +103,8 @@ const Mission = () => {
             <DailyCardBox>
               {!loading && missionWeekly ? (
                 missionWeekly.map((item, index) => {
-                  return item.status === "DEFAULT" ? (
+                  return item.status === "DEFAULT" ||
+                    item.status === "REJECTED" ? (
                     <DailyMission
                       key={item.missionId + index}
                       item={item}
@@ -143,7 +144,10 @@ const Mission = () => {
       </MissionPage>{" "}
       <div
         className="floating-round"
-        onClick={() => navigate("/archive/certification")}
+        onClick={() => {
+          navigate("/archive/certification");
+          onClickToast(`사진 클릭 시, 게시물 작성이 가능합니다`, 1);
+        }}
       >
         <HiPencil className="floating-icon" />
       </div>

@@ -10,6 +10,7 @@ import "./Error.css";
 const Error = () => {
   const navigate = useNavigate();
   return (
+    <>
     <ErrorBody>
       <div className="error-back-arrow-area">
         <div onClick={() => navigate(-1)}>
@@ -25,6 +26,7 @@ const Error = () => {
         입력하신 주소가 정확한지 다시 한번 확인해주세요.
       </ErrorText>
     </ErrorBody>
+    </>
   );
 };
 export default Error;

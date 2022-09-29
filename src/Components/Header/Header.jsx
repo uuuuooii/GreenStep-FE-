@@ -60,7 +60,7 @@ const Header = () => {
                 >
                   Green Step
                 </div>
-                <div className="header-icon-left">
+                <div className="header-icon-left" onClick={()=>navigate('/mission')}>
                   <HeaderLogo />
                 </div>
                 <div

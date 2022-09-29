@@ -80,6 +80,14 @@ const Archive = () => {
     setLoding(false);
   }, [dispatch]);
 
+const OnModal = () => {
+  document.getElementById('ch-plugin').style.display = 'none';
+  setModal(!modal)}
+
+  const OffModal = () => {
+    document.getElementById('ch-plugin').style.display = 'block';
+    setModal(!modal)}
+
   return (
     <ArchivePage>
       <WrapArchive>
@@ -103,7 +111,7 @@ const Archive = () => {
               </ArchiveSelectDiv>
             ) : (
               <div
-                onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
+                onClick={() => (delArr.length > 0 ? OnModal() : null)}
               >
                 <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
               </div>
@@ -208,7 +216,7 @@ const Archive = () => {
                             ...data.filter((item) => !delArr.includes(item.id)),
                           ])
                         );
-                  setModal(!modal);
+                        OffModal();
                   setDelArr([]);
                 }}
               >
@@ -219,7 +227,7 @@ const Archive = () => {
                   : "숨기기"}
               </DeleteBottomText>
             </DeleteText>
-            <DeleteCancelButton onClick={() => setModal(!modal)}>
+            <DeleteCancelButton onClick={() => OffModal()}>
               취소
             </DeleteCancelButton>
           </DeleteModal>

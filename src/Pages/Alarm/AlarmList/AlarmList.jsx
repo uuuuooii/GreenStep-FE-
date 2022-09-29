@@ -68,7 +68,7 @@ const AlarmList = ({onClickToast}) => {
       document.removeEventListener('mousedown', clickOutSide);
     };
   });
-
+console.log(allList)
 
   return (
     <>

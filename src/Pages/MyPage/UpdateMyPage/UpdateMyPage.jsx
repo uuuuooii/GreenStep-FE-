@@ -110,7 +110,6 @@ const UpdateMyPage = ({ onClickToast }) => {
       setConnection(true);
     }
   }, []);
-
   return (
     <>
       <UpdateMyPageDiv>
@@ -174,18 +173,26 @@ const UpdateMyPage = ({ onClickToast }) => {
                 <div className="updatemypage-profile-div">
                   <img
                     className="updatemypage-profile-image"
-                    src={connection ? kakaoProfile : !img ? "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" : img}
+                    src={
+                      connection
+                        ? kakaoProfile
+                        : !img
+                        ? 'https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
+                        : img
+                    }
                     alt="profile"
                   />
 
-                  <div
-                    className="updatemypage-profile-pencil-div"
-                    onClick={() => {
-                      setViewMoreModal(true);
-                    }}
-                  >
-                    <ProfilePencil />
-                  </div>
+                  {!connection ? (
+                    <div
+                      className="updatemypage-profile-pencil-div"
+                      onClick={() => {
+                        setViewMoreModal(true);
+                      }}
+                    >
+                      <ProfilePencil />
+                    </div>
+                  ) : null}
                 </div>
               </>
             ) : (

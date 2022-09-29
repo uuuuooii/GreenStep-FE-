@@ -1,11 +1,11 @@
 //react import
-import React from 'react';
-import { useNavigate } from 'react-router';
+import React from "react";
+import { useNavigate } from "react-router";
 //components import
-import ErrorImage from '../../static/components/ErrorImage';
-import { ErrorBody, ErrorText } from './ErrorStyled';
-import { IoIosArrowBack } from 'react-icons/io';
-import './Error.css';
+import ErrorImage from "../../static/components/ErrorImage";
+import { ErrorBody, ErrorText } from "./ErrorStyled";
+import { IoIosArrowBack } from "react-icons/io";
+import "./Error.css";
 
 const Error = () => {
   const navigate = useNavigate();
@@ -16,7 +16,9 @@ const Error = () => {
           <IoIosArrowBack className="error-back-arrow-icon" />
         </div>
       </div>
-      <ErrorImage />
+      <div className="error-image-area">
+        <ErrorImage />
+      </div>
       <ErrorText>
         요청하신 페이지를 찾을 수 없습니다.
         <br />

@@ -32,7 +32,8 @@ import Secession from './Pages/Secession/Secession';
 import Alarm from './Pages/Alarm/Alarm';
 import AlarmList from './Pages/Alarm/AlarmList/AlarmList';
 import UpdateLoading from './Pages/Loding/UpdateLoading';
-// import KakaoChannel from "./Components/KakaoChannel/KakaoChannel";
+import FourthModal from './Pages/Login/Modal/FourthModal/FourthModal';
+import Introduce from './Pages/MyPage/MyPage/Introduce/Introduce';
 
 function App() {
   const queryClient = new QueryClient();
@@ -45,11 +46,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         {/* <KakaoChannel  /> */}
         {/* <SetPullToRefresh /> */}
         <ScrollToTop />
         <QueryClientProvider client={queryClient}>
+          <Header />
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/users/kakao/callback" element={<Loding />} />
@@ -100,9 +101,16 @@ function App() {
             />
             <Route path="/detailphotoshots" element={<DetailPhotoShots />} />
             <Route path="/feed" element={<Feed />} />
-            <Route path="/secession" element={<Secession />} />
+            <Route
+              path="/secession"
+              element={<Secession onClickToast={onClickToast} />}
+            />
+            <Route path="introduce" element={<Introduce />} />
             <Route path="/alarm" element={<Alarm />} />
-            <Route path="/alarmlist" element={<AlarmList />} />
+            <Route
+              path="/alarmlist"
+              element={<AlarmList onClickToast={onClickToast} />}
+            />
             <Route path="*" element={<Error />} />
           </Routes>
         </QueryClientProvider>

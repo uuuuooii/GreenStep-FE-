@@ -33,9 +33,12 @@ import {
   FourthArea,
   LogoGraDiv,
   LastText,
+  DownButton,
+  DownArrow,
+  Introduce,
 } from "./LoginStyled";
 //imgcdn
-import Img, { CloudimageProvider } from "react-cloudimage-responsive";
+// import Img, { CloudimageProvider } from "react-cloudimage-responsive";
 const cloudimageConfig = {
   token: "demo",
   baseURL: "https://cdn.scaleflex.it/demo/",
@@ -62,7 +65,22 @@ const Login = () => {
   const [thirdAni, setThirdAni] = useState(false);
   const [fourth, fourthView] = useInView();
   const [fourthAni, setFourthAni] = useState(false);
+  const [button, setButton] = useState(false);
+  const scrollRef = useRef();
 
+  const DownPage = () => {
+    scrollRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
+  useEffect(() => {
+    //채널톡 삭제
+    setTimeout(() => {
+      document.getElementById("ch-plugin").style.display = "none";
+    }, [100]);
+  }, []);
   useEffect(() => {
     if (fourthView) {
       setFourthAni(true);
@@ -176,6 +194,12 @@ const Login = () => {
           </KakaoLink>
         </MarginDIv>
       </LoginPageArea>
+
+      <DownButton onClick={DownPage}>
+        <DownArrow onClick={DownPage} />
+      </DownButton>
+
+      <div ref={scrollRef} />
     </>
   );
 };

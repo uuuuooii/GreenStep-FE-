@@ -69,7 +69,7 @@ const Upload = ({ onClickToast }) => {
               <div className="upload-mission-close-button-area">
                 <div
                   className="upload-mission-close-button"
-                  onClick={() => navigate("/mypage")}
+                  onClick={() => navigate("/archive/certification")}
                 >
                   <HiOutlineX />
                 </div>
@@ -118,8 +118,9 @@ const Upload = ({ onClickToast }) => {
                 maxLength={140}
                 placeholder="인증샷 설명을 자유롭게 적어주세요"
                 onfocus="this.placeholder = ''"
-              ></UploadContentTextArea>
+              />
               <TotalButtonArea>
+               
                 <UploadButton
                   onClick={() =>
                     data.onFeed

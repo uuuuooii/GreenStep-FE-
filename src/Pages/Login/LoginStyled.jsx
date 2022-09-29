@@ -1,22 +1,25 @@
-import styled from "styled-components";
-import { RiKakaoTalkFill } from "react-icons/ri";
-import logo from "./kakao_login_medium_wide.png";
+import styled from 'styled-components';
+import { RiKakaoTalkFill } from 'react-icons/ri';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import logo from './kakao_login_medium_wide.png';
 import {
   LogoFade,
   FadeBottomOn,
   FadeBottomOnImage,
-} from "../../Components/Animation/Animation";
+} from '../../Components/Animation/Animation';
 export const LoginPageArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const LoginBody = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 `;
 
 export const ButtonBody = styled.div`
@@ -30,19 +33,20 @@ export const ButtonBody = styled.div`
   /* padding: 60px 0; */
 `;
 export const LogoGraDiv = styled.div`
-  display: block;
-  /* background-color: #daf2d5; */
+  /* width: 100%; */
+  /* height: 100%; */
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  background: linear-gradient(#DAF2D5,white);
   position: absolute;
   animation-name: ${LogoFade};
   animation-duration: 2.5s;
   animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+  animation-fill-mode: none;
   object-fit: cover;
-  overflow: hidden;
+  overflow-x: hidden;
 `;
 export const KakaoLink = styled.a`
   text-decoration: none;
@@ -51,16 +55,15 @@ export const KakaoLink = styled.a`
   margin-bottom: 100px;
 `;
 export const LDiv = styled.div`
-  /* position: absolute; */
   position: absolute;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* top: 286px; */
-
-  /* margin: 286px 80px 2700px 80px; */
-  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  overflow: hidden;
 `;
 export const MarginDIv = styled.div`
   padding-bottom: 60px;
@@ -82,6 +85,7 @@ export const FirstArea = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const FirstTitle = styled.div`
   font-style: normal;
@@ -123,6 +127,7 @@ export const SecondArea = styled.div`
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const SecondImgDiv = styled.div`
   position: relative;
@@ -138,6 +143,7 @@ export const SecondImg = styled.img`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   opacity: 0.5;
+  overflow: hidden;
 `;
 export const ThirdArea = styled.div`
   height: 100vh;
@@ -147,6 +153,7 @@ export const ThirdArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const FourthArea = styled.div`
   height: 100vh;
@@ -156,11 +163,11 @@ export const FourthArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 export const LogoArea = styled.div`
   height: 100vh;
-  /* border: 1px solid black; */
-  /* background-color: #DAF2D5; */
+  width: 100%;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -175,7 +182,7 @@ export const FirstCoverDiv = styled.div`
   top: 0;
   width: 130px;
   height: 282px;
-  z-index: 3000;
+  z-index: 5;
   transform: translate(20%, -20%);
 `;
 export const SecondCoverDiv = styled.div`
@@ -184,11 +191,11 @@ export const SecondCoverDiv = styled.div`
   top: 0;
   width: 130px;
   height: 282px;
-  z-index: 3000;
+  z-index: 5;
   transform: translate(-20%, -20%);
 `;
 export const FirstCover = styled.img`
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   animation-name: ${(props) => props.animation};
   animation-duration: 2s;
@@ -198,7 +205,7 @@ export const FirstCover = styled.img`
 `;
 export const FirstText = styled.div`
   opacity: 0;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -218,7 +225,7 @@ export const SecondRefDiv = styled.div`
 export const SecondText = styled.div`
   opacity: 0;
   width: 100%;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
@@ -233,7 +240,7 @@ export const SecondText = styled.div`
   animation-fill-mode: forwards;
 `;
 export const ThirdText = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -245,7 +252,7 @@ export const ThirdText = styled.div`
   white-space: pre-wrap;
 `;
 export const FourthText = styled.div`
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -257,7 +264,7 @@ export const FourthText = styled.div`
 `;
 export const LastText = styled.div`
   opacity: 0;
-  font-family: "Apple SD Gothic Neo";
+  font-family: 'Apple SD Gothic Neo';
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
@@ -269,3 +276,22 @@ export const LastText = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 `;
+export const DownButton = styled.div`
+  position: fixed;
+  border-radius: 15px;
+  right: 20px;
+  bottom: 90px;
+  width: 42px;
+  height: 42px;
+  background-color: #84ca79;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+`;
+export const DownArrow = styled(AiOutlineArrowDown)`
+  font-size: 28px;
+  color: #50674c;
+`;
+
+export const Introduce = styled.div``;

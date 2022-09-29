@@ -1,6 +1,16 @@
 .explain-mission-waiting-logo {
+  position: relative;
   border-radius: 100px;
   height: 200px;
   width: 200px;
   box-shadow: 0px 3px 20px #e2e2e2;
+  z-index: 1;
+}
+
+.explain-mission-waiting-png {
+  position: absolute;
+  height: 338px;
+  width: 338px;
+  box-shadow: 0px 3px 20px #e2e2e2;
+  opacity: 0.5;
 }

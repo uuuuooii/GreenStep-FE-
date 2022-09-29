@@ -6,12 +6,12 @@ import "./Secession.css";
 import Secessionimg from "../../static/components/Secessionimg";
 import instance from "../../Redux/modules/instance";
 
-const Secession = () => {
+const Secession = ({ onClickToast }) => {
   const navigate = useNavigate();
   return (
     <div className="secessionall">
       <div className="secession-back-arrow-area">
-        <div onClick={() => navigate("/mypage")}>
+        <div onClick={() => navigate(-1)}>
           <IoIosArrowBack className="secession-back-arrow-icon" />
 
           <p className="secessiontext">탈퇴하기</p>
@@ -31,6 +31,7 @@ const Secession = () => {
                 window.sessionStorage.clear();
               }
               navigate("/");
+              onClickToast(`탈퇴 되었습니다.`, 1);
             });
           }}
         >

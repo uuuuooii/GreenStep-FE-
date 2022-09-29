@@ -20,18 +20,21 @@
   transition-timing-function: ease-in;
   transition: all 1s;
 }
-
+.header-icon-bell {
+  color: #50674c;
+}
 .header-relative {
   position: relative;
 }
 
 .header-title {
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   position: relative;
   text-align: center;
   color: #50674c;
   font-size: 20px;
   padding: 14px 14px 13px 14px;
+  margin-left: 12px;
 }
 
 .header-icon-left {
@@ -43,8 +46,24 @@
 }
 
 .header-icon-right {
-  position: absolute;
   font-size: 25px;
-  top: 12px;
+  position: absolute;
   right: 18px;
+  top: 12px;
+}
+.header-new-list-div{
+  position: relative;
+}
+.header-new-list {
+  width: 15px;
+  height: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  background-color: red;
+  font-size: 10px;
 }

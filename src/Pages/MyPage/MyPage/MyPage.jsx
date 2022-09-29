@@ -12,6 +12,8 @@ import instance from "../../../Redux/modules/instance";
 //component import
 import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
+import CompleteIcon from "../../../static/components/MyPage/CompleteIcon";
+import StepLogo from "../../../static/components/MyPage/StepLogo";
 //styled import
 import "../../../Components/Toast/Toast.css";
 import "./MyPage.css";
@@ -55,13 +57,12 @@ const MyPageDiv = styled.div`
   animation-fill-mode: forwards;
 `;
 
-
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [userInfo,setUserInfo] = useState({})
+  const [userInfo, setUserInfo] = useState({});
   // const userInfo = useSelector((state) => state.userInfo.userInfo);
   const certification = useSelector((state) => state.userInfo.certification);
   const post = useSelector((state) => state.userInfo.post);
@@ -73,12 +74,11 @@ const MyPage = ({ onClickToast }) => {
   }님이 그린 스텝을 보고싶어해요! 🤩 \n 피드에 공유해 주세요!`;
   useEffect(() => {
     setLoding(true);
-   instance.get('/users/info').then((res)=>setUserInfo(res.data.data))
+    instance.get("/users/info").then((res) => setUserInfo(res.data.data));
     dispatch(getCertThunk());
     dispatch(getPostThunk());
     setLoding(false);
   }, []);
-console.log(userInfo)
   return (
     <>
       <MyPageDiv>
@@ -117,7 +117,7 @@ console.log(userInfo)
                   <ViewMoreAlarm />
                   <div
                     className="mypage-modal-alarm-text"
-                    onClick={() => navigate("/alarm")}
+                    onClick={() => alert("개발중입니다.")}
                   >
                     알림 설정
                   </div>
@@ -133,7 +133,12 @@ console.log(userInfo)
                 </div>
                 <div className="mypage-modal-cc-area">
                   <ViewMoreCC />
-                  <div className="mypage-modal-cc-text">고객센터</div>
+                  <div
+                    className="mypage-modal-cc-text"
+                    onClick={() => navigate("/introduce")}
+                  >
+                    고객센터
+                  </div>
                 </div>
                 <div className="mypage-modal-quit-area">
                   <ViewMoreQuit />
@@ -148,16 +153,13 @@ console.log(userInfo)
                   <ViewMoreLogOut />
                   <div
                     className="mypage-modal-logout-text"
-                    onClick={() =>
-                      instance.get("/kakao/logout").then((res) => {
-                        if (res.data) {
-                          window.localStorage.clear();
-                          window.sessionStorage.clear();
-                          navigate("/");
-                          onClickToast(`로그아웃 되었습니다`, 1);
-                        }
-                      })
-                    }
+                    onClick={() => {
+                      window.localStorage.clear();
+                      window.sessionStorage.clear();
+                      // window.location.replace("https://greenstepapp.com/");
+                      navigate("/");
+                      onClickToast(`로그아웃 되었습니다`, 1);
+                    }}
                   >
                     로그아웃
                   </div>
@@ -187,11 +189,30 @@ console.log(userInfo)
                 <div className="email-text">
                   {userInfo.email ? userInfo.email : "Email"}
                 </div>
-                <div className="mypage-mission-count">
-                  미션 달성 : {userInfo.missionCount}개
-                </div>
-                <div className="mypage-mission-point">
-                  내가 그린 스텝 : {userInfo.missionPoint}걸음
+
+                <div className="mypage-mission-count-and-point-area">
+                  <div className="mypage-mission-count-area">
+                    <div className="mypage-mission-count-icon">
+                      <CompleteIcon />
+                    </div>
+                    <div className="mypage-mission-count-and-text">
+                      <div className="mypage-mission-count">
+                        {userInfo.missionCount}
+                      </div>
+                      <div className="mypage-mission-count-text">미션 완료</div>
+                    </div>
+                  </div>
+                  <div className="mypage-mission-point-area">
+                    <div className="mypage-mission-point-icon">
+                      <StepLogo />
+                    </div>
+                    <div className="mypage-mission-point-and-text">
+                      <div className="mypage-mission-point">
+                        {userInfo.missionPoint}
+                      </div>
+                      <div className="mypage-mission-point-text">걸음</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

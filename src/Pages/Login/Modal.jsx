@@ -23,6 +23,7 @@ import FourthModal from './Modal/FourthModal/FourthModal';
 import LoadingBar from '../../Components/LoadingBar/LoadingBar';
 
 const Modal = ({ onClickToast }) => {
+  const user = useSelector((state) => state.userInfo.userInfo);
   const [loading, setLoading] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
@@ -30,12 +31,9 @@ const Modal = ({ onClickToast }) => {
   const [display, setDisplay] = useState(0);
   const [img, setImg] = useState('');
   const [check, setCheck] = useState(0);
-  const [name, setName] = useInput('');
-  const [nickname, setNickname] = useInput('');
+  const [name, setName] = useInput(user.name);
+  const [nickname, setNickname] = useInput(user.nickname);
   const dispatch = useDispatch();
-  const user = useSelector((state) => {
-    return state.userInfo.userInfo;
-  });
 
   useEffect(() => {
     setLoading(true);
@@ -95,6 +93,7 @@ const Modal = ({ onClickToast }) => {
               name={name}
               img={img}
               user={user}
+              onClickToast={onClickToast}
             />
           ) : null}
           <DotArea>

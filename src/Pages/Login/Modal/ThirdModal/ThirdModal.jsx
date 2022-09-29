@@ -47,9 +47,7 @@ const ThirdModal = ({
   };
 
   const krEg = /[^가-힣^a-zA-Z]$/;
-  const korean = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
-
-  //  /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/ ]/gim;
+  const korean = /[a-z0-8]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
 
   useEffect(() => {
     if (name === "") {
@@ -57,7 +55,7 @@ const ThirdModal = ({
         return { ...prev, name: "empty" };
       });
     } else {
-      if (korean.test(name)) {
+      if (korean.test(name ? name : user.name)) {
         setValid((prev) => {
           return { ...prev, name: "error" };
         });
@@ -112,7 +110,7 @@ const ThirdModal = ({
               <TextInput
                 color={name ? "#B2E2AB" : "#C3C2C2 "}
                 onChange={setName}
-                defaultValue={user.name ? user.name : "이름"}
+                defaultValue={user.name}
                 placeholder="이름"
                 maxLength={8}
                 type="text"
@@ -167,7 +165,7 @@ const ThirdModal = ({
                 {
                   empty: <WarningText></WarningText>,
                   error: (
-                    <ErrorText>아이디는 영문,숫자만 입력해주세요.</ErrorText>
+                    <ErrorText>아이디는 한글 or 영어로 입력해주세요.</ErrorText>
                   ),
                   success: (
                     <WarningText>

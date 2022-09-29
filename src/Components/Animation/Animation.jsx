@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 export const FadeOn = keyframes`
 from{opacity:0}
@@ -14,11 +14,11 @@ to{transform:translateY(0px)}
 `;
 
 export const LogoFade = keyframes`
-0%{transform:scale(0.8);border-radius:250px;background-color:white}
-35%{transform:scale(0.5);border-radius:250px;background-color: #DAF2D5}
-100%{transform:scale(4);background: linear-gradient(#DAF2D5,white);}
-/* 100%{max-width:100%;height:100%;background: linear-gradient(#DAF2D5,white);} */
-`
+0%{width:500px;height:500px; transform:scale(0.8);border-radius:250px;background-color:white;  overflow-x: hidden;}
+35%{ width:500px;height:500px;transform:scale(0.5);border-radius:250px;background-color: #DAF2D5;  overflow-x: hidden;}
+100%{ width:500px;height:500px;transform:scale(4);background: linear-gradient(#DAF2D5,white);  overflow-x: hidden;}
+
+`;
 
 export const FadeBottomOn = keyframes`
 0%{opacity:0;transform:translateY(100px)}

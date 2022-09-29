@@ -36,71 +36,68 @@ export const MissionText = styled.div`
 `;
 export const ChallengeMissionText = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: "Apple SD Gothic Neo";
   font-style: normal;
-
-  font-size: ${(props) => (props.title.length > 8 ? "10px" : "13px")};
+  font-size: 15px;
+  font-weight: 600;
   line-height: 16px;
-  color: #b2e2ab;
+  color: #2b5139;
   flex-wrap: wrap;
   margin-top: 10px;
+  font-family: "AppleNeoR";
 `;
 
 export const ChallengeBox = styled.div`
+  width: 332px;
+  height: 178px;
   display: flex;
-  padding: 12px 12px 12px 10px;
+  padding: 12px 12px 12px 20px;
   justify-content: space-between;
-  background: #ffffff;
+  background: linear-gradient(
+    269.82deg,
+    rgba(178, 226, 171, 0.2) 0.17%,
+    rgba(249, 253, 249, 0.15) 78.05%,
+    rgba(249, 253, 249, 0.1) 99.85%
+  );
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 15px 20px 0px 20px;
+  margin: 20px auto 0px auto;
 `;
 
 export const ChallengeTextArea = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 30px 0;
-  margin: 0 20px 0px 10px;
 `;
 
 export const ChallengeBody = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  width: 100px;
-  height: 133px;
-  border-radius: 5px;
-  background: #f9fdf9;
-  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
   position: relative;
   &:hover {
     cursor: pointer;
   }
 `;
 export const ChallengePhoto = styled.img`
-  width: 100px;
-  height: 107px;
-  background: rgba(255, 255, 255, 0.5);
+  width: 171px;
+  height: 173px;
+  padding: 7px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`
-  font-size: 18px;
+  font-family: "AppleNeoR";
+  font-size: 13px;
   line-height: 22px;
-  text-align: center;
-  color: #84ca79;
+  padding: 9px 0px 0px 0px;
+
+  color: #50674c;
 `;
 export const ChallengeTimer = styled.div`
-  width: 132px;
-  font-weight: 600;
+  width: 149px;
+  height: 36px;
+  font-family: "AppleNeoM";
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  padding: 10px 10px;
-  margin-top: 5px;
+  padding: 10px 1px;
+  margin: 79px -2px;
   color: white;
   background: #ade2e9;
   border-radius: 5px;

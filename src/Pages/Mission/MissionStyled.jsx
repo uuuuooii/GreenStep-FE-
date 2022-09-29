@@ -25,7 +25,7 @@ export const DailyMissionArea = styled.div`
   align-items: center;
   background: #fcfcfa;
   padding: 0px;
-  margin: 20px auto 0px auto;
+  margin: 27px auto 0px auto;
 `;
 export const WeeklyMissionArea = styled.div`
   display: flex;
@@ -52,6 +52,8 @@ export const DailyText = styled.div`
 export const DailyCardBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
   flex-direction: row;
 `;
 export const WatingBody = styled.div`

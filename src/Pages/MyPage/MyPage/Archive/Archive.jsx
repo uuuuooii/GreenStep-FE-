@@ -33,7 +33,7 @@ import {
   DeleteCancelButton,
   ModalArea,
   ArchivePage,
-} from './ArchiveStyled';
+} from "./ArchiveStyled";
 
 const Archive = () => {
   const param = useParams().id;
@@ -65,6 +65,7 @@ const Archive = () => {
       : state.userInfo.hide
   );
   useEffect(() => {
+    document.querySelector("body").style.maxWidth = "none";
     setLoding(true);
 
     //param 값으로 인증글,게시글,숨김글 분기
@@ -78,6 +79,14 @@ const Archive = () => {
     setData(serverData);
     setLoding(false);
   }, [dispatch]);
+
+const OnModal = () => {
+  document.getElementById('ch-plugin').style.display = 'none';
+  setModal(!modal)}
+
+  const OffModal = () => {
+    document.getElementById('ch-plugin').style.display = 'block';
+    setModal(!modal)}
 
   return (
     <ArchivePage>
@@ -102,7 +111,8 @@ const Archive = () => {
               </ArchiveSelectDiv>
             ) : (
               <div
-                onClick={() => (delArr.length > 0 ? setModal(!modal) : null)}
+                onClick={() => (delArr.length > 0 ? OnModal() : null)}
+
               >
                 <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
               </div>
@@ -177,15 +187,13 @@ const Archive = () => {
         ) : null}
       </WrapArchive>
 
-
-
       {modal ? (
         <ModalArea>
           <DeleteModal>
             <DeleteText>
               <DeleteTopText>
                 {param === "certification"
-                  ? "인증샷을 숨기면 아카이브 페이지에서 보이지 않습니다. 숨기기 하시겠습니까?"
+                  ? "게시글을 숨기기 하시면 아카이브 페이지에서 보여지지 않습니다. 숨기기 하시겠습니까?"
                   : param === "post"
                   ? "게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?"
                   : "해당 게시물들을 인증샷 아카이브로 이동하시겠습니까?"}
@@ -209,7 +217,7 @@ const Archive = () => {
                             ...data.filter((item) => !delArr.includes(item.id)),
                           ])
                         );
-                  setModal(!modal);
+                        OffModal();
                   setDelArr([]);
                 }}
               >
@@ -220,7 +228,7 @@ const Archive = () => {
                   : "숨기기"}
               </DeleteBottomText>
             </DeleteText>
-            <DeleteCancelButton onClick={() => setModal(!modal)}>
+            <DeleteCancelButton onClick={() => OffModal()}>
               취소
             </DeleteCancelButton>
           </DeleteModal>

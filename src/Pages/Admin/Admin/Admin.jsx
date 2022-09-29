@@ -1,6 +1,7 @@
 //react import
-import React, { useEffect, useState, useMemo } from "react";
-import instance from "../../../Redux/modules/instance";
+import React, { useEffect, useState, useMemo } from 'react';
+import useInput from '../../../hooks/useInput';
+import instance from '../../../Redux/modules/instance';
 //styled import
 import {
   AdminArea,
@@ -10,14 +11,15 @@ import {
   Textarea,
   Button,
   ButtonArea,
-} from "./AdminStyled";
+} from './AdminStyled';
 const Admin = () => {
   const [feedList, setFeedList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [reject, setReject] = useInput('');
   useEffect(() => {
     setLoading(true);
     instance
-      .get("/admin/verification")
+      .get('/admin/verification')
       .then((res) => setFeedList(res.data.data));
     setLoading(false);
   }, []);
@@ -32,7 +34,9 @@ const Admin = () => {
     );
   };
   const Reject = (id) => {
-    instance.post(`/admin/verification/${id}?verification=REJECTED`);
+    instance.post(`/admin/verification/${id}?verification=REJECTED`, {
+      info: reject,
+    });
     setFeedList(
       feedList.filter((it) => {
         return it.id !== id;
@@ -44,7 +48,7 @@ const Admin = () => {
     <>
       {!loading ? (
         feedList.map((item) =>
-          item.status == "WAITING" ? (
+          item.status == 'WAITING' ? (
             <AdminArea key={item.missionImgUrl}>
               <SubmitCard>
                 <SubmitPhoto src={item.missionImgUrl} />
@@ -52,19 +56,17 @@ const Admin = () => {
                 <p>미션 내용: {item.missionName}</p>
                 <p>email: {item.email}</p>
                 <TextareaArea>
-                  <Textarea placeholder="거절사유" />
+                  <Textarea placeholder="거절사유" onChange={setReject} />
                 </TextareaArea>
                 <ButtonArea>
                   <Button onClick={() => Verify(item.id)}>승인</Button>
-                  <Button color={"pink"} onClick={() => Reject(item.id)}>
+                  <Button color={'pink'} onClick={() => Reject(item.id)}>
                     거절
                   </Button>
                 </ButtonArea>
               </SubmitCard>
               <ButtonArea>
-              {item.missionType}: 
-                {item.missionName}
-                
+                {item.missionType}:{item.missionName}
               </ButtonArea>
             </AdminArea>
           ) : null

@@ -41,18 +41,27 @@ const DailyChallenge = ({ mission }) => {
       {mission ? (
         <ChallengeBox>
           <ChallengeTextArea>
-            <ChallengeTitle>Challenge Mission</ChallengeTitle>
+            <ChallengeTitle>챌린지 미션</ChallengeTitle>
+            <ChallengeMissionText title={mission.missionName}>
+              {mission.missionName}
+            </ChallengeMissionText>
             <ChallengeTimer>
-              미션 완료까지&nbsp;
+              미션 완료까지&nbsp;&nbsp;
               {hour < 10 ? "0" + hour : hour}:
               {minute < 10 ? "0" + minute : minute}:
               {second < 10 ? "0" + second : second}
             </ChallengeTimer>
           </ChallengeTextArea>
           <ChallengeBody
-            onClick={() => navigate(`/explain/${mission.missionId}&challenge`)}
+            onClick={() =>
+              mission.status === "DEFAULT"
+                ? navigate(`/explain/${mission.missionId}&challenge`)
+                : mission.status === "WAITING"
+                ? navigate(`explainwaiting/${mission.missionId}&challenge`)
+                : null
+            }
           >
-            {mission.status === "WATING" ? (
+            {mission.status === "WAITING" ? (
               <ChallengeWaiting>
                 <WatingText>인증 대기중</WatingText>
               </ChallengeWaiting>
@@ -64,8 +73,7 @@ const DailyChallenge = ({ mission }) => {
               </ChallengeWaiting>
             ) : null}
 
-            <ChallengePhoto src={mission.missionImageUrl} />
-            <ChallengeMissionText title={mission.missionName} >{mission.missionName}</ChallengeMissionText>
+            <ChallengePhoto src={mission.missionIconUrl} />
           </ChallengeBody>
         </ChallengeBox>
       ) : (

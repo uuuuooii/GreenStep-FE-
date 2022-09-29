@@ -10,14 +10,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 17px 0;
-  padding: 0 21px;
+  margin: 18px 0px 17px 0px;
+  padding: 0 16px;
 }
 
 .DeleteLine {
-  width: 358px;
-
+  width: 297px;
   border: 0.5px solid #c3c2c2;
+  margin: 0px -34px 0px 0px;
+}
+
+.archive-eye-icon {
+  margin-top: 4px;
 }
 
 .archive-grid-area {
@@ -38,6 +42,7 @@
   height: 123px;
   background-color: #f3f3f3;
 }
+
 .archive-flex-box {
   display: flex;
   justify-content: center;

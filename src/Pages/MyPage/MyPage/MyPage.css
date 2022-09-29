@@ -216,7 +216,7 @@
 .mypage-mission-count-and-point-area {
   display: flex;
   flex-direction: row;
-  margin: 42px 18px 0px 0px;
+  margin: 42px 20px 0px 0px;
 }
 
 .mypage-mission-count-area {
@@ -407,8 +407,8 @@
 }
 
 .posts-archive-images {
-  min-width: 145px;
-  height: 145px;
+  min-width: 122px;
+  height: 122px;
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.25);
   margin-right: 3px;
   background: #f3f3f3;

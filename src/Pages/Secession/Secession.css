@@ -1,14 +1,6 @@
-.secessionall {
-  background: #fcfcfa;
-}
-
-.secessionwrap {
-  padding: 0px 0px 0px 60px;
-}
-
 .secession-back-arrow-area {
-  margin: 8px 0px 16px 0px;
-  padding-bottom: 4px;
+  margin: 0px auto;
+  padding-top: 8px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -17,42 +9,47 @@
 }
 
 .secession-back-arrow-icon {
-  position: absolute;
-  margin: 15px 0px 3px 6px;
   font-size: 36px;
   color: #c3c2c2;
+  margin-bottom: 4px;
+  margin-left: 4px;
 }
 
-.secessiontext {
-
-  position: relative;
-  padding: 0px 0px 0px 150px;
+.secession-title-text {
+  font-family: "AppleNeoM";
   font-size: 20px;
   color: #50674c;
   font-weight: 600;
-  font-family: "AppleNeoM";
+  margin: 4px 0px 0px 6px;
 }
 
-.secessiontitle {
-  width: 217px;
-  height: 44px;
-  padding: 120px 0px 0px 35px;
-  font-family: "AppleNeoM";
+.secession-header-dummy {
+  width: 36px;
+  height: 36px;
+}
+
+.wrap-secession {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.secession-quit-text {
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
   color: #84ca79;
-
+  margin-top: 100px;
 }
 
-.secessionbutton {
+.secession-quit-image {
+  margin-left: 8px;
+}
 
+.secession-quit-button {
   cursor: pointer;
-  width: 223px;
-  height: 26px;
-  margin: 95px 24px;
-  padding: 0 17px;
   font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 15px;
@@ -61,14 +58,10 @@
   align-items: center;
   text-align: center;
   color: #fcfcfa;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  border: 0;
-  outline: 0;
-
-
   background: #c3c2c2;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
+  border: none;
+  padding: 4px 18px;
+  margin-top: 60px;
 }

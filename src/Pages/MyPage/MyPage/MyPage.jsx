@@ -153,17 +153,13 @@ const MyPage = ({ onClickToast }) => {
                   <ViewMoreLogOut />
                   <div
                     className="mypage-modal-logout-text"
-                    onClick={() =>
-                      instance.get("/kakao/logout").then((res) => {
-                        if (res.data.success) {
-                          // window.localStorage.clear();
-                          // window.sessionStorage.clear();
-                          window.location.replace(res.data.data);
-                          // navigate("/");
-                          onClickToast(`로그아웃 되었습니다`, 1);
-                        }
-                      })
-                    }
+                    onClick={() => {
+                      window.localStorage.clear();
+                      window.sessionStorage.clear();
+                      // window.location.replace("https://greenstepapp.com/");
+                      navigate("/");
+                      onClickToast(`로그아웃 되었습니다`, 1);
+                    }}
                   >
                     로그아웃
                   </div>

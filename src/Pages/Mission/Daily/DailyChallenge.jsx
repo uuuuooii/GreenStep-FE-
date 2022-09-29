@@ -54,7 +54,7 @@ const DailyChallenge = ({ mission }) => {
           </ChallengeTextArea>
           <ChallengeBody
             onClick={() =>
-              mission.status === 'DEFAULT'
+              mission.status === 'DEFAULT' || mission.status === 'REJECTED'
                 ? navigate(`/explain/${mission.missionId}&challenge`)
                 : mission.status === 'WAITING'
                 ? navigate(`explainwaiting/${mission.missionId}&challenge`)

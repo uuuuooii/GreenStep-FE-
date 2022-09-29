@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import Header from './Components/Header/Header';
@@ -38,11 +38,19 @@ import Introduce from './Pages/MyPage/MyPage/Introduce/Introduce';
 function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
+  const [check, setCheck] = useState(false);
   useEffect(() => {
-    if(display>0){
-    setTimeout(() => {
-      setDisplay(0);
-    }, 4000);}
+    if (check) {
+      setTimeout(() => {
+        setDisplay(0);
+      }, 4000);
+    }
+  }, [check]);
+  useEffect(() => {
+    setDisplay((pre) => {
+      display > pre || display === pre ? setCheck(true) : setCheck(false);
+      return display;
+    });
   }, [display]);
   return (
     <>

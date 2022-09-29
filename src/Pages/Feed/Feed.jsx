@@ -158,6 +158,10 @@ const Feed = () => {
             ]);
           });
     setLoading(false);
+    //피드가 없을경우 페이지값 변경(0으로 유지될 경우 갱신이 안됨)
+    if (FeedList.length === 0) {
+      setPage(1);
+    }
   };
   // 최하단에 도달 시 페이지 +1
   useEffect(() => {

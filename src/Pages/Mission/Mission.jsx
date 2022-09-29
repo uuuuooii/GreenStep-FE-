@@ -28,7 +28,7 @@ import {
 import "./Mission.css";
 import { HiPencil } from "react-icons/hi";
 
-const Mission = () => {
+const Mission = ({ onClickToast }) => {
   const [loading, setLoading] = useState(false);
   const missionWeekly = useSelector((state) => state.mission.weekly);
   const missionDaily = useSelector((state) => state.mission.daily);
@@ -143,7 +143,10 @@ const Mission = () => {
       </MissionPage>{" "}
       <div
         className="floating-round"
-        onClick={() => navigate("/archive/certification")}
+        onClick={() => {
+          navigate("/archive/certification");
+          onClickToast(`게시물 작성이 가능합니다`, 1);
+        }}
       >
         <HiPencil className="floating-icon" />
       </div>

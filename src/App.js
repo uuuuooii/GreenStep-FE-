@@ -39,15 +39,15 @@ function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
   useEffect(() => {
-    setTimeout(() => {
-      setDisplay(0);
-    }, 3000);
+    if (display > 0) {
+      setTimeout(() => {
+        setDisplay(0);
+      }, 4000);
+    }
   }, [display]);
   return (
     <>
       <BrowserRouter>
-        {/* <KakaoChannel  /> */}
-        {/* <SetPullToRefresh /> */}
         <ScrollToTop />
         <QueryClientProvider client={queryClient}>
           <Header />

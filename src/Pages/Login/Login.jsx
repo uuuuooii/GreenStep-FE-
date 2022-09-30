@@ -81,6 +81,7 @@ const Login = () => {
       document.getElementById("ch-plugin").style.display = "none";
     }, [100]);
   }, []);
+
   useEffect(() => {
     if (fourthView) {
       setFourthAni(true);

@@ -34,8 +34,10 @@ import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
 import UpdateLoading from "./Pages/Loading/UpdateLoading";
 import FourthModal from "./Pages/Login/Modal/FourthModal/FourthModal";
 import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 function App() {
+  RouteChangeTracker();
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
   useEffect(() => {

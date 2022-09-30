@@ -6,7 +6,10 @@ import { Provider } from "react-redux/es/exports";
 import store from "./Redux/ConfigureStore";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+import ReactGA from "react-ga";
 
+const TRACKING_ID = "UA-243737163-1";
+ReactGA.initialize(TRACKING_ID);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>

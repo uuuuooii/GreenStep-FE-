@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Kakaoshare.css";
-export const createShareButton=()=> {
+export const createShareButton = () => {
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
@@ -10,9 +10,8 @@ export const createShareButton=()=> {
       container: ".kakaoBtn",
       objectType: "feed",
       content: {
-        title:  "Green Step",
+        title: "Green Step",
         description:
-
           "당신의 작지만 일상적인 환경 미션을 통해서, 나비 효과를 만들어 아주 큰 변화로 이끌어보세요.",
         imageUrl:
           "https://postfiles.pstatic.net/MjAyMjA5MjFfMTA3/MDAxNjYzNzQyMDU4NzMw.TdlM0tvkOs_rkWCx6UYP0PtBBfrhashZENJ2MC0jyjAg.A_FnkPKNVen8Jl8wmK7Y8g7pskNWuDish7JpVGuqIswg.PNG.eunhey2717/KakaoTalk_Photo_2022-09-20-16-12-31_004.png?type=w773",
@@ -34,7 +33,7 @@ export const createShareButton=()=> {
   } else {
     console.log("KaKao CDN fetch error");
   }
-}
+};
 //카카오톡 공유버튼 만들기
 function KakaoShare({
   image = "",
@@ -86,7 +85,7 @@ function KakaoShare({
 
   return (
     <>
-      <a className="kakaoBtn">
+      <a className="kakao-btn">
         <div className="kakaoBtnTxt">카카오 공유하기</div>
       </a>
     </>

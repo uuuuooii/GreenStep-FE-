@@ -1,21 +1,16 @@
 import { RiKakaoTalkFill } from "react-icons/ri";
 import styled from "styled-components";
 
+//피드 올리기 버튼
 export const UploadButton = styled.div`
-  background: #b8dde2;
   color: #fcfcfa;
   border: none;
   display: flex;
-
   justify-content: center;
   align-items: center;
-  padding: 7px 19px;
-
+  /* padding: 7px 10px; */
   width: 132px;
   height: 18px;
-
-  /* primary 2.2 */
-
   background: #84ca79;
   border-radius: 30px;
   margin: 30px 0 10px 0;
@@ -23,6 +18,7 @@ export const UploadButton = styled.div`
     cursor: pointer;
   }
 `;
+// 카카오 공유하기
 export const ShareButton = styled.div`
   background: #b8dde2;
   color: #fcfcfa;
@@ -30,13 +26,14 @@ export const ShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7px 19px;
-  width: 132px;
-  height: 18px;
+  padding: 0;
+  /* width: 132px;
+  height: 18px; */
   background: #84ca79;
   border-radius: 30px;
   margin-bottom: 43px;
 `;
+
 export const PostShareButton = styled.div`
   background: #b8dde2;
   color: #fcfcfa;
@@ -44,7 +41,7 @@ export const PostShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7px 19px;
+  padding: 0;
   width: 132px;
   height: 18px;
   background: #84ca79;
@@ -97,7 +94,7 @@ export const UploadSkeleton = styled.div`
 export const ButtonArea = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   width: 100%;
 `;
 export const KakaoReactIcon = styled(RiKakaoTalkFill)`

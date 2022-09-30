@@ -20,6 +20,10 @@
   margin: 0px -34px 0px 0px;
 }
 
+.archive-eye-icon {
+  margin-top: 4px;
+}
+
 .archive-grid-area {
   width: 100%;
   display: grid;

@@ -55,8 +55,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <KakaoChannel  /> */}
-        {/* <SetPullToRefresh /> */}
         <ScrollToTop />
         <QueryClientProvider client={queryClient}>
           <Header />
@@ -70,7 +68,10 @@ function App() {
               path="/modal"
               element={<Modal onClickToast={onClickToast} />}
             />
-            <Route path="/mission" element={<Mission />} />
+            <Route
+              path="/mission"
+              element={<Mission onClickToast={onClickToast} />}
+            />
             <Route path="/missioncamera" element={<MissionCamera />} />
             <Route
               path="/missioncamera/:id"

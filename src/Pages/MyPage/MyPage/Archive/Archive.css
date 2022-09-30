@@ -4,6 +4,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.archive-title-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #51684d;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .archive-top-button {

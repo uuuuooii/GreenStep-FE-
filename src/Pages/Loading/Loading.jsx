@@ -9,7 +9,7 @@ import { userThunk } from "../../Redux/modules/user";
 import { IoIosArrowBack } from "react-icons/io";
 import LoadingBar from "../../Components/LoadingBar/LoadingBar";
 
-const Test = () => {
+const Loading = () => {
   const url = process.env.REACT_APP_URL;
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
@@ -48,4 +48,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Loading;

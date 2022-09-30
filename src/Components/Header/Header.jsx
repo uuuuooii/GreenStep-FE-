@@ -35,8 +35,8 @@ const Header = () => {
       .get('/notifications/count')
       .then((res) => setUnread(res.data.count));
     if (
-      !localStorage.getItem('Authorization') &&
-      !pathname === '/users/kakao/callback'
+      pathname !== '/users/kakao/callback' &&
+      !localStorage.getItem('Authorization')
     ) {
       navigate('/');
     }
@@ -44,7 +44,7 @@ const Header = () => {
   useEffect(() => {
     //구독하기
     if (token) {
-      const sse = new EventSource('http://13.209.16.253:8080/subscribe', {
+      const sse = new EventSource('https://greenstepserver.link/subscribe', {
         headers: {
           Authorization: token,
         },

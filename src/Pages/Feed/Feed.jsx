@@ -86,7 +86,6 @@ const Feed = () => {
     'energy',
     'etc',
   ];
-
   //clap
   const CheckClap = (item) => {
     //두개의 배열에 모두 들어가있을 경우 둘 다 삭제
@@ -158,6 +157,10 @@ const Feed = () => {
             ]);
           });
     setLoading(false);
+    //피드가 없을경우 페이지값 변경(0으로 유지될 경우 갱신이 안됨)
+    if (FeedList.length === 0) {
+      setPage(1);
+    }
   };
   // 최하단에 도달 시 페이지 +1
   useEffect(() => {
@@ -172,9 +175,7 @@ const Feed = () => {
     setLast(0);
   }, [category]);
   useEffect(() => {
-    if (page === 0 || page % 2 !== 0) {
-      TagClick();
-    }
+    TagClick();
   }, [page]);
   //페이지 랜더링시에 랭크정보 가져오기
   useEffect(() => {

@@ -6,6 +6,15 @@
   justify-content: space-between;
 }
 
+.archive-title-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0px 17px 30px;
+  padding: 0 16px;
+  color: #51684d;
+}
+
 .archive-top-button {
   display: flex;
   justify-content: center;

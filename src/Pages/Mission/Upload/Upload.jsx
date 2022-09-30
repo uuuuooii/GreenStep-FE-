@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useInput from '../../../hooks/useInput';
 //components import
 import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
-import { createShareButton } from '../../../Components/Kakaoshare/Kakaoshare';
+import KakaoShare from '../../../Components/Kakaoshare/Kakaoshare';
 //modules import
 import instance from '../../../Redux/modules/instance';
 import { getCertThunk } from '../../../Redux/modules/userInfoSlice';
@@ -140,7 +140,7 @@ const Upload = ({ onClickToast }) => {
                     <KakaoIconDiv>
                       <KakaoReactIcon />
                     </KakaoIconDiv>{' '}
-                    <ShareText>카카오 공유하기</ShareText>
+                    <KakaoShare>카카오 공유하기</KakaoShare>
                   </ButtonArea>
                 </ShareButton>
               </TotalButtonArea>

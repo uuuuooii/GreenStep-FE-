@@ -178,10 +178,10 @@ const Login = () => {
           >
             당신이 그릴 스텝,
           </LastText>
-          <LastText time={"2s"} animation={fourthAni ? FadeBottomOn : null}>
+          <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
             "내가 그린 스텝"{" "}
           </LastText>
-          <LastText time={"3s"} animation={fourthAni ? FadeBottomOn : null}>
+          <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
             지금 시작해볼까요?
           </LastText>
         </FourthArea>

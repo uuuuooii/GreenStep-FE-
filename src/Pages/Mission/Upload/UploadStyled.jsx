@@ -32,7 +32,6 @@ export const ShareButton = styled.div`
   margin-bottom: 43px;
 `;
 export const PostShareButton = styled.div`
-  background: #b8dde2;
   color: #fcfcfa;
   border: none;
   display: flex;
@@ -92,7 +91,6 @@ export const ButtonArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 `;
 export const KakaoReactIcon = styled(RiKakaoTalkFill)`
   font-size: 25px;

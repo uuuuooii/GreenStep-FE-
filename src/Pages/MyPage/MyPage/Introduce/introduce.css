@@ -1,5 +1,9 @@
 .introduce-text {
-    padding: 7px 0px 0px 28px;
-    color: #50674C;
+  font-family: "AppleNeoR";
+  padding: 0px 0px 0px 28px;
+  color: #50674c;
+}
 
+.introduce-link-color {
+  color: #50674c;
 }

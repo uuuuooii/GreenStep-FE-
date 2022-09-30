@@ -52,7 +52,7 @@ const DetailPosts = ({ onClickToast }) => {
 
   return (
     <>
-      {!loading ? (
+      {!loading&&detailPost ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
             <div className="detail-posts-close-button-area">

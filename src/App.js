@@ -23,8 +23,6 @@ import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
 import Loading from "./Pages/Loading/Loading";
 import Error from "./Pages/Error/Error";
 import ExplainWaiting from "./Pages/Mission/Explain/ExplainWaiting";
-import instance from "./Redux/modules/instance";
-import SetPullToRefresh from "./Components/PullToRefresh/SetPullToRefresh";
 import ScrollToTop from "./Components/ScrollTop/ScrollTop";
 import useToast from "./hooks/useToast";
 import Toast from "./Components/Toast/Toast";
@@ -32,12 +30,9 @@ import Secession from "./Pages/Secession/Secession";
 import Alarm from "./Pages/Alarm/Alarm";
 import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
 import UpdateLoading from "./Pages/Loading/UpdateLoading";
-import FourthModal from "./Pages/Login/Modal/FourthModal/FourthModal";
 import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
-import RouteChangeTracker from "./RouteChangeTracker";
 
 function App() {
-  RouteChangeTracker();
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
   useEffect(() => {

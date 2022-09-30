@@ -40,7 +40,7 @@
 }
 
 .explain-mission-name-text {
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-size: 25px;
   line-height: 30px;
   margin: 0px 0px 10px 0px;
@@ -48,7 +48,7 @@
 }
 
 .explain-mission-tag-text {
-  font-family: "AppleNeoM";
+  font-family: 'AppleNeoM';
   line-height: 18px;
   font-size: 15px;
   margin: 2px 0px 0px 0px;
@@ -56,7 +56,7 @@
 }
 
 .explain-mission-contents-text {
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   line-height: 18px;
   margin: 15px 0px 0px 0px;
   font-size: 15px;
@@ -99,10 +99,11 @@
   flex-direction: column;
 }
 
-.explain-mission-center-point-area {}
+.explain-mission-center-point-area {
+}
 
 .explain-mission-center-point-text {
-  font-family: "AppleNeoM";
+  font-family: 'AppleNeoM';
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -117,7 +118,7 @@
 .explain-waiting-bar {
   position: relative;
   font-size: 25px;
-  font-family: "AppleNeoM";
+  font-family: 'AppleNeoM';
   font-weight: 700;
   letter-spacing: 0.05em;
   line-height: 30px;
@@ -131,11 +132,14 @@
   margin: 30px 0 82px 0;
   padding: 8px 0px 10px 0px;
 }
+.explain-waiting-bar:hover {
+  cursor: pointer;
+}
 
 .explain-text {
   position: absolute;
   bottom: 35px;
-  color: #ADE2E9;
+  color: #ade2e9;
   font-size: 15px;
   text-align: center;
   justify-content: center;

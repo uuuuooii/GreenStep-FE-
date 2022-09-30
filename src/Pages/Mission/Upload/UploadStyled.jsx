@@ -8,7 +8,7 @@ export const UploadButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 7px 10px; */
+  padding: 7px 19px;
   width: 132px;
   height: 18px;
   background: #84ca79;
@@ -35,7 +35,6 @@ export const ShareButton = styled.div`
 `;
 
 export const PostShareButton = styled.div`
-  background: #b8dde2;
   color: #fcfcfa;
   border: none;
   display: flex;
@@ -94,8 +93,7 @@ export const UploadSkeleton = styled.div`
 export const ButtonArea = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: flex-start; */
-  width: 100%;
+  justify-content: center;
 `;
 export const KakaoReactIcon = styled(RiKakaoTalkFill)`
   font-size: 25px;
@@ -107,8 +105,6 @@ export const UploadIconDiv = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-left: 15px;
-  margin-top: 2px;
 `;
 
 export const KakaoIconDiv = styled.div`
@@ -116,7 +112,7 @@ export const KakaoIconDiv = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-left: 2px;
+  margin-right: 5px;
 `;
 
 export const IconDiv = styled.div`

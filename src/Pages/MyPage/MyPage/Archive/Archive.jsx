@@ -1,21 +1,21 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 //modules import
 import {
   getPostThunk,
   getCertThunk,
   getHideThunk,
-} from "../../../../Redux/modules/userInfoSlice";
-import instance from "../../../../Redux/modules/instance";
+} from '../../../../Redux/modules/userInfoSlice';
+import instance from '../../../../Redux/modules/instance';
 //styled import
-import styled from "styled-components";
-import "./Archive.css";
-import TrashIcon from "../../../../static/components/Archive/TrashIcon";
-import Cancel from "../../../../static/components/Archive/Cancel";
-import BackMypage from "../../../../static/components/Archive/BackMypage";
-import { FadeOn } from "../../../../Components/Animation/Animation";
+import styled from 'styled-components';
+import './Archive.css';
+import TrashIcon from '../../../../static/components/Archive/TrashIcon';
+import Cancel from '../../../../static/components/Archive/Cancel';
+import BackMypage from '../../../../static/components/Archive/BackMypage';
+import { FadeOn } from '../../../../Components/Animation/Animation';
 
 import {
   ImageCard,
@@ -33,7 +33,7 @@ import {
   DeleteCancelButton,
   ModalArea,
   ArchivePage,
-} from "./ArchiveStyled";
+} from './ArchiveStyled';
 
 const Archive = () => {
   const param = useParams().id;
@@ -44,8 +44,6 @@ const Archive = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  console.log(data);
 
   const CancelClick = () => {
     setDelState(!delState);
@@ -58,20 +56,20 @@ const Archive = () => {
   }
   //param 값으로 저장소 분기
   const serverData = useSelector((state) =>
-    param === "certification"
+    param === 'certification'
       ? state.userInfo.certification
-      : param === "post"
+      : param === 'post'
       ? state.userInfo.post
       : state.userInfo.hide
   );
   useEffect(() => {
-    document.querySelector("body").style.maxWidth = "none";
+    document.querySelector('body').style.maxWidth = 'none';
     setLoding(true);
 
     //param 값으로 인증글,게시글,숨김글 분기
-    param === "certification"
+    param === 'certification'
       ? dispatch(getCertThunk())
-      : param === "post"
+      : param === 'post'
       ? dispatch(getPostThunk())
       : instance
           .get(`/profiles/setting/hidden-missions`)
@@ -81,12 +79,12 @@ const Archive = () => {
   }, [dispatch]);
 
   const OnModal = () => {
-    document.getElementById("ch-plugin").style.display = "none";
+    document.getElementById('ch-plugin').style.display = 'none';
     setModal(!modal);
   };
 
   const OffModal = () => {
-    document.getElementById("ch-plugin").style.display = "block";
+    document.getElementById('ch-plugin').style.display = 'block';
     setModal(!modal);
   };
 
@@ -96,25 +94,27 @@ const Archive = () => {
         <div className="back-and-settings-button-area">
           <div
             className="archive-top-button"
-            onClick={() => (delState ? CancelClick() : navigate("/mypage"))}
+            onClick={() => (delState ? CancelClick() : navigate('/mypage'))}
           >
             {!delState ? <BackMypage /> : <Cancel />}
           </div>
-          <div className="archive-title-text">인증샷 아카이브</div>
+          <div className="archive-title-text">
+            {param === 'post' ? '게시물 아카이브' : '인증샷 아카이브'}
+          </div>
           <div className="archive-top-button">
             {!delState ? (
               <ArchiveSelectDiv onClick={() => setDelState(!delState)}>
                 {data.length === 0
                   ? null
-                  : param === "post"
-                  ? "삭제"
-                  : param === "certification"
-                  ? "숨기기"
-                  : "복구"}
+                  : param === 'post'
+                  ? '삭제'
+                  : param === 'certification'
+                  ? '숨기기'
+                  : '복구'}
               </ArchiveSelectDiv>
             ) : (
               <div onClick={() => (delArr.length > 0 ? OnModal() : null)}>
-                <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
+                <TrashIcon color={delArr.length > 0 ? '#B2E2AB' : '#d9d9d9'} />
               </div>
             )}
           </div>
@@ -127,14 +127,14 @@ const Archive = () => {
                   src={item.missionImgUrl}
                   onClick={() => {
                     navigate(
-                      param === "post"
+                      param === 'post'
                         ? `/detailposts/${item.id} `
                         : `/upload/${item.id}`
                     );
                   }}
                 />
                 <DeleteDiv
-                  display={delState ? "flex" : "none"}
+                  display={delState ? 'flex' : 'none'}
                   onClick={() =>
                     delArr.includes(item.id)
                       ? setDelArr([...delArr.filter((a) => a !== item.id)])
@@ -143,26 +143,26 @@ const Archive = () => {
                   check={delArr}
                   num={item.id}
                 >
-                  {" "}
+                  {' '}
                   {delArr.includes(item.id) ? <Check /> : <NonCheck />}
                 </DeleteDiv>
               </CardArea>
             ))
           ) : (!loading && data.length) === 1 ? (
             <CardArea key={data.id}>
-              {" "}
+              {' '}
               <ImageCard
                 src={data[0].missionImgUrl}
                 onClick={() =>
                   navigate(
-                    param === "post"
+                    param === 'post'
                       ? `/detailposts/${data[0].id}`
                       : `/upload/${data[0].id}`
                   )
                 }
               />
               <DeleteDiv
-                display={delState ? "flex" : "none"}
+                display={delState ? 'flex' : 'none'}
                 onClick={() =>
                   delArr.includes(data[0].id)
                     ? setDelArr([])
@@ -180,7 +180,7 @@ const Archive = () => {
           <div className="archive-flex-box">
             <div className="archive-flex-text">
               {
-                "아직 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!"
+                '아직 흔적이 보이지 않아요 🥲 \n 지구를 향한 그린 스텝 보여주세요!'
               }
             </div>
           </div>
@@ -192,17 +192,17 @@ const Archive = () => {
           <DeleteModal>
             <DeleteText>
               <DeleteTopText>
-                {param === "certification"
-                  ? "게시글을 숨기기 하시면 아카이브 페이지에서 보여지지 않습니다. 숨기기 하시겠습니까?"
-                  : param === "post"
-                  ? "게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?"
-                  : "해당 게시물들을 인증샷 아카이브로 이동하시겠습니까?"}
+                {param === 'certification'
+                  ? '게시글을 숨기기 하시면 아카이브 페이지에서 보여지지 않습니다. 숨기기 하시겠습니까?'
+                  : param === 'post'
+                  ? '게시글을 삭제 하시면 게시물 페이지에서 보여지지 않습니다. 삭제 하시겠습니까?'
+                  : '해당 게시물들을 인증샷 아카이브로 이동하시겠습니까?'}
               </DeleteTopText>
               <hr className="DeleteLine" />
               {/* <DeleteLine /> */}
               <DeleteBottomText
                 onClick={() => {
-                  param === "post"
+                  param === 'post'
                     ? instance
                         .delete(`/feed`, { data: delArr })
                         .then(() =>
@@ -221,11 +221,11 @@ const Archive = () => {
                   setDelArr([]);
                 }}
               >
-                {param === "certification"
-                  ? "가려진 항목으로 이동"
-                  : param === "post"
-                  ? "삭제하기"
-                  : "복구하기"}
+                {param === 'certification'
+                  ? '가려진 항목으로 이동'
+                  : param === 'post'
+                  ? '삭제하기'
+                  : '복구하기'}
               </DeleteBottomText>
             </DeleteText>
             <DeleteCancelButton onClick={() => OffModal()}>

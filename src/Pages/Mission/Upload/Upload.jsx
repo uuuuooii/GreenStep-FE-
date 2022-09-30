@@ -69,7 +69,7 @@ const Upload = ({ onClickToast }) => {
               <div className="upload-mission-close-button-area">
                 <div
                   className="upload-mission-close-button"
-                  onClick={() => navigate("/archive/certification")}
+                  onClick={() => navigate(-1)}
                 >
                   <HiOutlineX />
                 </div>
@@ -120,7 +120,6 @@ const Upload = ({ onClickToast }) => {
                 onfocus="this.placeholder = ''"
               />
               <TotalButtonArea>
-               
                 <UploadButton
                   onClick={() =>
                     data.onFeed

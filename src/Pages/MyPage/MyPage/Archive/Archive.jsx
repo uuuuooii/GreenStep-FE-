@@ -100,6 +100,7 @@ const Archive = () => {
           >
             {!delState ? <BackMypage /> : <Cancel />}
           </div>
+          <div className="archive-title-text">인증샷 아카이브</div>
           <div className="archive-top-button">
             {!delState ? (
               <ArchiveSelectDiv onClick={() => setDelState(!delState)}>

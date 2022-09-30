@@ -25,7 +25,7 @@ export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
 export const ArchiveSelectDiv = styled.div`
   font-family: "AppleNeoR";
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   color: #50674c;
   &:hover {
@@ -118,7 +118,6 @@ export const DeleteTopText = styled.div`
   letter-spacing: 0.03em;
   margin: 13.5px;
   padding: 0 28px 0px 47px;
-  
 `;
 export const DeleteLine = styled.div`
   width: 100%;

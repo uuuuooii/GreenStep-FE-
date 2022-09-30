@@ -11,7 +11,16 @@ const Introduce = () => {
           <IoIosArrowBack className="error-back-arrow-icon" />
         </div>
       </div>
-      <div className="introduce-text"> 운영자: keunhey0107@gmail.com</div>
+      <div className="introduce-text">
+        운영자:
+        <a
+          href="mailto: keunhey0107@gmail.com"
+          className="introduce-link-color"
+        >
+          {" "}
+          keunhey0107@gmail.com{" "}
+        </a>
+      </div>
     </>
   );
 };

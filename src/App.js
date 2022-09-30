@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { QueryClientProvider, QueryClient } from 'react-query';
-import Header from './Components/Header/Header';
+import React, { useEffect, useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 import Admin from './Pages/Admin/Admin/Admin';
 import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
@@ -32,9 +32,10 @@ import AlarmList from './Pages/Alarm/AlarmList/AlarmList';
 import UpdateLoading from './Pages/Loading/UpdateLoading';
 import Introduce from './Pages/MyPage/MyPage/Introduce/Introduce';
 
+
 function App() {
   const queryClient = new QueryClient();
-  const [toastNum, onClickToast, display, setDisplay, text,] = useToast(0);
+  const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
   useEffect(() => {
     if (display > 0) {
       setTimeout(() => {

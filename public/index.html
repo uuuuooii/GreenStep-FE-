@@ -69,65 +69,61 @@
 
 
   <script>
-    //Google tag (gtag.js)
+    // Google tag (gtag.js)
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
-    // gtag('js', new Date());
+    gtag('js', new Date());
 
-    // gtag('config', 'G-GEGHDT1405', {
-    //   page_title: 'login',
-    //   page_location: 'https://greenstepapp.com/', // Include the full URL
-    //   page_title: 'mission',
-    //   page_location: 'https://greenstepapp.com/mission',
-    //   page_title: 'feed',
-    //   page_location: 'https://greenstepapp.com/feed',
-    //   page_title: 'mypage',
-    //   page_location: 'https://greenstepapp.com/mypage',
-    //   page_title: 'explain',
-    //   page_location: 'https://greenstepapp.com/explain',
-    //   page_title: 'explain',
-    //   page_location: 'https://greenstepapp.com/explain/:id',
-    //   page_title: 'explainwaiting',
-    //   page_location: 'https://greenstepapp.com/explainwaiting',
-    //   page_title: 'explainwaiting',
-    //   page_location: 'https://greenstepapp.com/explainwaiting/:id',
-    //   page_title: 'missioncamera',
-    //   page_location: 'https://greenstepapp.com/missioncamera',
-    //   page_title: 'alarmlist',
-    //   page_location: 'https://greenstepapp.com/alarmlist',
-    //   page_title: 'archive/certification',
-    //   page_location: 'https://greenstepapp.com/archive/certification',
-    //   page_title: 'archive/post',
-    //   page_location: 'https://greenstepapp.com/archive/post',
-    //   page_title: 'upload',
-    //   page_location: 'https://greenstepapp.com/upload',
-    //   page_title: 'upload',
-    //   page_location: 'https://greenstepapp.com/upload/id',
-    //   page_title: 'detailposts',
-    //   page_location: 'https://greenstepapp.com/detailposts',
-    //   page_title: 'detailposts',
-    //   page_location: 'https://greenstepapp.com/detailposts/id',
-    //   page_title: 'error',
-    //   page_location: 'https://greenstepapp.com/*',
-    //   page_title: 'secession',
-    //   page_location: 'https://greenstepapp.com/secession',
-    //   page_title: 'introduce',
-    //   page_location: 'https://greenstepapp.com/introduce',
-    //   page_title: 'archive/hide',
-    //   page_location: 'https://greenstepapp.com/archive/hide',
-
-    // });
+    gtag('config', 'G-GEGHDT1405', {
+      page_title: 'login',
+      page_location: 'https://greenstepapp.com/', // Include the full URL
+      page_title: 'mission',
+      page_location: 'https://greenstepapp.com/mission',
+      page_title: 'feed',
+      page_location: 'https://greenstepapp.com/feed',
+      page_title: 'mypage',
+      page_location: 'https://greenstepapp.com/mypage',
+      page_title: 'explain',
+      page_location: 'https://greenstepapp.com/explain',
+      page_title: 'explain',
+      page_location: 'https://greenstepapp.com/explain/:id',
+      page_title: 'explainwaiting',
+      page_location: 'https://greenstepapp.com/explainwaiting',
+      page_title: 'explainwaiting',
+      page_location: 'https://greenstepapp.com/explainwaiting/:id',
+      page_title: 'missioncamera',
+      page_location: 'https://greenstepapp.com/missioncamera',
+      page_title: 'alarmlist',
+      page_location: 'https://greenstepapp.com/alarmlist',
+      page_title: 'archive/certification',
+      page_location: 'https://greenstepapp.com/archive/certification',
+      page_title: 'archive/post',
+      page_location: 'https://greenstepapp.com/archive/post',
+      page_title: 'upload',
+      page_location: 'https://greenstepapp.com/upload',
+      page_title: 'upload',
+      page_location: 'https://greenstepapp.com/upload/id',
+      page_title: 'detailposts',
+      page_location: 'https://greenstepapp.com/detailposts',
+      page_title: 'detailposts',
+      page_location: 'https://greenstepapp.com/detailposts/id',
+      page_title: 'error',
+      page_location: 'https://greenstepapp.com/*',
+      page_title: 'secession',
+      page_location: 'https://greenstepapp.com/secession',
+      page_title: 'introduce',
+      page_location: 'https://greenstepapp.com/introduce',
+      page_title: 'archive/hide',
+      page_location: 'https://greenstepapp.com/archive/hide',
+    });
     //Channel Plugin Scripts 
     (function () {
       var w = window;
-      w.id = 'channelTalk'
       if (w.ChannelIO) {
-        return (window.console.error || window.console.log || function () {})(
-          "ChannelIO script included twice."
-        );
+        return (window.console.error || window.console.log || function () {})('ChannelIO script included twice.');
       }
       var ch = function () {
         ch.c(arguments);
@@ -143,28 +139,27 @@
           return;
         }
         w.ChannelIOInitialized = true;
-        var s = document.createElement("script");
-        s.type = "text/javascript";
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
         s.async = true;
-        s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
-        s.charset = "UTF-8";
-        var x = document.getElementsByTagName("script")[0];
+        s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+        s.charset = 'UTF-8';
+        var x = document.getElementsByTagName('script')[0];
         x.parentNode.insertBefore(s, x);
       }
-      if (document.readyState === "complete") {
+      if (document.readyState === 'complete') {
         l();
       } else if (window.attachEvent) {
-        window.attachEvent("onload", l);
+        window.attachEvent('onload', l);
       } else {
-        window.addEventListener("DOMContentLoaded", l, false);
-        window.addEventListener("load", l, false);
+        window.addEventListener('DOMContentLoaded', l, false);
+        window.addEventListener('load', l, false);
       }
     })();
-    ChannelIO("boot", {
-      pluginKey: "0f8cda23-1dfd-49f1-9e44-1eeccf36d4e7",
+    ChannelIO('boot', {
+      "pluginKey": "0f8cda23-1dfd-49f1-9e44-1eeccf36d4e7"
     });
     //End Channel Plugin 
-
     //pwa
     var deferredPrompt;
 

@@ -37,20 +37,13 @@ import Introduce from './Pages/MyPage/MyPage/Introduce/Introduce';
 
 function App() {
   const queryClient = new QueryClient();
-  const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
-  const [check, setCheck] = useState(false);
+  const [toastNum, onClickToast, display, setDisplay, text,] = useToast(0);
   useEffect(() => {
-    if (check) {
+    if (display > 0) {
       setTimeout(() => {
         setDisplay(0);
       }, 4000);
     }
-  }, [check]);
-  useEffect(() => {
-    setDisplay((pre) => {
-      display > pre || display === pre ? setCheck(true) : setCheck(false);
-      return display;
-    });
   }, [display]);
   return (
     <>
@@ -124,7 +117,7 @@ function App() {
             <Route path="*" element={<Error />} />
           </Routes>
         </QueryClientProvider>
-        {display === 1 ? <Toast text={text} toastNum={toastNum} /> : null}
+        {display > 0 ? <Toast text={text} toastNum={toastNum} /> : null}
       </BrowserRouter>
     </>
   );

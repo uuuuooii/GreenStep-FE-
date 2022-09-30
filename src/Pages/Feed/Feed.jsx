@@ -86,7 +86,7 @@ const Feed = () => {
     'energy',
     'etc',
   ];
-
+console.log(page,inView)
   //clap
   const CheckClap = (item) => {
     //두개의 배열에 모두 들어가있을 경우 둘 다 삭제
@@ -176,9 +176,8 @@ const Feed = () => {
     setLast(0);
   }, [category]);
   useEffect(() => {
-    if (page === 0 || page % 2 !== 0) {
       TagClick();
-    }
+
   }, [page]);
   //페이지 랜더링시에 랭크정보 가져오기
   useEffect(() => {

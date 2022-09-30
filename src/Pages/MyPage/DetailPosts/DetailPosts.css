@@ -47,6 +47,7 @@
 .detail-posts-mission-icon {
   margin: 0 5px;
 }
+
 .detail-posts-mission-img-div {
   position: relative;
   display: flex;
@@ -54,21 +55,25 @@
   align-items: center;
   flex-direction: column;
 }
+
 .detail-posts-mission-image-area {
   width: 90%;
   height: 338px;
   margin: 0px auto 38px auto;
   background-color: rgba(255, 255, 255, 0.7);
 }
+
 .detail-posts-mission-name-area {
   display: flex;
   justify-content: space-between;
   margin: 0px 0px 10px 0px;
 }
+
 .detail-posts-clap-area {
   display: flex;
   margin-right: 50px;
 }
+
 .detail-posts-clap-point {
   display: flex;
   justify-content: center;
@@ -83,13 +88,16 @@
   color: #84ca79;
   margin: 0px 9px 1px 0px;
 }
+
 .detail-posts-flex-position {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 .detail-posts-mission-contents-box {
+  word-break: break-all;
   width: 338px;
   height: 80px;
   margin-left: 18px;

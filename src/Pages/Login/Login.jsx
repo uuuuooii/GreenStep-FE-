@@ -150,7 +150,7 @@ const Login = () => {
         </SecondArea>
         <FirstArea>
           <FirstTitle animation={thirdAni ? FadeBottomOn : null}>
-            Habbit
+            Habit
           </FirstTitle>
           <FirstImgDiv>
             <FirstImg

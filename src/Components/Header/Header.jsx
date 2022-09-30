@@ -35,8 +35,8 @@ const Header = () => {
       .get('/notifications/count')
       .then((res) => setUnread(res.data.count));
     if (
-      !localStorage.getItem('Authorization') &&
-      !pathname === '/users/kakao/callback'
+      pathname !== '/users/kakao/callback' &&
+      !localStorage.getItem('Authorization')
     ) {
       navigate('/');
     }

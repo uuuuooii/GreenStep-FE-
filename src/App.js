@@ -20,7 +20,7 @@ import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
 import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
 import Modal from "./Pages/Login/Modal";
 import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
-import Loding from "./Pages/Loding/Loding";
+import Loading from "./Pages/Loading/Loading";
 import Error from "./Pages/Error/Error";
 import ExplainWaiting from "./Pages/Mission/Explain/ExplainWaiting";
 import instance from "./Redux/modules/instance";
@@ -31,7 +31,7 @@ import Toast from "./Components/Toast/Toast";
 import Secession from "./Pages/Secession/Secession";
 import Alarm from "./Pages/Alarm/Alarm";
 import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
-import UpdateLoading from "./Pages/Loding/UpdateLoading";
+import UpdateLoading from "./Pages/Loading/UpdateLoading";
 import FourthModal from "./Pages/Login/Modal/FourthModal/FourthModal";
 import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
 
@@ -53,7 +53,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/users/kakao/callback" element={<Loding />} />
+            <Route path="/users/kakao/callback" element={<Loading />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
             <Route path="/alert" element={<Alert />} />

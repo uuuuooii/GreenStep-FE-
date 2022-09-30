@@ -47,12 +47,14 @@
 .header-icon-right {
   font-size: 25px;
   position: absolute;
-  right: 14px;
-  top: 12px;
+  right: 15px;
+  top: 14px;
 }
+
 .header-new-list-div {
   position: relative;
 }
+
 .header-new-list {
   width: 15px;
   height: 14px;
@@ -61,12 +63,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1.8px solid #50674c;
+  border: 2px solid #50674c;
   border-radius: 10px;
   position: absolute;
   left: 12px;
-  top: -3px;
+  top: -4px;
   background-color: red;
-  padding-top: 1px;
+  padding-bottom: 1px;
+  font-family: "AppleNeoR";
   font-size: 12px;
 }

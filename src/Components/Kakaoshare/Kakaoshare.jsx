@@ -53,7 +53,7 @@ function KakaoShare({
   return (
     <>
       <a className="kakaoBtn">
-        <div className="kakaoBtnTxt">카카오 공유하기</div>
+        <p className="kakaoBtnTxt">카카오 공유하기</p>
       </a>
     </>
   );

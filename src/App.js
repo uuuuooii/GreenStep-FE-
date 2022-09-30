@@ -31,10 +31,14 @@ import Alarm from "./Pages/Alarm/Alarm";
 import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
 import UpdateLoading from "./Pages/Loading/UpdateLoading";
 import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
+import RouteChangeTracker from "./RouteChangeTracker";
 
 function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
+
+  RouteChangeTracker();
+
   useEffect(() => {
     if (display > 0) {
       setTimeout(() => {

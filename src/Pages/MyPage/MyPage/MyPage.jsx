@@ -137,7 +137,7 @@ const MyPage = ({ onClickToast }) => {
                     className="mypage-modal-cc-text"
                     onClick={() => navigate("/introduce")}
                   >
-                    고객센터
+                    개발자에게 피드백
                   </div>
                 </div>
                 <div className="mypage-modal-quit-area">

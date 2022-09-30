@@ -58,7 +58,7 @@ const DetailPosts = ({ onClickToast }) => {
             <div className="detail-posts-close-button-area">
               <div
                 className="detail-posts-close-button"
-                onClick={() => navigate("/archive/post")}
+                onClick={() => navigate(-1)}
               >
                 <HiOutlineX />
               </div>

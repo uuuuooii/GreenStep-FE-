@@ -25,7 +25,7 @@ export const DailyMissionArea = styled.div`
   align-items: center;
   background: #fcfcfa;
   padding: 0px;
-  margin: 27px auto 0px auto;
+  margin: 15px auto 0px auto;
 `;
 export const WeeklyMissionArea = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const WeeklyMissionArea = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0px 0px 16px;
-  margin: 20px auto;
+  margin: 4px auto 20px auto;
 `;
 export const DailyTextArea = styled.div`
   width: 100%;
@@ -43,7 +43,7 @@ export const DailyTextArea = styled.div`
 `;
 export const DailyText = styled.div`
   font-family: "AppleNeoR";
-  margin: 15px 15px 15px 20px;
+  margin: 15px 15px 15px 18px;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
@@ -52,9 +52,9 @@ export const DailyText = styled.div`
 export const DailyCardBox = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center;
-  align-items: center; */
-  flex-direction: row;
+  justify-content: space-evenly;
+  /* padding: 0 14px; */
+  align-items: center;
 `;
 export const WatingBody = styled.div`
   background-color: rgba(0, 0, 0, 0.5);

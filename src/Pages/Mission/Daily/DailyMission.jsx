@@ -6,11 +6,6 @@ import { __GetDailymission } from "../../../Redux/modules/mission";
 import { useDispatch } from "react-redux";
 
 const DailyMission = ({ item, type }) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(__GetDailymission());
-  }, [dispatch]);
-
   const navigate = useNavigate();
   return (
     <DailyBody

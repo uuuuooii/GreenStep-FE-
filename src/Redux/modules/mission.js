@@ -38,7 +38,6 @@ export const __GetWeeklymission = createAsyncThunk(
 const missionItem = createSlice({
   name: "mission",
   initialState: {
-    loaded: false,
     challenge: [],
     daily: [],
     weekly: [],
@@ -46,15 +45,12 @@ const missionItem = createSlice({
   reducers: {},
   extraReducers: {
     [__GetTodaymission.fulfilled]: (state, action) => {
-      state.loaded = true;
       state.challenge = action.payload;
     },
     [__GetDailymission.fulfilled]: (state, action) => {
-      state.loaded = true;
       state.daily = action.payload;
     },
     [__GetWeeklymission.fulfilled]: (state, action) => {
-      state.loaded = true;
       state.weekly = action.payload;
     },
   },

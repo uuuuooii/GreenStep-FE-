@@ -35,8 +35,8 @@ export const ButtonBody = styled.div`
 export const LogoGraDiv = styled.div`
   /* width: 100%; */
   /* height: 100%; */
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   max-width: 100%;
   max-height: 100%;
   background: linear-gradient(#daf2d5, white);
@@ -288,6 +288,9 @@ export const DownButton = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 9;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 export const DownArrow = styled(AiOutlineArrowDown)`
   font-size: 28px;

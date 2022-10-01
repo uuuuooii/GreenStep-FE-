@@ -65,11 +65,12 @@ const AlarmList = ({ onClickToast }) => {
   };
 
   useEffect(() => {
+    instance.get('/notification/open')
     if (alertOpen) document.addEventListener('mousedown', clickOutSide);
     return () => {
       document.removeEventListener('mousedown', clickOutSide);
     };
-  });
+  },[]);
 
   return (
     <>

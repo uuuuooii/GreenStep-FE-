@@ -26,7 +26,7 @@ export const ShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 7px 19px;
   /* width: 132px;
   height: 18px; */
   background: #84ca79;

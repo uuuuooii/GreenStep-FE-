@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DailyBody = styled.div`
   display: flex;
@@ -10,7 +10,8 @@ export const DailyBody = styled.div`
   height: 170px;
   border-radius: 5px;
   background: #daf2d5;
-  margin: 10px auto;
+  margin: 10px 0;
+  box-shadow: 0px 2px 2px rgba(134, 134, 134, 0.3);
   position: relative;
   &:hover {
     cursor: pointer;
@@ -31,7 +32,7 @@ export const MissionText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 13px;
   line-height: 16px;
   color: #50674c;

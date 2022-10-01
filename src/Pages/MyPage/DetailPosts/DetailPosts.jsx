@@ -23,8 +23,6 @@ import {
 } from '../../Mission/Upload/UploadStyled';
 import DoneClap from '../../../static/components/DoneClap';
 
-import { hideArr } from '../../../static/path/Path';
-
 const DetailPosts = ({ onClickToast }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -35,15 +33,13 @@ const DetailPosts = ({ onClickToast }) => {
       ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
-  const path = useLocation()
-  console.log(path)
-  console.log(hideArr)
+
   //post의 id값들을 담을배열(페이지 이동시 지표)
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
   );
-//내림차순 정렬
+  //내림차순 정렬
   IdArr.sort(function (a, b) {
     return b - a;
   });
@@ -56,7 +52,7 @@ const DetailPosts = ({ onClickToast }) => {
 
   return (
     <>
-      <div className="detail-posts-background" />
+      <div className="detail-posts-background"/>
       {!loading && detailPost ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">

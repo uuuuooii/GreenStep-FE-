@@ -9,13 +9,19 @@ import { BiBell } from 'react-icons/bi';
 import HeaderLogo from '../../static/components/HeaderLogo';
 //component import
 import { pathArr, hideArr } from '../../static/path/Path';
+import instance from '../../Redux/modules/instance';
 import {
+  useDeleteAlert,
+  useDeleteAlertAll,
+  useGetMessageAlert,
   useGetUnreadAlert,
+  usePostReadAlert,
 } from '../../hooks/useNotification';
 const EventSource = EventSourcePolyfill || NativeEventSource;
 const Header = () => {
   //주소값
   const { pathname } = useLocation();
+  const [path,setPath] = useState('')
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { data: alertUnreadList } = useGetUnreadAlert();
@@ -24,33 +30,45 @@ const Header = () => {
   const [y, setY] = useState(document.scrollingElement.scrollHeight);
   const [hide, setHide] = useState(false);
   const unreadList = alertUnreadList?.data.count;
+  console.log(path)
   useEffect(() => {
+
+    //안읽은 알람정보 받아오기
+    instance.get('/notifications/count').then((res)=>setUnread(res.data.count))
+
+    //로딩창을 제외한 나머지 페이지에서 토큰값이 없을경우 시작페이지로 보냄
     if (
       pathname !== '/users/kakao/callback' &&
       !localStorage.getItem('Authorization')
     ) {
       navigate('/');
     }
+//datailposts 와 upload페이지 예외처리 (동적라우팅의 id값 예외처리)
+    if(pathname.includes('detailposts')||pathname.includes('upload')){
+      setPath('/'+pathname.split('/')[1])
+    }else{
+      setPath(pathname)
+    }
   }, [pathname]);
   useEffect(() => {
     //구독하기
     if (token) {
+      
       const sse = new EventSource('https://greenstepserver.link/subscribe', {
         headers: {
           Authorization: token,
         },
-        heartbeatTimeout: 60000,
-        delayTime: 2000,
+        heartbeatTimeout: 180 * 10000,
       });
 
       sse.addEventListener('message', (e) => {
         queryClient.invalidateQueries('alertList');
       });
-      return () => {
+      return ()=>{
         sse.removeEventListener('message', (e) => {
           queryClient.invalidateQueries('alertList');
         });
-      };
+      }
     }
   }, [token]);
   //실시간으로 안읽은 알림 수 받아오기
@@ -59,6 +77,7 @@ const Header = () => {
       setUnread(unreadList);
       queryClient.invalidateQueries('unreadList');
     }
+
   }, [unreadList]);
   //스크롤 내릴때 헤더 사라지고 올릴때 생기게
   const handleNavigation = useCallback(
@@ -73,6 +92,8 @@ const Header = () => {
     [y]
   );
 
+  
+
   useEffect(() => {
     window.addEventListener('scroll', handleNavigation);
 
@@ -83,9 +104,9 @@ const Header = () => {
 
   return (
     <>
-      {pathArr.includes(pathname) ? (
+      {pathArr.includes(path) ? (
         <>
-          {!hideArr.includes(pathname) ? (
+          {!hideArr.includes(path) ? (
             <div className="header-dummy-div" />
           ) : null}
 

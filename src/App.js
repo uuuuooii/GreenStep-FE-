@@ -1,43 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "react-query";
-import Header from "./Components/Header/Header";
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from 'react-query';
+import Header from './Components/Header/Header';
 // import Footer from "./Components/Footer/Footer";
-import Admin from "./Pages/Admin/Admin/Admin";
-import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
-import Alert from "./Components/Alert/Alert";
-import Login from "./Pages/Login/Login";
-import Mission from "./Pages/Mission/Mission";
-import Upload from "./Pages/Mission/Upload/Upload";
-import Explain from "./Pages/Mission/Explain/Explain";
-import Feed from "./Pages/Feed/Feed";
-import Mypage from "./Pages/MyPage/MyPage/MyPage";
-import ViewMoreModal from "./Pages/MyPage/MyPage/ViewMoreModal/ViewMoreModal";
-import UpdateMyPage from "./Pages/MyPage/UpdateMyPage/UpdateMyPage";
-import Archive from "./Pages/MyPage/MyPage/Archive/Archive";
-import PhotoShotsArchive from "./Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive";
-import DetailPosts from "./Pages/MyPage/DetailPosts/DetailPosts";
-import DetailPhotoShots from "./Pages/MyPage/DetailPhotoShots/DetailPhotoShots";
-import Modal from "./Pages/Login/Modal";
-import MissionCamera from "./Pages/Mission/Camera/MissionCamera";
-import Loading from "./Pages/Loading/Loading";
-import Error from "./Pages/Error/Error";
-import ExplainWaiting from "./Pages/Mission/Explain/ExplainWaiting";
-import ScrollToTop from "./Components/ScrollTop/ScrollTop";
-import useToast from "./hooks/useToast";
-import Toast from "./Components/Toast/Toast";
-import Secession from "./Pages/Secession/Secession";
-import Alarm from "./Pages/Alarm/Alarm";
-import AlarmList from "./Pages/Alarm/AlarmList/AlarmList";
-import UpdateLoading from "./Pages/Loading/UpdateLoading";
-import Introduce from "./Pages/MyPage/MyPage/Introduce/Introduce";
-import RouteChangeTracker from "./RouteChangeTracker";
+import Admin from './Pages/Admin/Admin/Admin';
+import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
+import Alert from './Components/Alert/Alert';
+import Login from './Pages/Login/Login';
+import Mission from './Pages/Mission/Mission';
+import Upload from './Pages/Mission/Upload/Upload';
+import Explain from './Pages/Mission/Explain/Explain';
+import Feed from './Pages/Feed/Feed';
+import Mypage from './Pages/MyPage/MyPage/MyPage';
+import ViewMoreModal from './Pages/MyPage/MyPage/ViewMoreModal/ViewMoreModal';
+import UpdateMyPage from './Pages/MyPage/UpdateMyPage/UpdateMyPage';
+import Archive from './Pages/MyPage/MyPage/Archive/Archive';
+import PhotoShotsArchive from './Pages/MyPage/PhotoShotsArchive/PhotoShotsArchive';
+import DetailPosts from './Pages/MyPage/DetailPosts/DetailPosts';
+import DetailPhotoShots from './Pages/MyPage/DetailPhotoShots/DetailPhotoShots';
+import Modal from './Pages/Login/Modal';
+import MissionCamera from './Pages/Mission/Camera/MissionCamera';
+import Loading from './Pages/Loading/Loading';
+import Error from './Pages/Error/Error';
+import ExplainWaiting from './Pages/Mission/Explain/ExplainWaiting';
+import ScrollToTop from './Components/ScrollTop/ScrollTop';
+import useToast from './hooks/useToast';
+import Toast from './Components/Toast/Toast';
+import Secession from './Pages/Secession/Secession';
+import Alarm from './Pages/Alarm/Alarm';
+import AlarmList from './Pages/Alarm/AlarmList/AlarmList';
+import UpdateLoading from './Pages/Loading/UpdateLoading';
+import Introduce from './Pages/MyPage/MyPage/Introduce/Introduce';
+import RouteChangeTracker from './RouteChangeTracker';
 
 function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
-
-  // RouteChangeTracker();
 
   useEffect(() => {
     if (display > 0) {

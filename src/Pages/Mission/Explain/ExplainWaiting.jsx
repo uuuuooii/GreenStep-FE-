@@ -84,14 +84,14 @@ const ExplainWaiting = ({ onClickToast }) => {
                 ></img>
 
                 <div className="explain-mission-center-point-text">
-                  {`예상 경험치는 +${pointNum}xp 입니다.`}
+                  {`예상 걸음치는 +${pointNum}xp 입니다.`}
                 </div>
               </div>
               <div
                 className="explain-waiting-bar"
                 onClick={() => {
                   navigate("/mission");
-                  onClickToast(`예상 경험치 (+${pointNum}xp)`, 1);
+                  onClickToast(`예상 걸음치 (+${pointNum}xp)`, 1);
                 }}
               >
                 인증 대기중

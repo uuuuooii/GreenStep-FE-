@@ -43,6 +43,7 @@ const Mission = ({ onClickToast }) => {
     dispatch(__GetTodaymission());
     setLoading(false);
   }, []);
+
   return (
     <>
       <MissionPage>

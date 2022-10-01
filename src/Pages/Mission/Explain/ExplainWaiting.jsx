@@ -31,7 +31,7 @@ const ExplainWaiting = ({ onClickToast }) => {
   );
   console.log(select);
   const pointNum =
-    paramsCategory === "challenge" ? 40 : paramsCategory === "weekly" ? 20 : 10;
+    paramsCategory === "challenge" ? 30 : paramsCategory === "weekly" ? 20 : 10;
   useEffect(() => {
     setLoding(true);
     paramsCategory === "challenge"

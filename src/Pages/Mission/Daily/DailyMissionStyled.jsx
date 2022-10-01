@@ -5,15 +5,18 @@ export const DailyBody = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  margin: 6px 0;
   width: 145px;
   height: 170px;
   border-radius: 5px;
   background: #fcfcfa;
-  margin: 10px auto;
-  box-shadow: 1px 1px 0px rgba(134, 134, 134, 0.1);
+  box-shadow: 0px 2px 2px rgba(134, 134, 134, 0.3);
   &:hover {
     cursor: pointer;
   }
+
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const MissionPhoto = styled.img`
@@ -36,14 +39,14 @@ export const MissionText = styled.div`
 `;
 export const ChallengeMissionText = styled.div`
   display: flex;
-  font-style: normal;
+  font-family: "AppleNeoM";
   font-size: 15px;
   font-weight: 600;
   line-height: 16px;
-  color: #2b5139;
+  color: #50674c;
   flex-wrap: wrap;
-  margin-top: 10px;
-  font-family: "AppleNeoR";
+  margin-top: 8px;
+  margin-left: 4px;
 `;
 
 export const ChallengeBox = styled.div`
@@ -59,7 +62,7 @@ export const ChallengeBox = styled.div`
   );
   box-shadow: 0px 4px 4px rgba(134, 134, 134, 0.3);
   border-radius: 7px;
-  margin: 20px 0px 0px 0px;
+  margin: 14px 0px 0px 0px;
 `;
 
 export const ChallengeTextArea = styled.div`
@@ -95,11 +98,11 @@ export const ChallengePhoto = styled.img`
   padding: 2px 0px 0px 0px;
 `;
 export const ChallengeTitle = styled.div`
-  font-family: "AppleNeoR";
+  font-family: "AppleNeoM";
   font-size: 13px;
-  line-height: 22px;
+  line-height: 16px;
   padding: 9px 0px 0px 0px;
-
+  margin: 8px 0px 0px 4px;
   color: #50674c;
 `;
 export const ChallengeTimer = styled.div`
@@ -110,7 +113,7 @@ export const ChallengeTimer = styled.div`
   line-height: 16px;
   text-align: center;
   padding: 10px 1px;
-  margin: 69px -2px;
+  margin: 72px -2px;
   color: white;
   background: #ade2e9;
   border-radius: 5px;

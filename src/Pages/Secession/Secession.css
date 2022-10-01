@@ -9,10 +9,11 @@
 }
 
 .secession-back-arrow-icon {
-  font-size: 36px;
-  color: #c3c2c2;
-  margin-bottom: 4px;
-  margin-left: 4px;
+  font-size: 30px;
+  color: #51684d;
+  margin-bottom: 8px;
+  margin-top: 2px;
+  margin-left: 6px;
 }
 
 .secession-title-text {
@@ -20,7 +21,7 @@
   font-size: 20px;
   color: #50674c;
   font-weight: 600;
-  margin: 4px 0px 0px 6px;
+  margin: 4px 0px 0px 12px;
 }
 
 .secession-header-dummy {

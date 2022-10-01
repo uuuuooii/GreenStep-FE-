@@ -8,7 +8,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import ReactGA from "react-ga";
 
-const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID;
+const TRACKING_ID = "UA-243737163-2";
 ReactGA.initialize(TRACKING_ID);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

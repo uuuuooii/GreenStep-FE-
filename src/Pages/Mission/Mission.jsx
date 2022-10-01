@@ -39,10 +39,10 @@ const Mission = ({ onClickToast }) => {
   useEffect(() => {
     setLoading(true);
     dispatch(__GetWeeklymission());
-    dispatch(__GetDailymission());
+    // dispatch(__GetDailymission());
     dispatch(__GetTodaymission());
     setLoading(false);
-  }, [2000]);
+  }, []);
 
   return (
     <>

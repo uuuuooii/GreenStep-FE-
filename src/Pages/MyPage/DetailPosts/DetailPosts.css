@@ -14,7 +14,8 @@
 }
 
 .detail-posts-close-button {
-  padding: 20px 18px 0px 0px;
+  margin: 20px 18px 0px 0px;
+  border-radius: 50px;
   font-size: 25px;
   color: #c3c2c2;
 }

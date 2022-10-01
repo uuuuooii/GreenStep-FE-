@@ -47,7 +47,8 @@ const Header = () => {
       const sse = new EventSource('https://greenstepserver.link/subscribe', {
         headers: {
           Authorization: token,
-        },heartbeatTimeout: 180 * 1000
+        },
+        heartbeatTimeout: 180 * 1000,
       });
 
       sse.addEventListener('message', (e) => {

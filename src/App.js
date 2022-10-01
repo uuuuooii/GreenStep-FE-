@@ -5,7 +5,6 @@ import Header from './Components/Header/Header';
 // import Footer from "./Components/Footer/Footer";
 import Admin from './Pages/Admin/Admin/Admin';
 import AdminLogin from './Pages/Admin/AdminLogin/AdminLogin';
-import Alert from './Components/Alert/Alert';
 import Login from './Pages/Login/Login';
 import Mission from './Pages/Mission/Mission';
 import Upload from './Pages/Mission/Upload/Upload';
@@ -56,7 +55,6 @@ function App() {
             <Route path="/users/kakao/callback" element={<Loading />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
-            <Route path="/alert" element={<Alert />} />
             <Route
               path="/modal"
               element={<Modal onClickToast={onClickToast} />}

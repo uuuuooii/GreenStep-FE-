@@ -37,7 +37,7 @@ function App() {
   const queryClient = new QueryClient();
   const [toastNum, onClickToast, display, setDisplay, text] = useToast(0);
 
-  RouteChangeTracker();
+  // RouteChangeTracker();
 
   useEffect(() => {
     if (display > 0) {
@@ -49,6 +49,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <RouteChangeTracker />
         <ScrollToTop />
         <QueryClientProvider client={queryClient}>
           <Header />

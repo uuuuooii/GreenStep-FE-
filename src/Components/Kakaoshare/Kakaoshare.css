@@ -1,5 +1,4 @@
 .kakaoBtn {
-  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,5 +9,4 @@
   line-height: 18px;
   margin-left: 3px;
   margin-bottom: 1px;
-  height: 100%;
 }

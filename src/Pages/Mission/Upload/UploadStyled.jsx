@@ -27,8 +27,8 @@ export const ShareButton = styled.div`
   justify-content: center;
   align-items: center;
   padding: 7px 19px;
-  /* width: 132px;
-  height: 18px; */
+  width: 132px;
+  height: 18px;
   background: #84ca79;
   border-radius: 30px;
   margin-bottom: 43px;
@@ -40,7 +40,7 @@ export const PostShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 10px 19px;
   width: 132px;
   height: 18px;
   background: #84ca79;

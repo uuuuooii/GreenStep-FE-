@@ -79,7 +79,7 @@ const Login = () => {
     //채널톡 삭제
     setTimeout(() => {
       document.getElementById("ch-plugin").style.display = "none";
-    }, [100]);
+    }, [500]);
   }, []);
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const Login = () => {
       setFirstAni(true);
     }
   }, [firstView, secondView, thirdView, fourthView]);
-  // useEffect(()=>{},[secondView])
+
 
   return (
     <>
@@ -111,7 +111,6 @@ const Login = () => {
           <FirstImgDiv>
             <FirstImg
               src="/images/Login/1번이미지.webp"
-              // animation={firstAni ? FadeBottomOnImage : null}
             />
 
             <FirstCoverDiv>
@@ -133,8 +132,6 @@ const Login = () => {
           <SecondImgDiv>
             <SecondImg
               src="images/Login/2번이미지.webp"
-
-              // animation={secondAni ? FadeBottomOnImage : null}
             />
             <SecondCoverDiv>
               <FirstCover
@@ -156,8 +153,6 @@ const Login = () => {
           <FirstImgDiv>
             <FirstImg
               src="/images/Login/3번이미지.webp"
-
-              // animation={thirdAni ? FadeBottomOnImage : null}
             />
             <FirstCoverDiv>
               <FirstCover
@@ -179,7 +174,7 @@ const Login = () => {
           >
             당신이 그릴 스텝,
           </LastText>
-          <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
+          <LastText bold={700} time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
             "내가 그린 스텝"{" "}
           </LastText>
           <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>

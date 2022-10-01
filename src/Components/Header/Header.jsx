@@ -9,20 +9,14 @@ import { BiBell } from 'react-icons/bi';
 import HeaderLogo from '../../static/components/HeaderLogo';
 //component import
 import { pathArr, hideArr } from '../../static/path/Path';
-import instance from '../../Redux/modules/instance';
 import {
-  useDeleteAlert,
-  useDeleteAlertAll,
-  useGetMessageAlert,
   useGetUnreadAlert,
-  usePostReadAlert,
 } from '../../hooks/useNotification';
 const EventSource = EventSourcePolyfill || NativeEventSource;
 const Header = () => {
   //주소값
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
   const queryClient = useQueryClient();
   const { data: alertUnreadList } = useGetUnreadAlert();
   const [unread, setUnread] = useState(0);
@@ -31,9 +25,6 @@ const Header = () => {
   const [hide, setHide] = useState(false);
   const unreadList = alertUnreadList?.data.count;
   useEffect(() => {
-    instance
-      .get('/notifications/count')
-      .then((res) => setUnread(res.data.count));
     if (
       pathname !== '/users/kakao/callback' &&
       !localStorage.getItem('Authorization')
@@ -48,12 +39,18 @@ const Header = () => {
         headers: {
           Authorization: token,
         },
-        heartbeatTimeout: 180 * 1000,
+        heartbeatTimeout: 60000,
+        delayTime: 2000,
       });
 
       sse.addEventListener('message', (e) => {
         queryClient.invalidateQueries('alertList');
       });
+      return () => {
+        sse.removeEventListener('message', (e) => {
+          queryClient.invalidateQueries('alertList');
+        });
+      };
     }
   }, [token]);
   //실시간으로 안읽은 알림 수 받아오기

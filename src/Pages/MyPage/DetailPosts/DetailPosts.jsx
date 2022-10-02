@@ -34,7 +34,7 @@ const DetailPosts = ({ onClickToast }) => {
       ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
-  console.log(detailPost);
+  // console.log(detailPost);
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
@@ -52,7 +52,7 @@ const DetailPosts = ({ onClickToast }) => {
 
   return (
     <>
-      {!loading&&detailPost ? (
+      {!loading && detailPost ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
             <div className="detail-posts-close-button-area">

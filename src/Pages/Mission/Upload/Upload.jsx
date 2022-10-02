@@ -20,12 +20,11 @@ import {
   KakaoReactIcon,
   UploadIconDiv,
   KakaoIconDiv,
-  ButtonText,
   TotalButtonArea,
   ShareButton,
   ShareText,
+  UploadPageDiv
 } from './UploadStyled';
-import Slide from 'react-reveal/Slide';
 import Next from '../../../static/components/DetailPost/Next';
 import Previous from '../../../static/components/DetailPost/Previous';
 import UploadFeed from '../../../static/components/DetailPost/UploadFeed';
@@ -62,8 +61,9 @@ const Upload = ({ onClickToast }) => {
   }, []);
   return (
     <>
-      <Slide bottom>
-        <div className="upload-wrap-shape">
+    <div className='upload-background'/>
+
+        <UploadPageDiv>
           {!loading && data ? (
             <>
               <div className="upload-mission-close-button-area">
@@ -148,8 +148,8 @@ const Upload = ({ onClickToast }) => {
           ) : (
             <LoadingBar />
           )}
-        </div>
-      </Slide>
+        </UploadPageDiv>
+
     </>
   );
 };

@@ -94,7 +94,6 @@ const Login = () => {
     }
   }, [firstView, secondView, thirdView, fourthView]);
 
-
   return (
     <>
       <LoginPageArea>
@@ -109,9 +108,7 @@ const Login = () => {
             Mission
           </FirstTitle>
           <FirstImgDiv>
-            <FirstImg
-              src="/images/Login/1번이미지.webp"
-            />
+            <FirstImg src="/images/Login/1번이미지.webp" />
 
             <FirstCoverDiv>
               <FirstCover
@@ -130,9 +127,7 @@ const Login = () => {
             Feed
           </FirstTitle>
           <SecondImgDiv>
-            <SecondImg
-              src="images/Login/2번이미지.webp"
-            />
+            <SecondImg src="images/Login/2번이미지.webp" />
             <SecondCoverDiv>
               <FirstCover
                 ref={second}
@@ -151,9 +146,7 @@ const Login = () => {
             Habit
           </FirstTitle>
           <FirstImgDiv>
-            <FirstImg
-              src="/images/Login/3번이미지.webp"
-            />
+            <FirstImg src="/images/Login/3번이미지.webp" />
             <FirstCoverDiv>
               <FirstCover
                 ref={third}
@@ -174,7 +167,11 @@ const Login = () => {
           >
             당신이 그릴 스텝,
           </LastText>
-          <LastText bold={700} time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
+          <LastText
+            bold={700}
+            time={"1s"}
+            animation={fourthAni ? FadeBottomOn : null}
+          >
             "내가 그린 스텝"{" "}
           </LastText>
           <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>

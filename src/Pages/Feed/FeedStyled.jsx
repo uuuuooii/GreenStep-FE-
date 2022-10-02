@@ -137,7 +137,7 @@ export const CategoryArea = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  padding: 10px 0;
+  padding: 0;
   background-color: #fcfcfa;
   /* box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); */
   &::-webkit-scrollbar {

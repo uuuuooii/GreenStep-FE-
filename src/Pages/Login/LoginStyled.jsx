@@ -28,18 +28,13 @@ export const ButtonBody = styled.div`
   text-align: center;
   position: relative;
   padding: 5px;
-
-  /* margin: 3100px 62px 63px 62px; */
-  /* padding: 60px 0; */
 `;
 export const LogoGraDiv = styled.div`
-  /* width: 100%; */
-  /* height: 100%; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width: 100%;
   max-height: 100%;
-  background: linear-gradient(#daf2d5, white);
+  background: linear-gradient(#daf2d5, #fcfcfa);
   position: absolute;
   animation-name: ${LogoFade};
   animation-duration: 2.5s;
@@ -266,7 +261,7 @@ export const LastText = styled.div`
   opacity: 0;
   font-family: "Apple SD Gothic Neo";
   font-style: normal;
-  font-weight: 500;
+  font-weight: ${(props)=>props.bold ? props.bold : 500};
   font-size: 25px;
   line-height: 48px;
   text-align: center;
@@ -288,6 +283,9 @@ export const DownButton = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 9;
+  &:hover{
+    cursor: pointer;
+  }
 `;
 export const DownArrow = styled(AiOutlineArrowDown)`
   font-size: 28px;

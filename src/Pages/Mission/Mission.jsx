@@ -42,7 +42,7 @@ const Mission = ({ onClickToast }) => {
     dispatch(__GetDailymission());
     dispatch(__GetTodaymission());
     setLoading(false);
-  }, [2000]);
+  }, []);
 
   return (
     <>

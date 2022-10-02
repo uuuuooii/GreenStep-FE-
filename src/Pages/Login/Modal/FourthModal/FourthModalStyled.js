@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-import { AiOutlineCheckCircle, AiFillCheckCircle } from "react-icons/ai";
-
 const SlideRight = keyframes`
 from{transform:translateX(300px)}
 to{transform:translateX(0px)}
@@ -75,24 +73,6 @@ export const CheckMailArea = styled.div`
   &:hover {
     cursor: pointer;
   }
-`;
-
-export const CheckedMailIcon = styled(AiFillCheckCircle)`
-  color: #d9d9d9;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  transition: all 0.5s;
-  border-radius: 10px;
-`;
-
-export const CheckMailIcon = styled(AiOutlineCheckCircle)`
-  color: #d9d9d9;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  transition: all 0.5s;
-  border-radius: 10px;
 `;
 
 export const CheckMailText = styled.div`

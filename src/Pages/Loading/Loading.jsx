@@ -14,7 +14,6 @@ const Loading = () => {
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(code);
   useEffect(() => {
     axios
       .get(

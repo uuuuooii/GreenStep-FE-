@@ -1,5 +1,18 @@
 import { RiKakaoTalkFill } from "react-icons/ri";
 import styled from "styled-components";
+import { SlideBottom } from "../../../Components/Animation/Animation";
+
+export const UploadPageDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: #fcfcfa;
+  animation-name: ${SlideBottom};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;`
 
 //피드 올리기 버튼
 export const UploadButton = styled.div`
@@ -26,9 +39,9 @@ export const ShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  /* width: 132px;
-  height: 18px; */
+  padding: 7px 19px;
+  width: 132px;
+  height: 18px;
   background: #84ca79;
   border-radius: 30px;
   margin-bottom: 43px;
@@ -40,7 +53,7 @@ export const PostShareButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 10px 19px;
   width: 132px;
   height: 18px;
   background: #84ca79;

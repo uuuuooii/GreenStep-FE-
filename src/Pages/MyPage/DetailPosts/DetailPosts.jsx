@@ -1,7 +1,7 @@
 //react import
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 //modules import
 import { getPostThunk } from "../../../Redux/modules/userInfoSlice";
 //component import
@@ -18,7 +18,6 @@ import {
   ButtonArea,
   KakaoReactIcon,
   IconDiv,
-  ButtonText,
   TotalButtonArea,
   PostShareButton,
 } from "../../Mission/Upload/UploadStyled";
@@ -34,12 +33,13 @@ const DetailPosts = ({ onClickToast }) => {
       ? state.userInfo.post.filter((item) => item.id == Param)[0]
       : state.userInfo.post[0]
   );
-  console.log(detailPost);
+
+  //post의 id값들을 담을배열(페이지 이동시 지표)
   const IdArr = [];
   useSelector((state) => state.userInfo.post).map((item) =>
     IdArr.push(item.id)
   );
-
+  //내림차순 정렬
   IdArr.sort(function (a, b) {
     return b - a;
   });
@@ -52,7 +52,8 @@ const DetailPosts = ({ onClickToast }) => {
 
   return (
     <>
-      {!loading&&detailPost ? (
+      <div className="detail-posts-background" />
+      {!loading && detailPost ? (
         <Slide bottom>
           <div className="detail-posts-wrap-shape">
             <div className="detail-posts-close-button-area">
@@ -122,9 +123,9 @@ const DetailPosts = ({ onClickToast }) => {
               />
             </div>
             <div className="detail-posts-mission-contents-box">
-              <p className="detail-posts-mission-contents-text">
+              <div className="detail-posts-mission-contents-text">
                 {detailPost ? detailPost.content : "#Content"}
-              </p>
+              </div>
             </div>
             <TotalButtonArea>
               <PostShareButton>

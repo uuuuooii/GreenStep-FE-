@@ -1,7 +1,8 @@
 //react import
-import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import instance from "../../../../Redux/modules/instance";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import instance from '../../../../Redux/modules/instance';
+import { CheckIcon, CheckedIcon } from '../../../../Components/Check/Check';
 import {
   FourthModalBody,
   FourthModalSection,
@@ -18,9 +19,7 @@ import {
   EmailButton,
   EmailStrong,
   EmailP,
-} from "./FourthModalStyled";
-import { Fade } from "react-reveal";
-import user from "../../../../Redux/modules/user";
+} from './FourthModalStyled';
 
 const FourthModal = ({
   setDisplay,
@@ -53,31 +52,28 @@ const FourthModal = ({
             다양한 정보를 제공합니다.
           </EmailP>
           <CheckMailArea onClick={() => setAcceptMail(!acceptMail)}>
-            {" "}
-            {acceptMail ? <CheckedMailIcon /> : <CheckMailIcon />}
-            <CheckMailText color={"d9d9d9"}>
+            {' '}
+            {acceptMail ? <CheckedIcon /> : <CheckIcon />}
+            <CheckMailText color={'d9d9d9'}>
               E-mail 알림 수신 동의
             </CheckMailText>
           </CheckMailArea>
-          {/* {nickname && name ? (
-            <Fade> */}{" "}
+
           <EmailButtonArea>
-            {" "}
+            {' '}
             <EmailButton
-              background={"#b8dde2"}
-              // {acceptMail ? '#b8dde2' : 'd9d9d9'}
+              background={'#b8dde2'}
               onClick={() =>
                 instance.patch(`/users/info`, userinfo).then(() => {
-                  navigate("/mission");
+                  navigate('/mission');
                   onClickToast(`${nickname}님 환영합니다.`, 1);
                 })
               }
             >
               회원가입
             </EmailButton>
-          </EmailButtonArea>{" "}
-          {/* </Fade>
-          ) : null} */}
+          </EmailButtonArea>{' '}
+
         </TotalEmailArea>
       </SelectBody>
     </>

@@ -12,9 +12,10 @@ export const ImageCard = styled.img`
   }
 `;
 export const CardArea = styled.div`
+  width: 100%;
   position: relative;
-  width: 123px;
-  height: 123px;
+  width: ${window.innerWidth / 3.05}px;
+  height: ${window.innerWidth / 3.05}px;
 `;
 
 export const ArchiveArrow = styled(MdOutlineDoubleArrow)`
@@ -88,7 +89,7 @@ export const ModalArea = styled.div`
   /* left: 50%; */
   /* transform: translateX(-50%); */
   bottom: 20px;
-  z-index: 500;
+  z-index: 10;
   animation-name: ${SlideBottom};
   animation-duration: 0.5s;
   animation-timing-function: ease-out;

@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { FadeOn } from "../../Components/Animation/Animation";
+import styled, { keyframes } from 'styled-components';
+import { FadeOn } from '../../Components/Animation/Animation';
 
 export const Shake = keyframes`
 0%{transform: rotate(-0deg)}
@@ -25,19 +25,19 @@ export const FeedPage = styled.div`
 
 export const RankingBox = styled.div`
   /* width: 293px; */
-  margin: 18px 0px;
+  margin: 8px 0px 5px 0px;
   padding: 0px 34px;
   display: flex;
   flex-direction: column;
   background: #fcfcfa;
   box-shadow: 0px 3px 3px rgba(134, 134, 134, 0.3);
-  border-radius: 10px;
+  border-radius: 7px;
 `;
 export const RankTitle = styled.div`
   text-align: center;
   color: #50674c;
   width: 100%;
-  font-family: "AppleNeoB";
+  font-family: 'Inter';
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -47,7 +47,7 @@ export const MedalBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 25px 0px 26px 0px;
+  margin: 25px 0px 24px 0px;
 `;
 export const UserProfile = styled.img`
   width: 70px;
@@ -55,6 +55,7 @@ export const UserProfile = styled.img`
   background: #d9d9d9;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0px 2px 1px #cfcfcf;
 `;
 export const UserArea = styled.div`
   margin: 0px 9px;
@@ -62,12 +63,13 @@ export const UserArea = styled.div`
   position: relative;
 `;
 export const UserName = styled.div`
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 600;
   font-size: 12px;
   color: #50674c;
   line-height: 14px;
   text-align: center;
+  margin-top: 1px;
 `;
 export const InfoArea = styled.div`
   position: relative;
@@ -94,7 +96,7 @@ export const MedalHead = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 12.5px;
-  background-color: ${(props) => (props.color ? props.color : "#ffc72d")};
+  background-color: ${(props) => (props.color ? props.color : '#ffc72d')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +108,7 @@ export const MedalCenter = styled.div`
   width: 9.75px;
   height: 9.75px;
   border-radius: 4.875px;
-  background-color: ${(props) => (props.color ? props.color : "#FFE49C")};
+  background-color: ${(props) => (props.color ? props.color : '#FFE49C')};
   /* margin: auto; */
 `;
 
@@ -132,19 +134,21 @@ export const MedalRightBottom = styled.div`
 `;
 
 export const CategoryArea = styled.div`
-  /* max-width: 100%; */
   width: 100%;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  padding: 10px 0;
+  padding: 10px 0 14px 0;
   background-color: #fcfcfa;
-  /* box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1); */
   &::-webkit-scrollbar {
     display: none;
   }
-  /* padding-left: 20px; */
 `;
+
+export const CategoryDummyDiv = styled.div`
+  margin-left: 10px;
+`;
+
 export const CategoryButton = styled.div`
   min-width: 90px;
   min-height: 26px;
@@ -154,13 +158,13 @@ export const CategoryButton = styled.div`
   line-height: 16px;
   color: #a1d0d7;
   background-color: ${(props) =>
-    props.check === props.num ? "#F1F8F9" : "none"};
+    props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #a1d0d7;
-  margin: 0 5px;
+  margin: 0 6px 0 0;
   padding-bottom: 3px;
   padding-top: 1px;
   &:hover {
@@ -168,7 +172,7 @@ export const CategoryButton = styled.div`
   }
 `;
 export const CategoryButtonText = styled.div`
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
@@ -186,7 +190,7 @@ export const FeedCard = styled.div`
 `;
 
 export const FeedArea = styled.div`
-  width: 313px;
+  width: 332px;
 `;
 export const BottomProfileArea = styled.div`
   display: flex;
@@ -206,22 +210,21 @@ export const CardBottomArea = styled.div`
 
 export const CardTopArea = styled.div`
   width: 100%;
-  margin: 10px 0;
+  margin: 24px 0 0 0px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   position: absolute;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 export const TagArea = styled.div`
-  /* position: absolute; */
-  width: 100%;
-  margin: 15px 21px 0 0;
+  width: 92%;
+  /* margin: 15px 26px 0 0; */
+  margin: 0px;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  font-family: "AppleNeoM";
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'AppleNeoM';
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -247,19 +250,15 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0px 10px 0px 0px;
-  font-family: "AppleNeoSB";
+  font-family: 'AppleNeoSB';
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
-  /* identical to box height */
-
   display: flex;
   align-items: center;
-
-  /* primary 2.2 */
-
   color: #84ca79;
 `;
+
 export const FeedProfile = styled.img`
   border-radius: 10px;
   width: 35px;
@@ -267,8 +266,9 @@ export const FeedProfile = styled.img`
   margin: 5px 10px 0px 5px;
   object-fit: cover;
 `;
+
 export const FeedNickname = styled.div`
-  font-family: "AppleNeoSB";
+  font-family: 'AppleNeoSB';
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -289,7 +289,7 @@ export const FeedContent = styled.div`
 export const FeedText = styled.div`
   width: 100%;
   display: flex;
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -310,7 +310,7 @@ export const ArrowArea = styled.div`
 `;
 
 export const TotalFeed = styled.div`
-  margin: 16px 0;
+  margin: 0px 0 30px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
   padding-bottom: 10px;
@@ -322,8 +322,8 @@ export const TotalFeed = styled.div`
 `;
 
 export const LargePhoto = styled.img`
-  width: 312px;
-  height: 312px;
+  width: 332px;
+  height: 332px;
   border-radius: 10px 10px 0 0;
 `;
 

@@ -113,7 +113,10 @@ const Archive = () => {
                   : "복구"}
               </ArchiveSelectDiv>
             ) : (
-              <div onClick={() => (delArr.length > 0 ? OnModal() : null)}>
+              <div
+                className="archive-eye-icon"
+                onClick={() => (delArr.length > 0 ? OnModal() : null)}
+              >
                 <TrashIcon color={delArr.length > 0 ? "#B2E2AB" : "#d9d9d9"} />
               </div>
             )}

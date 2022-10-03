@@ -18,5 +18,10 @@
 }
 
 .mission-event-image {
-  margin: 16px 0px 0px 0px;
+  width: 100%;
+  margin: -2px 0px 0px 0px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -25,6 +25,7 @@ import {
   UserArea,
   InfoArea,
   CategoryArea,
+  CategoryDummyDiv,
   CategoryButton,
   CategoryButtonText,
   FeedArea,
@@ -49,22 +50,22 @@ import {
 import FeedArrow from '../../static/components/FeedArrow';
 
 const Feed = () => {
-  //랭킹 정보 가져오기
+  // 랭킹 정보 가져오기
   const ranks = useSelector((state) => state.ranks.ranks);
-  //애니메이션 분기 처리를 위한 배열 2개
+  // 애니메이션 분기 처리를 위한 배열 2개
   const [clapArr, setClapArr] = useState([]);
   const [clapCheck, setClapCheck] = useState([]);
-  //현재 보고있는 카테고리 값
+  // 현재 보고있는 카테고리 값
   const [category, setCategory] = useState(0);
-  //페이지 값
+  // 페이지 값
   const [page, setPage] = useState(0);
-  //로딩 상태값
+  // 로딩 상태값
   const [loading, setLoading] = useState(false);
-  //피드를 받는 배열
+  // 피드를 받는 배열
   const [FeedList, setFeedList] = useState([]);
-  //서버에 보내는 마지막 피드의 id값
+  // 서버에 보내는 마지막 피드의 id값
   const [last, setLast] = useState('');
-  //화면에 보일시 inView의 값이 true로 변함
+  // 화면에 보일시 inView의 값이 true로 변함
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
 
@@ -86,23 +87,24 @@ const Feed = () => {
     'energy',
     'etc',
   ];
-  //clap
+  // clap
   const CheckClap = (item) => {
-    //두개의 배열에 모두 들어가있을 경우 둘 다 삭제
+    // 두개의 배열에 모두 들어가있을 경우 둘 다 삭제
     if (clapCheck.includes(item) && clapArr.includes(item)) {
       setClapArr([...clapArr.filter((i) => i !== item)]);
       setClapCheck([...clapCheck.filter((i) => i !== item)]);
     }
-    //두개의 배열에 모두 포함하지 않을경우 둘 다 넣어줌
+    // 두개의 배열에 모두 포함하지 않을경우 둘 다 넣어줌
     else if (!clapCheck.includes(item) && !clapArr.includes(item)) {
       setClapArr([...clapArr, item]);
       setClapCheck([...clapCheck, item]);
     }
-    //하나의 배열에만 들어있을 경우 들어있는 배열의 값을 삭제
+    // 하나의 배열에만 들어있을 경우 들어있는 배열의 값을 삭제
     else if (!clapCheck.includes(item) && clapArr.includes(item)) {
       setClapArr([...clapArr.filter((i) => i !== item)]);
     }
   };
+  // 박수 쳤을때
   const changeClap = async (id) => {
     await instance
       .post(`/feed/claps/${id}`)
@@ -122,7 +124,7 @@ const Feed = () => {
       })
       .catch((error) => error);
   };
-  //categri
+  // categri
   const TagClick = () => {
     setLoading(true);
     category == 0
@@ -132,9 +134,9 @@ const Feed = () => {
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
-            //받은 피드의 맨 마지막 아이디를 저장
+            // 받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
-            //받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
+            // 받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
             setClapArr([
               ...clapArr,
               ...res.data.data.map((item) => (item.clapByMe ? item.id : null)),
@@ -148,16 +150,16 @@ const Feed = () => {
           )
           .then((res) => {
             setFeedList([...FeedList, ...res.data.data]);
-            //받은 피드의 맨 마지막 아이디를 저장
+            // 받은 피드의 맨 마지막 아이디를 저장
             setLast(res.data.data[res.data.data.length - 1].id);
-            //받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
+            // 받아온 값들중 내가 이전에 박수를 친 피드의 아이디를 하나의 배열에 담아놓음
             setClapArr([
               ...clapArr,
               ...res.data.data.map((item) => (item.clapByMe ? item.id : null)),
             ]);
           });
     setLoading(false);
-    //피드가 없을경우 페이지값 변경(0으로 유지될 경우 갱신이 안됨)
+    // 피드가 없을경우 페이지값 변경(0으로 유지될 경우 갱신이 안됨)
     if (FeedList.length === 0) {
       setPage(1);
     }
@@ -166,7 +168,7 @@ const Feed = () => {
   useEffect(() => {
     setPage(page + 1);
   }, [inView]);
-  //카테고리 변경시 페이지를 비움
+  // 카테고리 변경시 페이지를 비움
   useEffect(() => {
     setFeedList([]);
     setClapArr([]);
@@ -177,7 +179,7 @@ const Feed = () => {
   useEffect(() => {
     TagClick();
   }, [page]);
-  //페이지 랜더링시에 랭크정보 가져오기
+  // 페이지 랜더링시에 랭크정보 가져오기
   useEffect(() => {
     dispatch(__GetLanks());
   }, [dispatch]);
@@ -204,6 +206,7 @@ const Feed = () => {
           <RankingSkeleton />
         )}
         <CategoryArea>
+          <CategoryDummyDiv />
           {categoryList.map((item, index) => (
             <CategoryButton
               key={item + index}

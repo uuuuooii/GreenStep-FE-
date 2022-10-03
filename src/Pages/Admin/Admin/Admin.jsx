@@ -23,16 +23,17 @@ const Admin = () => {
       .then((res) => setFeedList(res.data.data));
     setLoading(false);
   }, []);
+  // 승인 함수
   const Verify = (id) => {
     instance
       .post(`/admin/verification/${id}?verification=DONE`)
-      .then((res) => console.log(res));
     setFeedList(
       feedList.filter((it) => {
         return it.id !== id;
       })
     );
   };
+  // 거절 함수
   const Reject = (id) => {
     instance.post(`/admin/verification/${id}?verification=REJECTED`, {
       info: reject,
@@ -43,7 +44,7 @@ const Admin = () => {
       })
     );
   };
-  console.log(feedList);
+
   return (
     <>
       {!loading ? (

@@ -57,6 +57,7 @@ const text2 =
 const text3 = "다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.";
 const text4 = '당신이 그릴 스텝, \n "내가 그린 스텝" \n 지금 시작해볼까요?';
 const Login = () => {
+  // 페이지 inView값
   const [first, firstView] = useInView();
   const [firstAni, setFirstAni] = useState(false);
   const [second, secondView] = useInView();
@@ -65,9 +66,9 @@ const Login = () => {
   const [thirdAni, setThirdAni] = useState(false);
   const [fourth, fourthView] = useInView();
   const [fourthAni, setFourthAni] = useState(false);
-  const [button, setButton] = useState(false);
+// 최하단부 스크롤 ref
   const scrollRef = useRef();
-
+// 맨 아래로 내리는 버튼
   const DownPage = () => {
     scrollRef.current.scrollIntoView({
       behavior: "smooth",
@@ -79,9 +80,9 @@ const Login = () => {
     //채널톡 삭제
     setTimeout(() => {
       document.getElementById("ch-plugin").style.display = "none";
-    }, [100]);
+    }, [500]);
   }, []);
-
+//페이지가 보일 때 애니메이션 발생
   useEffect(() => {
     if (fourthView) {
       setFourthAni(true);
@@ -93,7 +94,6 @@ const Login = () => {
       setFirstAni(true);
     }
   }, [firstView, secondView, thirdView, fourthView]);
-  // useEffect(()=>{},[secondView])
 
   return (
     <>
@@ -109,10 +109,7 @@ const Login = () => {
             Mission
           </FirstTitle>
           <FirstImgDiv>
-            <FirstImg
-              src="/images/Login/1번이미지.webp"
-              // animation={firstAni ? FadeBottomOnImage : null}
-            />
+            <FirstImg src="/images/Login/1번이미지.webp" />
 
             <FirstCoverDiv>
               <FirstCover
@@ -131,11 +128,7 @@ const Login = () => {
             Feed
           </FirstTitle>
           <SecondImgDiv>
-            <SecondImg
-              src="images/Login/2번이미지.webp"
-
-              // animation={secondAni ? FadeBottomOnImage : null}
-            />
+            <SecondImg src="images/Login/2번이미지.webp" />
             <SecondCoverDiv>
               <FirstCover
                 ref={second}
@@ -154,11 +147,7 @@ const Login = () => {
             Habit
           </FirstTitle>
           <FirstImgDiv>
-            <FirstImg
-              src="/images/Login/3번이미지.webp"
-
-              // animation={thirdAni ? FadeBottomOnImage : null}
-            />
+            <FirstImg src="/images/Login/3번이미지.webp" />
             <FirstCoverDiv>
               <FirstCover
                 ref={third}
@@ -179,7 +168,11 @@ const Login = () => {
           >
             당신이 그릴 스텝,
           </LastText>
-          <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>
+          <LastText
+            bold={700}
+            time={"1s"}
+            animation={fourthAni ? FadeBottomOn : null}
+          >
             "내가 그린 스텝"{" "}
           </LastText>
           <LastText time={"1s"} animation={fourthAni ? FadeBottomOn : null}>

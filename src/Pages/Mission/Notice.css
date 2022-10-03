@@ -1,0 +1,33 @@
+.notice-back-arrow-area {
+  margin: 8px 0px 0px 0px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 2.5px solid rgba(218, 218, 218, 0.15);
+}
+
+.notice-back-arrow-icon {
+  margin: 2px 0px 5px 6px;
+  font-size: 28px;
+  color: #50674c;
+}
+
+.notice-title-text {
+  color: #50674c;
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 4px 0px 0px 5px;
+}
+
+.notice-dummy-div {
+  width: 30px;
+}
+
+.notice-content {
+  font-family: "AppleNeoR";
+  margin: 18px;
+}

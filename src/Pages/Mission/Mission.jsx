@@ -55,6 +55,14 @@ const Mission = ({ onClickToast }) => {
                   <EventImage />
                 </a>
               </div>
+              <div
+                className="mission-notice-area"
+                onClick={() => navigate("/notice")}
+              >
+                <div className="mission-notice-box">
+                  <div className="mission-notice-text">Notice 긴급 공지🚨</div>
+                </div>
+              </div>
               <DailyChallenge mission={missionChallenge[0]} />
             </>
           ) : (

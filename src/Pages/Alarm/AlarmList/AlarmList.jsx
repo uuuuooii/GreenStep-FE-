@@ -33,26 +33,28 @@ const AlarmList = ({ onClickToast }) => {
   const token = localStorage.getItem('Authorization');
   const allList = alertList?.data;
   const navigate = useNavigate();
-  console.log(delArr);
+  // 알람정보 받아오기
   useEffect(() => {
     if (token) {
       setNewAlert(allList);
       queryClient.invalidateQueries('unreadList');
     }
   }, [allList]);
+  // 열람 처리
   useEffect(() => {
     instance.post('/notification/open');
   }, []);
-  // instance.delete(`/notifications/delete/${item.id}`);
+  // 읽음 후 이동 처리
   const ReadingAlarm = (id, url) => {
     instance.post(`/notification/read/${id}`);
     navigate(url);
   };
+  // 삭제 선택 뒤로가기
   const BackArrow = () => {
     setDel(false);
     setDelArr([]);
   };
-  // console.log(newAlert.filter((i) => !delArr.includes(i)))
+// 삭제 요청
   const DeleteAlarm = () => {
     setNewAlert([...newAlert.filter((i) => !delArr.includes(i.id))]);
     instance.delete('/notifications/delete', { data: delArr });
@@ -109,10 +111,13 @@ const AlarmList = ({ onClickToast }) => {
           ? newAlert.map((item, index) => (
               <ContentDiv
                 onClick={() => {
+                  //삭제모드가 켜져있고 삭제 배열에 없을시 배열에 id 추가
                   del && !delArr.includes(item.id)
                     ? setDelArr([...delArr, item.id])
+                    //삭제모드가 켜져있고 삭제 배열에 있을시 배열에서 id 제거
                     : del && delArr.includes(item.id)
                     ? setDelArr([...delArr.filter((i) => i !== item.id)])
+                    //읽음 처리 후 이동
                     : ReadingAlarm(item.id, item.url);
                 }}
                 key={item + index}

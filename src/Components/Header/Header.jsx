@@ -30,7 +30,6 @@ const Header = () => {
   const [y, setY] = useState(document.scrollingElement.scrollHeight);
   const [hide, setHide] = useState(false);
   const unreadList = alertUnreadList?.data.count;
-  console.log(path)
   useEffect(() => {
 
     //안읽은 알람정보 받아오기

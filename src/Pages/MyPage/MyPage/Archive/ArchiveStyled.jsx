@@ -12,9 +12,10 @@ export const ImageCard = styled.img`
   }
 `;
 export const CardArea = styled.div`
+  width: 100%;
   position: relative;
-  width: 123px;
-  height: 123px;
+  width: ${window.innerWidth / 3.05}px;
+  height: ${window.innerWidth / 3.05}px;
 `;
 
 export const ArchiveArrow = styled(MdOutlineDoubleArrow)`

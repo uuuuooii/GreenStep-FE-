@@ -14,10 +14,10 @@ export const SubmitPhoto = styled.img`
   height: 200px;
 `;
 export const TextareaArea = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const Textarea = styled.textarea`
   width: 90%;
   height: 100px;

@@ -11,20 +11,37 @@ body {
 
 @font-face {
   font-family: "AppleNeoR";
-  src: url("./Components/fonts/AppleSDGothicNeoR.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoR.ttf") format("truetype"),
+    url("./Components/fonts/applesdgothicneoR.otf") format("opentype"),
+    url("./Components/fonts/AppleSDGothicNeoR.woff2") format("woff2"),
+    url("./Components/fonts/AppleSDGothicNeoR.woff") format("woff");
 }
 
 @font-face {
   font-family: "AppleNeoM";
-  src: url("./Components/fonts/AppleSDGothicNeoM.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoM.ttf") format("truetype"),
+    url("./Components/fonts/applesdgothicneoM.otf") format("opentype"),
+    url("./Components/fonts/AppleSDGothicNeoM.woff2") format("woff2"),
+    url("./Components/fonts/AppleSDGothicNeoM.woff") format("woff");
 }
 
 @font-face {
   font-family: "AppleNeoSB";
-  src: url("./Components/fonts/AppleSDGothicNeoSB.ttf");
+  src: url("./Components/fonts/AppleSDGothicNeoSB.ttf") format("truetype"),
+    url("./Components/fonts/applesdgothicneoSB.otf") format("opentype"),
+    url("./Components/fonts/AppleSDGothicNeoSB.woff2") format("woff2"),
+    url("./Components/fonts/AppleSDGothicNeoSB.woff") format("woff");
 }
 
 @font-face {
   font-family: "AppleNeoB";
-  src: url("./Components/fonts/AppleSDGothicNeoB.ttf") format("truetype");
+  src: url("./Components/fonts/AppleSDGothicNeoB.ttf") format("truetype"),
+    url("./Components/fonts/applesdgothicneoB.otf") format("opentype"),
+    url("./Components/fonts/AppleSDGothicNeoB.woff2") format("woff2"),
+    url("./Components/fonts/AppleSDGothicNeoB.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Components/fonts/InterSemiBold.ttf");
 }

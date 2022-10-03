@@ -24,9 +24,13 @@ import AlarmTrashIcon from '../../../static/components/AlarmList/AlarmTrashIcon'
 
 const EventSource = EventSourcePolyfill || NativeEventSource;
 const AlarmList = ({ onClickToast }) => {
+  // 삭제 선택 상태값
   const [del, setDel] = useState(false);
+  // 삭제할 배열
   const [delArr, setDelArr] = useState([]);
+  // 모달 상태값
   const [modal, setModal] = useState(false);
+  // 알림값
   const [newAlert, setNewAlert] = useState([]);
   const queryClient = useQueryClient();
   const { data: alertList } = useGetMessageAlert();
@@ -54,7 +58,7 @@ const AlarmList = ({ onClickToast }) => {
     setDel(false);
     setDelArr([]);
   };
-// 삭제 요청
+  // 삭제 요청
   const DeleteAlarm = () => {
     setNewAlert([...newAlert.filter((i) => !delArr.includes(i.id))]);
     instance.delete('/notifications/delete', { data: delArr });
@@ -114,11 +118,11 @@ const AlarmList = ({ onClickToast }) => {
                   //삭제모드가 켜져있고 삭제 배열에 없을시 배열에 id 추가
                   del && !delArr.includes(item.id)
                     ? setDelArr([...delArr, item.id])
-                    //삭제모드가 켜져있고 삭제 배열에 있을시 배열에서 id 제거
-                    : del && delArr.includes(item.id)
+                    : //삭제모드가 켜져있고 삭제 배열에 있을시 배열에서 id 제거
+                    del && delArr.includes(item.id)
                     ? setDelArr([...delArr.filter((i) => i !== item.id)])
-                    //읽음 처리 후 이동
-                    : ReadingAlarm(item.id, item.url);
+                    : //읽음 처리 후 이동
+                      ReadingAlarm(item.id, item.url);
                 }}
                 key={item + index}
                 read={modal ? true : item.status}

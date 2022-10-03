@@ -1,14 +1,14 @@
 //react import
-import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
-import useInput from "../../../hooks/useInput";
+import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import useInput from '../../../hooks/useInput';
 //styled import
-import { Area } from "./AdminLoginStyled";
-import instance from "../../../Redux/modules/instance";
+import { Area } from './AdminLoginStyled';
+import instance from '../../../Redux/modules/instance';
 const AdminLogin = () => {
-  const [id, setid] = useInput("");
-  const [pw, setpw] = useInput("");
+  const [id, setid] = useInput('');
+  const [pw, setpw] = useInput('');
   const URL = process.env.REACT_APP_URL;
   const loginInfo = {
     email: id,
@@ -20,9 +20,9 @@ const AdminLogin = () => {
     instance.post(`/admin/login`, loginInfo).then((res) => {
       const token = res.headers.authorization;
       const refresh_token = res.headers.refresh_token;
-      localStorage.setItem("Authorization", token);
-      sessionStorage.setItem("refresh-Token", refresh_token);
-      navigate("/admin");
+      localStorage.setItem('Authorization', token);
+      sessionStorage.setItem('refresh-Token', refresh_token);
+      navigate('/admin');
     });
   };
 

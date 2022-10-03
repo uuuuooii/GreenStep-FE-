@@ -57,6 +57,7 @@ const text2 =
 const text3 = "다른 사람들의 인증샷을 보고 \n 동기부여를 받아보세요.";
 const text4 = '당신이 그릴 스텝, \n "내가 그린 스텝" \n 지금 시작해볼까요?';
 const Login = () => {
+  // 페이지 inView값
   const [first, firstView] = useInView();
   const [firstAni, setFirstAni] = useState(false);
   const [second, secondView] = useInView();
@@ -65,9 +66,9 @@ const Login = () => {
   const [thirdAni, setThirdAni] = useState(false);
   const [fourth, fourthView] = useInView();
   const [fourthAni, setFourthAni] = useState(false);
-  const [button, setButton] = useState(false);
+// 최하단부 스크롤 ref
   const scrollRef = useRef();
-
+// 맨 아래로 내리는 버튼
   const DownPage = () => {
     scrollRef.current.scrollIntoView({
       behavior: "smooth",
@@ -81,7 +82,7 @@ const Login = () => {
       document.getElementById("ch-plugin").style.display = "none";
     }, [500]);
   }, []);
-
+//페이지가 보일 때 애니메이션 발생
   useEffect(() => {
     if (fourthView) {
       setFourthAni(true);

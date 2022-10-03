@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import { FadeOn } from "../../Components/Animation/Animation";
+import styled, { keyframes } from 'styled-components';
+import { FadeOn } from '../../Components/Animation/Animation';
 
 export const Shake = keyframes`
 0%{transform: rotate(-0deg)}
@@ -37,7 +37,7 @@ export const RankTitle = styled.div`
   text-align: center;
   color: #50674c;
   width: 100%;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -63,7 +63,7 @@ export const UserArea = styled.div`
   position: relative;
 `;
 export const UserName = styled.div`
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 600;
   font-size: 12px;
   color: #50674c;
@@ -96,7 +96,7 @@ export const MedalHead = styled.div`
   width: 25px;
   height: 25px;
   border-radius: 12.5px;
-  background-color: ${(props) => (props.color ? props.color : "#ffc72d")};
+  background-color: ${(props) => (props.color ? props.color : '#ffc72d')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +108,7 @@ export const MedalCenter = styled.div`
   width: 9.75px;
   height: 9.75px;
   border-radius: 4.875px;
-  background-color: ${(props) => (props.color ? props.color : "#FFE49C")};
+  background-color: ${(props) => (props.color ? props.color : '#FFE49C')};
   /* margin: auto; */
 `;
 
@@ -134,7 +134,6 @@ export const MedalRightBottom = styled.div`
 `;
 
 export const CategoryArea = styled.div`
-  /* max-width: 100%; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -159,7 +158,7 @@ export const CategoryButton = styled.div`
   line-height: 16px;
   color: #a1d0d7;
   background-color: ${(props) =>
-    props.check === props.num ? "#F1F8F9" : "none"};
+    props.check === props.num ? '#F1F8F9' : 'none'};
   align-items: center;
   display: flex;
   justify-content: center;
@@ -173,7 +172,7 @@ export const CategoryButton = styled.div`
   }
 `;
 export const CategoryButtonText = styled.div`
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 700;
   font-size: 13px;
   line-height: 16px;
@@ -225,7 +224,7 @@ export const TagArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-family: "AppleNeoM";
+  font-family: 'AppleNeoM';
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -251,7 +250,7 @@ export const ClapPoint = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0px 10px 0px 0px;
-  font-family: "AppleNeoSB";
+  font-family: 'AppleNeoSB';
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
@@ -269,7 +268,7 @@ export const FeedProfile = styled.img`
 `;
 
 export const FeedNickname = styled.div`
-  font-family: "AppleNeoSB";
+  font-family: 'AppleNeoSB';
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -290,7 +289,7 @@ export const FeedContent = styled.div`
 export const FeedText = styled.div`
   width: 100%;
   display: flex;
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;

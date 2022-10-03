@@ -39,7 +39,7 @@
 .archive-grid-area {
   width: 100%;
   display: grid;
-  gap: 15px;
+  /* gap: 15px; */
   grid-template-columns: 33.1% 33.1% 33.1%;
   row-gap: 2.5px;
   column-gap: 2px;

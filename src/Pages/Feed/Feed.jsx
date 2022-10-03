@@ -1,18 +1,18 @@
 //react import
-import React, { useState, useEffect } from 'react';
-import instance from '../../Redux/modules/instance';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
+import instance from "../../Redux/modules/instance";
+import { useInView } from "react-intersection-observer";
 //components import
-import Medal from './Medal';
-import ClapIcon from '../../static/components/ClapIcon';
-import DoneClap from '../../static/components/DoneClap';
-import FeedSkeleton from '../../Components/Skeleton/FeedSkeleton';
-import RankingSkeleton from '../../Components/Skeleton/RankingSkeleton';
-import Footer from '../../Components/Footer/Footer';
-import { Shake } from './FeedStyled';
+import Medal from "./Medal";
+import ClapIcon from "../../static/components/ClapIcon";
+import DoneClap from "../../static/components/DoneClap";
+import FeedSkeleton from "../../Components/Skeleton/FeedSkeleton";
+import RankingSkeleton from "../../Components/Skeleton/RankingSkeleton";
+import Footer from "../../Components/Footer/Footer";
+import { Shake } from "./FeedStyled";
 //redux
-import { __GetLanks } from '../../Redux/modules/ranks';
-import { useDispatch, useSelector } from 'react-redux';
+import { __GetLanks } from "../../Redux/modules/ranks";
+import { useDispatch, useSelector } from "react-redux";
 
 //styled import
 import {
@@ -25,6 +25,7 @@ import {
   UserArea,
   InfoArea,
   CategoryArea,
+  CategoryDummyDiv,
   CategoryButton,
   CategoryButtonText,
   FeedArea,
@@ -45,8 +46,8 @@ import {
   BottomProfileArea,
   ArrowArea,
   ContentArea,
-} from './FeedStyled';
-import FeedArrow from '../../static/components/FeedArrow';
+} from "./FeedStyled";
+import FeedArrow from "../../static/components/FeedArrow";
 
 const Feed = () => {
   //랭킹 정보 가져오기
@@ -63,28 +64,28 @@ const Feed = () => {
   //피드를 받는 배열
   const [FeedList, setFeedList] = useState([]);
   //서버에 보내는 마지막 피드의 id값
-  const [last, setLast] = useState('');
+  const [last, setLast] = useState("");
   //화면에 보일시 inView의 값이 true로 변함
   const [ref, inView] = useInView();
   const dispatch = useDispatch();
 
   const categoryList = [
-    '전체보기',
-    '#NO일회용품',
-    '#분리수거',
-    '#환경운동',
-    '#환경용품사용',
-    '#에너지절약',
-    '#기타',
+    "전체보기",
+    "#NO일회용품",
+    "#분리수거",
+    "#환경운동",
+    "#환경용품사용",
+    "#에너지절약",
+    "#기타",
   ];
   const categoryApi = [
-    'all',
-    'disposable',
-    'separate',
-    'environmental',
-    'goods',
-    'energy',
-    'etc',
+    "all",
+    "disposable",
+    "separate",
+    "environmental",
+    "goods",
+    "energy",
+    "etc",
   ];
   //clap
   const CheckClap = (item) => {
@@ -204,6 +205,7 @@ const Feed = () => {
           <RankingSkeleton />
         )}
         <CategoryArea>
+          <CategoryDummyDiv />
           {categoryList.map((item, index) => (
             <CategoryButton
               key={item + index}
@@ -235,7 +237,7 @@ const Feed = () => {
                 <FeedContent>
                   <CardBottomArea>
                     <BottomProfileArea>
-                      {' '}
+                      {" "}
                       <FeedProfile src={item.profilePhoto} />
                       <FeedNickname>{item.authorName}</FeedNickname>
                     </BottomProfileArea>
@@ -260,14 +262,14 @@ const Feed = () => {
                         {item.clapByMe ? (
                           <DoneClap />
                         ) : (
-                          <ClapIcon color={'#84CA79'} />
+                          <ClapIcon color={"#84CA79"} />
                         )}
                       </ClapBox>
                     </ClapArea>
                   </CardBottomArea>
                   <ContentArea>
                     <ArrowArea>
-                      {' '}
+                      {" "}
                       <FeedArrow />
                     </ArrowArea>
                     <FeedText>{item.content}</FeedText>

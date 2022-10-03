@@ -66,9 +66,9 @@ const Login = () => {
   const [thirdAni, setThirdAni] = useState(false);
   const [fourth, fourthView] = useInView();
   const [fourthAni, setFourthAni] = useState(false);
-// 최하단부 스크롤 ref
+  // 최하단부 스크롤 ref
   const scrollRef = useRef();
-// 맨 아래로 내리는 버튼
+  // 맨 아래로 내리는 버튼
   const DownPage = () => {
     scrollRef.current.scrollIntoView({
       behavior: "smooth",
@@ -82,7 +82,7 @@ const Login = () => {
       document.getElementById("ch-plugin").style.display = "none";
     }, [500]);
   }, []);
-//페이지가 보일 때 애니메이션 발생
+  //페이지가 보일 때 애니메이션 발생
   useEffect(() => {
     if (fourthView) {
       setFourthAni(true);
@@ -180,8 +180,8 @@ const Login = () => {
           </LastText>
         </FourthArea>
         <MarginDIv>
-          {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code"> */}
-          <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code">
+          <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=https://greenstepapp.com/users/kakao/callback&response_type=code">
+            {/* <KakaoLink href="https://kauth.kakao.com/oauth/authorize?client_id=3e7b3b7d9b0de5387c8ac0d9325f57ab&redirect_uri=http://localhost:3000/users/kakao/callback&response_type=code"> */}
             <ButtonBody>
               <Logo />
             </ButtonBody>

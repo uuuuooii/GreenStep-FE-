@@ -210,7 +210,7 @@ export const CardBottomArea = styled.div`
 
 export const CardTopArea = styled.div`
   width: 100%;
-  margin: 24px 0 0 0px;
+  margin: 20px 0 0 0px;
   display: flex;
   /* justify-content: space-between; */
   position: absolute;
@@ -218,7 +218,7 @@ export const CardTopArea = styled.div`
 `;
 
 export const TagArea = styled.div`
-  width: 92%;
+  width: 94%;
   /* margin: 15px 26px 0 0; */
   margin: 0px;
   display: flex;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoadingArea = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const LoadingArea = styled.div`
 
 export const LodingText = styled.div`
   /* position: absolute; */
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;

@@ -17,11 +17,14 @@ import Slide from "react-reveal/Slide";
 import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
 
 const ExplainWaiting = ({ onClickToast }) => {
-  const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // 로딩 상태값
+  const [loding, setLoding] = useState(false);
+  // 미션 번호 & 미션 분류
   const paramsNum = useParams().id.split("&")[0];
   const paramsCategory = useParams().id.split("&")[1];
+  // 미션 값
   const select = useSelector((state) =>
     paramsCategory === "challenge"
       ? state.mission.challenge[0]
@@ -29,7 +32,7 @@ const ExplainWaiting = ({ onClickToast }) => {
       ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
-  console.log(select);
+  // 미션 분류에 따른 적립 포인트
   const pointNum =
     paramsCategory === "challenge" ? 30 : paramsCategory === "weekly" ? 20 : 10;
   useEffect(() => {
@@ -45,10 +48,6 @@ const ExplainWaiting = ({ onClickToast }) => {
     <>
       {!loding && select ? (
         <>
-          {/* <div
-            className="explain-back-div"
-            onClick={() => navigate("/mission")}
-          /> */}
           <Slide bottom>
             <div className="explain-wrap-shape">
               <div className="explain-mission-close-button-area">
@@ -84,14 +83,14 @@ const ExplainWaiting = ({ onClickToast }) => {
                 ></img>
 
                 <div className="explain-mission-center-point-text">
-                  {`예상 걸음치는 +${pointNum}xp 입니다.`}
+                  {`예상 걸음치는 +${pointNum}걸음 입니다.`}
                 </div>
               </div>
               <div
                 className="explain-waiting-bar"
                 onClick={() => {
                   navigate("/mission");
-                  onClickToast(`예상 걸음치 (+${pointNum}xp)`, 1);
+                  onClickToast(`예상 걸음치 (+${pointNum}걸음)`, 1);
                 }}
               >
                 인증 대기중

@@ -25,3 +25,26 @@
   justify-content: center;
   align-items: center;
 }
+
+.mission-notice-area {
+  width: 100%;
+  margin: -2px 0px 0px 0px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mission-notice-box {
+  width: 415px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aee1e9;
+}
+.mission-notice-text {
+  font-family: "AppleNeoSB";
+  font-size: 22px;
+  font-weight: 800;
+  color: #51684d;
+}

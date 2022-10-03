@@ -100,8 +100,7 @@
   flex-direction: column;
 }
 
-.explain-mission-center-point-area {
-}
+.explain-mission-center-point-area {}
 
 .explain-mission-center-point-text {
   font-family: "AppleNeoM";
@@ -133,8 +132,10 @@
   margin: 30px 0 82px 0;
   padding: 8px 0px 10px 0px;
 }
+
 .explain-waiting-bar:hover {
   cursor: pointer;
+  font-family: "AppleNeoM";
 }
 
 .explain-text {

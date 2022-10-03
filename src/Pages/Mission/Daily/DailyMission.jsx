@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+//react import
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DailyBody, MissionPhoto, MissionText } from './DailyMissionStyled';
 //redux
 import { __GetDailymission } from '../../../Redux/modules/mission';
-import { useDispatch } from 'react-redux';
 
 const DailyMission = ({ item, type }) => {
   const navigate = useNavigate();

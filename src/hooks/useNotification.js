@@ -1,12 +1,12 @@
-import { useMutation, useQuery } from "react-query";
-import { informApis } from "./imformApi";
+import { useMutation, useQuery } from 'react-query';
+import { informApis } from './imformApi';
 
 export function useGetMessageAlert() {
-  return useQuery("alertList", informApis.notification);
+  return useQuery('alertList', informApis.notification);
 }
 
 export function useGetUnreadAlert() {
-  return useQuery("unreadList", informApis.notificationCnt);
+  return useQuery('unreadList', informApis.notificationCnt);
 }
 
 export function usePostReadAlert() {

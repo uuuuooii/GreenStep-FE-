@@ -1,42 +1,45 @@
 //react import
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 //styled import
-import { HiOutlineX } from "react-icons/hi";
-import "./Explain.css";
-import "./ExplainWaiting.css";
+import { HiOutlineX } from 'react-icons/hi';
+import './Explain.css';
+import './ExplainWaiting.css';
 import {
   __GetTodaymission,
   __GetDailymission,
   __GetWeeklymission,
-} from "../../../Redux/modules/mission";
-import Slide from "react-reveal/Slide";
+} from '../../../Redux/modules/mission';
+import Slide from 'react-reveal/Slide';
 //component import
-import LoadingBar from "../../../Components/LoadingBar/LoadingBar";
+import LoadingBar from '../../../Components/LoadingBar/LoadingBar';
 
 const ExplainWaiting = ({ onClickToast }) => {
-  const [loding, setLoding] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const paramsNum = useParams().id.split("&")[0];
-  const paramsCategory = useParams().id.split("&")[1];
+  // 로딩 상태값
+  const [loding, setLoding] = useState(false);
+  // 미션 번호 & 미션 분류
+  const paramsNum = useParams().id.split('&')[0];
+  const paramsCategory = useParams().id.split('&')[1];
+  // 미션 값
   const select = useSelector((state) =>
-    paramsCategory === "challenge"
+    paramsCategory === 'challenge'
       ? state.mission.challenge[0]
-      : paramsCategory === "daily"
+      : paramsCategory === 'daily'
       ? state.mission.daily.filter((item) => item.missionId == paramsNum)[0]
       : state.mission.weekly.filter((item) => item.missionId == paramsNum)[0]
   );
-  console.log(select);
+  // 미션 분류에 따른 적립 포인트 
   const pointNum =
-    paramsCategory === "challenge" ? 30 : paramsCategory === "weekly" ? 20 : 10;
+    paramsCategory === 'challenge' ? 30 : paramsCategory === 'weekly' ? 20 : 10;
   useEffect(() => {
     setLoding(true);
-    paramsCategory === "challenge"
+    paramsCategory === 'challenge'
       ? dispatch(__GetTodaymission())
-      : paramsCategory === "daily"
+      : paramsCategory === 'daily'
       ? dispatch(__GetDailymission())
       : dispatch(__GetWeeklymission());
     setLoding(false);
@@ -45,31 +48,27 @@ const ExplainWaiting = ({ onClickToast }) => {
     <>
       {!loding && select ? (
         <>
-          {/* <div
-            className="explain-back-div"
-            onClick={() => navigate("/mission")}
-          /> */}
           <Slide bottom>
             <div className="explain-wrap-shape">
               <div className="explain-mission-close-button-area">
                 <div
                   className="explain-mission-close-button"
-                  onClick={() => navigate("/mission")}
+                  onClick={() => navigate('/mission')}
                 >
                   <HiOutlineX />
                 </div>
               </div>
               <div className="explain-mission-name-and-tag-area">
                 <div className="explain-mission-name-text">
-                  {select ? select.missionName : "MissionName"}
+                  {select ? select.missionName : 'MissionName'}
                 </div>
                 <div className="explain-mission-tag-text">
-                  {select ? select.tag : "#Tag"}
+                  {select ? select.tag : '#Tag'}
                 </div>
                 <p className="explain-mission-contents-text">
                   {select
                     ? select.missionContent
-                    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor."}
+                    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi, proin a neque vel facilisi vel tempor etiam. Lorem vitae ut ac auctor.'}
                 </p>
               </div>
 
@@ -90,7 +89,7 @@ const ExplainWaiting = ({ onClickToast }) => {
               <div
                 className="explain-waiting-bar"
                 onClick={() => {
-                  navigate("/mission");
+                  navigate('/mission');
                   onClickToast(`예상 걸음치 (+${pointNum}xp)`, 1);
                 }}
               >

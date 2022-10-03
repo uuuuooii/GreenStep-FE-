@@ -58,13 +58,11 @@ const FourthModal = ({
               E-mail 알림 수신 동의
             </CheckMailText>
           </CheckMailArea>
-          {/* {nickname && name ? (
-            <Fade> */}{' '}
+
           <EmailButtonArea>
             {' '}
             <EmailButton
               background={'#b8dde2'}
-              // {acceptMail ? '#b8dde2' : 'd9d9d9'}
               onClick={() =>
                 instance.patch(`/users/info`, userinfo).then(() => {
                   navigate('/mission');
@@ -75,8 +73,7 @@ const FourthModal = ({
               회원가입
             </EmailButton>
           </EmailButtonArea>{' '}
-          {/* </Fade>
-          ) : null} */}
+
         </TotalEmailArea>
       </SelectBody>
     </>

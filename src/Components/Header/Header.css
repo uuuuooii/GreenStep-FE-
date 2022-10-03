@@ -27,7 +27,7 @@
 }
 
 .header-title {
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   position: relative;
   text-align: center;
   color: #50674c;
@@ -70,6 +70,6 @@
   top: -3px;
   background-color: red;
   padding-bottom: 1px;
-  font-family: "AppleNeoR";
+  font-family: 'AppleNeoR';
   font-size: 12px;
 }

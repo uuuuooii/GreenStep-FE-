@@ -107,6 +107,7 @@ const Modal = ({ onClickToast }) => {
               onClickToast={onClickToast}
             />
           ) : null}
+          {/* 상태창 애니메이션 */}
           <DotArea>
             {display === 0 ? (
               <>
@@ -168,6 +169,7 @@ const Modal = ({ onClickToast }) => {
                 <OnDot />
               </>
             ) : null}
+            {/* 상태창 애니메이션 */}
           </DotArea>
         </ModalSection>
       </ModalBody>

@@ -38,13 +38,16 @@
   width: 415px;
   height: 92px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #aee1e9;
+  background-color: #c3c2c2;
 }
 .mission-notice-text {
-  font-family: "AppleNeoSB";
-  font-size: 22px;
+  font-family: "AppleNeoM";
   font-weight: 800;
-  color: #51684d;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 112%;
+  color: #fcfcfa;
 }

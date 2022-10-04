@@ -27,12 +27,12 @@ export const MissionPhoto = styled.div`
   background-size: contain;
   background-position: center;
 `;
+
 export const MissionText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* font-weight: 600; */
   font-size: 13px;
   line-height: 16px;
   color: #50674c;

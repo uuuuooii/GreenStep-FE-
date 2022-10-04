@@ -1,3 +1,5 @@
+## 프로젝트 소개
+
 ### GREEN STEP
 
 우리가 그리는 푸른 발자국이 지구를 구하도록
@@ -15,111 +17,40 @@
 ## ⚒️기술스택
 
 - **백엔드**
-- **프론트엔드**
+
+
+**프론트엔드**
+
+- React
+
+   - redux-toolkit
+ 
+   - react-router-dom
+ 
+   - react-intersection-observer
+ 
+   - axios
+
 
 ## 핵심기능
 
-1. 로그인 페이지
-
-
-![로그인페이지](https://user-images.githubusercontent.com/107654769/193560690-765082c7-1c2d-4e14-ae1e-87900064b469.gif)
-
-
-로그인 페이지에서는, 사용자에게 순차적으로 앱의 사용방법과 목적을 알려주게끔 만들었습니다.
-
-- 로그인 (회원가입 기능)
-
-![회원가입](https://user-images.githubusercontent.com/107654769/193562361-21c760a8-d5cc-4bb6-b526-1240d0a99404.gif)
-
- 카카오톡 소셜 로그인
- 로그인은 접근성을 위해 카카오톡 로그인만 지원하도록 했습니다.
- 처음 접속한 유저의 경우에는 간단한 회원가입 절차 후 메인페이지로 넘어갈 수 있습니다.
-
-2. 메인 페이지 (미션 페이지)
-
-- 미션 제공 기능
-
-
-![KakaoTalk_20221003_200639698](https://user-images.githubusercontent.com/107654769/193562852-b3f9af0f-b0fd-4fc0-ba56-ca54979a7332.png)
-
-
-미션 페이지에 접속하면 챌린지미션, 데일리미션, 위클리미션 3가지의 미션을 만나볼 수 있고, 각 미션을 클릭해서 상세 페이지로 넘어갈 수 있습니다.
-
-
-![KakaoTalk_20221003_205649712](https://user-images.githubusercontent.com/107654769/193571399-d59c550a-cbcd-4f9a-81bb-89187ad619ce.png)
-
-
-상세 페이지에 접근하면 미션에 대한 간단한 설명과 예시 사진이 안내됩니다.
-
-
-- 미션 사진 촬영 기능
-
-
-![KakaoTalk_20221003_205928002](https://user-images.githubusercontent.com/107654769/193571752-3ab373fd-fff7-4e4a-aa57-296bba63019e.png)
-
-
-
-상세 페이지에서 안내받은 뒤 촬영 페이지로 접근할 수 있습니다. 
-
-
-
-앱에 내장된 카메라기능만을 사용할 수 있으며, 사진을 찍고 찍은 사진을 확인한 후 한번 더 버튼을 누르면 서버로 전송이 됩니다.
-
-
-
-- 미션 인증 수락 기능
-
-
-인증요청이 보내진 사진은 어드민 페이지에서 관리자가 확인 후 승인 혹은 거절을 할 수 있습니다.
-
-
-
-3. 마이 페이지 
-
-![KakaoTalk_20221003_233556350](https://user-images.githubusercontent.com/107654769/193604508-9a881b7d-eb61-4838-a081-c1d13db96d28.png)
-
-
-마이페이지에서는 회원정보와 달성한 미션 수, 미션달성에 따른 걸음수를  볼 수 있으며, 인증이 완료된 미션들은 인증샷 아카이브로 이동된다.
-
-
-인증샷 아카이브, 게시물 아카이브, 프로필 수정 페이지 등으로 접근할 수 있다.
-
-
-- 포스트 아카이빙 기능
-
-
-![KakaoTalk_20221004_000207784](https://user-images.githubusercontent.com/107654769/193610889-9d1d3704-f34c-4b84-928c-a26eb1e8e322.png)
-
-
-아카이브 페이지는 인증샷, 게시물, 숨김 아카이브의 3종류가 있습니다.
-
-
-아카이브 페이지로 넘어가면 내가 들어간 아카이브 종류에 따라, 업로드페이지, 상세페이지로 넘어갈 수 있으며, 숨기기, 피드삭제 숨김복구 등의 작업을 수행할 수 있습니다.
-
-
-
-- 피드 업로드 기능
-
-
-![KakaoTalk_20221004_001803141](https://user-images.githubusercontent.com/107654769/193614253-98673d7c-a7f3-47de-9db7-1a00f5e68872.png)
-
-
-인증이 완료된 게시물들은 업로드 페이지에서 피드에 게시할 수 있습니다.
-
-
-
-4. 피드 페이지
-
-
-![피드페이지 시연](https://user-images.githubusercontent.com/107654769/193619304-72ec6d7e-2b3b-4445-88c8-e3fd24800362.gif)
-
-
-피드페이지 에서는 최상단에 일별 랭킹을 볼 수 있고, 다른 사용자들이 올린 피드를 카테고리 별로 분류해서 볼 수 있습니다.
-
-
-박수 버튼을 누르면 애니메이션과 함께 박수가 쳐지고 페이지 최하단부에 닿을시 무한스크롤링으로 다음 피드들을 받아옵니다.
-
-
+- 로그인 페이지
+
+ - 카카오톡 소셜 로그인
+
+- 미션 페이지 
+
+ - 미션 투두리스트 제공
+ 
+ - 미션 촬영 기능
+ 
+ - 미션 포스트 아카이빙 기능
+ 
+- 피드 페이지 
+ 
+ - 피드 제공 기능 (무한스크롤링)
+ 
+ - 박수 기능 (좋아요 기능)
 
 ## 데모영상
 
@@ -127,8 +58,55 @@
 
 # 프론트엔드
 
-# frontend
+- 렌더링 지연 문제
 
-# frontend2
+  - 문제상황 : 미션페이지에서 미션들과 사진들을 불러오는데 지연되는 문제가 발생하였다.
+  
+  - 원인파악 : 사용중이던 이미지의 용량이 너무 컸고, 페이지에서 3번의 요청이 발생해야 하는데 12번의 요청이 발생하는것을 확인.
+  
+  - 해결 
+        
+        1️ : WebP로 이미지 리사이징. 총 6개의 이미지 평균 용량 94% 감소
+        
+        2 : 각각의 데일리미션의 컴포넌트가 요청을 보내고 있었고, 불필요한 요청을 삭제 후 서버 지연시간이 4109ms->64ms로 98.44% 단축
+ 
+ 
+ - S3 버킷으로 빌드 배포 시 유저가 브라우저에 캐시를 삭제해야 업데이트가 되는 문제
+ 
+  - 문제상황 : 메인서버에 빌드 후 배포하여도 유저에게 바로 반영이 되지 않는 문제가 발생
+  
+  - 원인파악 : CRA 빌드 시에 JS와 CSS 번들 정적 파일의 해시값이 변경되지 않는 것을 확인했다.
+  
+  - 시도한 방법 
+  
+     1 : CloudFront에서 캐시 무효화 → 여전히 유저가 캐시를 삭제해야만 최신 버전이 나타난다.
+     
+     2 : S3 버킷에서 index.html에 메타데이터로 cache-control 값 추가 → 빌드 할 때마다 index.html 파일이 새로 업로드돼서 추가되어서 일일이 다시 해줘야 했다.
+ 
+  - 해결 
+   
+    CRA 빌드 시에 정적 파일의 이름을 그때그때 다르게 한다면 브라우저에서 새로운 파일로 인식하므로 이전 캐시에서 불러오지 않고 최신 버전을 불러오게 된다.
 
-# GreenStep2
+    CRA 환경에서 webpack 설정을 커스텀 할 필요가 있었고, react-app-rewired라는 라이브러리가 있어 사용하였다.
+
+    설치 후 프로젝트 root경로에 config-overrides.js 파일을 생성한 뒤 다음과 같은 코드를 작성하였다.
+    
+    ```
+    module.exports = {
+    webpack: function (config, env) {
+    config.output.filename = `static/js/[name].[hash:8]-${Date.now()}.js`;
+    config.output.chunkFilename = `static/js/[name].[hash:8]-${Date.now()}.chunk.js`;
+
+    const miniCSSExtractPlugin = config.plugins.find(
+      (element) => element.constructor.name === "MiniCssExtractPlugin"
+    );
+
+    miniCSSExtractPlugin.options.filename = `static/css/[name].[hash:8]-${Date.now()}.css`;
+    miniCSSExtractPlugin.options.chunkFilename = `static/css/[name].[hash:8]-${Date.now()}.chunk.css`;
+    return config;
+    },
+    };
+    ```
+
+        
+        

@@ -44,6 +44,7 @@ const Admin = () => {
       })
     );
   };
+  console.log(feedList)
 
   return (
     <>

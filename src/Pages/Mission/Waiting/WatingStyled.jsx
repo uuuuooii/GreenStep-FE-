@@ -10,7 +10,7 @@ export const DailyBody = styled.div`
   height: 170px;
   border-radius: 5px;
   background: #f9fdf9;
-  margin: 10px auto;
+  margin: 10px 0;
   position: relative;
   &:hover {
     cursor: pointer;

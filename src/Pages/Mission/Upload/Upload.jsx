@@ -140,7 +140,7 @@ const Upload = ({ onClickToast }) => {
                     <KakaoIconDiv>
                       <KakaoReactIcon />
                     </KakaoIconDiv>{' '}
-                    <KakaoShare>카카오 공유하기</KakaoShare>
+                    <KakaoShare>카카오 공유</KakaoShare>
                   </ButtonArea>
                 </ShareButton>
               </TotalButtonArea>

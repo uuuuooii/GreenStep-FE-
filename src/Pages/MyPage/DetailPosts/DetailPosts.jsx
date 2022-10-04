@@ -133,7 +133,7 @@ const DetailPosts = ({ onClickToast }) => {
                   <IconDiv>
                     <KakaoReactIcon />
                   </IconDiv>{" "}
-                  <KakaoShare>카카오 공유하기</KakaoShare>
+                  <KakaoShare>카카오 공유</KakaoShare>
                 </ButtonArea>
               </PostShareButton>
             </TotalButtonArea>

@@ -19,7 +19,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: #50674c;
-  font-family: 'AppleNeoM';
+  font-family: "AppleNeoM";
   font-size: 20px;
   margin: 3px 0px 0px 5px;
 }
@@ -28,13 +28,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-style: normal;
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #50674c;
-  margin: 0px 15px 2px 15px;
+  margin: 0px 15px 6px 15px;
 }
 
 .alarmlist-dummy-div {
@@ -48,6 +48,7 @@
 }
 
 .alarmlist-contents-and-time {
+  font-family: "AppleNeoR";
   display: flex;
   flex-direction: column;
   justify-content: center;

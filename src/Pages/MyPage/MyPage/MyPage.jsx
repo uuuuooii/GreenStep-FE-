@@ -14,6 +14,7 @@ import Footer from "../../../Components/Footer/Footer";
 import ProfilePencil from "../../../static/components/ProfilePencil";
 import CompleteIcon from "../../../static/components/MyPage/CompleteIcon";
 import StepLogo from "../../../static/components/MyPage/StepLogo";
+import PointInfo from "../../../static/components/PointInfo";
 //styled import
 import "../../../Components/Toast/Toast.css";
 import "./MyPage.css";
@@ -210,7 +211,13 @@ const MyPage = ({ onClickToast }) => {
                       <div className="mypage-mission-point">
                         {userInfo.missionPoint}
                       </div>
-                      <div className="mypage-mission-point-text">걸음</div>
+                      <div className="mypage-mission-point-text-and-info">
+                        <div className="mypage-mission-point-text">걸음</div>
+                        {/* <div className="mypage-mission-point-info-div">
+                          <PointInfo className="mypage-mission-point-info" />
+                        </div> */}
+                        {/* 위의 코드는 임시 주석입니다 삭제하지 마세요 */}
+                      </div>
                     </div>
                   </div>
                 </div>

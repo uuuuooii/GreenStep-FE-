@@ -41,7 +41,7 @@
 }
 
 .mypage-wrap-view-more {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -133,7 +133,7 @@
 
 .mypage-flex-text {
   cursor: pointer;
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -190,7 +190,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'AppleNeoB';
+  font-family: "AppleNeoB";
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -205,7 +205,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
@@ -234,7 +234,7 @@
 .mypage-mission-count {
   display: flex;
   justify-content: flex-start;
-  font-family: 'AppleNeoSB';
+  font-family: "AppleNeoSB";
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -242,7 +242,7 @@
   margin-bottom: 3px;
 }
 .mypage-mission-count-text {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
@@ -260,22 +260,39 @@
   display: flex;
   flex-direction: column;
 }
+
 .mypage-mission-point {
   display: flex;
   justify-content: flex-start;
-  font-family: 'AppleNeoSB';
+  font-family: "AppleNeoSB";
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #84ca79;
   margin-bottom: 3px;
 }
+
+.mypage-mission-point-text-and-info {
+  display: flex;
+  flex-direction: row;
+  height: 10px;
+}
+
 .mypage-mission-point-text {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
   color: #868686;
+}
+
+.mypage-mission-point-info-div {
+  width: 12px;
+  height: 12px;
+  margin-left: 3px;
+}
+
+.mypage-mission-point-info {
 }
 
 .photoshots-archive-area {
@@ -291,7 +308,7 @@
 }
 
 .photoshots-text-and-icon {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;
@@ -360,7 +377,7 @@
 }
 
 .posts-text-and-icon {
-  font-family: 'AppleNeoR';
+  font-family: "AppleNeoR";
   font-weight: 600;
   font-size: 13px;
   line-height: 16px;

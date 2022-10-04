@@ -18,6 +18,7 @@ const ToastBody = styled.div`
   transform: translateX(-50%);
   bottom: 80px;
   font-size: 13px;
+  font-family: "AppleNeoM";
   color: #fff;
   background-color: rgba(178, 226, 171, 0.75);
   box-shadow: 0px 2px 2px #dadada;

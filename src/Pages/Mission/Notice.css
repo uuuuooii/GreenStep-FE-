@@ -9,18 +9,18 @@
 }
 
 .notice-back-arrow-icon {
-  margin: 2px 0px 5px 6px;
-  font-size: 28px;
+  margin: 4px 0px 7px 6px;
+  font-size: 30px;
   color: #50674c;
 }
 
 .notice-title-text {
   color: #50674c;
-  font-family: "AppleNeoR";
+  font-family: "AppleNeoM";
   font-weight: 600;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 24px;
-  margin: 4px 0px 0px 5px;
+  margin: 5px 0px 0px 5px;
 }
 
 .notice-dummy-div {
@@ -29,5 +29,6 @@
 
 .notice-content {
   font-family: "AppleNeoR";
+  font-size: 15px;
   margin: 18px;
 }

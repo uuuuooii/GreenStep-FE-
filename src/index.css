@@ -43,5 +43,5 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("./Components/fonts/InterSemiBold.ttf");
+  src: url("./Components/fonts/InterSemiBold.ttf") format("truetype");
 }

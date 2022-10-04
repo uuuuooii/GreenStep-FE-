@@ -9,12 +9,15 @@
 }
 
 .archive-title-text {
+  font-family: "AppleNeoM";
+  font-size: 17px;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #51684d;
-  left: 50%;
+  left: 50.5%;
+  margin-bottom: 2px;
   transform: translateX(-50%);
 }
 

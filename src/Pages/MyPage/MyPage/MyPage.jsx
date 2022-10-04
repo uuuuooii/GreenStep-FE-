@@ -24,7 +24,6 @@ import { HiDotsHorizontal } from "react-icons/hi";
 import { HiOutlineX } from "react-icons/hi";
 import { IoIosArrowForward } from "react-icons/io";
 import { ArchiveArrow } from "./Archive/ArchiveStyled";
-import ViewMoreRowBar from "../../../static/components/ViewMoreRowBar";
 import ViewMoreAlarm from "../../../static/components/ViewMoreAlarm";
 import ViewMoreHidden from "../../../static/components/ViewMoreHidden";
 import ViewMoreCC from "../../../static/components/ViewMoreCC";
@@ -61,6 +60,7 @@ const MyPageDiv = styled.div`
 const MyPage = ({ onClickToast }) => {
   const [loading, setLoding] = useState(false);
   const [viewMoreModal, setViewMoreModal] = useState(false);
+  const [PointInfoModal, setPointInfoModal] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({});
@@ -86,7 +86,6 @@ const MyPage = ({ onClickToast }) => {
         <div className="mypage-three-dots-area">
           <HiDotsHorizontal
             className="mypage-three-dots-icon"
-            // onClick={() => navigate("/updatemypage")}
             onClick={() => {
               setViewMoreModal(true);
             }}
@@ -207,16 +206,64 @@ const MyPage = ({ onClickToast }) => {
                     <div className="mypage-mission-point-icon">
                       <StepLogo />
                     </div>
-                    <div className="mypage-mission-point-and-text">
+
+                    {PointInfoModal ? (
+                      <>
+                        <div
+                          className="point-info-modal-background"
+                          onClick={() => {
+                            setPointInfoModal(false);
+                          }}
+                        ></div>
+                        <div class="point-info-modal-box">
+                          <div className="point-info-modal-title">걸음</div>
+                          <div className="point-info-modal-content-area">
+                            <div className="point-info-modal-content-1">
+                              걸음은 사용자들이 미션을 인증할 때마다 적립되는
+                              포인트 개념입니다.
+                            </div>
+                            <div className="point-info-modal-subtitle">
+                              걸음 적립 항목
+                            </div>
+                            <div className="point-info-modal-content-2">
+                              데일리 미션 : 10 걸음 적립
+                            </div>
+                            <div className="point-info-modal-content-2">
+                              챌린지 미션 : 20 걸음 적립
+                            </div>
+                            <div className="point-info-modal-content-2">
+                              위클리 미션 : 30 걸음 적립
+                            </div>
+                            <div className="point-info-modal-content-2">
+                              피드 올리기 : 10 걸음 적립
+                            </div>
+                          </div>
+                          <div
+                            className="point-info-modal-confirm-div"
+                            onClick={() => {
+                              setPointInfoModal(false);
+                            }}
+                          >
+                            <div className="point-info-modal-confirm">확인</div>
+                          </div>
+                        </div>
+                      </>
+                    ) : null}
+
+                    <div
+                      className="mypage-mission-point-and-text"
+                      onClick={() => {
+                        setPointInfoModal(true);
+                      }}
+                    >
                       <div className="mypage-mission-point">
                         {userInfo.missionPoint}
                       </div>
                       <div className="mypage-mission-point-text-and-info">
                         <div className="mypage-mission-point-text">걸음</div>
-                        {/* <div className="mypage-mission-point-info-div">
-                          <PointInfo className="mypage-mission-point-info" />
-                        </div> */}
-                        {/* 위의 코드는 임시 주석입니다 삭제하지 마세요 */}
+                        <div className="mypage-mission-point-info-div">
+                          <PointInfo />
+                        </div>
                       </div>
                     </div>
                   </div>

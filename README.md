@@ -55,7 +55,8 @@
 
 ## 데모영상
 
-[![image](https://user-images.githubusercontent.com/107654769/194050570-3558bc62-837a-4b97-a19d-23637d76c09d.png)](https://youtu.be/L4lZPjanLBY)
+[![image](https://user-images.githubusercontent.com/107654769/194067669-5ac2ea82-08bc-40ef-9879-16000d6a2c10.png)](https://youtu.be/L4lZPjanLBY)
+
 
 ## 트러블 슈팅
 

@@ -7,7 +7,7 @@
 
 개발기간 2022.08.26- 2022. 10.05
 
-바로가기🍀: https://greenstepapp.com -> 모바일로 접속해주세요!
+바로가기🍀: <a href='https://greenstepapp.com'> https://greenstepapp.com </a> -> 모바일로 접속해주세요!
 
 ## 팀원소개
 
@@ -54,8 +54,6 @@
  - 박수 기능 (좋아요 기능)
 
 ## 데모영상
-
-![image](https://user-images.githubusercontent.com/107654769/194067669-5ac2ea82-08bc-40ef-9879-16000d6a2c10.png)
 
 <a href=https://youtu.be/L4lZPjanLBY>영상 바로가기</a>
 

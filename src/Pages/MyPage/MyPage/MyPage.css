@@ -175,7 +175,7 @@
   width: 32px;
   height: 22px;
   position: absolute;
-  transform: translateX(50%);
+  left: 82px;
 }
 
 .nick-and-email-area {
@@ -267,7 +267,7 @@
 
 .point-info-modal-box {
   position: fixed;
-  top: calc(42vh - 100px);
+  top: calc(40vh - 100px);
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
@@ -318,6 +318,15 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 130%;
+}
+
+.point-info-modal-content-3 {
+  color: #2b5139;
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  margin-top: 5px;
 }
 
 .point-info-modal-confirm-div {

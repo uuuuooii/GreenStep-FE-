@@ -7,7 +7,7 @@
 
 개발기간 2022.08.26- 2022. 10.05
 
-바로가기🍀: <a href='https://greenstepapp.com'> https://greenstepapp.com </a> -> 모바일로 접속해주세요!
+바로가기🍀: <a href='https://greenstepapp.com'> 그린스텝  </a> -> 모바일로 접속해주세요!
 
 ## 팀원소개
 

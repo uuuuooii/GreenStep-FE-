@@ -37,6 +37,7 @@ const FourthModal = ({
     profilePhoto: img,
     acceptMail: acceptMail,
   };
+  console.log(userinfo)
   return (
     <>
       <ModalHeader>

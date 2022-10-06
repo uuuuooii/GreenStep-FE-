@@ -175,7 +175,7 @@
   width: 32px;
   height: 22px;
   position: absolute;
-  transform: translateX(50%);
+  left: 82px;
 }
 
 .nick-and-email-area {
@@ -256,6 +256,95 @@
   margin-right: 10px;
 }
 
+.point-info-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(42, 42, 42, 0.37);
+}
+
+.point-info-modal-box {
+  position: fixed;
+  top: calc(40vh - 100px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 305px;
+  z-index: 10;
+}
+
+.point-info-modal-title {
+  color: #2b5139;
+  font-family: "AppleNeoM";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 28px 0px 26px 0px;
+}
+
+.point-info-modal-content-area {
+  padding: 0 25px 28px 25px;
+}
+
+.point-info-modal-content-1 {
+  color: #2b5139;
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.point-info-modal-subtitle {
+  color: #2b5139;
+  font-family: "AppleNeoSB";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 130%;
+  margin-bottom: 2px;
+}
+
+.point-info-modal-content-2 {
+  color: #2b5139;
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+}
+
+.point-info-modal-content-3 {
+  color: #2b5139;
+  font-family: "AppleNeoR";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  margin-top: 5px;
+}
+
+.point-info-modal-confirm-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 0.5px solid #c3c2c2;
+}
+
+.point-info-modal-confirm {
+  margin: 18px 0;
+  color: #84ca79;
+  font-family: "AppleNeoR";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .mypage-mission-point-and-text {
   display: flex;
   flex-direction: column;
@@ -287,12 +376,9 @@
 }
 
 .mypage-mission-point-info-div {
-  width: 12px;
-  height: 12px;
+  position: relative;
   margin-left: 3px;
-}
-
-.mypage-mission-point-info {
+  bottom: 3px;
 }
 
 .photoshots-archive-area {

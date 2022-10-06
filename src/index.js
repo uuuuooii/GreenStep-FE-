@@ -12,10 +12,8 @@ const TRACKING_ID = "UA-243737163-2";
 ReactGA.initialize(TRACKING_ID);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <React.StrictMode>
   <Provider store={store}>
     <App />
-    {/* // </React.StrictMode> */}
   </Provider>
 );
 
@@ -24,4 +22,4 @@ serviceWorkerRegistration.register();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals(console.log);

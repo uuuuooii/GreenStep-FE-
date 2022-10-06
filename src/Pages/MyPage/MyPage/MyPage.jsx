@@ -237,6 +237,10 @@ const MyPage = ({ onClickToast }) => {
                             <div className="point-info-modal-content-2">
                               피드 올리기 : 10 걸음 적립
                             </div>
+                            <div className="point-info-modal-content-3">
+                              *피드에 업로드한 게시글 삭제 시, 지급된 걸음
+                              수(게시글 당 10 걸음)는 회수됩니다.
+                            </div>
                           </div>
                           <div
                             className="point-info-modal-confirm-div"

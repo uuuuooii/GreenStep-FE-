@@ -43,7 +43,7 @@ export const DailyTextArea = styled.div`
 `;
 export const DailyText = styled.div`
   font-family: "AppleNeoR";
-  margin: 15px 15px 15px 18px;
+  margin: 18px 15px 15px 18px;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;

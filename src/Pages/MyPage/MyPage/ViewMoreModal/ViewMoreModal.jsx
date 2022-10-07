@@ -8,7 +8,7 @@ const ViewMoreModal = () => {
   return (
     <>
       <div>
-        Lorem ipsum
+        Lorem ipsum..
         <button
           onClick={() => {
             setModal(true);

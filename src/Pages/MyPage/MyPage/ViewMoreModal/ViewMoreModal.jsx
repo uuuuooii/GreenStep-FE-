@@ -8,7 +8,10 @@ const ViewMoreModal = () => {
   return (
     <>
       <div>
-        Lorem ipsum
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+        dignissimos mollitia rem eaque, aliquam totam ipsam nisi iste iure
+        quaerat esse veniam fugiat provident laudantium facere corrupti debitis?
+        Cum, hic!
         <button
           onClick={() => {
             setModal(true);

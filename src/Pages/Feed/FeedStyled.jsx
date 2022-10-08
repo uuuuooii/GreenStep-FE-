@@ -310,7 +310,7 @@ export const ArrowArea = styled.div`
 `;
 
 export const TotalFeed = styled.div`
-  margin: 0px 0 30px 0;
+  margin: 0px 0 26px 0;
   box-shadow: 0px 3px 3px rgba(80, 103, 76, 0.2);
   border-radius: 10px;
   padding-bottom: 10px;
